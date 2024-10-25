@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "userguide.md",
+  "type": "object",
+  "properties": {
+    "manual_de_usuario": {
+      "type": "string"
+    },
+    "introducción": {
+      "type": "string"
+    },
+    "requisitos_del_sistema": {
+      "type": "string"
+    },
+    "instalación": {
+      "type": "string"
+    },
+    "descripción_general_de_la_interfaz_de_usuario": {
+      "type": "string"
+    },
+    "funciones_del_programa": {
+      "type": "string"
+    },
+    "solución_de_problemas": {
+      "type": "string"
+    },
+    "preguntas_frecuentes_faq": {
+      "type": "string"
+    },
+    "información_de_contacto": {
+      "type": "string"
+    },
+    "unordered_list_item_1": {
+      "type": "string"
+    },
+    "unordered_list_item_2": {
+      "type": "string"
+    },
+    "unordered_list_item_3": {
+      "type": "string"
+    },
+    "unordered_list_item_4": {
+      "type": "string"
+    },
+    "unordered_list_item_5": {
+      "type": "string"
+    },
+    "unordered_list_item_6": {
+      "type": "string"
+    },
+    "unordered_list_item_7": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "manual_de_usuario",
+    "introducción",
+    "requisitos_del_sistema",
+    "instalación",
+    "descripción_general_de_la_interfaz_de_usuario",
+    "funciones_del_programa",
+    "solución_de_problemas",
+    "preguntas_frecuentes_faq",
+    "información_de_contacto",
+    "unordered_list_item_1",
+    "unordered_list_item_2",
+    "unordered_list_item_3",
+    "unordered_list_item_4",
+    "unordered_list_item_5",
+    "unordered_list_item_6",
+    "unordered_list_item_7"
+  ]
+}

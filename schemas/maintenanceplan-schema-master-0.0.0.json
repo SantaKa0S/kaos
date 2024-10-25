@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "maintenanceplan.md",
+  "type": "object",
+  "properties": {
+    "plan_de_mantenimiento": {
+      "type": "string"
+    },
+    "introducción": {
+      "type": "string"
+    },
+    "tipos_de_mantenimiento": {
+      "type": "string"
+    },
+    "procedimientos_de_mantenimiento": {
+      "type": "string"
+    },
+    "programación_de_mantenimiento": {
+      "type": "string"
+    },
+    "responsabilidades": {
+      "type": "string"
+    },
+    "herramientas_de_mantenimiento": {
+      "type": "string"
+    },
+    "informe_de_mantenimiento": {
+      "type": "string"
+    },
+    "información_de_contacto": {
+      "type": "string"
+    },
+    "unordered_list_item_1": {
+      "type": "string"
+    },
+    "unordered_list_item_2": {
+      "type": "string"
+    },
+    "unordered_list_item_3": {
+      "type": "string"
+    },
+    "unordered_list_item_4": {
+      "type": "string"
+    },
+    "unordered_list_item_5": {
+      "type": "string"
+    },
+    "unordered_list_item_6": {
+      "type": "string"
+    },
+    "unordered_list_item_7": {
+      "type": "string"
+    },
+    "unordered_list_item_8": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "plan_de_mantenimiento",
+    "introducción",
+    "tipos_de_mantenimiento",
+    "procedimientos_de_mantenimiento",
+    "programación_de_mantenimiento",
+    "responsabilidades",
+    "herramientas_de_mantenimiento",
+    "informe_de_mantenimiento",
+    "información_de_contacto",
+    "unordered_list_item_1",
+    "unordered_list_item_2",
+    "unordered_list_item_3",
+    "unordered_list_item_4",
+    "unordered_list_item_5",
+    "unordered_list_item_6",
+    "unordered_list_item_7",
+    "unordered_list_item_8"
+  ]
+}
