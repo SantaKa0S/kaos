@@ -350,3 +350,33 @@
 - **Files Changed**:
   - version.txt
 ---------------------------------
+## Version 0.4.7
+- **Branch**: refs/heads/feature
+- **Commit**: 31d3cce53a52d92baf3976057b943f43e5385cb3
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 10:04:01 UTC 2024
+- **Message**: Del: ficheros innecesarios
+- **Files Changed**:
+  - schemas/README.md
+  - schemas/apiguide-schema-master-0.0.0.json
+  - schemas/architecture-schema-master-0.0.0.json
+  - schemas/maintenanceplan-schema-master-0.0.0.json
+  - schemas/product-schema-master-0.0.0.json
+  - schemas/proofresilent-schema-master-0.0.0.json
+  - schemas/resilent-schema-master-0.0.0.json
+  - schemas/summary-schema-master-0.0.0.json
+  - schemas/technicalguide-schema-master-0.0.0.json
+  - schemas/testguide-schema-master-0.0.0.json
+  - schemas/userguide-schema-master-0.0.0.json
+  - templates/apiguide.md
+  - templates/architecture.md
+  - templates/maintenanceplan.md
+  - templates/product.md
+  - templates/proofresilent.md
+  - templates/resilent.md
+  - templates/summary.md
+  - templates/technicalguide.md
+  - templates/testguide.md
+  - templates/userguide.md
+  - version.txt
+---------------------------------
