@@ -282,3 +282,13 @@
   - bin/generate_schema.txt
   - version.txt
 ---------------------------------
+## Version 0.4.2
+- **Branch**: refs/heads/feature
+- **Commit**: eeedbad49bd3c0e4a3c30b8b64268e28bed6b440
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 09:04:02 UTC 2024
+- **Message**: Fix: modificamos la generacion
+- **Files Changed**:
+  - .github/workflows/schema.yaml
+  - version.txt
+---------------------------------
