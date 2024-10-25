@@ -312,3 +312,23 @@
   - bin/generate_schema.py
   - version.txt
 ---------------------------------
+## Version 0.4.5
+- **Branch**: refs/heads/feature
+- **Commit**: 90bb0f3c44d8f09e1b71386b3b35abf205ae845f
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 09:28:42 UTC 2024
+- **Message**: Del: eliminamos esquemas
+- **Files Changed**:
+  - README.md
+  - schemas/apiguide-schema-master-0.0.0.json
+  - schemas/architecture-schema-master-0.0.0.json
+  - schemas/maintenanceplan-schema-master-0.0.0.json
+  - schemas/product-schema-master-0.0.0.json
+  - schemas/proofresilent-schema-master-0.0.0.json
+  - schemas/resilent-schema-master-0.0.0.json
+  - schemas/summary-schema-master-0.0.0.json
+  - schemas/technicalguide-schema-master-0.0.0.json
+  - schemas/testguide-schema-master-0.0.0.json
+  - schemas/userguide-schema-master-0.0.0.json
+  - version.txt
+---------------------------------
