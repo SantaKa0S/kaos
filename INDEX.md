@@ -27,3 +27,4 @@
 - **Version**: v0.4.8 - **Description**: Fix: corregimos errores en la estructura de colocacion de los ficheros
 - **Version**: v0.4.9 - **Description**: Fix: activamos que se graben los ficheros antes del audit
 - **Version**: v0.4.10 - **Description**: Fix: corregimos el path de los ficheros a generar
+- **Version**: v0.4.11 - **Description**: Fix: añadimos el disparador automatico si se detecta un nuevo fichero de templates

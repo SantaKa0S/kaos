@@ -30,11 +30,11 @@ jobs:
       - name: Identify User of the Team
         id: identify-user
         run: |
-            USER_NAME=$(git log -1 --pretty=format:'%an')
-            echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
+            user=$(git log -1 --pretty=format:'%an')
+            echo "user=$user" >> $GITHUB_ENV
     
       - name: Display User Name and Team Name
-        run: echo "Push has been performed by the user $USER_NAME of de Team $CLEAN_BRANCH_NAME"
+        run: echo "Push has been performed by the user $user of the Team $CLEAN_BRANCH_NAME"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -48,6 +48,27 @@ jobs:
       - name: Create markdownlint config
         run: |
           echo '{ "MD013": false }' > ./bin/.markdownlint.json
+
+      - name: Identify Changed Files
+        id: changed-files
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
+          cat changed-files.txt
+
+      - name: Process Changed Files
+        run: |
+          while IFS= read -r file; do
+            case "$file" in
+              templates/*.md)
+                echo "Markdown file in templates detected: $file"
+                echo "Triggering schema.yaml workflow..."
+                gh workflow run schema.yaml -f file="$file"
+                ;;
+              *)
+                echo "File $file does not match any case."
+                ;;
+            esac
+          done < changed-files.txt
 
       - name: Lint Markdown for all Docs
         run: |
