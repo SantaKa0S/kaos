@@ -82,7 +82,7 @@ jobs:
       - name: Lint Markdown Team ${{ env.CLEAN_BRANCH_NAME }}
         run: |
           echo "Starting markdown linting process for team ${{ env.CLEAN_BRANCH_NAME }}..."
-          resume_file="./results/Resume${{ env.CLEAN_BRANCH_NAME }}.txt"
+          resume_file="./results/Resume_${{ env.CLEAN_BRANCH_NAME }}.txt"
           echo "" > "$resume_file" # Inicializa el archivo de resumen como vacío
           find "./docs/${{ env.CLEAN_BRANCH_NAME }}" -name '*.md' > team-files-to-lint.txt
           if [ -s team-files-to-lint.txt ]; then
