@@ -1,15 +1,99 @@
 import sys
 import json
 import os
+import re
 from jsonschema import Draft7Validator
 
 def generate_schema(markdown_file, output_file):
-    # Aquí puedes definir cómo quieres generar el esquema a partir del archivo Markdown
-    # Este es un ejemplo básico que crea un esquema vacío
+    # Leer el contenido del archivo Markdown
+    with open(markdown_file, 'r') as f:
+        content = f.read()
+
+    # Detectar propiedades del archivo Markdown
+    properties = {}
+    required = []
+
+    # Detectar encabezados como propiedades
+    headers = re.findall(r'^(#+)\s+(.*)', content, re.MULTILINE)
+    for header in headers:
+        level, title = header
+        key = title.lower().replace(' ', '_')
+        properties[key] = {"type": "string"}
+        required.append(key)
+
+    # Detectar listas desordenadas
+    unordered_lists = re.findall(r'^[-*+]\s+(.*)', content, re.MULTILINE)
+    for i, item in enumerate(unordered_lists):
+        key = f"unordered_list_item_{i+1}"
+        properties[key] = {"type": "string"}
+        required.append(key)
+
+    # Detectar listas ordenadas
+    ordered_lists = re.findall(r'^\d+\.\s+(.*)', content, re.MULTILINE)
+    for i, item in enumerate(ordered_lists):
+        key = f"ordered_list_item_{i+1}"
+        properties[key] = {"type": "string"}
+        required.append(key)
+
+    # Detectar citas
+    blockquotes = re.findall(r'^>\s+(.*)', content, re.MULTILINE)
+    for i, quote in enumerate(blockquotes):
+        key = f"blockquote_{i+1}"
+        properties[key] = {"type": "string"}
+        required.append(key)
+
+    # Detectar código en bloque
+    code_blocks = re.findall(r'```(.*?)```', content, re.DOTALL)
+    for i, code in enumerate(code_blocks):
+        key = f"code_block_{i+1}"
+        properties[key] = {"type": "string"}
+        required.append(key)
+
+    # Detectar reglas horizontales
+    horizontal_rules = re.findall(r'^\s*([-*_]){3,}\s*$', content, re.MULTILINE)
+    for i, rule in enumerate(horizontal_rules):
+        key = f"horizontal_rule_{i+1}"
+        properties[key] = {"type": "string"}
+        required.append(key)
+
+    # Detectar enlaces
+    links = re.findall(r'\[(.*?)\]\((.*?)\)', content)
+    for i, link in enumerate(links):
+        key = f"link_{i+1}"
+        properties[key] = {
+            "type": "object",
+            "properties": {
+                "text": {"type": "string"},
+                "url": {"type": "string"}
+            },
+            "required": ["text", "url"]
+        }
+        required.append(key)
+
+    # Detectar imágenes
+    images = re.findall(r'!\[(.*?)\]\((.*?)\)', content)
+    for i, image in enumerate(images):
+        key = f"image_{i+1}"
+        properties[key] = {
+            "type": "object",
+            "properties": {
+                "alt_text": {"type": "string"},
+                "url": {"type": "string"}
+            },
+            "required": ["alt_text", "url"]
+        }
+        required.append(key)
+
+    # Crear el esquema JSON
     schema = {
         "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": os.path.basename(markdown_file),
+        "type": "object",
+        "properties": properties,
+        "required": required
     }
 
+    # Guardar el esquema en el archivo de salida
     with open(output_file, 'w') as f:
         json.dump(schema, f, indent=2)
 
