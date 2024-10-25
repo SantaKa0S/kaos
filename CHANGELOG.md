@@ -412,3 +412,13 @@
   - .github/workflows/lint.yaml
   - version.txt
 ---------------------------------
+## Version 0.4.11
+- **Branch**: refs/heads/feature
+- **Commit**: 4c391a81338504fc562ee7ea502a233bb240a488
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 10:33:29 UTC 2024
+- **Message**: Fix: añadimos el disparador automatico si se detecta un nuevo fichero de templates
+- **Files Changed**:
+  - .github/workflows/lint.yaml
+  - version.txt
+---------------------------------
