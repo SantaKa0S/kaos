@@ -249,3 +249,13 @@
   - README.md
   - version.txt
 ---------------------------------
+## Version 0.3.2
+- **Branch**: refs/heads/feature
+- **Commit**: 34396c08a1f2e2f87689e73a3a2cf24f22f0a4d7
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 08:09:12 UTC 2024
+- **Message**: Fix: corregimos el esquema base
+- **Files Changed**:
+  - bin/generate_schema.py
+  - version.txt
+---------------------------------

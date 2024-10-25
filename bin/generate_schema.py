@@ -8,14 +8,6 @@ def generate_schema(markdown_file, output_file):
     # Este es un ejemplo básico que crea un esquema vacío
     schema = {
         "$schema": "http://json-schema.org/draft-07/schema#",
-        "title": os.path.basename(markdown_file),
-        "type": "object",
-        "properties": {
-            "content": {
-                "type": "string"
-            }
-        },
-        "required": ["content"]
     }
 
     with open(output_file, 'w') as f:

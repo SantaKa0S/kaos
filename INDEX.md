@@ -15,3 +15,4 @@
 - **Version**: v0.2.6 - **Description**: Fix: reubicamos el js
 - **Version**: v0.3.0 - **Description**: New: nueva version del generador de esquemas en python
 - **Version**: v0.3.1 - **Description**: Fix: actualizamos el patch
+- **Version**: v0.3.2 - **Description**: Fix: corregimos el esquema base
