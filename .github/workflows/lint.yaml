@@ -56,7 +56,7 @@ jobs:
           echo "" > ResumeDocs.txt # Inicializa ResumeDocs.txt como un archivo vacío
           while IFS= read -r file; do
             echo "Linting $file"
-            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ResumeDocs.txt 2>&1 || true
+            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/ResumeDocs.txt 2>&1 || true
           done < docs-files-to-lint.txt
           echo "Linting completed for docs. Results saved to ResumeDocs.txt"
           cat ResumeDocs.txt
@@ -72,7 +72,7 @@ jobs:
           echo "" > Resume.txt # Inicializa Resume.txt como un archivo vacío
           while IFS= read -r file; do
             echo "Linting $file"
-            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ResumeTemplates.txt 2>&1 || true
+            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/ResumeTemplates.txt 2>&1 || true
           done < templates-files-to-lint.txt
           echo "Linting completed for templates. Results saved to ResumeTemplates.txt"
           cat ResumeTemplates.txt
@@ -86,7 +86,7 @@ jobs:
           if [ -s team-files-to-lint.txt ]; then
             while IFS= read -r file; do
               echo "Linting $file"
-              markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> "$resume_file" 2>&1 || true
+              markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/"$resume_file" 2>&1 || true
             done < team-files-to-lint.txt
             echo "Linting completed for ${{ env.CLEAN_BRANCH_NAME }}. Results saved to $resume_file"
             cat "$resume_file"
@@ -99,19 +99,19 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: markdown-lint-results-docs
-          path: ResumeDocs.txt
+          path: ./results/ResumeDocs.txt
 
       - name: Archive Linting Results All Templates
         uses: actions/upload-artifact@v4
         with:
           name: markdown-lint-results-templates
-          path: ResumeTemplates.txt
+          path: ./results/ResumeTemplates.txt
 
       - name: Archive Team ${{ env.CLEAN_BRANCH_NAME }} Linting Results
         uses: actions/upload-artifact@v4
         with:
             name: markdown-lint-results-team-${{ env.CLEAN_BRANCH_NAME }}
-            path: Resume${{ env.CLEAN_BRANCH_NAME }}.txt
+            path: ./results/Resume${{ env.CLEAN_BRANCH_NAME }}.txt
 
       - name: Check for Linting Errors in Docs ${{ env.CLEAN_BRANCH_NAME }}
         run: |

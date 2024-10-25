@@ -25,3 +25,4 @@
 - **Version**: v0.4.6 - **Description**: Fix: Merge pull request #22 from santakloud/main
 - **Version**: v0.4.7 - **Description**: Del: ficheros innecesarios
 - **Version**: v0.4.8 - **Description**: Fix: corregimos errores en la estructura de colocacion de los ficheros
+- **Version**: v0.4.9 - **Description**: Fix: activamos que se graben los ficheros antes del audit
