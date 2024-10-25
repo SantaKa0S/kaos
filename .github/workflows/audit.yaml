@@ -72,6 +72,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
+        git pull
         git add CHANGELOG.md version.txt
         git commit -m "Update CHANGELOG.md with new version log entry"
         git push
@@ -91,7 +92,6 @@ jobs:
         echo "- **Version**: v${{ env.VERSION }} - **Description**: ${{ env.COMMIT_MESSAGE }}" >> INDEX.md
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
-        git pull
         git add INDEX.md
         git commit -m "Upload: INDEX.md with version ${{ env.VERSION }}"
         git push

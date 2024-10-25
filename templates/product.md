@@ -17,3 +17,5 @@ Proporciona una breve descripción del proyecto, su propósito y los objetivos q
 ## Código Generado
 
 ## Runbook de Operaciones
+
+## Manual de Producto
