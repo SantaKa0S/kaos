@@ -34,3 +34,4 @@
 - **Version**: v0.4.15 - **Description**: Error: corregimos 10
 - **Version**: v0.4.16 - **Description**: Fix: error 14
 - **Version**: v0.4.17 - **Description**: Fix: error 16
+- **Version**: v0.4.18 - **Description**: Fix: erge branch 'feature' of https://github.com/santakloud/kaos into feature
