@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   actions: write
 
 jobs:
@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set Team Name
         id: set-branch-name
@@ -51,44 +52,43 @@ jobs:
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
           cat changed-files.txt
 
+      - name: Create Results Directory
+        run: mkdir -p ./results
+
       - name: Lint Markdown for all Docs
         run: |
           echo "Starting markdown linting process for docs..."
           find ./docs -name '*.md' > docs-files-to-lint.txt
-          echo "" > ResumeDocs.txt # Inicializa ResumeDocs.txt como un archivo vacío
+          echo "" > ./results/ResumeDocs_${{ env.CLEAN_BRANCH_NAME }}.txt # Inicializa el archivo de resumen como vacío
           while IFS= read -r file; do
             echo "Linting $file"
-            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/ResumeDocs.txt 2>&1 || true
+            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/ResumeDocs_${{ env.CLEAN_BRANCH_NAME }}.txt 2>&1 || true
           done < docs-files-to-lint.txt
-          echo "Linting completed for docs. Results saved to ResumeDocs.txt"
-          cat ResumeDocs.txt
+          echo "Linting completed for docs. Results saved to ./results/ResumeDocs_${{ env.CLEAN_BRANCH_NAME }}.txt"
+          cat ./results/ResumeDocs_${{ env.CLEAN_BRANCH_NAME }}.txt
 
       - name: Lint Markdown for all Templates
         run: |
           echo "Starting markdown linting process for templates..."
           find ./templates -name '*.md' > templates-files-to-lint.txt
-          echo "" > ResumeTemplates.txt # Inicializa ResumeTemplates.txt como un archivo vacío
-          echo "Starting markdown linting process...."
-          find . \( -path './docs/*.md' -o -path './docs/**/*.md' -o -path './templates/*.md' -o -path './templates/**/*.md' -o -name '*.md' \) -not -path './node_modules/*' -not -path './bin/*' > files-to-lint.txt
-          cat files-to-lint.txt
-          echo "" > Resume.txt # Inicializa Resume.txt como un archivo vacío
+          echo "" > ./results/ResumeTemplates_${{ env.CLEAN_BRANCH_NAME }}.txt # Inicializa el archivo de resumen como vacío
           while IFS= read -r file; do
             echo "Linting $file"
-            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/ResumeTemplates.txt 2>&1 || true
+            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/ResumeTemplates_${{ env.CLEAN_BRANCH_NAME }}.txt 2>&1 || true
           done < templates-files-to-lint.txt
-          echo "Linting completed for templates. Results saved to ResumeTemplates.txt"
-          cat ResumeTemplates.txt
+          echo "Linting completed for templates. Results saved to ./results/ResumeTemplates_${{ env.CLEAN_BRANCH_NAME }}.txt"
+          cat ./results/ResumeTemplates_${{ env.CLEAN_BRANCH_NAME }}.txt
 
       - name: Lint Markdown Team ${{ env.CLEAN_BRANCH_NAME }}
         run: |
           echo "Starting markdown linting process for team ${{ env.CLEAN_BRANCH_NAME }}..."
-          resume_file="Resume${{ env.CLEAN_BRANCH_NAME }}.txt"
+          resume_file="./results/Resume_${{ env.CLEAN_BRANCH_NAME }}.txt"
           echo "" > "$resume_file" # Inicializa el archivo de resumen como vacío
           find "./docs/${{ env.CLEAN_BRANCH_NAME }}" -name '*.md' > team-files-to-lint.txt
           if [ -s team-files-to-lint.txt ]; then
             while IFS= read -r file; do
               echo "Linting $file"
-              markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/"$resume_file" 2>&1 || true
+              markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> "$resume_file" 2>&1 || true
             done < team-files-to-lint.txt
             echo "Linting completed for ${{ env.CLEAN_BRANCH_NAME }}. Results saved to $resume_file"
             cat "$resume_file"
@@ -100,31 +100,39 @@ jobs:
       - name: Archive Linting Results all Docs
         uses: actions/upload-artifact@v4
         with:
-          name: markdown-lint-results-docs
-          path: ResumeDocs.txt
+          name: markdown-lint-results-docs-${{ env.CLEAN_BRANCH_NAME }}
+          path: ./results/ResumeDocs_${{ env.CLEAN_BRANCH_NAME }}.txt
 
       - name: Archive Linting Results All Templates
         uses: actions/upload-artifact@v4
         with:
-          name: markdown-lint-results-templates
-          path: ResumeTemplates.txt
+          name: markdown-lint-results-templates-${{ env.CLEAN_BRANCH_NAME }}
+          path: ./results/ResumeTemplates_${{ env.CLEAN_BRANCH_NAME }}.txt
 
       - name: Archive Team ${{ env.CLEAN_BRANCH_NAME }} Linting Results
         uses: actions/upload-artifact@v4
         with:
           name: markdown-lint-results-team-${{ env.CLEAN_BRANCH_NAME }}
-          path: Resume${{ env.CLEAN_BRANCH_NAME }}.txt
+          path: ./results/Resume${{ env.CLEAN_BRANCH_NAME }}.txt
 
       - name: Check for Linting Errors in Docs ${{ env.CLEAN_BRANCH_NAME }}
         run: |
           echo "Checking for linting errors in team summary..."
-          resume_file="Resume${{ env.CLEAN_BRANCH_NAME }}.txt"
+          resume_file="./results/Resume${{ env.CLEAN_BRANCH_NAME }}.txt"
           if [ -f "$resume_file" ] && grep -q "MD" "$resume_file"; then
             echo "Errors found in $resume_file"
             exit 1
           else
             echo "No linting errors found in team summary."
           fi
+
+      - name: Commit and Push Results
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add ./results/
+          git commit -m "Add linting results for team ${{ env.CLEAN_BRANCH_NAME }}"
+          git push origin feature
 
       - name: Trigger Audit
         uses: benc-uk/workflow-dispatch@v1
