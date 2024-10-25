@@ -475,3 +475,15 @@
   - templates/product.md
   - version.txt
 ---------------------------------
+## Version 0.4.17
+- **Branch**: refs/heads/feature
+- **Commit**: 0a39b6f8e8249d1eb3b3a0c158359778d6c34101
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 12:04:28 UTC 2024
+- **Message**: Fix: error 16
+- **Files Changed**:
+  - .github/workflows/audit.yaml
+  - .github/workflows/lint.yaml
+  - templates/product.md
+  - version.txt
+---------------------------------
