@@ -11,11 +11,6 @@ Proporciona una breve descripción del proyecto, su propósito y los objetivos q
 3. Runbook de Operaciones
 4. Manual de Producto
 5. Guía de Usuarios
-6. Guía Técnica
-7. Documento de Resiliencia
-8. Documento de Test
-9. Preguntas y Respuestas
-10. Errores Más Comunes
 
 ## API
 
