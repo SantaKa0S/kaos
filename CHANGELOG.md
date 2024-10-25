@@ -402,3 +402,13 @@
   - schemas/README.md
   - version.txt
 ---------------------------------
+## Version 0.4.10
+- **Branch**: refs/heads/feature
+- **Commit**: 91a0a3452bd22f63d3061e37268f3420c223bd0c
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 10:24:22 UTC 2024
+- **Message**: Fix: corregimos el path de los ficheros a generar
+- **Files Changed**:
+  - .github/workflows/lint.yaml
+  - version.txt
+---------------------------------

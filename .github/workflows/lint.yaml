@@ -99,19 +99,19 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: markdown-lint-results-docs
-          path: ./results/ResumeDocs.txt
+          path: ResumeDocs.txt
 
       - name: Archive Linting Results All Templates
         uses: actions/upload-artifact@v4
         with:
           name: markdown-lint-results-templates
-          path: ./results/ResumeTemplates.txt
+          path: ResumeTemplates.txt
 
       - name: Archive Team ${{ env.CLEAN_BRANCH_NAME }} Linting Results
         uses: actions/upload-artifact@v4
         with:
             name: markdown-lint-results-team-${{ env.CLEAN_BRANCH_NAME }}
-            path: ./results/Resume${{ env.CLEAN_BRANCH_NAME }}.txt
+            path: Resume${{ env.CLEAN_BRANCH_NAME }}.txt
 
       - name: Check for Linting Errors in Docs ${{ env.CLEAN_BRANCH_NAME }}
         run: |
