@@ -1,0 +1,23 @@
+name: =Test
+
+on:
+  workflow_dispatch:
+    branches:
+      - feature
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  test-github-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Llamar a la acción de GitHub
+        run: |
+          gh-ghr --non-interactive "github.com/${{ secrets.GITHUB_REPOSITORY }}/${{ github.event.repository.name }}.github/workflows/" \
+          > results/result-${date +%Y-%m-%d_%H-%M-%S}.json \
+          2>/dev/null || echo "Error al ejecutar la acción"
