@@ -498,3 +498,13 @@
   - INDEX.md
   - version.txt
 ---------------------------------
+## Version 0.4.19
+- **Branch**: refs/heads/feature
+- **Commit**: 9c514f52f9c3aebbb030ffe60fb2e2e06fe43926
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 12:25:10 UTC 2024
+- **Message**: Fix: error 18
+- **Files Changed**:
+  - .github/workflows/schema.yaml
+  - version.txt
+---------------------------------
