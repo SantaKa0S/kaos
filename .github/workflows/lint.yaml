@@ -55,6 +55,8 @@ jobs:
           cat changed-files.txt
 
       - name: Process Changed Files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           while IFS= read -r file; do
             case "$file" in
