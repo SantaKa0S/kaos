@@ -487,3 +487,14 @@
   - templates/product.md
   - version.txt
 ---------------------------------
+## Version 0.4.18
+- **Branch**: refs/heads/feature
+- **Commit**: 0c3bb389ba5ab272170d601b5dbe9e7130098617
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 12:18:38 UTC 2024
+- **Message**: Fix: erge branch 'feature' of https://github.com/santakloud/kaos into feature
+- **Files Changed**:
+  - CHANGELOG.md
+  - INDEX.md
+  - version.txt
+---------------------------------
