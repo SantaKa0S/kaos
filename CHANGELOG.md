@@ -443,3 +443,14 @@
   - templates/product.md
   - version.txt
 ---------------------------------
+## Version 0.4.14
+- **Branch**: refs/heads/feature
+- **Commit**: 49e65a52812d4dc7426a48b231fa499cf6f5a5b3
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 11:17:13 UTC 2024
+- **Message**: Error: corregimos
+- **Files Changed**:
+  - .github/workflows/lint.yaml
+  - templates/product.md
+  - version.txt
+---------------------------------
