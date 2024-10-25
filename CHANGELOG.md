@@ -341,3 +341,12 @@
 - **Files Changed**:
   - schemas/README.md
 ---------------------------------
+## Version 0.4.6
+- **Branch**: refs/heads/feature
+- **Commit**: 3eb6ef25e23cff5025c29735a18a7799dcfa05a3
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Fri Oct 25 09:40:31 UTC 2024
+- **Message**: Fix: Merge pull request #22 from santakloud/main
+- **Files Changed**:
+  - version.txt
+---------------------------------
