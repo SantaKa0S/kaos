@@ -508,3 +508,13 @@
   - .github/workflows/schema.yaml
   - version.txt
 ---------------------------------
+## Version 0.4.20
+- **Branch**: refs/heads/feature
+- **Commit**: 7c80d9aaacb70edefee8166d6decc0a0c2d0abeb
+- **Author**: github-actions[bot] (github-actions[bot]@users.noreply.github.com)
+- **Date**: Fri Oct 25 12:28:06 UTC 2024
+- **Message**: Fix: generated JSON schemas
+- **Files Changed**:
+  - schemas/product-schema-master-0.0.0.json
+  - version.txt
+---------------------------------
