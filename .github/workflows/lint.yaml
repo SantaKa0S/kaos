@@ -75,8 +75,23 @@ jobs:
             echo "Triggering schema.yaml workflow..."
             gh workflow run schema.yaml --ref feature
             echo "Waiting for schema.yaml workflow to complete..."
-            run_id=$(gh run list --workflow=schema.yaml --branch=feature --limit=1 --json databaseId --jq '.[0].databaseId')
-            gh run watch "$run_id" --exit-status
+            run_id=$(gh run list --workflow=schema.yaml --branch=feature --limit=1 --json databaseId | grep -oP '"databaseId":\s*\K\d+')
+            while true; do
+              status=$(gh run view "$run_id" --json status | grep -oP '"status":\s*"\K[^"]+')
+              if [ "$status" = "completed" ]; then
+                conclusion=$(gh run view "$run_id" --json conclusion | grep -oP '"conclusion":\s*"\K[^"]+')
+                if [ "$conclusion" = "success" ]; then
+                  echo "schema.yaml workflow completed successfully."
+                  break
+                else
+                  echo "schema.yaml workflow failed."
+                  exit 1
+                fi
+              else
+                echo "schema.yaml workflow is still running..."
+                sleep 10
+              fi
+            done
           fi
 
       - name: Lint Markdown for all Docs

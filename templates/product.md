@@ -2,8 +2,7 @@
 
 ## Introducción
 
-Proporciona una breve descripción del proyecto,
-su propósito y los objetivos que se esperan alcanzar con esta documentación.
+Proporciona una breve descripción del proyecto, su propósito y los objetivos que se esperan alcanzar con esta documentación.
 
 ## Tabla de Contenidos
 
@@ -17,3 +16,9 @@ su propósito y los objetivos que se esperan alcanzar con esta documentación.
 8. Documento de Test
 9. Preguntas y Respuestas
 10. Errores Más Comunes
+
+## API
+
+### Descripción General
+
+Describe brevemente la API, su propósito y cómo se integra en el proyecto.
