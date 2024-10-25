@@ -32,3 +32,4 @@
 - **Version**: v0.4.13 - **Description**: Error: cuarta prueba
 - **Version**: v0.4.14 - **Description**: Error: corregimos
 - **Version**: v0.4.15 - **Description**: Error: corregimos 10
+- **Version**: v0.4.16 - **Description**: Fix: error 14
