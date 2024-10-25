@@ -1,0 +1,69 @@
+name: Init
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'feature'
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  markdownLint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set Team Name
+        id: set-branch-name
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          CLEAN_BRANCH_NAME=${BRANCH_NAME#feature/}
+          echo "CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Identify User of the Team
+        id: identify-user
+        run: |
+          user=$(git log -1 --pretty=format:'%an')
+          echo "user=$user" >> $GITHUB_ENV
+
+      - name: Display User Name and Team Name
+        run: echo "Push has been performed by the user ${{ env.user }} of the Team ${{ env.CLEAN_BRANCH_NAME }}"
+
+      - name: Identify Changed Files
+        id: changed-files
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
+          cat changed-files.txt
+
+      - name: Exist changes in Template files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          trigger_schema=false
+          while IFS= read -r file; do
+            case "$file" in
+              templates/*.md)
+                echo "Markdown file in templates detected: $file"
+                trigger_schema=true
+                ;;
+              *)
+                echo "File $file does not match any case."
+                ;;
+            esac
+          done < changed-files.txt
+
+          if [ "$trigger_schema" = true ]; then
+            echo "Triggering schema.yaml workflow..."
+            gh workflow run schema.yaml --ref feature
+          fi
+          if [ "$trigger_schema" = false ]; then
+            echo "Triggering lint.yaml workflow..."
+            gh workflow run lint.yaml --ref feature
+          fi
