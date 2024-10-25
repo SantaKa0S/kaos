@@ -17,4 +17,3 @@ su propósito y los objetivos que se esperan alcanzar con esta documentación.
 8. Documento de Test
 9. Preguntas y Respuestas
 10. Errores Más Comunes
-11. Anexos
