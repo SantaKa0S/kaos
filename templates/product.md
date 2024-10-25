@@ -16,4 +16,3 @@ Proporciona una breve descripción del proyecto, su propósito y los objetivos q
 
 ### Descripción General
 
-Describe brevemente la API, su propósito y cómo se integra en el proyecto.

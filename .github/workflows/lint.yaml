@@ -74,24 +74,6 @@ jobs:
           if [ "$trigger_schema" = true ]; then
             echo "Triggering schema.yaml workflow..."
             gh workflow run schema.yaml --ref feature
-            echo "Waiting for schema.yaml workflow to complete..."
-            run_id=$(gh run list --workflow=schema.yaml --branch=feature --limit=1 --json databaseId | grep -oP '"databaseId":\s*\K\d+')
-            while true; do
-              status=$(gh run view "$run_id" --json status | grep -oP '"status":\s*"\K[^"]+')
-              if [ "$status" = "completed" ]; then
-                conclusion=$(gh run view "$run_id" --json conclusion | grep -oP '"conclusion":\s*"\K[^"]+')
-                if [ "$conclusion" = "success" ]; then
-                  echo "schema.yaml workflow completed successfully."
-                  break
-                else
-                  echo "schema.yaml workflow failed."
-                  exit 1
-                fi
-              else
-                echo "schema.yaml workflow is still running..."
-                sleep 10
-              fi
-            done
           fi
 
       - name: Lint Markdown for all Docs
@@ -168,6 +150,39 @@ jobs:
           else
             echo "No linting errors found in team summary."
           fi
+
+  waitForSchema:
+    runs-on: ubuntu-latest
+    needs: markdownLint
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Wait for schema.yaml to complete
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Waiting for schema.yaml workflow to complete..."
+          run_id=$(gh run list --workflow=schema.yaml --branch=feature --limit=1 --json databaseId | grep -oP '"databaseId":\s*\K\d+')
+          while true; do
+            status=$(gh run view "$run_id" --json status | grep -oP '"status":\s*"\K[^"]+')
+            if [ "$status" = "completed" ]; then
+              conclusion=$(gh run view "$run_id" --json conclusion | grep -oP '"conclusion":\s*"\K[^"]+')
+              if [ "$conclusion" = "success" ]; then
+                echo "schema.yaml workflow completed successfully."
+                break
+              else
+                echo "schema.yaml workflow failed."
+                exit 1
+              fi
+            else
+              echo "schema.yaml workflow is still running..."
+              sleep 10
+            fi
+          done
 
       - name: Trigger Audit
         uses: benc-uk/workflow-dispatch@v1
