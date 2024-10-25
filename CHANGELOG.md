@@ -422,3 +422,13 @@
   - .github/workflows/lint.yaml
   - version.txt
 ---------------------------------
+## Version 0.4.12
+- **Branch**: refs/heads/feature
+- **Commit**: 74c4a042ef06bff48dd497ebcf0223fb8debbb9b
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 10:46:02 UTC 2024
+- **Message**: Fix: error en la linea 48
+- **Files Changed**:
+  - .github/workflows/lint.yaml
+  - version.txt
+---------------------------------
