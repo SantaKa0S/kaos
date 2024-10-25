@@ -332,3 +332,12 @@
   - schemas/userguide-schema-master-0.0.0.json
   - version.txt
 ---------------------------------
+## Version 0.4.5
+- **Branch**: refs/heads/feature
+- **Commit**: ae8097b7a75ae419f6e708b655f6656ea0a307dc
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 09:32:18 UTC 2024
+- **Message**: Del : eliminamos json schema
+- **Files Changed**:
+  - schemas/README.md
+---------------------------------
