@@ -20,3 +20,4 @@
 - **Version**: v0.4.1 - **Description**: Fix: añadimos cambios
 - **Version**: v0.4.2 - **Description**: Fix: modificamos la generacion
 - **Version**: v0.4.3 - **Description**: Fix: change coment index
+- **Version**: v0.4.4 - **Description**: Fix: añadimos caracteristicas
