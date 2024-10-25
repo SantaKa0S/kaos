@@ -292,3 +292,13 @@
   - .github/workflows/schema.yaml
   - version.txt
 ---------------------------------
+## Version 0.4.3
+- **Branch**: refs/heads/feature
+- **Commit**: 68a905f3f0d4327c75ffbb87f14e665c7b1b0ef1
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 09:08:43 UTC 2024
+- **Message**: Fix: change coment index
+- **Files Changed**:
+  - .github/workflows/audit.yaml
+  - version.txt
+---------------------------------
