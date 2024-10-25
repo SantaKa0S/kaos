@@ -15,4 +15,3 @@ su propósito y los objetivos que se esperan alcanzar con esta documentación.
 6. Guía Técnica
 7. Documento de Resiliencia
 8. Documento de Test
-9. Preguntas y Respuestas
