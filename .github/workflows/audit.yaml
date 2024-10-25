@@ -92,7 +92,7 @@ jobs:
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add INDEX.md
-        git commit -m "Update INDEX.md with version ${{ env.VERSION }}"
+        git commit -m "Upload: INDEX.md with version ${{ env.VERSION }}"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
