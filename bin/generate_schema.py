@@ -6,18 +6,22 @@ from jsonschema import Draft7Validator
 
 def generate_schema(markdown_file, output_file):
     # Leer el contenido del archivo Markdown
-    with open(markdown_file, 'r') as f:
+    with open(markdown_file, 'r', encoding='utf-8') as f:
         content = f.read()
 
     # Detectar propiedades del archivo Markdown
     properties = {}
     required = []
 
+    # Función para normalizar nombres de propiedades
+    def normalize_key(key):
+        return re.sub(r'\W+', '_', key.lower()).strip('_')
+
     # Detectar encabezados como propiedades
     headers = re.findall(r'^(#+)\s+(.*)', content, re.MULTILINE)
     for header in headers:
         level, title = header
-        key = title.lower().replace(' ', '_')
+        key = normalize_key(title)
         properties[key] = {"type": "string"}
         required.append(key)
 
@@ -94,8 +98,8 @@ def generate_schema(markdown_file, output_file):
     }
 
     # Guardar el esquema en el archivo de salida
-    with open(output_file, 'w') as f:
-        json.dump(schema, f, indent=2)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(schema, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:

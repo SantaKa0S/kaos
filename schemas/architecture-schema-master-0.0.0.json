@@ -1,3 +1,49 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "architecture.md",
+  "type": "object",
+  "properties": {
+    "arquitectura": {
+      "type": "string"
+    },
+    "diagrama_de_la_infraestructura": {
+      "type": "string"
+    },
+    "documentaci\u00f3n_funcional": {
+      "type": "string"
+    },
+    "configuracion_redes": {
+      "type": "string"
+    },
+    "informaci\u00f3n_de_contacto": {
+      "type": "string"
+    },
+    "unordered_list_item_1": {
+      "type": "string"
+    },
+    "unordered_list_item_2": {
+      "type": "string"
+    },
+    "unordered_list_item_3": {
+      "type": "string"
+    },
+    "unordered_list_item_4": {
+      "type": "string"
+    },
+    "unordered_list_item_5": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "arquitectura",
+    "diagrama_de_la_infraestructura",
+    "documentaci\u00f3n_funcional",
+    "configuracion_redes",
+    "informaci\u00f3n_de_contacto",
+    "unordered_list_item_1",
+    "unordered_list_item_2",
+    "unordered_list_item_3",
+    "unordered_list_item_4",
+    "unordered_list_item_5"
+  ]
 }

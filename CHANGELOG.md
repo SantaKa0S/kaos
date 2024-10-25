@@ -271,3 +271,14 @@
   - bin/generate_schema.txt
   - version.txt
 ---------------------------------
+## Version 0.4.1
+- **Branch**: refs/heads/feature
+- **Commit**: 9a26a67b78f4fb83cdda34f667f79f7b3a6a0db8
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 08:59:20 UTC 2024
+- **Message**: Fix: añadimos cambios
+- **Files Changed**:
+  - bin/generate_schema.py
+  - bin/generate_schema.txt
+  - version.txt
+---------------------------------
