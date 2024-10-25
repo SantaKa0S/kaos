@@ -13,6 +13,3 @@ Proporciona una breve descripción del proyecto, su propósito y los objetivos q
 5. Guía de Usuarios
 
 ## API
-
-### Descripción General
-
