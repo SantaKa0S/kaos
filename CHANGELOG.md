@@ -464,3 +464,14 @@
   - .github/workflows/lint.yaml
   - version.txt
 ---------------------------------
+## Version 0.4.16
+- **Branch**: refs/heads/feature
+- **Commit**: e16ae6486de65e6d637835b0a38e92726a90ac84
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 11:56:04 UTC 2024
+- **Message**: Fix: error 14
+- **Files Changed**:
+  - .github/workflows/lint.yaml
+  - templates/product.md
+  - version.txt
+---------------------------------
