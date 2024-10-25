@@ -45,8 +45,7 @@ jobs:
         run: npm install -g markdownlint-cli2
 
       - name: Create markdownlint config
-        run: |
-          echo '{ "MD013": false }' > ./bin/.markdownlint.json
+        run: echo '{ "MD013": false }' > ./bin/.markdownlint.json
 
       - name: Identify Changed Files
         id: changed-files
@@ -73,12 +72,13 @@ jobs:
 
           if [ "$trigger_schema" = true ]; then
             echo "Triggering schema.yaml workflow..."
-            run_id=$(gh workflow run schema.yaml --ref feature --json id --jq '.id')
+            gh workflow run schema.yaml --ref feature
             echo "Waiting for schema.yaml workflow to complete..."
+            run_id=$(gh run list --workflow=schema.yaml --branch=feature --limit=1 --json databaseId | grep -oP '"databaseId":\s*\K\d+')
             while true; do
-              status=$(gh run view "$run_id" --json status --jq '.status')
+              status=$(gh run view "$run_id" --json status | grep -oP '"status":\s*"\K[^"]+')
               if [ "$status" = "completed" ]; then
-                conclusion=$(gh run view "$run_id" --json conclusion --jq '.conclusion')
+                conclusion=$(gh run view "$run_id" --json conclusion | grep -oP '"conclusion":\s*"\K[^"]+')
                 if [ "$conclusion" = "success" ]; then
                   echo "schema.yaml workflow completed successfully."
                   break
