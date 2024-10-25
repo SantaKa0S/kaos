@@ -24,3 +24,4 @@
 - **Version**: v0.4.5 - **Description**: Del: eliminamos esquemas
 - **Version**: v0.4.6 - **Description**: Fix: Merge pull request #22 from santakloud/main
 - **Version**: v0.4.7 - **Description**: Del: ficheros innecesarios
+- **Version**: v0.4.8 - **Description**: Fix: corregimos errores en la estructura de colocacion de los ficheros

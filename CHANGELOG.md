@@ -380,3 +380,14 @@
   - templates/userguide.md
   - version.txt
 ---------------------------------
+## Version 0.4.8
+- **Branch**: refs/heads/feature
+- **Commit**: 4caa6a3bda56a706c5ad0729e7bbb0778a01dbda
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 10:08:09 UTC 2024
+- **Message**: Fix: corregimos errores en la estructura de colocacion de los ficheros
+- **Files Changed**:
+  - .github/workflows/lint.yaml
+  - generate-schemas.js
+  - version.txt
+---------------------------------

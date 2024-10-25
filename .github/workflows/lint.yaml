@@ -47,7 +47,7 @@ jobs:
 
       - name: Create markdownlint config
         run: |
-          echo '{ "MD013": false }' > .markdownlint.json
+          echo '{ "MD013": false }' > ./bin/.markdownlint.json
 
       - name: Lint Markdown for all Docs
         run: |
@@ -56,7 +56,7 @@ jobs:
           echo "" > ResumeDocs.txt # Inicializa ResumeDocs.txt como un archivo vacío
           while IFS= read -r file; do
             echo "Linting $file"
-            markdownlint-cli2 "$file" --config .markdownlint.json >> ResumeDocs.txt 2>&1 || true
+            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ResumeDocs.txt 2>&1 || true
           done < docs-files-to-lint.txt
           echo "Linting completed for docs. Results saved to ResumeDocs.txt"
           cat ResumeDocs.txt
@@ -72,7 +72,7 @@ jobs:
           echo "" > Resume.txt # Inicializa Resume.txt como un archivo vacío
           while IFS= read -r file; do
             echo "Linting $file"
-            markdownlint-cli2 "$file" --config ./bin/markdownlint.json >> ResumeTemplates.txt 2>&1 || true
+            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ResumeTemplates.txt 2>&1 || true
           done < templates-files-to-lint.txt
           echo "Linting completed for templates. Results saved to ResumeTemplates.txt"
           cat ResumeTemplates.txt
@@ -86,7 +86,7 @@ jobs:
           if [ -s team-files-to-lint.txt ]; then
             while IFS= read -r file; do
               echo "Linting $file"
-              markdownlint-cli2 "$file" --config ./bin/markdownlint.json >> "$resume_file" 2>&1 || true
+              markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> "$resume_file" 2>&1 || true
             done < team-files-to-lint.txt
             echo "Linting completed for ${{ env.CLEAN_BRANCH_NAME }}. Results saved to $resume_file"
             cat "$resume_file"
