@@ -1,3 +1,73 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "apiguide.md",
+  "type": "object",
+  "properties": {
+    "api_y_uso_de_la_base_de_datos": {
+      "type": "string"
+    },
+    "introducci\u00f3n": {
+      "type": "string"
+    },
+    "descripci\u00f3n_de_la_api": {
+      "type": "string"
+    },
+    "autenticaci\u00f3n_y_autorizaci\u00f3n": {
+      "type": "string"
+    },
+    "uso_de_la_base_de_datos": {
+      "type": "string"
+    },
+    "soluci\u00f3n_de_problemas": {
+      "type": "string"
+    },
+    "informaci\u00f3n_de_contacto": {
+      "type": "string"
+    },
+    "unordered_list_item_1": {
+      "type": "string"
+    },
+    "unordered_list_item_2": {
+      "type": "string"
+    },
+    "unordered_list_item_3": {
+      "type": "string"
+    },
+    "unordered_list_item_4": {
+      "type": "string"
+    },
+    "unordered_list_item_5": {
+      "type": "string"
+    },
+    "unordered_list_item_6": {
+      "type": "string"
+    },
+    "unordered_list_item_7": {
+      "type": "string"
+    },
+    "unordered_list_item_8": {
+      "type": "string"
+    },
+    "unordered_list_item_9": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "api_y_uso_de_la_base_de_datos",
+    "introducci\u00f3n",
+    "descripci\u00f3n_de_la_api",
+    "autenticaci\u00f3n_y_autorizaci\u00f3n",
+    "uso_de_la_base_de_datos",
+    "soluci\u00f3n_de_problemas",
+    "informaci\u00f3n_de_contacto",
+    "unordered_list_item_1",
+    "unordered_list_item_2",
+    "unordered_list_item_3",
+    "unordered_list_item_4",
+    "unordered_list_item_5",
+    "unordered_list_item_6",
+    "unordered_list_item_7",
+    "unordered_list_item_8",
+    "unordered_list_item_9"
+  ]
 }
