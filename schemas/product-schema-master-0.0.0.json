@@ -12,6 +12,12 @@
     "tabla_de_contenidos": {
       "type": "string"
     },
+    "api": {
+      "type": "string"
+    },
+    "descripción_general": {
+      "type": "string"
+    },
     "ordered_list_item_1": {
       "type": "string"
     },
@@ -26,44 +32,18 @@
     },
     "ordered_list_item_5": {
       "type": "string"
-    },
-    "ordered_list_item_6": {
-      "type": "string"
-    },
-    "ordered_list_item_7": {
-      "type": "string"
-    },
-    "ordered_list_item_8": {
-      "type": "string"
-    },
-    "ordered_list_item_9": {
-      "type": "string"
-    },
-    "ordered_list_item_10": {
-      "type": "string"
-    },
-    "ordered_list_item_11": {
-      "type": "string"
-    },
-    "ordered_list_item_12": {
-      "type": "string"
     }
   },
   "required": [
     "documentación_de_proyecto",
     "introducción",
     "tabla_de_contenidos",
+    "api",
+    "descripción_general",
     "ordered_list_item_1",
     "ordered_list_item_2",
     "ordered_list_item_3",
     "ordered_list_item_4",
-    "ordered_list_item_5",
-    "ordered_list_item_6",
-    "ordered_list_item_7",
-    "ordered_list_item_8",
-    "ordered_list_item_9",
-    "ordered_list_item_10",
-    "ordered_list_item_11",
-    "ordered_list_item_12"
+    "ordered_list_item_5"
   ]
 }
