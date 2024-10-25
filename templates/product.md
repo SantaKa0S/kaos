@@ -2,7 +2,8 @@
 
 ## Introducción
 
-Proporciona una breve descripción del proyecto, su propósito y los objetivos que se esperan alcanzar con esta documentación.
+Proporciona una breve descripción del proyecto,
+su propósito y los objetivos que se esperan alcanzar con esta documentación.
 
 ## Tabla de Contenidos
 
@@ -16,3 +17,4 @@ Proporciona una breve descripción del proyecto, su propósito y los objetivos q
 8. Documento de Test
 9. Preguntas y Respuestas
 10. Errores Más Comunes
+11. Anexos

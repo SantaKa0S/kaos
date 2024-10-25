@@ -55,19 +55,26 @@ jobs:
           cat changed-files.txt
 
       - name: Process Changed Files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          trigger_schema=false
           while IFS= read -r file; do
             case "$file" in
               templates/*.md)
                 echo "Markdown file in templates detected: $file"
-                echo "Triggering schema.yaml workflow..."
-                gh workflow run schema.yaml -f file="$file"
+                trigger_schema=true
                 ;;
               *)
                 echo "File $file does not match any case."
                 ;;
             esac
           done < changed-files.txt
+
+          if [ "$trigger_schema" = true ]; then
+            echo "Triggering schema.yaml workflow..."
+            gh workflow run schema.yaml
+          fi
 
       - name: Lint Markdown for all Docs
         run: |
