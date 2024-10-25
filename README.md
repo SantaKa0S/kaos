@@ -18,3 +18,5 @@ Para realizar esta prueba es tan sencillo como modificar el fichero de ./README.
 
 De momento el resultado de las pruebas es satisfactorio.
 Funciona el proceso del lint y audit. Queda por integrar schema.
+Ya tenemos schema realizado vamos a comenzar con las pruebas.
+Subimos el codigo y realizamos las pruebas manuales.
