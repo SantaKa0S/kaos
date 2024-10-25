@@ -259,3 +259,15 @@
   - bin/generate_schema.py
   - version.txt
 ---------------------------------
+## Version 0.4.0
+- **Branch**: refs/heads/feature
+- **Commit**: eaf3fdc95120f4f400bbcc671e60f60d876323dc
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 08:29:26 UTC 2024
+- **Message**: New: nueva version de generar el esquema personalizado
+- **Files Changed**:
+  - bin/esquema/esquema_md.txt
+  - bin/generate_schema.py
+  - bin/generate_schema.txt
+  - version.txt
+---------------------------------
