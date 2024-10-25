@@ -302,3 +302,13 @@
   - .github/workflows/audit.yaml
   - version.txt
 ---------------------------------
+## Version 0.4.4
+- **Branch**: refs/heads/feature
+- **Commit**: 06405b94fb890f6c909c0e54a0f4b9245f9a043d
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 09:18:31 UTC 2024
+- **Message**: Fix: añadimos caracteristicas
+- **Files Changed**:
+  - bin/generate_schema.py
+  - version.txt
+---------------------------------
