@@ -10,3 +10,10 @@ Enlaces: Detecta enlaces (por ejemplo, texto) y los añade como propiedades.
 Imágenes: Detecta imágenes (por ejemplo, !texto alternativo) y las añade como propiedades.
 Creación del Esquema JSON: Genera un esquema JSON utilizando la definición de http://json-schema.org/draft-07/schema#, incluyendo las propiedades detectadas y marcándolas como requeridas.
 Guardado del Esquema: Guarda el esquema generado en el archivo de salida especificado.
+
+
+Explicación de los Cambios
+Lectura y Escritura en UTF-8: Aseguramos que los archivos se leen y escriben en UTF-8 añadiendo encoding='utf-8' a las funciones open.
+Normalización de Nombres de Propiedades: Añadimos la función normalize_key para convertir los títulos en nombres de propiedades válidos, reemplazando caracteres no alfanuméricos con guiones bajos y convirtiendo todo a minúsculas.
+Asegurar Codificación Correcta en JSON: Usamos ensure_ascii=False en json.dump para mantener los caracteres Unicode en el archivo JSON.
+Con estos cambios, los nombres de las propiedades en el esquema JSON deberían ser más legibles y no contener caracteres extraños.
