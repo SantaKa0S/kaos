@@ -73,9 +73,9 @@ jobs:
 
           if [ "$trigger_schema" = true ]; then
             echo "Triggering schema.yaml workflow..."
-            gh workflow run schema.yaml --ref feature
+            run_id=$(gh workflow run schema.yaml --ref feature --json id --jq '.id')
             echo "Waiting for schema.yaml workflow to complete..."
-            gh run watch --exit-status
+            gh run watch "$run_id" --exit-status
           fi
 
       - name: Lint Markdown for all Docs
