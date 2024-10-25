@@ -1,9 +1,13 @@
 name: Check
 
 on:
-  workflow-dispatcher:
+  workflow_dispatch:
+    branches:
+      - feature
 
-
+permissions:
+  contents: write
+  actions: write
 
 jobs:
   lint:
