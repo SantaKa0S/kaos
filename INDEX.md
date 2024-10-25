@@ -22,3 +22,4 @@
 - **Version**: v0.4.3 - **Description**: Fix: change coment index
 - **Version**: v0.4.4 - **Description**: Fix: añadimos caracteristicas
 - **Version**: v0.4.5 - **Description**: Del: eliminamos esquemas
+- **Version**: v0.4.6 - **Description**: Fix: Merge pull request #22 from santakloud/main
