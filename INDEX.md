@@ -29,3 +29,4 @@
 - **Version**: v0.4.10 - **Description**: Fix: corregimos el path de los ficheros a generar
 - **Version**: v0.4.11 - **Description**: Fix: añadimos el disparador automatico si se detecta un nuevo fichero de templates
 - **Version**: v0.4.12 - **Description**: Fix: error en la linea 48
+- **Version**: v0.4.13 - **Description**: Error: cuarta prueba
