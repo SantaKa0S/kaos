@@ -391,3 +391,14 @@
   - generate-schemas.js
   - version.txt
 ---------------------------------
+## Version 0.4.9
+- **Branch**: refs/heads/feature
+- **Commit**: ab8d3f520602776fa7539bc737305cd710553e3b
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 10:19:53 UTC 2024
+- **Message**: Fix: activamos que se graben los ficheros antes del audit
+- **Files Changed**:
+  - .github/workflows/lint.yaml
+  - schemas/README.md
+  - version.txt
+---------------------------------
