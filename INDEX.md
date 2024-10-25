@@ -37,3 +37,4 @@
 - **Version**: v0.4.18 - **Description**: Fix: erge branch 'feature' of https://github.com/santakloud/kaos into feature
 - **Version**: v0.4.19 - **Description**: Fix: error 18
 - **Version**: v0.4.20 - **Description**: Fix: generated JSON schemas
+- **Version**: v0.4.20 - **Description**: Add linting results for team feature
