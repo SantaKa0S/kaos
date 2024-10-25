@@ -13,3 +13,4 @@
 - **Version**: v0.2.4 - **Description**: Error: confusion con el token
 - **Version**: v0.2.5 - **Description**: Error: corregimos las rutas en el fichero js
 - **Version**: v0.2.6 - **Description**: Fix: reubicamos el js
+- **Version**: v0.3.0 - **Description**: New: nueva version del generador de esquemas en python
