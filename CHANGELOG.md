@@ -222,3 +222,11 @@
   - bin/schema.py
   - version.txt
 ---------------------------------
+## Version 0.3.0
+- **Branch**: refs/heads/feature
+- **Commit**: 9f82912bb7c93e9bea957122e45fcbc83d32ca37
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Fri Oct 25 07:40:12 UTC 2024
+- **Message**: Merge branch 'main' into feature
+- **Files Changed**:
+---------------------------------
