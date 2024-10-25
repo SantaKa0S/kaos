@@ -1,0 +1,12 @@
+Lectura del Archivo Markdown: El script lee el contenido del archivo Markdown especificado.
+Detección de Propiedades:
+Encabezados: Detecta encabezados (por ejemplo, # Título) y los convierte en propiedades del esquema JSON.
+Listas Desordenadas: Detecta elementos de listas desordenadas (por ejemplo, - Elemento) y los añade como propiedades.
+Listas Ordenadas: Detecta elementos de listas ordenadas (por ejemplo, 1. Elemento) y los añade como propiedades.
+Citas: Detecta citas (por ejemplo, > Cita) y las añade como propiedades.
+Código en Bloque: Detecta bloques de código (por ejemplo, código) y los añade como propiedades.
+Reglas Horizontales: Detecta reglas horizontales (por ejemplo, ---) y las añade como propiedades.
+Enlaces: Detecta enlaces (por ejemplo, texto) y los añade como propiedades.
+Imágenes: Detecta imágenes (por ejemplo, !texto alternativo) y las añade como propiedades.
+Creación del Esquema JSON: Genera un esquema JSON utilizando la definición de http://json-schema.org/draft-07/schema#, incluyendo las propiedades detectadas y marcándolas como requeridas.
+Guardado del Esquema: Guarda el esquema generado en el archivo de salida especificado.
