@@ -432,3 +432,14 @@
   - .github/workflows/lint.yaml
   - version.txt
 ---------------------------------
+## Version 0.4.13
+- **Branch**: refs/heads/feature
+- **Commit**: 7a7cc9f9b5f457e3640adbf4c23d766b0e77d963
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 10:59:21 UTC 2024
+- **Message**: Error: cuarta prueba
+- **Files Changed**:
+  - .github/workflows/lint.yaml
+  - templates/product.md
+  - version.txt
+---------------------------------
