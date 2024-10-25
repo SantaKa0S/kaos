@@ -551,3 +551,12 @@
   - team-files-to-lint.txt
   - templates-files-to-lint.txt
 ---------------------------------
+## Version 0.4.20
+- **Branch**: refs/heads/feature
+- **Commit**: 4bdddbd23e5f0db781e37f18b700ae63e7bafbe9
+- **Author**: github-actions[bot] (github-actions[bot]@users.noreply.github.com)
+- **Date**: Fri Oct 25 15:13:17 UTC 2024
+- **Message**: Add linting results for team feature
+- **Files Changed**:
+  - changed-files.txt
+---------------------------------
