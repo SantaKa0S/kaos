@@ -37,7 +37,13 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git pull
           git add schemas/
           git commit -m "Fix: generated JSON schemas"
           git push origin feature
+      
+      - name: Trigger Audit
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: Lint
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: feature
