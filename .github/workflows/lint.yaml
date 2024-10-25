@@ -69,6 +69,8 @@ jobs:
                 ;;
             esac
           done < changed-files.txt
+        env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lint Markdown for all Docs
         run: |
