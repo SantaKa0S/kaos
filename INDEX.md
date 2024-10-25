@@ -18,3 +18,4 @@
 - **Version**: v0.3.2 - **Description**: Fix: corregimos el esquema base
 - **Version**: v0.4.0 - **Description**: New: nueva version de generar el esquema personalizado
 - **Version**: v0.4.1 - **Description**: Fix: añadimos cambios
+- **Version**: v0.4.2 - **Description**: Fix: modificamos la generacion
