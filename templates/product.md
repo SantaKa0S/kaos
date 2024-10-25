@@ -16,4 +16,3 @@ su propósito y los objetivos que se esperan alcanzar con esta documentación.
 7. Documento de Resiliencia
 8. Documento de Test
 9. Preguntas y Respuestas
-10. Errores Más Comunes
