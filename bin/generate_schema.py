@@ -17,48 +17,51 @@ def generate_schema(markdown_file, output_file):
     def normalize_key(key):
         return re.sub(r'\W+', '_', key.lower()).strip('_')
 
+    # Función para crear una propiedad con opciones de regex y requerido
+    def create_property(key, regex=None, is_required=True):
+        prop = {"type": "string"}
+        if regex:
+            prop["pattern"] = regex
+        properties[key] = prop
+        if is_required:
+            required.append(key)
+
     # Detectar encabezados como propiedades
     headers = re.findall(r'^(#+)\s+(.*)', content, re.MULTILINE)
     for header in headers:
         level, title = header
         key = normalize_key(title)
-        properties[key] = {"type": "string"}
-        required.append(key)
+        create_property(key, is_required=True)
 
     # Detectar listas desordenadas
     unordered_lists = re.findall(r'^[-*+]\s+(.*)', content, re.MULTILINE)
     for i, item in enumerate(unordered_lists):
         key = f"unordered_list_item_{i+1}"
-        properties[key] = {"type": "string"}
-        required.append(key)
+        create_property(key, is_required=True)
 
     # Detectar listas ordenadas
     ordered_lists = re.findall(r'^\d+\.\s+(.*)', content, re.MULTILINE)
     for i, item in enumerate(ordered_lists):
         key = f"ordered_list_item_{i+1}"
-        properties[key] = {"type": "string"}
-        required.append(key)
+        create_property(key, is_required=True)
 
     # Detectar citas
     blockquotes = re.findall(r'^>\s+(.*)', content, re.MULTILINE)
     for i, quote in enumerate(blockquotes):
         key = f"blockquote_{i+1}"
-        properties[key] = {"type": "string"}
-        required.append(key)
+        create_property(key, is_required=True)
 
     # Detectar código en bloque
     code_blocks = re.findall(r'```(.*?)```', content, re.DOTALL)
     for i, code in enumerate(code_blocks):
         key = f"code_block_{i+1}"
-        properties[key] = {"type": "string"}
-        required.append(key)
+        create_property(key, is_required=True)
 
     # Detectar reglas horizontales
     horizontal_rules = re.findall(r'^\s*([-*_]){3,}\s*$', content, re.MULTILINE)
     for i, rule in enumerate(horizontal_rules):
         key = f"horizontal_rule_{i+1}"
-        properties[key] = {"type": "string"}
-        required.append(key)
+        create_property(key, is_required=True)
 
     # Detectar enlaces
     links = re.findall(r'\[(.*?)\]\((.*?)\)', content)
@@ -68,7 +71,7 @@ def generate_schema(markdown_file, output_file):
             "type": "object",
             "properties": {
                 "text": {"type": "string"},
-                "url": {"type": "string"}
+                "url": {"type": "string", "format": "uri"}
             },
             "required": ["text", "url"]
         }
@@ -82,7 +85,7 @@ def generate_schema(markdown_file, output_file):
             "type": "object",
             "properties": {
                 "alt_text": {"type": "string"},
-                "url": {"type": "string"}
+                "url": {"type": "string", "format": "uri"}
             },
             "required": ["alt_text", "url"]
         }
