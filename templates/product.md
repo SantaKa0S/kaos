@@ -13,11 +13,3 @@ Proporciona una breve descripción del proyecto, su propósito y los objetivos q
 5. Guía de Usuarios
 
 ## API
-
-## Código Generado
-
-## Runbook de Operaciones
-
-## Manual de Producto
-
-## Guía de Usuarios
