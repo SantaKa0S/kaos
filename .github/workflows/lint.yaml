@@ -51,6 +51,9 @@ jobs:
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
           cat changed-files.txt
 
+      - name: Create Results Directory
+        run: mkdir -p ./results
+
       - name: Lint Markdown for all Docs
         run: |
           echo "Starting markdown linting process for docs..."
