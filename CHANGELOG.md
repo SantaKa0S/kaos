@@ -239,3 +239,13 @@
 - **Files Changed**:
   - CHANGELOG.md
 ---------------------------------
+## Version 0.3.1
+- **Branch**: refs/heads/feature
+- **Commit**: 72da81e33eee71b3d92555c8a86803db5cd67a13
+- **Author**: santacana.canton (santacana.canton@icloud.com)
+- **Date**: Fri Oct 25 07:46:57 UTC 2024
+- **Message**: Fix: actualizamos el patch
+- **Files Changed**:
+  - README.md
+  - version.txt
+---------------------------------
