@@ -1,0 +1,43 @@
+name: Check
+
+on:
+  workflow_dispatch:
+    branches:
+      - feature
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Grabar resultados en archivo JSON
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          workflow-formatter .github/workflows/*.yaml --format json --output /tmp/formatted.yaml
+          workflow-validator .github/workflows/*.yaml --format json --output /tmp/validation.json
+
+      - name: Grabar errores en archivo Error
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Copiar y pegar el contenido de /tmp/formatted.yaml en un archivo Error con la extensión .error
+          cat /tmp/formatted.yaml > /tmp/error.yaml
+
+      - name: Grabar errores en archivo Error
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Copiar y pegar el contenido de /tmp/validation.json en un archivo Error con la extensión .error
+          cat /tmp/validation.json > /tmp/error.yaml
+
+      - name: Subir resultados a GitHub Actions
+        uses: actions/upload-artifact@v2
+        with:
+          name: errores
+          path: error.yaml
