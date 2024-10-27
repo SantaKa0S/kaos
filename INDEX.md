@@ -48,3 +48,4 @@
 - **Version**: v5.0.0 - **Description**: Build: New version of GitHub Actions
 - **Version**: v6.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
 - **Version**: v7.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
+- **Version**: v8.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
