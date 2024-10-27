@@ -23,7 +23,7 @@ jobs:
         id: validate-yaml
         run: |
           for file in .github/workflows/*.yaml; do
-          if ! yq e '. | type == "object"' -v "$file"; then
+          if ! yq e '. | type == "object"' "$file"; then
             echo "Error en archivo $file - Version NO VALIDA" >> results/Resume-check-yaml-$(date +"%Y%m%d%H%M%S").txt
           else
             echo "Archivo $file - Version OK" >> results/Resume-check-yaml-$(date +"%Y%m%d%H%M%S").txt
@@ -33,7 +33,7 @@ jobs:
       - name: Subir resultados a GitHub Actions
         uses: actions/upload-artifact@v4
         with:
-          name: Resume-check-yaml-$(date +"%Y%m%d%H%M%S")
+          name: Resume-check-yaml
           path: results/Resume-check-yaml-$(date +"%Y%m%d%H%M%S").txt
       
       - name: Commit and Push Results
