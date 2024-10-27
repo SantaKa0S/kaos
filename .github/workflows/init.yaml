@@ -56,7 +56,7 @@ jobs:
                 echo "Triggering md Lint workflow..."
                 gh workflow run lint.yaml --ref feature
                 ;;
-              .github/worflows/*.yaml)
+              .github/workflows/*.yaml)
                 echo "Triggering Check YAML workflow..."
                 gh workflow run check.yaml --ref feature
                 ;;
