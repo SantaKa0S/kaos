@@ -65,7 +65,6 @@ jobs:
             markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/Resume-all-docs_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt 2>&1 || true
           done < ./results/docs-files-to-lint-${{ env.datetime }}.txt
           echo "Linting completed for docs. Results saved to ./results/Resume-all-docs_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt"
-          cat ./results/Resume-all-docs_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt
 
       - name: Lint Markdown for all Templates
         run: |
@@ -77,7 +76,6 @@ jobs:
             markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt 2>&1 || true
           done < ./results/templates-files-to-lint-${{ env.datetime }}.txt
           echo "Linting completed for templates. Results saved to ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt"
-          cat ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}.txt
 
       - name: Lint Markdown Team ${{ env.CLEAN_BRANCH_NAME }}
         run: |
@@ -91,7 +89,6 @@ jobs:
               markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> "$resume_file" 2>&1 || true
             done < ./results/team-files-to-lint-${{ env.datetime }}.txt
             echo "Linting completed for ${{ env.CLEAN_BRANCH_NAME }}. Results saved to $resume_file"
-            cat "$resume_file"
           else
             echo "No markdown files found for team ${{ env.CLEAN_BRANCH_NAME }}"
             rm "$resume_file" # Elimina el archivo de resumen vacío
