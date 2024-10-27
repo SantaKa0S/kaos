@@ -23,12 +23,16 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set execution date-time variable
+        id: set_datetime
+        run: echo "datetime=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
       - name: Llamar a las acciones de GitHub
       # This action calls the GitHub Actions
         run: |
           find .github/workflows -type f -name "*.yaml" | while read file; do
             gh-ghr --non-interactive ".github/workflows/$file" \
-              > results/Resume-test-actions-${file}-${date +%Y-%m-%d_%H-%M-%S}.json \
+              > results/Resume-test-actions-$file-${{ env.datetime }}.json \
               2>/dev/null || echo "Error al ejecutar $file - GitHub Actions que debería de comprobarse"
           done
           
@@ -36,7 +40,7 @@ jobs:
       # This action writes the result if the execution is successful
         run: |
           if [ $? -eq 0 ]; then
-            echo "Version OK Ejecución OK" > results/Resume-test-actions-${date +%Y-%m-%d_%H-%M-%S}.txt
+            echo "Version OK Ejecución OK" > results/Resume-test-actions-${{ env.datetime }}.txt
           fi
       
       - name: Commit and Push Results
