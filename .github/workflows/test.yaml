@@ -32,7 +32,8 @@ jobs:
         run: |
           find .github/workflows -type f -name "*.yaml" | while read file; do
             gh-ghr --non-interactive --debug ".github/workflows/$file" \
-              >> results/Resume-execution-actions-${{ env.datetime }}.json 
+              >> results/Resume-execution-actions-${{ env.datetime }}.json \
+              2>/dev/null 
           done
           
       - name: Grabar resultado si es exitoso
