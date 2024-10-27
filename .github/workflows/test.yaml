@@ -28,7 +28,7 @@ jobs:
         run: |
           find .github/workflows -type f -name "*.yaml" | while read file; do
             gh-ghr --non-interactive "github.com/${{ secrets.GITHUB_REPOSITORY }}/${{ github.event.repository.name }}.github/workflows/$file" \
-              > results/Resume-test-actions-${date +%Y-%m-%d_%H-%M-%S}-${file##*/}.json \
+              > results/Resume-test-actions-${file}-${date +%Y-%m-%d_%H-%M-%S}.json \
               2>/dev/null || echo "Error al ejecutar $file - GitHub Actions que debería de comprobarse"
           done
           
