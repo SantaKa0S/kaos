@@ -42,11 +42,10 @@ jobs:
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
           cat changed-files.txt
 
-      - name: Exist changes in Template files
+      - name: Exist changes in files
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          trigger_schema=false
           while IFS= read -r file; do
             case "$file" in
               templates/*.md)
