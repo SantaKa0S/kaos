@@ -43,3 +43,4 @@
 - **Version**: v0.5.0 - **Description**: Audit: linting results for team feature
 - **Version**: v1.0.0 - **Description**: Build: New version of GitHub Actions
 - **Version**: v2.0.0 - **Description**: Build: New version of GitHub Actions
+- **Version**: v3.0.0 - **Description**: Build: New version of GitHub Actions
