@@ -40,7 +40,7 @@ jobs:
       # This action writes the result if the execution is successful
         run: |
           if [ $? -eq 0 ]; then
-            echo "Version OK Ejecución OK" > results/Resume-execution-actions-${{ env.datetime }}.txt
+            echo "Version OK Ejecución OK" >> results/Resume-execution-actions-${{ env.datetime }}.txt
           fi
       
       - name: Commit and Push Results
