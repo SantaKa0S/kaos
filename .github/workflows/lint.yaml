@@ -63,7 +63,7 @@ jobs:
           while IFS= read -r file; do
             echo "Linting $file"
             markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/Resume-all-docs_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt 2>&1 || true
-          done < docs-files-to-lint-${{ env.datetime }}.txt
+          done < ./results/docs-files-to-lint-${{ env.datetime }}.txt
           echo "Linting completed for docs. Results saved to ./results/Resume-all-docs_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt"
           cat ./results/Resume-all-docs_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt
 
@@ -75,7 +75,7 @@ jobs:
           while IFS= read -r file; do
             echo "Linting $file"
             markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt 2>&1 || true
-          done < templates-files-to-lint-${{ env.datetime }}.txt
+          done < ./results/templates-files-to-lint-${{ env.datetime }}.txt
           echo "Linting completed for templates. Results saved to ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt"
           cat ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}.txt
 
@@ -89,7 +89,7 @@ jobs:
             while IFS= read -r file; do
               echo "Linting $file"
               markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> "$resume_file" 2>&1 || true
-            done < team-files-to-lint-${{ env.datetime }}.txt
+            done < ./results/team-files-to-lint-${{ env.datetime }}.txt
             echo "Linting completed for ${{ env.CLEAN_BRANCH_NAME }}. Results saved to $resume_file"
             cat "$resume_file"
           else
