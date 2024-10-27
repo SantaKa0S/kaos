@@ -40,3 +40,4 @@
 - **Version**: v0.4.20 - **Description**: Add linting results for team feature
 - **Version**: v0.4.21 - **Description**: Audit: linting results for team feature
 - **Version**: v0.4.22 - **Description**: Audit: linting results for team feature
+- **Version**: v0.5.0 - **Description**: Audit: linting results for team feature
