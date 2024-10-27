@@ -22,10 +22,12 @@ jobs:
       - name: Validate YAML Workflows
         id: validate-yaml
         run: |
-          for file in .github/workflows/*.yml; do
-            if ! yq e '. | type == "object"' -v "$file"; then
-              echo "Error en archivo $file" >> results/Resume-check-yaml-$(date +"%Y%m%d%H%M%S").txt
-            fi
+          for file in .github/workflows/*.yaml; do
+          if ! yq e '. | type == "object"' -v "$file"; then
+            echo "Error en archivo $file - Version NO VALIDA" >> results/Resume-check-yaml-$(date +"%Y%m%d%H%M%S").txt
+          else
+            echo "Archivo $file - Version OK" >> results/Resume-check-yaml-$(date +"%Y%m%d%H%M%S").txt
+          fi
           done
       
       - name: Subir resultados a GitHub Actions
