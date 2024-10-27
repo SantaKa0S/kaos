@@ -41,12 +41,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add results/*.txt
-          git commit -m "Build: New version of GitHub Actions ${{ env.CLEAN_BRANCH_NAME }}"
+          git commit -m "Build: New version to TEST of GitHub Actions ${{ env.CLEAN_BRANCH_NAME }}"
           git push origin feature
   
-      - name: Trigger Audit
+      - name: Trigger Test
         uses: benc-uk/workflow-dispatch@v1
         with:
-          workflow: Audit
+          workflow: Test
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: feature
