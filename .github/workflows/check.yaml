@@ -23,7 +23,7 @@ jobs:
         id: validate-yaml
         run: |
           for file in .github/workflows/*.yml; do
-            if ! yq -c e '. | type == "object"' "$file"; then
+            if ! yq e '. | type == "object"' -v "$file"; then
               echo "Error en archivo $file" >> results/Resume-check-yaml-$(date +"%Y%m%d%H%M%S").txt
             fi
           done
