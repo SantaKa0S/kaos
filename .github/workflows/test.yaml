@@ -32,7 +32,7 @@ jobs:
         run: |
           find .github/workflows -type f -name "*.yaml" | while read file; do
             gh-ghr --non-interactive ".github/workflows/$file" \
-              > results/Resume-test-actions-$file-${{ env.datetime }}.json \
+              >> results/Resume-execution-actions-${{ env.datetime }}.json \
               2>/dev/null || echo "Error al ejecutar $file - GitHub Actions que debería de comprobarse"
           done
           
@@ -40,7 +40,7 @@ jobs:
       # This action writes the result if the execution is successful
         run: |
           if [ $? -eq 0 ]; then
-            echo "Version OK Ejecución OK" > results/Resume-test-actions-${{ env.datetime }}.txt
+            echo "Version OK Ejecución OK" > results/Resume-execution-actions-${{ env.datetime }}.txt
           fi
       
       - name: Commit and Push Results
