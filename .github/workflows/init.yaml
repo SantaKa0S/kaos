@@ -11,7 +11,7 @@ permissions:
   actions: write
 
 jobs:
-  markdownLint:
+  initprocess:
     runs-on: ubuntu-latest
 
     steps:
@@ -42,28 +42,31 @@ jobs:
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
           cat changed-files.txt
 
-      - name: Exist changes in Template files
+      - name: Exist changes in files
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          trigger_schema=false
           while IFS= read -r file; do
             case "$file" in
               templates/*.md)
-                echo "Markdown file in templates detected: $file"
-                trigger_schema=true
+                echo "Triggering Schema workflow..."
+                gh workflow run schema.yaml --ref feature
                 ;;
-              *)
-                echo "File $file does not match any case."
+              docs/*.md)
+                echo "Triggering md Lint workflow..."
+                gh workflow run lint.yaml --ref feature
+                ;;
+              .github/worflows/*.yaml)
+                echo "Triggering Check YAML workflow..."
+                gh workflow run check.yaml --ref feature
+                ;;
+              bin/*.py)
+                echo "Triggering checkpy.yaml workflow..."
+                gh workflow run checkpy.yaml --ref feature
+                ;;
+              schemas/*.json)
+                echo "Triggering Check JSON workflow..."
+                gh workflow run checkjson.yaml --ref feature
                 ;;
             esac
           done < changed-files.txt
-
-          if [ "$trigger_schema" = true ]; then
-            echo "Triggering schema.yaml workflow..."
-            gh workflow run schema.yaml --ref feature
-          fi
-          if [ "$trigger_schema" = false ]; then
-            echo "Triggering lint.yaml workflow..."
-            gh workflow run lint.yaml --ref feature
-          fi

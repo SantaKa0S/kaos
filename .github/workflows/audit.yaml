@@ -34,7 +34,7 @@ jobs:
         VERSION=$(cat version.txt)
         cat version.txt
         IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
-        if [[ "${{ env.COMMIT_MESSAGE }}" =~ (Del: |Fix: |Error: ) ]]; then
+        if [[ "${{ env.COMMIT_MESSAGE }}" =~ (Del: |Fix: |Error: |Audit:) ]]; then
           PATCH=$((PATCH + 1))
         elif [[ "${{ env.COMMIT_MESSAGE }}" =~ (Add: |New: |Upload: ) ]]; then
           MINOR=$((MINOR + 1))

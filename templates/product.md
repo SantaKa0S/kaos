@@ -10,6 +10,10 @@ Proporciona una breve descripción del proyecto, su propósito y los objetivos q
 2. Código Generado
 3. Runbook de Operaciones
 4. Manual de Producto
-5. Guía de Usuarios
-6. Algo más
-7. Algo más de más
+5. Uno
+6. Dos
+7. Tres
+8. Cuatro
+9. Cinco
+10. Seis
+11. Siete
