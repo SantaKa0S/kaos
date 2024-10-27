@@ -2,38 +2,49 @@ name: Test
 
 on:
   workflow_dispatch:
+    # This workflow runs only on the feature branch
     branches:
       - feature
 
 permissions:
+  # This workflow has write permissions to the contents of the repository
   contents: write
   actions: write
 
 jobs:
   test-github-action:
+    # This job runs on the latest version of the Ubuntu operating system
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
+      # This action checks out the repository code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set execution date-time variable
+        id: set_datetime
+        run: echo "datetime=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
       - name: Llamar a las acciones de GitHub
+      # This action calls the GitHub Actions
         run: |
           find .github/workflows -type f -name "*.yaml" | while read file; do
-            gh-ghr --non-interactive "github.com/${{ secrets.GITHUB_REPOSITORY }}/${{ github.event.repository.name }}.github/workflows/$file" \
-              > results/Resume-test-actions-${date +%Y-%m-%d_%H-%M-%S}-${file##*/}.json \
+            gh-ghr --non-interactive ".github/workflows/$file" \
+              > results/Resume-test-actions-$file-${{ env.datetime }}.json \
               2>/dev/null || echo "Error al ejecutar $file - GitHub Actions que debería de comprobarse"
           done
           
       - name: Grabar resultado si es exitoso
+      # This action writes the result if the execution is successful
         run: |
           if [ $? -eq 0 ]; then
-            echo "Version OK Ejecución OK" > results/Resume-test-actions-${date +%Y-%m-%d_%H-%M-%S}.txt
+            echo "Version OK Ejecución OK" > results/Resume-test-actions-${{ env.datetime }}.txt
           fi
       
       - name: Commit and Push Results
+      # This action commits and pushes the results to the repository
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -42,6 +53,7 @@ jobs:
           git push origin feature
     
       - name: Trigger Audit
+      # This action triggers the Audit workflow
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: Audit

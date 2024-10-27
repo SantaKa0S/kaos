@@ -46,3 +46,4 @@
 - **Version**: v3.0.0 - **Description**: Build: New version of GitHub Actions
 - **Version**: v4.0.0 - **Description**: Build: New version of GitHub Actions
 - **Version**: v5.0.0 - **Description**: Build: New version of GitHub Actions
+- **Version**: v6.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
