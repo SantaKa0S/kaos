@@ -49,3 +49,4 @@
 - **Version**: v6.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
 - **Version**: v7.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
 - **Version**: v8.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
+- **Version**: v9.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
