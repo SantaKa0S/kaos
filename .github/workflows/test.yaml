@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   test-github-action:
+    # This job runs on the latest version of the Ubuntu operating system
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
