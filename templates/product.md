@@ -50,8 +50,3 @@ de la manera que usted estime necesario
 
 > Escriba aqui su texto
 de la manera que usted estime necesario
-
-- Paso 4
-
-> Escriba aqui su texto
-de la manera que usted estime necesario
