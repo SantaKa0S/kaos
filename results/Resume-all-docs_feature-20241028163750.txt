@@ -1,0 +1,118 @@
+
+markdownlint-cli2 v0.14.0 (markdownlint v0.35.0)
+Finding: ./docs/README.md
+Linting: 1 file(s)
+Summary: 0 error(s)
+markdownlint-cli2 v0.14.0 (markdownlint v0.35.0)
+Finding: ./docs/feature/planmantenimiento.md
+Linting: 1 file(s)
+Summary: 32 error(s)
+docs/feature/planmantenimiento.md:29 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 1: Identificación del problema"]
+docs/feature/planmantenimiento.md:30 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Revisar los registros de err..."]
+docs/feature/planmantenimiento.md:34 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 2: Análisis y diagnóstico"]
+docs/feature/planmantenimiento.md:35 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Identificar el problema espe..."]
+docs/feature/planmantenimiento.md:39 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 3: Solución y corrección"]
+docs/feature/planmantenimiento.md:40 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Implementar la solución sele..."]
+docs/feature/planmantenimiento.md:46 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 1: Planificación y programación"]
+docs/feature/planmantenimiento.md:47 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Establecer un calendario de ..."]
+docs/feature/planmantenimiento.md:51 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 2: Identificación de riesgos y oportunidades"]
+docs/feature/planmantenimiento.md:52 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Identificar posibles riesgos..."]
+docs/feature/planmantenimiento.md:56 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 3: Implementación de medidas preventivas"]
+docs/feature/planmantenimiento.md:57 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Implementar las medidas prev..."]
+docs/feature/planmantenimiento.md:63 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 1: Planificación y programación"]
+docs/feature/planmantenimiento.md:63 MD024/no-duplicate-heading Multiple headings with the same content [Context: "Sección 1: Planificación y pro..."]
+docs/feature/planmantenimiento.md:64 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Establecer un calendario de ..."]
+docs/feature/planmantenimiento.md:68 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 2: Identificación de oportunidades de mejora"]
+docs/feature/planmantenimiento.md:69 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Identificar oportunidades de..."]
+docs/feature/planmantenimiento.md:73 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 3: Implementación de soluciones perfectivas"]
+docs/feature/planmantenimiento.md:74 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Implementar las soluciones p..."]
+docs/feature/planmantenimiento.md:80 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 1: Planificación y programación"]
+docs/feature/planmantenimiento.md:80 MD024/no-duplicate-heading Multiple headings with the same content [Context: "Sección 1: Planificación y pro..."]
+docs/feature/planmantenimiento.md:81 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Establecer un calendario de ..."]
+docs/feature/planmantenimiento.md:85 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 2: Identificación de cambios en las necesidades del usuario"]
+docs/feature/planmantenimiento.md:86 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Identificar cambios en las n..."]
+docs/feature/planmantenimiento.md:90 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "#### Sección 3: Implementación de soluciones adaptativas"]
+docs/feature/planmantenimiento.md:91 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "* Implementar las soluciones a..."]
+docs/feature/planmantenimiento.md:107:2 MD004/ul-style Unordered list style [Expected: asterisk; Actual: plus]
+docs/feature/planmantenimiento.md:107:1 MD007/ul-indent Unordered list indentation [Expected: 2; Actual: 1]
+docs/feature/planmantenimiento.md:107:1 MD010/no-hard-tabs Hard tabs [Column: 1]
+docs/feature/planmantenimiento.md:108:2 MD004/ul-style Unordered list style [Expected: asterisk; Actual: plus]
+docs/feature/planmantenimiento.md:108:1 MD007/ul-indent Unordered list indentation [Expected: 2; Actual: 1]
+docs/feature/planmantenimiento.md:108:1 MD010/no-hard-tabs Hard tabs [Column: 1]
+markdownlint-cli2 v0.14.0 (markdownlint v0.35.0)
+Finding: ./docs/feature/manualtecnico.md
+Linting: 1 file(s)
+Summary: 7 error(s)
+docs/feature/manualtecnico.md:24 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Pruebas y Validación"]
+docs/feature/manualtecnico.md:32 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Mantenimiento y Actualización"]
+docs/feature/manualtecnico.md:62 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Dependencias"]
+docs/feature/manualtecnico.md:79 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Función A"]
+docs/feature/manualtecnico.md:87 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Función B"]
+docs/feature/manualtecnico.md:101 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "API"]
+docs/feature/manualtecnico.md:110 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Uso de la Base de Datos"]
+markdownlint-cli2 v0.14.0 (markdownlint v0.35.0)
+Finding: ./docs/feature/arquitectura.md
+Linting: 1 file(s)
+Summary: 25 error(s)
+docs/feature/arquitectura.md:6 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- Servidor web: Utiliza Apache..."]
+docs/feature/arquitectura.md:11 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- Servicio de API: Permite la ..."]
+docs/feature/arquitectura.md:14 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Diagrama de la infraestructura"]
+docs/feature/arquitectura.md:21 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- **Flujos de Trabajo**: Descr..."]
+docs/feature/arquitectura.md:24 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Flujo de Trabajo"]
+docs/feature/arquitectura.md:32 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Transformaciones de Datos"]
+docs/feature/arquitectura.md:38 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Configuracion Redes"]
+docs/feature/arquitectura.md:41 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- **Red de Servidores**: Descr..."]
+docs/feature/arquitectura.md:45 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Red de Servidores"]
+docs/feature/arquitectura.md:52 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Red de Base de Datos"]
+docs/feature/arquitectura.md:58 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Red de Correo Electrónico"]
+docs/feature/arquitectura.md:67 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- **Contactos Técnicos**: Desc..."]
+docs/feature/arquitectura.md:70 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Contactos Técnicos"]
+docs/feature/arquitectura.md:74:16 MD034/no-bare-urls Bare URL used [Context: "juan.perez@example.com"]
+docs/feature/arquitectura.md:75:18 MD034/no-bare-urls Bare URL used [Context: "maria.garcia@example.com"]
+docs/feature/arquitectura.md:77 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Servicio al Cliente"]
+docs/feature/arquitectura.md:79:1 MD004/ul-style Unordered list style [Expected: dash; Actual: asterisk]
+docs/feature/arquitectura.md:80:1 MD004/ul-style Unordered list style [Expected: dash; Actual: asterisk]
+docs/feature/arquitectura.md:81:2 MD004/ul-style Unordered list style [Expected: dash; Actual: plus]
+docs/feature/arquitectura.md:81:1 MD007/ul-indent Unordered list indentation [Expected: 2; Actual: 1]
+docs/feature/arquitectura.md:81:1 MD010/no-hard-tabs Hard tabs [Column: 1]
+docs/feature/arquitectura.md:82:2 MD004/ul-style Unordered list style [Expected: dash; Actual: plus]
+docs/feature/arquitectura.md:82:1 MD007/ul-indent Unordered list indentation [Expected: 2; Actual: 1]
+docs/feature/arquitectura.md:82:1 MD010/no-hard-tabs Hard tabs [Column: 1]
+docs/feature/arquitectura.md:89:35 MD047/single-trailing-newline Files should end with a single newline character
+markdownlint-cli2 v0.14.0 (markdownlint v0.35.0)
+Finding: ./docs/feature/README.md
+Linting: 1 file(s)
+Summary: 0 error(s)
+markdownlint-cli2 v0.14.0 (markdownlint v0.35.0)
+Finding: ./docs/feature/product.md
+Linting: 1 file(s)
+Summary: 0 error(s)
+markdownlint-cli2 v0.14.0 (markdownlint v0.35.0)
+Finding: ./docs/feature/manualusuario.md
+Linting: 1 file(s)
+Summary: 25 error(s)
+docs/feature/manualusuario.md:7 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Objetivos"]
+docs/feature/manualusuario.md:18:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:18 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- Sistema Operativo: Windows 1..."]
+docs/feature/manualusuario.md:19:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:20:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:21:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:23 MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "Instalación"]
+docs/feature/manualusuario.md:28 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "1. Descargar el instalador des..."]
+docs/feature/manualusuario.md:38:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:38 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- Menú Principal: Permite acce..."]
+docs/feature/manualusuario.md:39:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:40:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:49:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:50:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:55:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:56:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:77:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:77 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- Nombre de Producto: [Inserta..."]
+docs/feature/manualusuario.md:78:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:79:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:80:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:87:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:87 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- Fecha de revisión: [Insertar..."]
+docs/feature/manualusuario.md:88:1 MD004/ul-style Unordered list style [Expected: asterisk; Actual: dash]
+docs/feature/manualusuario.md:91:35 MD047/single-trailing-newline Files should end with a single newline character
