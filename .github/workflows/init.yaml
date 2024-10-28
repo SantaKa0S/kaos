@@ -42,28 +42,28 @@ jobs:
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
           cat changed-files.txt
 
-          - name: Exist changes in files
-          env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: |
-            declare -A workflows=(
-              ["templates/*.md"]="lintemplates.yaml"
-              ["docs/*.md"]="lint.yaml"
-              [".github/workflows/*.yaml"]="check.yaml"
-              ["bin/*.py"]="checkpy.yaml"
-            )
-        
-            declare -A found
-        
-            while IFS= read -r file; do
-              for pattern in "${!workflows[@]}"; do
-                if [[ "$file" == $pattern ]]; then
-                  found["$pattern"]=true
-                fi
-              done
-            done < changed-files.txt
-        
-            for pattern in "${!found[@]}"; do
-              echo "Triggering ${workflows[$pattern]} workflow..."
-              gh workflow run "${workflows[$pattern]}" --ref feature
+      - name: Exist changes in files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          declare -A workflows=(
+            ["templates/*.md"]="lintemplates.yaml"
+            ["docs/*.md"]="lint.yaml"
+            [".github/workflows/*.yaml"]="check.yaml"
+            ["bin/*.py"]="checkpy.yaml"
+          )
+      
+          declare -A found
+      
+          while IFS= read -r file; do
+            for pattern in "${!workflows[@]}"; do
+              if [[ "$file" == $pattern ]]; then
+                found["$pattern"]=true
+              fi
             done
+          done < changed-files.txt
+      
+          for pattern in "${!found[@]}"; do
+            echo "Triggering ${workflows[$pattern]} workflow..."
+            gh workflow run "${workflows[$pattern]}" --ref feature
+          done
