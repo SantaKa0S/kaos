@@ -5,8 +5,3 @@
 Proporciona una breve descripción del proyecto, su propósito y los objetivos que se esperan alcanzar con esta documentación.
 
 ## Tabla de Contenidos
-
-1. API
-2. Código Generado
-3. Runbook de Operaciones
-4. Manual de Producto
