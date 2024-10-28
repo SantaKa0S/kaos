@@ -26,7 +26,7 @@ jobs:
       - name: Validate YAML Workflows
         id: validate-yaml
         run: |
-          touch results/Resume-check-yaml-${{ env.datetime }}.txt
+          echo "Resume Check YAML" > results/Resume-check-yaml-${{ env.datetime }}.txt
           for file in .github/workflows/*.yaml; do
           if ! yq e '. | type == "object"' "$file"; then
             echo "Error en archivo $file - Version NO VALIDA" >> results/Resume-check-yaml-${{ env.datetime }}.txt
