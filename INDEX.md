@@ -64,3 +64,4 @@
 - **Version**: v10.11.0 - **Description**: Audit: New version to TEST of GitHub Actions
 - **Version**: v10.12.0 - **Description**: Audit: New version to TEST of GitHub Actions
 - **Version**: v10.13.0 - **Description**: Audit: linting results for team feature
+- **Version**: v11.0.0 - **Description**: Build: New version to TEST of GitHub Actions
