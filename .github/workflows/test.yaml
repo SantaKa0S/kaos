@@ -3,8 +3,6 @@ name: Test
 on:
   workflow_dispatch:
     # This workflow runs only on the feature branch
-    branches:
-      - feature
 
 permissions:
   # This workflow has write permissions to the contents of the repository
