@@ -25,13 +25,15 @@ jobs:
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           CLEAN_BRANCH_NAME=${BRANCH_NAME#feature/}
-          echo "CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME" >> $GITHUB_ENV
+          declare -A branch_info=(["clean_branch_name"]="$CLEAN_BRANCH_NAME")
+          echo "Branch info: ${branch_info[@]}" >> $GITHUB_ENV
 
       - name: Identify User of the Team
         id: identify-user
         run: |
           user=$(git log -1 --pretty=format:'%an')
-          echo "user=$user" >> $GITHUB_ENV
+          declare -A user_info=(["user"]="$user")
+          echo "User info: ${user_info[@]}" >> $GITHUB_ENV
 
       - name: Display User Name and Team Name
         run: echo "Push has been performed by the user ${{ env.user }} of the Team ${{ env.CLEAN_BRANCH_NAME }}"
@@ -39,8 +41,14 @@ jobs:
       - name: Identify Changed Files
         id: changed-files
         run: |
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
-          cat changed-files.txt
+          git diff --cached > changed-files.txt
+          while IFS= read -r file; do
+            for pattern in "${!workflows[@]}"; do
+              if [[ "$file" == $pattern ]]; then
+                found["$pattern"]=true
+              fi
+            done
+          done < changed-files.txt
 
       - name: Exist changes in files
         env:
@@ -52,9 +60,7 @@ jobs:
             [".github/workflows/*.yaml"]="check.yaml"
             ["bin/*.py"]="checkpy.yaml"
           )
-      
           declare -A found
-      
           while IFS= read -r file; do
             for pattern in "${!workflows[@]}"; do
               if [[ "$file" == $pattern ]]; then
@@ -62,7 +68,7 @@ jobs:
               fi
             done
           done < changed-files.txt
-      
+
           for pattern in "${!found[@]}"; do
             echo "Triggering ${workflows[$pattern]} workflow..."
             gh workflow run "${workflows[$pattern]}" --ref feature
