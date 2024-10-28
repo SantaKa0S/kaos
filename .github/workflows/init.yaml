@@ -46,23 +46,44 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          templates_changed=false
+          docs_changed=false
+          yaml_changed=false
+          py_changed=false
+      
           while IFS= read -r file; do
             case "$file" in
               templates/*.md)
-                echo "Triggering Lint Templates workflow..."
-                gh workflow run lintemplates.yaml --ref feature
+                templates_changed=true
                 ;;
               docs/*.md)
-                echo "Triggering md Lint workflow..."
-                gh workflow run lint.yaml --ref feature
+                docs_changed=true
                 ;;
               .github/workflows/*.yaml)
-                echo "Triggering Check YAML workflow..."
-                gh workflow run check.yaml --ref feature
+                yaml_changed=true
                 ;;
               bin/*.py)
-                echo "Triggering checkpy.yaml workflow..."
-                gh workflow run checkpy.yaml --ref feature
+                py_changed=true
                 ;;
             esac
           done < changed-files.txt
+      
+          if [ "$templates_changed" = true ]; then
+            echo "Triggering Lint Templates workflow..."
+            gh workflow run lintemplates.yaml --ref feature
+          fi
+      
+          if [ "$docs_changed" = true ]; then
+            echo "Triggering md Lint workflow..."
+            gh workflow run lint.yaml --ref feature
+          fi
+      
+          if [ "$yaml_changed" = true ]; then
+            echo "Triggering Check YAML workflow..."
+            gh workflow run check.yaml --ref feature
+          fi
+      
+          if [ "$py_changed" = true ]; then
+            echo "Triggering checkpy.yaml workflow..."
+            gh workflow run checkpy.yaml --ref feature
+          fi
