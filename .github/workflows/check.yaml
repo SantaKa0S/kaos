@@ -47,9 +47,9 @@ jobs:
           git commit -m "Build: New version to TEST of GitHub Actions ${{ env.CLEAN_BRANCH_NAME }}"
           git push origin feature
   
-      - name: Trigger Test
+      - name: Trigger Audit # Change for Test
         uses: benc-uk/workflow-dispatch@v1
         with:
-          workflow: Test
+          workflow: Audit
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: feature
