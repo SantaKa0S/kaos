@@ -31,12 +31,9 @@ jobs:
           
       - name: Validate GitHub Actions workflow
         run: |
-          docker --version
-          sudo systemctl status docker
-          sudo systemctl start docker
-          sudo usermod -aG docker $USER
+          export DOCKER_HOST="unix:///var/run/docker.sock"
           echo "Validating workflow..."
-          ./bin/act -W '.github/workflows' --action-offline-mode > results/Resume-execution-test-${{ env.datetime }}.txt 
+          ./bin/act -W '.github/workflows/init.yaml' --action-offline-mode > results/Resume-execution-test-${{ env.datetime }}.txt
       
       - name: Commit and Push Results
       # This action commits and pushes the results to the repository
