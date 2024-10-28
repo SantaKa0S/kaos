@@ -39,7 +39,7 @@ jobs:
           name: documentacion
 
       - name: Analizar documentación con GitHub Copilot
-        uses: github/copilot-action@v1
+        uses: github/copilot-action@v1.0.20
         with:
           context: ${{ steps.context.value }}
           documentacion: ${{ steps.documentacion.value }}
