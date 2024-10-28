@@ -37,13 +37,3 @@ de la manera que usted estime necesario
 de la manera que usted estime necesario
 
 - Paso 2.1
-
-> Escriba aqui su texto
-de la manera que usted estime necesario
-
-- Paso 2.2
-
-> Escriba aqui su texto
-de la manera que usted estime necesario
-
-
