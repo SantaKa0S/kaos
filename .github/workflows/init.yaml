@@ -46,44 +46,24 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          templates_changed=false
-          docs_changed=false
-          yaml_changed=false
-          py_changed=false
+          declare -A workflows=(
+            ["templates/*.md"]="lintemplates.yaml"
+            ["docs/*.md"]="lint.yaml"
+            [".github/workflows/*.yaml"]="check.yaml"
+            ["bin/*.py"]="checkpy.yaml"
+          )
+      
+          declare -A found
       
           while IFS= read -r file; do
-            case "$file" in
-              templates/*.md)
-                templates_changed=true
-                ;;
-              docs/*.md)
-                docs_changed=true
-                ;;
-              .github/workflows/*.yaml)
-                yaml_changed=true
-                ;;
-              bin/*.py)
-                py_changed=true
-                ;;
-            esac
+            for pattern in "${!workflows[@]}"; do
+              if [[ "$file" == $pattern ]]; then
+                found["$pattern"]=true
+              fi
+            done
           done < changed-files.txt
       
-          if [ "$templates_changed" = true ]; then
-            echo "Triggering Lint Templates workflow..."
-            gh workflow run lintemplates.yaml --ref feature
-          fi
-      
-          if [ "$docs_changed" = true ]; then
-            echo "Triggering md Lint workflow..."
-            gh workflow run lint.yaml --ref feature
-          fi
-      
-          if [ "$yaml_changed" = true ]; then
-            echo "Triggering Check YAML workflow..."
-            gh workflow run check.yaml --ref feature
-          fi
-      
-          if [ "$py_changed" = true ]; then
-            echo "Triggering checkpy.yaml workflow..."
-            gh workflow run checkpy.yaml --ref feature
-          fi
+          for pattern in "${!found[@]}"; do
+            echo "Triggering ${workflows[$pattern]} workflow..."
+            gh workflow run "${workflows[$pattern]}" --ref feature
+          done
