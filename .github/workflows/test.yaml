@@ -34,7 +34,7 @@ jobs:
       - name: Validate GitHub Actions workflow
         run: |
           echo "Validating workflow..."
-          act -W .github/workflows -j validate init > results/Resume-execution-test-${{ env.datetime }}.txt 2>&1 || exit 1
+          act -W .github/workflows -j init > results/Resume-execution-test-${{ env.datetime }}.txt 2>&1 || exit 1
       
       - name: Commit and Push Results
       # This action commits and pushes the results to the repository
