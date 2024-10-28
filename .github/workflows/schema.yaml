@@ -43,6 +43,6 @@ jobs:
       - name: Trigger Lint
         uses: benc-uk/workflow-dispatch@v1
         with:
-          workflow: Lint
+          workflow: Lint MD
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: feature

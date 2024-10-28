@@ -48,6 +48,6 @@ jobs:
       # This action triggers the Audit workflow
         uses: benc-uk/workflow-dispatch@v1
         with:
-          workflow: Audit
+          workflow: Audit New Version
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: feature

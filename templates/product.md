@@ -10,3 +10,4 @@ Proporciona una breve descripción del proyecto, su propósito y los objetivos q
 2. Código Generado
 3. Runbook de Operaciones
 4. Manual de Producto
+5. Nuevo manual de usuario
