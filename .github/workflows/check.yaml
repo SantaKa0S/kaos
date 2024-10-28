@@ -8,10 +8,9 @@ permissions:
   actions: write
 
 jobs:
-  lint:
-    lint-yaml:
-       runs-on: ubuntu-latest
-       
+  lint-yaml:
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
