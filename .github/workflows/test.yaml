@@ -31,6 +31,10 @@ jobs:
           
       - name: Validate GitHub Actions workflow
         run: |
+          docker --version
+          sudo systemctl status docker
+          sudo systemctl start docker
+          sudo usermod -aG docker $USER
           echo "Validating workflow..."
           ./bin/act -W '.github/workflows' --action-offline-mode > results/Resume-execution-test-${{ env.datetime }}.txt 
       

@@ -50,3 +50,4 @@
 - **Version**: v7.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
 - **Version**: v8.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
 - **Version**: v9.0.0 - **Description**: Build: TEST of GitHub Actions  cheked
+- **Version**: v10.0.0 - **Description**: Build: New version to TEST of GitHub Actions
