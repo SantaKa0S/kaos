@@ -53,3 +53,4 @@
 - **Version**: v10.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v10.1.0 - **Description**: Audit: New version to TEST of GitHub Actions
 - **Version**: v10.2.0 - **Description**: Audit: New version to TEST of GitHub Actions
+- **Version**: v10.3.0 - **Description**: Audit: New version to TEST of GitHub Actions
