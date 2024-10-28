@@ -66,17 +66,6 @@ jobs:
           done < ./results/docs-files-to-lint-${{ env.datetime }}.txt
           echo "Linting completed for docs. Results saved to ./results/Resume-all-docs_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt"
 
-      - name: Lint Markdown for all Templates
-        run: |
-          echo "Starting markdown linting process for templates..."
-          find ./templates -name '*.md' > ./results/templates-files-to-lint-${{ env.datetime }}.txt
-          echo "" > ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt # Inicializa el archivo de resumen como vacío
-          while IFS= read -r file; do
-            echo "Linting $file"
-            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt 2>&1 || true
-          done < ./results/templates-files-to-lint-${{ env.datetime }}.txt
-          echo "Linting completed for templates. Results saved to ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt"
-
       - name: Lint Markdown Team ${{ env.CLEAN_BRANCH_NAME }}
         run: |
           echo "Starting markdown linting process for team ${{ env.CLEAN_BRANCH_NAME }}..."
@@ -100,12 +89,6 @@ jobs:
           name: markdown-lint-results-docs-${{ env.CLEAN_BRANCH_NAME }}
           path: ./results/Resume-all-docs_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt
 
-      - name: Archive Linting Results All Templates
-        uses: actions/upload-artifact@v4
-        with:
-          name: markdown-lint-results-templates-${{ env.CLEAN_BRANCH_NAME }}
-          path: ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt
-
       - name: Archive Team ${{ env.CLEAN_BRANCH_NAME }} Linting Results
         uses: actions/upload-artifact@v4
         with:
@@ -125,6 +108,7 @@ jobs:
 
       - name: Commit and Push Results
         run: |
+          git pull
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add results/*.txt
