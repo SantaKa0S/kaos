@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 jobs:
-  log-version:
+  audit-version:
     runs-on: ubuntu-latest
 
     steps:

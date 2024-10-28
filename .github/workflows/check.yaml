@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    checks-yaml: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
