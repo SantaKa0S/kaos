@@ -11,11 +11,112 @@
     },
     "tabla_de_contenidos": {
       "type": "string"
+    },
+    "1_introducción": {
+      "type": "string"
+    },
+    "2_detalle_del_proceso": {
+      "type": "string"
+    },
+    "3_runbook": {
+      "type": "string"
+    },
+    "unordered_list_item_1": {
+      "type": "string"
+    },
+    "unordered_list_item_2": {
+      "type": "string"
+    },
+    "unordered_list_item_3": {
+      "type": "string"
+    },
+    "unordered_list_item_4": {
+      "type": "string"
+    },
+    "unordered_list_item_5": {
+      "type": "string"
+    },
+    "unordered_list_item_6": {
+      "type": "string"
+    },
+    "ordered_list_item_1": {
+      "type": "string"
+    },
+    "ordered_list_item_2": {
+      "type": "string"
+    },
+    "ordered_list_item_3": {
+      "type": "string"
+    },
+    "blockquote_1": {
+      "type": "string"
+    },
+    "blockquote_2": {
+      "type": "string"
+    },
+    "blockquote_3": {
+      "type": "string"
+    },
+    "blockquote_4": {
+      "type": "string"
+    },
+    "blockquote_5": {
+      "type": "string"
+    },
+    "blockquote_6": {
+      "type": "string"
+    },
+    "blockquote_7": {
+      "type": "string"
+    },
+    "blockquote_8": {
+      "type": "string"
+    },
+    "blockquote_9": {
+      "type": "string"
+    },
+    "link_1": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "text",
+        "url"
+      ]
     }
   },
   "required": [
     "documentación_de_proyecto",
     "introducción",
-    "tabla_de_contenidos"
+    "tabla_de_contenidos",
+    "1_introducción",
+    "2_detalle_del_proceso",
+    "3_runbook",
+    "unordered_list_item_1",
+    "unordered_list_item_2",
+    "unordered_list_item_3",
+    "unordered_list_item_4",
+    "unordered_list_item_5",
+    "unordered_list_item_6",
+    "ordered_list_item_1",
+    "ordered_list_item_2",
+    "ordered_list_item_3",
+    "blockquote_1",
+    "blockquote_2",
+    "blockquote_3",
+    "blockquote_4",
+    "blockquote_5",
+    "blockquote_6",
+    "blockquote_7",
+    "blockquote_8",
+    "blockquote_9",
+    "link_1"
   ]
 }
