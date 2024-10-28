@@ -1,0 +1,67 @@
+name: Lint Templates
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  generate-schemas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+  
+      - name: Install markdownlint-cli2
+        run: npm install -g markdownlint-cli2
+  
+      - name: Identify Changed Files
+        id: changed-files
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
+          cat changed-files.txt
+      
+      - name: Set execution date-time variable
+        id: set_datetime
+        run: echo "datetime=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+      
+      - name: Lint Markdown for all Templates
+        run: |
+          echo "Starting markdown linting process for templates..."
+          find ./templates -name '*.md' > ./results/templates-files-to-lint-${{ env.datetime }}.txt
+          echo "" > ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt # Inicializa el archivo de resumen como vacío
+          while IFS= read -r file; do
+            echo "Linting $file"
+            markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt 2>&1 || true
+          done < ./results/templates-files-to-lint-${{ env.datetime }}.txt
+          echo "Linting completed for templates. Results saved to ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt"
+
+      - name: Archive Linting Results All Templates
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdown-lint-results-templates-${{ env.CLEAN_BRANCH_NAME }}
+          path: ./results/Resume-Templates_${{ env.CLEAN_BRANCH_NAME }}-${{ env.datetime }}.txt
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add schemas/*.json
+          git commit -m "New: linting results for team ${{ env.CLEAN_BRANCH_NAME }}""
+          git push origin feature
+      
+      - name: Trigger Lint
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: Audit New Version
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: feature

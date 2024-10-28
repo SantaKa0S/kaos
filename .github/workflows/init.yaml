@@ -49,8 +49,8 @@ jobs:
           while IFS= read -r file; do
             case "$file" in
               templates/*.md)
-                echo "Triggering Schema workflow..."
-                gh workflow run schema.yaml --ref feature
+                echo "Triggering Lint Templates workflow..."
+                gh workflow run lintemplates.yaml --ref feature
                 ;;
               docs/*.md)
                 echo "Triggering md Lint workflow..."
@@ -63,10 +63,6 @@ jobs:
               bin/*.py)
                 echo "Triggering checkpy.yaml workflow..."
                 gh workflow run checkpy.yaml --ref feature
-                ;;
-              schemas/*.json)
-                echo "Triggering Check JSON workflow..."
-                gh workflow run checkjson.yaml --ref feature
                 ;;
             esac
           done < changed-files.txt
