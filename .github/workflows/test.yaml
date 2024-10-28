@@ -34,8 +34,6 @@ jobs:
       - name: Validate GitHub Actions workflow
         run: |
           echo "Validating workflow..."
-          act -version
-          act -h
           act -W '.github/workflows' --action-offline-mode > results/Resume-execution-test-${{ env.datetime }}.txt 2>&1 || exit 1
       
       - name: Commit and Push Results
