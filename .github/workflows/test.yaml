@@ -3,8 +3,6 @@ name: Test
 on:
   workflow_dispatch:
     # This workflow runs only on the feature branch
-    branches:
-      - feature
 
 permissions:
   # This workflow has write permissions to the contents of the repository
@@ -13,7 +11,7 @@ permissions:
 
 jobs:
   test-github-action:
-    # This job runs on the latest version of the Ubuntu operating system
+    # This job runs on the latest version 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -34,7 +32,7 @@ jobs:
       - name: Validate GitHub Actions workflow
         run: |
           echo "Validating workflow..."
-          act -W .github/workflows -j validate init > results/Resume-execution-test-${{ env.datetime }}.txt 2>&1 || exit 1
+          ./bin/act -W '.github/workflows' --action-offline-mode > results/Resume-execution-test-${{ env.datetime }}.txt 
       
       - name: Commit and Push Results
       # This action commits and pushes the results to the repository

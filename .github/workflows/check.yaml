@@ -2,8 +2,6 @@ name: Check
 
 on:
   workflow_dispatch:
-    branches:
-      - feature
 
 permissions:
   contents: write
@@ -19,14 +17,19 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set execution date-time variable
+        id: set_datetime
+        run: echo "datetime=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
       - name: Validate YAML Workflows
         id: validate-yaml
         run: |
+          echo "" > ./results/Resume-check-yaml-${{ env.datetime }}.txt
           for file in .github/workflows/*.yaml; do
           if ! yq e '. | type == "object"' "$file"; then
-            echo "Error en archivo $file - Version NO VALIDA" >> results/Resume-check-yaml-$(date +"%Y%m%d%H%M%S").txt
+            echo "Error en archivo $file - Version NO VALIDA" >> ./results/Resume-check-yaml-${{ env.datetime }}.txt
           else
-            echo "Archivo $file - Version OK" >> results/Resume-check-yaml-$(date +"%Y%m%d%H%M%S").txt
+            echo "Archivo $file - Version OK" >> ./results/Resume-check-yaml-${{ env.datetime }}.txt
           fi
           done
       
@@ -34,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Resume-check-yaml
-          path: results/Resume-check-yaml-$(date +"%Y%m%d%H%M%S").txt
+          path: ./results/Resume-check-yaml-${{ env.datetime }}.txt
       
       - name: Commit and Push Results
         run: |
