@@ -53,7 +53,7 @@ jobs:
           cat copilot_results.txt
 
       - name: Descargar resultados
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           path: './results/copilot_results-${{ env.datetime }}.txt'
           name: resultados
