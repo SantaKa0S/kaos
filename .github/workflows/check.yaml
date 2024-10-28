@@ -26,12 +26,12 @@ jobs:
       - name: Validate YAML Workflows
         id: validate-yaml
         run: |
-          echo "Resume Check YAML" > results/Resume-check-yaml-${{ env.datetime }}.txt
+          echo "Resume Check YAML" > ./results/Resume-check-yaml-${{ env.datetime }}.txt
           for file in .github/workflows/*.yaml; do
           if ! yq e '. | type == "object"' "$file"; then
-            echo "Error en archivo $file - Version NO VALIDA" >> results/Resume-check-yaml-${{ env.datetime }}.txt
+            echo "Error en archivo $file - Version NO VALIDA" >> ./results/Resume-check-yaml-${{ env.datetime }}.txt
           else
-            echo "Archivo $file - Version OK" >> results/Resume-check-yaml-${{ env.datetime }}.txt
+            echo "Archivo $file - Version OK" >> ./results/Resume-check-yaml-${{ env.datetime }}.txt
           fi
           done
       
@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Resume-check-yaml
-          path: results/Resume-check-yaml-${{ env.datetime }}.txt
+          path: ./results/Resume-check-yaml-${{ env.datetime }}.txt
       
       - name: Commit and Push Results
         run: |
