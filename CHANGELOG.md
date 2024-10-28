@@ -883,3 +883,14 @@
   - results/Resume-check-yaml-20241028143114.txt
   - version.txt
 ---------------------------------
+## Version 13.0.1
+- **Branch**: refs/heads/feature
+- **Commit**: 2bb9a62d1b4bdbff05c48df1ecf4f85c332b4c81
+- **Author**: github-actions[bot] (github-actions[bot]@users.noreply.github.com)
+- **Date**: Mon Oct 28 14:32:47 UTC 2024
+- **Message**: New: linting results for team
+- **Files Changed**:
+  - results/Resume-Templates_-20241028143234.txt
+  - results/templates-files-to-lint-20241028143234.txt
+  - version.txt
+---------------------------------
