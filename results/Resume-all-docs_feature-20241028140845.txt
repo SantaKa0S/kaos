@@ -1,0 +1,15 @@
+
+markdownlint-cli2 v0.14.0 (markdownlint v0.35.0)
+Finding: ./docs/README.md
+Linting: 1 file(s)
+Summary: 0 error(s)
+markdownlint-cli2 v0.14.0 (markdownlint v0.35.0)
+Finding: ./docs/feature/README.md
+Linting: 1 file(s)
+Summary: 0 error(s)
+markdownlint-cli2 v0.14.0 (markdownlint v0.35.0)
+Finding: ./docs/feature/product.md
+Linting: 1 file(s)
+Summary: 2 error(s)
+docs/feature/product.md:49 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
+docs/feature/product.md:50 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 3]
