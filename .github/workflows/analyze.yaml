@@ -28,18 +28,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y python3-pip
 
-      - name: Copiar ficheros de contexto y documentación
-        uses: actions/download-artifact@v4
-        with:
-          path: './contexto/el_problema_de_los_tres_cuerpos.txt'
-          name: contexto
-
-      - name: Copiar ficheros de contexto y documentación
-        uses: actions/download-artifact@v4
-        with:
-          path: './docs/feature/producto.md'
-          name: documentacion
-
       - name: Configurar Llama 3.2:3B
         run: |
           pip3 install transformers

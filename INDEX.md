@@ -85,3 +85,4 @@
 - **Version**: v26.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v27.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v28.0.0 - **Description**: Build: New version to TEST of GitHub Actions
+- **Version**: v29.0.0 - **Description**: Build: New version to TEST of GitHub Actions
