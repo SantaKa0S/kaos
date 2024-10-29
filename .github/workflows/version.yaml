@@ -23,7 +23,7 @@ jobs:
           GITHUB_MARKETPLACE_URL: https://api.github.com/markets/actions
         run: |
           curl -X GET \
-            -H "Authorization: Bearer ${GITHUB_MARKETPLACE_URL}" \
+            -H "Authorization: Bearer ${GITHUB_TOKEN}" \
             https://api.github.com/markets/actions -o marketplace-update.json
 
       - name: Grabar información en un fichero
