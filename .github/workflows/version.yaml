@@ -53,11 +53,9 @@ jobs:
             })
           with open('acciones.json-${{ env.datetime }}', 'w') as f:
             json.dump(actions, f, indent=4)
-        artifacts:
-          paths:
-            - actions-${{ env.datetime }}.json
 
       - name: Compartir acciones
         uses: actions/upload-artifact@v4
         with:
-          name: acciones-${{ env.datetime }}.json
+          name: acciones-${{ env.datetime }}
+          path: ./acciones-${{ env.datetime }}.json
