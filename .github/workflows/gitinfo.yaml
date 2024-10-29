@@ -42,10 +42,9 @@ jobs:
           echo "BRANCH_NAME: $BRANCH_NAME" >> $GITHUB_ENV
           echo "BRANCH_DESCRIPTION: $BRANCH_DESCRIPTION" >> $GITHUB_ENV
 
-      - name: Almacenar información en variables
-        id: almacenar-informacion
+      - name: Mostrar contenido de variables
         run: |
-          # Obtenemos las variables de la acción anterior
+          # Obtenemos el contenido de las variables guardadas
           COMMIT_ID=$(echo "$GITHUB_ENV" | grep -oP '(?<="COMMIT_ID": ")[^"]*')
           COMMIT_MESSAGE=$(echo "$GITHUB_ENV" | grep -oP '(?<="COMMIT_MESSAGE": ")[^"]*')
           AUTHOR=$(echo "$GITHUB_ENV" | grep -oP '(?<="AUTHOR": ")[^"]*')
@@ -53,12 +52,13 @@ jobs:
           CHANGED_FILES=$(echo "$GITHUB_ENV" | grep -oP '(?<="CHANGED_FILES": ")[^"]*')
           BRANCH_NAME=$(echo "$GITHUB_ENV" | grep -oP '(?<="BRANCH_NAME": ")[^"]*')
           BRANCH_DESCRIPTION=$(echo "$GITHUB_ENV" | grep -oP '(?<="BRANCH_DESCRIPTION": ")[^"]*')
-
-          # Almacenamos la información en variables de GitHub Actions
-          echo "COMMIT_ID: $COMMIT_ID" >> $GITHUB_ENV
-          echo "COMMIT_MESSAGE: $COMMIT_MESSAGE" >> $GITHUB_ENV
-          echo "AUTHOR: $AUTHOR" >> $GITHUB_ENV
-          echo "DATE: $DATE" >> $GITHUB_ENV
-          echo "CHANGED_FILES: $CHANGED_FILES" >> $GITHUB_ENV
-          echo "BRANCH_NAME: $BRANCH_NAME" >> $GITHUB_ENV
-          echo "BRANCH_DESCRIPTION: $BRANCH_DESCRIPTION" >> $GITHUB_ENV
+  
+          # Mostramos el contenido de las variables
+          echo "Variables guardadas:"
+          echo "COMMIT_ID: $COMMIT_ID"
+          echo "COMMIT_MESSAGE: $COMMIT_MESSAGE"
+          echo "AUTHOR: $AUTHOR"
+          echo "DATE: $DATE"
+          echo "CHANGED_FILES: $CHANGED_FILES"
+          echo "BRANCH_NAME: $BRANCH_NAME"
+          echo "BRANCH_DESCRIPTION: $BRANCH_DESCRIPTION"
