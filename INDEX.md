@@ -78,3 +78,4 @@
 - **Version**: v19.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v20.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v21.0.0 - **Description**: Build: New version to TEST of GitHub Actions
+- **Version**: v22.0.0 - **Description**: Build: New version to TEST of GitHub Actions
