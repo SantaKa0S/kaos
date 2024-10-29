@@ -26,13 +26,14 @@ jobs:
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           CLEAN_BRANCH_NAME=${BRANCH_NAME#feature/}
+          echo "CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME" >> $GITHUB_ENV
 
       - name: Identify User of the Team
         id: identify-user
         run: |
           user=$(git log -1 --pretty=format:'%an')
           declare -A user_info=(["user"]="$user")
-          echo "User info: ${user_info[@]}" >> $GITHUB_ENV
+          echo "user=$user" >> $GITHUB_ENV
 
       - name: Display User Name and Team Name
         run: echo "Push has been performed by the user ${{ env.user }} of the Team $BRANCH_NAME"
