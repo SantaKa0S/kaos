@@ -33,23 +33,44 @@ jobs:
           BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
           BRANCH_DESCRIPTION=$(git describe --tags --always 2>/dev/null || git rev-parse --short HEAD)
       
-          # Almacenamos la información en variables
-          github.env.COMMIT_ID=${COMMIT_ID}
-          github.env.COMMIT_MESSAGE=${COMMIT_MESSAGE}
-          github.env.AUTHOR=${AUTHOR}
-          github.env.DATE=${DATE}
-          github.env.CHANGED_FILES=${CHANGED_FILES}
-          github.env.BRANCH_NAME=${BRANCH_NAME}
-          github.env.BRANCH_DESCRIPTION=${BRANCH_DESCRIPTION}
-      
+          # Almacenamos la información en variables de GitHub Actions
+          github.actions.set_env(
+            name: 'COMMIT_ID',
+            value: COMMIT_ID
+          )
+          github.actions.set_env(
+            name: 'COMMIT_MESSAGE',
+            value: COMMIT_MESSAGE
+          )
+          github.actions.set_env(
+            name: 'AUTHOR',
+            value: AUTHOR
+          )
+          github.actions.set_env(
+            name: 'DATE',
+            value: DATE
+          )
+          github.actions.set_env(
+            name: 'CHANGED_FILES',
+            value: CHANGED_FILES
+          )
+          github.actions.set_env(
+            name: 'BRANCH_NAME',
+            value: BRANCH_NAME
+          )
+          github.actions.set_env(
+            name: 'BRANCH_DESCRIPTION',
+            value: BRANCH_DESCRIPTION
+          )
+
       - name: Mostrar contenido de variables
         run: |
           # Obtenemos el contenido de las variables guardadas
           echo "Variables guardadas:"
-          echo "COMMIT_ID: ${{ github.env.COMMIT_ID }}"
-          echo "COMMIT_MESSAGE: ${{ github.env.COMMIT_MESSAGE }}"
-          echo "AUTHOR: ${{ github.env.AUTHOR }}"
-          echo "DATE: ${{ github.env.DATE }}"
-          echo "CHANGED_FILES: ${{ github.env.CHANGED_FILES }}"
-          echo "BRANCH_NAME: ${{ github.env.BRANCH_NAME }}"
-          echo "BRANCH_DESCRIPTION: ${{ github.env.BRANCH_DESCRIPTION }}
+          echo "COMMIT_ID: ${{ github.actions.env.COMMIT_ID }}"
+          echo "COMMIT_MESSAGE: ${{ github.actions.env.COMMIT_MESSAGE }}"
+          echo "AUTHOR: ${{ github.actions.env.AUTHOR }}"
+          echo "DATE: ${{ github.actions.env.DATE }}"
+          echo "CHANGED_FILES: ${{ github.actions.env.CHANGED_FILES }}"
+          echo "BRANCH_NAME: ${{ github.actions.env.BRANCH_NAME }}"
+          echo "BRANCH_DESCRIPTION: ${{ github.actions.env.BRANCH_DESCRIPTION }}
