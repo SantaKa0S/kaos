@@ -10,55 +10,18 @@ permissions:
   actions: write
 
 jobs:
-  web-scrapping-maorketplace:
+  web-scrapping:
     runs-on: ubuntu-latest
     steps:
-      - name: Agregar dependencias
-        uses: actions/checkout@v4
+      - name: Obtener token de acceso de GitHub
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set execution date-time variable
-        id: set_datetime
-        run: echo "datetime=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-
-      - name: Instalar Python y pip
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Instalar requests
-        run: |
-          pip install --upgrade requests
-
-      - name: Realizar web-scrapping del marketplace de GitHub
+      - name: Utilizar API de GitHub para obtener información sobre acciones
         env:
-          GITHUB_MARKETPLACE_URL: https://github.com/marketplace?type=actions
+          GITHUB_MARKETPLACE_URL: https://api.github.com/markets/actions
         run: |
-          import requests
-          try:
-            response = requests.get(GITHUB_MARKETPLACE_URL)
-            data = response.json()
-            actions = []
-            for item in data['items']:
-              action_name = item['name']
-              action_description = item['description']
-              action_version = item['version']
-              action_link = item['links']['self']
-              actions.append({
-                'name': action_name,
-                'description': action_description,
-                'version': action_version,
-                'link': action_link
-              })
-          except Exception as e:
-            print(f"Error: {e}")
-          with open('acciones.json-${{ env.datetime }}.txt', 'w') as f:
-            json.dump(actions, f, indent=4)
-
-      - name: Compartir acciones
-        uses: actions/upload-artifact@v4
-        with:
-          name: acciones-${{ env.datetime }}
-          path: ./acciones-${{ env.datetime }}.json
+          curl -X GET \
+            -H "Authorization: Bearer ${GITHUB_MARKETPLACE_URL}" \
+            https://api.github.com/markets/actions | json
