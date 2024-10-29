@@ -42,6 +42,8 @@ jobs:
         id: changed-files
         run: |
           git diff --cached > changed-files.txt
+          echo "Ficheros del commit"
+          cat changed-files.txt
           while IFS= read -r file; do
             for pattern in "${!workflows[@]}"; do
               if [[ "$file" == $pattern ]]; then
