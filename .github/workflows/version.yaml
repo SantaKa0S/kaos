@@ -30,28 +30,31 @@ jobs:
 
       - name: Instalar requests
         run: |
-          pip install requests
+          pip install --upgrade requests
 
       - name: Realizar web-scrapping del marketplace de GitHub
         env:
           GITHUB_MARKETPLACE_URL: https://github.com/marketplace?type=actions
         run: |
           import requests
-          response = requests.get(GITHUB_MARKETPLACE_URL)
-          data = response.json()
-          actions = []
-          for item in data['items']:
-            action_name = item['name']
-            action_description = item['description']
-            action_version = item['version']
-            action_link = item['links']['self']
-            actions.append({
-              'name': action_name,
-              'description': action_description,
-              'version': action_version,
-              'link': action_link
-            })
-          with open('acciones.json-${{ env.datetime }}', 'w') as f:
+          try:
+            response = requests.get(GITHUB_MARKETPLACE_URL)
+            data = response.json()
+            actions = []
+            for item in data['items']:
+              action_name = item['name']
+              action_description = item['description']
+              action_version = item['version']
+              action_link = item['links']['self']
+              actions.append({
+                'name': action_name,
+                'description': action_description,
+                'version': action_version,
+                'link': action_link
+              })
+          except Exception as e:
+            print(f"Error: {e}")
+          with open('acciones.json-${{ env.datetime }}.txt', 'w') as f:
             json.dump(actions, f, indent=4)
 
       - name: Compartir acciones
