@@ -16,14 +16,12 @@ jobs:
       - name: Obtener token de acceso de GitHub
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MARKETPLACE }}
 
       - name: Utilizar API de GitHub para obtener información sobre acciones
-        env:
-          GITHUB_MARKETPLACE_URL: https://api.github.com/markets/actions
         run: |
           curl -H "Accept: application/vnd.github.v3+json" \
-               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+               -H "Authorization: token ${{ secrets.MARKETPLACE }}" \
                "https://api.github.com/marketplace_listing/plans?verified=true" -o marketplace-update.json
 
       - name: Grabar información en un fichero
