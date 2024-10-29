@@ -38,10 +38,10 @@ jobs:
         run: |
           # Obtenemos el contenido de las variables guardadas
           echo "Variables guardadas:"
-          echo "COMMIT_ID: $(cat $GITHUB_ENV | grep -oP '(?<="COMMIT_ID": ")[^"]*')"
-          echo "COMMIT_MESSAGE: $(cat $GITHUB_ENV | grep -oP '(?<="COMMIT_MESSAGE": ")[^"]*')"
-          echo "AUTHOR: $(cat $GITHUB_ENV | grep -oP '(?<="AUTHOR": ")[^"]*')"
-          echo "DATE: $(cat $GITHUB_ENV | grep -oP '(?<="DATE": ")[^"]*')"
-          echo "CHANGED_FILES: $(cat changed-files.txt)"
-          echo "BRANCH_NAME: $(cat $GITHUB_ENV | grep -oP '(?<="BRANCH_NAME": ")[^"]*')"
-          echo "BRANCH_DESCRIPTION: $(cat $GITHUB_ENV | grep -oP '(?<="BRANCH_DESCRIPTION": ")[^"]*')"
+          echo "COMMIT_ID: ${{ env.COMMIT_ID }}"
+          echo "COMMIT_MESSAGE: ${{ env.COMMIT_MESSAGE }}"
+          echo "AUTHOR: ${{ env.AUTHOR }}"
+          echo "DATE: ${{ env.DATE }}"
+          echo "CHANGED_FILES: ${{cat changed-files.txt}}"
+          echo "BRANCH_NAME: ${{ env.BRANCH_NAME }}"
+          echo "BRANCH_DESCRIPTION: ${{ env.BRANCH_DESCRIPTION }}"
