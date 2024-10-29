@@ -1,0 +1,55 @@
+name: Analyze
+
+on:
+  workflow_dispatch:
+    # Este flujo de trabajo se ejecuta solo en la rama feature
+
+permissions:
+  # Este flujo de trabajo tiene permisos de escritura en el contenido del repositorio
+  contents: write
+  actions: write
+
+jobs:
+  grabar-salida:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Agregar variables de entorno
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set execution date-time variable
+        id: set_datetime
+        run: echo "datetime=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+      - name: Verificar acciones disponibles en GitHub Marketplace
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const marketplace = 'https://github.com/marketplace?type=actions';
+            const response = await fetch(marketplace);
+            const data = await response.json();
+            console.log(data);
+
+      - name: Instalar acciones necesarias
+        uses: actions/setup-action@v4
+        with:
+          action-names: 'git-log,mermaidize'
+          restore: true
+
+      - name: Ejecutar comando git log --graph --all
+        uses: actions/git-log@v3
+        with:
+          ref: main
+
+      - name: Transformar salida a Mermaid
+        uses: actions/mermaid@v2
+        with:
+          file: loggraph.md
+
+      - name: Compartir archivo
+        uses: actions/upload-artifact@v4
+        with:
+          name: loggraph.mmd
