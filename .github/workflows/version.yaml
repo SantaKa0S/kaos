@@ -24,7 +24,7 @@ jobs:
         run: |
           curl -X GET \
             -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-            https://api.github.com/markets/actions -o marketplace-update.json
+            https://github.com/marketplace?type=actions -o marketplace-update.json
 
       - name: Grabar información en un fichero
         uses: actions/upload-artifact@v4
