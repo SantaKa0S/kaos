@@ -41,8 +41,7 @@ jobs:
       - name: Identify Changed Files
         id: changed-files
         run: |
-          git diff --cached > changed-files.txt
-          echo "Ficheros del commit"
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
           cat changed-files.txt
           while IFS= read -r file; do
             for pattern in "${!workflows[@]}"; do
