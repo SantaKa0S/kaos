@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Obtener token de acceso de GitHub
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.MARKETPLACE }}
 
       - name: Utilizar API de GitHub para obtener información sobre acciones
         run: |
