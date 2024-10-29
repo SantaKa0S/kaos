@@ -81,3 +81,4 @@
 - **Version**: v22.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v23.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v24.0.0 - **Description**: Build: New version to TEST of GitHub Actions
+- **Version**: v25.0.0 - **Description**: Build: New version to TEST of GitHub Actions
