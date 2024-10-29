@@ -27,7 +27,7 @@ jobs:
           echo "DATE=$(git log -1 --format=%cd)" >> $GITHUB_ENV
       
           # Obtenemos la lista de archivos cambiados en el commit
-          echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }}" >> $GITHUB_ENV
+          echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})" >> $GITHUB_ENV
           # Obtenemos la información del branch actual
           echo "BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
           echo "BRANCH_DESCRIPTION=$(git describe --tags --always 2>/dev/null || git rev-parse --short HEAD)" >> $GITHUB_ENV
