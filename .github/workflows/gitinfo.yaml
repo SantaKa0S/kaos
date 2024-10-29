@@ -21,56 +21,27 @@ jobs:
         id: obtener-informacion
         run: |
           # Obtenemos la información del commit actual
-          COMMIT_ID=$(git rev-parse HEAD)
-          COMMIT_MESSAGE=$(git log -1 --format=%s)
-          AUTHOR=$(git log -1 --format=%an)
-          DATE=$(git log -1 --format=%cd)
+          echo "COMMIT_ID=${{ github.sha }}" >> $GITHUB_ENV
+          echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_ENV
+          echo "AUTHOR=$(git log -1 --format=%an)" >> $GITHUB_ENV
+          echo "DATE=$(git log -1 --format=%cd)" >> $GITHUB_ENV
       
           # Obtenemos la lista de archivos cambiados en el commit
-          CHANGED_FILES=$(git diff --cached --name-only)
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files.txt
       
           # Obtenemos la información del branch actual
-          BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-          BRANCH_DESCRIPTION=$(git describe --tags --always 2>/dev/null || git rev-parse --short HEAD)
+          echo "BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+          echo "BRANCH_DESCRIPTION=$(git describe --tags --always 2>/dev/null || git rev-parse --short HEAD)" >> $GITHUB_ENV
       
-          # Almacenamos la información en variables de GitHub Actions
-          github.actions.set_env(
-            name: 'COMMIT_ID',
-            value: COMMIT_ID
-          )
-          github.actions.set_env(
-            name: 'COMMIT_MESSAGE',
-            value: COMMIT_MESSAGE
-          )
-          github.actions.set_env(
-            name: 'AUTHOR',
-            value: AUTHOR
-          )
-          github.actions.set_env(
-            name: 'DATE',
-            value: DATE
-          )
-          github.actions.set_env(
-            name: 'CHANGED_FILES',
-            value: CHANGED_FILES
-          )
-          github.actions.set_env(
-            name: 'BRANCH_NAME',
-            value: BRANCH_NAME
-          )
-          github.actions.set_env(
-            name: 'BRANCH_DESCRIPTION',
-            value: BRANCH_DESCRIPTION
-          )
-
+        
       - name: Mostrar contenido de variables
         run: |
           # Obtenemos el contenido de las variables guardadas
           echo "Variables guardadas:"
-          echo "COMMIT_ID: ${{ github.actions.env.COMMIT_ID }}"
-          echo "COMMIT_MESSAGE: ${{ github.actions.env.COMMIT_MESSAGE }}"
-          echo "AUTHOR: ${{ github.actions.env.AUTHOR }}"
-          echo "DATE: ${{ github.actions.env.DATE }}"
-          echo "CHANGED_FILES: ${{ github.actions.env.CHANGED_FILES }}"
-          echo "BRANCH_NAME: ${{ github.actions.env.BRANCH_NAME }}"
-          echo "BRANCH_DESCRIPTION: ${{ github.actions.env.BRANCH_DESCRIPTION }}
+          echo "COMMIT_ID: $(cat $GITHUB_ENV | grep -oP '(?<="COMMIT_ID": ")[^"]*')"
+          echo "COMMIT_MESSAGE: $(cat $GITHUB_ENV | grep -oP '(?<="COMMIT_MESSAGE": ")[^"]*')"
+          echo "AUTHOR: $(cat $GITHUB_ENV | grep -oP '(?<="AUTHOR": ")[^"]*')"
+          echo "DATE: $(cat $GITHUB_ENV | grep -oP '(?<="DATE": ")[^"]*')"
+          echo "CHANGED_FILES: $(cat changed-files.txt)"
+          echo "BRANCH_NAME: $(cat $GITHUB_ENV | grep -oP '(?<="BRANCH_NAME": ")[^"]*')"
+          echo "BRANCH_DESCRIPTION: $(cat $GITHUB_ENV | grep -oP '(?<="BRANCH_DESCRIPTION": ")[^"]*')"
