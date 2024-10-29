@@ -22,9 +22,9 @@ jobs:
         env:
           GITHUB_MARKETPLACE_URL: https://api.github.com/markets/actions
         run: |
-          curl -X GET \
-            -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-            https://github.com/marketplace?type=actions -o marketplace-update.json
+          curl -H "Accept: application/vnd.github.v3+json" \
+               -H "Authorization: token YOUR_GITHUB_TOKEN" \
+               "https://api.github.com/marketplace_listing/plans?verified=true" -o marketplace-update.json
 
       - name: Grabar información en un fichero
         uses: actions/upload-artifact@v4
