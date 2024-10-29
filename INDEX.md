@@ -97,3 +97,4 @@
 - **Version**: v38.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v39.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v40.0.0 - **Description**: Build: New version to TEST of GitHub Actions
+- **Version**: v41.0.0 - **Description**: Build: New version to TEST of GitHub Actions
