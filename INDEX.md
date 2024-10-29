@@ -91,3 +91,4 @@
 - **Version**: v32.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v33.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v34.0.0 - **Description**: Build: New version to TEST of GitHub Actions
+- **Version**: v35.0.0 - **Description**: Build: New version to TEST of GitHub Actions
