@@ -42,6 +42,6 @@ jobs:
           echo "COMMIT_MESSAGE: ${{ env.COMMIT_MESSAGE }}"
           echo "AUTHOR: ${{ env.AUTHOR }}"
           echo "DATE: ${{ env.DATE }}"
-          echo "CHANGED_FILES: ${{cat changed-files.txt}}"
+          echo "CHANGED_FILES: ${{ changed-files.txt}}"
           echo "BRANCH_NAME: ${{ env.BRANCH_NAME }}"
           echo "BRANCH_DESCRIPTION: ${{ env.BRANCH_DESCRIPTION }}"
