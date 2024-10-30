@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  DATE_TIME: $(date +'%Y%m%d%H%M%S')
+  DATE_TIME: echo "datetime=$(date +'%Y%m%d%H%M%S')"
 
 jobs:
   lint-md:
@@ -16,6 +16,6 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Muestro la variable DATE_TIME
         run: echo "DATE_TIME...........=$DATE_TIME   "
