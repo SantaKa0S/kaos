@@ -1,0 +1,21 @@
+name: Markdown Lint Workflow
+
+on:
+  workflow_dispatch:
+
+env:
+  DATE_TIME: $(date +'%Y%m%d%H%M%S')
+
+jobs:
+  lint-md:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name : Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Muestro la variable DATE_TIME
+        run: echo "DATE_TIME...........=$DATE_TIME   "
