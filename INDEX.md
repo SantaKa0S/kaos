@@ -103,3 +103,4 @@
 - **Version**: v44.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v45.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v46.0.0 - **Description**: Build: New version to TEST of GitHub Actions
+- **Version**: v47.0.0 - **Description**: Build: New version to TEST of GitHub Actions
