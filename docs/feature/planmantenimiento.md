@@ -132,7 +132,3 @@ El informe de mantenimiento debe incluir la siguiente información:
 * **Nombre**: [Insertar nombre]
 * **Correo electrónico**: [Insertar correo electrónico]
 * **Teléfono**: [Insertar teléfono]
-
-Revisión y Actualización:
-
-El plan de mantenimiento se revisará y actualizará periódicamente para garantizar su relevancia y eficacia. La fecha de la próxima revisión es: [Insertar fecha].
