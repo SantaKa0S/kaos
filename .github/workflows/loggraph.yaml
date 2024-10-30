@@ -22,7 +22,7 @@ jobs:
       - name: Set execution date-time variable
         id: set_datetime
         run: echo "datetime=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-        
+
       - name: Update stats.md
         run: |
           echo "Versión Actual" > stats.md
@@ -67,3 +67,9 @@ jobs:
         run: |
           # Elimina el archivo temporal
           rm commits.txt
+          
+      - name: Grabar stats.md
+        uses: actions/upload-artifact@v4
+        with:
+          name: stats.md
+          path: stats.md
