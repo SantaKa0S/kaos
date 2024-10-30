@@ -40,12 +40,10 @@ jobs:
           while IFS=resultados read -r file; do
             # Procesa cada archivo con markdownlint-cli2 y guarda los resultados en un fichero JSON
             markdownlint-cli2 "$file" --config ./bin/.markdownlint.json >> ./result/result-markdown-lint-${{ env.datetime }}.json
+            git config --global user.name 'github-actions'
+            git config --global user.email 'github-actions@github.com'
             git add ./result/result-markdown-lint-${{ env.datetime }}.json
             git commit -m "Upload: se ha pasado el markdownlint al archivo $file y el resultado se ha guardado en result-markdown-lint-${{ env.datetime }}.json"
           done < changed-files.txt
-      - name: Push changes
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
           git push
 
