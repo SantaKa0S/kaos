@@ -3,9 +3,6 @@ name: Markdown Lint Workflow
 on:
   workflow_dispatch:
 
-env:
-  DATE_TIME: echo "datetime=$(date +'%Y%m%d%H%M%S')"
-
 jobs:
   lint-md:
     runs-on: ubuntu-latest
@@ -17,5 +14,13 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Muestro la variable DATE_TIME
-        run: echo "DATE_TIME...........=$DATE_TIME   "
+      - name: Variables de Entorno
+        id: variables-entorno
+        run: |
+          echo "datetime=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+      - name: Mostramos la variable
+        id: mostrar-variable
+        run: |
+          echo "La fecha y hora actual es ${{ env.datetime }}"
+          
