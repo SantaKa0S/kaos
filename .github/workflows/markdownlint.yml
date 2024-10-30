@@ -22,8 +22,6 @@ jobs:
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           TEAM_NAME=${BRANCH_NAME#feature/}
           echo "TEAM_NAME=$TEAM_NAME" >> $GITHUB_ENV
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
 
       - name: Mostramos la variable
         id: mostrar-variable
@@ -47,5 +45,7 @@ jobs:
           done < changed-files.txt
       - name: Push changes
         run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
           git push
 
