@@ -42,10 +42,10 @@ jobs:
       - name: Write Info to files
         run: |
           # Save all the changed files in the environment variable to use it change-files-0000000000000.txt
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.PATH_RESUME }}changed-files-$DATETIME.txt
-          cat ${{ env.PATH_RESUME }}changed-files-$DATETIME.txt
-          git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:"%H %s" > ${{ env.PATH_RESUME }}commit-messages-$DATETIME.txt
-          cat ${{ env.PATH_RESUME }}commit-messages-$DATETIME.txt
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.PATH_RESUME }}changed-files-${{ DATETIME }}.txt
+          cat ${{ env.PATH_RESUME }}changed-files-${{ DATETIME }}.txt
+          git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:"%H %s" > ${{ env.PATH_RESUME }}commit-messages-${{ DATETIME }}.txt
+          cat ${{ env.PATH_RESUME }}commit-messages-${{ DATETIME }}.txt
 
       - name: Exist changes in files
         env:
@@ -64,7 +64,7 @@ jobs:
                 found["$pattern"]=true
               fi
             done
-          done < ${{ env.PATH_RESUME }}changed-files-$DATETIME.txt
+          done < ${{ env.PATH_RESUME }}changed-files-${{ DATETIME }}.txt
 
           for pattern in "${!found[@]}"; do
             echo "Triggering ${workflows[$pattern]} workflow..."
@@ -74,26 +74,26 @@ jobs:
       - name: Run on success
         if: success()
         run: |
-          echo "The complete information on this execution is:" >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          echo "with the following content:" >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          echo "Commit:" >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          cat ${{ env.PATH_RESUME }}commit-messages-$DATETIME.txt >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          echo "Files:" >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          cat ${{ env.PATH_RESUME }}changed-files-$DATETIME.txt >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          echo "and the result has been successful." >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
+          echo "The complete information on this execution is:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          echo "with the following content:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          echo "Commit:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          cat ${{ env.PATH_RESUME }}commit-messages-${{ DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          echo "Files:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          cat ${{ env.PATH_RESUME }}changed-files-${{ DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          echo "and the result has been successful." >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
 
       - name: Run on failure
         if: failure()
         run: 
-          echo "The complete information on this execution is:" >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          echo "with the following content:" >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          echo "Commit:" >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          cat ${{ env.PATH_RESUME }}commit-messages-$DATETIME.txt >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          echo "Files:" >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          cat ${{ env.PATH_RESUME }}changed-files-$DATETIME.txt >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
-          echo "and the result has not been successful." >> ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
+          echo "The complete information on this execution is:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          echo "with the following content:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          echo "Commit:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          cat ${{ env.PATH_RESUME }}commit-messages-${{ DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          echo "Files:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          cat ${{ env.PATH_RESUME }}changed-files-${{ DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
+          echo "and the result has not been successful." >> ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
 
       - name: Upload success file
         if: success()
@@ -101,9 +101,9 @@ jobs:
         with:
           name: success-files
           path: |
-            ${{ env.PATH_RESUME }}changed-files-$DATETIME.txt
-            ${{ env.PATH_RESUME }}commit-messages-$DATETIME.txt
-            ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
+            ${{ env.PATH_RESUME }}changed-files-${{ DATETIME }}.txt
+            ${{ env.PATH_RESUME }}commit-messages-${{ DATETIME }}.txt
+            ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
 
       - name: Upload failure file
         if: failure()
@@ -111,6 +111,6 @@ jobs:
         with:
           name: failure-files
           path: |
-            ${{ env.PATH_RESUME }}changed-files-$DATETIME.txt
-            ${{ env.PATH_RESUME }}commit-messages-$DATETIME.txt
-            ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
+            ${{ env.PATH_RESUME }}changed-files-${{ DATETIME }}.txt
+            ${{ env.PATH_RESUME }}commit-messages-${{ DATETIME }}.txt
+            ${{ env.PATH_RESUME }}resumen-watson-${{ DATETIME }}.txt
