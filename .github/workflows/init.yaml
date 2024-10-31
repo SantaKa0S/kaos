@@ -56,7 +56,7 @@ jobs:
                 found["$pattern"]=true
               fi
             done
-          done < changed-files.txt
+          done < changed-files-${{ env.DATETIME}}.txt
 
           for pattern in "${!found[@]}"; do
             echo "Triggering ${workflows[$pattern]} workflow..."
