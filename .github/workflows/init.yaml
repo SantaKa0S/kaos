@@ -35,7 +35,7 @@ jobs:
           echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
           echo "USER_EMAIL=$USER_EMAIL" >> $GITHUB_ENV
           echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-          
+
       - name: Write Info to files
         run: |
           # Save all the changed files in the environment variable to use it change-files-0000000000000.txt
@@ -98,8 +98,9 @@ jobs:
         with:
           name: success-files
           path: |
-            changed-files-$DATETIME.txt
-            commit-messages-$DATETIME.txt
+            ./changed-files-$DATETIME.txt
+            ./commit-messages-$DATETIME.txt
+            ./resumen-watson-$DATETIME.txt
 
       - name: Upload failure file
         if: failure()
@@ -107,5 +108,6 @@ jobs:
         with:
           name: failure-files
           path: |
-            changed-files-$DATETIME.txt
-            commit-messages-$DATETIME.txt
+            ./changed-files-$DATETIME.txt
+            ./commit-messages-$DATETIME.txt
+            ./resumen-watson-$DATETIME.txt
