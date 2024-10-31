@@ -71,38 +71,20 @@ jobs:
             gh workflow run "${workflows[$pattern]}" --ref feature
           done
 
-      - name: Run on success
-        if: success()
+      - name: Generate resul of Actions (WATSON)
         run: |
-          echo "Init process (WATSON)" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "The complete information on this execution is:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "with the following content:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo -e "\n" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "Commit:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          cat ${{ env.PATH_RESUME }}commit-messages-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo -e "\n" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "Files:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          cat ${{ env.PATH_RESUME }}changed-files-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo -e "\n" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "and the result has been successful." >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-
-      - name: Run on failure
-        if: failure()
-        run: |
-          echo "Init process (WATSON)" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "The complete information on this execution is:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "with the following content:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo -e "\n" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "Commit:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          cat ${{ env.PATH_RESUME }}commit-messages-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo -e "\n" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "Files:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          cat ${{ env.PATH_RESUME }}changed-files-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo -e "\n" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo "and the result has not been successful." >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-
+          contenido="Init process (WATSON)"
+          contenido+="\nThe complete information on this execution is:"
+          contenido+="\n${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME."
+          contenido+="\nwith the following content:\n"
+          contenido+="\nCommit:\n$(cat ${{ env.PATH_RESUME }}commit-messages-${{ env.DATETIME }}.txt)"
+          contenido+="\n\nFiles:\n$(cat ${{ env.PATH_RESUME }}changed-files-${{ env.DATETIME }}.txt)"
+          if [ "${{ job.status }}" != "success" ]; then
+            contenido+="\n\nand the result has been successful."
+          else
+            contenido+="\n\nand the result has not been failure."
+          fi
+        
       - name: Upload success file
         if: success()
         uses: actions/upload-artifact@v4
