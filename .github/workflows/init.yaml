@@ -74,27 +74,29 @@ jobs:
       - name: Run on success
         if: success()
         run: |
+          echo "Inicio de proceso (WATSON)" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "The complete information on this execution is:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "with the following content:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "Commit:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           cat ${{ env.PATH_RESUME }}commit-messages-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
+          echo "\n" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "Files:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           cat ${{ env.PATH_RESUME }}changed-files-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo " "
           echo "and the result has been successful." >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
 
       - name: Run on failure
         if: failure()
-        run: 
+        run: |
+          echo "Inicio de proceso (WATSON)" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "The complete information on this execution is:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "with the following content:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "Commit:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           cat ${{ env.PATH_RESUME }}commit-messages-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
+          echo "\n" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "Files:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           cat ${{ env.PATH_RESUME }}changed-files-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
-          echo " "
           echo "and the result has not been successful." >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
 
       - name: Upload success file
