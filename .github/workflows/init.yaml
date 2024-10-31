@@ -101,9 +101,9 @@ jobs:
         with:
           name: success-files
           path: |
-            ./${{ env.PATH_RESUME }}changed-files-$DATETIME.txt
-            ./${{ env.PATH_RESUME }}commit-messages-$DATETIME.txt
-            ./${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
+            ${{ env.PATH_RESUME }}changed-files-$DATETIME.txt
+            ${{ env.PATH_RESUME }}commit-messages-$DATETIME.txt
+            ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
 
       - name: Upload failure file
         if: failure()
@@ -111,6 +111,6 @@ jobs:
         with:
           name: failure-files
           path: |
-            ./${{ env.PATH_RESUME }}changed-files-$DATETIME.txt
-            ./${{ env.PATH_RESUME }}commit-messages-$DATETIME.txt
-            ./${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
+            ${{ env.PATH_RESUME }}changed-files-$DATETIME.txt
+            ${{ env.PATH_RESUME }}commit-messages-$DATETIME.txt
+            ${{ env.PATH_RESUME }}resumen-watson-$DATETIME.txt
