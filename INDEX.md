@@ -111,3 +111,4 @@
 - **Version**: v51.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v52.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v53.0.0 - **Description**: Build: New version to TEST of GitHub Actions
+- **Version**: v54.0.0 - **Description**: Build: New version to TEST of GitHub Actions
