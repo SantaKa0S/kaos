@@ -81,10 +81,10 @@ jobs:
           contenido+="\n\nFiles:\n$(cat ${{ env.PATH_RESUME }}changed-files-${{ env.DATETIME }}.txt)"
           if [ "${{ job.status }}" != "success" ]; then
             contenido+="\n\nand the result has been successful."
-            echo "$contenido" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
+            echo -e "$contenido" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           else
             contenido+="\n\nand the result has not been failure."
-            echo "$contenido" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
+            echo - e"$contenido" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           fi
         
       - name: Upload success file

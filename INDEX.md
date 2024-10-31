@@ -118,3 +118,4 @@
 - **Version**: v58.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v59.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v60.0.0 - **Description**: Build: New version to TEST of GitHub Actions
+- **Version**: v61.0.0 - **Description**: Build: New version to TEST of GitHub Actions
