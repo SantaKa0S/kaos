@@ -81,6 +81,7 @@ jobs:
           cat ${{ env.PATH_RESUME }}commit-messages-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "Files:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           cat ${{ env.PATH_RESUME }}changed-files-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
+          echo " "
           echo "and the result has been successful." >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
 
       - name: Run on failure
@@ -93,6 +94,7 @@ jobs:
           cat ${{ env.PATH_RESUME }}commit-messages-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           echo "Files:" >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
           cat ${{ env.PATH_RESUME }}changed-files-${{ env.DATETIME }}.txt >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
+          echo " "
           echo "and the result has not been successful." >> ${{ env.PATH_RESUME }}resumen-watson-${{ env.DATETIME }}.txt
 
       - name: Upload success file
