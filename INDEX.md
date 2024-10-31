@@ -107,3 +107,4 @@
 - **Version**: v48.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v49.0.0 - **Description**: Build: New version to TEST of GitHub Actions
 - **Version**: v49.1.0 - **Description**: Audit: linting results for team feature
+- **Version**: v50.0.0 - **Description**: Build: New version to TEST of GitHub Actions
