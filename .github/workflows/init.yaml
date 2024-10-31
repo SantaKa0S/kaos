@@ -29,16 +29,15 @@ jobs:
           TEAM_NAME=${BRANCH_NAME#feature/}
           USER_NAME=$(git log -1 --pretty=format:'%an')
           USER_EMAIL=$(git log -1 --pretty=format:'%ae')
-          DATETIME=$(date +'%Y%m%d%H%M%S')
           # Save the branch name and team name in the environment variable to use it ${{ env.VARIABLE_NAME}}
           echo "TEAM_NAME=$TEAM_NAME" >> $GITHUB_ENV 
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
           echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
           echo "USER_EMAIL=$USER_EMAIL" >> $GITHUB_ENV
-          echo "DATETIME=$DATETIME" >> $GITHUB_ENV
+          echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
           # Save all the changed files in the environment variable to use it change-files-0000000000000.txt
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files-${{ env.DATETIME}}.txt
-          git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:"%H %s" > commit-messages-${{ env.DATETIME}}.txt
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed-files-$DATETIME.txt
+          git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:"%H %s" > commit-messages-$DATETIME.txt
 
       - name: Exist changes in files
         env:
@@ -57,7 +56,7 @@ jobs:
                 found["$pattern"]=true
               fi
             done
-          done < changed-files-${{ env.DATETIME}}.txt
+          done < changed-files-$DATETIME.txt
 
           for pattern in "${!found[@]}"; do
             echo "Triggering ${workflows[$pattern]} workflow..."
@@ -67,26 +66,26 @@ jobs:
       - name: Run on success
         if: success()
         run: |
-          echo "The complete information on this execution is:" >> resumen-watson-${{ env.DATETIME}}.txt
-          echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> resumen-watson-${{ env.DATETIME}}.txt
-          echo "with the following content:" >> resumen-watson-${{ env.DATETIME}}.txt
-          echo "Commit:" >> resumen-watson-${{ env.DATETIME}}.txt
-          cat commit-messages-${{ env.DATETIME}}.txt >> resumen-watson-${{ env.DATETIME}}.txt
-          echo "Files:" >> resumen-watson-${{ env.DATETIME}}.txt
-          cat changed-files-${{ env.DATETIME}}.txt >> resumen-watson-${{ env.DATETIME}}.txt
-          echo "and the result has been successful." >> resumen-watson-${{ env.DATETIME}}.txt
+          echo "The complete information on this execution is:" >> resumen-watson-$DATETIME.txt
+          echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> resumen-watson-$DATETIME.txt
+          echo "with the following content:" >> resumen-watson-$DATETIME.txt
+          echo "Commit:" >> resumen-watson-$DATETIME.txt
+          cat commit-messages-$DATETIME.txt >> resumen-watson-$DATETIME.txt
+          echo "Files:" >> resumen-watson-$DATETIME.txt
+          cat changed-files-$DATETIME.txt >> resumen-watson-$DATETIME.txt
+          echo "and the result has been successful." >> resumen-watson-$DATETIME.txt
 
       - name: Run on failure
         if: failure()
         run: 
-          echo "The complete information on this execution is:" >> resumen-watson-${{ env.DATETIME}}.txt
-          echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> resumen-watson-${{ env.DATETIME}}.txt
-          echo "with the following content:" >> resumen-watson-${{ env.DATETIME}}.txt
-          echo "Commit:" >> resumen-watson-${{ env.DATETIME}}.txt
-          cat commit-messages-${{ env.DATETIME}}.txt >> resumen-watson-${{ env.DATETIME}}.txt
-          echo "Files:" >> resumen-watson-${{ env.DATETIME}}.txt
-          cat changed-files-${{ env.DATETIME}}.txt >> resumen-watson-${{ env.DATETIME}}.txt
-          echo "and the result has not been successful." >> resumen-watson-${{ env.DATETIME}}.txt
+          echo "The complete information on this execution is:" >> resumen-watson-$DATETIME.txt
+          echo "${{ env.TEAM_NAME}} has requested to perform $GITHUB_EVENT_NAME." >> resumen-watson-$DATETIME.txt
+          echo "with the following content:" >> resumen-watson-$DATETIME.txt
+          echo "Commit:" >> resumen-watson-$DATETIME.txt
+          cat commit-messages-$DATETIME.txt >> resumen-watson-$DATETIME.txt
+          echo "Files:" >> resumen-watson-$DATETIME.txt
+          cat changed-files-$DATETIME.txt >> resumen-watson-$DATETIME.txt
+          echo "and the result has not been successful." >> resumen-watson-$DATETIME.txt
 
       - name: Upload success file
         if: success()
@@ -94,8 +93,8 @@ jobs:
         with:
           name: success-files
           path: |
-            changed-files-${{ env.DATETIME}}.txt
-            commit-messages-${{ env.DATETIME}}.txt
+            changed-files-$DATETIME.txt
+            commit-messages-$DATETIME.txt
 
       - name: Upload failure file
         if: failure()
@@ -103,5 +102,5 @@ jobs:
         with:
           name: failure-files
           path: |
-            changed-files-${{ env.DATETIME}}.txt
-            commit-messages-${{ env.DATETIME}}.txt
+            changed-files-$DATETIME.txt
+            commit-messages-$DATETIME.txt
