@@ -3,6 +3,10 @@ name: Markdown Lint Workflow
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+  actions: write
+
 jobs:
   lint-md:
     runs-on: ubuntu-latest
