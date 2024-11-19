@@ -1,4 +1,5 @@
 # Ka0S
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/203720c203a84af7a9d888680a047df4)](https://app.codacy.com/gh/SantaKa0S/kaos/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 <p align="center">
   <img src="core/imgs/kaos.png" alt="All is Code">
