@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
 
-      - name: Set Info about Commit
+      - name: Set Info about Commit temp vars
         id: set-commit-info
         # Set the branch name and team name and file implicit in commit and save it in the environment variable
         run: |
@@ -34,10 +34,13 @@ jobs:
           USER_NAME=$(git log -1 --pretty=format:'%an')
           USER_EMAIL=$(git log -1 --pretty=format:'%ae')
           PATH_RESUME="./core/results/"
+          KAOS_MODULE="[CORE INIT]"
+          KAOS_STEP_MODULE=""
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
           echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
           echo "USER_EMAIL=$USER_EMAIL" >> $GITHUB_ENV
           echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
+          echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
           echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
           git config --global user.name ${{ secrets.KAOS_USER_NAME }}
           git config --global user.email ${{ secrets.KAOS_USER_EMAIL }}
@@ -45,18 +48,12 @@ jobs:
       - name: Generate files report
         id: generate-files-report
         run: |
-          # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el clico de vida del workflow
+          # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
           # en cada paso este fichero actualiza el contenido, dado que el workflow deja registro en tres partes distintas
           git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.PATH_RESUME }}commit-summary-${{ env.DATETIME }}.txt
-          echo "Commit Summary:"
-          cat ${{ env.PATH_RESUME }}commit-summary-${{ env.DATETIME }}.txt
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
           # este paso es el que provoca que el workflow siga un camino u otro
-          git diff-tree --no-commit-id --name-only -r $(git log -1 --pretty=format:'%H') > ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
-          echo "Files in Commit:"
-          cat ${{ env.PATH_RESUME }}commit-summary-${{ env.DATETIME }}.txt
-          cat ${{ env.KAOS_CORE_MODULES }}
-          cat ${{ env.KAOS_CORE_FILES }}
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
           # Acceder al secreto
           WORKFLOWS_JSON=${{ secrets.KAOS_CORE_MODULES }}
           
@@ -66,6 +63,56 @@ jobs:
           # Imprimir el contenido del array asociativo
           for key in "${!workflows[@]}"; do
             echo "$key: ${workflows[$key]}"
+            case $key in
+              ".github/workflows")
+                echo "Existe este primer directorio"
+                ;;
+              "automations")
+                echo "Directorio de automatizaciones encontrado"
+                ;;
+              "compliance")
+                echo "Directorio de cumplimiento encontrado"
+                ;;
+              "core")
+                echo "Directorio principal encontrado"
+                ;;
+              "monitoring")
+                echo "Directorio de monitoreo encontrado"
+                ;;
+              "observability")
+                echo "Directorio de observabilidad encontrado"
+                ;;
+              "resilence")
+                echo "Directorio de resiliencia encontrado"
+                ;;
+              "security")
+                echo "Directorio de seguridad encontrado"
+                ;;
+              *)
+                echo "Directorio no reconocido"
+                # en este caso deberemos de genarar una issue indicando de una acción no permitida y el máximo detalle
+                KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+                KAOS_ISSUE_BODY=$(cat <<'EOF'
+                An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+                **${{ env.KAOS_MODULE }} Message:**
+                \`\`\`
+                Resultado de la ejecución : **DIRECTORIO NO PERMITIDO**
+                **Please check the job logs for ${{ secret.KAOS_ACTIONS_URL }} ${{ github.run_id }}**
+                \`\`\`
+                **Workflow Name:** ${{ github.workflow }}
+                **Job Name:** ${{ github.job }}
+                **Run ID:** ${{ github.run_id }}
+                **Run Number:** ${{ github.run_number }}
+                **Repository:** ${{ github.repository }}
+                **Branch:** ${{ github.ref }}
+                **Commit:** ${{ github.sha }}
+                **Files Involved:**
+                $(git diff --name-only ${{ github.sha }}^ ${{ github.sha }})
+                Please investigate the issue.
+                EOF
+                )
+                ;;
+            esac 
           done
 
 
