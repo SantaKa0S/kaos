@@ -96,7 +96,7 @@ jobs:
                 **${{ env.KAOS_MODULE }} Message:**
                 \`\`\`
                 Resultado de la ejecución : **DIRECTORIO NO PERMITIDO**
-                **Please check the job logs for ${{ secret.KAOS_ACTIONS_URL }} ${{ github.run_id }}**
+                **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }} ${{ github.run_id }}**
                 \`\`\`
                 **Workflow Name:** ${{ github.workflow }}
                 **Job Name:** ${{ github.job }}
