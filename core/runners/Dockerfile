@@ -1,12 +1,11 @@
 FROM ubuntu:20.04
 ENV TZ=UTC
-SHELL ["/bin/bash", "-c"]
 
 # Actualiza y configura el entorno
 RUN apt-get update && \
     export DEBIAN_FRONTEND=noninteractive && \
     ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
-    apt-get install -y tzdata apt-utils apt-transport-https curl wget  && \
+    apt-get install -y tzdata apt-utils apt-transport-https curl wget git jq && \
     dpkg-reconfigure --frontend noninteractive tzdata && \
     apt-get upgrade -y
 
@@ -22,12 +21,6 @@ RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-p
 RUN wget https://dot.net/v1/dotnet-install.sh && \
     chmod +x dotnet-install.sh && \
     ./dotnet-install.sh -c 6.0
-
-# Instala bash y verifica su existencia
-RUN apt-get install -y bash && \
-    if [ ! -f /bin/bash ]; then echo "Bash not found!"; exit 1; fi && \
-    ln -sf /bin/bash /bin/sh && \
-    ls -l /bin/bash && ls -l /bin/sh
 
 # Creamos el directorio y descargamos el runner
 RUN mkdir actions-runner && cd actions-runner && \
