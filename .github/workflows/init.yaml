@@ -30,8 +30,8 @@ jobs:
         # Set the branch name and team name and file implicit in commit and save it in the environment variable
         run: |
           BRANCH_NAME=${{ github.event.base_ref }}
-          USER_NAME=$(git log -1 --pretty=format:'%an')
-          USER_EMAIL=$(git log -1 --pretty=format:'%ae')
+          USER_NAME=${{ github.actor.name}}
+          USER_EMAIL=${{ github.actor.email }}
           PATH_RESUME="./core/results/"
           KAOS_MODULE="[CORE INIT]"
           KAOS_STEP_MODULE=""
