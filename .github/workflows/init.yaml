@@ -88,24 +88,24 @@ jobs:
                 # en este caso deberemos de genarar una issue indicando de una acción no permitida y el máximo detalle
                 KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
                 KAOS_ISSUE_BODY=$(cat <<'EOF'
-                An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
-                **${{ env.KAOS_MODULE }} Message:**
-                \`\`\`
-                Resultado de la ejecución : **DIRECTORIO NO PERMITIDO**
-                **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }} ${{ github.run_id }}**
-                \`\`\`
-                **Workflow Name:** ${{ github.workflow }}
-                **Job Name:** ${{ github.job }}
-                **Run ID:** ${{ github.run_id }}
-                **Run Number:** ${{ github.run_number }}
-                **Repository:** ${{ github.repository }}
-                **Branch:** ${{ github.ref }}
-                **Commit:** ${{ github.sha }}
-                **Files Involved:**
-                $(git diff --name-only ${{ github.sha }}^ ${{ github.sha }})
-                Please investigate the issue.
-                EOF
-                )
+                                  An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+                                  **${{ env.KAOS_MODULE }} Message:**
+                                  \`\`\`
+                                  Resultado de la ejecución : **DIRECTORIO NO PERMITIDO**
+                                  **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }} ${{ github.run_id }}**
+                                  \`\`\`
+                                  **Workflow Name:** ${{ github.workflow }}
+                                  **Job Name:** ${{ github.job }}
+                                  **Run ID:** ${{ github.run_id }}
+                                  **Run Number:** ${{ github.run_number }}
+                                  **Repository:** ${{ github.repository }}
+                                  **Branch:** ${{ github.ref }}
+                                  **Commit:** ${{ github.sha }}
+                                  **Files Involved:**
+                                  $(git diff --name-only ${{ github.sha }}^ ${{ github.sha }})
+                                  Please investigate the issue.
+                                  EOF
+                                  )
                 ;;
             esac 
           done
