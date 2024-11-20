@@ -51,11 +51,9 @@ jobs:
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
           # este paso es el que provoca que el workflow siga un camino u otro
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
-          # Acceder al secreto
-          WORKFLOWS_JSON=${{ secrets.KAOS_CORE_MODULES }}
           
           # Convertir el JSON de nuevo a un array asociativo
-          declare -A workflows=$(echo "$WORKFLOWS_JSON" | jq -r 'to_entries | map("\(.key)=\(.value)") | .[]')
+          declare -A workflows=$(echo "${{ secrets.KAOS_CORE_MODULES }}" | jq -r 'to_entries | map("\(.key)=\(.value)") | .[]')
           
           # Imprimir el contenido del array asociativo
           for key in "${!workflows[@]}"; do
