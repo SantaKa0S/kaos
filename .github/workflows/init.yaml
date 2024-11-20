@@ -55,7 +55,7 @@ jobs:
           echo "INVOLVED=$INVOLVED" >> $GITHUB_ENV
           
           # Convertir el JSON de nuevo a un array asociativo
-          declare -A workflows=$(echo "${{ secrets.KAOS_CORE_MODULES }}" | jq -r 'to_entries | map("\(.key)=\(.value)") | .[0]')
+          declare -A workflows=$(echo "${{ secrets.KAOS_CORE_MODULES }}" | jq -r 'to_entries | map("\(.key)=\(.value)") | .')
           
           # Imprimir el contenido del array asociativo
           for key in "${!workflows[@]}"; do
