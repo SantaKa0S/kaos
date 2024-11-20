@@ -15,8 +15,8 @@ permissions:
   pull-requests: write
 
 jobs:
-  watson-process:
-    runs-on: ubuntu-latest
+  kaos-init-process:
+    runs-on: self-hosted
 
     steps:
       - name: Checkout Repository
@@ -27,7 +27,6 @@ jobs:
           token: ${{ secrets.KAOS_TOKEN }}
 
       - name: Set Info about Commit temp vars
-        id: set-commit-info
         # Set the branch name and team name and file implicit in commit and save it in the environment variable
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
@@ -41,12 +40,12 @@ jobs:
           echo "USER_EMAIL=$USER_EMAIL" >> $GITHUB_ENV
           echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
           echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
+          echo "KAOS_STEP_MODULE=$KAOS__STEP_MODULE" >> $GITHUB_ENV
           echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
           git config --global user.name ${{ secrets.KAOS_USER_NAME }}
           git config --global user.email ${{ secrets.KAOS_USER_EMAIL }}
 
       - name: Generate files report
-        id: generate-files-report
         run: |
           # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
           # en cada paso este fichero actualiza el contenido, dado que el workflow deja registro en tres partes distintas
