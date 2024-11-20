@@ -51,6 +51,8 @@ jobs:
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
           # este paso es el que provoca que el workflow siga un camino u otro
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
+          INVOLVED=$(cat ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt)
+          echo "INVOLVED=$INVOLVED" >> $GITHUB_ENV
           
           # Convertir el JSON de nuevo a un array asociativo
           declare -A workflows=$(echo "${{ secrets.KAOS_CORE_MODULES }}" | jq -r 'to_entries | map("\(.key)=\(.value)") | .[]')
@@ -87,25 +89,7 @@ jobs:
                 echo "Directorio no reconocido"
                 # en este caso deberemos de genarar una issue indicando de una acción no permitida y el máximo detalle
                 KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
-                KAOS_ISSUE_BODY=$(cat <<'EOF'
-                                  An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
-                                  **${{ env.KAOS_MODULE }} Message:**
-                                  \`\`\`
-                                  Resultado de la ejecución : **DIRECTORIO NO PERMITIDO**
-                                  **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }} ${{ github.run_id }}**
-                                  \`\`\`
-                                  **Workflow Name:** ${{ github.workflow }}
-                                  **Job Name:** ${{ github.job }}
-                                  **Run ID:** ${{ github.run_id }}
-                                  **Run Number:** ${{ github.run_number }}
-                                  **Repository:** ${{ github.repository }}
-                                  **Branch:** ${{ github.ref }}
-                                  **Commit:** ${{ github.sha }}
-                                  **Files Involved:**
-                                  $(git diff --name-only ${{ github.sha }}^ ${{ github.sha }})
-                                  Please investigate the issue.
-                                  EOF
-                                  )
+                KAOS_ISSUE_BODY=$(printf "This is a resume to the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Success Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }} ${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
                 ;;
             esac 
           done
