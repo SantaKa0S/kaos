@@ -124,7 +124,7 @@ jobs:
           An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
           **[KAOS INIT]  Message:**
           \`\`\`
-          **Please check the job logs for https://github.com/mapfre-tech/cloud-tec-automation-catalog/actions/runs/${{ github.run_id }}**
+          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
           **Workflow Name:** ${{ github.workflow }}
           **Job Name:** ${{ github.job }}
