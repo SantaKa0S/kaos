@@ -59,7 +59,8 @@ jobs:
           kaos-modules: ${{ secrets.KAOS_CORE_MODULES }}
         run: |
           # vamos a determinar que accion debera de ser la siguiente en el flujo
-          modules="${{ secrets.KAOS_CORE_MODULES }}"
+          echo "KAOS_CORE_MODULES=${{ secrets.KAOS_CORE_MODULES }}" >> $GITHUB_ENV
+          modules="${{ env.KAOS_CORE_MODULES }}"
           IFS=',' read -r -a module_array <<< "$modules"
           while IFS= read -r line; do
             for module in "${module_array[@]}"; do
