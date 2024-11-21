@@ -55,6 +55,8 @@ jobs:
           echo "INVOLVED=$INVOLVED" >> $GITHUB_ENV
 
       - name: We check the module where the action is to be performed
+        env:
+          kaos-modules: ${{ secrets.KAOS_CORE_MODULES }}
         run: |
           # vamos a determinar que accion debera de ser la siguiente en el flujo
           modules="${{ secrets.KAOS_CORE_MODULES }}"
