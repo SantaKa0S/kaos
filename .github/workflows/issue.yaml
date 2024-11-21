@@ -56,7 +56,7 @@ jobs:
           USER_NAME=${{ github.actor.name}}
           USER_EMAIL=${{ github.actor.email }}
           PATH_RESUME="./core/results/"
-          KAOS_MODULE="[CORE INIT]"
+          KAOS_MODULE="[YAML LINT]"
           KAOS_STEP_MODULE=""
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
           echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
@@ -104,4 +104,34 @@ jobs:
                     # el modulo de issues fallara y creara una issue propia  
                   ;;
             esac
+
+      - name: Check execution
+        env:
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+        if: failure()
+        run: |
+          echo "Error detected in KaoS INIT, creating issue..."
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_BODY=$(cat <<'EOF'
+          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          **[KAOS INIT]  Message:**
+          \`\`\`
+          **Please check the job logs for https://github.com/mapfre-tech/cloud-tec-automation-catalog/actions/runs/${{ github.run_id }}**
+          \`\`\`
+          **Workflow Name:** ${{ github.workflow }}
+          **Job Name:** ${{ github.job }}
+          **Run ID:** ${{ github.run_id }}
+          **Run Number:** ${{ github.run_number }}
+          **Repository:** ${{ github.repository }}
+          **Branch:** ${{ github.ref }}
+          **Commit:** ${{ github.sha }}
+          **Files Involved:**
+          ${{ env.INVOLVED }}
+          Please investigate the issue.
+          EOF
+          )
+          gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
+          GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
+          echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
+          "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
             
