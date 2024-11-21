@@ -1,0 +1,16 @@
+extends: default
+
+rules:
+# 80 chars should be enough, but don't fail if a line is longer
+  line-length: disable
+# Head of document
+  document-start: disable
+# don't bother me with this rule
+  indentation: disable
+# don't bother me with this rule
+  trailing-spaces: disable
+# don't bother me with this rule
+  truthy:
+    level: warning
+    ignore: |
+      .github/workflows/*.yaml
