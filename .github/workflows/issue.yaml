@@ -11,9 +11,13 @@ on:
         description: 'Body'
         default: "Kaos Issue Body Example"
         required: true
+      kaos-issue-body-file:
+        description: 'Attach file to body'
+        default: ""
+        required: true
       kaos-issue-actions:
         description: 'Issue Actions'
-        default: "Kaos Issue Actions Example"
+        default: "create"
         required: true
         type: choice
         options:
@@ -23,11 +27,11 @@ on:
         - reopen
       kaos-issue-tag:
         description: 'Issue tag'
-        default: "Kaos Issue Tag Example"
+        default: "bug"
         required: true
       kaos-issue-id:
         description: 'Issue ID'
-        default: "Kaos Issue ID Example"
+        default: "1"
         required: true
   
 
@@ -80,8 +84,12 @@ jobs:
                     "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
                     ;;
                 comment)
-                    # Añadimos comentarios a una issue en concreto
-                    gh issue comment ${{ env.KAOS_ISSUE_ID }} -b "${{ github.event.inputs.kaos-issue-body }}"
+                    # Añadimos comentarios a una issue en concreto o ficheros
+                    if [[ "${{ github.event.inputs.kaos-issue-body }}" == ""]]
+                      gh issue comment ${{ env.KAOS_ISSUE_ID }} -b "${{ github.event.inputs.kaos-issue-body }}"
+                    else
+                      gh issue comment ${{ env.KAOS_ISSUE_ID }} -b "${{ github.event.inputs.kaos-issue-body }}" --body-file ${{ github.event.inputs.kaos-issue-body-file }}
+                    fi
                   ;;
                 close)
                     # Cerramos una issue finalizada
