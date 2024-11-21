@@ -1,0 +1,113 @@
+name: Ka0s YAML Lint
+
+on:
+  workflow_dispatch: # Permite disparar el workflow manualmente
+    inputs:
+      kaos-origin:
+        description: 'Dispatcher Workflow Run ID'
+        default: ""
+        required: true
+      kaos-files:
+        description: 'Files Involved'
+        default: ""
+        required: true
+      kaos-issue-id:
+        description: 'Issue ID'
+        default: "Kaos Issue ID"
+        required: true
+  
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  yaml-lint-process:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+      # Checkout the repository to get the information of the commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+
+      - name: Set Info about Commit temp vars
+        # Set the branch name and team name and file implicit in commit and save it in the environment variable
+        run: |
+          BRANCH_NAME=${{ github.event.base_ref }}
+          USER_NAME=${{ github.actor.name}}
+          USER_EMAIL=${{ github.actor.email }}
+          PATH_RESUME="./core/results/"
+          KAOS_MODULE="[YAML LINT]"
+          KAOS_STEP_MODULE=""
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+          echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
+          echo "USER_EMAIL=$USER_EMAIL" >> $GITHUB_ENV
+          echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
+          echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
+          echo "KAOS_STEP_MODULE=$KAOS__STEP_MODULE" >> $GITHUB_ENV
+          echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+    
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+  
+      - name: Install yamllint
+        run: |
+          python -m pip install yamllint
+
+      - name: Check yaml lint condition
+        env:
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+          KAOS_YAMLLINT_CONFIG: ${{ secrets.KAOS_YAMLLINT_CONFIG }}
+        run: |
+            # Invocamos la primera comprobación de base, sino se supera el proceso no continua
+            yamllint -c $KAOS_YAMLLINT_CONFIG "${{ github.event.inputs.kaos-files }}" >> core/results/yaml-lint-results-${{ github.run_id }}-${{ env.DATETIME }}.txt || true
+              # Check if exist errors in file
+              if [ ! -s .core/results/yaml-lint-results-${{ github.run_id }}-${{ env.DATETIME }}.txt ]; then
+                # Todo ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso
+                KAOS_ISSUE_BODY="The yaml lint process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} and its result has been SUCCESS"
+                gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-title="" -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+                # una vez finalizado este proceso, en funcion del modulo donde esta ubicado el fichero que se ha comprobado ejecutara un jobs u otro                
+              else
+                # Algo no ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso
+                KAOS_ISSUE_BODY="The yaml lint process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} and its result has been FAILED, please check core/results/yaml-lint-results-${{ github.run_id }}-${{ env.DATETIME }}.txt"
+                gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-title="" -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-body-file=core/results/yaml-lint-results-${{ github.run_id }}-${{ env.DATETIME }}.txt
+                # una vez finalizado este proceso, en funcion del modulo donde esta ubicado el ficher que se ha comprobado ejecutara un jobs u otro 
+              fi
+      - name: Check execution
+        env:
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+        if: failure()
+        run: |
+          echo "Error detected in KaoS INIT, creating issue..."
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_BODY=$(cat <<'EOF'
+          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          **[KAOS INIT]  Message:**
+          \`\`\`
+          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
+          \`\`\`
+          **Workflow Name:** ${{ github.workflow }}
+          **Job Name:** ${{ github.job }}
+          **Run ID:** ${{ github.run_id }}
+          **Run Number:** ${{ github.run_number }}
+          **Repository:** ${{ github.repository }}
+          **Branch:** ${{ github.ref }}
+          **Commit:** ${{ github.sha }}
+          **Files Involved:**
+          ${{ env.INVOLVED }}
+          Please investigate the issue.
+          EOF
+          )
+          gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
+          GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
+          echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
+          "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
+      
+      
