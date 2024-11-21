@@ -74,14 +74,14 @@ jobs:
             case ${{ github.event.inputs.kaos-issue-actions }} in
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
-                    gh issue create -t "${{ github.event.inputs.kaos-issue-kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-kaos-issue-tag }}" -a "${{ github.actor.name }}"
-                    GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
+                    gh issue create -t "${{ github.event.inputs.aos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.actor.name }}"
+                    GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-title }}"'") | .number')
                     echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
                     "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
                     ;;
                 comment)
                     # Añadimos comentarios a una issue en concreto
-                    gh issue comment ${{ env.KAOS_ISSUE_ID }} -b "${{ github.event.inputs.kaos-issue-kaos-issue-body }}"
+                    gh issue comment ${{ env.KAOS_ISSUE_ID }} -b "${{ github.event.inputs.kaos-issue-body }}"
                   ;;
                 close)
                     # Cerramos una issue finalizada
