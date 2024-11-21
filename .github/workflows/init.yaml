@@ -114,7 +114,7 @@ jobs:
           An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
           **[KAOS INIT]  Message:**
           \`\`\`
-          **Please check the job logs for https://github.com/mapfre-tech/cloud-tec-automation-catalog/actions/runs/${{ github.run_id }}**
+          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
           **Workflow Name:** ${{ github.workflow }}
           **Job Name:** ${{ github.job }}
@@ -129,7 +129,7 @@ jobs:
           EOF
           )
           gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
-          GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
+          GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-title }}"'") | .number')
           echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
           "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
 
