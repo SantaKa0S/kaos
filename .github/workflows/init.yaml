@@ -53,21 +53,31 @@ jobs:
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
           INVOLVED=$(cat ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt)
           echo "INVOLVED=$INVOLVED" >> $GITHUB_ENV
-          
-          modules_to_check=".guthub/workflows core ensaladilla"
-              IFS=',' read -r -a secret_modules <<< "${{ secrets.KAOS_CORE_MODULES }}"
-              for module in $modules_to_check; do
-                if [[ " ${secret_modules[@]} " =~ " ${module} " ]]; then
-                  echo "Module $module exists in secrets"
-                  # desde aqui llamamos a los actions principales que son propietarios de cada repositorio
-                  # vamos a trabajar con el de Observabilidad
-                else
-                  echo "Module $module does not exist in secrets"
+
+      - name: We check the module where the action is to be performed
+        run: |
+          # vamos a determinar que accion debera de ser la siguiente en el flujo
+          modules="${{ secrets.KAOS_CORE_MODULES }}"
+          IFS=',' read -r -a module_array <<< "$modules"
+          while IFS= read -r line; do
+            for module in "${module_array[@]}"; do
+              if [[ "$line" == *"$module"* ]]; then
+                file_name=$(basename "$line")
+                file_extension="${file_name##*.}"
+                echo "Encontrado el módulo: $module"
+                echo "Nombre del fichero: $file_name"
+                echo "Extensión del fichero: $file_extension"
+                echo "FILE_NAME=$file_name" >> $GITHUB_ENV
+                echo "FILE_EXTENSION=$file_extension" >> $GITHUB_ENV
+              else
+                echo "A este módulo no tiene acceso: $module"
+                echo "Module $module does not exist in secrets"
                   # en este caso deberemos de genarar una issue indicando de una acción no permitida y el máximo detalle
                   KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
                   KAOS_ISSUE_BODY=$(printf "This is a resume to the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Success Message:**\n\`\`\`\nPlease check the job logs for ${{ secret.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
-                fi
-              done
+              fi
+            done
+          done < ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
@@ -83,9 +93,9 @@ jobs:
         if: failure()
         run: |
           echo "Error detected in KaoS INIT, creating issue..."
-          KAOS_ISSUE_TITLE="[KAOS INIT] Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
-          An error occurred in the [KAOS INIT] Action workflow **${{ github.workflow }}**.
+          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
           **[KAOS INIT]  Message:**
           \`\`\`
           **Please check the job logs for https://github.com/mapfre-tech/cloud-tec-automation-catalog/actions/runs/${{ github.run_id }}**
