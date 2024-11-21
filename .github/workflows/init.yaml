@@ -54,46 +54,18 @@ jobs:
           INVOLVED=$(cat ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt)
           echo "INVOLVED=$INVOLVED" >> $GITHUB_ENV
           
-          # Convertir el JSON de nuevo a un array asociativo
-          declare -A workflows=$(echo "${{ secrets.KAOS_CORE_MODULES }}" | jq -r 'to_entries | map("\(.key)=\(.value)") | .')
-          
-          # Imprimir el contenido del array asociativo
-          for key in "${!workflows[@]}"; do
-            echo "$key: ${workflows[$key]}"
-            case $key in
-              ".github/workflows")
-                echo "Existe este primer directorio"
-                ;;
-              "automations")
-                echo "Directorio de automatizaciones encontrado"
-                ;;
-              "compliance")
-                echo "Directorio de cumplimiento encontrado"
-                ;;
-              "core")
-                echo "Directorio principal encontrado"
-                ;;
-              "monitoring")
-                echo "Directorio de monitoreo encontrado"
-                ;;
-              "observability")
-                echo "Directorio de observabilidad encontrado"
-                ;;
-              "resilence")
-                echo "Directorio de resiliencia encontrado"
-                ;;
-              "security")
-                echo "Directorio de seguridad encontrado"
-                ;;
-              *)
-                echo "Directorio no reconocido"
-                # en este caso deberemos de genarar una issue indicando de una acción no permitida y el máximo detalle
-                KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
-                KAOS_ISSUE_BODY=$(printf "This is a resume to the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Success Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }} ${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
-                ;;
-            esac 
-          done
-
+          modules_to_check=".guthub/workflows core"
+              IFS=',' read -r -a secret_modules <<< "${{ secrets.KAOS_CORE_MODULES }}"
+              for module in $modules_to_check; do
+                if [[ " ${secret_modules[@]} " =~ " ${module} " ]]; then
+                  echo "Module $module exists in secrets"
+                else
+                  echo "Module $module does not exist in secrets"
+                  # en este caso deberemos de genarar una issue indicando de una acción no permitida y el máximo detalle
+                  KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+                  KAOS_ISSUE_BODY=$(printf "This is a resume to the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Success Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }} ${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
+                fi
+              done
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
