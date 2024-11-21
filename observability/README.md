@@ -4,6 +4,9 @@ Este repositorio esta compuesto de diferentes diviones en funcion de las necesad
 Básicamente su estructura inicial es
 observability/
     data/
+        jenkins/
+        github/
+        finops/
     viewer/
     parser/
     
