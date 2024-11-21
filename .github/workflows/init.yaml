@@ -82,7 +82,7 @@ jobs:
                     echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
                     "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
                     # Lanzamos el lint del fichero
-                    gh workflow run $FILE_EXTENSIONlint.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-origin=${{ github.event.inputs.file-name }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=${{ env.KAOS_ISSUE_ID }}
+                    gh workflow run $FILE_EXTENSIONlint.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=${{ env.KAOS_ISSUE_ID }}
                 done
 
               else
