@@ -1,0 +1,100 @@
+name: Ka0s Issues
+
+on:
+  workflow_dispatch: # Permite disparar el workflow manualmente
+    inputs:
+      kaos-issue-title:
+        description: 'Title'
+        default: "Kaos Issue Title Example"
+        required: true
+      kaos-issue-body:
+        description: 'Body'
+        default: "Kaos Issue Body Example"
+        required: true
+      kaos-issue-actions:
+        description: 'Issue Actions'
+        default: "Kaos Issue Actions Example"
+        required: true
+        type: choice
+        options:
+        - create
+        - comment
+        - close
+        - reopen
+      kaos-issue-tag:
+        description: 'Issue tag'
+        default: "Kaos Issue Tag Example"
+        required: true
+      kaos-issue-id:
+        description: 'Issue ID'
+        default: "Kaos Issue ID Example"
+        required: true
+  
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  kaos-init-process:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+      # Checkout the repository to get the information of the commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+
+      - name: Set Info about Commit temp vars
+        # Set the branch name and team name and file implicit in commit and save it in the environment variable
+        run: |
+          BRANCH_NAME=${{ github.event.base_ref }}
+          USER_NAME=${{ github.actor.name}}
+          USER_EMAIL=${{ github.actor.email }}
+          PATH_RESUME="./core/results/"
+          KAOS_MODULE="[CORE INIT]"
+          KAOS_STEP_MODULE=""
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+          echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
+          echo "USER_EMAIL=$USER_EMAIL" >> $GITHUB_ENV
+          echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
+          echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
+          echo "KAOS_STEP_MODULE=$KAOS__STEP_MODULE" >> $GITHUB_ENV
+          echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+      
+      - name: Work with issues
+        env:
+          GH_TOKEN: ${{ secrets.GH_APP_TEC }}
+        run: |
+            # Lo primero comprobar la acción que queremos realizar
+            case ${{ github.event.inputs.kaos-issue-actions }} in
+                create)
+                    # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
+                    gh issue create -t "${{ github.event.inputs.kaos-issue-kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-kaos-issue-tag }}" -a "${{ github.actor.name }}"
+                    GH_TEC_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
+                    echo "KAOS_ISSUE_ID=GH_TEC_ID" >> $GITHUB_ENV
+                    "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
+                    ;;
+                comment)
+                    # Añadimos comentarios a una issue en concreto
+                    gh issue comment ${{ env.KAOS_ISSUE_ID }} -b "${{ github.event.inputs.kaos-issue-kaos-issue-body }}"
+                  ;;
+                close)
+                    # Cerramos una issue finalizada
+                    gh issue close ${{ env.KAOS_ISSUE_ID }} -c "Issue: ${{ env.KAOS_ISSUE_ID }} closed by  ${{ github.actor.name }}" -r "completed"
+                  ;;
+                reopen)
+                    # Reabrimos una issue que no ha sido solucionada
+                    gh issue reopen ${{ env.KAOS_ISSUE_ID }} -c "Reopen Issue: ${{ env.KAOS_ISSUE_ID }} by  ${{ github.actor.name }}"
+                    gh issue edit ${{ env.KAOS_ISSUE_ID }} --remove-label "resolved"
+                  ;;
+                *)
+                    # Si no es alguna de las anteriores
+                    # el modulo de issues fallara y creara una issue propia  
+                  ;;
+            esac
+            
