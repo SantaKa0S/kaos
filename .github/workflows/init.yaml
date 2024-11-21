@@ -54,7 +54,7 @@ jobs:
           INVOLVED=$(cat ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt)
           echo "INVOLVED=$INVOLVED" >> $GITHUB_ENV
           
-          modules_to_check=".guthub/workflows core"
+          modules_to_check=".guthub/workflows core ensaladilla"
               IFS=',' read -r -a secret_modules <<< "${{ secrets.KAOS_CORE_MODULES }}"
               for module in $modules_to_check; do
                 if [[ " ${secret_modules[@]} " =~ " ${module} " ]]; then
@@ -65,7 +65,7 @@ jobs:
                   echo "Module $module does not exist in secrets"
                   # en este caso deberemos de genarar una issue indicando de una acción no permitida y el máximo detalle
                   KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
-                  KAOS_ISSUE_BODY=$(printf "This is a resume to the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Success Message:**\n\`\`\`\nPlease check the job logs for https://github.com/mapfre-tech/cloud-tec-automation-catalog/actions/runs/${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
+                  KAOS_ISSUE_BODY=$(printf "This is a resume to the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Success Message:**\n\`\`\`\nPlease check the job logs for ${{ secret.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
                 fi
               done
 
@@ -76,3 +76,34 @@ jobs:
           path: |
             ${{ env.PATH_RESUME }}commit-summary-${{ env.DATETIME }}.txt
             ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
+      
+      - name: Check execution
+        env:
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+        if: failure()
+        run: |
+          echo "Error detected in KaoS INIT, creating issue..."
+          KAOS_ISSUE_TITLE="[KAOS INIT] Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_BODY=$(cat <<'EOF'
+          An error occurred in the [KAOS INIT] Action workflow **${{ github.workflow }}**.
+          **[KAOS INIT]  Message:**
+          \`\`\`
+          **Please check the job logs for https://github.com/mapfre-tech/cloud-tec-automation-catalog/actions/runs/${{ github.run_id }}**
+          \`\`\`
+          **Workflow Name:** ${{ github.workflow }}
+          **Job Name:** ${{ github.job }}
+          **Run ID:** ${{ github.run_id }}
+          **Run Number:** ${{ github.run_number }}
+          **Repository:** ${{ github.repository }}
+          **Branch:** ${{ github.ref }}
+          **Commit:** ${{ github.sha }}
+          **Files Involved:**
+          ${{ env.INVOLVED }}
+          Please investigate the issue.
+          EOF
+          )
+          gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
+          GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
+          echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
+          "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
+
