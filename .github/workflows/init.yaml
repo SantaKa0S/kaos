@@ -57,6 +57,7 @@ jobs:
       - name: We check the module where the action is to be performed
         env:
             modules: ${{ secrets.KAOS_CORE_MODULES }}
+            files: ${{ secrets.KAOS_CORE_FILES }}
         run: |
           # vamos a determinar que accion debera de ser la siguiente en el flujo
           IFS=',' read -r -a module_array <<< "$modules"
@@ -70,9 +71,23 @@ jobs:
                 echo "Extensión del fichero: $file_extension"
                 echo "FILE_NAME=$file_name" >> $GITHUB_ENV
                 echo "FILE_EXTENSION=$file_extension" >> $GITHUB_ENV
+                IFS=',' read -r -a file_array <<< "$files"
+                for module in "${module_array[@]}"; do
+                  if [[ "$FILE_EXTENSION" == "$file"]]
+                    # en este caso deberemos de genarar una issue indicando de una acción no permitida y el máximo detalle
+                    KAOS_ISSUE_TITLE="[WORFLOW] Action Started: ${{ github.workflow }}"
+                    KAOS_ISSUE_BODY=$(printf "This is a issue created by ${{ env.KAOS_MODULE }} to register Actions workflows **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
+                    gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "workflow" --repo ${{ github.repository }}
+                    GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
+                    echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
+                    "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
+                    # Lanzamos el lint del fichero
+                    gh workflow run $FILE_EXTENSIONlint.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-origin=${{ github.event.inputs.file-name }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=${{ env.KAOS_ISSUE_ID }}
+                done
+
               else
-                echo "A este módulo no tiene acceso: $module"
-                echo "Module $module does not exist in secrets"
+                echo "No ha ejecuciones para este módulo: $module"
+                echo "Not execution module $module does not exist in changed in files envolved"
                   # en este caso deberemos de genarar una issue indicando de una acción no permitida y el máximo detalle
                   KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
                   KAOS_ISSUE_BODY=$(printf "This is a resume to the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Success Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
