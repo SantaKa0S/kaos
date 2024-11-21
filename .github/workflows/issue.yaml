@@ -75,8 +75,8 @@ jobs:
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
                     gh issue create -t "${{ github.event.inputs.kaos-issue-kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-kaos-issue-tag }}" -a "${{ github.actor.name }}"
-                    GH_TEC_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
-                    echo "KAOS_ISSUE_ID=GH_TEC_ID" >> $GITHUB_ENV
+                    GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
+                    echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
                     "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
                     ;;
                 comment)
@@ -89,7 +89,14 @@ jobs:
                   ;;
                 reopen)
                     # Reabrimos una issue que no ha sido solucionada
+                    title="${{ github.event.inputs.kaos-issue-title }}"
+                    if [[ "$title" == *"[SUCCESS]"* ]]; then
+                      echo "Found [SUCCESS] in the title"
+                      new_title="${title//[SUCCESS]/[FAILED]}"
+                      echo "new_title=$new_title" >> $GITHUB_ENV
+                    fi
                     gh issue reopen ${{ env.KAOS_ISSUE_ID }} -c "Reopen Issue: ${{ env.KAOS_ISSUE_ID }} by  ${{ github.actor.name }}"
+                    gh issue edit ${{ env.KAOS_ISSUE_ID }} -t "$new_title"
                     gh issue edit ${{ env.KAOS_ISSUE_ID }} --remove-label "resolved"
                   ;;
                 *)
