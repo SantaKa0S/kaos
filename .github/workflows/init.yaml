@@ -106,6 +106,7 @@ jobs:
       - name: Check execution
         env:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+          GH_ISSUE_ID: ${{ vars.KAOS_ISSUE_ID }}
         if: failure()
         run: |
           echo "Error detected in KaoS INIT, creating issue..."
