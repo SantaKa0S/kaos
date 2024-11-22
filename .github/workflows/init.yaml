@@ -72,9 +72,9 @@ jobs:
                 echo "FILE_NAME=$file_name" >> $GITHUB_ENV
                 echo "FILE_EXTENSION=$file_extension" >> $GITHUB_ENV
                 IFS=',' read -r -a file_array <<< "$files"
-                for module in "${module_array[@]}"; do
+                for file in "${file_array[@]}"; do
                   if [[ "$FILE_EXTENSION" == "$file"]]
-                    # en este caso deberemos de genarar una issue indicando de una acción no permitida y el máximo detalle
+                    # en este caso deberemos de genarar una issue indicando de una acción en ejecucion y el máximo detalle
                     KAOS_ISSUE_TITLE="[WORFLOW] Action Started: ${{ github.workflow }}"
                     KAOS_ISSUE_BODY=$(printf "This is a issue created by ${{ env.KAOS_MODULE }} to register Actions workflows **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
                     gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "workflow" --repo ${{ github.repository }}
