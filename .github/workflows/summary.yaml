@@ -1,0 +1,119 @@
+name: Ka0s Summary
+
+on:
+    workflow_dispatch:
+    schedule:
+      - cron: '0 0 * * *' # Ejecutar diariamente a medianoche
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  kaos-init-summary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+      # Checkout the repository to get the information of the commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+
+      - name: Set Info about Commit temp vars
+        # Set the branch name and team name and file implicit in commit and save it in the environment variable
+        run: |
+          BRANCH_NAME=${{ github.event.base_ref }}
+          USER_NAME=${{ github.actor.name}}
+          USER_EMAIL=${{ github.actor.email }}
+          PATH_RESUME="./core/results/"
+          KAOS_MODULE="[CORE SUMMARY]"
+          KAOS_STEP_MODULE=""
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+          echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
+          echo "USER_EMAIL=$USER_EMAIL" >> $GITHUB_ENV
+          echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
+          echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
+          echo "KAOS_STEP_MODULE=$KAOS_STEP_MODULE" >> $GITHUB_ENV
+          echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+      - name: Summary Audit Log
+        env:
+           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+        run: |
+             #!/bin/bash
+
+             # Configuración
+             GITHUB_TOKEN="${{ secrets.KAOS_TOKEN }}"
+             ORG="santaka0s"
+             OUTPUT_FILE="${{ env.PATH_RESUME }}kaos-audit-log-${{ env.DATETIME }}.csv"
+             
+             # Inicializar el archivo CSV
+             echo "action,actor,created_at" > $OUTPUT_FILE
+             
+             # Función para obtener los registros de auditoría
+             get_audit_logs() {
+               local cursor=$1
+               local url="https://api.github.com/orgs/$ORG/audit-log?per_page=100"
+               if [ -n "$cursor" ]; then
+                 url="$url&after=$cursor"
+               fi
+             
+               curl -s -H "Authorization: Bearer $GITHUB_TOKEN" $url
+             }
+         
+             # Obtener los registros de auditoría y paginar
+             cursor=""
+             while : ; do
+               response=$(get_audit_logs $cursor)
+               echo "$response" | jq -r '.[] | [.action, .actor, .created_at] | @csv' >> $OUTPUT_FILE
+               cursor=$(echo "$response" | jq -r '.[-1].cursor')
+               if [ "$cursor" == "null" ]; then
+                 break
+               fi
+             done
+         
+             echo "Audit logs have been saved to $OUTPUT_FILE"
+
+      - name: Upload parameter file
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports-audit-files
+          path: |
+            ${{ env.PATH_RESUME }}kaos-audit-log-${{ env.DATETIME }}.csv
+      
+      - name: Check execution
+        env:
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+          GH_ISSUE_ID: ${{ vars.KAOS_ISSUE_ID }}
+        if: failure()
+        run: |
+          echo "Error detected in KaoS INIT, creating issue..."
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_BODY=$(cat <<'EOF'
+          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          **[KAOS INIT]  Message:**
+          \`\`\`
+          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
+          \`\`\`
+          **Workflow Name:** ${{ github.workflow }}
+          **Job Name:** ${{ github.job }}
+          **Run ID:** ${{ github.run_id }}
+          **Run Number:** ${{ github.run_number }}
+          **Repository:** ${{ github.repository }}
+          **Branch:** ${{ github.ref }}
+          **Commit:** ${{ github.sha }}
+          **Files Involved:**
+          ${{ env.INVOLVED }}
+          Please investigate the issue.
+          EOF
+          )
+          gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
+          GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-title }}"'") | .number')
+          echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
+          "KAOS_ISSUE_ID is ${{ vars.KAOS_ISSUE_ID }}"
+  
+  
