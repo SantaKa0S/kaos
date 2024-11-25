@@ -50,33 +50,42 @@ jobs:
              GITHUB_TOKEN="${{ secrets.KAOS_TOKEN }}"
              ORG="santaka0s"
              OUTPUT_FILE="${{ env.PATH_RESUME }}kaos-audit-log-${{ env.DATETIME }}.csv"
-             
-             # Función para obtener los registros de auditoría
-                get_audit_logs() {
-                  local cursor=$1
-                  local url="https://api.github.com/orgs/$ORG/audit-log?per_page=100"
-                  if [ -n "$cursor" ]; then
-                    url="$url&after=$cursor"
-                  fi
+             PROJECT_NUMBER=1 # Cambia esto al número de tu proyecto
 
-                  gh api -H "Accept: application/vnd.github.v3+json" $url
-                }
-
-                # Obtener los registros de auditoría y paginar
-                cursor=""
-                while : ; do
-                  response=$(get_audit_logs $cursor)
-                  echo "$response" | jq -c '.[]' >> $OUTPUT_FILE
-                  cursor=$(echo "$response" | jq -r '.[-1].cursor')
-                  if [ "$cursor" == "null" ]; then
-                    break
-                  fi
-                done
-
-                # Cerrar el archivo JSON
-                echo "]" >> $OUTPUT_FILE
-                        
-                echo "Audit logs have been saved to $OUTPUT_FILE"
+                # Obtener la información del proyecto
+                gh api graphql -F owner="$ORG" -F number="$PROJECT_NUMBER" -f query='
+                query($owner: String!, $number: Int!) {
+                  organization(login: $owner) {
+                    projectV2(number: $number) {
+                      title
+                      description
+                      createdAt
+                      updatedAt
+                      items(first: 100) {
+                        nodes {
+                          content {
+                            ... on Issue {
+                              title
+                              body
+                              state
+                              createdAt
+                              updatedAt
+                            }
+                            ... on PullRequest {
+                              title
+                              body
+                              state
+                              createdAt
+                              updatedAt
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }' > $OUTPUT_FILE
+              
+                echo "Project summary has been saved to $OUTPUT_FILE"
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
