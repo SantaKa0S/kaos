@@ -51,28 +51,32 @@ jobs:
              ORG="santaka0s"
              OUTPUT_FILE="${{ env.PATH_RESUME }}kaos-audit-log-${{ env.DATETIME }}.csv"
              
-             # Inicializar el archivo CSV
-             echo "action,actor,created_at" > $OUTPUT_FILE
-             
              # Función para obtener los registros de auditoría
-             get_audit_logs() {
-               local cursor=$1
-               local url="https://api.github.com/orgs/$ORG/audit-log?per_page=100"
-               if [ -n "$cursor" ]; then
-                 url="$url&after=$cursor"
-               fi
-             
-               curl -s -H "Authorization: Bearer $GITHUB_TOKEN" $url
-             }
-         
-             # Obtener los registros de auditoría y paginar
-             cursor=""
-             while : ; do
-               response=$(get_audit_logs $cursor)
-               echo "$response" >> $OUTPUT_FILE
-             done
-         
-             echo "Audit logs have been saved to $OUTPUT_FILE"
+                get_audit_logs() {
+                  local cursor=$1
+                  local url="https://api.github.com/orgs/$ORG/audit-log?per_page=100"
+                  if [ -n "$cursor" ]; then
+                    url="$url&after=$cursor"
+                  fi
+
+                  gh api -H "Accept: application/vnd.github.v3+json" $url
+                }
+
+                # Obtener los registros de auditoría y paginar
+                cursor=""
+                while : ; do
+                  response=$(get_audit_logs $cursor)
+                  echo "$response" | jq -c '.[]' >> $OUTPUT_FILE
+                  cursor=$(echo "$response" | jq -r '.[-1].cursor')
+                  if [ "$cursor" == "null" ]; then
+                    break
+                  fi
+                done
+
+                # Cerrar el archivo JSON
+                echo "]" >> $OUTPUT_FILE
+                        
+                echo "Audit logs have been saved to $OUTPUT_FILE"
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
