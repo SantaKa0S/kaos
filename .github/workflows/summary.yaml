@@ -69,7 +69,7 @@ jobs:
              cursor=""
              while : ; do
                response=$(get_audit_logs $cursor)
-               echo "$response" | jq -r '.[] | [.action, .actor, .created_at] | @csv' >> $OUTPUT_FILE
+               echo "$response" >> $OUTPUT_FILE
                cursor=$(echo "$response" | jq -r '.[-1].cursor')
                if [ "$cursor" == "null" ]; then
                  break
