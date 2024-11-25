@@ -73,7 +73,7 @@ jobs:
                 echo "FILE_EXTENSION=$file_extension" >> $GITHUB_ENV
                 IFS=',' read -r -a file_array <<< "$files"
                 for file in "${file_array[@]}"; do
-                  if [[ "$FILE_EXTENSION" == "$file"]]
+                  if [[ "$FILE_EXTENSION" == "$file"]]; then
                     # en este caso deberemos de genarar una issue indicando de una acción en ejecucion y el máximo detalle
                     KAOS_ISSUE_TITLE="[WORFLOW] Action Started: ${{ github.workflow }}"
                     KAOS_ISSUE_BODY=$(printf "This is a issue created by ${{ env.KAOS_MODULE }} to register Actions workflows **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
@@ -83,6 +83,9 @@ jobs:
                     "KAOS_ISSUE_ID is ${{ vars.KAOS_ISSUE_ID }}"
                     # Lanzamos el lint del fichero
                     gh workflow run $FILE_EXTENSIONlint.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=${{ vars.KAOS_ISSUE_ID }}
+                  else
+                    #Si el fichero que se esta intrentando subir no esta permitido se abre una issue indicando el error.
+                  fi
                 done
 
               else
