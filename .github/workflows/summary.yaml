@@ -113,7 +113,6 @@ jobs:
           )
           gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
           GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-title }}"'") | .number')
-          echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
-          "KAOS_ISSUE_ID is ${{ vars.KAOS_ISSUE_ID }}"
+          echo "KAOS_ISSUE_ID is $GH_ISSUE_ID"
   
   
