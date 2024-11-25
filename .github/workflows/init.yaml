@@ -84,7 +84,8 @@ jobs:
                       # Lanzamos el lint del fichero
                       gh workflow run $FILE_EXTENSIONlint.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=$GH_ISSUE_ID
                     else
-                      #Si el fichero que se esta intrentando subir no esta permitido se abre una issue indicando el error.
+                      #Si el fichero que se esta intentando subir no esta permitido se abre una issue indicando el error.
+                      echo "Error el fichero que intenta subir no esta permetido"
                     fi
                   done
               else
