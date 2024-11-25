@@ -70,10 +70,6 @@ jobs:
              while : ; do
                response=$(get_audit_logs $cursor)
                echo "$response" >> $OUTPUT_FILE
-               cursor=$(echo "$response" | jq -r '.[-1].cursor')
-               if [ "$cursor" == "null" ]; then
-                 break
-               fi
              done
          
              echo "Audit logs have been saved to $OUTPUT_FILE"
