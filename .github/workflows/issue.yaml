@@ -17,8 +17,8 @@ on:
         required: false
       kaos-issue-actions:
         description: 'Issue Actions'
-        default: "create"
-        required: true
+        default: "comment"
+        required: false
         type: choice
         options:
         - create
@@ -28,7 +28,7 @@ on:
       kaos-issue-tag:
         description: 'Issue tag'
         default: "bug"
-        required: true
+        required: false
       kaos-issue-id:
         description: 'Issue ID'
         default: "1"
