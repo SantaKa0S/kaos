@@ -84,6 +84,7 @@ jobs:
                       gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "workflow" --repo ${{ github.repository }}
                       GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-title }}"'") | .number')
                       echo "GH_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
+                      echo "LA ISSU ID ES ${{ env.GH_ISSUE_ID }} ó $GH_ISSUE_ID"
                       # Lanzamos el lint del fichero
                       gh workflow run $workflow --ref main -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=${{ env.GH_ISSUE_ID }}
                       job_id=$(gh run list --workflow=$workflow --branch=main --json databaseId --jq '.[0].databaseId')
