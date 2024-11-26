@@ -41,7 +41,7 @@ jobs:
           BRANCH_NAME=${{ github.event.base_ref }}
           USER_NAME=${{ github.actor.name}}
           USER_EMAIL=${{ github.actor.email }}
-          PATH_RESUME="./core/results/"
+          PATH_RESUME="core/results/"
           KAOS_MODULE="[YAML LINT]"
           KAOS_STEP_MODULE=""
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
