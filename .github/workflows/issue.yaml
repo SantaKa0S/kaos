@@ -31,7 +31,7 @@ on:
         required: false
       kaos-issue-id:
         description: 'Issue ID'
-        default: "1"
+        default: ""
         required: true
   
 permissions:
