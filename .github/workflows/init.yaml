@@ -27,7 +27,7 @@ jobs:
           token: ${{ secrets.KAOS_TOKEN }}
 
       - name: Set Info about Commit temp vars
-        # Set the branch name and team name and file implicit in commit and save it in the environment variable
+        # Set the branch name and team name and file implicit in commit and save it the environment variable
         run: |
           BRANCH_NAME=${{ github.event.base_ref }}
           USER_NAME=${{ github.actor.name}}
