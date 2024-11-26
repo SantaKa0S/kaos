@@ -78,22 +78,19 @@ jobs:
             case ${{ github.event.inputs.kaos-issue-actions }} in
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
-                    gh issue create -t "${{ github.event.inputs.aos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.actor.name }}"
-                    GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-title }}"'") | .number')
-                    echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
-                    "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
+                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.actor.name }}"
                     ;;
                 comment)
                     # Añadimos comentarios a una issue en concreto o ficheros
-                    if [[ "${{ github.event.inputs.kaos-issue-body }}" == ""]]
-                      gh issue comment ${{ env.KAOS_ISSUE_ID }} -b "${{ github.event.inputs.kaos-issue-body }}"
+                    if [[ "${{ github.event.inputs.kaos-issue-body-file }}" == ""]]
+                      gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}"
                     else
-                      gh issue comment ${{ env.KAOS_ISSUE_ID }} -b "${{ github.event.inputs.kaos-issue-body }}" --body-file ${{ github.event.inputs.kaos-issue-body-file }}
+                      gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}" --body-file ${{ github.event.inputs.kaos-issue-body-file }}
                     fi
                   ;;
                 close)
                     # Cerramos una issue finalizada
-                    gh issue close ${{ env.KAOS_ISSUE_ID }} -c "Issue: ${{ env.KAOS_ISSUE_ID }} closed by  ${{ github.actor.name }}" -r "completed"
+                    gh issue close ${{ github.event.inputs.kaos-issue-id }} -c "Issue: ${{ github.event.inputs.kaos-issue-id }} closed by  ${{ github.actor.name }}" -r "completed"
                   ;;
                 reopen)
                     # Reabrimos una issue que no ha sido solucionada
@@ -103,9 +100,9 @@ jobs:
                       new_title="${title//[SUCCESS]/[FAILED]}"
                       echo "new_title=$new_title" >> $GITHUB_ENV
                     fi
-                    gh issue reopen ${{ env.KAOS_ISSUE_ID }} -c "Reopen Issue: ${{ env.KAOS_ISSUE_ID }} by  ${{ github.actor.name }}"
-                    gh issue edit ${{ env.KAOS_ISSUE_ID }} -t "$new_title"
-                    gh issue edit ${{ env.KAOS_ISSUE_ID }} --remove-label "resolved"
+                    gh issue reopen ${{ github.event.inputs.kaos-issue-id }} -c "Reopen Issue: ${{ github.event.inputs.kaos-issue-id }} by  ${{ github.actor.name }}"
+                    gh issue edit ${{ github.event.inputs.kaos-issue-id }} -t "$new_title"
+                    gh issue edit ${{ github.event.inputs.kaos-issue-id }} --remove-label "resolved"
                   ;;
                 *)
                     # Si no es alguna de las anteriores
@@ -139,7 +136,5 @@ jobs:
           EOF
           )
           gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
-          GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
-          echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
-          "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
+          
             
