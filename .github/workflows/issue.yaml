@@ -81,7 +81,7 @@ jobs:
                     ;;
                 comment)
                     # Añadimos comentarios a una issue en concreto o ficheros
-                    if [[ "${{ github.event.inputs.kaos-issue-body-file }}" == ""]]; then
+                    if [[ -z "${{ github.event.inputs.kaos-issue-body-file }}" ]]; then
                       gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}"
                     else
                       gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}" --body-file ${{ github.event.inputs.kaos-issue-body-file }}
