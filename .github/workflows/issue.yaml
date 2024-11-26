@@ -1,7 +1,7 @@
 name: Ka0s Issues
 
 on:
-  workflow_dispatch: # Permite disparar el workflow manualmente
+  workflow_dispatch: # Permite disparar workflow manualmente
     inputs:
       kaos-issue-title:
         description: 'Title'
