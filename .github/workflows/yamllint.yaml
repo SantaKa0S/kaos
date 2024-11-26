@@ -72,7 +72,7 @@ jobs:
               if [ ! -s .core/results/yaml-lint-results-${{ github.run_id }}-${{ env.DATETIME }}.txt ]; then
                 # Todo ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso
                 KAOS_ISSUE_BODY="The yaml lint process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} and its result has been SUCCESS"
-                gh workflow run issue.yaml --ref main -f kaos-issue-title="" -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+                gh workflow run issue.yaml --ref main -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
                 # una vez finalizado este proceso, en funcion del modulo donde esta ubicado el fichero que se ha comprobado ejecutara un jobs u otro                
               else
                 # Algo no ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso
