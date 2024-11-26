@@ -71,7 +71,7 @@ jobs:
       
       - name: Work with issues
         env:
-          GH_TOKEN: ${{ secrets.GH_APP_TEC }}
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
             # Lo primero comprobar la acción que queremos realizar
             case ${{ github.event.inputs.kaos-issue-actions }} in
