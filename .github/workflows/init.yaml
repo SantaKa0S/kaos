@@ -75,14 +75,14 @@ jobs:
                   for file in "${file_array[@]}"; do
                   echo "Extensión del fichero: $file_extension"
                   echo "Extensión del sistema: $file" 
-                    if [[ "$FILE_EXTENSION" == "$file" ]]; then
+                    if [[ "$file_extension" == "$file" ]]; then
                       # en este caso deberemos de genarar una issue indicando de una acción en ejecucion y el máximo detalle
                       KAOS_ISSUE_TITLE="[WORFLOW] Action Started: ${{ github.workflow }}"
                       KAOS_ISSUE_BODY=$(printf "This is a issue created by ${{ env.KAOS_MODULE }} to register Actions workflows **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
                       gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "workflow" --repo ${{ github.repository }}
                       GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-title }}"'") | .number')
                       # Lanzamos el lint del fichero
-                      gh workflow run $FILE_EXTENSIONlint.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=$GH_ISSUE_ID
+                      gh workflow run $file_extensionlint.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=$GH_ISSUE_ID
                     else
                       #Si el fichero que se esta intentando subir no esta permitido se abre una issue indicando el error.
                       echo "Error el fichero que intenta subir no esta permetido"
