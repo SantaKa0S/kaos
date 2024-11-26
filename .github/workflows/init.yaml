@@ -85,7 +85,7 @@ jobs:
                       gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "workflow" --repo ${{ github.repository }}
                       GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-title }}"'") | .number')
                       # Lanzamos el lint del fichero
-                      gh workflow run $workflow --ref ${{ env.BRANCH_NAME }} -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=$GH_ISSUE_ID
+                      gh workflow run $workflow --ref ${{ github.event.base_ref }} -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=$GH_ISSUE_ID
                     else
                       #Si el fichero que se esta intentando subir no esta permitido se abre una issue indicando el error.
                       echo "Error el fichero que intenta subir no esta permetido"
