@@ -14,7 +14,7 @@ on:
       kaos-issue-body-file:
         description: 'Attach file to body'
         default: ""
-        required: true
+        required: false
       kaos-issue-actions:
         description: 'Issue Actions'
         default: "create"
@@ -136,5 +136,5 @@ jobs:
           EOF
           )
           gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
-          
+
             
