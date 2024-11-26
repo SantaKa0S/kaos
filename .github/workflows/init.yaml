@@ -83,7 +83,7 @@ jobs:
                       KAOS_ISSUE_BODY=$(printf "This is a issue created by ${{ env.KAOS_MODULE }} to register Actions workflows **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
                       gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "workflow" --repo ${{ github.repository }}
                       sleep 60
-                      GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} -s "open" --json number,title --jq '.[] | select(.title=="$KAOS_ISSUE_TITLE") | .number' | head -n 1)
+                      GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} -s "open" --json number,title --jq '.[] | select(.title==$KAOS_ISSUE_TITLE) | .number' | head -n 1)
                       echo "GH_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
                       echo "La nueva numeracion es ${{ env.GH_ISSUE_ID }}"
                       # Lanzamos el lint del fichero
