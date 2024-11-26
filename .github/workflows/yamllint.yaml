@@ -72,12 +72,12 @@ jobs:
               if [ ! -s .core/results/yaml-lint-results-${{ github.run_id }}-${{ env.DATETIME }}.txt ]; then
                 # Todo ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso
                 KAOS_ISSUE_BODY="The yaml lint process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} and its result has been SUCCESS"
-                gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-title="" -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+                gh workflow run issue.yaml --ref main -f kaos-issue-title="" -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
                 # una vez finalizado este proceso, en funcion del modulo donde esta ubicado el fichero que se ha comprobado ejecutara un jobs u otro                
               else
                 # Algo no ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso
                 KAOS_ISSUE_BODY="The yaml lint process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} and its result has been FAILED, please check core/results/yaml-lint-results-${{ github.run_id }}-${{ env.DATETIME }}.txt"
-                gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-title="" -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-body-file=core/results/yaml-lint-results-${{ github.run_id }}-${{ env.DATETIME }}.txt
+                gh workflow run issue.yaml --ref main -f kaos-issue-title="" -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-body-file=core/results/yaml-lint-results-${{ github.run_id }}-${{ env.DATETIME }}.txt
                 # una vez finalizado este proceso, en funcion del modulo donde esta ubicado el ficher que se ha comprobado ejecutara un jobs u otro 
               fi
       - name: Check execution
@@ -106,8 +106,3 @@ jobs:
           EOF
           )
           gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
-          GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-kaos-issue-title }}"'") | .number')
-          echo "KAOS_ISSUE_ID=$GH_ISSUE_ID" >> $GITHUB_ENV
-          "KAOS_ISSUE_ID is ${{ env.KAOS_ISSUE_ID }}"
-      
-      
