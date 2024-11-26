@@ -60,7 +60,7 @@ jobs:
             files: ${{ secrets.KAOS_CORE_FILES }}
             GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
-          # vamos a determinar que accion debera de ser la siguiente en el flujo
+          # Vamos a determinar que accion debera de ser la siguiente en el flujo
           IFS=',' read -r -a module_array <<< "$modules"
           while IFS= read -r line; do
             for module in "${module_array[@]}"; do
