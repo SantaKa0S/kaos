@@ -77,7 +77,6 @@ jobs:
                   echo "Extensión del fichero: $file_extension"
                   echo "Extensión del sistema: $file"
                   workflow=$file_extension"lint.yaml"
-                  echo "Workflow a ejecutar $workflow"
                     if [[ "$file_extension" == "$file" ]]; then
                       # en este caso deberemos de genarar una issue indicando de una acción en ejecucion y el máximo detalle
                       KAOS_ISSUE_TITLE="[WORFLOW] Action Started: ${{ github.workflow }}"
