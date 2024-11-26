@@ -75,7 +75,9 @@ jobs:
                 IFS=',' read -r -a file_array <<< "$files"
                   for file in "${file_array[@]}"; do
                   echo "Extensión del fichero: $file_extension"
-                  echo "Extensión del sistema: $file" 
+                  echo "Extensión del sistema: $file"
+                  workflow=$file_extension"lint.yaml"
+                  echo "Workflow a ejecutar $workflow"
                     if [[ "$file_extension" == "$file" ]]; then
                       # en este caso deberemos de genarar una issue indicando de una acción en ejecucion y el máximo detalle
                       KAOS_ISSUE_TITLE="[WORFLOW] Action Started: ${{ github.workflow }}"
@@ -83,7 +85,7 @@ jobs:
                       gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "workflow" --repo ${{ github.repository }}
                       GH_ISSUE_ID=$(gh issue list --repo ${{ github.repository }} --limit 1 --json number,title --jq '.[] | select(.title=="'"${{ github.event.inputs.kaos-issue-title }}"'") | .number')
                       # Lanzamos el lint del fichero
-                      gh workflow run ${{ env.FILE_EXTENSION }}lint.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=$GH_ISSUE_ID
+                      gh workflow run $workflow --ref ${{ env.BRANCH_NAME }} -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=$GH_ISSUE_ID
                     else
                       #Si el fichero que se esta intentando subir no esta permitido se abre una issue indicando el error.
                       echo "Error el fichero que intenta subir no esta permetido"
