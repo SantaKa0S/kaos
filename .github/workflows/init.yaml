@@ -73,6 +73,8 @@ jobs:
                 echo "FILE_EXTENSION=$file_extension" >> $GITHUB_ENV
                 IFS=',' read -r -a file_array <<< "$files"
                   for file in "${file_array[@]}"; do
+                  echo "Extensión del fichero: $file_extension"
+                  echo "Extensión del sistema: $file" 
                     if [[ "$FILE_EXTENSION" == "$file" ]]; then
                       # en este caso deberemos de genarar una issue indicando de una acción en ejecucion y el máximo detalle
                       KAOS_ISSUE_TITLE="[WORFLOW] Action Started: ${{ github.workflow }}"
