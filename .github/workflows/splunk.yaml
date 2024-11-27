@@ -62,7 +62,7 @@ jobs:
           data=$(cat $file_path)
 
           # Enviar datos al índice específico
-          curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple?index=$index_name"
+          curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple"
       
       - name: Check execution
         env:
