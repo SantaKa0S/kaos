@@ -42,7 +42,7 @@ jobs:
 
       - name: Summary Audit Log
         env:
-           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+           GH_TOKEN: ${{ secrets.KAOS_ISSUE_TOKEN }}
            GH_REPO: ${{ secrets.KAOS_REPO }}
         run: |
              #  Extraemos toda la información de las issues haste el momento
