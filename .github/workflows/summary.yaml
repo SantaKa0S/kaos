@@ -51,7 +51,7 @@ jobs:
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
         with:
-          name: reports-audit-files
+          name: reports-issue-files
           path: |
             ${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json
       
