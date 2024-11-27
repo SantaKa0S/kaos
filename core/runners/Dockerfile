@@ -2,10 +2,10 @@ FROM ubuntu:20.04
 ENV TZ=UTC
 
 # Actualiza y configura el entorno
-RUN apt-get update --no-install-recommends && \
+RUN apt-get update && \
     export DEBIAN_FRONTEND=noninteractive && \
     ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
-    apt-get install -y tzdata apt-utils apt-transport-https curl wget git jq gnupg && \
+    apt-get install -y --no-install-recommends tzdata apt-utils apt-transport-https curl wget git jq gnupg && \
     dpkg-reconfigure --frontend noninteractive tzdata && \
     apt-get upgrade -y
 
@@ -19,9 +19,9 @@ RUN VERSION=`curl  "https://api.github.com/repos/cli/cli/releases/latest" | grep
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
     dpkg -i packages-microsoft-prod.deb && \
     rm packages-microsoft-prod.deb && \
-    apt-get update --no-install-recommends && \
+    apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y dotnet-sdk-6.0 aspnetcore-runtime-6.0 dotnet-runtime-6.0 
+    apt-get install -y --no-install-recommends dotnet-sdk-6.0 aspnetcore-runtime-6.0 dotnet-runtime-6.0 
 
 # Actualiza DoNete
 RUN wget https://dot.net/v1/dotnet-install.sh && \
