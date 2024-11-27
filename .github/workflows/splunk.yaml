@@ -50,7 +50,7 @@ jobs:
            GH_SPLUNK_PASSWORD: ${{ secrets.KAOS_SPLUNK_PASSWORD }}
         run: |
           # Check url
-          response=$(curl -v -k -s -d "username=$GH_SPLUNK_USER&password=$GH_SPLUNK_PASSWORD" "${{ env.GH_SPLUNK_URL }}en-US/services/auth/login")
+          kaos_response=$(curl -v -k -s -d "username=$GH_SPLUNK_USER&password=$GH_SPLUNK_PASSWORD" "${{ env.GH_SPLUNK_URL }}en-US/services/auth/login")
           echo "Esta es la respuesta de Splunk $response"
           # Autenticación
           index_name='idx_prueba'
@@ -62,6 +62,7 @@ jobs:
           data=$(cat $file_path)
 
           # Enviar datos al índice específico
+          kaos_response_idx=$(curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple")
           curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple"
       
       - name: Check execution
@@ -86,7 +87,11 @@ jobs:
           **Branch:** ${{ github.ref }}
           **Commit:** ${{ github.sha }}
           **Files Involved:**
+          **Splunk response login:** $kaos_response
+          **Splunk response idx:** $kaos_response_idx
           ${{ env.INVOLVED }}
+
+
           Please investigate the issue.
           EOF
           )
