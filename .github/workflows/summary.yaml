@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   kaos-summary:
-    runs-on: self-hosted
+    runs-on: kaos-self-hosted
 
     steps:
       - name: Checkout Repository
@@ -45,8 +45,10 @@ jobs:
            GH_TOKEN: ${{ secrets.KAOS_ISSUE_TOKEN }}
            GH_REPO: ${{ secrets.KAOS_REPO }}
         run: |
-             #  Extraemos toda la información de las issues haste el momento
-             gh issue list --repo $GH_REPO --state all --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json
+            #  Extraemos toda la información de las issues haste el momento
+            gh issue list --repo $GH_REPO --state all --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}issue-log-${{ env.DATETIME }}.json
+            # Formatear el archivo JSON final
+            cat ${{ env.PATH_RESUME }}issue-log-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json
 
       - name: Summary Workflows Log
         env:
@@ -55,7 +57,9 @@ jobs:
         run: |
           # Añadimos la infpormación de todos los workflows y sus datos
           # Generamos el fichero con los workflows disponibles en el repo
-          gh workflow list --all --json id,name,path,state > ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json
+          gh workflow list --all --json id,name,path,state > ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json
+          # Formatear el archivo JSON final
+          cat ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json
           # A continuación extraemos el fichero con todas las ejecuciones de cada uno de los workflows anteriores
           # Leer el archivo de workflows
           workflows=$(cat ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json | jq -r '.[].id')  
@@ -90,7 +94,7 @@ jobs:
              # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros
              git config --global user.email ${{ secrets.KAOS_USER_EMAIL }}
              git config --global user.name ${{ secrets.KAOS_USER_NAME }}
-             git add ${{ env.PATH_RESUME }}*
+             git add ${{ env.PATH_RESUME }}kaos-*
              git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
              git push
 
