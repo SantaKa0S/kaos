@@ -12,7 +12,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  kaos-init-summary:
+  kaos-summary:
     runs-on: self-hosted
 
     steps:
