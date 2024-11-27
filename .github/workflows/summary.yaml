@@ -47,7 +47,14 @@ jobs:
         run: |
              #  Extraemos toda la información de las issues haste el momento
              gh issue list --repo $GH_REPO --state all --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json
+             
+      - name: Upload files to Repo
+        env:
+           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+        run: |  
              # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros
+             git config --global user.email ${{ secrets.KAOS_USER_EMAIL }}
+             git config --global user.name ${{ secrets.KAOS_USER_NAME }}
              git add ${{ env.PATH_RESUME }}*
              git commit -m "[KA0S] We integrate the issue ${{ env.DATETIME }} summary in the repository, please approve PR"
              git push
