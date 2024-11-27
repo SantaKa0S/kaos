@@ -1,0 +1,91 @@
+name: Ka0s Splunk
+
+on:
+    workflow_dispatch:
+    schedule:
+      - cron: '0 0 * * *' # Ejecutar diariamente a medianoche
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  kaos-splunk:
+    runs-on: kaos-self-hosted
+
+    steps:
+      - name: Checkout Repository
+      # Checkout the repository to get the information of the commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+
+      - name: Set Info about Commit temp vars
+        # Set the branch name and team name and file implicit in commit and save it in the environment variable
+        run: |
+          BRANCH_NAME=${{ github.event.base_ref }}
+          USER_NAME=${{ github.actor.name}}
+          USER_EMAIL=${{ github.actor.email }}
+          PATH_RESUME="./observability/data/github/"
+          KAOS_MODULE="[CORE SPLUNK]"
+          KAOS_STEP_MODULE=""
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+          echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
+          echo "USER_EMAIL=$USER_EMAIL" >> $GITHUB_ENV
+          echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
+          echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
+          echo "KAOS_STEP_MODULE=$KAOS_STEP_MODULE" >> $GITHUB_ENV
+          echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+      - name: Send file to Splunk
+        env:
+           GH_TOKEN: ${{ secrets.KAOS_ISSUE_TOKEN }}
+           GH_REPO: ${{ secrets.KAOS_REPO }}
+           GH_SPLUNK_URL: ${{ secrets.KAOS_SPLUNK_URL }}
+           GH_SPLUNK_USER: ${{ secrets.KAOS_SPLUNK_USER }}
+           GH_SPLUNK_PASSWORD: ${{ secrets.KAOS_SPLUNK_PASSWORD }}
+        run: |
+        # Autenticación
+        index_name='idx_prueba'
+        # Obtener la clave de sesión
+        response=$(curl -k -s -d "username=${{ env.GH_SPLUNK_USER }}&password=${{ env.GH_SPLUNK_PASSWORD}}" "${{ env.GH_SPLUNK_URL}}/services/auth/login")
+        session_key=$(echo $response | sed -n 's:.*<sessionKey>\(.*\)</sessionKey>.*:\1:p')
+        # Leer el contenido del fichero
+        file_path='${{ env.PATH_RESUME }}kaos-issue-log-20241127132736.json'
+        data=$(cat $file_path)
+
+        # Enviar datos al índice específico
+        curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL}}/services/receivers/simple?index=$index_name"
+      
+      - name: Check execution
+        env:
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+          GH_ISSUE_ID: ${{ vars.KAOS_ISSUE_ID }}
+        if: failure()
+        run: |
+          echo "Error detected in KaoS ${{ env.KAOS_MODULE }}, creating issue..."
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_BODY=$(cat <<'EOF'
+          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          **[KAOS INIT]  Message:**
+          \`\`\`
+          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
+          \`\`\`
+          **Workflow Name:** ${{ github.workflow }}
+          **Job Name:** ${{ github.job }}
+          **Run ID:** ${{ github.run_id }}
+          **Run Number:** ${{ github.run_number }}
+          **Repository:** ${{ github.repository }}
+          **Branch:** ${{ github.ref }}
+          **Commit:** ${{ github.sha }}
+          **Files Involved:**
+          ${{ env.INVOLVED }}
+          Please investigate the issue.
+          EOF
+          )
+          gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
+  
+  
