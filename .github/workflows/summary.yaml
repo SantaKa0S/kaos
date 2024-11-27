@@ -46,7 +46,11 @@ jobs:
            GH_REPO: ${{ secrets.KAOS_REPO }}
         run: |
              #  Extraemos toda la información de las issues haste el momento
-             gh issue list --repo $GH_REPO --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json
+             gh issue list --repo $GH_REPO --state all --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json
+             # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros
+             git add ${{ env.PATH_RESUME }}*
+             git commit -m "[KA0S] We integrate the issue ${{ env.DATETIME }} summary in the repository, please approve PR"
+             git push
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
