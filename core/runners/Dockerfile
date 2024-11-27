@@ -5,16 +5,16 @@ ENV TZ=UTC
 RUN apt-get update && \
     export DEBIAN_FRONTEND=noninteractive && \
     ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
-    apt-get install -y tzdata apt-utils apt-transport-https curl wget git jq && \
+    apt-get install -y tzdata apt-utils apt-transport-https curl wget git jq gnupg && \
     dpkg-reconfigure --frontend noninteractive tzdata && \
     apt-get upgrade -y
 
 # Implementa la cli de GH
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 && \
-    apt-add-repository https://cli.github.com/packages && \
-    apt update && \
-    apt install gh -y
-    
+RUN VERSION=`curl  "https://api.github.com/repos/cli/cli/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c2-` && \
+    wget https://github.com/cli/cli/releases/download/v${VERSION}/gh_${VERSION}_linux_amd64.tar.gz && \
+    tar xvf gh_${VERSION}_linux_amd64.tar.gz && \
+    cp gh_${VERSION}_linux_amd64/bin/gh /usr/local/bin/
+
 # Actualizamos los repos
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
     dpkg -i packages-microsoft-prod.deb && \
