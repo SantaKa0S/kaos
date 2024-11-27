@@ -40,14 +40,50 @@ jobs:
           echo "KAOS_STEP_MODULE=$KAOS_STEP_MODULE" >> $GITHUB_ENV
           echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
 
-      - name: Summary Audit Log
+      - name: Summary Issue Log
         env:
            GH_TOKEN: ${{ secrets.KAOS_ISSUE_TOKEN }}
            GH_REPO: ${{ secrets.KAOS_REPO }}
         run: |
              #  Extraemos toda la información de las issues haste el momento
              gh issue list --repo $GH_REPO --state all --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json
-             
+
+      - name: Summary Workflows Log
+        env:
+           GH_TOKEN: ${{ secrets.KAOS_ISSUE_TOKEN }}
+           GH_REPO: ${{ secrets.KAOS_REPO }}
+        run: |
+          # Añadimos la infpormación de todos los workflows y sus datos
+          # Generamos el fichero con los workflows disponibles en el repo
+          gh workflow list --all --json id,name,path,state > ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json
+          # A continuación extraemos el fichero con todas las ejecuciones de cada uno de los workflows anteriores
+          # Leer el archivo de workflows
+          workflows=$(cat ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json | jq -r '.id')  
+          # Crear un archivo para guardar los detalles de las ejecuciones
+          echo "[]" > ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json
+          # Iterar sobre cada workflow y obtener sus ejecuciones
+          for workflow_id in $workflows; do
+          gh api repos/:owner/:repo/actions/workflows/$workflow_id/runs --paginate --jq '.workflow_runs[]' | jq '{
+            id: .id,
+            name: .name,
+            head_branch: .head_branch,
+            head_sha: .head_sha,
+            run_number: .run_number,
+            event: .event,
+            status: .status,
+            conclusion: .conclusion,
+            workflow_id: .workflow_id,
+            url: .url,
+            created_at: .created_at,
+            updated_at: .updated_at,
+            run_started_at: .run_started_at,
+            run_duration: ((.updated_at | fromdateiso8601) - (.run_started_at | fromdateiso8601)) / 60  # Calcular duración en minutos
+          }' >> ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json
+          done
+
+          # Formatear el archivo JSON final
+          cat ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-runs-${{ env.DATETIME }}.json
+      
       - name: Upload files to Repo
         env:
            GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
@@ -56,15 +92,17 @@ jobs:
              git config --global user.email ${{ secrets.KAOS_USER_EMAIL }}
              git config --global user.name ${{ secrets.KAOS_USER_NAME }}
              git add ${{ env.PATH_RESUME }}*
-             git commit -m "[KA0S] We integrate the issue ${{ env.DATETIME }} summary in the repository, please approve PR"
+             git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
              git push
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
         with:
-          name: reports-issue-files
+          name: reports-summary-files
           path: |
             ${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json
+            ${{ env.PATH_RESUME }}kaos-workflows-runs-${{ env.DATETIME }}.json
+            ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json
       
       - name: Check execution
         env:
