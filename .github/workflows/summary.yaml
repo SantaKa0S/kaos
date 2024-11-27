@@ -62,7 +62,7 @@ jobs:
           cat ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json
           # A continuación extraemos el fichero con todas las ejecuciones de cada uno de los workflows anteriores
           # Leer el archivo de workflows
-          workflows=$(cat ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json | jq -r '.[].id')  
+          workflows=$(cat ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json | jq -r '.[].[].id')  
           # Crear un archivo para guardar los detalles de las ejecuciones
           echo "[]" > ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json
           # Iterar sobre cada workflow y obtener sus ejecuciones
