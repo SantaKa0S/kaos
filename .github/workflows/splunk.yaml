@@ -45,23 +45,24 @@ jobs:
            GH_TOKEN: ${{ secrets.KAOS_ISSUE_TOKEN }}
            GH_REPO: ${{ secrets.KAOS_REPO }}
            GH_SPLUNK_URL: ${{ secrets.KAOS_SPLUNK_URL }}
+           GH_SPLUNK_URL_IDX: ${{ secrets.KAOS_SPLUNK_URL_IDX }}
            GH_SPLUNK_USER: ${{ secrets.KAOS_SPLUNK_USER }}
            GH_SPLUNK_PASSWORD: ${{ secrets.KAOS_SPLUNK_PASSWORD }}
         run: |
           # Check url
-          response=$(curl -v -k -s -d "username=$GH_SPLUNK_USER&password=$GH_SPLUNK_PASSWORD" "$GH_SPLUNK_URL/services/auth/login")
+          response=$(curl -v -k -s -d "username=$GH_SPLUNK_USER&password=$GH_SPLUNK_PASSWORD" "${{ env.GH_SPLUNK_URL }}services/auth/login")
           echo "Esta es la respuesta de Splunk $response"
           # Autenticación
           index_name='idx_prueba'
           # Obtener la clave de sesión
-          response=$(curl -k -s -d "username=${{ env.GH_SPLUNK_USER }}&password=${{ env.GH_SPLUNK_PASSWORD}}" "${{ env.GH_SPLUNK_URL}}/services/auth/login")
+          response=$(curl -k -s -d "username=${{ env.GH_SPLUNK_USER }}&password=${{ env.GH_SPLUNK_PASSWORD}}" "${{ env.GH_SPLUNK_URL }}services/auth/login")
           session_key=$(echo $response | sed -n 's:.*<sessionKey>\(.*\)</sessionKey>.*:\1:p')
           # Leer el contenido del fichero
           file_path='${{ env.PATH_RESUME }}kaos-issue-log-20241127132736.json'
           data=$(cat $file_path)
 
           # Enviar datos al índice específico
-          curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL}}/services/receivers/simple?index=$index_name"
+          curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}services/receivers/simple?index=$index_name"
       
       - name: Check execution
         env:
