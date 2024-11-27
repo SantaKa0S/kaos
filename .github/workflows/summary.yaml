@@ -76,8 +76,7 @@ jobs:
             url: .url,
             created_at: .created_at,
             updated_at: .updated_at,
-            run_started_at: .run_started_at,
-            run_duration: ((.updated_at | fromdateiso8601) - (.run_started_at | fromdateiso8601)) / 60  # Calcular duración en minutos
+            run_started_at: .run_started_at
           }' >> ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json
           done
 
