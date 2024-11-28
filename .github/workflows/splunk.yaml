@@ -2,6 +2,15 @@ name: Ka0s Splunk
 
 on:
     workflow_dispatch:
+     inputs:
+      kaos-issue-body-file:
+        description: 'Attach file to body'
+        default: ""
+        required: true
+      kaos-issue-id:
+        description: 'Actions ID'
+        default: ""
+        required: true
     schedule:
       - cron: '0 0 * * *' # Ejecutar diariamente a medianoche
 
@@ -50,21 +59,23 @@ jobs:
            GH_SPLUNK_PASSWORD: ${{ secrets.KAOS_SPLUNK_PASSWORD }}
         run: |
           # Check url
-          kaos_response=$(curl -v -k -s -d "username=$GH_SPLUNK_USER&password=$GH_SPLUNK_PASSWORD" "${{ env.GH_SPLUNK_URL }}en-US/services/auth/login")
+          KAOS_RESPONSE=$(curl -v -k -s -d "username=$GH_SPLUNK_USER&password=$GH_SPLUNK_PASSWORD" "${{ env.GH_SPLUNK_URL }}en-US/services/auth/login")
+          echo "KAOS_RESPONSE=$KAOS_RESPONSE" >> $GITHUB_ENV
           echo "Esta es la respuesta de Splunk $kaos_response"
           # Autenticación
           index_name='idx_prueba'
           # Obtener la clave de sesión
           response=$(curl -k -s -d "username=${{ env.GH_SPLUNK_USER }}&password=${{ env.GH_SPLUNK_PASSWORD}}" "${{ env.GH_SPLUNK_URL }}en-US/services/auth/login")
+          echo "KAOS_RESPONSE=$KAOS_RESPONSE" >> $GITHUB_ENV
           session_key=$(echo $response | sed -n 's:.*<sessionKey>\(.*\)</sessionKey>.*:\1:p')
           # Leer el contenido del fichero
-          file_path='${{ env.PATH_RESUME }}kaos-issue-log-20241127132736.json'
+          file_path='${{ github.event.inputs.kaos-issue-body-file }}'
           data=$(cat $file_path)
 
           # Enviar datos al índice específico
-          #kaos_response_idx=$(curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple")
-          kaos_response_idx=$(curl -k -u admin:splunk/splunk -X POST "https://80.28.162.237:8089/services/receivers/stream?sourcetype=st_prueba&index=idx_prueba&host=curl-testing" -H "Content-Type: multipart/form-data" -F "file=@observability/data/github/workflows-runs-20241127121918.json")
-          #curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple"
+          #KAOS_RESPONSE_IDX=$(curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple")
+          echo "KAOS_RESPONSE_IDX=$KAOS_RESPONSE_IDX" >> $GITHUB_ENV
+          kaos_response_idx=$(curl -k -u admin:splunk/splunk -X POST "https://80.28.162.237:8089/services/receivers/stream?sourcetype=st_prueba&index=idx_prueba&host=curl-testing" -H "Content-Type: multipart/form-data" -F "file=${{ github.event.inputs.kaos-issue-body-file }}")
           echo "Esta es la respuesta de la indexación $kaos_response_idx"
       
       - name: Check execution
@@ -81,6 +92,7 @@ jobs:
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
+          **Workflow Origin:** ${{ github.event.inputs.kaos-issue-id }}
           **Workflow Name:** ${{ github.workflow }}
           **Job Name:** ${{ github.job }}
           **Run ID:** ${{ github.run_id }}
@@ -89,9 +101,9 @@ jobs:
           **Branch:** ${{ github.ref }}
           **Commit:** ${{ github.sha }}
           **Files Involved:**
-          **Splunk response login:** $kaos_response
-          **Splunk response idx:** $kaos_response_idx
-          ${{ env.INVOLVED }}
+          **Splunk response login:** ${{ env.KAOS_RESPONSE }}
+          **Splunk response idx:** ${{ env.KAOS_RESPONSE_IDX }}
+          ${{ github.event.inputs.kaos-issue-body-file }}
 
 
           Please investigate the issue.
