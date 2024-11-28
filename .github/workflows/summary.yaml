@@ -51,8 +51,6 @@ jobs:
             gh issue list --repo $GH_REPO --state all --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}issue-log-${{ env.DATETIME }}.json
             # Formatear el archivo JSON final
             cat ${{ env.PATH_RESUME }}issue-log-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json
-            gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json -f kaos-issue-id=${{ github.workflow }}
-            
 
       - name: Summary Workflows Log
         env:
@@ -64,7 +62,6 @@ jobs:
           gh workflow list --all --json id,name,path,state > ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json
           # Formatear el archivo JSON final
           cat ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json
-          gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json -f kaos-issue-id=${{ github.workflow }}
           # job_id=$(gh run list --workflow=$workflow --branch=main --json databaseId --jq '.[0].databaseId')
           # gh workflow run issue.yaml --ref main -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="Launch workflow $workflow with id $job_id" -f kaos-issue-id=$GH_ISSUE_ID
           # A continuación extraemos el fichero con todas las ejecuciones de cada uno de los workflows anteriores
@@ -93,7 +90,6 @@ jobs:
 
           # Formatear el archivo JSON final
           cat ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-runs-${{ env.DATETIME }}.json
-          gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-${{ env.DATETIME }}.json -f kaos-issue-id=${{ github.workflow }}
       
       - name: Upload files to Repo
         env:
@@ -105,6 +101,10 @@ jobs:
              git add ${{ env.PATH_RESUME }}kaos-*
              git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
              git push
+             # LLamamos a splunk
+             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-${{ env.DATETIME }}.json -f kaos-issue-id=${{ github.workflow }}
+             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json -f kaos-issue-id=${{ github.workflow }}
+             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json -f kaos-issue-id=${{ github.workflow }}
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
