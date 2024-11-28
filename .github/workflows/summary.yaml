@@ -50,7 +50,7 @@ jobs:
             #  Extraemos toda la información de las issues haste el momento
             gh issue list --repo $GH_REPO --state all --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}issue-log-${{ env.DATETIME }}.json
             # Formatear el archivo JSON final
-            cat ${{ env.PATH_RESUME }}issue-log-${{ env.DATETIME }}.json | jq -s '.' > kaos-issue-log-20241128133035.json
+            cat ${{ env.PATH_RESUME }}issue-log-${{ env.DATETIME }}.json | jq -s '.' > kaos-issue-log.json
 
       - name: Summary Workflows Log
         env:
@@ -61,12 +61,12 @@ jobs:
           # Generamos el fichero con los workflows disponibles en el repo
           gh workflow list --all --json id,name,path,state > ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json
           # Formatear el archivo JSON final
-          cat ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-available-20241128133035.json
+          cat ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-available.json
           # job_id=$(gh run list --workflow=$workflow --branch=main --json databaseId --jq '.[0].databaseId')
           # gh workflow run issue.yaml --ref main -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="Launch workflow $workflow with id $job_id" -f kaos-issue-id=$GH_ISSUE_ID
           # A continuación extraemos el fichero con todas las ejecuciones de cada uno de los workflows anteriores
           # Leer el archivo de workflows
-          workflows=$(cat ${{ env.PATH_RESUME }}kaos-workflows-available-20241128133035.json | jq -r '.[] | .[] | .id')  
+          workflows=$(cat ${{ env.PATH_RESUME }}kaos-workflows-available.json | jq -r '.[] | .[] | .id')  
           # Crear un archivo para guardar los detalles de las ejecuciones
           echo "[]" > ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json
           # Iterar sobre cada workflow y obtener sus ejecuciones
@@ -89,7 +89,7 @@ jobs:
           done
 
           # Formatear el archivo JSON final
-          cat ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-runs-20241128133035.json
+          cat ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-runs.json
       
       - name: Upload files to Repo
         env:
@@ -101,19 +101,64 @@ jobs:
              git add ${{ env.PATH_RESUME }}kaos-*
              git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
              git push
-             # LLamamos a splunk
-             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-20241128133035.json -f kaos-issue-id=${{ github.workflow }}
-             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-20241128133035.json -f kaos-issue-id=${{ github.workflow }}
-             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-20241128133035.json -f kaos-issue-id=${{ github.workflow }}
+
+             # Generamos los ficheros delta de kaos-workflows-runs
+             if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-runs-old.json" ]]; then
+                 # Comparar con la lista anterior
+                 jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-workflows-runs.json ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
+                 if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json" ]]; then
+                  # LLamamos a splunk
+                  gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json -f kaos-issue-id=${{ github.workflow }}
+                 else
+                  echo "No hay contenido nuevo que subir a splunk"
+                fi 
+             else
+                 cat ${{ env.PATH_RESUME }}kaos-workflows-runs.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json
+                 cat ${{ env.PATH_RESUME }}kaos-workflows-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
+                 gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json -f kaos-issue-id=${{ github.workflow }}
+             fi
+
+             # Generamos los ficheros delta de kaos-workflows-available
+             if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-available-old.json" ]]; then
+                 # Comparar con la lista anterior
+                 jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-workflows-available.json ${{ env.PATH_RESUME }}kaos-workflows-available-old.json > ${{ env.PATH_RESUME }}kaos-workflows-available-delta.json
+                 if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-available.-delta.json" ]]; then
+                  # LLamamos a splunk
+                  gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-delta.json -f kaos-issue-id=${{ github.workflow }}
+                 else
+                  echo "No hay contenido nuevo que subir a splunk"
+                fi 
+             else
+                 cat ${{ env.PATH_RESUME }}kaos-workflows-available.json > ${{ env.PATH_RESUME }}kaos-workflows-available-old.json
+                 cat ${{ env.PATH_RESUME }}kaos-workflows-available-old.json > ${{ env.PATH_RESUME }}kaos-workflows-available-delta.json
+                 gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-delta.json -f kaos-issue-id=${{ github.workflow }}
+             fi
+             
+
+             # Generamos los ficheros delta de kaos-issue-log
+             if [[ -f "${{ env.PATH_RESUME }}kaos-issue-log-old.json" ]]; then
+                 # Comparar con la lista anterior
+                 jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-issue-log.json ${{ env.PATH_RESUME }}kaos-issue-log-old.json > ${{ env.PATH_RESUME }}kaos-issue-log-delta.json
+                 if [[ -f "${{ env.PATH_RESUME }}kaos-issue-log-delta.json" ]]; then
+                  # LLamamos a splunk
+                  gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-delta.json -f kaos-issue-id=${{ github.workflow }}
+                 else
+                  echo "No hay contenido nuevo que subir a splunk"
+                fi 
+             else
+                 cat ${{ env.PATH_RESUME }}kaos-issue-log.json > ${{ env.PATH_RESUME }}kaos-issue-log-old.json
+                 cat ${{ env.PATH_RESUME }}kaos-issue-log-old.json > ${{ env.PATH_RESUME }}kaos-issue-log-delta.json
+                 gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-delta.json -f kaos-issue-id=${{ github.workflow }}
+             fi
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
         with:
           name: reports-summary-files
           path: |
-            ${{ env.PATH_RESUME }}kaos-issue-log-20241128133035.json
-            ${{ env.PATH_RESUME }}kaos-workflows-runs-20241128133035.json
-            ${{ env.PATH_RESUME }}kaos-workflows-available-20241128133035.json
+            ${{ env.PATH_RESUME }}kaos-issue-log-delta.json
+            ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
+            ${{ env.PATH_RESUME }}kaos-workflows-available--delta.json
       
       - name: Check execution
         env:
