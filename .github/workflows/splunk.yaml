@@ -51,7 +51,7 @@ jobs:
         run: |
           # Check url
           kaos_response=$(curl -v -k -s -d "username=$GH_SPLUNK_USER&password=$GH_SPLUNK_PASSWORD" "${{ env.GH_SPLUNK_URL }}en-US/services/auth/login")
-          echo "Esta es la respuesta de Splunk $response"
+          echo "Esta es la respuesta de Splunk $kaos_response"
           # Autenticación
           index_name='idx_prueba'
           # Obtener la clave de sesión
@@ -62,8 +62,10 @@ jobs:
           data=$(cat $file_path)
 
           # Enviar datos al índice específico
-          kaos_response_idx=$(curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple")
-          curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple"
+          #kaos_response_idx=$(curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple")
+          kaos_response_idx=$(curl -k -u admin:splunk/splunk -X POST "https://80.28.162.237:8089/services/receivers/stream?sourcetype=st_prueba&index=idx_prueba&host=curl-testing" -H "Content-Type: multipart/form-data" -F "file=@prueba.txt")
+          #curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple"
+          echo "Esta es la respuesta de la indexación $kaos_response_idx"
       
       - name: Check execution
         env:
