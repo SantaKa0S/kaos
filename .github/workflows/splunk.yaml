@@ -61,7 +61,7 @@ jobs:
           echo "KAOS_RESPONSE=$KAOS_RESPONSE" >> $GITHUB_ENV
           echo "Esta es la respuesta de Splunk $kaos_response"
           # Autenticación
-          index_name='idx_prueba'
+          index_name='idx_kaos_github'
           # Obtener la clave de sesión
           response=$(curl -k -s -d "username=${{ env.GH_SPLUNK_USER }}&password=${{ env.GH_SPLUNK_PASSWORD}}" "${{ env.GH_SPLUNK_URL }}en-US/services/auth/login")
           echo "KAOS_RESPONSE=$KAOS_RESPONSE" >> $GITHUB_ENV
@@ -73,7 +73,7 @@ jobs:
           # Enviar datos al índice específico
           #KAOS_RESPONSE_IDX=$(curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple")
           echo "KAOS_RESPONSE_IDX=$KAOS_RESPONSE_IDX" >> $GITHUB_ENV
-          kaos_response_idx=$(curl -k -u admin:splunk/splunk -X POST "https://80.28.162.237:8089/services/receivers/stream?sourcetype=st_prueba&index=idx_prueba&host=curl-testing" -H "Content-Type: multipart/form-data" -F "file=${{ github.event.inputs.kaos-issue-body-file }}")
+          kaos_response_idx=$(curl -k -u admin:splunk/splunk -X POST "https://80.28.162.237:8089/services/receivers/stream?sourcetype=st_kaos_github&index=idx_prueba&host=curl-testing" -H "Content-Type: multipart/form-data" -F "file=${{ github.event.inputs.kaos-issue-body-file }}")
           echo "Esta es la respuesta de la indexación $kaos_response_idx"
       
       - name: Check execution
