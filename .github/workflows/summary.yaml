@@ -61,12 +61,12 @@ jobs:
           # Generamos el fichero con los workflows disponibles en el repo
           gh workflow list --all --json id,name,path,state > ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json
           # Formatear el archivo JSON final
-          cat ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json | jq -s '.' > kaos-workflows-available-20241128133035.json
+          cat ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-available-20241128133035.json
           # job_id=$(gh run list --workflow=$workflow --branch=main --json databaseId --jq '.[0].databaseId')
           # gh workflow run issue.yaml --ref main -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="Launch workflow $workflow with id $job_id" -f kaos-issue-id=$GH_ISSUE_ID
           # A continuación extraemos el fichero con todas las ejecuciones de cada uno de los workflows anteriores
           # Leer el archivo de workflows
-          workflows=$(cat ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json | jq -r '.[] | .[] | .id')  
+          workflows=$(cat ${{ env.PATH_RESUME }}kaos-workflows-available-20241128133035.json | jq -r '.[] | .[] | .id')  
           # Crear un archivo para guardar los detalles de las ejecuciones
           echo "[]" > ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json
           # Iterar sobre cada workflow y obtener sus ejecuciones
@@ -89,7 +89,7 @@ jobs:
           done
 
           # Formatear el archivo JSON final
-          cat ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json | jq -s '.' > kaos-workflows-runs-20241128133035.json
+          cat ${{ env.PATH_RESUME }}workflows-runs-${{ env.DATETIME }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-runs-20241128133035.json
       
       - name: Upload files to Repo
         env:
@@ -102,18 +102,18 @@ jobs:
              git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
              git push
              # LLamamos a splunk
-             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=kaos-workflows-runs-20241128133035.json -f kaos-issue-id=${{ github.workflow }}
-             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=kaos-workflows-available-20241128133035.json -f kaos-issue-id=${{ github.workflow }}
-             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=kaos-issue-log-20241128133035.json -f kaos-issue-id=${{ github.workflow }}
+             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-20241128133035.json -f kaos-issue-id=${{ github.workflow }}
+             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-20241128133035.json -f kaos-issue-id=${{ github.workflow }}
+             gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-20241128133035.json -f kaos-issue-id=${{ github.workflow }}
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
         with:
           name: reports-summary-files
           path: |
-            kaos-issue-log-20241128133035.json
-            kaos-workflows-runs-20241128133035.json
-            kaos-workflows-available-20241128133035.json
+            ${{ env.PATH_RESUME }}kaos-issue-log-20241128133035.json
+            ${{ env.PATH_RESUME }}kaos-workflows-runs-20241128133035.json
+            ${{ env.PATH_RESUME }}kaos-workflows-available-20241128133035.json
       
       - name: Check execution
         env:
