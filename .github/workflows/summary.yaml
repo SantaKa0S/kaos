@@ -109,7 +109,7 @@ jobs:
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
-                 if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json" ]]; then
+                 if [[ -s "${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json" ]]; then
                   # LLamamos a splunk
                   gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json -f kaos-issue-id=${{ github.workflow }}
                  else
@@ -134,7 +134,7 @@ jobs:
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
-                 if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-available-delta.json" ]]; then
+                 if [[ -s "${{ env.PATH_RESUME }}kaos-workflows-available-delta.json" ]]; then
                   # LLamamos a splunk
                   gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-delta.json -f kaos-issue-id=${{ github.workflow }}
                  else
@@ -160,7 +160,7 @@ jobs:
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
-                 if [[ -f "${{ env.PATH_RESUME }}kaos-issue-log-delta.json" ]]; then
+                 if [[ -s "${{ env.PATH_RESUME }}kaos-issue-log-delta.json" ]]; then
                   # LLamamos a splunk
                   gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-delta.json -f kaos-issue-id=${{ github.workflow }}
                  else
