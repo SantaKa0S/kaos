@@ -11,8 +11,6 @@ on:
         description: 'Actions ID'
         default: ""
         required: true
-    schedule:
-      - cron: '0 0 * * *' # Ejecutar diariamente a medianoche
 
 permissions:
   contents: write
