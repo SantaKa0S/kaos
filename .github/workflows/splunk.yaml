@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   kaos-splunk:
-    runs-on: kaos-self-hosted
+    runs-on: kaos-runner-splunk
 
     steps:
       - name: Checkout Repository
