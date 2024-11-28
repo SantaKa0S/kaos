@@ -111,9 +111,9 @@ jobs:
         with:
           name: reports-summary-files
           path: |
-            ${{ env.PATH_RESUME }}kaos-issue-log-${{ env.DATETIME }}.json
-            ${{ env.PATH_RESUME }}kaos-workflows-runs-${{ env.DATETIME }}.json
-            ${{ env.PATH_RESUME }}kaos-workflows-available-${{ env.DATETIME }}.json
+            kaos-issue-log-20241128133035.json
+            kaos-workflows-runs-20241128133035.json
+            kaos-workflows-available-20241128133035.json
       
       - name: Check execution
         env:
