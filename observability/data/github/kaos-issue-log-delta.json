@@ -8,6 +8,44 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
+      "body": "An error occurred in the [CORE INIT] Action workflow **Ka0s**.\n**[KAOS INIT]  Message:**\n\\`\\`\\`\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12072379216**\n\\`\\`\\`\n**Workflow Name:** Ka0s\n**Job Name:** kaos-init-process\n**Run ID:** 12072379216\n**Run Number:** 188\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 92cc165f3f69e7370a854eddb54e7acbf85c2fd2\n**Files Involved:**\nobservability/data/github/issue-log-20241128161102.json\nPlease investigate the issue.",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2024-11-28T16:13:21Z",
+      "id": "I_kwDONP0GL86hFyBb",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        }
+      ],
+      "milestone": null,
+      "number": 272,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[CORE INIT] Action Failed: Ka0s",
+      "updatedAt": "2024-11-28T16:13:21Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/272"
+    },
+    {
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
       "body": "An error occurred in the [CORE INIT] Action workflow **Ka0s**.\n**[KAOS INIT]  Message:**\n\\`\\`\\`\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12072358903**\n\\`\\`\\`\n**Workflow Name:** Ka0s\n**Job Name:** kaos-init-process\n**Run ID:** 12072358903\n**Run Number:** 187\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 25a1013e3bbf844d6aa0f2ac06ec792b5300dd85\n**Files Involved:**\nobservability/data/github/issue-log-20241128155201.json\nPlease investigate the issue.",
       "closed": false,
       "closedAt": null,
@@ -1501,44 +1539,6 @@
       "title": "[CORE INIT] Action Failed: Ka0s",
       "updatedAt": "2024-11-28T14:17:30Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/243"
-    },
-    {
-      "assignees": [],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [CORE SPLUNK] Action workflow **Ka0s Splunk**.\n**[KAOS INIT]  Message:**\n\\`\\`\\`\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12069294979**\n\\`\\`\\`\n**Workflow Origin:** Ka0s\n**Workflow Name:** Ka0s Splunk\n**Job Name:** kaos-splunk\n**Run ID:** 12069294979\n**Run Number:** 33\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 52f348bae8814822b958dc067f6bad3c7fbabb53\n**Files Involved:**\n**Splunk response login:** <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n**Splunk response idx:** \nobservability/data/github/kaos-issue-log-20241128125403.json\n\n\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-11-28T14:17:30Z",
-      "comments": [],
-      "createdAt": "2024-11-28T12:55:02Z",
-      "id": "I_kwDONP0GL86hDkuV",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        },
-        {
-          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
-          "name": "core",
-          "description": "Only referent CORE MODULES",
-          "color": "0e8a16"
-        }
-      ],
-      "milestone": null,
-      "number": 242,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[CORE SPLUNK] Action Failed: Ka0s Splunk",
-      "updatedAt": "2024-11-28T14:17:30Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/242"
     }
   ]
 ]
