@@ -106,6 +106,7 @@ jobs:
              if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-runs-old.json" ]]; then
                  # Comparar con la lista anterior
                  jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-workflows-runs.json ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
+                 git pull
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
@@ -117,10 +118,12 @@ jobs:
                 fi 
              else
                  cat ${{ env.PATH_RESUME }}kaos-workflows-runs.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json
+                 git pull
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
                  cat ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
+                 git pull
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
@@ -131,6 +134,7 @@ jobs:
              if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-available-old.json" ]]; then
                  # Comparar con la lista anterior
                  jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-workflows-available.json ${{ env.PATH_RESUME }}kaos-workflows-available-old.json > ${{ env.PATH_RESUME }}kaos-workflows-available-delta.json
+                 git pull
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
@@ -142,10 +146,12 @@ jobs:
                 fi 
              else
                  cat ${{ env.PATH_RESUME }}kaos-workflows-available.json > ${{ env.PATH_RESUME }}kaos-workflows-available-old.json
+                 git pull
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
                  cat ${{ env.PATH_RESUME }}kaos-workflows-available-old.json > ${{ env.PATH_RESUME }}kaos-workflows-available-delta.json
+                 git pull
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
@@ -157,6 +163,7 @@ jobs:
              if [[ -f "${{ env.PATH_RESUME }}kaos-issue-log-old.json" ]]; then
                  # Comparar con la lista anterior
                  jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-issue-log.json ${{ env.PATH_RESUME }}kaos-issue-log-old.json > ${{ env.PATH_RESUME }}kaos-issue-log-delta.json
+                 git pull
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
@@ -168,10 +175,12 @@ jobs:
                 fi 
              else
                  cat ${{ env.PATH_RESUME }}kaos-issue-log.json > ${{ env.PATH_RESUME }}kaos-issue-log-old.json
+                 git pull
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
                  cat ${{ env.PATH_RESUME }}kaos-issue-log-old.json > ${{ env.PATH_RESUME }}kaos-issue-log-delta.json
+                 git pull
                  git add ${{ env.PATH_RESUME }}*
                  git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
