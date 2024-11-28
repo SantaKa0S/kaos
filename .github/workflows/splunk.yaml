@@ -63,7 +63,7 @@ jobs:
 
           # Enviar datos al índice específico
           #kaos_response_idx=$(curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple")
-          kaos_response_idx=$(curl -k -u admin:splunk/splunk -X POST "https://80.28.162.237:8089/services/receivers/stream?sourcetype=st_prueba&index=idx_prueba&host=curl-testing" -H "Content-Type: multipart/form-data" -F "file=/tmp/prueba.txt")
+          kaos_response_idx=$(curl -k -u admin:splunk/splunk -X POST "https://80.28.162.237:8089/services/receivers/stream?sourcetype=st_prueba&index=idx_prueba&host=curl-testing" -H "Content-Type: multipart/form-data" -F "file=@/tmp/prueba.txt")
           #curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple"
           echo "Esta es la respuesta de la indexación $kaos_response_idx"
       
