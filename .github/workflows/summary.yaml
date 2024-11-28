@@ -29,7 +29,7 @@ jobs:
           BRANCH_NAME=${{ github.event.base_ref }}
           USER_NAME=${{ github.actor.name}}
           USER_EMAIL=${{ github.actor.email }}
-          PATH_RESUME="./observability/data/github/"
+          PATH_RESUME="observability/data/github/"
           KAOS_MODULE="[CORE SUMMARY]"
           KAOS_STEP_MODULE=""
           KAOS_WORKFLOW="splunk.yaml"
