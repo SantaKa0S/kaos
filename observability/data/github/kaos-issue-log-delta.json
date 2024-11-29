@@ -8,6 +8,44 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
+      "body": "An error occurred in the [CORE INIT] Action workflow **Ka0s**.\n**[KAOS INIT]  Message:**\n\\`\\`\\`\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12072800159**\n\\`\\`\\`\n**Workflow Name:** Ka0s\n**Job Name:** kaos-init-process\n**Run ID:** 12072800159\n**Run Number:** 204\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 964c9c0e801aed59ac9223766674b15fdf9d942e\n**Files Involved:**\nobservability/data/github/issue-log-20241128164320.json\nPlease investigate the issue.",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2024-11-28T16:43:55Z",
+      "id": "I_kwDONP0GL86hF_H_",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        }
+      ],
+      "milestone": null,
+      "number": 279,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[CORE INIT] Action Failed: Ka0s",
+      "updatedAt": "2024-11-28T16:43:55Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/279"
+    },
+    {
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
       "body": "An error occurred in the [CORE INIT] Action workflow **Ka0s**.\n**[KAOS INIT]  Message:**\n\\`\\`\\`\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12072772220**\n\\`\\`\\`\n**Workflow Name:** Ka0s\n**Job Name:** kaos-init-process\n**Run ID:** 12072772220\n**Run Number:** 203\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** a60556383e35481516e27af3f94da769840ca3a3\n**Files Involved:**\n.github/workflows/summary.yaml\nPlease investigate the issue.",
       "closed": false,
       "closedAt": null,
@@ -1421,44 +1459,6 @@
       "title": "[WORFLOW] Action Started: Ka0s",
       "updatedAt": "2024-11-28T13:38:32Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/250"
-    },
-    {
-      "assignees": [],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [CORE INIT] Action workflow **Ka0s**.\n**[KAOS INIT]  Message:**\n\\`\\`\\`\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12069883908**\n\\`\\`\\`\n**Workflow Name:** Ka0s\n**Job Name:** kaos-init-process\n**Run ID:** 12069883908\n**Run Number:** 150\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** da33266788df992335aaa0e961a2139373c00450\n**Files Involved:**\nobservability/data/github/kaos-issue-log-20241128133035.json\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-11-28T14:17:32Z",
-      "comments": [],
-      "createdAt": "2024-11-28T13:32:21Z",
-      "id": "I_kwDONP0GL86hEAIe",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        },
-        {
-          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
-          "name": "core",
-          "description": "Only referent CORE MODULES",
-          "color": "0e8a16"
-        }
-      ],
-      "milestone": null,
-      "number": 249,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[CORE INIT] Action Failed: Ka0s",
-      "updatedAt": "2024-11-28T14:17:32Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/249"
     }
   ]
 ]
