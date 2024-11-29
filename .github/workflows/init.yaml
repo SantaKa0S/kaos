@@ -1,12 +1,7 @@
 name: Ka0s
 
 on:
-  push:
-    branches:
-      - 'main'
-      - 'release/new'
-      - 'feature'
-      - 'hotfix'
+  workflow_dispatch:
 
 permissions:
   contents: write
