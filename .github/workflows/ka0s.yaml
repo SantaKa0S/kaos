@@ -58,8 +58,8 @@ jobs:
           esac
           RNBRANCH=$(echo "$rn" | grep -o '^[A-Za-z]*')
           RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
-          echo "Extracted RN Branch: ${{ env.RNBRANCH}} - $RNBRANCH"
-          echo "Extracted RN Number: ${{ env.RNNUMBER }} - $RNNUMBER"     
+          echo "Extracted RN Branch: $RNBRANCH"
+          echo "Extracted RN Number: $RNNUMBER"     
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
