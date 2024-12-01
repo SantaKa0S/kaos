@@ -12,8 +12,8 @@ jobs:
     # Condicion antes de comenzar el jobs
     if: ${{ always() }} 
     outputs:
-      RNBRANCH: ${{ steps.core.outputs.RNBRANCH }}
-      RNNUMBER: ${{ steps.core.outputs.RNNUMBER }}
+      KAOS_BRANCH: ${{ steps.core.outputs.RNBRANCH }}
+      KAOS_NUMBER: ${{ steps.core.outputs.RNNUMBER }}
     runs-on: 
       group: kaos-test
     permissions:
@@ -33,9 +33,6 @@ jobs:
       - id: core
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
         if: ${{ always() }}
-        env:
-          RNBRANCH: "coño"
-          RNNUMBER: "polla"
         run: |
           echo "Branch name is ${{ github.ref }}"
           case "${{ github.ref }}" in
@@ -60,17 +57,16 @@ jobs:
           RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
           echo "Extracted RN Branch: $RNBRANCH"
           echo "Extracted RN Number: $RNNUMBER"
-          echo "env.RNBRANCH=$RNBRANCH" >> $GITHUB_ENV
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
-          echo "RNNUMBER=$RNNUMBER" >> $GITHUB_ENV   
+          echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT   
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
-          echo "${{ env.RNBRANCH}}"
-          echo "${{ env.RNNUMBER}}"
 
   job-flows:
     needs: job-core # Si antes haber evaluado la información no ejecutamos nada
+    outputs:
+      KAOS_BODY_ISSUE: ${{ steps.release-new-flow.outputs.SUMMARY }}
     runs-on:
       group: kaos-test
     permissions:
@@ -80,15 +76,24 @@ jobs:
       pull-requests: write
     steps:
       - id: release-new-flow
-        if: ${{ needs.job-core.outputs.RNBRANCH == 'RN' }}
+        env:
+          SUMMARY: ""
+          BRANCH_ACTION: ${{ needs.job-core.outputs.KAOS_BRANCH }}
+          BRANCH_NUMBER: ${{ needs.job-core.outputs.KAOS_NUMBER }}
+        if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
-          echo "release-new-flow"
-          echo "Branch name is ${{ github.ref }}"
-          echo "Commit SHA is ${{ github.sha }}"
-          echo "Repo origin is ${{ github.repository }}"
-          echo "Launch by ${{ github.actor }}"
+          echo "SUMMARY<<EOF" >> $GITHUB_ENV
+          echo "Job:${{ github.workflow }} has been initiated by ${{ github.triggering_actor}}"
+          echo "${{ github.action_status }} launch by ${{ github.actor }}" >> $GITHUB_ENV
+          echo "Branch name is ${{ github.ref }}" >> $GITHUB_ENV
+          echo "Commit SHA is ${{ github.sha }}" >> $GITHUB_ENV
+          echo "Repo origin is ${{ github.repository }}" >> $GITHUB_ENV
+          echo "Assigned number issue ${{ env.BRANCH_ACTION }}" >> $GITHUB_ENV
+          echo "Executed flow about ${{ env.BRANCH_ACTION }}" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          cat $SUMMARY
       - id: feature-flow
-        if: ${{ needs.job-core.outputs.RNBRANCH == 'F' }}
+        if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
         run: |
           echo "feature-flow"
           echo "Branch name is ${{ github.ref }}"
@@ -96,7 +101,7 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
       - id: hotfix-flow
-        if: ${{ needs.job-core.outputs.RNBRANCH == 'H' }}
+        if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'H' }}
         run: |
           echo "hotfix-flow"
           echo "Branch name is ${{ github.ref }}"
@@ -104,7 +109,7 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
       - id: execution-flow
-        if: ${{ needs.job-core.outputs.RNBRANCH == 'E' }}
+        if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'E' }}
         run: |
           execution-flow
           echo "Branch name is ${{ github.ref }}"
