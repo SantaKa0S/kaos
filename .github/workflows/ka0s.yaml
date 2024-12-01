@@ -22,7 +22,11 @@ jobs:
       actions: write
       issues: write
       pull-requests: write
-
+    env:
+          KAOS_PATH_RESUME: "core/results/"
+          KAOS_MODULE: "[Ka0S]"
+          KAOS_STEP_MODULE: ""
+          KAOS_CODE: ""
     steps:
       - id: repo
         if: ${{ always() }}
@@ -31,14 +35,9 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
           
+          
       - id: core
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
-        env:
-          KAOS_PATH_RESUME: "core/results/"
-          KAOS_MODULE: "[Ka0S]"
-          KAOS_STEP_MODULE: ""
-          KAOS_CODE: ""
-
         if: ${{ always() }}
         run: |
           # Comprobamos el flow que deberemos de ejecutar
@@ -74,6 +73,10 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
           BRANCH_NAME=${{ github.event.base_ref }}
+          
+      - id: files
+        if: ${{ always() }}
+        run: |
           # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
           git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.KAOS_PATH_RESUME }}commit-summary-${{ env.KAOS_CODE }}.txt
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
