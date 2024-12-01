@@ -36,7 +36,7 @@ jobs:
         if: ${{ always() }}
         run: |
           echo "Este el job JOB-CORE"
-          echo "Este es el paso JOB-ID CORE dentro del Job JOB-CORE"
+          echo "Este es el paso JOB-ID CORE dentro de Job JOB-CORE"
           echo "$GITHUB_CONTEXT"
           echo "Branch name is ${{ github.ref }}"
           echo "Commit SHA is ${{ github.sha }}"
