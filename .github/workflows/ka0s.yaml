@@ -14,7 +14,7 @@ jobs:
     outputs:
       KAOS_BRANCH: ${{ steps.core.outputs.RNBRANCH }}
       KAOS_NUMBER: ${{ steps.core.outputs.RNNUMBER }}
-      KAOS_INVOLVED: ${{ steps.core.outputs.INVOLVED }}
+      KAOS_INVOLVED: ${{ steps.core.outputs.KAOS_INVOLVED }}
     runs-on: 
       group: kaos-test
     permissions:
@@ -108,6 +108,7 @@ jobs:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
+          Echo "Este es el fichero implicado ${{ env.BRANCH_INVOLVED}}"
           KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action ${{ github.workflow.action_status }}"
           KAOS_ISSUE_BODY='${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.
           ${{ github.action_status }} launch by ${{ github.actor }}
