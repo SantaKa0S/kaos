@@ -60,8 +60,8 @@ jobs:
           RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
           echo "Extracted RN Branch: $RNBRANCH"
           echo "Extracted RN Number: $RNNUMBER"
-          echo "RNBRANCH=$RNBRANCH" >> $GITHUB_ENV
-          echo "RNBRANCH=${{ env.RNBRANCH}}" >> $GITHUB_OUTPUT
+          echo "env.RNBRANCH=$RNBRANCH" >> $GITHUB_ENV
+          echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
           echo "RNNUMBER=$RNNUMBER" >> $GITHUB_ENV   
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
