@@ -42,7 +42,10 @@ jobs:
           ref="${{ github.ref }}"
           if [[ $ref =~ (RN[0-9]+)- ]]; then
             rn="${BASH_REMATCH[1]}"
-            echo "Extracted RN: $rn"
+            rn_branch=$(echo "$rn" | grep -o '^[A-Za-z]*')
+            rn_number=$(echo "$rn" | grep -o '[0-9]*')
+            echo "Extracted RN Branch: $rn_branch"
+            echo "Extracted RN Number: $rn_number"
           else
             echo "No RN found in ref"
           fi
