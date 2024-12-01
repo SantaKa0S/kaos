@@ -109,7 +109,7 @@ jobs:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
-          echo "Este es el fichero implicado ${{ env.BRANCH_INVOLVED}}"
+          echo "Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
           KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action ${{ github.workflow.action_status }}"
           KAOS_ISSUE_BODY='${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.
           ${{ github.action_status }} launch by ${{ github.actor }}
