@@ -32,6 +32,8 @@ jobs:
       - id: core
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
+          rn_branch:
+          rn_number:
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
         if: ${{ always() }}
         run: |
