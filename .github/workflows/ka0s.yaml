@@ -75,7 +75,7 @@ jobs:
       pull-requests: write
     steps:
       - id: release-new-flow
-        if: ${{ env.RNBRANCH == 'RN' }}
+        if: ${{ RNBRANCH == 'RN' }}
         run: |
           echo "release-new-flow"
           echo "Branch name is ${{ github.ref }}"
