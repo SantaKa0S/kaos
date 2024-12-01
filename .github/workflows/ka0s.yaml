@@ -128,10 +128,10 @@ jobs:
           **Ref Flow: ${{ env.BRANCH_ACTION }}**
           **Ref Issue: ${{ env.BRANCH_NUMBER }}**
           **Please review issue ${{ env.BRANCH_NUMBER }} for more information.**'
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }} -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment
-          gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body=$KAOS_ISSUE_BODY  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
+          gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}
           KAOS_ISSUE_BODY='Now initiates flow ${{ env.BRANCH_ACTION }}'
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment   
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body=$KAOS_ISSUE_BODY  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}   
       - id: feature-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
         run: |
