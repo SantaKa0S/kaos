@@ -37,7 +37,7 @@ jobs:
           KAOS_PATH_RESUME: "core/results/"
           KAOS_MODULE: "[Ka0S]"
           KAOS_STEP_MODULE: ""
-          KAOS_CODE: "kaos"
+          KAOS_CODE: ""
 
         if: ${{ always() }}
         run: |
@@ -66,7 +66,7 @@ jobs:
           echo "Extracted RN Branch: $RNBRANCH"
           echo "Extracted RN Number: $RNNUMBER"
           KAOS_CODE=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')
-          echo "KAOS_CODE=$KAOS_CODE" >> $GITHUB_ENV
+          echo "KAOS_CODE=$KAOS_CODE" > $GITHUB_ENV
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
           echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT   
           echo "Commit SHA is ${{ github.sha }}"
@@ -77,7 +77,7 @@ jobs:
           git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.KAOS_PATH_RESUME }}commit-summary-${{ env.KAOS_CODE}}.txt
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE}}.txt
-          INVOLVED=$(cat ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE}}.txt)
+          INVOLVED=$(cat ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ KAOS_CODE}}.txt)
           echo "INVOLVED=$INVOLVED" >> $GITHUB_OUTPUT
           # git add ${{ env.KAOS_PATH_RESUME }}
           # git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
