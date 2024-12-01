@@ -81,8 +81,7 @@ jobs:
           git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.KAOS_PATH_RESUME }}commit-summary-${{ env.KAOS_CODE }}.txt
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
-          cat ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
-          INVOLVED=$(cat ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt)
+          INVOLVED=${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
           echo "INVOLVED=$INVOLVED" >> $GITHUB_OUTPUT
           # git add ${{ env.KAOS_PATH_RESUME }}
           # git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
@@ -111,7 +110,7 @@ jobs:
         run: |
           echo "Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
           KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action ${{ github.workflow.action_status }}"
-          KAOS_ISSUE_BODY='${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.
+          KAOS_ISSUE_BODY="${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.
           ${{ github.action_status }} launch by ${{ github.actor }}
           Branch name is ${{ github.ref }}
           Commit SHA is ${{ github.sha }}
@@ -129,10 +128,10 @@ jobs:
           **Actions Involved:**
           **Ref Flow: ${{ env.BRANCH_ACTION }}**
           **Ref Issue: ${{ env.BRANCH_NUMBER }}**
-          **Please review issue ${{ env.BRANCH_NUMBER }} for more information.**'
+          **Please review issue ${{ env.BRANCH_NUMBER }} for more information.**"
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body=$KAOS_ISSUE_BODY  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
           gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}
-          KAOS_ISSUE_BODY='Now initiates flow ${{ env.BRANCH_ACTION }}'
+          KAOS_ISSUE_BODY="Now initiates flow ${{ env.BRANCH_ACTION }}"
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body=$KAOS_ISSUE_BODY  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}   
       - id: feature-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
