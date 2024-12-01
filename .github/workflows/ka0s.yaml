@@ -41,7 +41,6 @@ jobs:
 
         if: ${{ always() }}
         run: |
-          ${{ vars.KAOS_CODE }}="RN-123"
           # Comprobamos el flow que deberemos de ejecutar
           echo "Branch name is ${{ github.ref }}"
           case "${{ github.ref }}" in
@@ -66,8 +65,7 @@ jobs:
           RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
           echo "Extracted RN Branch: $RNBRANCH"
           echo "Extracted RN Number: $RNNUMBER"
-          KAOS_CODE=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')
-          echo "KAOS_CODE=$KAOS_CODE" >> $GITHUB_ENV
+          echo "KAOS_CODE=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')" >> $GITHUB_ENV
           echo "La variable de KAOS_CODE es $KAOS_CODE"
           echo "La variable de KAOS_CODE es ${{ env.KAOS_CODE }}"
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
