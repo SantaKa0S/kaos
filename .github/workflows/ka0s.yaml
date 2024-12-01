@@ -34,8 +34,8 @@ jobs:
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
         if: ${{ always() }}
         env:
-          RNBRANCH: ""
-          RNNUMBER: ""
+          RNBRANCH: "coño"
+          RNNUMBER: "polla"
         run: |
           echo "Branch name is ${{ github.ref }}"
           case "${{ github.ref }}" in
