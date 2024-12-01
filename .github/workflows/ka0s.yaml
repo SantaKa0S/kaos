@@ -83,9 +83,9 @@ jobs:
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
           INVOLVED=${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
           echo "INVOLVED=$INVOLVED" >> $GITHUB_OUTPUT
-          # git add ${{ env.KAOS_PATH_RESUME }}
-          # git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
-          # git push
+          git add ${{ env.KAOS_PATH_RESUME }}
+          git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
+          git push
 
   job-flows:
     needs: job-core # Si antes haber evaluado la información not∫ ejecutamos nada
