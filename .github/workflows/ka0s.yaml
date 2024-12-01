@@ -56,11 +56,13 @@ jobs:
           RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
           echo "Extracted RN Branch: $RNBRANCH"
           echo "Extracted RN Number: $RNNUMBER"
-          echo "::set-output name=RNBRANCH::$RNBRANCH"
-          echo "::set-output name=RNNUMBER::$RNNUMBER"     
+          echo "RNBRANCH::$RNBRANCH" >> $GITHUB_OUTPUT
+          echo "RNNUMBER::$RNNUMBER" >> $GITHUB_OUTPUT    
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
+          echo "${{ steps.core.outputs.RNBRANCH }}"
+          echo "${{ steps.core.outputs.RNNUMBER }}"
 
   job-flows:
     needs: job-core # Si antes haber evaluado la información no ejecutamos nada
