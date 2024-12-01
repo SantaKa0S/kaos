@@ -32,12 +32,9 @@ jobs:
       - id: core
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-      # vamos a capturar la información que ha permitido disparar el evento
+      # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
         if: ${{ always() }}
         run: |
-          echo "Este el job JOB-CORE"
-          echo "Este es el paso JOB-ID CORE dentro de Job JOB-CORE"
-          # echo "$GITHUB_CONTEXT"
           echo "Branch name is ${{ github.ref }}"
           case "${{ github.ref }}" in
             *RN[0-9]*-*)
@@ -49,21 +46,26 @@ jobs:
             *H[0-9]*-*)
               rn=$(echo "${{ github.ref }}" | grep -o 'H[0-9]*')
               ;;
+            *E[0-9]*-*)
+              rn=$(echo "${{ github.ref }}" | grep -o 'H[0-9]*')
+              ;;
             *)
               echo "No debería de estar haciendo esto"
               exit 1
               ;;
           esac
           rn_branch=$(echo "$rn" | grep -o '^[A-Za-z]*')
+          echo "rn_branch=$rn_branch" >> >> $GITHUB_ENV
           rn_number=$(echo "$rn" | grep -o '[0-9]*')
-          echo "Extracted RN Branch: $rn_branch"
-          echo "Extracted RN Number: $rn_number"
+          echo "rn_number=$rn_number" >> >> $GITHUB_ENV
+          echo "Extracted RN Branch: ${{ env.rn_branch }}"
+          echo "Extracted RN Number: ${{ env.rn_number }}"         
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
 
-  job-customer:
-    needs: job-core # Podemos hacer dependiente la ejecución en funcion de que un job termine [job1, job2]
+  job-flows:
+    needs: job-core # Si antes haber evaluado la información no ejecutamos nada
     runs-on:
       group: kaos-test
     permissions:
@@ -72,20 +74,34 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-      - id: init
-        if: ${{ always() }}
+      - id: release-new-flow
+        if: ${{ env.rn_branch == 'RN' }}
         run: |
-          echo "JOB-CUSTOMER"
-          echo "JOB-ID INIT"
+          echo "release-new-flow"
           echo "Branch name is ${{ github.ref }}"
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
-      - id: varios
-        if: ${{ always() }}
+      - id: feature-flow
+        if: ${{ env.rn_branch == 'F' }}
         run: |
-          echo "JOB-CUSTOMER"
-          echo "JOB-ID VARIOS"
+          echo "feature-flow"
+          echo "Branch name is ${{ github.ref }}"
+          echo "Commit SHA is ${{ github.sha }}"
+          echo "Repo origin is ${{ github.repository }}"
+          echo "Launch by ${{ github.actor }}"
+      - id: hotfix-flow
+        if: ${{ env.rn_branch == 'H' }}
+        run: |
+          echo "hotfix-flow"
+          echo "Branch name is ${{ github.ref }}"
+          echo "Commit SHA is ${{ github.sha }}"
+          echo "Repo origin is ${{ github.repository }}"
+          echo "Launch by ${{ github.actor }}"
+      - id: execution-flow
+        if: ${{ env.rn_branch == 'E' }}
+        run: |
+          execution-flow
           echo "Branch name is ${{ github.ref }}"
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
