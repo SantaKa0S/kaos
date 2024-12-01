@@ -27,7 +27,6 @@ jobs:
       KAOS_MODULE: "[Ka0S]"
       KAOS_STEP_MODULE: ""
       KAOS_CODE: ""
-      INVOLVED: ""
     steps:
       - id: repo
         if: ${{ always() }}
