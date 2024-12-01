@@ -80,6 +80,7 @@ jobs:
           SUMMARY: ""
           BRANCH_ACTION: ${{ needs.job-core.outputs.KAOS_BRANCH }}
           BRANCH_NUMBER: ${{ needs.job-core.outputs.KAOS_NUMBER }}
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action ${{ github.workflow.action_status }}"
