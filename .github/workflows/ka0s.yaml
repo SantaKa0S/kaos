@@ -37,7 +37,7 @@ jobs:
           KAOS_PATH_RESUME: "core/results/"
           KAOS_MODULE: "[Ka0S]"
           KAOS_STEP_MODULE: ""
-          KAOS_DATETIME: $(date +'%Y%m%d%H%M%S')
+          KAOS_DATETIME: ""
 
         if: ${{ always() }}
         run: |
@@ -63,6 +63,8 @@ jobs:
           esac
           RNBRANCH=$(echo "$rn" | grep -o '^[A-Za-z]*')
           RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
+          KAOS_DATETIME=$(date +'%Y%m%d%H%M%S')
+          echo "KAOS_DATETIME=$KAOS_DATETIME" >> $GITHUB_ENV
           echo "Extracted RN Branch: $RNBRANCH"
           echo "Extracted RN Number: $RNNUMBER"
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
