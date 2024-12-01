@@ -105,9 +105,7 @@ jobs:
           **Please review issue ${{ env.BRANCH_NUMBER }} for more information.**'
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment
           gh workflow run init.yaml  --ref ${{ github.ref }}
-          database_id=$(gh run list --workflow=init.yaml --branch=${{ github.ref }} --json databaseId --jq '.[0].databaseId')
-          echo "DATABASE_ID=$database_id" >> $GITHUB_ENV
-          KAOS_ISSUE_BODY='Now launch de flow ${{ env.BRANCH_ACTION }} initiated ${{ env.DATABASE_ID }}'
+          KAOS_ISSUE_BODY='Now initiates flow ${{ env.BRANCH_ACTION }}'
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment   
       - id: feature-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
