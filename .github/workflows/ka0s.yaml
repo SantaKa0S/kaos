@@ -61,8 +61,8 @@ jobs:
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_ENV
           RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
           echo "RNNUMBER=$RNNUMBER" >> $GITHUB_ENV
-          echo "Extracted RN Branch: ${{ env.rn_branch }} - $RNBRANCH"
-          echo "Extracted RN Number: ${{ env.rn_number }} - $RNNUMBER"     
+          echo "Extracted RN Branch: ${{ env.RNBRANCH }} - $RNBRANCH"
+          echo "Extracted RN Number: ${{ env.RNNUMBER }} - $RNNUMBER"     
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
@@ -78,7 +78,7 @@ jobs:
       pull-requests: write
     steps:
       - id: release-new-flow
-        if: ${{ env.rn_branch == 'RN' }}
+        if: ${{ env.RNBRANCH == 'RN' }}
         run: |
           echo "release-new-flow"
           echo "Branch name is ${{ github.ref }}"
@@ -86,7 +86,7 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
       - id: feature-flow
-        if: ${{ env.rn_branch == 'F' }}
+        if: ${{ env.RNBRANCH == 'F' }}
         run: |
           echo "feature-flow"
           echo "Branch name is ${{ github.ref }}"
@@ -94,7 +94,7 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
       - id: hotfix-flow
-        if: ${{ env.rn_branch == 'H' }}
+        if: ${{ env.RNBRANCH == 'H' }}
         run: |
           echo "hotfix-flow"
           echo "Branch name is ${{ github.ref }}"
@@ -102,7 +102,7 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
       - id: execution-flow
-        if: ${{ env.rn_branch == 'E' }}
+        if: ${{ env.RNBRANCH == 'E' }}
         run: |
           execution-flow
           echo "Branch name is ${{ github.ref }}"
