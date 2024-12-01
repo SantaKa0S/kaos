@@ -19,8 +19,8 @@ jobs:
       issues: write
       pull-requests: write
     outputs:
-      output-core: ${{ steps.core.outputs.test }}
-      output-evaluated: ${{ steps.evaluated.outputs.kaos_result }}
+      RNNUMBER: ${{ steps.core.outputs.RNBRANCH }}
+      RNBRANCH: ${{ steps.core.outputs.RNNUMBER }}
     steps:
       - id: repo
         if: ${{ always() }}
@@ -30,9 +30,6 @@ jobs:
           token: ${{ secrets.KAOS_TOKEN }}
           
       - id: core
-        outputs:
-          RNNUMBER: ${{ steps.set-vars.outputs.RNBRANCH }}
-          RNBRANCH: ${{ steps.set-vars.outputs.RNNUMBER }}
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
         if: ${{ always() }}
         run: |
