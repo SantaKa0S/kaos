@@ -67,6 +67,7 @@ jobs:
           echo "Extracted RN Number: $RNNUMBER"
           KAOS_CODE=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')
           echo "KAOS_CODE=$KAOS_CODE" >> $GITHUB_ENV
+          echo "La variable de KAOS_CODE es $KAOS_CODE"
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
           echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT   
           echo "Commit SHA is ${{ github.sha }}"
