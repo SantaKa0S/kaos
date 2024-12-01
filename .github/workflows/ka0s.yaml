@@ -35,6 +35,18 @@ jobs:
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
         if: ${{ always() }}
         run: |
+          # Añadimos las variables necesarias en esta seccion
+          USER_NAME=${{ github.actor.name}}
+          USER_EMAIL=${{ github.actor.email }}
+          PATH_RESUME="core/results/"
+          KAOS_MODULE="[Ka0S]"
+          KAOS_STEP_MODULE=""
+          DATETIME=$(date +'%Y%m%d%H%M%S')
+          echo "$DATETIME"
+          echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
+          echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
+          echo "KAOS_STEP_MODULE=$KAOS_STEP_MODULE" >> $GITHUB_ENV
+          echo "DATETIME=$DATETIME" >> $GITHUB_ENV
           # Comprobamos el flow que deberemos de ejecutar
           echo "Branch name is ${{ github.ref }}"
           case "${{ github.ref }}" in
@@ -65,16 +77,6 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
           BRANCH_NAME=${{ github.event.base_ref }}
-          USER_NAME=${{ github.actor.name}}
-          USER_EMAIL=${{ github.actor.email }}
-          PATH_RESUME="core/results/"
-          KAOS_MODULE="[Ka0S]"
-          KAOS_STEP_MODULE=""
-          DATETIME=$(date +'%Y%m%d%H%M%S')
-          echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
-          echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
-          echo "KAOS_STEP_MODULE=$KAOS_STEP_MODULE" >> $GITHUB_ENV
-          echo "DATETIME=$DATETIME" >> $GITHUB_ENV
           # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
           git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.PATH_RESUME }}commit-summary-${{ env.DATETIME }}.txt
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
