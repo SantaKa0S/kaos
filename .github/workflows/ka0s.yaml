@@ -41,13 +41,13 @@ jobs:
           echo "Branch name is ${{ github.ref }}"
           case "${{ github.ref }}" in
             *RN[0-9]*-*)
-              rn=$(echo "$ref" | grep -o 'RN[0-9]*')
+              rn=$(echo "${{ github.ref }}" | grep -o 'RN[0-9]*')
               ;;
             *F[0-9]*-*)
-              rn=$(echo "$ref" | grep -o 'F[0-9]*')
+              rn=$(echo "${{ github.ref }}" | grep -o 'F[0-9]*')
               ;;
             *H[0-9]*-*)
-              rn=$(echo "$ref" | grep -o 'H[0-9]*')
+              rn=$(echo "${{ github.ref }}" | grep -o 'H[0-9]*')
               ;;
             *)
               echo "No debería de estar haciendo esto"
