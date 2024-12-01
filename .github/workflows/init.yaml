@@ -2,6 +2,15 @@ name: Ka0s Init
 
 on:
   workflow_dispatch:
+    inputs:
+      kaos-issue-id:
+        description: 'Issue ID'
+        default: ""
+        required: true
+      kaos-involved-file:
+        description: 'Involved Files to process'
+        default: ""
+        required: true
 
 permissions:
   contents: write
@@ -98,7 +107,7 @@ jobs:
                   KAOS_ISSUE_BODY=$(printf "This is a resume to the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Success Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
               fi
             done
-          done < ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
+          done < ${{ github.event.inputs.kaos-involved-file }}
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4
