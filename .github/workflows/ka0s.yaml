@@ -34,7 +34,6 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_RNNUMBER:
           GITHUB_RNBRANCH:
-          rn_number:
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
         if: ${{ always() }}
         run: |
@@ -57,12 +56,10 @@ jobs:
               exit 1
               ;;
           esac
-          ${{ env.RNBRANCH }}=$(echo "$rn" | grep -o '^[A-Za-z]*')
-          echo "RNBRANCH=$RNBRANCH" >> $GITHUB_ENV
-          ${{ env.RNBRANCH }}=$(echo "$rn" | grep -o '[0-9]*')
-          echo "RNNUMBER=$RNNUMBER" >> $GITHUB_ENV
-          echo "Extracted RN Branch: ${{ env.RNBRANCH }} - $RNBRANCH"
-          echo "Extracted RN Number: ${{ env.RNNUMBER }} - $RNNUMBER"     
+          echo "GITHUB_RNBRANCH=$(echo "$rn" | grep -o '^[A-Za-z]*')" >> $GITHUB_ENV
+          echo "GITHUB_RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')" >> $GITHUB_ENV
+          echo "Extracted RN Branch: ${{ env.GITHUB_RNBRANCH }} - $RNBRANCH"
+          echo "Extracted RN Number: ${{ env.GITHUB_RNNUMBER }} - $RNNUMBER"     
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
