@@ -40,7 +40,7 @@ jobs:
           # echo "$GITHUB_CONTEXT"
           echo "Branch name is ${{ github.ref }}"
           ref="${{ github.ref }}"
-          f [[ $ref =~ RN[0-9]+- ]]; then
+          if [[ $ref =~ RN[0-9]+- ]]; then
             rn="${BASH_REMATCH[0]}"
             echo "Extracted RN: $rn"
           else
