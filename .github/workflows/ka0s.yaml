@@ -32,8 +32,8 @@ jobs:
       - id: core
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
         env:
-          RNBRANCH: ${{ steps.set-vars.outputs.RNBRANCH }}
-          RNNUMBER: ${{ steps.set-vars.outputs.RNNUMBER }}
+          RNBRANCH: ${{ env.RNBRANCH }}
+          RNNUMBER: ${{ env.RNNUMBER }}
         if: ${{ always() }}
         run: |
           echo "Branch name is ${{ github.ref }}"
@@ -64,8 +64,8 @@ jobs:
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
-          echo "${{ steps.core.GITHUB_OUTPUT.RNBRANCH }}"
-          echo "${{ steps.job-core.GITHUB_OUTPUT.RNBRANCH }}"
+          echo "${{ env.RNBRANCH}}"
+          echo "${{ env.RNNUMBER}}"
 
   job-flows:
     needs: job-core # Si antes haber evaluado la información no ejecutamos nada
@@ -86,7 +86,7 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
       - id: feature-flow
-        if: ${{ env.RNBRANCH == 'F' }}
+        if: ${{ needs.job-core.outputs.RNBRANCH == 'F' }}
         run: |
           echo "feature-flow"
           echo "Branch name is ${{ github.ref }}"
@@ -94,7 +94,7 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
       - id: hotfix-flow
-        if: ${{ env.RNBRANCH == 'H' }}
+        if: ${{ needs.job-core.outputs.RNBRANCH == 'H' }}
         run: |
           echo "hotfix-flow"
           echo "Branch name is ${{ github.ref }}"
@@ -102,7 +102,7 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
       - id: execution-flow
-        if: ${{ env.RNBRANCH == 'E' }}
+        if: ${{ needs.job-core.outputs.RNBRANCH == 'E' }}
         run: |
           execution-flow
           echo "Branch name is ${{ github.ref }}"
