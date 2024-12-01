@@ -37,7 +37,7 @@ jobs:
           KAOS_PATH_RESUME: "core/results/"
           KAOS_MODULE: "[Ka0S]"
           KAOS_STEP_MODULE: ""
-          KAOS_CODE: "POLLA"
+          KAOS_CODE: "kaos"
 
         if: ${{ always() }}
         run: |
