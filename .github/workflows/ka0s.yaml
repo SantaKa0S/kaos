@@ -84,26 +84,26 @@ jobs:
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action ${{ github.workflow.action_status }}"
-          KAOS_ISSUE_BODY='${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.\n\
-          ${{ github.action_status }} launch by ${{ github.actor }}\n\
-          Branch name is ${{ github.ref }}\n\
-          Commit SHA is ${{ github.sha }}\n\
-          Repo origin is ${{ github.repository }}\n\
-          Assigned number issue ${{ env.BRANCH_ACTION }}\n\
-          Executed flow about ${{ env.BRANCH_NUMBER }}\n\`\`\`\n\
-          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**\n\
-          \`\`\`\n\
-          **Workflow Name:** ${{ github.workflow }}\n\
-          **Job Name:** ${{ github.job }}\n\
-          **Run ID:** ${{ github.run_id }}\n\
-          **Run Number:** ${{ github.run_number }}\n\
-          **Repository:** ${{ github.repository }}\n\
-          **Branch:** ${{ github.ref }}\n\
-          **Commit:** ${{ github.sha }}\n\
-          **Actions Involved:**\n\
-          ${{ env.BRANCH_ACTION }}\n\
-          ${{ env.BRANCH_NUMBER }}\n\
-          Please review issue ${{ env.BRANCH_NUMBER }} for more information.'
+          KAOS_ISSUE_BODY=$(printf'${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.\n
+          ${{ github.action_status }} launch by ${{ github.actor }}\n
+          Branch name is ${{ github.ref }}\n
+          Commit SHA is ${{ github.sha }}\n
+          Repo origin is ${{ github.repository }}\n
+          Assigned number issue ${{ env.BRANCH_NUMBER }}\n
+          Executed flow about ${{ env.BRANCH_ACTION }}\n\`\`\`\n
+          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**\n
+          \`\`\`\n
+          **Workflow Name:** ${{ github.workflow }}\n
+          **Job Name:** ${{ github.job }}\n
+          **Run ID:** ${{ github.run_id }}\n
+          **Run Number:** ${{ github.run_number }}\n
+          **Repository:** ${{ github.repository }}\n
+          **Branch:** ${{ github.ref }}\n
+          **Commit:** ${{ github.sha }}\n
+          **Actions Involved:**\n
+          ${{ env.BRANCH_ACTION }}\n
+          ${{ env.BRANCH_NUMBER }}\n
+          Please review issue ${{ env.BRANCH_NUMBER }} for more information.')
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment
       - id: feature-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
