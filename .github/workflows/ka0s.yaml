@@ -70,10 +70,11 @@ jobs:
           PATH_RESUME="core/results/"
           KAOS_MODULE="[Ka0S]"
           KAOS_STEP_MODULE=""
+          DATETIME=$(date +'%Y%m%d%H%M%S')
           echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
           echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
           echo "KAOS_STEP_MODULE=$KAOS_STEP_MODULE" >> $GITHUB_ENV
-          echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+          echo "DATETIME=$DATETIME" >> $GITHUB_ENV
           # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
           git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.PATH_RESUME }}commit-summary-${{ env.DATETIME }}.txt
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
