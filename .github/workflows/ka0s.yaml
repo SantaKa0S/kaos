@@ -84,30 +84,7 @@ jobs:
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action ${{ github.workflow.action_status }}"
-          KAOS_ISSUE_BODY=$(cat <<'EOF'
-                            Job:${{ github.workflow }} has been initiated by ${{ github.triggering_actor}}.
-                            ${{ github.action_status }} launch by ${{ github.actor }}
-                            Branch name is ${{ github.ref }}
-                            Commit SHA is ${{ github.sha }}
-                            Repo origin is ${{ github.repository }}
-                            Assigned number issue ${{ env.BRANCH_ACTION }}
-                            Executed flow about ${{ env.BRANCH_NUMBER }}
-                            \`\`\`
-                            **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
-                            \`\`\`
-                            **Workflow Name:** ${{ github.workflow }}
-                            **Job Name:** ${{ github.job }}
-                            **Run ID:** ${{ github.run_id }}
-                            **Run Number:** ${{ github.run_number }}
-                            **Repository:** ${{ github.repository }}
-                            **Branch:** ${{ github.ref }}
-                            **Commit:** ${{ github.sha }}
-                            **Actions Involved:**
-                            ${{ env.BRANCH_ACTION }}
-                            ${{ env.BRANCH_NUMBER }}
-                            Please review issue ${{ env.BRANCH_NUMBER }} for more information.
-                            'EOF'
-                          )
+          KAOS_ISSUE_BODY=$(cat <<'EOF' Job:${{ github.workflow }} has been initiated by ${{ github.triggering_actor}}. ${{ github.action_status }} launch by ${{ github.actor }} Branch name is ${{ github.ref }} Commit SHA is ${{ github.sha }} Repo origin is ${{ github.repository }} Assigned number issue ${{ env.BRANCH_ACTION }} Executed flow about ${{ env.BRANCH_NUMBER }} \`\`\` **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}** \`\`\` **Workflow Name:** ${{ github.workflow }} **Job Name:** ${{ github.job }} **Run ID:** ${{ github.run_id }} **Run Number:** ${{ github.run_number }} **Repository:** ${{ github.repository }} **Branch:** ${{ github.ref }} **Commit:** ${{ github.sha }} **Actions Involved:** ${{ env.BRANCH_ACTION }} ${{ env.BRANCH_NUMBER }} Please review issue ${{ env.BRANCH_NUMBER }} for more information. EOF )
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment
       - id: feature-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
