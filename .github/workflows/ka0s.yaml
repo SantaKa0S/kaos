@@ -84,7 +84,7 @@ jobs:
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action ${{ github.workflow.action_status }}"
-          KAOS_ISSUE_BODY="${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.\n\
+          KAOS_ISSUE_BODY='${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.\n\
           ${{ github.action_status }} launch by ${{ github.actor }}\n\
           Branch name is ${{ github.ref }}\n\
           Commit SHA is ${{ github.sha }}\n\
@@ -103,7 +103,7 @@ jobs:
           **Actions Involved:**\n\
           ${{ env.BRANCH_ACTION }}\n\
           ${{ env.BRANCH_NUMBER }}\n\
-          Please review issue ${{ env.BRANCH_NUMBER }} for more information."
+          Please review issue ${{ env.BRANCH_NUMBER }} for more information.'
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment
       - id: feature-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
