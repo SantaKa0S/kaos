@@ -84,7 +84,7 @@ jobs:
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action ${{ github.workflow.action_status }}"
-          KAOS_ISSUE_BODY=$(printf'${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.\n
+          KAOS_ISSUE_BODY='${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}./\n
           ${{ github.action_status }} launch by ${{ github.actor }}\n
           Branch name is ${{ github.ref }}\n
           Commit SHA is ${{ github.sha }}\n
