@@ -33,20 +33,14 @@ jobs:
           
       - id: core
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
+        env:
+          KAOS_PATH_RESUME: "core/results/"
+          KAOS_MODULE: "[Ka0S]"
+          KAOS_STEP_MODULE: ""
+          KAOS_DATETIME: $(date +'%Y%m%d%H%M%S')
+
         if: ${{ always() }}
         run: |
-          # Añadimos las variables necesarias en esta seccion
-          USER_NAME=${{ github.actor.name}}
-          USER_EMAIL=${{ github.actor.email }}
-          PATH_RESUME="core/results/"
-          KAOS_MODULE="[Ka0S]"
-          KAOS_STEP_MODULE=""
-          DATETIME=$(date +'%Y%m%d%H%M%S')
-          echo "$DATETIME"
-          echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
-          echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
-          echo "KAOS_STEP_MODULE=$KAOS_STEP_MODULE" >> $GITHUB_ENV
-          echo "DATETIME=$DATETIME" >> $GITHUB_ENV
           # Comprobamos el flow que deberemos de ejecutar
           echo "Branch name is ${{ github.ref }}"
           case "${{ github.ref }}" in
@@ -78,12 +72,12 @@ jobs:
           echo "Launch by ${{ github.actor }}"
           BRANCH_NAME=${{ github.event.base_ref }}
           # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
-          git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.PATH_RESUME }}commit-summary-${{ env.DATETIME }}.txt
+          git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.KAOS_PATH_RESUME }}commit-summary-${{ env.Kaos_DATETIME }}.txt
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
-          INVOLVED=$(cat "${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt")
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_DATETIME }}.txt
+          INVOLVED=$(cat "${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_DATETIME }}.txt")
           echo "INVOLVED=$INVOLVED" >> $GITHUB_OUTPUT
-          # git add ${{ env.PATH_RESUME }}*
+          # git add ${{ env.KAOS_PATH_RESUME }}*
           # git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
           # git push
 
