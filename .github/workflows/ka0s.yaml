@@ -30,10 +30,9 @@ jobs:
           token: ${{ secrets.KAOS_TOKEN }}
           
       - id: core
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-          RNNUMBER: ""
-          RNBRANCH: ""
+        outputs:
+          RNNUMBER: ${{ steps.set-vars.outputs.RNBRANCH }}
+          RNBRANCH: ${{ steps.set-vars.outputs.RNNUMBER }}
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
         if: ${{ always() }}
         run: |
@@ -59,7 +58,9 @@ jobs:
           RNBRANCH=$(echo "$rn" | grep -o '^[A-Za-z]*')
           RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
           echo "Extracted RN Branch: $RNBRANCH"
-          echo "Extracted RN Number: $RNNUMBER"     
+          echo "Extracted RN Number: $RNNUMBER"
+          echo "::set-output name=RNBRANCH::$RNBRANCH"
+          echo "::set-output name=RNNUMBER::$RNNUMBER"     
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
@@ -75,7 +76,7 @@ jobs:
       pull-requests: write
     steps:
       - id: release-new-flow
-        if: ${{ RNBRANCH == 'RN' }}
+        if: ${{ needs.job-core.outputs.RNBRANCH == 'RN' }}
         run: |
           echo "release-new-flow"
           echo "Branch name is ${{ github.ref }}"
