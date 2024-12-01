@@ -31,6 +31,9 @@ jobs:
           
       - id: core
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
+        outputs:
+          RNBRANCH: ${{ steps.set-vars.outputs.RNBRANCH }}
+          RNNUMBER: ${{ steps.set-vars.outputs.RNNUMBER }}
         if: ${{ always() }}
         run: |
           echo "Branch name is ${{ github.ref }}"
