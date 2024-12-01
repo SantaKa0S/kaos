@@ -37,9 +37,10 @@ jobs:
         run: |
           echo "Este el job JOB-CORE"
           echo "Este es el paso JOB-ID CORE dentro de Job JOB-CORE"
-          echo "$GITHUB_CONTEXT"
+          # echo "$GITHUB_CONTEXT"
           echo "Branch name is ${{ github.ref }}"
-          f [[ ${{ github.ref }} =~ RN[0-9]+- ]]; then
+          ref="${{ github.ref }}"
+          f [[ $ref =~ RN[0-9]+- ]]; then
             rn="${BASH_REMATCH[0]}"
             echo "Extracted RN: $rn"
           else
