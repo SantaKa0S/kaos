@@ -41,6 +41,7 @@ jobs:
 
         if: ${{ always() }}
         run: |
+          ${{ vars.KAOS_CODE }}="RN-123"
           # Comprobamos el flow que deberemos de ejecutar
           echo "Branch name is ${{ github.ref }}"
           case "${{ github.ref }}" in
