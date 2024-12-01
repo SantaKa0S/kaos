@@ -56,8 +56,8 @@ jobs:
               exit 1
               ;;
           esac
-          echo "$rn" | grep -o '^[A-Za-z]*' >> $RNBRANCH
-          echo "RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')" >> $GITHUB_ENV
+          RNBRANCH=$(echo "$rn" | grep -o '^[A-Za-z]*')
+          RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
           echo "Extracted RN Branch: ${{ env.RNBRANCH}} - $RNBRANCH"
           echo "Extracted RN Number: ${{ env.RNNUMBER }} - $RNNUMBER"     
           echo "Commit SHA is ${{ github.sha }}"
