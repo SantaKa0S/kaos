@@ -23,10 +23,11 @@ jobs:
       issues: write
       pull-requests: write
     env:
-          KAOS_PATH_RESUME: "core/results/"
-          KAOS_MODULE: "[Ka0S]"
-          KAOS_STEP_MODULE: ""
-          KAOS_CODE: ""
+      KAOS_PATH_RESUME: "core/results/"
+      KAOS_MODULE: "[Ka0S]"
+      KAOS_STEP_MODULE: ""
+      KAOS_CODE: ""
+      KAOS_INVOLVED: ""
     steps:
       - id: repo
         if: ${{ always() }}
