@@ -104,7 +104,7 @@ jobs:
           ${{ env.BRANCH_ACTION }}\n\
           ${{ env.BRANCH_NUMBER }}\n\
           Please review issue ${{ env.BRANCH_NUMBER }} for more information.'
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body=$KAOS_ISSUE_BODY -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment
       - id: feature-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
         run: |
