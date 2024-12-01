@@ -30,11 +30,14 @@ jobs:
           token: ${{ secrets.KAOS_TOKEN }}
           
       - id: core
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
       # vamos a capturar la información que ha permitido disparar el evento
         if: ${{ always() }}
         run: |
-          echo "JOB-CORE"
-          echo "JOB-ID CORE"
+          echo "Este el job JOB-CORE"
+          echo "Este es el paso JOB-ID CORE dentro del Job JOB-CORE"
+          echo "$GITHUB_CONTEXT"
           echo "Branch name is ${{ github.ref }}"
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
