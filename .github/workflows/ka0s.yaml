@@ -12,8 +12,8 @@ jobs:
     # Condicion antes de comenzar el jobs
     if: ${{ always() }} 
     outputs:
-      RNBRANCH: ${{ steps.set-vars.outputs.RNBRANCH }}
-      RNNUMBER: ${{ steps.set-vars.outputs.RNNUMBER }}
+      RNBRANCH: ${{ steps.core.outputs.RNBRANCH }}
+      RNNUMBER: ${{ steps.core.outputs.RNNUMBER }}
     runs-on: 
       group: kaos-test
     permissions:
@@ -80,7 +80,7 @@ jobs:
       pull-requests: write
     steps:
       - id: release-new-flow
-        if: ${{ env.RNBRANCH == 'RN' }}
+        if: ${{ needs.job-core.outputs.RNBRANCH == 'RN' }}
         run: |
           echo "release-new-flow"
           echo "Branch name is ${{ github.ref }}"
