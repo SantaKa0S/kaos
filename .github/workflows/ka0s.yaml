@@ -83,7 +83,7 @@ jobs:
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           echo "SUMMARY<<EOF" >> $GITHUB_ENV
-          echo "Job:${{ github.workflow }} has been initiated by ${{ github.triggering_actor}}"
+          echo "Job:${{ github.workflow }} has been initiated by ${{ github.triggering_actor}}" >> $GITHUB_ENV
           echo "${{ github.action_status }} launch by ${{ github.actor }}" >> $GITHUB_ENV
           echo "Branch name is ${{ github.ref }}" >> $GITHUB_ENV
           echo "Commit SHA is ${{ github.sha }}" >> $GITHUB_ENV
@@ -91,7 +91,7 @@ jobs:
           echo "Assigned number issue ${{ env.BRANCH_ACTION }}" >> $GITHUB_ENV
           echo "Executed flow about ${{ env.BRANCH_ACTION }}" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-          cat $SUMMARY
+          cat ${{ env.SUMMARY }}
       - id: feature-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
         run: |
