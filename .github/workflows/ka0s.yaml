@@ -11,6 +11,9 @@ jobs:
   job-core:
     # Condicion antes de comenzar el jobs
     if: ${{ always() }} 
+    outputs:
+      RNBRANCH: ${{ steps.set-vars.outputs.RNBRANCH }}
+      RNNUMBER: ${{ steps.set-vars.outputs.RNNUMBER }}
     runs-on: 
       group: kaos-test
     permissions:
@@ -29,10 +32,10 @@ jobs:
           
       - id: core
       # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
+        if: ${{ always() }}
         env:
           RNBRANCH: ""
           RNNUMBER: ""
-        if: ${{ always() }}
         run: |
           echo "Branch name is ${{ github.ref }}"
           case "${{ github.ref }}" in
@@ -58,6 +61,7 @@ jobs:
           echo "Extracted RN Branch: $RNBRANCH"
           echo "Extracted RN Number: $RNNUMBER"
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_ENV
+          echo "RNBRANCH=${{ env.RNBRANCH}}" >> $GITHUB_OUTPUT
           echo "RNNUMBER=$RNNUMBER" >> $GITHUB_ENV   
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
@@ -76,7 +80,7 @@ jobs:
       pull-requests: write
     steps:
       - id: release-new-flow
-        if: ${{ needs.job-core.outputs.RNBRANCH == 'RN' }}
+        if: ${{ env.RNBRANCH == 'RN' }}
         run: |
           echo "release-new-flow"
           echo "Branch name is ${{ github.ref }}"
