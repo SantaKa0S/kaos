@@ -65,7 +65,7 @@ jobs:
           RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
           echo "Extracted RN Branch: $RNBRANCH"
           echo "Extracted RN Number: $RNNUMBER"
-          KAOS_CODE=$RNBRANCH$RNNUMBER
+          KAOS_CODE=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')
           echo $KAOS_CODE
           echo "KAOS_CODE=$KAOS_CODE" >> $GITHUB_ENV
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
