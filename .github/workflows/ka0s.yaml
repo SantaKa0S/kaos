@@ -9,7 +9,7 @@ on:
 jobs:
   # Primer Job dentro del Job
   job-core:
-    # condicion antes de comenzar el jobs
+    # Condicion antes de comenzar el jobs
     if: ${{ always() }} 
     runs-on: 
       group: kaos-test
