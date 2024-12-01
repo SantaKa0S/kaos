@@ -57,7 +57,7 @@ jobs:
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
           # este paso es el que provoca que el workflow siga un camino u otro
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
-          INVOLVED=$(cat ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt)
+          INVOLVED=$(cat ${{ github.event.inputs.kaos-involved-file}})
           echo "INVOLVED=$INVOLVED" >> $GITHUB_ENV
 
       - name: We check the module where the action is to be performed
