@@ -82,6 +82,7 @@ jobs:
           git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.KAOS_PATH_RESUME }}commit-summary-${{ env.KAOS_CODE }}.txt
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
+          echo 'cat ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt'
           echo "INVOLVED=$(cat ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt)" >> $GITHUB_ENV
           # git add ${{ env.KAOS_PATH_RESUME }}
           # git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
