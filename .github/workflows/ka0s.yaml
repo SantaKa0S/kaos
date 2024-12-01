@@ -39,6 +39,12 @@ jobs:
           echo "Este es el paso JOB-ID CORE dentro de Job JOB-CORE"
           echo "$GITHUB_CONTEXT"
           echo "Branch name is ${{ github.ref }}"
+          f [[ ${{ github.ref }} =~ RN[0-9]+- ]]; then
+            rn="${BASH_REMATCH[0]}"
+            echo "Extracted RN: $rn"
+          else
+            echo "No RN found in ref"
+          fi
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
