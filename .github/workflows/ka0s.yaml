@@ -61,8 +61,8 @@ jobs:
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
-          echo "${{ steps.core.outputs.RNBRANCH }}"
-          echo "${{ steps.core.outputs.RNNUMBER }}"
+          echo "${{ steps.core.GITHUB_OUTPUT.RNBRANCH }}"
+          echo "${{ steps.job-core.GITHUB_OUTPUT.RNBRANCH }}"
 
   job-flows:
     needs: job-core # Si antes haber evaluado la información no ejecutamos nada
