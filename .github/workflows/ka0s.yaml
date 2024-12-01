@@ -39,32 +39,25 @@ jobs:
           echo "Este es el paso JOB-ID CORE dentro de Job JOB-CORE"
           # echo "$GITHUB_CONTEXT"
           echo "Branch name is ${{ github.ref }}"
-          ref="${{ github.ref }}"
-          if [[ $ref =~ (RN[0-9]+)- ]]; then
-            rn="${BASH_REMATCH[1]}"
-            rn_branch=$(echo "$rn" | grep -o '^[A-Za-z]*')
-            rn_number=$(echo "$rn" | grep -o '[0-9]*')
-            echo "Extracted RN Branch: $rn_branch"
-            echo "Extracted RN Number: $rn_number"
-          else
-            if [[ $ref =~ (F[0-9]+)- ]]; then
-              rn="${BASH_REMATCH[1]}"
-              rn_branch=$(echo "$rn" | grep -o '^[A-Za-z]*')
-              rn_number=$(echo "$rn" | grep -o '[0-9]*')
-              echo "Extracted RN Branch: $rn_branch"
-              echo "Extracted RN Number: $rn_number"
-            else
-              if [[ $ref =~ (H[0-9]+)- ]]; then
-                rn="${BASH_REMATCH[1]}"
-                rn_branch=$(echo "$rn" | grep -o '^[A-Za-z]*')
-                rn_number=$(echo "$rn" | grep -o '[0-9]*')
-                echo "Extracted RN Branch: $rn_branch"
-                echo "Extracted RN Number: $rn_number"
-              else
-                echo "No debería de estar haciendo esto"
-              fi
-            fi
-          fi
+          case "${{ github.ref }}" in
+            *RN[0-9]*-*)
+              rn=$(echo "$ref" | grep -o 'RN[0-9]*')
+              ;;
+            *F[0-9]*-*)
+              rn=$(echo "$ref" | grep -o 'F[0-9]*')
+              ;;
+            *H[0-9]*-*)
+              rn=$(echo "$ref" | grep -o 'H[0-9]*')
+              ;;
+            *)
+              echo "No debería de estar haciendo esto"
+              exit 1
+              ;;
+          esac
+          rn_branch=$(echo "$rn" | grep -o '^[A-Za-z]*')
+          rn_number=$(echo "$rn" | grep -o '[0-9]*')
+          echo "Extracted RN Branch: $rn_branch"
+          echo "Extracted RN Number: $rn_number"
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
