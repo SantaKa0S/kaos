@@ -90,7 +90,7 @@ jobs:
                       gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
                       # Lanzamos el lint del fichero
                       gh workflow run $workflow --ref ${{ github.ref }} -f kaos-origin=${{ github.run_id }} -f kaos-files=$line -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
-                      gh workflow run issue.yaml --ref main -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="Launch workflow $workflow" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+                      gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="Launch workflow $workflow" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
                     else
                       #Si el fichero que se esta intentando subir no esta permitido se abre una issue indicando el error.
                       echo "Error el fichero que intenta subir no esta permitido"
