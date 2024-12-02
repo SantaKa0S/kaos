@@ -121,7 +121,7 @@ jobs:
         KAOS_ISSUE_TITLE="KaoS VERSION Action Failed: ${{ github.workflow }}"
         KAOS_ISSUE_BODY=$(cat <<'EOF'
         An error occurred in the KaoS VERSION Action workflow **${{ github.workflow }}**.
-        **[KAOS INIT]  Message:**
+        **[KAOS VERSION]  Message:**
         \`\`\`
         **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
         \`\`\`
