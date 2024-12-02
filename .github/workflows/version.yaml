@@ -11,18 +11,14 @@ permissions:
   issues: write
 
 jobs:
-  
-  if_merged:
-      if: github.event.pull_request.merged == true
-      runs-on: ubuntu-latest
-
   kaos-version:
+    if: github.event.pull_request.merged == true
     outputs:
         KAOS_BRANCH: ${{ steps.commit_details.outputs.RNBRANCH }}
         KAOS_NUMBER: ${{ steps.commit_details.outputs.RNNUMBER }}
         KAOS_CODE: ${{ steps.commit_details.outputs.RNCODE }}
         KAOS_VERSION: ${{ steps.version.outputs.VERSION }}
-    runs-on: ubuntu-latest
+    runs-on: kaos-test
 
     steps:
     - id: repo
