@@ -21,6 +21,7 @@ jobs:
         KAOS_BRANCH: ${{ steps.commit_details.outputs.RNBRANCH }}
         KAOS_NUMBER: ${{ steps.commit_details.outputs.RNNUMBER }}
         KAOS_CODE: ${{ steps.commit_details.outputs.RNCODE }}
+        KAOS_VERSION: ${{ steps.version.outputs.VERSION }}
     runs-on: ubuntu-latest
 
     steps:
@@ -38,9 +39,9 @@ jobs:
       env:
         KAOS_REF: ${{ github.ref }}
       run: |
-        echo "AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_ENV
-        echo "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_ENV
-        echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_ENV
+        echo "AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
+        echo "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
+        echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
         RNBRANCH=$(echo "${{ env.KAOS_REF}}" | grep -o '^[A-Za-z]*')
         RNNUMBER=$(echo "${{ env.KAOS_REF}}" | grep -o '[0-9]*')
         echo "Extracted RN Branch: $RNBRANCH"
@@ -77,45 +78,42 @@ jobs:
     - id: changed_files
       run: |
         CHANGED_FILES=$(git diff --name-only HEAD~1 | tr '\n' ' ')
-        echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+        echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_OUTPUT
 
     - id: changelog
+      env:
+        VERSION: ${{ steps.version.outputs.VERSION }}
+        CHANGE_FILES: ${{ steps.changed_files.outputs.CHANGED_FILES }}
+        NAME:  ${{ steps.commit_details.outputs.AUTHOR_NAME }}
+        EMAIL: ${{ steps.commit_details.outputs.AUTHOR_EMAIL }}
+        MESSAGE: ${{ steps.commit_details.outputs.COMMIT_MESSAGE }}
       run: |
-        echo "## Version ${{ steps. }}" >> CHANGELOG.md
+        echo "## Version ${{ env.VERSION }}" >> CHANGELOG.md
         echo "- **Branch**: ${{ github.ref }}" >> CHANGELOG.md
         echo "- **Commit**: ${{ github.sha }}" >> CHANGELOG.md
-        echo "- **Author**: ${{ env.AUTHOR_NAME }} (${{ env.AUTHOR_EMAIL }})" >> CHANGELOG.md
+        echo "- **Author**: ${{ env.NAME }} (${{ env.EMAIL }})" >> CHANGELOG.md
         echo "- **Date**: $(date -u)" >> CHANGELOG.md
-        echo "- **Message**: ${{ env.COMMIT_MESSAGE }}" >> CHANGELOG.md
+        echo "- **Message**: ${{ env.MESSAGE }}" >> CHANGELOG.md
         echo "- **Files Changed**:" >> CHANGELOG.md
-        for file in ${{ env.CHANGED_FILES }}; do echo "  - $file" >> CHANGELOG.md; done
+        for file in ${{ env.CHANGE_FILES }}; do echo "  - $file" >> CHANGELOG.md; done
         echo "---------------------------------" >> CHANGELOG.md
 
-    - id: push-log
+    - id: push-log-tag-index
+      env:
+        USER_NAME: ${{ secrets.KAOS_USER_NAME }}
+        USER_EMAIL: ${{ secrets.KAOS_USER_EMAIL }}
+        GITHUB_TOKEN: ${{ secrets.KAOS_TOKEN }}
       run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
+        git config --global user.name '${{ env.USER_NAME }}'
+        git config --global user.email '${{ env.USER_EMAIL}}'
+        if [ ! -f INDEX.md ]; then echo "# Version Index" > INDEX.md; fi
+        echo "- **Version**: v${{ steps.version.outputs.VERSION }} - **Description**: ${{ steps.commit_details.outputs.COMMIT_MESSAGE }}" >> INDEX.md
+        git tag -a "v${{ steps.version.outputs.VERSION }}" -m "NEW Ka0S version ${{ steps.version.outputs.VERSION }}"
+        git push origin "v${{ steps.version.outputs.VERSION }}"
         git add CHANGELOG.md version.txt
         git commit -m "[Ka0S] Upload: CHANGELOG.md with new version log entry"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-    - id: push-tag
-      run: |
-        git tag -a "v${{ env.VERSION }}" -m "Release version ${{ env.VERSION }}"
-        git push origin "v${{ env.VERSION }}"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - id: index
-      run: |
-        if [ ! -f INDEX.md ]; then echo "# Version Index" > INDEX.md; fi
-        echo "- **Version**: v${{ env.VERSION }} - **Description**: ${{ env.COMMIT_MESSAGE }}" >> INDEX.md
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
         git add INDEX.md
-        git commit -m "[Ka0S] Upload: INDEX.md with version ${{ env.VERSION }}"
+        git commit -m "[Ka0S] Upload: INDEX.md with version ${{ steps.version.outputs.VERSION }}"
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        
