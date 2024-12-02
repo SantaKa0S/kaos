@@ -3,6 +3,8 @@ name: Ka0S
 # Controls when the workflow will run
 on:
   push: 
+    paths:
+      - '**.yaml'
     branches-ignore:
       - 'main'
     paths-ignore:
