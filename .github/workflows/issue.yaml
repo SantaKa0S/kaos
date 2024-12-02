@@ -32,7 +32,7 @@ on:
       kaos-issue-id:
         description: 'Issue ID'
         default: ""
-        required: true
+        required: false
   
 permissions:
   contents: write
