@@ -57,7 +57,7 @@ jobs:
            GH_TOKEN: ${{ secrets.KAOS_ISSUE_TOKEN }}
            GH_REPO: ${{ secrets.KAOS_REPO }}
         run: |
-          # Añadimos la infpormación de todos los workflows y sus datos
+          # Añadimos la información de todos los workflows y sus datos
           # Generamos el fichero con los workflows disponibles en el repo
           gh workflow list --all --json id,name,path,state > ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json
           # Formatear el archivo JSON final
