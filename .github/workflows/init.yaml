@@ -2,6 +2,15 @@ name: Ka0s Init
 
 on:
   workflow_dispatch:
+    inputs:
+      kaos-issue-id:
+        description: 'Issue ID'
+        default: ""
+        required: true
+      kaos-involved-file:
+        description: 'Involved Files to process'
+        default: ""
+        required: true
 
 permissions:
   contents: write
@@ -48,7 +57,7 @@ jobs:
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
           # este paso es el que provoca que el workflow siga un camino u otro
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
-          INVOLVED=$(cat ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt)
+          INVOLVED=${{ github.event.inputs.kaos-involved-file}}
           echo "INVOLVED=$INVOLVED" >> $GITHUB_ENV
 
       - name: We check the module where the action is to be performed
@@ -78,16 +87,13 @@ jobs:
                       # en este caso deberemos de genarar una issue indicando de una acción en ejecucion y el máximo detalle
                       KAOS_ISSUE_TITLE="[WORFLOW] Action Started: ${{ github.workflow }}"
                       KAOS_ISSUE_BODY=$(printf "This is a issue created by ${{ env.KAOS_MODULE }} to register Actions workflows **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
-                      GH_ISSUE_ID=$(gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "workflow" --repo ${{ github.repository }})
-                      echo "$GH_ISSUE_ID"
-                      echo "La nueva numeracion es $GH_ISSUE_ID"
+                      gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
                       # Lanzamos el lint del fichero
-                      gh workflow run $workflow --ref main -f kaos-origin=${{ github.run_id }} -f kaos-files=${{ env.INVOLVED }} -f kaos-issue-id=$GH_ISSUE_ID
-                      job_id=$(gh run list --workflow=$workflow --branch=main --json databaseId --jq '.[0].databaseId')
-                      gh workflow run issue.yaml --ref main -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="Launch workflow $workflow with id $job_id" -f kaos-issue-id=$GH_ISSUE_ID
+                      gh workflow run $workflow --ref ${{ github.ref }} -f kaos-origin=${{ github.run_id }} -f kaos-files=$line -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+                      gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="Launch workflow $workflow" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
                     else
                       #Si el fichero que se esta intentando subir no esta permitido se abre una issue indicando el error.
-                      echo "Error el fichero que intenta subir no esta permetido"
+                      echo "Error el fichero que intenta subir no esta permitido"
                     fi
                   done
               else
@@ -98,7 +104,7 @@ jobs:
                   KAOS_ISSUE_BODY=$(printf "This is a resume to the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.\nIt has been requested by: **${{ github.actor }}**\n\n**Success Message:**\n\`\`\`\nPlease check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}\n**Please check the issues for more details**\n\`\`\`\n\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n\n**Files Involved:**\n${{ env.INVOLVED }}\n")
               fi
             done
-          done < ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
+          done < ${{ github.event.inputs.kaos-involved-file }}
 
       - name: Upload parameter file
         uses: actions/upload-artifact@v4

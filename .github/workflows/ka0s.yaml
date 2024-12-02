@@ -1,0 +1,151 @@
+# This is a basic workflow to help you get started with Actions
+name: Ka0S
+# Controls when the workflow will run
+on:
+  push: 
+    branches-ignore:
+      - 'main'
+    paths-ignore:
+      - 'core/result/*'
+    
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # Primer Job dentro del Job
+  job-core:
+    # Condicion antes de comenzar el jobs
+    if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }} 
+    outputs:
+      KAOS_BRANCH: ${{ steps.core.outputs.RNBRANCH }}
+      KAOS_NUMBER: ${{ steps.core.outputs.RNNUMBER }}
+      KAOS_INVOLVED: ${{ steps.files.outputs.INVOLVED }}
+    runs-on: 
+      group: kaos-test
+    permissions:
+      contents: write
+      actions: write
+      issues: write
+      pull-requests: write
+    env:
+      KAOS_PATH_RESUME: "core/results/"
+      KAOS_MODULE: "[Ka0S]"
+      KAOS_STEP_MODULE: ""
+      KAOS_CODE: ""
+    steps:
+      - id: repo
+        if: ${{ always() }}
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+          
+          
+      - id: core
+      # vamos a capturar toda la información del evento que dispara el actions para controlar el flujo que debera de seguir
+        if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }}
+        run: |
+          # Comprobamos el flow que deberemos de ejecutar
+          echo "Branch name is ${{ github.ref }}"
+          case "${{ github.ref }}" in
+            *RN[0-9]*-*)
+              rn=$(echo "${{ github.ref }}" | grep -o 'RN[0-9]*')
+              ;;
+            *F[0-9]*-*)
+              rn=$(echo "${{ github.ref }}" | grep -o 'F[0-9]*')
+              ;;
+            *H[0-9]*-*)
+              rn=$(echo "${{ github.ref }}" | grep -o 'H[0-9]*')
+              ;;
+            *E[0-9]*-*)
+              rn=$(echo "${{ github.ref }}" | grep -o 'H[0-9]*')
+              ;;
+            *)
+              echo "No debería de estar haciendo esto"
+              exit 1
+              ;;
+          esac
+          RNBRANCH=$(echo "$rn" | grep -o '^[A-Za-z]*')
+          RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
+          echo "Extracted RN Branch: $RNBRANCH"
+          echo "Extracted RN Number: $RNNUMBER"
+          echo "KAOS_CODE=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')" >> $GITHUB_ENV
+          echo "La variable de KAOS_CODE es $KAOS_CODE"
+          echo "La variable de KAOS_CODE es ${{ env.KAOS_CODE }}"
+          echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
+          echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT   
+          echo "Commit SHA is ${{ github.sha }}"
+          echo "Repo origin is ${{ github.repository }}"
+          echo "Launch by ${{ github.actor }}"
+          BRANCH_NAME=${{ github.event.base_ref }}
+
+      - id: files
+        env:
+          USER_NAME: ${{ secrets.KAOS_USER_NAME }}
+          USER_EMAIL: ${{ secrets.KAOS_USER_EMAIL }}
+        if: ${{ always() }}
+        run: |
+          # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
+          git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.KAOS_PATH_RESUME }}commit-summary-${{ env.KAOS_CODE }}.txt
+          # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
+          INVOLVED=${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
+          echo "INVOLVED=$INVOLVED" >> $GITHUB_OUTPUT
+          git config --global user.name "${{ env.USER_NAME }}"
+          git config --global user.email "${{ env.USER_EMAIL}}"
+          git add ${{ env.KAOS_PATH_RESUME }}*
+          git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
+          git push
+
+  job-flows:
+    needs: job-core # Si antes haber evaluado la información not∫ ejecutamos nada
+    outputs:
+      KAOS_BODY_ISSUE: ${{ steps.release-new-flow.outputs.SUMMARY }}
+    runs-on:
+      group: kaos-test
+    permissions:
+      contents: write
+      actions: write
+      issues: write
+      pull-requests: write
+    steps:
+      - id: release-new-flow
+        env:
+          SUMMARY: ""
+          BRANCH_ACTION: ${{ needs.job-core.outputs.KAOS_BRANCH }}
+          BRANCH_NUMBER: ${{ needs.job-core.outputs.KAOS_NUMBER }}
+          BRANCH_INVOLVED: ${{ needs.job-core.outputs.KAOS_INVOLVED }}
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+        if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
+        run: |
+          echo "Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
+          KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action"
+          KAOS_ISSUE_BODY=$(printf "${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.\n${{ github.action_status }} launch by ${{ github.actor }}\nBranch name is ${{ github.ref }}\nCommit SHA is ${{ github.sha }}\nRepo origin is ${{ github.repository }}\nAssigned number issue ${{ env.BRANCH_NUMBER }}\nExecuted flow about ${{ env.BRANCH_ACTION }}\n**Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n**Actions Involved:**\n**Ref Flow: ${{ env.BRANCH_ACTION }}**\n**Ref Issue: ${{ env.BRANCH_NUMBER }}**\n**Please review issue ${{ env.BRANCH_NUMBER }} for more information.**\n")
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
+          gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}
+          KAOS_ISSUE_BODY="Now initiates flow process to check ${{ env.BRANCH_ACTION }}-${{ env.BRANCH_NUMBER }} Ka0S_Code"
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}   
+      - id: feature-flow
+        if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
+        run: |
+          echo "feature-flow"
+          echo "Branch name is ${{ github.ref }}"
+          echo "Commit SHA is ${{ github.sha }}"
+          echo "Repo origin is ${{ github.repository }}"
+          echo "Launch by ${{ github.actor }}"
+      - id: hotfix-flow
+        if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'H' }}
+        run: |
+          echo "hotfix-flow"
+          echo "Branch name is ${{ github.ref }}"
+          echo "Commit SHA is ${{ github.sha }}"
+          echo "Repo origin is ${{ github.repository }}"
+          echo "Launch by ${{ github.actor }}"
+      - id: execution-flow
+        if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'E' }}
+        run: |
+          execution-flow
+          echo "Branch name is ${{ github.ref }}"
+          echo "Commit SHA is ${{ github.sha }}"
+          echo "Repo origin is ${{ github.repository }}"
+          echo "Launch by ${{ github.actor }}"
+
+

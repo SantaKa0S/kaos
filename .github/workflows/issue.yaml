@@ -77,19 +77,20 @@ jobs:
             case ${{ github.event.inputs.kaos-issue-actions }} in
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
-                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.actor.name }}"
+                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.actor }}"
                     ;;
                 comment)
                     # Añadimos comentarios a una issue en concreto o ficheros
                     if [[ -z "${{ github.event.inputs.kaos-issue-body-file }}" ]]; then
                       gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}"
                     else
-                      gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}" --body-file ${{ github.event.inputs.kaos-issue-body-file }}
+                      gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}" 
+                      # Esta opción se añadira más adelante --body-file "${{ github.event.inputs.kaos-issue-body-file }}"
                     fi
                   ;;
                 close)
                     # Cerramos una issue finalizada
-                    gh issue close ${{ github.event.inputs.kaos-issue-id }} -c "Issue: ${{ github.event.inputs.kaos-issue-id }} closed by  ${{ github.actor.name }}" -r "completed"
+                    gh issue close ${{ github.event.inputs.kaos-issue-id }} -c "Issue: ${{ github.event.inputs.kaos-issue-id }} closed by  ${{ github.actor }}" -r "completed"
                   ;;
                 reopen)
                     # Reabrimos una issue que no ha sido solucionada
@@ -99,7 +100,7 @@ jobs:
                       new_title="${title//[SUCCESS]/[FAILED]}"
                       echo "new_title=$new_title" >> $GITHUB_ENV
                     fi
-                    gh issue reopen ${{ github.event.inputs.kaos-issue-id }} -c "Reopen Issue: ${{ github.event.inputs.kaos-issue-id }} by  ${{ github.actor.name }}"
+                    gh issue reopen ${{ github.event.inputs.kaos-issue-id }} -c "Reopen Issue: ${{ github.event.inputs.kaos-issue-id }} by  ${{ github.actor }}"
                     gh issue edit ${{ github.event.inputs.kaos-issue-id }} -t "$new_title"
                     gh issue edit ${{ github.event.inputs.kaos-issue-id }} --remove-label "resolved"
                   ;;

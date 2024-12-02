@@ -57,7 +57,7 @@ jobs:
            GH_TOKEN: ${{ secrets.KAOS_ISSUE_TOKEN }}
            GH_REPO: ${{ secrets.KAOS_REPO }}
         run: |
-          # Añadimos la infpormación de todos los workflows y sus datos
+          # Añadimos la información de todos los workflows y sus datos
           # Generamos el fichero con los workflows disponibles en el repo
           gh workflow list --all --json id,name,path,state > ${{ env.PATH_RESUME }}workflows-available-${{ env.DATETIME }}.json
           # Formatear el archivo JSON final
@@ -98,8 +98,9 @@ jobs:
              # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros
              git config --global user.email ${{ secrets.KAOS_USER_EMAIL }}
              git config --global user.name ${{ secrets.KAOS_USER_NAME }}
+             git pull
              git add ${{ env.PATH_RESUME }}*
-             git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
+             git commit -m "[Ka0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
              git push
 
              # Generamos los ficheros delta de kaos-workflows-runs
@@ -108,7 +109,7 @@ jobs:
                  jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-workflows-runs.json ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
                  git pull
                  git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
+                 git commit -m "[Ka0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
                  if [[ -s "${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json" ]]; then
                   # LLamamos a splunk
@@ -120,12 +121,12 @@ jobs:
                  cat ${{ env.PATH_RESUME }}kaos-workflows-runs.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json
                  git pull
                  git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
+                 git commit -m "[Ka0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
                  cat ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
                  git pull
                  git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[KA0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
+                 git commit -m "[Ka0S] We integrate the summary files for ${{ env.DATETIME }} in the repository, you do not need to integrate these files"
                  git push
                  gh workflow run ${{ env.KAOS_WORKFLOW }} --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json -f kaos-issue-id=${{ github.workflow }}
              fi
