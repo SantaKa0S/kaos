@@ -207,7 +207,7 @@ jobs:
           KAOS_ISSUE_TITLE="Ka0S SUMMARY Action Failed: ${{ github.workflow }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
           An error occurred in the Ka0S SUMMARY Action workflow **${{ github.workflow }}**.
-          **[KAOS SPLUNK]  Message:**
+          **[KAOS SUMMARY]  Message:**
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
