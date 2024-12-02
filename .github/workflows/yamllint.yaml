@@ -1,7 +1,7 @@
 name: Ka0s YAML Lint
 
 on:
-  workflow_dispatch: # Permite disparar el workflow manualmente
+  workflow_dispatch: # Dispara el workflow manualmente
     inputs:
       kaos-origin:
         description: 'Dispatcher Workflow Run ID'
