@@ -153,7 +153,8 @@ jobs:
           echo "Launch by ${{ github.actor }}"
 
   handle_failure:
-    runs-on: kaos-test
+    runs-on: 
+      group: kaos-test
     needs: [job-core, job-flows]
     if: ${{ failure() }}
     steps:
