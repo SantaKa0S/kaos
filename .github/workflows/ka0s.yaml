@@ -7,7 +7,8 @@ on:
       - '**.yaml'
     # branches-ignore:
     #  - 'main'
-    
+env:
+  KAOS_MODULE: "[Ka0S]"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # Primer Job dentro del Job
@@ -27,7 +28,6 @@ jobs:
       pull-requests: write
     env:
       KAOS_PATH_RESUME: "core/results/"
-      KAOS_MODULE: "[Ka0S]"
       KAOS_STEP_MODULE: ""
       KAOS_CODE: ""
     steps:
@@ -167,7 +167,7 @@ jobs:
           KAOS_ISSUE_TITLE="Ka0S Action Failed: ${{ github.workflow }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
           An error occurred in the Ka0S Action workflow **${{ github.workflow }}**.
-          **[KAOS CORE]  Message:**
+          **${{ env.KAOS_MODULE }}  Message:**
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`

@@ -9,31 +9,29 @@ permissions:
   contents: write
   actions: write
   issues: write
+env:
+  KAOS_MODULE: "[Ka0S] VERSION"
+  KAOS_REF: ${{ github.ref }}
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
 
 jobs:
   kaos-version:
     if: github.event.pull_request.merged == true
-    outputs:
-        KAOS_BRANCH: ${{ steps.commit_details.outputs.RNBRANCH }}
-        KAOS_NUMBER: ${{ steps.commit_details.outputs.RNNUMBER }}
-        KAOS_CODE: ${{ steps.commit_details.outputs.RNCODE }}
-        KAOS_VERSION: ${{ steps.version.outputs.VERSION }}
     runs-on: kaos-test
-
+    outputs:
+      KAOS_BRANCH: ${{ steps.commit_details.outputs.RNBRANCH }}
+      KAOS_NUMBER: ${{ steps.commit_details.outputs.RNNUMBER }}
+      KAOS_CODE: ${{ steps.commit_details.outputs.RNCODE }}
+      KAOS_VERSION: ${{ steps.version.outputs.VERSION }}
+      KAOS_FILES: ${{ steps.changed_files.outputs.CHANGED_FILES }}
     steps:
     - id: repo
       uses: actions/checkout@v4
       with:
         fetch-depth: 0  # Clonar todo el historial 
-
-    - id: node
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+        token: ${{ secrets.KAOS_TOKEN }}
 
     - id: commit_details
-      env:
-        KAOS_REF: ${{ github.ref }}
       run: |
         echo "AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
         echo "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
@@ -48,19 +46,17 @@ jobs:
         echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT 
 
     - id: version
-      env: 
-        RNBRANCH: ${{ steps.commit_details.outputs.RNBRANCH }}
       run: |
         if [ ! -f version.txt ]; then echo "0.0.0" > version.txt; fi
         VERSION=$(cat version.txt)
         cat version.txt
         IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
-        if [[ "${{ env.RNBRANCH }}" =~ (H) ]]; then
+        if [[ "${{ steps.commit_details.outputs.RNBRANCH }}" =~ (H) ]]; then
           PATCH=$((PATCH + 1))
-        elif [[ "${{ env.RNBRANCH }}" =~ (Audit:) ]]; then
+        elif [[ "${{ steps.commit_details.outputs.RNBRANCH }}" =~ (Audit:) ]]; then
           MINOR=$((MINOR + 1))
           PATCH=0
-        elif [[ "${{ env.RNBRANCH }}" =~ (Build: ) ]]; then
+        elif [[ "${{ steps.commit_details.outputs.RNBRANCH }}" =~ (Build: ) ]]; then
           MAJOR=$((MAJOR + 1))
           MINOR=0
           PATCH=0
@@ -112,28 +108,31 @@ jobs:
         git commit -m "[Ka0S] Upload: INDEX.md with version ${{ steps.version.outputs.VERSION }}"
         git push
 
-    - id: check-execution
-      env:
-        GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
-      if: failure()
-      run: |
-        echo "Error detected in KaoS VERSION, creating issue..."
-        KAOS_ISSUE_TITLE="KaoS VERSION Action Failed: ${{ github.workflow }}"
-        KAOS_ISSUE_BODY=$(cat <<'EOF'
-        An error occurred in the KaoS VERSION Action workflow **${{ github.workflow }}**.
-        **[KAOS VERSION]  Message:**
-        \`\`\`
-        **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
-        \`\`\`
-        **Workflow Name:** ${{ github.workflow }}
-        **Job Name:** ${{ github.job }}
-        **Run ID:** ${{ github.run_id }}
-        **Run Number:** ${{ github.run_number }}
-        **Repository:** ${{ github.repository }}
-        **Branch:** ${{ github.ref }}
-        **Commit:** ${{ github.sha }}
-        Please investigate the issue.
-        EOF
-        )
-        gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"
-  
+  handle_failure:
+    runs-on: 
+      group: kaos-test
+    needs: [kaos-version]
+    if: ${{ failure() }}
+    steps:
+      - id: check-execution
+        run: |
+          echo "Error detected in Ka0S, creating issue..."
+          KAOS_ISSUE_TITLE="Ka0S Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_BODY=$(cat <<'EOF'
+          An error occurred in the Ka0S Action workflow **${{ github.workflow }}**.
+          **${{ env.KAOS_MODULE }}  Message:**
+          \`\`\`
+          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
+          \`\`\`
+          **Workflow Name:** ${{ github.workflow }}
+          **Job Name:** ${{ github.job }}
+          **Run ID:** ${{ github.run_id }}
+          **Run Number:** ${{ github.run_number }}
+          **Repository:** ${{ github.repository }}
+          **Branch:** ${{ github.ref }}
+          **Commit:** ${{ github.sha }}
+          Please investigate the issue.
+          EOF
+          )
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
+                
