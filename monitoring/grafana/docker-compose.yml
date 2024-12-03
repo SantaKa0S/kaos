@@ -37,7 +37,7 @@ services:
         - '/:/host:ro,rslave'
 
   kaos-cadvisor:
-    image: google/cadvisor:latest
+    image: gcr.io/cadvisor/cadvisor:v0.46.0
     container_name: cadvisor
     ports:
      - "8080:8080"
