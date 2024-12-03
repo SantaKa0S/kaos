@@ -109,13 +109,12 @@ jobs:
       pull-requests: write
     env:
       GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+      SUMMARY: ""
+      BRANCH_ACTION: ${{ needs.job-core.outputs.KAOS_BRANCH }}
+      BRANCH_NUMBER: ${{ needs.job-core.outputs.KAOS_NUMBER }}
+      BRANCH_INVOLVED: ${{ needs.job-core.outputs.KAOS_INVOLVED }}
     steps:
       - id: release-new-flow
-        env:
-          SUMMARY: ""
-          BRANCH_ACTION: ${{ needs.job-core.outputs.KAOS_BRANCH }}
-          BRANCH_NUMBER: ${{ needs.job-core.outputs.KAOS_NUMBER }}
-          BRANCH_INVOLVED: ${{ needs.job-core.outputs.KAOS_INVOLVED }}
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           echo "RN - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
