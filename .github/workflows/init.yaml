@@ -20,6 +20,8 @@ permissions:
 
 env:
   KAOS_MODULE: "[Ka0S] INIT"
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  
 jobs:
   kaos-init-process:
     runs-on: kaos-runner-init
@@ -40,7 +42,6 @@ jobs:
         env:
             modules: ${{ secrets.KAOS_CORE_MODULES }}
             files: ${{ secrets.KAOS_CORE_FILES }}
-            GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
           # Vamos a determinar que accion debera de ser la siguiente en el flujo
           IFS=',' read -r -a module_array <<< "$modules"
