@@ -11,7 +11,7 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - /config/prometheus.yaml:/etc/prometheus/prometheus.yaml
+      - /config/:/etc/prometheus/
       - prometheus-data:/prometheus
     restart: unless-stopped
     command:
@@ -51,6 +51,4 @@ services:
     privileged: true
     devices:
       - /dev/kmsg
-    command:
-      - '--disable_metrics=nvm'
     restart: unless-stopped
