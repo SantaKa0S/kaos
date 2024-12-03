@@ -1,15 +1,385 @@
-9f189f5501376ccecef43f1589f13430a1f314fe
+a88d1670f7345f53a21d3c785309aa66b8551b63
 santakloud
 santacana.canton@icloud.com
-Mon Dec 2 14:06:53 2024 +0000
-Finalizamos la version de prueba de creación de versiones
-542790a800e4a0998f4c40053824cb73d98c9ac0
+Tue Dec 3 14:08:58 2024 +0000
+Añadimos la funcionalidad de la configuración de grafana prometheus node-exporter y cadvisor personalizada para kaos
+a7ac1ccdac6a0e9d284bcd9a555d0ab366761e02
 santakloud
 santacana.canton@icloud.com
-Mon Dec 2 13:24:11 2024 +0000
-Añadimos el id de los pasos para poder trabajar con variables entre diferentes pasos
-3e81019e39c286f8f68854dca95b656437507aa5
+Tue Dec 3 14:06:52 2024 +0000
+Merge remote-tracking branch 'origin' into F326-primera-feature-control-de-feature
+84fb429f61c71fbf5058ad24ba0d7dcc3d1b21df
 santakloud
 santacana.canton@icloud.com
-Mon Dec 2 12:28:18 2024 +0000
-Añadimos el fichero de control de versionado
+Tue Dec 3 14:05:00 2024 +0000
+Merge branch 'F326-primera-feature-control-de-feature' of github.com:SantaKa0S/kaos into F326-primera-feature-control-de-feature
+faa5b873152139b54271d4ddacb10ca4d0b9cbc7
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 14:01:12 2024 +0000
+Añadimos la base de los primeros monitores en grafana
+eb14cf9e4070825b0f6e14c0eb9d721a06c3fc54
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 13:37:01 2024 +0000
+Corregimos la configuracion
+6b485954b1df6b7db3a543ed6d81137bb87f7206
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 13:18:13 2024 +0000
+Modificamos la configuracion
+c94c7250b49f523d530a02e7f3ee2a18121d8df5
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 12:36:45 2024 +0000
+Publicamos los servicios bajo localhost
+a10868f16180c3328f6090bc87247936f47e477a
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 12:06:50 2024 +0000
+Retoques en la configuracion
+5870ed16d6c5e26ef67ae82833e3aa8b461f1b08
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 12:04:17 2024 +0000
+Añadimos los cambios en la configuracion
+9ad0f21be5d41967106ffaa4d6f108d0f4fcaa9e
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 12:01:47 2024 +0000
+Cambiamos la version de cadvisor
+cbb92578e86fe71fe7593e2e74fa6f1485ceb027
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 11:59:28 2024 +0000
+Añadimos privilegios a cadvisor
+b6abe6a889c60b36ed09d5bab00e574d54a42223
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 11:51:49 2024 +0000
+Corregimos el puerto de cadvisor
+174425df405ee1bb51647671f7b0f059453eef59
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 11:38:24 2024 +0000
+Añadimos la funcionalidar de ver los logs de docker
+9e55448bfba92fefa8854f7e948ad364ba5c9d9f
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 11:15:50 2024 +0000
+Añadimos gestion de logs en docker
+760d15d14f4a7077e8f0d71898cb814aebe89b03
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 10:20:34 2024 +0000
+Estamos ajustando las configuraciones para su correcta funcionalidad
+722caaab63ad8d1d32a754bb29eb6e987d8663c6
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 10:07:51 2024 +0000
+Nueva configuracion del fichero prometheus
+e4e7d7ecbf81d848127f0e3e520a2690b7873d1f
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 10:02:38 2024 +0000
+Implementamos una nueva version de la configuracion de prometheus
+462141d28dc0f1ba64885de37f51b6537795f1d5
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 09:57:23 2024 +0000
+Cambiamos el puerto de publicación de grafana console, dichoso puerto
+1f2b2c2dbba6a523eeaf6cc69d0ff3f1ccf02d2c
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 09:51:44 2024 +0000
+Cambiamos el puerto de publicación de grafana console, dichoso puerto
+3283f3d7aa089337529a0d5b859a7e332c324498
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 09:45:22 2024 +0000
+Cambiamos el puerto de publicación de grafana console
+1e57d977222fa3191fece652bdbe87f72dc463f6
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 09:36:10 2024 +0000
+Cambiamos el puerto de publicación de grafana console
+367fd39013f342dbfd7d945997978bf634e7e5c1
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 09:26:06 2024 +0000
+Cambiamos el puerto de publicación de grafana console
+4185d9bfc290d87b0a24f560da07da2af0e68a49
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 09:20:11 2024 +0000
+Añadimos la ruta de configuración de prometheus
+d5dc329ad402eadf987343a361baacd4aab6e2cc
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 09:06:16 2024 +0000
+Añadimos la personalización de prometheus para grafana
+532e8110725dab6aa5f43248185cd15c50361139
+santakloud
+santacana.canton@icloud.com
+Tue Dec 3 09:05:47 2024 +0000
+Añadimos la configuracion de grafana mediante compose
+b22adbce02c42dd1c4cfc7e92f5bfbf86d0139c5
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Tue Dec 3 01:37:04 2024 +0000
+[KA0S] We integrate the summary files for 20241203013616 in the repository, you do not need to integrate these files
+f9e119546ccfffa18f159bc3288674eb943d4d74
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Tue Dec 3 01:37:03 2024 +0000
+[KA0S] We integrate the summary files for 20241203013616 in the repository, you do not need to integrate these files
+a1d44dc2b10880df24d920941b0da654de796549
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Tue Dec 3 01:37:00 2024 +0000
+[KA0S] We integrate the summary files for 20241203013616 in the repository, you do not need to integrate these files
+e5d4bee42a88e6006f6b5ca35fd856013599f3ee
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Tue Dec 3 01:36:59 2024 +0000
+[KA0S] We integrate the summary files for 20241203013616 in the repository, you do not need to integrate these files
+0e0e5ccc02458e3011e2b89d52b872a883125f41
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Tue Dec 3 01:36:57 2024 +0000
+[Ka0S] We integrate the summary files for 20241203013616 in the repository, you do not need to integrate these files
+ace19437cabcfaab55dd0fc53a71422b937a6dea
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Tue Dec 3 01:36:56 2024 +0000
+[Ka0S] We integrate the summary files for 20241203013616 in the repository, you do not need to integrate these files
+a44d7f2acf2d504ae8dc6cb08c7c90fd4708b661
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Tue Dec 3 01:36:54 2024 +0000
+[Ka0S] We integrate the summary files for 20241203013616 in the repository, you do not need to integrate these files
+70c39acc218cdbc9f8f7bde2c848bfd764061188
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Mon Dec 2 17:23:17 2024 +0000
+[Ka0S] se generan los ficheros commit-summary files-in-commit
+8642428e2b8005e1f54be4bb77324c768b457a6f
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 17:23:01 2024 +0000
+Añadimos inicialmente solo una label, ya evaluaremos asignar más de una
+22b27cc726380cc148cd6a7790a0e88d858572d3
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Mon Dec 2 17:13:28 2024 +0000
+[Ka0S] se generan los ficheros commit-summary files-in-commit
+bdb9b504216d2e0d0de9d7c96f88220800aa0d49
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 17:13:09 2024 +0000
+Merge branch 'main' of github.com:SantaKa0S/kaos
+9e5d542473680b774fe5997338e421df35a1757b
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 17:13:03 2024 +0000
+Cambiamos la manera de asignar varias labels ya que se separana con un espacio en blanco
+6c3ddde50824bcf0eda10c9104086a897a7cbb7e
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Mon Dec 2 17:04:42 2024 +0000
+[Ka0S] se generan los ficheros commit-summary files-in-commit
+f6b80596255a95075f1054316e2d305ad90243dc
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 17:04:24 2024 +0000
+Merge branch 'main' of github.com:SantaKa0S/kaos
+2ab3e6a08c69ddacc844bd588bb33a760e40857c
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 17:04:16 2024 +0000
+Quitamos la oblicacion del issue-id que para la creación no es necesario
+69975579ce405c689c7cef9368eed70620d5e79d
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Mon Dec 2 17:01:28 2024 +0000
+[Ka0S] se generan los ficheros commit-summary files-in-commit
+f6ec85d64d0ac63ec3e8480415bc96a4ed4611b7
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 17:01:11 2024 +0000
+I prueba del ciclo, con una exepcion de ejecucion en main
+90a1e8691a9b83f376224230daff0d578f7e6e0f
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 17:00:27 2024 +0000
+Merge branch 'main' of github.com:SantaKa0S/kaos
+8c44668b6879fd5ce638f4d125c1c58dbc762e01
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:59:33 2024 +0000
+Hemos tenido que corregir el nombre del actions que se llama a la creacion de la issue
+21804a6f8ad0b4882c193819f1c7939cfe20e245
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Mon Dec 2 16:54:34 2024 +0000
+[Ka0S] se generan los ficheros commit-summary files-in-commit
+69c645500ffdb7dc08d5cfc61c3f44d042b89bd2
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:54:06 2024 +0000
+Modificamos el nombre del grupo de ejecutores
+3f802cc3e4bfd017c495efc2f32ceec5d29538f0
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:53:44 2024 +0000
+Merge branch 'main' of github.com:SantaKa0S/kaos
+067ec652c30cb73baab4bb879de0ffb01ca7affa
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:53:37 2024 +0000
+Modificamos el nombre del grupo de ejecutores
+1ba4dc0eb665495aef591f631f9ef4d032f00965
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Mon Dec 2 16:48:21 2024 +0000
+[Ka0S] se generan los ficheros commit-summary files-in-commit
+707aac5b40102169010b4576c4cea6952edf340f
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:47:36 2024 +0000
+Personalizamos el texto y las labels
+cfc418ceb3b08050dfb44cc0abaac9f06010698f
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:46:54 2024 +0000
+Personalizamos el mensaje y las labels
+f14636840d208e5809c1955f6d456feee0875751
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:45:25 2024 +0000
+Personalizamos el mensaje y las labels
+8eb207a91a4417d622ee33426da5d7e15c59ceb3
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:40:59 2024 +0000
+Personalizamos el mensaje y las labels
+1287a8833c8bbe2054f154431bea14b7c8440e1f
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:39:46 2024 +0000
+Añadimos la opcion de crear una issue si falla el actions
+cf02f5f976765cde38f6ce1a800510cae3ba8672
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:38:30 2024 +0000
+Personalizamos el mensaje
+173cfaa5e809eaad9bca9a4c443de01efa062e7d
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:38:09 2024 +0000
+Personalizamos el mensaje
+c5d8249bb3811964df3cf1c84a88dcc1830d3373
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:37:50 2024 +0000
+Personalizamos mensaje
+cb630b6cf22e7a8fe30b8a1be448659f6d2dccd5
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:37:32 2024 +0000
+Añadimos la funcionalidad de crear una issue si falla el actions
+b0522a98c379a5ed330873ff793d34442eaa5ea0
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:35:39 2024 +0000
+Añadimos la funcionalidad de crear la issue del error
+b18b17584b99ad2138268ff6cdb25d2a528afce4
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:33:35 2024 +0000
+Añadimos la funcionalidad de que cree una issue si el proceso o subprocesos fallan
+35b1f00ff6067a03747442f7316372a970847c10
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:32:42 2024 +0000
+Añadimos la funcionalidad de que cree una issue si el proceso o subprocesos fallan
+3a3062cdb39cf668b647fd199e85d7d2d88066d8
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Mon Dec 2 16:21:30 2024 +0000
+[Ka0S] se generan los ficheros commit-summary files-in-commit
+e7ccf02c07677fe5bcb576cf9405c97d0692e5cc
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:19:22 2024 +0000
+Permitimos la ejecucion en la rama main
+36eba97df66b8ce54a270b4ce22717c649041ec6
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 16:15:53 2024 +0000
+Añadimos el modulo de control de errores, si falla el job se crea una issue automatica
+89ec5ed6266ce0fc33ef497385c3a5cee25e4ef6
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 15:55:52 2024 +0000
+Añadimos la correccion del if
+1bb56dd78b5512b25eddbb6784723dbf926a6481
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 15:32:10 2024 +0000
+Eliminamos los ficheros de indice
+a3a970e3647bebda70944407942ae68dfe307a71
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 15:31:06 2024 +0000
+Merge branch 'main' of github.com:SantaKa0S/kaos
+f5ce6fc88b4f7d6bce2a7bf5f144116322ce9135
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 15:30:56 2024 +0000
+Limpiamos los indices de splunk
+17848b70ed49756fb946a200ad573de0e795c8be
+SantaKloud
+73332898+santakloud@users.noreply.github.com
+Mon Dec 2 15:36:23 2024 +0100
+Merge pull request #329 from SantaKa0S/F326-primera-feature-control-de-feature
+fb60d0735e8f8e7b8b731c8fb9c22ef584694ad3
+SantaKloud
+73332898+santakloud@users.noreply.github.com
+Mon Dec 2 15:26:03 2024 +0100
+Merge pull request #328 from SantaKa0S/RN286-primera-realese-control-de-releases
+04c5297b84b7b988110e779d89a10762e3b5e93b
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Mon Dec 2 12:17:03 2024 +0000
+[Ka0S] se generan los ficheros commit-summary files-in-commit
+4013b6f85607ea5cb5d39d2db9c83cd74759c22e
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 12:16:26 2024 +0000
+Añadimos las funcionalidades de feature y hotfix
+a494dec35b76e23d5acccd551315658ca5a498a3
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 12:15:13 2024 +0000
+Merge branch 'RN286-primera-realese-control-de-releases' of github.com:SantaKa0S/kaos into RN286-primera-realese-control-de-releases
+4b62b62f3de2263550a9723164cd069cdfb8fd73
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 12:14:56 2024 +0000
+Añadimos la funcionalidad de feature y hotfix
+c228d13cbb06fcb8f6ebd8bb0f6685f1b1c6e632
+github-actions[bot]
+github-actions[bot]@users.noreply.github.com
+Mon Dec 2 11:41:00 2024 +0000
+[Ka0S] se generan los ficheros commit-summary files-in-commit
+3b90885822225a4840b6bb756144f487049ef699
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 11:40:43 2024 +0000
+Eliminamos uno de los path que son incompatibles
+7e2efe4e5fc43430598f41316e216fe8047025cf
+santakloud
+santacana.canton@icloud.com
+Mon Dec 2 11:38:19 2024 +0000
+Realizamos el control de solamente disprarlo en función del tipo de archivos que intervengan
