@@ -106,6 +106,8 @@ jobs:
       actions: write
       issues: write
       pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
     steps:
       - id: release-new-flow
         env:
@@ -113,7 +115,6 @@ jobs:
           BRANCH_ACTION: ${{ needs.job-core.outputs.KAOS_BRANCH }}
           BRANCH_NUMBER: ${{ needs.job-core.outputs.KAOS_NUMBER }}
           BRANCH_INVOLVED: ${{ needs.job-core.outputs.KAOS_INVOLVED }}
-          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           echo "RN - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
