@@ -91,6 +91,7 @@ jobs:
           echo "INVOLVED=$INVOLVED" >> $GITHUB_OUTPUT
           git config --global user.name "${{ env.USER_NAME }}"
           git config --global user.email "${{ env.USER_EMAIL}}"
+          git pull
           git add ${{ env.KAOS_PATH_RESUME }}*
           git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
           git push
