@@ -1,45 +1,46 @@
-networks:
-  monitoring:
-    driver: bridge
 volumes:
   prometheus-data:
     driver: local
   grafana-data:
     driver: local
+
 services:
-  prometheus:
-    image: prom/prometheus:v2.37.9
+  kaos-prometheus:
+    image: prom/prometheus:latest
     container_name: prometheus
     ports:
-      - 9091:9090
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
+      - "9090:9090"
     volumes:
-      - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
-      - ./data:/prometheus
+      - /config/prometheus.yaml:/etc/prometheus/prometheus.yaml
+      - prometheus-data:/prometheus
     restart: unless-stopped
-  grafana:
-    image: grafana/grafana-oss:latest
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+
+  kaos-grafana:
+    image: grafana/grafana:latest
     container_name: grafana
     ports:
-      - '3003:3000'
+      - "3003:3000"
     volumes:
       - grafana-data:/var/lib/grafana
     restart: unless-stopped
-    #password: root123
-  node_exporter:
-    image: quay.io/prometheus/node-exporter:v1.5.0
-    container_name: node_exporter
-    command: '--path.rootfs=/host'
-    pid: host
-    restart: unless-stopped
-    volumes:
-      - /:/host:ro,rslave
-  cadvisor:
-    image: gcr.io/cadvisor/cadvisor:v0.47.0
+
+  kaos-node_exporter:
+      image: quay.io/prometheus/node-exporter:latest
+      container_name: node_exporter
+      command:
+        - '--path.rootfs=/host'
+      pid: host
+      restart: unless-stopped
+      volumes:
+        - '/:/host:ro,rslave'
+
+  kaos-cadvisor:
+    image: google/cadvisor:latest
     container_name: cadvisor
-    command:
-      - '-port=8098'
+    ports:
+     - "8081:8081"
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro
@@ -48,5 +49,4 @@ services:
       - /dev/disk/:/dev/disk:ro
     devices:
       - /dev/kmsg
-    privileged: true
     restart: unless-stopped
