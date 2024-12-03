@@ -13,7 +13,7 @@ services:
     ports:
       - 9090:9090
     command:
-      - '--config.file=/etc/prometheus/prometheus.yaml'
+      - '--config.file=/config/prometheus.yaml'
     volumes:
       - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
       - ./data:/prometheus
