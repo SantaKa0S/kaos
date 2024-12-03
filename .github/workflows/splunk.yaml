@@ -77,15 +77,14 @@ jobs:
           GH_ISSUE_ID: ${{ vars.KAOS_ISSUE_ID }}
         if: failure()
         run: |
-          echo "Error detected in KaoS ${{ env.KAOS_MODULE }}, creating issue..."
-          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          echo "Error detected in Ka0S SPLUNK, creating issue..."
+          KAOS_ISSUE_TITLE="Ka0S SPLUNK Action Failed: ${{ github.workflow }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
-          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
-          **[KAOS INIT]  Message:**
+          An error occurred in the Ka0S SPLUNK Action workflow **${{ github.workflow }}**.
+          **[KAOS SPLUNK]  Message:**
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
-          **Workflow Origin:** ${{ github.event.inputs.kaos-issue-id }}
           **Workflow Name:** ${{ github.workflow }}
           **Job Name:** ${{ github.job }}
           **Run ID:** ${{ github.run_id }}
@@ -93,15 +92,9 @@ jobs:
           **Repository:** ${{ github.repository }}
           **Branch:** ${{ github.ref }}
           **Commit:** ${{ github.sha }}
-          **Files Involved:**
-          **Splunk response login:** 
-          **Splunk response idx:** 
-          ${{ github.event.inputs.kaos-issue-body-file }}
-
-
           Please investigate the issue.
           EOF
           )
-          gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
-  
-  
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
+
+            

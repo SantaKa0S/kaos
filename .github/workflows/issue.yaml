@@ -32,7 +32,7 @@ on:
       kaos-issue-id:
         description: 'Issue ID'
         default: ""
-        required: true
+        required: false
   
 permissions:
   contents: write
@@ -115,11 +115,11 @@ jobs:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         if: failure()
         run: |
-          echo "Error detected in KaoS INIT, creating issue..."
-          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          echo "Error detected in Ka0S ISSUE, creating issue..."
+          KAOS_ISSUE_TITLE="Ka0S ISSUE Action Failed: ${{ github.workflow }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
-          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
-          **[KAOS INIT]  Message:**
+          An error occurred in the Ka0S ISSUE Action workflow **${{ github.workflow }}**.
+          **[KAOS ISSUE]  Message:**
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
@@ -130,11 +130,9 @@ jobs:
           **Repository:** ${{ github.repository }}
           **Branch:** ${{ github.ref }}
           **Commit:** ${{ github.sha }}
-          **Files Involved:**
-          ${{ env.INVOLVED }}
           Please investigate the issue.
           EOF
           )
-          gh issue create --title "$KAOS_ISSUE_TITLE" --body "$KAOS_ISSUE_BODY" --label "bug,core" --repo ${{ github.repository }}
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
 
             

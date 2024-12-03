@@ -11,18 +11,14 @@ permissions:
   issues: write
 
 jobs:
-  
-  if_merged:
-      if: github.event.pull_request.merged == true
-      runs-on: ubuntu-latest
-
   kaos-version:
+    if: github.event.pull_request.merged == true
     outputs:
         KAOS_BRANCH: ${{ steps.commit_details.outputs.RNBRANCH }}
         KAOS_NUMBER: ${{ steps.commit_details.outputs.RNNUMBER }}
         KAOS_CODE: ${{ steps.commit_details.outputs.RNCODE }}
         KAOS_VERSION: ${{ steps.version.outputs.VERSION }}
-    runs-on: ubuntu-latest
+    runs-on: kaos-test
 
     steps:
     - id: repo
@@ -116,4 +112,28 @@ jobs:
         git commit -m "[Ka0S] Upload: INDEX.md with version ${{ steps.version.outputs.VERSION }}"
         git push
 
-        
+    - id: check-execution
+      env:
+        GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+      if: failure()
+      run: |
+        echo "Error detected in KaoS VERSION, creating issue..."
+        KAOS_ISSUE_TITLE="KaoS VERSION Action Failed: ${{ github.workflow }}"
+        KAOS_ISSUE_BODY=$(cat <<'EOF'
+        An error occurred in the KaoS VERSION Action workflow **${{ github.workflow }}**.
+        **[KAOS VERSION]  Message:**
+        \`\`\`
+        **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
+        \`\`\`
+        **Workflow Name:** ${{ github.workflow }}
+        **Job Name:** ${{ github.job }}
+        **Run ID:** ${{ github.run_id }}
+        **Run Number:** ${{ github.run_number }}
+        **Repository:** ${{ github.repository }}
+        **Branch:** ${{ github.ref }}
+        **Commit:** ${{ github.sha }}
+        Please investigate the issue.
+        EOF
+        )
+        gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"
+  
