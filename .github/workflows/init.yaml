@@ -18,49 +18,25 @@ permissions:
   issues: write
   pull-requests: write
 
+env:
+  KAOS_MODULE: "[Ka0S] INIT"
 jobs:
   kaos-init-process:
     runs-on: kaos-runner-init
-
+    env:
+      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
+      BRANCH_NAME: ${{ github.ref }}
+      USER_NAME: ${{ github.actor.name}}
+      USER_EMAIL: ${{ github.actor.email }}
+      PATH_RESUME: "core/results/"
     steps:
-      - name: Checkout Repository
-      # Check out the repository to get the information of the commit
+      - id: repo # Check out the repository to get the information of the commit
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
 
-      - name: Set Info about Commit temp vars
-        env:
-          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
-        # Set the branch name and team name and file implicit in commit and save it the environment variable
-        run: |
-          BRANCH_NAME=${{ github.event.base_ref }}
-          USER_NAME=${{ github.actor.name}}
-          USER_EMAIL=${{ github.actor.email }}
-          PATH_RESUME="core/results/"
-          KAOS_MODULE="[CORE INIT]"
-          KAOS_STEP_MODULE=""
-          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
-          echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
-          echo "USER_EMAIL=$USER_EMAIL" >> $GITHUB_ENV
-          echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
-          echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
-          echo "KAOS_STEP_MODULE=$KAOS_STEP_MODULE" >> $GITHUB_ENV
-          echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-
-      - name: Generate files report
-        run: |
-          # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
-          # en cada paso este fichero actualiza el contenido, dado que el workflow deja registro en tres partes distintas
-          git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.PATH_RESUME }}commit-summary-${{ env.DATETIME }}.txt
-          # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
-          # este paso es el que provoca que el workflow siga un camino u otro
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
-          INVOLVED=${{ github.event.inputs.kaos-involved-file}}
-          echo "INVOLVED=$INVOLVED" >> $GITHUB_ENV
-
-      - name: We check the module where the action is to be performed
+      - id: module
         env:
             modules: ${{ secrets.KAOS_CORE_MODULES }}
             files: ${{ secrets.KAOS_CORE_FILES }}
@@ -105,26 +81,22 @@ jobs:
               fi
             done
           done < ${{ github.event.inputs.kaos-involved-file }}
-
-      - name: Upload parameter file
-        uses: actions/upload-artifact@v4
-        with:
-          name: reports-files
-          path: |
-            ${{ env.PATH_RESUME }}commit-summary-${{ env.DATETIME }}.txt
-            ${{ env.PATH_RESUME }}files-in-commit-${{ env.DATETIME }}.txt
       
-      - name: Check execution
+  handle_failure:
+    runs-on: 
+      group: kaos-test
+    needs: [kaos-init-process]
+    if: ${{ failure() }}
+    steps:
+      - id: check-execution
         env:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
-          GH_ISSUE_ID: ${{ vars.KAOS_ISSUE_ID }}
-        if: failure()
         run: |
-          echo "Error detected in Ka0S INIT, creating issue..."
-          KAOS_ISSUE_TITLE="Ka0S INIT Action Failed: ${{ github.workflow }}"
+          echo "Error detected in Ka0S, creating issue..."
+          KAOS_ISSUE_TITLE="Ka0S Action Failed: ${{ github.workflow }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
           An error occurred in the Ka0S Action workflow **${{ github.workflow }}**.
-          **[KAOS INIT]  Message:**
+          **${{ env.KAOS_MODULE }}  Message:**
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
@@ -138,4 +110,4 @@ jobs:
           Please investigate the issue.
           EOF
           )
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
