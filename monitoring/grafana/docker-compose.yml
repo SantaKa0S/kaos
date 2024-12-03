@@ -31,6 +31,7 @@ services:
       container_name: node_exporter
       command:
         - '--path.rootfs=/host'
+      privileged: true
       pid: host
       restart: unless-stopped
       volumes:
@@ -50,4 +51,6 @@ services:
     privileged: true
     devices:
       - /dev/kmsg
+    command:
+      - '--disable_metrics=nvm'
     restart: unless-stopped
