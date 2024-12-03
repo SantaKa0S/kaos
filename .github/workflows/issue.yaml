@@ -40,38 +40,21 @@ permissions:
   issues: write
   pull-requests: write
 
+env:
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  KAOS_MODULE: "[Ka0S] ISSUE"
 jobs:
-  kaos-init-process:
+  kaos-issue-process:
     runs-on: kaos-runner-issue
 
     steps:
-      - name: Checkout Repository
-      # Checkout the repository to get the information of the commit
+      - id: repo # Checkout the repository to get the information of the commit
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
-
-      - name: Set Info about Commit temp vars
-        # Set the branch name and team name and file implicit in commit and save it in the environment variable
-        run: |
-          BRANCH_NAME=${{ github.event.base_ref }}
-          USER_NAME=${{ github.actor.name}}
-          USER_EMAIL=${{ github.actor.email }}
-          PATH_RESUME="./core/results/"
-          KAOS_MODULE="[ISSUE]"
-          KAOS_STEP_MODULE=""
-          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
-          echo "USER_NAME=$USER_NAME" >> $GITHUB_ENV
-          echo "USER_EMAIL=$USER_EMAIL" >> $GITHUB_ENV
-          echo "PATH_RESUME=$PATH_RESUME" >> $GITHUB_ENV
-          echo "KAOS_MODULE=$KAOS_MODULE" >> $GITHUB_ENV
-          echo "KAOS_STEP_MODULE=$KAOS__STEP_MODULE" >> $GITHUB_ENV
-          echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-      
-      - name: Work with issues
-        env:
-          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+ 
+      - id: work-issues
         run: |
             # Lo primero comprobar la acción que queremos realizar
             case ${{ github.event.inputs.kaos-issue-actions }} in
@@ -110,16 +93,21 @@ jobs:
                   ;;
             esac
 
-      - name: Check execution
+  handle_failure:
+    runs-on: 
+      group: kaos-test
+    needs: [kaos-issue-process]
+    if: ${{ failure() }}
+    steps:
+      - id: check-execution
         env:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
-        if: failure()
         run: |
-          echo "Error detected in Ka0S ISSUE, creating issue..."
-          KAOS_ISSUE_TITLE="Ka0S ISSUE Action Failed: ${{ github.workflow }}"
+          echo "Error detected in Ka0S, creating issue..."
+          KAOS_ISSUE_TITLE="Ka0S Action Failed: ${{ github.workflow }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
-          An error occurred in the Ka0S ISSUE Action workflow **${{ github.workflow }}**.
-          **[KAOS ISSUE]  Message:**
+          An error occurred in the Ka0S Action workflow **${{ github.workflow }}**.
+          **${{ env.KAOS_MODULE }}  Message:**
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
@@ -134,5 +122,3 @@ jobs:
           EOF
           )
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
-
-            
