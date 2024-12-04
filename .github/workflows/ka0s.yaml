@@ -159,6 +159,9 @@ jobs:
     needs: [job-core, job-flows]
     if: ${{ failure() }}
     steps:
+      - id: resume-log
+        run: |
+          echo "KAOS_WORFLOW_LOG=$(gh run view --job ${{ github.run_id }} --log-failed)" >> $GITHUB_OUTPUT
       - id: check-execution
         env:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
@@ -168,6 +171,7 @@ jobs:
           KAOS_ISSUE_BODY=$(cat <<'EOF'
           An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
           **${{ env.KAOS_MODULE }}  Message:**
+          ${{ steps.resume-log.outputs.KAOS_WORFLOW_LOG }}
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
