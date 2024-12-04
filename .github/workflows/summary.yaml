@@ -14,10 +14,10 @@ permissions:
 env:
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   KAOS_MODULE: "[Ka0S] SUMMARY"
-  KAOS_REF: ${{ github.base_ref }}
   GH_REPO: ${{ secrets.KAOS_REPO }}
   PATH_RESUME: "config/results/"
-  KAOS_CODE: ""
+  KAOS_CODE: ${{ github.run_id }}
+  
 jobs:
   kaos-summary:
     runs-on: kaos-self-hosted
@@ -28,10 +28,6 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
-
-      - id: kaos-code
-        run: |
-            echo "KAOS_CODE=$(echo "${{ env.KAOS_REF }}" | grep -o '^[A-Za-z]*')-$(echo "${{ env.KAOS_REF }}" | grep -o '[0-9]*')" >> $GITHUB_ENV
 
       - id: summary-issue-log
         run: |
