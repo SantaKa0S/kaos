@@ -15,7 +15,7 @@ env:
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   KAOS_MODULE: "[Ka0S] SUMMARY"
   GH_REPO: ${{ secrets.KAOS_REPO }}
-  PATH_RESUME: "config/results/"
+  PATH_RESUME: "/config/results/"
   KAOS_CODE: ${{ github.run_id }}
 
 jobs:
