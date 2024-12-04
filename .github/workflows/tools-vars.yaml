@@ -11,19 +11,27 @@ jobs:
         id: github
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT" >> GITHUB_OUTPUT
+        run: |
+            echo "$GITHUB_CONTEXT" >> GITHUB_OUTPUT
+            echo "github run:${{ github.run_id }}"
       - name: Dump job context
         id: job
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"
+        run: |
+            echo "$JOB_CONTEXT"
+            echo "job run:${{ github.run_id }}"
       - name: Dump steps context
         id: steps
         env:
           STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT ${{ steps.github.outputs.GITHUB_CONTEXT }}"
+        run: |
+            echo "$STEPS_CONTEXT"
+            echo "steps run:${{ github.run_id }}"
       - name: Dump runner context
         id: runner
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
-        run: echo "$RUNNER_CONTEXT"
+        run: |
+            echo "$RUNNER_CONTEXT"
+            echo "runner run:${{ github.run_id }}"
