@@ -3,9 +3,8 @@ on:
     workflow_dispatch:
 
 jobs:
-  dump_contexts_to_log:
+  dump-github-context:
     runs-on: ubuntu-latest
-
     steps:
       - name: Dump GitHub context
         id: github
@@ -13,7 +12,10 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
             echo "$GITHUB_CONTEXT" >> GITHUB_OUTPUT
-            echo "github run:${{ github.action }}"
+            echo "github run:${{ job.status.outputs.log }}"
+  dump-job-context:
+    runs-on: ubuntu-latest
+    steps:
       - name: Dump job context
         id: job
         env:
@@ -21,6 +23,9 @@ jobs:
         run: |
             echo "$JOB_CONTEXT"
             echo "job run:${{ github.run_id }}"
+  dump-steps-context:
+      runs-on: ubuntu-latest     
+      steps:
       - name: Dump steps context
         id: steps
         env:
@@ -28,10 +33,24 @@ jobs:
         run: |
             echo "$STEPS_CONTEXT"
             echo "steps run:${{ github.run_id }}"
+
+  dump-runner-context:
+      runs-on: ubuntu-latest     
+      steps:
       - name: Dump runner context
         id: runner
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: |
-            echo "$RUNNER_CONTEXT"
+            echo "$RUNNER_CONTEXT" >> $GITHUB_OUTPUT
             echo "runner run:${{ github.run_id }}"
+  handler-exception:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Exception Handler
+          id: handler
+          env:
+            STEPS_CONTEXT: ${{ toJson(steps) }}
+          run: |
+            echo "$STEPS_CONTEXT"
+            echo "steps run:${{ github.run_id }}"
