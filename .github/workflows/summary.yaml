@@ -14,7 +14,7 @@ permissions:
 env:
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   KAOS_MODULE: "[Ka0S] SUMMARY"
-  KAOS_REF: ${{ github.ref }}
+  KAOS_REF: ${{ github.base_ref }}
   GH_REPO: ${{ secrets.KAOS_REPO }}
   PATH_RESUME: "config/results/"
   KAOS_CODE: ""
