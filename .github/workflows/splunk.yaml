@@ -26,6 +26,7 @@ env:
   GH_SPLUNK_URL_IDX: ${{ secrets.KAOS_SPLUNK_URL_IDX }}
   GH_SPLUNK_USER: ${{ secrets.KAOS_SPLUNK_USER }}
   GH_SPLUNK_PASSWORD: ${{ secrets.KAOS_SPLUNK_PASSWORD }}
+  
 jobs:
   kaos-splunk:
     runs-on: kaos-runner-splunk
