@@ -13,7 +13,7 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
             echo "$GITHUB_CONTEXT" >> GITHUB_OUTPUT
-            echo "github run:${{ github.job.toJson }}"
+            echo "github run:${{ github.action }}"
       - name: Dump job context
         id: job
         env:
