@@ -5,20 +5,26 @@ on:
 jobs:
   dump_contexts_to_log:
     runs-on: ubuntu-latest
+    outputs:
+
     steps:
       - name: Dump GitHub context
+        id: github
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+        run: echo "$GITHUB_CONTEXT" >> GITHUB_OUTPUT
       - name: Dump job context
+        id: job
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
         run: echo "$JOB_CONTEXT"
       - name: Dump steps context
+        id: steps
         env:
           STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
+        run: echo "$STEPS_CONTEXT ${{ steps.github.outputs.GITHUB_CONTEXT }}"
       - name: Dump runner context
+        id: runner
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: echo "$RUNNER_CONTEXT"
