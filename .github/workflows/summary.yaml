@@ -12,7 +12,7 @@ permissions:
   pull-requests: write
 
 env:
-  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  GH_TOKEN: ${{ secrets.KAOS_ISSUE_TOKEN }}
   KAOS_MODULE: "[Ka0S] SUMMARY"
   GH_REPO: ${{ secrets.KAOS_REPO }}
   PATH_RESUME: "core/results/"
