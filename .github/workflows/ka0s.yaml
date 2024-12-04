@@ -161,7 +161,7 @@ jobs:
     steps:
       - id: resume-log
         run: |
-          echo "KAOS_WORFLOW_LOG=$(gh run view --job ${{ github.run_id }} --log-failed)" >> $GITHUB_OUTPUT
+          echo "KAOS_WORFLOW_LOG=$(gh run view --job ${{ github.run_id }} --log)" >> $GITHUB_OUTPUT
 
       - id: check-execution
         env:
