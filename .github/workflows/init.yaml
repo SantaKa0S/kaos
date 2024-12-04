@@ -93,10 +93,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
-          echo "Error detected in Ka0S, creating issue..."
-          KAOS_ISSUE_TITLE="Ka0S Action Failed: ${{ github.workflow }}"
+          echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
-          An error occurred in the Ka0S Action workflow **${{ github.workflow }}**.
+          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
           **${{ env.KAOS_MODULE }}  Message:**
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
