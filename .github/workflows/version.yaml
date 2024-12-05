@@ -2,8 +2,9 @@ name: Ka0S Version
 
 on:
   pull_request:
-    types:
-      - closed
+    types: [opened]
+    branches:
+      - 'main'
 
 permissions:
   contents: write
@@ -17,7 +18,7 @@ env:
 
 jobs:
   kaos-version:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.state == 'open'
     runs-on: 
       group: kaos-test
     outputs:
