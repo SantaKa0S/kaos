@@ -17,7 +17,8 @@ env:
 jobs:
   kaos-version:
     if: github.event.pull_request.merged == true
-    runs-on: kaos-test
+    runs-on: 
+      group: kaos-test
     outputs:
       KAOS_BRANCH: ${{ steps.commit_details.outputs.RNBRANCH }}
       KAOS_NUMBER: ${{ steps.commit_details.outputs.RNNUMBER }}
