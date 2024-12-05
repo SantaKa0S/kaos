@@ -37,11 +37,11 @@ jobs:
         echo "AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
         echo "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
         echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
-        RNBRANCH=$(echo "${{ env.KAOS_REF}}" | grep -o '^[A-Za-z]*')
-        RNNUMBER=$(echo "${{ env.KAOS_REF}}" | grep -o '[0-9]*')
+        RNBRANCH=$(echo "${{ github.event.pull_request.title }}" | grep -o '^[A-Za-z]*')
+        RNNUMBER=$(echo "${{ github.event.pull_request.title }}" | grep -o '[0-9]*')
         echo "Extracted RN Branch: $RNBRANCH"
         echo "Extracted RN Number: $RNNUMBER"
-        echo "RNCODE=$(echo "${{ env.KAOS_REF}}" | grep -o '^[A-Za-z]*')-$(echo "${{ env.KAOS_REF}}" | grep -o '[0-9]*')" >> $GITHUB_OUTPUT
+        echo "RNCODE=$(echo "${{ github.event.pull_request.title }}" | grep -o '^[A-Za-z]*')-$(echo "${{ github.event.pull_request.title }}" | grep -o '[0-9]*')" >> $GITHUB_OUTPUT
         echo "La variable de KAOS_CODE es $RNCODE"
         echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
         echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT 
