@@ -15,7 +15,6 @@ env:
   KAOS_REF: ${{ github.ref }}
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   PATH_RESUME: "core/config/"
-
 jobs:
   kaos-version:
     if: github.event.pull_request.state == 'open'
@@ -111,6 +110,12 @@ jobs:
         git commit -m "${{ env.KAOS_MODULE }}  Upload: INDEX.md with version ${{ steps.version.outputs.VERSION }}"
         git push origin main
 
+    - id: failure-delete-tag
+      if: ${{ failure() }}
+      run: |
+        # Antes de nada borramos el tag asignado en el paso anterior
+          git push origin --delete "v${{ steps.version.outputs.VERSION }}"
+
   handle_failure:
     runs-on: 
       group: kaos-test
@@ -140,5 +145,5 @@ jobs:
           Please investigate the issue.
           EOF
           )
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
+          gh workflow run issue.yaml --ref main -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
                 
