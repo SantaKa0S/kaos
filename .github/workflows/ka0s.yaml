@@ -9,6 +9,7 @@ on:
     #  - 'main'
 env:
   KAOS_MODULE: "[Ka0S]"
+  PATH_RESUME: "core/results/"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # Primer Job dentro del Job
@@ -161,7 +162,9 @@ jobs:
     steps:
       - id: resume-log
         run: |
-          echo "KAOS_WORFLOW_LOG=$(gh run view --job ${{  github.job }} --log)" >> $GITHUB_OUTPUT
+          # Extraemos el error
+          gh run view ${{  github.run_id }} --log-failed > ${{  github.run_id }}.log
+          echo "KAOS_WORFLOW_LOG=$(cat ${{  github.run_id }}.log)" >> $GITHUB_OUTPUT
 
       - id: check-execution
         env:
