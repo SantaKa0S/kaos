@@ -62,7 +62,7 @@ jobs:
         run: |
           # Extraemos el error
           # Extraemos el error
-          gh run view ${{ github.event.inputs.kaos-workflow-id }} --log-failed > ${{ github.event.inputs.kaos-workflow-id }}.log
+          # gh run view ${{ github.event.inputs.kaos-workflow-id }} --log-failed > ${{ github.event.inputs.kaos-workflow-id }}.log
           # echo "KAOS_WORFLOW_LOG=$(cat ${{ github.event.inputs.kaos-workflow-id }}.log)" >> $GITHUB_OUTPUT
 
       - id: work-issues
@@ -72,7 +72,7 @@ jobs:
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
                     gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.actor }}"
-                    gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ github.event.inputs.kaos-workflow-id }}.log"
+                    # gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ github.event.inputs.kaos-workflow-id }}.log"
                     ;;
                 comment)
                     # Añadimos comentarios a una issue en concreto o ficheros
@@ -120,6 +120,9 @@ jobs:
           KAOS_ISSUE_BODY=$(cat <<'EOF'
           An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
           **${{ env.KAOS_MODULE }}  Message:**
+          El error ha sido en : ${{  github.run_id }}
+          ejecute este comando en su consola y podrá consultar el fallo del trabajo
+          gh run view ${{  github.run_id }} --log-failed
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`

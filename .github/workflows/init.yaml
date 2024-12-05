@@ -98,6 +98,9 @@ jobs:
           KAOS_ISSUE_BODY=$(cat <<'EOF'
           An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
           **${{ env.KAOS_MODULE }}  Message:**
+          El error ha sido en : ${{  github.run_id }}
+          ejecute este comando en su consola y podrá consultar el fallo del trabajo
+          gh run view ${{  github.run_id }} --log-failed
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
