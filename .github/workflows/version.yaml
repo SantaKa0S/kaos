@@ -107,7 +107,7 @@ jobs:
         git commit -m "[Ka0S] Upload: CHANGELOG.md with new version log entry"
         git add INDEX.md
         git commit -m "[Ka0S] Upload: INDEX.md with version ${{ steps.version.outputs.VERSION }}"
-        git push
+        git push origin main
 
   handle_failure:
     runs-on: 
