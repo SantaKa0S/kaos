@@ -11,7 +11,7 @@ permissions:
   actions: write
   issues: write
 env:
-  KAOS_MODULE: "[Ka0S] VERSION"
+  KAOS_MODULE: "[Ka0S]  VERSION"
   KAOS_REF: ${{ github.ref }}
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   PATH_RESUME: "core/config/"
