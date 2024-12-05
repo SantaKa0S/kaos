@@ -41,6 +41,10 @@ RUN useradd -m -s /bin/bash kaos && echo 'kaos:PASSWORD' | chpasswd && \
 
 USER kaos
 # Ejecuto la conexion con github
-# esta parte hay que ejecutarla en el interior del docker (requeire respuestas) /actions-runner/config.sh --url https://github.com/SantaKa0S --token TOKEN
+# esta parte hay que ejecutarla en el interior del docker (requeire respuestas) /actions-runner/config.sh --url https://github.com/SantaKa0S --token TOKEN \
+# --name string          Name of the runner to configure (default myrunner)
+# --runnergroup string   Name of the runner group to add this runner to (defaults to the default runner group)
+# --labels string        Extra labels in addition to the default: 'self-hosted,Linux,X64'
+# --work string          Relative runner work directory (default _work)
 WORKDIR /home/kaos
 CMD ["bash"]
