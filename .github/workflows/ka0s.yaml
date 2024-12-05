@@ -161,11 +161,6 @@ jobs:
     needs: [job-core, job-flows]
     if: ${{ failure() }}
     steps:
-      - id: resume-log
-        run: |
-          # Extraemos el error
-          gh run view ${{  github.run_id }} --log-failed > ${{  github.run_id }}.log
-          echo "KAOS_WORFLOW_LOG=$(cat ${{  github.run_id }}.log)" >> $GITHUB_OUTPUT
 
       - id: check-execution
         env:
@@ -176,8 +171,9 @@ jobs:
           KAOS_ISSUE_BODY=$(cat <<'EOF'
           An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
           **${{ env.KAOS_MODULE }}  Message:**
-          El error ha sido por: 
-            ${{ steps.resume-log.outputs.KAOS_WORFLOW_LOG }}
+          El error ha sido en : ${{  github.run_id }}
+          ejecute este comando en su consola y podrá consultar el fallo del trabajo
+          gh run view ${{  github.run_id }} --log-failed
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
@@ -191,4 +187,4 @@ jobs:
           Please investigate the issue.
           EOF
           )
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-workflow-id=${{  github.run_id }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
