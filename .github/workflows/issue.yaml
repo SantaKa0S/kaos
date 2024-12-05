@@ -33,6 +33,10 @@ on:
         description: 'Issue ID'
         default: ""
         required: false
+      kaos-workflow-id:
+        description: 'Workflow ID'
+        default: ""
+        required: false
   
 permissions:
   contents: write
@@ -53,7 +57,14 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
- 
+
+      - id: resume-log
+        run: |
+          # Extraemos el error
+          # Extraemos el error
+          gh run view ${{ github.event.inputs.kaos-workflow-id }} --log-failed > ${{ github.event.inputs.kaos-workflow-id }}.log
+          echo "KAOS_WORFLOW_LOG=$(cat ${{ github.event.inputs.kaos-workflow-id }}.log)" >> $GITHUB_OUTPUT
+
       - id: work-issues
         run: |
             # Lo primero comprobar la acción que queremos realizar
@@ -61,6 +72,7 @@ jobs:
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
                     gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.actor }}"
+                    gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ steps.resume-log.outputs.KAOS_WORFLOW_LOG }}"
                     ;;
                 comment)
                     # Añadimos comentarios a una issue en concreto o ficheros
