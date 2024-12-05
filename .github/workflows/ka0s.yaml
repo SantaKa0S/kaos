@@ -5,8 +5,11 @@ on:
   push: 
     paths:
       - '**.yaml'
-    # branches-ignore:
-    #  - 'main'
+    branches-ignore:
+      - 'H*'
+      - 'F*'
+      - 'RN*'
+      
 env:
   KAOS_MODULE: "[Ka0S]"
   PATH_RESUME: "core/results/"
