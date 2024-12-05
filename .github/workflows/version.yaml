@@ -17,7 +17,7 @@ env:
 
 jobs:
   kaos-version:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.state == 'open'
     runs-on: 
       group: kaos-test
     outputs:
