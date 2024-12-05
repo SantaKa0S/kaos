@@ -3,7 +3,7 @@ name: Ka0S Version
 on:
   pull_request:
     types:
-      - closed
+      - opened
 
 permissions:
   contents: write
