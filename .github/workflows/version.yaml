@@ -36,7 +36,7 @@ jobs:
 
     - id: commit_details
       run: |
-        echo "GH_VERSION=$(git describe --abbrev=0 --tags)" >> $GITHUB_ENV
+        echo "GH_VERSION=$(gh api repos/:owner/:repo/git/matching-refs/tags --jq '.[-1].ref' | sed 's|refs/tags/||')" >> $GITHUB_ENV
         echo "AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
         echo "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
         echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
