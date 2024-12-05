@@ -2,8 +2,9 @@ name: Ka0S Version
 
 on:
   pull_request:
-    types:
-      - opened
+    types: [opened]
+    branches:
+      - 'main'
 
 permissions:
   contents: write
