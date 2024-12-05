@@ -10,6 +10,7 @@ on:
 env:
   KAOS_MODULE: "[Ka0S]"
   PATH_RESUME: "core/results/"
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # Primer Job dentro del Job
