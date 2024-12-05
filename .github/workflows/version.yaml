@@ -13,6 +13,7 @@ env:
   KAOS_MODULE: "[Ka0S] VERSION"
   KAOS_REF: ${{ github.ref }}
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  PATH_RESUME: "core/config/"
 
 jobs:
   kaos-version:
@@ -64,8 +65,8 @@ jobs:
         fi
         
         NEW_VERSION="$MAJOR.$MINOR.$PATCH"
-        echo $NEW_VERSION > version.txt
-        cat version.txt
+        echo $NEW_VERSION > ${{ env.PATH_RESUME}}version.txt
+        cat ${{ env.PATH_RESUME}}version.txt
         echo "VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
 
     - id: changed_files
@@ -104,10 +105,10 @@ jobs:
         git tag -a "v${{ steps.version.outputs.VERSION }}" -m "NEW Ka0S version ${{ steps.version.outputs.VERSION }}"
         git push origin "v${{ steps.version.outputs.VERSION }}"
         git add CHANGELOG.md version.txt
-        git commit -m "[Ka0S] Upload: CHANGELOG.md with new version log entry"
+        git commit -m "${{ env.KAOS_MODULE }} Upload: CHANGELOG.md with new version log entry"
         git add INDEX.md
-        git commit -m "[Ka0S] Upload: INDEX.md with version ${{ steps.version.outputs.VERSION }}"
-        git push
+        git commit -m "${{ env.KAOS_MODULE }}  Upload: INDEX.md with version ${{ steps.version.outputs.VERSION }}"
+        git push origin main
 
   handle_failure:
     runs-on: 
