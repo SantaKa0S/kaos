@@ -113,7 +113,16 @@ jobs:
       if: ${{ failure() }}
       run: |
         # Antes de nada borramos el tag asignado en el paso anterior
-          git push origin --delete "v${{ steps.version.outputs.VERSION }}"
+        git push origin --delete "v${{ steps.version.outputs.VERSION }}"
+        KAOS_ISSUE_BODY="Sentimos comunicarle que no se cumplen los requerimientos, por favor revise los checks"
+        gh workflow run issue.yaml --ref main -f kaos-issue-id="${{ github.event.pull_request.number }}" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment
+    
+    - id: comment-pull-request
+      if:  ${{ success() }} 
+      run: |
+        # Añadimos el comentario a la pull request de que todo ha ido correcto y de cual es la nueva version generada
+        KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha generado una nuversión con el tag v${{ steps.version.outputs.VERSION }}. Esto todo dispuesto para realizar el merge"
+        gh workflow run issue.yaml --ref main -f kaos-issue-id="${{ github.event.pull_request.number }}" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment
 
   handle_failure:
     runs-on: 
