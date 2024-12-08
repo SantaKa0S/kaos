@@ -14,6 +14,82 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
+      "body": "An error occurred in the [Ka0S] SPLUNK Action workflow **Ka0s Splunk**.\n**[Ka0S] SPLUNK  Message:**\nEl error ha sido en : 12208709658\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12208709658 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12208709658**\n```\n**Workflow Name:** Ka0s Splunk\n**Job Name:** handle_failure\n**Run ID:** 12208709658\n**Run Number:** 104\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** ee80a2a8573cc944966220d39dc927054a86bc73\nPlease investigate the issue.",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2024-12-07T01:46:39Z",
+      "id": "I_kwDONP0GL86iYLtN",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 433,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[Ka0S] SPLUNK Action Failed: Ka0s Splunk",
+      "updatedAt": "2024-12-07T01:46:39Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/433"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] SUMMARY Action workflow **Ka0s Summary**.\n**[Ka0S] SUMMARY  Message:**\nEl error ha sido en : 12208692552\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12208692552 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12208692552**\n```\n**Workflow Name:** Ka0s Summary\n**Job Name:** handle_failure\n**Run ID:** 12208692552\n**Run Number:** 71\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 06252e311fc2b99e813b3fe572b29b9e4579104b\nPlease investigate the issue.",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2024-12-07T01:45:46Z",
+      "id": "I_kwDONP0GL86iYLnr",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 432,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[Ka0S] SUMMARY Action Failed: Ka0s Summary",
+      "updatedAt": "2024-12-07T01:45:46Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/432"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
       "body": "An error occurred in the [Ka0S] SPLUNK Action workflow **Ka0s Splunk**.\n**[Ka0S] SPLUNK  Message:**\nEl error ha sido en : 12191198715\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12191198715 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12191198715**\n```\n**Workflow Name:** Ka0s Splunk\n**Job Name:** handle_failure\n**Run ID:** 12191198715\n**Run Number:** 103\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 06252e311fc2b99e813b3fe572b29b9e4579104b\nPlease investigate the issue.",
       "closed": false,
       "closedAt": null,
@@ -1401,82 +1477,6 @@
       "title": "[Ka0S] VERSION Action Failed: Ka0S Version",
       "updatedAt": "2024-12-05T12:42:55Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/390"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S] Action workflow **Ka0S**.\n**[Ka0S]  Message:**\nEl error ha sido en : 12179797551\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12179797551 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12179797551**\n```\n**Workflow Name:** Ka0S\n**Job Name:** handle_failure\n**Run ID:** 12179797551\n**Run Number:** 267\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 07b1478476378e5ca45ef49e73006f41e99b08e3\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-05T12:42:32Z",
-      "comments": [],
-      "createdAt": "2024-12-05T12:32:21Z",
-      "id": "I_kwDONP0GL86iJGK7",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 389,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S] Action Failed: Ka0S",
-      "updatedAt": "2024-12-05T12:42:32Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/389"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S] Action workflow **Ka0S**.\n**[Ka0S]  Message:**\nEl error ha sido en : 12179578457\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12179578457 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12179578457**\n```\n**Workflow Name:** Ka0S\n**Job Name:** handle_failure\n**Run ID:** 12179578457\n**Run Number:** 265\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** f6a43808665f5a4015695dd53af6d5501d767fe2\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-05T12:21:42Z",
-      "comments": [],
-      "createdAt": "2024-12-05T12:19:04Z",
-      "id": "I_kwDONP0GL86iI-mi",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 387,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S] Action Failed: Ka0S",
-      "updatedAt": "2024-12-05T12:21:42Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/387"
     }
   ]
 ]
