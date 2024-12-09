@@ -44,7 +44,7 @@ jobs:
         RNNUMBER=$(echo "${{ github.event.pull_request.title }}" | grep -o '[0-9]*')
         echo "Extracted RN Branch: $RNBRANCH"
         echo "Extracted RN Number: $RNNUMBER"
-        echo "RNCODE=$(echo "$RNBRANCH-$RNNUMBER") >> $GITHUB_OUTPUT
+        echo "RNCODE=$(echo "$RNBRANCH-$RNNUMBER")" >> $GITHUB_OUTPUT
         echo "La variable de KAOS_CODE es $RNCODE"
         echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
         echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT 
