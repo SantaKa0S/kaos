@@ -44,7 +44,7 @@ jobs:
         RNNUMBER=$(echo "${{ github.event.pull_request.title }}" | grep -o '[0-9]*')
         echo "Extracted RN Branch: $RNBRANCH"
         echo "Extracted RN Number: $RNNUMBER"
-        echo "RNCODE=$(echo "${{ github.event.pull_request.title }}" | grep -o '^[A-Za-z]*')-$(echo "${{ github.event.pull_request.title }}" | grep -o '[0-9]*')" >> $GITHUB_OUTPUT
+        echo "RNCODE=$(echo "$RNBRANCH-$RNNUMBER" >> $GITHUB_OUTPUT
         echo "La variable de KAOS_CODE es $RNCODE"
         echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
         echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT 
@@ -113,7 +113,7 @@ jobs:
       if: ${{ failure() }}
       run: |
         # Antes de nada borramos el tag asignado en el paso anterior
-        git push origin --delete "v${{ steps.version.outputs.VERSION }}"
+        git push origin --delete "${{ steps.version.outputs.VERSION }}"
         KAOS_ISSUE_BODY="Sentimos comunicarle que no se cumplen los requerimientos, por favor revise los checks"
         gh workflow run issue.yaml --ref main -f kaos-issue-id="${{ github.event.pull_request.number }}" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment
     
