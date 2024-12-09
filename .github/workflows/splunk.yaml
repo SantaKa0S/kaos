@@ -53,7 +53,8 @@ jobs:
 
           # Enviar datos al índice específico
           # KAOS_RESPONSE_IDX=$(curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple")
-          curl -k -u admin:splunk/splunk -X POST "${{env.GH_SPLUNK_URL_IDX}}" -H "Content-Type: multipart/form-data" -F "file=@${{ github.event.inputs.kaos-issue-body-file }}"
+          #curl -k -u admin:splunk/splunk -X POST "${{env.GH_SPLUNK_URL_IDX}}" -H "Content-Type: multipart/form-data" -F "file=@${{ github.event.inputs.kaos-issue-body-file }}"
+          curl -k -u admin:splunk/splunk -X POST "https://80.28.162.237:8089/services/receivers/stream?sourcetype=st_kaos_github&index=idx_kaos_github&host=curl-testing" -H "Content-Type: multipart/form-data" -F "file=@core/results/kaos-workflows-runs-delta.json"
       
   handle_failure:
     runs-on: 
