@@ -55,7 +55,23 @@
       "body": "An error occurred in the [Ka0S] SPLUNK Action workflow **Ka0s Splunk**.\n**[Ka0S] SPLUNK  Message:**\nEl error ha sido en : 12238782686\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12238782686 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12238782686**\n```\n**Workflow Name:** Ka0s Splunk\n**Job Name:** handle_failure\n**Run ID:** 12238782686\n**Run Number:** 129\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 5e2322ea4d0b4ba240f71d1d3ba080d5412a53f0\nPlease investigate the issue.",
       "closed": false,
       "closedAt": null,
-      "comments": [],
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86WtOxT",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Detectamos el fallo en un timeout que ampliamos",
+          "createdAt": "2024-12-09T15:43:11Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/467#issuecomment-2528439379",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2024-12-09T15:28:45Z",
       "id": "I_kwDONP0GL86ikXkj",
       "labels": [
@@ -73,7 +89,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "[Ka0S] SPLUNK Action Failed: Ka0s Splunk",
-      "updatedAt": "2024-12-09T15:28:45Z",
+      "updatedAt": "2024-12-09T15:43:13Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/467"
     },
     {
