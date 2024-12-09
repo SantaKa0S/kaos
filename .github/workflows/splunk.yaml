@@ -40,7 +40,7 @@ jobs:
 
       - id: send-file-splunk
         run: |
-          # Check url
+          # Check url login
           curl -v -k -s -d "username=$GH_SPLUNK_USER&password=$GH_SPLUNK_PASSWORD" "${{ env.GH_SPLUNK_URL }}en-US/services/auth/login"
           # Autenticación
           index_name='idx_kaos_github'
@@ -52,7 +52,7 @@ jobs:
           data=$(cat $file_path)
 
           # Enviar datos al índice específico
-          # KAOS_RESPONSE_IDX=$(curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple")
+          # KAOS_RESPONSE_IDX=$(curl -k -s -H "Authorization: Splunk $session_key" -d "$data" "${{ env.GH_SPLUNK_URL_IDX }}en_US/services/receivers/simple") 
           curl -k -u admin:splunk/splunk -X POST "https://80.28.162.237:8089/services/receivers/stream?sourcetype=st_kaos_github&index=idx_kaos_github&host=curl-testing" -H "Content-Type: multipart/form-data" -F "file=@${{ github.event.inputs.kaos-issue-body-file }}"
       
   handle_failure:
