@@ -40,7 +40,7 @@ jobs:
 
       - id: send-file-splunk
         run: |
-          # Check url
+          # Check Splunk url
           curl -v -k -s -d "username=$GH_SPLUNK_USER&password=$GH_SPLUNK_PASSWORD" "${{ env.GH_SPLUNK_URL }}"
           # Autenticación
           index_name='idx_kaos_github'
