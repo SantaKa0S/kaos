@@ -15,7 +15,7 @@ env:
   KAOS_REF: ${{ github.ref }}
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   PATH_RESUME: "core/config/"
-  GH_VERSION: 0
+  GH_VERSION: ""
 jobs:
   kaos-version:
     if: github.event.pull_request.state == 'open'
