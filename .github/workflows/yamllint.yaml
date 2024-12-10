@@ -30,7 +30,7 @@ env:
 
 jobs:
   yaml-lint-process:
-    runs-on: kaos-runner-yamllint
+    runs-on: kaos-yamllint
 
     steps:
       - id: repo # Checkout the repository to get the information of the commit
@@ -69,7 +69,7 @@ jobs:
 
   handle_failure:
     runs-on: 
-      group: kaos-test
+      group: kaos-yamllint
     needs: [yaml-lint-process]
     if: ${{ failure() }}
     steps:
