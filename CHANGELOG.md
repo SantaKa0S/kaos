@@ -79,3 +79,14 @@
 - **Files Changed**:
   - monitoring/grafana/dashboard/kaos_module_core.json
 ---------------------------------
+## Version 0.0.12
+- **Branch**: refs/pull/507/merge
+- **Commit**: 44d4a02f023c0d3d0e438084b1a3550f6425603c
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Dec 10 15:13:17 UTC 2024
+- **Message**: Merge 6ca1d9f67da27e31bc3bace482faad2a45321ef0 into 5c57d4915a1d02cd2f94ba7a4b610bdd983b0230
+- **Files Changed**:
+  - .github/workflows/summary.yaml
+  - core/results/commit-summary-H-506.txt
+  - core/results/files-in-commit-H-506.txt
+---------------------------------
