@@ -29,7 +29,7 @@ env:
   
 jobs:
   kaos-splunk:
-    runs-on: kaos-runner-splunk
+    runs-on: kaos-splunk
 
     steps:
       - id: repo # Checkout the repository to get the information of the commit
@@ -58,7 +58,7 @@ jobs:
       
   handle_failure:
     runs-on: 
-      group: kaos-test
+      group: kaos-splunk
     needs: [kaos-splunk]
     if: ${{ failure() }}
     steps:
