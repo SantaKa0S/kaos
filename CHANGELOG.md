@@ -1,0 +1,25 @@
+## Version 0.0.5
+- **Branch**: refs/pull/495/merge
+- **Commit**: 640ba7efa54f901ce4d5f28c34ebdf2abe580b40
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Dec 10 12:56:21 UTC 2024
+- **Message**: Merge 8fe6a7c8e828472e7645a288a4d7c95352ea460f into f5513e3b2b8da7746639cc403cfb8185022aabbd
+- **Files Changed**:
+  - .github/workflows/version.yaml
+  - core/results/commit-summary-H-471.txt
+  - core/results/files-in-commit-H-471.txt
+---------------------------------
+## Version 0.0.6
+- **Branch**: refs/pull/496/merge
+- **Commit**: 5a1473cc582b4c2d26d931dd8dec567d44a8fd67
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Dec 10 12:59:54 UTC 2024
+- **Message**: Merge de8799f75afb67201c707444acfe119bb2a997d0 into f5513e3b2b8da7746639cc403cfb8185022aabbd
+- **Files Changed**:
+  - .github/workflows/version.yaml
+  - CHANGELOG.md
+  - INDEX.md
+  - core/results/commit-summary-H-471.txt
+  - core/results/files-in-commit-H-471.txt
+  - version.txt
+---------------------------------
