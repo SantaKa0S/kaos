@@ -32,13 +32,20 @@ jobs:
 
       - id: summary-issue-log
         run: |
-
-            #  Extraemos toda la información de las issues haste el momento
+            #  Extraemos toda la información de las issues hasta el momento
             touch ${{ env.PATH_RESUME }}issue-log-${{ env.KAOS_CODE }}.json
             gh issue list --repo ${{ env.GH_REPO }} --state all --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}issue-log-${{ env.KAOS_CODE }}.json
             # Formatear el archivo JSON final
             cat ${{ env.PATH_RESUME }}issue-log-${{ env.KAOS_CODE }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-issue-log.json
 
+      - id: summary-pullrequest-log
+        run: |
+            #  Extraemos toda la información de las pullrequest hasta el momento
+            touch ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json
+            gh pr list --repo ${{ env.GH_REPO }} --state all --json additions,assignees,author,autoMergeRequest,baseRefName,body,changedFiles,closed,closedAt,comments,commits,createdAt,deletions,files,fullDatabaseId,headRefName,headRefOid,headRepository,headRepositoryOwner,id,isCrossRepository,isDraft,labels,latestReviews,maintainerCanModify,mergeCommit,mergeStateStatus,mergeable,mergedAt,mergedBy,milestone,number,potentialMergeCommit,projectCards,projectItems,reactionGroups,reviewDecision,reviewRequests,reviews,state,statusCheckRollup,title,updatedAt,url > ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json
+            # Formatear el archivo JSON final
+            cat ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-pullrequest-log.json
+          
       - id: summary-workflows-log
         run: |
           # Añadimos la información de todos los workflows y sus datos
@@ -81,106 +88,97 @@ jobs:
              git config --global user.email ${{ secrets.KAOS_USER_EMAIL }}
              git config --global user.name ${{ secrets.KAOS_USER_NAME }}
              git pull
-             git add ${{ env.PATH_RESUME }}*
+             git add ${{ env.PATH_RESUME }}kaos-*
              git commit -m "[Ka0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
              git push
 
-             # Generamos los ficheros delta de kaos-workflows-runs
-             if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-runs-old.json" ]]; then
-                 # Comparar con la lista anterior
-                 jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-workflows-runs.json ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
-                 git pull
-                 git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[Ka0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
-                 git push
-                 if [[ -s "${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json" ]]; then
-                  # LLamamos a splunk
-                  echo "En esta sección se puede habilitar la llamada a splunk"
-                  # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json -f kaos-issue-id=${{ github.workflow }}
-                 else
-                  echo "No hay contenido nuevo que subir a splunk"
-                fi 
-             else
-                 cat ${{ env.PATH_RESUME }}kaos-workflows-runs.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json
-                 git pull
-                 git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[Ka0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
-                 git push
-                 cat ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
-                 git pull
-                 git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[Ka0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
-                 git push
-                 # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json -f kaos-issue-id=${{ github.workflow }}
-             fi
-
-             # Generamos los ficheros delta de kaos-workflows-available
-             if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-available-old.json" ]]; then
-                 # Comparar con la lista anterior
-                 jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-workflows-available.json ${{ env.PATH_RESUME }}kaos-workflows-available-old.json > ${{ env.PATH_RESUME }}kaos-workflows-available-delta.json
-                 git pull
-                 git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
-                 git push
-                 if [[ -s "${{ env.PATH_RESUME }}kaos-workflows-available-delta.json" ]]; then
-                  # LLamamos a splunk
-                  echo "En esta sección se puede habilitar la llamada a splunk"
-                  # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-delta.json -f kaos-issue-id=${{ github.workflow }}
-                 else
-                  echo "No hay contenido nuevo que subir a splunk"
-                fi 
-             else
-                 cat ${{ env.PATH_RESUME }}kaos-workflows-available.json > ${{ env.PATH_RESUME }}kaos-workflows-available-old.json
-                 git pull
-                 git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
-                 git push
-                 cat ${{ env.PATH_RESUME }}kaos-workflows-available-old.json > ${{ env.PATH_RESUME }}kaos-workflows-available-delta.json
-                 git pull
-                 git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
-                 git push
-                 # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-delta.json -f kaos-issue-id=${{ github.workflow }}
-             fi
-             
-
-             # Generamos los ficheros delta de kaos-issue-log
-             if [[ -f "${{ env.PATH_RESUME }}kaos-issue-log-old.json" ]]; then
-                 # Comparar con la lista anterior
-                 jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-issue-log.json ${{ env.PATH_RESUME }}kaos-issue-log-old.json > ${{ env.PATH_RESUME }}kaos-issue-log-delta.json
-                 git pull
-                 git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
-                 git push
-                 if [[ -s "${{ env.PATH_RESUME }}kaos-issue-log-delta.json" ]]; then
-                  # LLamamos a splunk
-                  echo "En esta sección se puede habilitar la llamada a splunk"
-                  # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-delta.json -f kaos-issue-id=${{ github.workflow }}
-                 else
-                  echo "No hay contenido nuevo que subir a splunk"
-                fi 
-             else
-                 cat ${{ env.PATH_RESUME }}kaos-issue-log.json > ${{ env.PATH_RESUME }}kaos-issue-log-old.json
-                 git pull
-                 git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
-                 git push
-                 cat ${{ env.PATH_RESUME }}kaos-issue-log-old.json > ${{ env.PATH_RESUME }}kaos-issue-log-delta.json
-                 git pull
-                 git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
-                 git push
-                 # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-delta.json -f kaos-issue-id=${{ github.workflow }}
-             fi
-
-      - id: upload-file-repo
-        uses: actions/upload-artifact@v4
-        with:
-          name: reports-summary-files
-          path: |
-            ${{ env.PATH_RESUME }}kaos-issue-log-delta.json
-            ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
-            ${{ env.PATH_RESUME }}kaos-workflows-available--delta.json
+             # # Generamos los ficheros delta de kaos-workflows-runs
+             # if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-runs-old.json" ]]; then
+             #     # Comparar con la lista anterior
+             #     jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-workflows-runs.json ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
+             #     git pull
+             #     git add ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
+             #     git commit -m "[Ka0S] We integrate the DELTA runs summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
+             #     git push
+             #     if [[ -s "${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json" ]]; then
+             #      # LLamamos a splunk
+             #      echo "En esta sección se puede habilitar la llamada a splunk"
+             #      # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json -f kaos-issue-id=${{ github.workflow }}
+             #     else
+             #      echo "No hay contenido nuevo que subir a splunk"
+             #    fi 
+             # else
+             #     cat ${{ env.PATH_RESUME }}kaos-workflows-runs.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json
+             #     git pull
+             #     git add ${{ env.PATH_RESUME }}*
+             #     git commit -m "[Ka0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
+             #     git push
+             #     cat ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
+             #     git pull
+             #     git add ${{ env.PATH_RESUME }}*
+             #     git commit -m "[Ka0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
+             #     git push
+             #     # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json -f kaos-issue-id=${{ github.workflow }}
+             # fi
+             # 
+             # # Generamos los ficheros delta de kaos-workflows-available
+             # if [[ -f "${{ env.PATH_RESUME }}kaos-workflows-available-old.json" ]]; then
+             #     # Comparar con la lista anterior
+             #     jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-workflows-available.json ${{ env.PATH_RESUME }}kaos-workflows-available-old.json > ${{ env.PATH_RESUME }}kaos-workflows-available-delta.json
+             #     git pull
+             #     git add ${{ env.PATH_RESUME }}*
+             #     git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
+             #     git push
+             #     if [[ -s "${{ env.PATH_RESUME }}kaos-workflows-available-delta.json" ]]; then
+             #      # LLamamos a splunk
+             #      echo "En esta sección se puede habilitar la llamada a splunk"
+             #      # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-delta.json -f kaos-issue-id=${{ github.workflow }}
+             #     else
+             #      echo "No hay contenido nuevo que subir a splunk"
+             #    fi 
+             # else
+             #     cat ${{ env.PATH_RESUME }}kaos-workflows-available.json > ${{ env.PATH_RESUME }}kaos-workflows-available-old.json
+             #     git pull
+             #     git add ${{ env.PATH_RESUME }}*
+             #     git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
+             #     git push
+             #     cat ${{ env.PATH_RESUME }}kaos-workflows-available-old.json > ${{ env.PATH_RESUME }}kaos-workflows-available-delta.json
+             #     git pull
+             #     git add ${{ env.PATH_RESUME }}*
+             #     git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
+             #     git push
+             #     # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-delta.json -f kaos-issue-id=${{ github.workflow }}
+             # fi
+             # 
+             # 
+             # # Generamos los ficheros delta de kaos-issue-log
+             # if [[ -f "${{ env.PATH_RESUME }}kaos-issue-log-old.json" ]]; then
+             #     # Comparar con la lista anterior
+             #     jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-issue-log.json ${{ env.PATH_RESUME }}kaos-issue-log-old.json > ${{ env.PATH_RESUME }}kaos-issue-log-delta.json
+             #     git pull
+             #     git add ${{ env.PATH_RESUME }}*
+             #     git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
+             #     git push
+             #     if [[ -s "${{ env.PATH_RESUME }}kaos-issue-log-delta.json" ]]; then
+             #      # LLamamos a splunk
+             #      echo "En esta sección se puede habilitar la llamada a splunk"
+             #      # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-delta.json -f kaos-issue-id=${{ github.workflow }}
+             #     else
+             #      echo "No hay contenido nuevo que subir a splunk"
+             #    fi 
+             # else
+             #     cat ${{ env.PATH_RESUME }}kaos-issue-log.json > ${{ env.PATH_RESUME }}kaos-issue-log-old.json
+             #     git pull
+             #     git add ${{ env.PATH_RESUME }}*
+             #     git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
+             #     git push
+             #     cat ${{ env.PATH_RESUME }}kaos-issue-log-old.json > ${{ env.PATH_RESUME }}kaos-issue-log-delta.json
+             #     git pull
+             #     git add ${{ env.PATH_RESUME }}*
+             #     git commit -m "[KA0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
+             #     git push
+             #     # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-delta.json -f kaos-issue-id=${{ github.workflow }}
+             # fi
       
   handle_failure:
     runs-on: 
