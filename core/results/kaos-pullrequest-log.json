@@ -1,6 +1,398 @@
 [
   [
     {
+      "additions": 40893,
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "autoMergeRequest": null,
+      "baseRefName": "main",
+      "body": "Nueva version del summary",
+      "changedFiles": 11,
+      "closed": true,
+      "closedAt": "2024-12-10T16:47:14Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86W7z3e",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S]  VERSION ha generado una nueva versión con el tag v0.0.13. Esto todo dispuesto para realizar FUSIONAR el código.",
+          "createdAt": "2024-12-10T16:46:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/pull/514#issuecomment-2532261342",
+          "viewerDidAuthor": true
+        }
+      ],
+      "commits": [
+        {
+          "authoredDate": "2024-12-10T15:40:58Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-10T15:40:58Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos un control para comprobar su ejecucion",
+          "oid": "92ad9c3e81003d22c028661e881e3a050611e667"
+        },
+        {
+          "authoredDate": "2024-12-10T15:41:16Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-10T15:41:16Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "d061f404d7dca15691db16c33fe87654f99d120f"
+        },
+        {
+          "authoredDate": "2024-12-10T15:43:51Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-10T15:43:51Z",
+          "messageBody": "…ry, you do not need to integrate these files",
+          "messageHeadline": "[Ka0S] We integrate the summary files for 12259634870 in the reposito…",
+          "oid": "bea0004c4f227a59e6828bb92d93a436283c65a6"
+        },
+        {
+          "authoredDate": "2024-12-10T15:43:54Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-10T15:43:54Z",
+          "messageBody": "…he repository, you do not need to integrate these files",
+          "messageHeadline": "[Ka0S] We integrate the DELTA runs summary files for 12259634870 in t…",
+          "oid": "188c124a4f23ba5038104a156c88980bbdb3527b"
+        },
+        {
+          "authoredDate": "2024-12-10T16:24:32Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-10T16:24:32Z",
+          "messageBody": "",
+          "messageHeadline": "Nueva version de summary, añadimos las pr",
+          "oid": "f5eb0bb86d472fe6652b24ce5e78856a53f9f459"
+        },
+        {
+          "authoredDate": "2024-12-10T16:24:49Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-10T16:24:49Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "c93e3a5d9d4ef5216cad2c705a25abd641d5c289"
+        },
+        {
+          "authoredDate": "2024-12-10T16:28:53Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-10T16:28:53Z",
+          "messageBody": "",
+          "messageHeadline": "Nueva version de summary, añadimos las pr",
+          "oid": "42ff8e9821c6124bc29cf9767e83231c93c89b51"
+        },
+        {
+          "authoredDate": "2024-12-10T16:29:09Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-10T16:29:09Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "54fdfa480b95260dbe9c9b20483a7715de514d5c"
+        },
+        {
+          "authoredDate": "2024-12-10T16:31:30Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-10T16:31:30Z",
+          "messageBody": "",
+          "messageHeadline": "Nueva version de summary, añadimos las pr",
+          "oid": "49fcfdd8eab5279c5daa13da643c8057803a3553"
+        },
+        {
+          "authoredDate": "2024-12-10T16:31:46Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-10T16:31:46Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "9f302ac2712ad6266cdc1d017f04d8ef28a9c326"
+        },
+        {
+          "authoredDate": "2024-12-10T16:36:03Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-10T16:36:03Z",
+          "messageBody": "",
+          "messageHeadline": "Nueva version de summary, añadimos las pr",
+          "oid": "a6298938342299809f3140c61d9729e0de3a3ab0"
+        },
+        {
+          "authoredDate": "2024-12-10T16:36:18Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-10T16:36:18Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "1c97f759a6bcb2054f366608c47b008c56e1cca6"
+        },
+        {
+          "authoredDate": "2024-12-10T16:38:58Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-10T16:38:58Z",
+          "messageBody": "",
+          "messageHeadline": "Nueva version de summary, añadimos las pr",
+          "oid": "55507a7bd586d0c1315ce89b034e25e3b3962749"
+        },
+        {
+          "authoredDate": "2024-12-10T16:39:15Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-10T16:39:15Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "dead0d9e92086a1ba71eecc1c9bdd8b2ac987910"
+        },
+        {
+          "authoredDate": "2024-12-10T16:43:02Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-10T16:43:02Z",
+          "messageBody": "…ry, you do not need to integrate these files",
+          "messageHeadline": "[Ka0S] We integrate the summary files for 12260684691 in the reposito…",
+          "oid": "960e170e5bb82d6532ca61a0b0468b31503bb60d"
+        },
+        {
+          "authoredDate": "2024-12-10T16:46:03Z",
+          "authors": [
+            {
+              "email": "73332898+santakloud@users.noreply.github.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "SantaKloud"
+            }
+          ],
+          "committedDate": "2024-12-10T16:46:03Z",
+          "messageBody": "…5b3beaa9534206587d872d4",
+          "messageHeadline": "Merge 960e170e5bb82d6532ca61a0b0468b31503bb60d into 1e5b1484d94e483ab…",
+          "oid": "7b0a53045c5c5fd69f3ac88631c7f1c43229c6ba"
+        },
+        {
+          "authoredDate": "2024-12-10T16:46:16Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-10T16:46:16Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S]  VERSION  Upload: CHANGELOG.md, INDEX.md with version 0.0.13",
+          "oid": "c857073ab662d335a3ab1a36d69e53c40ae705c3"
+        }
+      ],
+      "createdAt": "2024-12-10T16:46:01Z",
+      "deletions": 435,
+      "files": [
+        {
+          "path": ".github/workflows/summary.yaml",
+          "additions": 97,
+          "deletions": 99
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 17,
+          "deletions": 0
+        },
+        {
+          "path": "INDEX.md",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/commit-summary-H-506.txt",
+          "additions": 3,
+          "deletions": 3
+        },
+        {
+          "path": "core/results/issue-log-12259634870.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/kaos-issue-log.json",
+          "additions": 792,
+          "deletions": 268
+        },
+        {
+          "path": "core/results/kaos-pullrequest-log.json",
+          "additions": 8400,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/kaos-workflows-runs-delta.json",
+          "additions": 168,
+          "deletions": 3
+        },
+        {
+          "path": "core/results/kaos-workflows-runs.json",
+          "additions": 1052,
+          "deletions": 62
+        },
+        {
+          "path": "core/results/workflows-available-12259634870.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/workflows-runs-12259634870.json",
+          "additions": 30361,
+          "deletions": 0
+        }
+      ],
+      "fullDatabaseId": "2226909480",
+      "headRefName": "H506-error-en-la-ejecución-de-summary",
+      "headRefOid": "c857073ab662d335a3ab1a36d69e53c40ae705c3",
+      "headRepository": {
+        "id": "R_kgDONP0GLw",
+        "name": "kaos"
+      },
+      "headRepositoryOwner": {
+        "id": "O_kgDOCyRQmA",
+        "login": "SantaKa0S"
+      },
+      "id": "PR_kwDONP0GL86Eu_Eo",
+      "isCrossRepository": false,
+      "isDraft": false,
+      "labels": [],
+      "latestReviews": [],
+      "maintainerCanModify": false,
+      "mergeCommit": {
+        "oid": "b32f254522fe3647d2c485953956bc44da213dac"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergeable": "UNKNOWN",
+      "mergedAt": "2024-12-10T16:47:14Z",
+      "mergedBy": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "milestone": null,
+      "number": 514,
+      "potentialMergeCommit": null,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "reviewDecision": "",
+      "reviewRequests": [],
+      "reviews": [],
+      "state": "MERGED",
+      "statusCheckRollup": [],
+      "title": "H506 error en la ejecución de summary",
+      "updatedAt": "2024-12-10T16:47:20Z",
+      "url": "https://github.com/SantaKa0S/kaos/pull/514"
+    },
+    {
       "additions": 21,
       "assignees": [],
       "author": {
@@ -8245,156 +8637,6 @@
       "title": "H422 kaos action failed kaos",
       "updatedAt": "2024-12-05T16:38:22Z",
       "url": "https://github.com/SantaKa0S/kaos/pull/428"
-    },
-    {
-      "additions": 11,
-      "assignees": [],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "autoMergeRequest": null,
-      "baseRefName": "main",
-      "body": "",
-      "changedFiles": 3,
-      "closed": true,
-      "closedAt": "2024-12-05T16:21:52Z",
-      "comments": [],
-      "commits": [
-        {
-          "authoredDate": "2024-12-05T16:01:12Z",
-          "authors": [
-            {
-              "email": "santacana.canton@icloud.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "santakloud"
-            }
-          ],
-          "committedDate": "2024-12-05T16:01:12Z",
-          "messageBody": "",
-          "messageHeadline": "Hotfix 422 corregimos la nomenclatura de la rama",
-          "oid": "7ec85c639a93348549e16bb501b00d8c3ebf3ad8"
-        },
-        {
-          "authoredDate": "2024-12-05T16:02:40Z",
-          "authors": [
-            {
-              "email": "santacana.canton@icloud.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "santakloud"
-            }
-          ],
-          "committedDate": "2024-12-05T16:02:40Z",
-          "messageBody": "",
-          "messageHeadline": "Hotfix 422 corregimos la nomenclatura de la rama",
-          "oid": "c9e78d61461b639c9eb674bc2370aa9506746c99"
-        },
-        {
-          "authoredDate": "2024-12-05T16:03:04Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2024-12-05T16:03:04Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
-          "oid": "78078c0f33f4f574e77d29ae6befa8ce84ef552e"
-        }
-      ],
-      "createdAt": "2024-12-05T16:06:06Z",
-      "deletions": 2,
-      "files": [
-        {
-          "path": ".github/workflows/ka0s.yaml",
-          "additions": 5,
-          "deletions": 2
-        },
-        {
-          "path": "core/results/commit-summary-H-422.txt",
-          "additions": 5,
-          "deletions": 0
-        },
-        {
-          "path": "core/results/files-in-commit-H-422.txt",
-          "additions": 1,
-          "deletions": 0
-        }
-      ],
-      "fullDatabaseId": "2218037340",
-      "headRefName": "H422-kaos-action-failed-kaos",
-      "headRefOid": "78078c0f33f4f574e77d29ae6befa8ce84ef552e",
-      "headRepository": {
-        "id": "R_kgDONP0GLw",
-        "name": "kaos"
-      },
-      "headRepositoryOwner": {
-        "id": "O_kgDOCyRQmA",
-        "login": "SantaKa0S"
-      },
-      "id": "PR_kwDONP0GL86ENJBc",
-      "isCrossRepository": false,
-      "isDraft": false,
-      "labels": [],
-      "latestReviews": [],
-      "maintainerCanModify": false,
-      "mergeCommit": null,
-      "mergeStateStatus": "UNKNOWN",
-      "mergeable": "UNKNOWN",
-      "mergedAt": null,
-      "mergedBy": null,
-      "milestone": null,
-      "number": 426,
-      "potentialMergeCommit": null,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "reviewDecision": "",
-      "reviewRequests": [],
-      "reviews": [],
-      "state": "CLOSED",
-      "statusCheckRollup": [
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-05T16:07:10Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12183552558/job/33985244310",
-          "name": "kaos-version",
-          "startedAt": "2024-12-05T16:06:28Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-05T16:07:22Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12183552558/job/33985305760",
-          "name": "handle_failure",
-          "startedAt": "2024-12-05T16:07:18Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-05T16:08:03Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://app.codacy.com/gh/SantaKa0S/kaos/pull-requests/426",
-          "name": "Codacy Static Code Analysis",
-          "startedAt": "2024-12-05T16:08:03Z",
-          "status": "COMPLETED",
-          "workflowName": ""
-        }
-      ],
-      "title": "H422 kaos action failed kaos",
-      "updatedAt": "2024-12-05T16:21:52Z",
-      "url": "https://github.com/SantaKa0S/kaos/pull/426"
     }
   ]
 ]
