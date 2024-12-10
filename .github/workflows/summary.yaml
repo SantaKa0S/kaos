@@ -90,8 +90,8 @@ jobs:
                  # Comparar con la lista anterior
                  jq -s '.[0] - .[1]' ${{ env.PATH_RESUME }}kaos-workflows-runs.json ${{ env.PATH_RESUME }}kaos-workflows-runs-old.json > ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
                  git pull
-                 git add ${{ env.PATH_RESUME }}*
-                 git commit -m "[Ka0S] We integrate the summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
+                 git add ${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json
+                 git commit -m "[Ka0S] We integrate the DELTA runs summary files for ${{ env.KAOS_CODE }} in the repository, you do not need to integrate these files"
                  git push
                  if [[ -s "${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json" ]]; then
                   # LLamamos a splunk
