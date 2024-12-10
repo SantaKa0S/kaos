@@ -14,6 +14,44 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
+      "body": "An error occurred in the [Ka0S] SUMMARY Action workflow **Ka0s Summary**.\n**[Ka0S] SUMMARY  Message:**\nEl error ha sido en : 12259109603\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12259109603 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12259109603**\n```\n**Workflow Name:** Ka0s Summary\n**Job Name:** handle_failure\n**Run ID:** 12259109603\n**Run Number:** 85\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 21eaa9b086aa8ffcfb9a3f545a06e65635d4e828\nPlease investigate the issue.",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2024-12-10T15:16:16Z",
+      "id": "I_kwDONP0GL86ivuxD",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 508,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[Ka0S] SUMMARY Action Failed: Ka0s Summary",
+      "updatedAt": "2024-12-10T15:16:16Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/508"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
       "body": "Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros\nAlready up to date.\n[main 9246aaf] [Ka0S] We integrate the summary files for 12257654954 in the repository, you do not need to integrate these files\n 5 files changed, 35249 insertions(+), 868 deletions(-)\n create mode 100644 core/results/issue-log-12257654954.json\n create mode 100644 core/results/workflows-available-12257654954.json\n create mode 100644 core/results/workflows-runs-12257654954.json\nTo https://github.com/SantaKa0S/kaos\n   7f36dbf..9246aaf  main -> main\n/actions-runner/_work/_temp/fec1baf9-b1a6-45b4-9e19-0c482d583d24.sh: line 20: syntax error near unexpected token `else'\nError: Process completed with exit code 2.",
       "closed": true,
       "closedAt": "2024-12-10T15:13:55Z",
@@ -107,6 +145,96 @@
           "reactionGroups": [],
           "url": "https://github.com/SantaKa0S/kaos/issues/506#issuecomment-2531960854",
           "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86W7L6g",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H506-error-en-la-ejecución-de-summary\nCommit SHA is 92ad9c3e81003d22c028661e881e3a050611e667\nRepo origin is SantaKa0S/kaos\nAssigned number issue 506\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12259605550**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12259605550\n**Run Number:** 322\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H506-error-en-la-ejecución-de-summary\n**Commit:** 92ad9c3e81003d22c028661e881e3a050611e667\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 506**\n**Please review issue 506 for more information.**",
+          "createdAt": "2024-12-10T15:41:42Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/506#issuecomment-2532097696",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86W7L79",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-506 Ka0S_Code",
+          "createdAt": "2024-12-10T15:41:44Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/506#issuecomment-2532097789",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86W7MDd",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12259614257\n**Run Number:** 346\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H506-error-en-la-ejecución-de-summary\n**Commit:** d061f404d7dca15691db16c33fe87654f99d120f\n\n**Files Involved:**",
+          "createdAt": "2024-12-10T15:41:56Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/506#issuecomment-2532098269",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86W7MEI",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-10T15:41:57Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/506#issuecomment-2532098312",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86W7MKz",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12259614257 launch the check 12259617826 and its result has been SUCCESS",
+          "createdAt": "2024-12-10T15:42:08Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/506#issuecomment-2532098739",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86W7ML9",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S approve create pull request for issue 506.Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-10T15:42:10Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/506#issuecomment-2532098813",
+          "viewerDidAuthor": true
         }
       ],
       "createdAt": "2024-12-10T15:08:34Z",
@@ -131,8 +259,8 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "98236657",
-            "name": "Done"
+            "optionId": "47fc9ee4",
+            "name": "In progress"
           },
           "title": "@Core-Kaos-Project"
         }
@@ -140,7 +268,7 @@
       "reactionGroups": [],
       "state": "CLOSED",
       "title": "Error en la ejecución de summary",
-      "updatedAt": "2024-12-10T15:13:55Z",
+      "updatedAt": "2024-12-10T15:42:12Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/506"
     },
     {
@@ -2862,60 +2990,6 @@
       "title": "[Ka0S] SPLUNK Action Failed: Ka0s Splunk",
       "updatedAt": "2024-12-09T15:08:58Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/459"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S] SPLUNK Action workflow **Ka0s Splunk**.\n**[Ka0S] SPLUNK  Message:**\nEl error ha sido en : 12236650149\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12236650149 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12236650149**\n```\n**Workflow Name:** Ka0s Splunk\n**Job Name:** handle_failure\n**Run ID:** 12236650149\n**Run Number:** 121\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 5364c7abdaf81fc0729269614f515f1a9194b7c7\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-09T15:09:33Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86Wsn-W",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Relacionada con la 436 hemos dado con el problema en la ejecucion de la subida de codigo",
-          "createdAt": "2024-12-09T15:09:30Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/458#issuecomment-2528280470",
-          "viewerDidAuthor": true
-        }
-      ],
-      "createdAt": "2024-12-09T13:34:15Z",
-      "id": "I_kwDONP0GL86ii9FZ",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 458,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S] SPLUNK Action Failed: Ka0s Splunk",
-      "updatedAt": "2024-12-09T15:09:33Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/458"
     }
   ]
 ]
