@@ -49,7 +49,8 @@ env:
   KAOS_MODULE: "[Ka0S] ISSUE"
 jobs:
   kaos-issue-process:
-    runs-on: kaos-runner-issue
+    runs-on: 
+      group: kaos-issue
 
     steps:
       - id: repo # Checkout the repository to get the information of the commit
@@ -107,7 +108,7 @@ jobs:
 
   handle_failure:
     runs-on: 
-      group: kaos-test
+      group: kaos-issue
     needs: [kaos-issue-process]
     if: ${{ failure() }}
     steps:

@@ -1,0 +1,180 @@
+services:
+  # Grupo del módulo de kaos-iniit
+  kaos-init-1:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-init-1:/actions-runner
+  kaos-init-2:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-init-2:/actions-runner
+  kaos-init-3:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-init-3:/actions-runner
+  kaos-init-4:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-init-4:/actions-runner
+  # Grupo del modulo kaos
+  kaos-1:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-1:/actions-runner
+  kaos-2:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-2:/actions-runner
+  kaos-3:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-3:/actions-runner
+  kaos-4:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-4:/actions-runner
+  # Grupo del modulo kaos-summary
+  kaos-summary-1:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-summary-1:/actions-runner
+  kaos-summary-2:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-summary-2:/actions-runner
+  kaos-summary-3:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-summary-3:/actions-runner
+  kaos-summary-4:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-summary-4:/actions-runner
+  # Grupo del modulo kaos-issue
+  kaos-issue-1:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-issue-1:/actions-runner
+  kaos-issue-2:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-issue-2:/actions-runner
+  kaos-issue-3:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-issue-3:/actions-runner
+  kaos-issue-4:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-issue-4:/actions-runner
+  # Grupo del modulo kaos-splunk
+  kaos-splunk-1:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-splunk-1:/actions-runner
+  kaos-splunk-2:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-splunk-2:/actions-runner
+  kaos-splunk-3:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-splunk-3:/actions-runner
+  kaos-splunk-4:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-splunk-4:/actions-runner
+  # Grupo del modulo kaos-version
+  kaos-version-1:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-version-1:/actions-runner
+  kaos-version-2:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-version-2:/actions-runner
+  kaos-version-3:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-version-3:/actions-runner
+  kaos-version-4:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-version-4:/actions-runner
+  # Grupo del modulo kaos-yamllint
+  kaos-yamllint-1:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-yamllint-1:/actions-runner
+  kaos-yamllint-2:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-yamllint-2:/actions-runner
+  kaos-yamllint-3:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-yamllint-3:/actions-runner
+  kaos-yamllint-4:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-yamllint-4:/actions-runner
+volumes:
+  kaos-1:
+  kaos-2:
+  kaos-3:
+  kaos-4:
+  kaos-init-1:
+  kaos-init-2:
+  kaos-init-3:
+  kaos-init-4:
+  kaos-issue-1:
+  kaos-issue-2:
+  kaos-issue-3:
+  kaos-issue-4:
+  kaos-splunk-1:
+  kaos-splunk-2:
+  kaos-splunk-3:
+  kaos-splunk-4:
+  kaos-summary-1:
+  kaos-summary-2:
+  kaos-summary-3:
+  kaos-summary-4:
+  kaos-version-1:
+  kaos-version-2:
+  kaos-version-3:
+  kaos-version-4:
+  kaos-yamllint-1:
+  kaos-yamllint-2:
+  kaos-yamllint-3:
+  kaos-yamllint-4:
+  
+  
+  

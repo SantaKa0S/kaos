@@ -25,7 +25,7 @@ jobs:
       KAOS_NUMBER: ${{ steps.core.outputs.RNNUMBER }}
       KAOS_INVOLVED: ${{ steps.files.outputs.INVOLVED }}
     runs-on: 
-      group: kaos-test
+      group: kaos
     permissions:
       contents: write
       actions: write
@@ -106,7 +106,7 @@ jobs:
     outputs:
       KAOS_BODY_ISSUE: ${{ steps.release-new-flow.outputs.SUMMARY }}
     runs-on:
-      group: kaos-test
+      group: kaos
     permissions:
       contents: write
       actions: write
@@ -160,7 +160,7 @@ jobs:
 
   handle_failure:
     runs-on: 
-      group: kaos-test
+      group: kaos
     needs: [job-core, job-flows]
     if: ${{ failure() }}
     steps:
