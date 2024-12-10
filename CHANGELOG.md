@@ -39,3 +39,12 @@
   - observability/splunk/config/inputs.conf
   - observability/splunk/config/outputs.conf
 ---------------------------------
+## Version 0.0.8
+- **Branch**: refs/pull/499/merge
+- **Commit**: 3b428789b89ad292069a2db581f8b720709de8c2
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Dec 10 13:37:29 UTC 2024
+- **Message**: Merge 29ab2e433f21a6cf1acbda023855f067e82fc658 into 2711bfd4c7cfc71e6a6ed2e8ec4c17fca78f27e7
+- **Files Changed**:
+  - observability/splunk/config/deploymentclient.conf
+---------------------------------
