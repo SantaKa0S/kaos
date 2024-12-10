@@ -20,7 +20,8 @@ env:
 
 jobs:
   kaos-summary:
-    runs-on: kaos-self-hosted
+    runs-on: 
+      group: kaos-summary
 
     steps:
       - id: repo # Checkout the repository to get the information of the commit
@@ -180,7 +181,7 @@ jobs:
       
   handle_failure:
     runs-on: 
-      group: kaos-test
+      group: kaos-summary
     needs: [kaos-summary]
     if: ${{ failure() }}
     steps:

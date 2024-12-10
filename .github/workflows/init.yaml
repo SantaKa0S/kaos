@@ -24,7 +24,8 @@ env:
   
 jobs:
   kaos-init-process:
-    runs-on: kaos-runner-init
+    runs-on: 
+      group: kaos-init
     env:
       GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
       BRANCH_NAME: ${{ github.ref }}
@@ -85,7 +86,7 @@ jobs:
       
   handle_failure:
     runs-on: 
-      group: kaos-test
+      group: kaos-init
     needs: [kaos-init-process]
     if: ${{ failure() }}
     steps:
