@@ -90,3 +90,20 @@
   - core/results/commit-summary-H-506.txt
   - core/results/files-in-commit-H-506.txt
 ---------------------------------
+## Version 0.0.13
+- **Branch**: refs/pull/514/merge
+- **Commit**: 7b0a53045c5c5fd69f3ac88631c7f1c43229c6ba
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Dec 10 16:46:15 UTC 2024
+- **Message**: Merge 960e170e5bb82d6532ca61a0b0468b31503bb60d into 1e5b1484d94e483ab5b3beaa9534206587d872d4
+- **Files Changed**:
+  - .github/workflows/summary.yaml
+  - core/results/commit-summary-H-506.txt
+  - core/results/issue-log-12259634870.json
+  - core/results/kaos-issue-log.json
+  - core/results/kaos-pullrequest-log.json
+  - core/results/kaos-workflows-runs-delta.json
+  - core/results/kaos-workflows-runs.json
+  - core/results/workflows-available-12259634870.json
+  - core/results/workflows-runs-12259634870.json
+---------------------------------
