@@ -95,6 +95,7 @@ jobs:
                  git push
                  if [[ -s "${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json" ]]; then
                   # LLamamos a splunk
+                  echo "En esta sección se puede habilitar la llamada a splunk"
                   # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-runs-delta.json -f kaos-issue-id=${{ github.workflow }}
                  else
                   echo "No hay contenido nuevo que subir a splunk"
@@ -123,6 +124,7 @@ jobs:
                  git push
                  if [[ -s "${{ env.PATH_RESUME }}kaos-workflows-available-delta.json" ]]; then
                   # LLamamos a splunk
+                  echo "En esta sección se puede habilitar la llamada a splunk"
                   # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-workflows-available-delta.json -f kaos-issue-id=${{ github.workflow }}
                  else
                   echo "No hay contenido nuevo que subir a splunk"
@@ -152,6 +154,7 @@ jobs:
                  git push
                  if [[ -s "${{ env.PATH_RESUME }}kaos-issue-log-delta.json" ]]; then
                   # LLamamos a splunk
+                  echo "En esta sección se puede habilitar la llamada a splunk"
                   # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=${{ env.PATH_RESUME }}kaos-issue-log-delta.json -f kaos-issue-id=${{ github.workflow }}
                  else
                   echo "No hay contenido nuevo que subir a splunk"
