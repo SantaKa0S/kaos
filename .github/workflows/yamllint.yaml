@@ -30,7 +30,8 @@ env:
 
 jobs:
   yaml-lint-process:
-    runs-on: kaos-yamllint
+    runs-on: 
+      group: kaos-yamllint
 
     steps:
       - id: repo # Checkout the repository to get the information of the commit

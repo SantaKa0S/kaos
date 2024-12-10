@@ -20,7 +20,8 @@ env:
 
 jobs:
   kaos-summary:
-    runs-on: kaos-summary
+    runs-on: 
+      group: kaos-summary
 
     steps:
       - id: repo # Checkout the repository to get the information of the commit

@@ -49,7 +49,8 @@ env:
   KAOS_MODULE: "[Ka0S] ISSUE"
 jobs:
   kaos-issue-process:
-    runs-on: kaos-issue
+    runs-on: 
+      group: kaos-issue
 
     steps:
       - id: repo # Checkout the repository to get the information of the commit
