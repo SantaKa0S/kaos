@@ -103,7 +103,7 @@ jobs:
         echo "- **Version**: ${{ steps.version.outputs.VERSION }} - **Description**: ${{ steps.commit_details.outputs.COMMIT_MESSAGE }}" >> INDEX.md
         git add *
         git commit -m "${{ env.KAOS_MODULE }}  Upload: CHANGELOG.md, INDEX.md with version ${{ steps.version.outputs.VERSION }}"
-        git push origin ${{ github.event.pull_request.base }}
+        git push origin ${{ github.base_ref }}
 
 
     - id: failure-delete-tag
