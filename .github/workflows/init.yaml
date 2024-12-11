@@ -50,8 +50,8 @@ jobs:
           while IFS= read -r line; do
             echo "Este es el fichero $line de la lista ${{ github.event.inputs.kaos-involved-file }}"
             for module in "${module_array[@]}"; do
-              echo "El modulo es $module"
-              echo "Y el fichero es $line"
+              echo "El modulo es: $module"
+              echo "Y el fichero es: $line"
               if [[ "$line" == *"$module"* ]]; then
                 file_name=$(basename "$line")
                 file_extension="${file_name##*.}"
