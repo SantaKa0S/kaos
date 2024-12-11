@@ -107,3 +107,12 @@
   - core/results/workflows-available-12259634870.json
   - core/results/workflows-runs-12259634870.json
 ---------------------------------
+## Version 0.0.13
+- **Branch**: refs/pull/518/merge
+- **Commit**: 5cb9fa602216178db8972786ef35f2916ea986d5
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Wed Dec 11 09:13:47 UTC 2024
+- **Message**: Merge fed60c4438ddd66ec2c5790ae54b192a95d27fad into 561cdb896f0a2a854a9137bcb5e3e989a80a27ef
+- **Files Changed**:
+  - monitoring/grafana/dashboard/kaos_github.json
+---------------------------------
