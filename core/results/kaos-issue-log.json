@@ -14,6 +14,298 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12283994016\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12283994016 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12283994016**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12283994016\n**Run Number:** 9\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 5cdaf63888784d6222938436decc1daaef639261\nPlease investigate the issue.",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2024-12-11T20:04:02Z",
+      "id": "I_kwDONP0GL86i824I",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 530,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-11T20:04:02Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/530"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12281109574\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12281109574 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12281109574**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12281109574\n**Run Number:** 8\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 8b3f3ffccced8bdd37f336791771d30b2c523248\nPlease investigate the issue.",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2024-12-11T16:56:21Z",
+      "id": "I_kwDONP0GL86i7dQE",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 529,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-11T16:56:21Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/529"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12280282837\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12280282837 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12280282837**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12280282837\n**Run Number:** 6\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 8a61b48d00029e70a5350e2379161aa371766ea6\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-11T16:45:41Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XMEbx",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Añadimos una nueva manera de gestionar el lint\r\njsonlint \"${{ github.event.inputs.kaos-files }}\" -p 2>&1 | tee >(grep -q \"Error\" && tee ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt)",
+          "createdAt": "2024-12-11T16:45:39Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/528#issuecomment-2536523505",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-11T16:10:43Z",
+      "id": "I_kwDONP0GL86i7EA-",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 528,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-11T16:45:41Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/528"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12277972392\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12277972392 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277972392**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12277972392\n**Run Number:** 3\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** e8239333c2d4a4a4ae50fd6efd71d61ef3ef35a9\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-11T14:12:21Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XKc36",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "\"Cambias una gestion absurda de los fichertos mediante push\"",
+          "createdAt": "2024-12-11T14:12:21Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/527#issuecomment-2536099322",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-11T14:03:43Z",
+      "id": "I_kwDONP0GL86i51GT",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 527,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-11T14:12:21Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/527"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12277748067\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12277748067 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277748067**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12277748067\n**Run Number:** 2\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 08d1866109e832a19f65ef3646ba3d75b5f9ad14\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-11T13:59:23Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XKUsr",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "echo \"FILE_ERROR=${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt\" >> $GITGHUB_ENV\r\ntenemos mal encaminada la varibale sobre un \"G\"\r\necho \"FILE_ERROR=${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt\" >> $GITHUB_ENV",
+          "createdAt": "2024-12-11T13:59:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/526#issuecomment-2536065835",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-11T13:50:33Z",
+      "id": "I_kwDONP0GL86i5tQh",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 526,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-11T13:59:23Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/526"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12277529742\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12277529742 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277529742**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12277529742\n**Run Number:** 1\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 6defb2ac3ec5b3a557688beffaf573acebd2a560\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-11T13:58:35Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XKUPf",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "detectado el error subimos el cambio",
+          "createdAt": "2024-12-11T13:58:35Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/525#issuecomment-2536063967",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-11T13:39:39Z",
+      "id": "I_kwDONP0GL86i5m6T",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 525,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-11T13:58:35Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/525"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
       "body": "Vamos a realizar las pruebas de JSONLINT y YAMLLINT en conjunto para evaluar las diferentes funcionalidades de todos los modulos en su conjunto.",
       "closed": false,
       "closedAt": null,
@@ -167,6 +459,1356 @@
           "reactionGroups": [],
           "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2535917700",
           "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XJ3CB",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is 989d3eab5329ae7df18763213f43fa06a423b7f7\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277002117**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12277002117\n**Run Number:** 335\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 989d3eab5329ae7df18763213f43fa06a423b7f7\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T13:07:50Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2535944321",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XJ3DC",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T13:07:52Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2535944386",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKDY_",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is b2457eddef82f84928b4247abab57ba0ef7ba70a\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277380343**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12277380343\n**Run Number:** 336\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** b2457eddef82f84928b4247abab57ba0ef7ba70a\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T13:29:05Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2535994943",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKDav",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T13:29:08Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2535995055",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKDgs",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12277387505\n**Run Number:** 359\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 9f21503cb12e7eda9677f366b7ab0f730b43cc91\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T13:29:18Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2535995436",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKDhO",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-11T13:29:19Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2535995470",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKDou",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S approve create pull request for issue 523.Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-11T13:29:31Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2535995950",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKDow",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12277387505 launch the check 12277390881 and its result has been SUCCESS",
+          "createdAt": "2024-12-11T13:29:31Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2535995952",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKFhA",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is 6d8af3b851c90452605a5a2870798be816fbb5b3\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277446103**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12277446103\n**Run Number:** 337\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 6d8af3b851c90452605a5a2870798be816fbb5b3\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T13:32:55Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536003648",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKFir",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T13:32:58Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536003755",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKIOS",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is b88f5751c9a72a4422da1bc5b5f9c881612a122c\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277519370**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12277519370\n**Run Number:** 338\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** b88f5751c9a72a4422da1bc5b5f9c881612a122c\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T13:37:08Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536014738",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKIPu",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T13:37:11Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536014830",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKIVA",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12277526353\n**Run Number:** 361\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 6defb2ac3ec5b3a557688beffaf573acebd2a560\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T13:37:21Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536015168",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKIVh",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow jsonlint.yaml",
+          "createdAt": "2024-12-11T13:37:21Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536015201",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKIV7",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12277526353\n**Run Number:** 361\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 6defb2ac3ec5b3a557688beffaf573acebd2a560\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T13:37:22Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536015227",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKIYH",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-11T13:37:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536015367",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKIeN",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12277526353 launch the check 12277530341 and its result has been SUCCESS",
+          "createdAt": "2024-12-11T13:37:37Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536015757",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKIer",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S approve create pull request for issue 523.Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-11T13:37:38Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536015787",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKM9E",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is 4f4570ca9193be67ba2c5ae06ad21ee12a71bcdb\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277665346**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12277665346\n**Run Number:** 339\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 4f4570ca9193be67ba2c5ae06ad21ee12a71bcdb\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T13:45:46Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536034116",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKM_I",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T13:45:48Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536034248",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKNGo",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12277673123\n**Run Number:** 362\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 457b15cd260e5d60dfdbcd34b961bab85e7c2c6e\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T13:45:58Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536034728",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKNHk",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-11T13:46:00Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536034788",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKNO0",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12277673123 launch the check 12277676556 and its result has been SUCCESS",
+          "createdAt": "2024-12-11T13:46:11Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536035252",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKNO-",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S approve create pull request for issue 523.Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-11T13:46:12Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536035262",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKPSX",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is 6a2c96dfb89e140cdd0369381dfb581a06d3fe67\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277737297**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12277737297\n**Run Number:** 340\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 6a2c96dfb89e140cdd0369381dfb581a06d3fe67\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T13:49:55Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536043671",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKPTF",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T13:49:57Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536043717",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKPZq",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12277744492\n**Run Number:** 363\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 08d1866109e832a19f65ef3646ba3d75b5f9ad14\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T13:50:07Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536044138",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKPaZ",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow jsonlint.yaml",
+          "createdAt": "2024-12-11T13:50:09Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536044185",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKVYt",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is b4a107e54e1804a10333c3fbc0a0fc89c9dbabbb\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277914012**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12277914012\n**Run Number:** 341\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** b4a107e54e1804a10333c3fbc0a0fc89c9dbabbb\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T14:00:36Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536068653",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKVZ_",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T14:00:38Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536068735",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKVfw",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12277922365\n**Run Number:** 364\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 37ced2ba45735e23d6c12a79cfcb4e2eb54df784\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T14:00:47Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536069104",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKVg4",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-11T14:00:48Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536069176",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKVnH",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12277922365 launch the check 12277926272 and its result has been SUCCESS",
+          "createdAt": "2024-12-11T14:00:59Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536069575",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKVns",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S approve create pull request for issue 523.Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-11T14:01:00Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536069612",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKW1c",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is 2fc2f02c70de808f57f1bc62af7085b4347837a0\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12277962436**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12277962436\n**Run Number:** 342\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 2fc2f02c70de808f57f1bc62af7085b4347837a0\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T14:03:03Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536074588",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKW2T",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T14:03:04Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536074643",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKW9-",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12277968816\n**Run Number:** 365\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** e8239333c2d4a4a4ae50fd6efd71d61ef3ef35a9\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T14:03:15Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536075134",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKW_F",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow jsonlint.yaml",
+          "createdAt": "2024-12-11T14:03:17Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536075205",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKXJ2",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The json lint process 12277968816 launch the check 12277972392 and its result has been FAILED, please check core/results/jsonlint-results-12277972392.txt and solved it",
+          "createdAt": "2024-12-11T14:03:31Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536075894",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKdFx",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is ced610304c0262851b0d77162723ce9a9ded0024\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12278147936**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12278147936\n**Run Number:** 343\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** ced610304c0262851b0d77162723ce9a9ded0024\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T14:12:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536100209",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKdHq",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T14:12:48Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536100330",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKdOj",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12278157321\n**Run Number:** 366\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 7a98f50008dc0e052a19c958256f3df218e4927c\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T14:12:59Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536100771",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKdO8",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-11T14:13:00Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536100796",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKdXA",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12278157321 launch the check 12278160778 and its result has been SUCCESS",
+          "createdAt": "2024-12-11T14:13:12Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536101312",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKdXs",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S approve create pull request for issue 523.Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-11T14:13:13Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536101356",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKnFL",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is ca0ab054bbb47d60d3ef975cdbabdd4b81b0edf2\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12278339521**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12278339521\n**Run Number:** 344\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** ca0ab054bbb47d60d3ef975cdbabdd4b81b0edf2\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T14:22:59Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536141131",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKnG8",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T14:23:02Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536141244",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKnPQ",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12278347706\n**Run Number:** 367\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** f204f6c25a3f279c29f3b59ea1ce2bdd9f60dd19\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T14:23:14Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536141776",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKnQQ",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow jsonlint.yaml",
+          "createdAt": "2024-12-11T14:23:16Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536141840",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XKnah",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The json lint process 12278347706 launch the check 12278352049 and its result has been FAILED, please check core/results/jsonlint-results-12278352049.txt and solved it",
+          "createdAt": "2024-12-11T14:23:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536142497",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLQvt",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is bf6ed79fe33f43e3d125b5c16d4976f12a57a40b\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12279537269**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12279537269\n**Run Number:** 345\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** bf6ed79fe33f43e3d125b5c16d4976f12a57a40b\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T15:27:11Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536311789",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLQwj",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T15:27:13Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536311843",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLQ5D",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12279544325\n**Run Number:** 368\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** a042ffb5d25c081cafa6a64f7cc1907fc1221036\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T15:27:27Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536312387",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLQ5T",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-11T15:27:27Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536312403",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLRA6",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12279544325 launch the check 12279548429 and its result has been SUCCESS",
+          "createdAt": "2024-12-11T15:27:40Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536312890",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLRB0",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S approve create pull request for issue 523.Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-11T15:27:41Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536312948",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLYNU",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is ebf43926e8313c5f1140031598ccb7428817c050\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12279757955**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12279757955\n**Run Number:** 346\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** ebf43926e8313c5f1140031598ccb7428817c050\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T15:38:39Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536342356",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLYOZ",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T15:38:41Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536342425",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLYVj",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12279766400\n**Run Number:** 369\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** c7812a862eaf3a6c789c0d57d41f5f610cf352ea\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T15:38:52Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536342883",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLYWH",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow jsonlint.yaml",
+          "createdAt": "2024-12-11T15:38:53Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536342919",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLYgw",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The json lint process 12279766400 launch the check 12279769969 and its result has been FAILED, please check core/results/jsonlint-results-12279769969.txt and solved it",
+          "createdAt": "2024-12-11T15:39:09Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536343600",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLqnf",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is 2d7780f78e8d0b32aa4c39fd879eb890c67f315c\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12280268064**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12280268064\n**Run Number:** 347\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 2d7780f78e8d0b32aa4c39fd879eb890c67f315c\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T16:06:43Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536417759",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLqoo",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T16:06:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536417832",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLqt4",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12280278575\n**Run Number:** 370\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 8a61b48d00029e70a5350e2379161aa371766ea6\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T16:06:54Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536418168",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XLquf",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow jsonlint.yaml",
+          "createdAt": "2024-12-11T16:06:55Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536418207",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMFV9",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is 28e30534d168cdf0645151a81851027265b239d6\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12280972000**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12280972000\n**Run Number:** 348\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 28e30534d168cdf0645151a81851027265b239d6\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T16:47:02Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536527229",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMFWe",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T16:47:02Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536527262",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMFct",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12280978846\n**Run Number:** 371\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 2098a08c5b65cea6f67c48493a41587dc6644afb\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T16:47:13Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536527661",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMFdj",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-11T16:47:15Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536527715",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMFk7",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12280978846 launch the check 12280982880 and its result has been SUCCESS",
+          "createdAt": "2024-12-11T16:47:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536528187",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMFl1",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S approve create pull request for issue 523.Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-11T16:47:27Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536528245",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMGm1",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is c8b23ae6ed6260d5a5240696d057f17b11e4ff93\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12281007713**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12281007713\n**Run Number:** 349\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** c8b23ae6ed6260d5a5240696d057f17b11e4ff93\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T16:49:09Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536532405",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMGn8",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T16:49:11Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536532476",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMGup",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12281014691\n**Run Number:** 372\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 806ba0ebf4f815968ee68a0a3ab581a6a5cf4e79\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T16:49:22Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536532905",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMGu6",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow jsonlint.yaml",
+          "createdAt": "2024-12-11T16:49:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536532922",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMG68",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The json lint process 12281014691 launch the check 12281018398 and its result has been SUCCESS. Please MERGE",
+          "createdAt": "2024-12-11T16:49:43Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536533692",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMIm7",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is 219e64620186d2a2487a9c1fe5a0e00f03e20d7e\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12281066670**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12281066670\n**Run Number:** 350\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 219e64620186d2a2487a9c1fe5a0e00f03e20d7e\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T16:52:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536540603",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMIn2",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T16:52:32Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536540662",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMItf",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12281072720\n**Run Number:** 373\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** e036c5184809446e6996af5cfeb41a623f5ce646\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T16:52:41Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536541023",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMIuG",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-11T16:52:42Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536541062",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMI0p",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12281072720 launch the check 12281076211 and its result has been SUCCESS",
+          "createdAt": "2024-12-11T16:52:52Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536541481",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMI0w",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S approve create pull request for issue 523.Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-11T16:52:53Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536541488",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMJv0",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is f525685a5ae9f1fc11cb518622ec6c0d588a5047\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12281098997**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12281098997\n**Run Number:** 351\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** f525685a5ae9f1fc11cb518622ec6c0d588a5047\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T16:54:27Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536545268",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMJwN",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T16:54:28Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536545293",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMJ2Q",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12281106746\n**Run Number:** 374\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 8b3f3ffccced8bdd37f336791771d30b2c523248\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T16:54:39Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536545680",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMJ2y",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow jsonlint.yaml",
+          "createdAt": "2024-12-11T16:54:40Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536545714",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMK4m",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\nCommit SHA is b1d3bbe8d09e9ed8fcb2a9d4f67b6bccd8ec0235\nRepo origin is SantaKa0S/kaos\nAssigned number issue 523\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12281136105**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12281136105\n**Run Number:** 352\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** b1d3bbe8d09e9ed8fcb2a9d4f67b6bccd8ec0235\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 523**\n**Please review issue 523 for more information.**",
+          "createdAt": "2024-12-11T16:56:33Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536549926",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMK5I",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-523 Ka0S_Code",
+          "createdAt": "2024-12-11T16:56:34Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536549960",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMLAA",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12281143452\n**Run Number:** 375\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 1288e6eea4edbf0953b16ab0a79a6d28f4f164b3\n\n**Files Involved:**",
+          "createdAt": "2024-12-11T16:56:46Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536550400",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XMLAG",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-11T16:56:46Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/523#issuecomment-2536550406",
+          "viewerDidAuthor": true
         }
       ],
       "createdAt": "2024-12-11T10:36:28Z",
@@ -200,7 +1842,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "Bateria de pruebas de JSONLINT y YAMLLINT",
-      "updatedAt": "2024-12-11T12:56:02Z",
+      "updatedAt": "2024-12-11T20:03:28Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/523"
     },
     {
@@ -2138,1440 +3780,6 @@
       "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
       "updatedAt": "2024-12-10T13:03:59Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/482"
-    },
-    {
-      "assignees": [
-        {
-          "id": "U_kgDOCG7Q6w",
-          "login": "Yolabn",
-          "name": "yolabn"
-        }
-      ],
-      "author": {
-        "id": "U_kgDOCG7Q6w",
-        "is_bot": false,
-        "login": "Yolabn",
-        "name": "yolabn"
-      },
-      "body": "Añadiendo los ficheros de configuración:\n- deploymentclient.conf\n- inputs.conf\n- outputs.conf",
-      "closed": true,
-      "closedAt": "2024-12-10T13:16:26Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86W5OYB",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by Yolabn.\n launch by Yolabn\nBranch name is refs/heads/H480-ficheros-de-configuracion-de-splunk\nCommit SHA is 81403e18dcafb128252d46f09c514e0eea4e6ef5\nRepo origin is SantaKa0S/kaos\nAssigned number issue 480\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12256698075**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12256698075\n**Run Number:** 319\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H480-ficheros-de-configuracion-de-splunk\n**Commit:** 81403e18dcafb128252d46f09c514e0eea4e6ef5\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 480**\n**Please review issue 480 for more information.**",
-          "createdAt": "2024-12-10T13:04:50Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/480#issuecomment-2531583489",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5OZE",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-480 Ka0S_Code",
-          "createdAt": "2024-12-10T13:04:52Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/480#issuecomment-2531583556",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5Ofp",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12256705388\n**Run Number:** 343\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H480-ficheros-de-configuracion-de-splunk\n**Commit:** 372455b9b61cb56ebd53f66d269b1e6392343685\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T13:05:02Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/480#issuecomment-2531583977",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5Ogu",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T13:05:04Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/480#issuecomment-2531584046",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5OnZ",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 480.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T13:05:14Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/480#issuecomment-2531584473",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5Onn",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12256705388 launch the check 12256708311 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T13:05:15Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/480#issuecomment-2531584487",
-          "viewerDidAuthor": true
-        }
-      ],
-      "createdAt": "2024-12-10T11:55:31Z",
-      "id": "I_kwDONP0GL86itzJk",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtkA",
-          "name": "enhancement",
-          "description": "New feature or request",
-          "color": "a2eeef"
-        },
-        {
-          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
-          "name": "core",
-          "description": "Only referent CORE MODULES",
-          "color": "0e8a16"
-        }
-      ],
-      "milestone": null,
-      "number": 480,
-      "projectCards": [],
-      "projectItems": [
-        {
-          "status": {
-            "optionId": "98236657",
-            "name": "Done"
-          },
-          "title": "@Core-Kaos-Project"
-        }
-      ],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "Ficheros de configuracion de Splunk",
-      "updatedAt": "2024-12-10T13:16:26Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/480"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12255359612\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12255359612 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255359612**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12255359612\n**Run Number:** 33\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/478/merge\n**Commit:** f8b2e1602fa26342967bd7eb9ece05c2810d87b5\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:03:58Z",
-      "comments": [],
-      "createdAt": "2024-12-10T11:41:37Z",
-      "id": "I_kwDONP0GL86itqdQ",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 479,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:03:59Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/479"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12255250796\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12255250796 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255250796**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12255250796\n**Run Number:** 32\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/476/merge\n**Commit:** 9432e957cf6ba6011ef274035bf0da83a10a6aac\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:03:58Z",
-      "comments": [],
-      "createdAt": "2024-12-10T11:34:37Z",
-      "id": "I_kwDONP0GL86itmYq",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 477,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:03:58Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/477"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12255157113\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12255157113 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255157113**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12255157113\n**Run Number:** 31\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/474/merge\n**Commit:** 335ed53e6060a31186484a67df05b08a88e5d4af\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:03:58Z",
-      "comments": [],
-      "createdAt": "2024-12-10T11:28:39Z",
-      "id": "I_kwDONP0GL86itjEu",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 475,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:03:58Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/475"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12255035658\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12255035658 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255035658**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12255035658\n**Run Number:** 30\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/472/merge\n**Commit:** 3966d8435f059c790b5044e2a7c17a8049234ebb\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:03:57Z",
-      "comments": [],
-      "createdAt": "2024-12-10T11:20:57Z",
-      "id": "I_kwDONP0GL86itfHJ",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 473,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:03:57Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/473"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "Corregimos la subida de los ficheros de CHANGELOG e INDEX, que los pusehamos primero y despues generamos la tag y la subimos en dos secuencias distintas.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:00:47Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86W4E1g",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is b4940beba58aa45549d66d21507284458e1752fe\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12254985131**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12254985131\n**Run Number:** 307\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** b4940beba58aa45549d66d21507284458e1752fe\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T11:17:47Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531282272",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4E2J",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T11:17:48Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531282313",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4E73",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12254992073\n**Run Number:** 331\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** c9cdee5f5b10f024cedc8cfc595fa93dadb1a119\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T11:18:00Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531282679",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4E8g",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T11:18:01Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531282720",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4FCV",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T11:18:13Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531283093",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4FCb",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12254992073 launch the check 12254995112 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T11:18:13Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531283099",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4H6P",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is c066c2ef165132504e7a85c95154f11ae24d206b\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255088748**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12255088748\n**Run Number:** 308\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** c066c2ef165132504e7a85c95154f11ae24d206b\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T11:24:17Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531294863",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4H6t",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T11:24:17Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531294893",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4H_6",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12255094460\n**Run Number:** 332\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 078729689efbd2bc47d858210eeabf606d106425\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T11:24:28Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531295226",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4IAJ",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T11:24:29Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531295241",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4IGN",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12255094460 launch the check 12255097277 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T11:24:40Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531295629",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4IGO",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T11:24:40Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531295630",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4MM7",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is 8ad4daf95f7ef6621977cb402cbf456c37717306\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255214443**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12255214443\n**Run Number:** 309\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 8ad4daf95f7ef6621977cb402cbf456c37717306\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T11:32:16Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531312443",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4MNv",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T11:32:17Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531312495",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4MSc",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12255220358\n**Run Number:** 333\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** d3be27c345d4fb9d059d06c087eff84fe5c3693d\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T11:32:27Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531312796",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4MSu",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T11:32:27Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531312814",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4MYN",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12255220358 launch the check 12255223349 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T11:32:39Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531313165",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4MYX",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T11:32:39Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531313175",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4QQK",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T11:39:15Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531329034",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4QQM",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is 7c0d425eada50c4261616d756f9c9d60d4e61201\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255323130**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12255323130\n**Run Number:** 310\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 7c0d425eada50c4261616d756f9c9d60d4e61201\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T11:39:15Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531329036",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4QV2",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12255328550\n**Run Number:** 334\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 2b3c667dc6d880fc7585adb4c527b79a5c339597\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T11:39:25Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531329398",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4QWR",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T11:39:26Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531329425",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4QdB",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12255328550 launch the check 12255331618 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T11:39:36Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531329857",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4Qd3",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T11:39:38Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531329911",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4ihU",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is d3f7d9de2837568420872fc1d8ec70a7a1497ab4\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255610701**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12255610701\n**Run Number:** 311\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** d3f7d9de2837568420872fc1d8ec70a7a1497ab4\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T11:59:05Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531403860",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4ij8",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T11:59:06Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531404028",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4izE",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12255616411\n**Run Number:** 335\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** c726d123a242eadc0d83c82b59f9fbb22e654806\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T11:59:17Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531404996",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4i0D",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T11:59:19Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531405059",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4jNs",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12255616411 launch the check 12255618794 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T11:59:29Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531406700",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4jQA",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T11:59:30Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531406848",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4we-",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is 56cf37223119b88de600470d39a04492dfb8116f\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255779746**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12255779746\n**Run Number:** 312\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 56cf37223119b88de600470d39a04492dfb8116f\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T12:09:35Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531461054",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4wgR",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T12:09:37Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531461137",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4wmV",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12255788314\n**Run Number:** 336\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 6e299a0fcf57f39fbe70274868d7046d30e629fc\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T12:09:47Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531461525",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4wmw",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T12:09:48Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531461552",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4wtF",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12255788314 launch the check 12255791764 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T12:09:59Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531461957",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4wtZ",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T12:10:00Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531461977",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4yt4",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is 65208692460a3b91167ea5816b40f3496020a11c\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255855743**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12255855743\n**Run Number:** 313\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 65208692460a3b91167ea5816b40f3496020a11c\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T12:13:52Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531470200",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4yvV",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T12:13:54Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531470293",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4y0K",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12255863095\n**Run Number:** 337\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 1a82192ac03785f4c3eb26c133dfbd2fe4fa73cf\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T12:14:03Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531470602",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4y1A",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T12:14:05Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531470656",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4y8x",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12255863095 launch the check 12255866268 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T12:14:18Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531471153",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4y84",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T12:14:18Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531471160",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W407D",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is edbf5250f61ee1e999d5e43993a76827f54226fd\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255917724**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12255917724\n**Run Number:** 314\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** edbf5250f61ee1e999d5e43993a76827f54226fd\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T12:17:35Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531479235",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W408W",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T12:17:37Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531479318",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W41C4",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12255925467\n**Run Number:** 338\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 34f5561cab63bd1ad5a406cb8b56a89185a04bd5\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T12:17:49Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531479736",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W41DH",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T12:17:50Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531479751",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W41Jk",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12255925467 launch the check 12255928758 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T12:18:02Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531480164",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W41KZ",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T12:18:03Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531480217",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W44IK",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is 0a3b1139c820e9de06544b8af16ad89ab7610d9a\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12256015472**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12256015472\n**Run Number:** 315\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 0a3b1139c820e9de06544b8af16ad89ab7610d9a\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T12:23:21Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531492362",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W44It",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T12:23:22Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531492397",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W44Oa",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12256022087\n**Run Number:** 339\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 14e4a99dc85eafc499a1c0cd235c7464e6c6cd2e\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T12:23:33Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531492762",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W44PM",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T12:23:34Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531492812",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W44WZ",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12256022087 launch the check 12256025427 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T12:23:46Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531493273",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W44W9",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T12:23:47Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531493309",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4_zS",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is de8fe54727258d26a988c0990286a774ead5060e\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12256252127**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12256252127\n**Run Number:** 316\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** de8fe54727258d26a988c0990286a774ead5060e\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T12:37:32Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531523794",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4_1w",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T12:37:36Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531523952",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4_5_",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12256259049\n**Run Number:** 340\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 2988779377a4b1a62b8a0f4f3588aad6b25988ab\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T12:37:44Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531524223",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W4_69",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T12:37:46Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531524285",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5AAv",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12256259049 launch the check 12256262237 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T12:37:57Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531524655",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5AA4",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T12:37:57Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531524664",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5IfS",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is 96e52ec9ba09e54137716a5801f77685a2ddafaa\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12256526995**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12256526995\n**Run Number:** 317\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 96e52ec9ba09e54137716a5801f77685a2ddafaa\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T12:54:17Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531559378",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5Ifw",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T12:54:18Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531559408",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5ImN",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12256532740\n**Run Number:** 341\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 8fe6a7c8e828472e7645a288a4d7c95352ea460f\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T12:54:29Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531559821",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5Imw",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T12:54:29Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531559856",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5ItP",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12256532740 launch the check 12256535534 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T12:54:40Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531560271",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5Iti",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T12:54:41Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531560290",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5LO2",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H471-correccion-a-la-subida-de-ficheros\nCommit SHA is 8014ed6de260b5d924eedfda253de5e70f692a90\nRepo origin is SantaKa0S/kaos\nAssigned number issue 471\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12256603783**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12256603783\n**Run Number:** 318\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** 8014ed6de260b5d924eedfda253de5e70f692a90\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 471**\n**Please review issue 471 for more information.**",
-          "createdAt": "2024-12-10T12:59:01Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531570614",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5LPt",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-471 Ka0S_Code",
-          "createdAt": "2024-12-10T12:59:02Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531570669",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5LVd",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12256610124\n**Run Number:** 342\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H471-correccion-a-la-subida-de-ficheros\n**Commit:** de8799f75afb67201c707444acfe119bb2a997d0\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T12:59:11Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531571037",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5LWF",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T12:59:12Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531571077",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5LcP",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12256610124 launch the check 12256613554 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T12:59:23Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531571471",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5LcY",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 471.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T12:59:24Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/471#issuecomment-2531571480",
-          "viewerDidAuthor": true
-        }
-      ],
-      "createdAt": "2024-12-10T11:14:14Z",
-      "id": "I_kwDONP0GL86itbqV",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        },
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtkA",
-          "name": "enhancement",
-          "description": "New feature or request",
-          "color": "a2eeef"
-        },
-        {
-          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
-          "name": "core",
-          "description": "Only referent CORE MODULES",
-          "color": "0e8a16"
-        }
-      ],
-      "milestone": null,
-      "number": 471,
-      "projectCards": [],
-      "projectItems": [
-        {
-          "status": {
-            "optionId": "98236657",
-            "name": "Done"
-          },
-          "title": "@Core-Kaos-Project"
-        }
-      ],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "Corrección a la subida de ficheros",
-      "updatedAt": "2024-12-10T13:00:47Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/471"
     }
   ]
 ]
