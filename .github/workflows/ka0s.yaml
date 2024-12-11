@@ -5,6 +5,7 @@ on:
   push: 
     paths:
       - '**.yaml'
+      - '**.json'
     branches:
       - 'H*'
       - 'F*'
