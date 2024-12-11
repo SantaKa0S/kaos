@@ -1,0 +1,101 @@
+name: Ka0s JSON Lint
+
+on:
+  workflow_dispatch: # Dispara el workflow manualmente
+    inputs:
+      kaos-origin:
+        description: 'Dispatcher Workflow Run ID'
+        default: ""
+        required: true
+      kaos-files:
+        description: 'Files Involved'
+        default: ""
+        required: true
+      kaos-issue-id:
+        description: 'Issue ID'
+        default: "Kaos Issue ID"
+        required: true
+  
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  pull-requests: write
+
+env:
+  KAOS_MODULE: "[Ka0S] JSONLINT"
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  PATH_RESUME: "core/results/"
+
+jobs:
+  json-lint-process:
+    runs-on: 
+      group: kaos-test
+
+    steps:
+      - id: repo # Checkout the repository to get the information of the commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+    
+      - id: install-node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+  
+      - id: install-jsonlint
+        run: |
+          npm install -g jsonlint
+
+      - id: check-json
+        run: |
+            # Invocamos la primera comprobación de base, sino se supera el proceso no continua
+            # Extraemos el nombre del fichero
+            file_name=$(basename "${{ github.event.inputs.kaos-files }}")
+            # Realizamos el check del documento json
+            jsonlint "${{ github.event.inputs.kaos-files }}" > ${{ env.PATH_RESUME }}jsonlint-results-$file_name-${{ github.event.inputs.kaos-issue-id }}.txt
+            # Check if exist errors in file
+            if [ ! -s ./results/lint-results-$file-${{ env.DATETIME }}.txt ]; then
+              echo "File lint-results-$file-${{ env.DATETIME }}.txt is empty and $file is content correct"
+            else
+              echo "File lint-results-$file-${{ env.DATETIME }}.txt is not empty and $file is content not correct and write commit info"
+              git add ./results/lint-results-$file-${{ env.DATETIME }}.txt
+              git commit -m "File lint-results-$file-${{ env.DATETIME }}.txt is not empty and $file is content not correct and write commit info"
+            fi
+            
+
+  handle_failure:
+    runs-on: 
+      group: kaos-yamllint
+    needs: [json-lint-process]
+    if: ${{ failure() }}
+    steps:
+      - id: check-execution
+        env:
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+        run: |
+          echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_BODY=$(cat <<'EOF'
+          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          **${{ env.KAOS_MODULE }}  Message:**
+          El error ha sido en : ${{  github.run_id }}
+          ejecute este comando en su consola y podrá consultar el fallo del trabajo
+          gh run view ${{  github.run_id }} --log-failed
+          \`\`\`
+          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
+          \`\`\`
+          **Workflow Name:** ${{ github.workflow }}
+          **Job Name:** ${{ github.job }}
+          **Run ID:** ${{ github.run_id }}
+          **Run Number:** ${{ github.run_number }}
+          **Repository:** ${{ github.repository }}
+          **Branch:** ${{ github.ref }}
+          **Commit:** ${{ github.sha }}
+          Please investigate the issue.
+          EOF
+          )
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
+  
