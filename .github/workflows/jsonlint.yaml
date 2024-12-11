@@ -60,7 +60,7 @@ jobs:
             # Extraemos el nombre del fichero
             file_name=$(basename "${{ github.event.inputs.kaos-files }}")
             # Realizamos el check del documento json
-            jsonlint "${{ github.event.inputs.kaos-files }}" > ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
+            jsonlint "${{ github.event.inputs.kaos-files }}" -p > ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             git add ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             git commit -m "Generated file ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt"
             git push
