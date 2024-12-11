@@ -52,9 +52,10 @@ jobs:
             for module in "${module_array[@]}"; do
               echo "El modulo es: $module"
               echo "Y el fichero es: $line"
-              if [[ "$line" == *"$module"* ]]; then
-                file_name=$(basename "$line")
-                file_extension="${file_name##*.}"
+              file_name=$(basename "$line")
+              file_extension="${file_name##*.}"
+              file_module="$file_extension""lint.yaml"
+              if [[ "$file_module" == *"$module"* ]]; then
                 echo "Encontrado el módulo: $module"
                 echo "Nombre del fichero: $file_name"
                 echo "Extensión del fichero: $file_extension"
