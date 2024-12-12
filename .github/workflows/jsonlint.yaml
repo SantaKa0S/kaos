@@ -1,7 +1,7 @@
 name: Ka0s JSON Lint
 
 on:
-  workflow_dispatch: # Dispara el workflow manualmente
+  workflow_dispatch: # Workflow manualmente
     inputs:
       kaos-origin:
         description: 'Dispatcher Workflow Run ID'
