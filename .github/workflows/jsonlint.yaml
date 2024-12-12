@@ -78,9 +78,6 @@ jobs:
                 is_valid, error_message = validate_json(input_file)
                 if not is_valid:
                     write_errors_to_file(error_message, output_file)
-                
-            if __name__ == "__main__":
-                main()
             "
             git add ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             git commit -m "Generated file ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt"
