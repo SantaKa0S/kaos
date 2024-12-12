@@ -42,15 +42,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
     
-      - id: install-node
-        uses: actions/setup-node@v4
+      - id: install-python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
+          python-version: '3.x'
   
-      - id: install-jsonlint
-        run: |
-          npm install -g jsonlint
-
       - id: check-json
         run: |
             # Invocamos la primera comprobación de base, sino se supera el proceso no continua
@@ -59,9 +55,36 @@ jobs:
             git pull
             # Extraemos el nombre del fichero
             file_name=$(basename "${{ github.event.inputs.kaos-files }}")
-            # Realizamos el check del documento json   
-            jsonlint -h        
-            jsonlint "${{ github.event.inputs.kaos-files }}" -p 2> ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
+            # Realizamos el check del documento json 
+            python -c "
+              import json
+
+              def validate_json(file_path):
+                  try:
+                      with open(file_path, 'r') as file:
+                          data = json.load(file)
+                      return True, None
+                  except json.JSONDecodeError as e:
+                      return False, str(e)
+                  
+              def write_errors_to_file(errors, output_file):
+                  with open(output_file, 'w') as file:
+                      file.write(errors)
+                  
+              def main():
+                  input_file = '${{ github.event.inputs.kaos-files }}'  # Cambia esto por el nombre de tu archivo JSON
+                  output_file = '${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt'
+              
+                  is_valid, error_message = validate_json(input_file)
+                  if not is_valid:
+                      write_errors_to_file(error_message, output_file)
+                      print(f"Errores encontrados y guardados en {output_file}")
+                  else:
+                      print("El archivo JSON es válido.")
+                  
+              if __name__ == "__main__":
+                  main()
+            "
             git add ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             git commit -m "Generated file ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt"
             git push
