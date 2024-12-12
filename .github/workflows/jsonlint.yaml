@@ -55,6 +55,8 @@ jobs:
             git pull
             # Extraemos el nombre del fichero
             file_name=$(basename "${{ github.event.inputs.kaos-files }}")
+            # Generamos el fichero de resultados vacio
+            touch ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             # Realizamos el check del documento json 
             python -c "
             import json
