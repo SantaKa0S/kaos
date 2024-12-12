@@ -59,7 +59,7 @@ jobs:
             touch ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             # Realizamos el check del documento json 
             # Este paso lo vamos a tener de ejemplo para ver la integración de codigo en el propio workflow
-            python - <<'EOF
+            python - <<EOF
             import json
 
             def validate_json(file_path):
