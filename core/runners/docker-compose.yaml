@@ -146,6 +146,27 @@ services:
     restart: always
     volumes:
       - kaos-yamllint-4:/actions-runner
+  # Grupo del modulo kaos-jsonlint
+  kaos-jsonlint-1:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-jsonlint-1:/actions-runner
+  kaos-jsonlint-2:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-jsonlint-2:/actions-runner
+  kaos-jsonlint-3:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-jsonlint-3:/actions-runner
+  kaos-jsonlint-4:
+    image: github-runner:latest
+    restart: always
+    volumes:
+      - kaos-jsonlint-4:/actions-runner
 volumes:
   kaos-1:
   kaos-2:
@@ -175,6 +196,10 @@ volumes:
   kaos-yamllint-2:
   kaos-yamllint-3:
   kaos-yamllint-4:
+  kaos-jsonlint-1:
+  kaos-jsonlint-2:
+  kaos-jsonlint-3:
+  kaos-jsonlint-4:
   
   
   
