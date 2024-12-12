@@ -2,14 +2,14 @@
     "version": "1.0",
     "application": {
       "name": "MiAplicacion",
-      "description": "Descripción de mi aplicación",
+      "description": "Descripción de mi aplicación como ejemplo",
       "environment": "producción",
       "settings": {
         "debug": false,
         "logging": {
           "level": "info",
           "file": "/var/log/miaplicacion.log"
-        },
+        }
       },
       "database": {
         "host": "localhost",
