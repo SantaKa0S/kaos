@@ -58,9 +58,9 @@ jobs:
             # Generamos el fichero de resultados vacio
             touch ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             # Realizamos el check del documento json 
-            python -c "
+            python - <<EOF
             import json
-
+                    
             def validate_json(file_path):
                 try:
                     with open(file_path, 'r') as file:
@@ -68,11 +68,11 @@ jobs:
                     return True, None
                 except json.JSONDecodeError as e:
                     return False, str(e)
-                
+                    
             def write_errors_to_file(errors, output_file):
                 with open(output_file, 'w') as file:
                     file.write(errors)
-                
+                    
             def main():
                 input_file = '${{ github.event.inputs.kaos-files }}'  # Cambia esto por el nombre de tu archivo JSON
                 output_file = '${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt'
@@ -80,7 +80,9 @@ jobs:
                 is_valid, error_message = validate_json(input_file)
                 if not is_valid:
                     write_errors_to_file(error_message, output_file)
-            "
+                
+            main()
+            EOF
             git add ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             git commit -m "Generated file ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt"
             git push
