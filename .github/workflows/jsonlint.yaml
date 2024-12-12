@@ -59,7 +59,8 @@ jobs:
             git pull
             # Extraemos el nombre del fichero
             file_name=$(basename "${{ github.event.inputs.kaos-files }}")
-            # Realizamos el check del documento json           
+            # Realizamos el check del documento json   
+            jsonlint -h        
             jsonlint "${{ github.event.inputs.kaos-files }}" -p 2> ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             git add ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             git commit -m "Generated file ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt"
