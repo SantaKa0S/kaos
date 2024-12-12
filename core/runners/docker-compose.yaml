@@ -167,7 +167,6 @@ services:
     restart: always
     volumes:
       - kaos-jsonlint-4:/actions-runner
-
 volumes:
   kaos-1:
   kaos-2:
