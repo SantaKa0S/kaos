@@ -78,7 +78,7 @@ jobs:
                 is_valid, error_message = validate_json(input_file)
                 if not is_valid:
                     write_errors_to_file(error_message, output_file)
-                    print(f"Errores encontrados y guardados en {output_file}")
+                    print("Errores encontrados y guardados en fichero de resultados del proceso")
                 else:
                     print("El archivo JSON es válido.")
                 
