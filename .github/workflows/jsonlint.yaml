@@ -33,7 +33,7 @@ env:
 jobs:
   json-lint-process:
     runs-on: 
-      group: kaos-test
+      group: kaos-jsonlint
 
     steps:
       - id: repo # Checkout the repository to get the information of the commit
@@ -102,7 +102,7 @@ jobs:
             
   handle_failure:
     runs-on: 
-      group: kaos-test
+      group: kaos-jsonlint
     needs: [json-lint-process]
     if: ${{ failure() }}
     steps:
