@@ -59,7 +59,8 @@ jobs:
             touch ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             # Realizamos el check del documento json 
             # Este paso lo vamos a tener de ejemplo para ver la integración de codigo en el propio workflow
-            python - <<EOF
+            # Creamos un script Python temporal
+            echo "
             import json
                     
             def validate_json(file_path):
@@ -72,7 +73,7 @@ jobs:
                     
             def write_errors_to_file(errors, output_file, input_file):
                 with open(output_file, 'w') as file:
-                    file.write(f"Los errores descritos en este documento han sido encontrados en {input_file}\\n")
+                    file.write(f'Los errores descritos en este documento han sido encontrados en {input_file}\\n')
                     file.write(errors)
                     
             def main():
@@ -84,7 +85,11 @@ jobs:
                     write_errors_to_file(error_message, output_file, input_file)
                 
             main()
-            EOF
+            " > script.py
+            # Ejecutamos el script Python
+            python script.py
+            # Eliminamos el script temporal
+            rm script.py
             git add ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             git commit -m "Generated file ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt"
             git push
