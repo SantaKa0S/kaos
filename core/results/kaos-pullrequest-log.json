@@ -1,6 +1,2021 @@
 [
   [
     {
+      "additions": 74,
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "autoMergeRequest": null,
+      "baseRefName": "main",
+      "body": "Tareas finalizadas\r\n- Se crean los runner personalizados y se activan\r\n- se configura jsonlint opara usar sus propios runner\r\n- se configuran los mensajes de finalizacion de jsonlint y yamllint para que indique sobre que fichero se ha realizado la operacion y no duplique mensajes.",
+      "changedFiles": 7,
+      "closed": true,
+      "closedAt": "2024-12-12T12:36:39Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XUtEG",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S]  VERSION ha generado una nueva versión con el tag v0.2.2. Esto todo dispuesto para realizar FUSIONAR el código.",
+          "createdAt": "2024-12-12T12:35:56Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/pull/543#issuecomment-2538787078",
+          "viewerDidAuthor": true
+        }
+      ],
+      "commits": [
+        {
+          "authoredDate": "2024-12-12T12:11:23Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T12:11:23Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos los runner de jsonlint",
+          "oid": "fca3e58583906e1515ca38125c7d58f83ad5bbfa"
+        },
+        {
+          "authoredDate": "2024-12-12T12:12:59Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T12:12:59Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos los runner de jsonlint",
+          "oid": "c78d6aa07724dd2e659a7e82b493f7d5258f6856"
+        },
+        {
+          "authoredDate": "2024-12-12T12:25:40Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T12:25:40Z",
+          "messageBody": "…k del deploy de los agentes",
+          "messageHeadline": "Añadimos el cambio de indicar los runners correctos y subimos el satc…",
+          "oid": "4dbecb2dd465eb3269528ee981b8a1413ae3d485"
+        },
+        {
+          "authoredDate": "2024-12-12T12:26:22Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T12:26:22Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "5ea018e66a1c1b9487772dffa4d0bd6654803b9b"
+        },
+        {
+          "authoredDate": "2024-12-12T12:30:48Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T12:30:48Z",
+          "messageBody": "… la gestion",
+          "messageHeadline": "Añadimos en el mensaje que escribe el nombre del fichero implicado en…",
+          "oid": "dcee791a6f1dec59c8de00902b33f6d1f450c52d"
+        },
+        {
+          "authoredDate": "2024-12-12T12:31:19Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T12:31:19Z",
+          "messageBody": "… la gestion",
+          "messageHeadline": "Añadimos en el mensaje que escribe el nombre del fichero implicado en…",
+          "oid": "a8ce72e3ce6a972610853673c19f923e01201b9a"
+        },
+        {
+          "authoredDate": "2024-12-12T12:31:24Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T12:31:24Z",
+          "messageBody": "…:SantaKa0S/kaos into H521-runner-personalizados-para-jsonlint",
+          "messageHeadline": "Merge branch 'H521-runner-personalizados-para-jsonlint' of github.com…",
+          "oid": "3dabf84ccdd33474ae6201c76acae069e187938c"
+        },
+        {
+          "authoredDate": "2024-12-12T12:32:02Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T12:32:02Z",
+          "messageBody": "… la gestion",
+          "messageHeadline": "Añadimos en el mensaje que escribe el nombre del fichero implicado en…",
+          "oid": "e7cf7f7e6dac96ef6de7ce4146a3128177edce39"
+        },
+        {
+          "authoredDate": "2024-12-12T12:32:10Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T12:32:10Z",
+          "messageBody": "… la gestion",
+          "messageHeadline": "Añadimos en el mensaje que escribe el nombre del fichero implicado en…",
+          "oid": "cbf130004660b1e298e870354d110e4dd21ebda3"
+        },
+        {
+          "authoredDate": "2024-12-12T12:32:27Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T12:32:27Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "52c065c50ccdc9496b31af44daf66edc80eeb8bc"
+        },
+        {
+          "authoredDate": "2024-12-12T12:35:31Z",
+          "authors": [
+            {
+              "email": "73332898+santakloud@users.noreply.github.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "SantaKloud"
+            }
+          ],
+          "committedDate": "2024-12-12T12:35:31Z",
+          "messageBody": "…8c1cc035474b23d16c0a7a8",
+          "messageHeadline": "Merge 52c065c50ccdc9496b31af44daf66edc80eeb8bc into 95d93fcc3dc2d10a5…",
+          "oid": "758b92e273842f506a821960e0dbb1d783f51222"
+        },
+        {
+          "authoredDate": "2024-12-12T12:35:44Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T12:35:44Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S]  VERSION  Upload: CHANGELOG.md, INDEX.md with version 0.2.2",
+          "oid": "10726218a4dd6a8efe26a3a1950013fa07dec575"
+        }
+      ],
+      "createdAt": "2024-12-12T12:35:24Z",
+      "deletions": 8,
+      "files": [
+        {
+          "path": ".github/workflows/jsonlint.yaml",
+          "additions": 5,
+          "deletions": 5
+        },
+        {
+          "path": ".github/workflows/yamllint.yaml",
+          "additions": 3,
+          "deletions": 3
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 13,
+          "deletions": 0
+        },
+        {
+          "path": "INDEX.md",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/commit-summary-H-521.txt",
+          "additions": 25,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/files-in-commit-H-521.txt",
+          "additions": 2,
+          "deletions": 0
+        },
+        {
+          "path": "core/runners/docker-compose.yaml",
+          "additions": 25,
+          "deletions": 0
+        }
+      ],
+      "fullDatabaseId": "2231569520",
+      "headRefName": "H521-runner-personalizados-para-jsonlint",
+      "headRefOid": "10726218a4dd6a8efe26a3a1950013fa07dec575",
+      "headRepository": {
+        "id": "R_kgDONP0GLw",
+        "name": "kaos"
+      },
+      "headRepositoryOwner": {
+        "id": "O_kgDOCyRQmA",
+        "login": "SantaKa0S"
+      },
+      "id": "PR_kwDONP0GL86FAwxw",
+      "isCrossRepository": false,
+      "isDraft": false,
+      "labels": [],
+      "latestReviews": [],
+      "maintainerCanModify": false,
+      "mergeCommit": {
+        "oid": "83b4c4649933529240c155186a6342dd881822dd"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergeable": "UNKNOWN",
+      "mergedAt": "2024-12-12T12:36:39Z",
+      "mergedBy": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "milestone": null,
+      "number": 543,
+      "potentialMergeCommit": null,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "reviewDecision": "",
+      "reviewRequests": [],
+      "reviews": [],
+      "state": "MERGED",
+      "statusCheckRollup": [],
+      "title": "H521 runner personalizados para jsonlint",
+      "updatedAt": "2024-12-12T12:36:44Z",
+      "url": "https://github.com/SantaKa0S/kaos/pull/543"
+    },
+    {
+      "additions": 440,
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "autoMergeRequest": null,
+      "baseRefName": "main",
+      "body": "Generamos el proceso de JSONLINT y comprobamos que funciona de manera individual y de manera combinada conjunto con YAMLLINT",
+      "changedFiles": 21,
+      "closed": true,
+      "closedAt": "2024-12-12T12:06:23Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XUcv2",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S]  VERSION ha generado una nueva versión con el tag v0.2.1. Esto todo dispuesto para realizar FUSIONAR el código.",
+          "createdAt": "2024-12-12T12:05:52Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/pull/542#issuecomment-2538720246",
+          "viewerDidAuthor": true
+        }
+      ],
+      "commits": [
+        {
+          "authoredDate": "2024-12-11T10:44:18Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T10:44:18Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos el fichero de control de yaml",
+          "oid": "3480c658b219c003c4e45c2214925b6acc1fc971"
+        },
+        {
+          "authoredDate": "2024-12-11T10:46:06Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T10:46:06Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos el fichero de control de json",
+          "oid": "73049c42d0292432bb7805b116c3b5a5967f9013"
+        },
+        {
+          "authoredDate": "2024-12-11T10:48:15Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T10:48:15Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "5384724ce3fd5061ef510f9b529c84d27377c717"
+        },
+        {
+          "authoredDate": "2024-12-11T12:34:18Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T12:34:18Z",
+          "messageBody": "…-jsonlint-y-yamllint",
+          "messageHeadline": "Merge remote-tracking branch 'origin' into H523-bateria-de-pruebas-de…",
+          "oid": "324ecae227accdb644040e38c3434a2dc85d9fb5"
+        },
+        {
+          "authoredDate": "2024-12-11T12:34:45Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T12:34:45Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "5019e5f2722f102707375728435730275686a6e3"
+        },
+        {
+          "authoredDate": "2024-12-11T12:43:08Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T12:43:08Z",
+          "messageBody": "",
+          "messageHeadline": "I Prueba de jsonlint",
+          "oid": "aec254dfb4cd8acc403fb427f9c6747d95a33f81"
+        },
+        {
+          "authoredDate": "2024-12-11T12:43:19Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T12:43:19Z",
+          "messageBody": "…ub.com:SantaKa0S/kaos into H523-bateria-de-pruebas-de-jsonlint-y-yamllint",
+          "messageHeadline": "Merge branch 'H523-bateria-de-pruebas-de-jsonlint-y-yamllint' of gith…",
+          "oid": "c0476465059abd98703536a4dfe8f93cf842c499"
+        },
+        {
+          "authoredDate": "2024-12-11T12:43:38Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T12:43:38Z",
+          "messageBody": "",
+          "messageHeadline": "I Prueba de jsonlint",
+          "oid": "07463394373026f7fb40fa85c03b56ab60e0769b"
+        },
+        {
+          "authoredDate": "2024-12-11T12:43:56Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T12:43:56Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "137da983ae0de03ce36db4808ecf5b88db51ebe5"
+        },
+        {
+          "authoredDate": "2024-12-11T12:54:16Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T12:54:16Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos unos check de control",
+          "oid": "27953227039d0e5b3fee1e92cec6613196606412"
+        },
+        {
+          "authoredDate": "2024-12-11T12:54:26Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T12:54:26Z",
+          "messageBody": "…ub.com:SantaKa0S/kaos into H523-bateria-de-pruebas-de-jsonlint-y-yamllint",
+          "messageHeadline": "Merge branch 'H523-bateria-de-pruebas-de-jsonlint-y-yamllint' of gith…",
+          "oid": "b551b7019fe9add3093e8b8f0dedd997ade320a6"
+        },
+        {
+          "authoredDate": "2024-12-11T12:55:17Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T12:55:17Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos unos check de control",
+          "oid": "6ac721110eaead6d61e053c97b825c50c51eed7c"
+        },
+        {
+          "authoredDate": "2024-12-11T12:55:34Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T12:55:34Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "5663cbe04b25d281124d336bc93dd6cfcdfbaa45"
+        },
+        {
+          "authoredDate": "2024-12-11T13:06:07Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T13:06:07Z",
+          "messageBody": "",
+          "messageHeadline": "I prueba de json",
+          "oid": "989d3eab5329ae7df18763213f43fa06a423b7f7"
+        },
+        {
+          "authoredDate": "2024-12-11T13:07:25Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T13:07:25Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "56beaa463df7c67bcbcce8ad2e981c91ebaa0c25"
+        },
+        {
+          "authoredDate": "2024-12-11T13:28:23Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T13:28:23Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos una modificacion y control a jsonlint",
+          "oid": "b2457eddef82f84928b4247abab57ba0ef7ba70a"
+        },
+        {
+          "authoredDate": "2024-12-11T13:28:41Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T13:28:41Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "9f21503cb12e7eda9677f366b7ab0f730b43cc91"
+        },
+        {
+          "authoredDate": "2024-12-11T13:32:12Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T13:32:12Z",
+          "messageBody": "",
+          "messageHeadline": "I prueba jsonlint desde init",
+          "oid": "6d8af3b851c90452605a5a2870798be816fbb5b3"
+        },
+        {
+          "authoredDate": "2024-12-11T13:32:30Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T13:32:30Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "4361fb39829b61ea9ababbdd20477f87798995e8"
+        },
+        {
+          "authoredDate": "2024-12-11T13:35:55Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T13:35:55Z",
+          "messageBody": "",
+          "messageHeadline": "Pruebas de control json",
+          "oid": "e9c6f23d58179f5c71d476353b73a32cf1b880e2"
+        },
+        {
+          "authoredDate": "2024-12-11T13:36:28Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T13:36:28Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos prueba de control yaml",
+          "oid": "b88f5751c9a72a4422da1bc5b5f9c881612a122c"
+        },
+        {
+          "authoredDate": "2024-12-11T13:36:44Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T13:36:44Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "6defb2ac3ec5b3a557688beffaf573acebd2a560"
+        },
+        {
+          "authoredDate": "2024-12-11T13:45:03Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T13:45:03Z",
+          "messageBody": "",
+          "messageHeadline": "Subimos el fichero de resultados antes de ninguna comprobacion",
+          "oid": "4f4570ca9193be67ba2c5ae06ad21ee12a71bcdb"
+        },
+        {
+          "authoredDate": "2024-12-11T13:45:20Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T13:45:20Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "457b15cd260e5d60dfdbcd34b961bab85e7c2c6e"
+        },
+        {
+          "authoredDate": "2024-12-11T13:49:15Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T13:49:15Z",
+          "messageBody": "",
+          "messageHeadline": "II jsonlint module",
+          "oid": "6a2c96dfb89e140cdd0369381dfb581a06d3fe67"
+        },
+        {
+          "authoredDate": "2024-12-11T13:49:32Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T13:49:32Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "08d1866109e832a19f65ef3646ba3d75b5f9ad14"
+        },
+        {
+          "authoredDate": "2024-12-11T13:50:10Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T13:50:10Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12277748067.txt",
+          "oid": "39c8ef3ee030f699ef1766d26c9d0808f66c8286"
+        },
+        {
+          "authoredDate": "2024-12-11T13:59:55Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T13:59:55Z",
+          "messageBody": "",
+          "messageHeadline": "Realizamos el cambio de la variable",
+          "oid": "b4a107e54e1804a10333c3fbc0a0fc89c9dbabbb"
+        },
+        {
+          "authoredDate": "2024-12-11T14:00:11Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T14:00:11Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "37ced2ba45735e23d6c12a79cfcb4e2eb54df784"
+        },
+        {
+          "authoredDate": "2024-12-11T14:02:23Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T14:02:23Z",
+          "messageBody": "",
+          "messageHeadline": "III jsonlint",
+          "oid": "2fc2f02c70de808f57f1bc62af7085b4347837a0"
+        },
+        {
+          "authoredDate": "2024-12-11T14:02:40Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T14:02:40Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "e8239333c2d4a4a4ae50fd6efd71d61ef3ef35a9"
+        },
+        {
+          "authoredDate": "2024-12-11T14:03:20Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T14:03:20Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12277972392.txt",
+          "oid": "6f4b88376d61929bf02047c7b55a55aef99a9dd3"
+        },
+        {
+          "authoredDate": "2024-12-11T14:12:01Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T14:12:01Z",
+          "messageBody": "",
+          "messageHeadline": "Cambias una gestion absurda de los fichertos mediante push",
+          "oid": "ced610304c0262851b0d77162723ce9a9ded0024"
+        },
+        {
+          "authoredDate": "2024-12-11T14:12:19Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T14:12:19Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "7a98f50008dc0e052a19c958256f3df218e4927c"
+        },
+        {
+          "authoredDate": "2024-12-11T14:22:15Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T14:22:15Z",
+          "messageBody": "",
+          "messageHeadline": "IV JSONLINT",
+          "oid": "ca0ab054bbb47d60d3ef975cdbabdd4b81b0edf2"
+        },
+        {
+          "authoredDate": "2024-12-11T14:22:33Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T14:22:33Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "f204f6c25a3f279c29f3b59ea1ce2bdd9f60dd19"
+        },
+        {
+          "authoredDate": "2024-12-11T14:23:16Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T14:23:16Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12278352049.txt",
+          "oid": "36a1cb9f86b403c498336f17df4e5a5b93447a6c"
+        },
+        {
+          "authoredDate": "2024-12-11T15:26:28Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T15:26:28Z",
+          "messageBody": "…sultado el contenido del fichero",
+          "messageHeadline": "Añadimos una opcion a jsonlint porque no sabemos porque graba como re…",
+          "oid": "bf6ed79fe33f43e3d125b5c16d4976f12a57a40b"
+        },
+        {
+          "authoredDate": "2024-12-11T15:26:46Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T15:26:46Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "a042ffb5d25c081cafa6a64f7cc1907fc1221036"
+        },
+        {
+          "authoredDate": "2024-12-11T15:37:12Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T15:37:12Z",
+          "messageBody": "",
+          "messageHeadline": "V JSONLINT",
+          "oid": "ebf43926e8313c5f1140031598ccb7428817c050"
+        },
+        {
+          "authoredDate": "2024-12-11T15:38:13Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T15:38:13Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "c7812a862eaf3a6c789c0d57d41f5f610cf352ea"
+        },
+        {
+          "authoredDate": "2024-12-11T15:38:54Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T15:38:54Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12279769969.txt",
+          "oid": "98bcb9d9f5d4477da6864e4c9f13cb7f55578234"
+        },
+        {
+          "authoredDate": "2024-12-11T16:05:55Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T16:05:55Z",
+          "messageBody": "",
+          "messageHeadline": "VII JSONLINT",
+          "oid": "2d7780f78e8d0b32aa4c39fd879eb890c67f315c"
+        },
+        {
+          "authoredDate": "2024-12-11T16:06:12Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T16:06:12Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "8a61b48d00029e70a5350e2379161aa371766ea6"
+        },
+        {
+          "authoredDate": "2024-12-11T16:46:18Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T16:46:18Z",
+          "messageBody": "",
+          "messageHeadline": "Una nueva manera de capturar el mensaje de error",
+          "oid": "28e30534d168cdf0645151a81851027265b239d6"
+        },
+        {
+          "authoredDate": "2024-12-11T16:46:36Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T16:46:36Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "2098a08c5b65cea6f67c48493a41587dc6644afb"
+        },
+        {
+          "authoredDate": "2024-12-11T16:48:27Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T16:48:27Z",
+          "messageBody": "",
+          "messageHeadline": "VIII JSONLINT",
+          "oid": "c8b23ae6ed6260d5a5240696d057f17b11e4ff93"
+        },
+        {
+          "authoredDate": "2024-12-11T16:48:44Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T16:48:44Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "806ba0ebf4f815968ee68a0a3ab581a6a5cf4e79"
+        },
+        {
+          "authoredDate": "2024-12-11T16:49:24Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T16:49:24Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12281018398.txt",
+          "oid": "c1e327bf4068f7d8d36abf499a4561f648e7c443"
+        },
+        {
+          "authoredDate": "2024-12-11T16:51:52Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T16:51:52Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la opcion de solo grabar los errores",
+          "oid": "219e64620186d2a2487a9c1fe5a0e00f03e20d7e"
+        },
+        {
+          "authoredDate": "2024-12-11T16:52:07Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T16:52:07Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "e036c5184809446e6996af5cfeb41a623f5ce646"
+        },
+        {
+          "authoredDate": "2024-12-11T16:53:47Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T16:53:47Z",
+          "messageBody": "",
+          "messageHeadline": "IX JSONLINT",
+          "oid": "f525685a5ae9f1fc11cb518622ec6c0d588a5047"
+        },
+        {
+          "authoredDate": "2024-12-11T16:54:04Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T16:54:04Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "8b3f3ffccced8bdd37f336791771d30b2c523248"
+        },
+        {
+          "authoredDate": "2024-12-11T16:55:55Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T16:55:55Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos grabar la salida a un fichero",
+          "oid": "b1d3bbe8d09e9ed8fcb2a9d4f67b6bccd8ec0235"
+        },
+        {
+          "authoredDate": "2024-12-11T16:56:11Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T16:56:11Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "1288e6eea4edbf0953b16ab0a79a6d28f4f164b3"
+        },
+        {
+          "authoredDate": "2024-12-11T20:02:28Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-11T20:02:28Z",
+          "messageBody": "",
+          "messageHeadline": "X JSONLINT",
+          "oid": "e232e225b0f1cf3166b99b09cc12bd5ebf2ccd70"
+        },
+        {
+          "authoredDate": "2024-12-11T20:02:47Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-11T20:02:47Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "5cdaf63888784d6222938436decc1daaef639261"
+        },
+        {
+          "authoredDate": "2024-12-12T09:31:45Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T09:31:45Z",
+          "messageBody": "",
+          "messageHeadline": "Generamos una excepcion a posta",
+          "oid": "664e5b5c30020c02923aad8447a8e83e51f9771e"
+        },
+        {
+          "authoredDate": "2024-12-12T09:32:03Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T09:32:03Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "a5d5a9f810cd292995d8f79fd9ea36df5ca97bd4"
+        },
+        {
+          "authoredDate": "2024-12-12T10:04:59Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:04:59Z",
+          "messageBody": "",
+          "messageHeadline": "Probamos una versión directamente en python",
+          "oid": "a52237ee2c5e26bec34ece35ed98b1b3482338d5"
+        },
+        {
+          "authoredDate": "2024-12-12T10:05:16Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:05:16Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "0b5c0143762cccf1163ec10656c6326749e4dd17"
+        },
+        {
+          "authoredDate": "2024-12-12T10:10:37Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:10:37Z",
+          "messageBody": "",
+          "messageHeadline": "I JSONLINT based on Python",
+          "oid": "9399798cf590d9c46699c92f4e3c953be5e00fb6"
+        },
+        {
+          "authoredDate": "2024-12-12T10:10:54Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:10:54Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "ecd879ae02e6d7caa74f9ac9938ef42112a1b2ed"
+        },
+        {
+          "authoredDate": "2024-12-12T10:13:21Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:13:21Z",
+          "messageBody": "",
+          "messageHeadline": "Corregimos el error de la indexacion",
+          "oid": "81c0a45cef8f91444b3741b3607190a40a64c7a8"
+        },
+        {
+          "authoredDate": "2024-12-12T10:13:37Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:13:37Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "3cf1bbb46e40afc6a51f669905fc159270356e8a"
+        },
+        {
+          "authoredDate": "2024-12-12T10:15:17Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:15:17Z",
+          "messageBody": "",
+          "messageHeadline": "II JSONLINT Python",
+          "oid": "9bc946b81ebfd8609476a1b9423d70b61b1045d7"
+        },
+        {
+          "authoredDate": "2024-12-12T10:15:32Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:15:32Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "01f8e31f12b35e089866001aef42a38bac86a863"
+        },
+        {
+          "authoredDate": "2024-12-12T10:20:08Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:20:08Z",
+          "messageBody": "",
+          "messageHeadline": "Retiramos la impresion de un mensaje que da error",
+          "oid": "bb8d4e76005e3c7008157caff286755a04acd1d9"
+        },
+        {
+          "authoredDate": "2024-12-12T10:20:24Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:20:24Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "d4a622a4bcae897a2e109733ef24a42651be1894"
+        },
+        {
+          "authoredDate": "2024-12-12T10:23:26Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:23:26Z",
+          "messageBody": "",
+          "messageHeadline": "III JSONLINT Python",
+          "oid": "6d7a46b9d662ea0ca062797d4d2b4d3f73f54a7d"
+        },
+        {
+          "authoredDate": "2024-12-12T10:23:43Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:23:43Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "6ba30f20eb04e50e0b429b90f90f231c2350a3d3"
+        },
+        {
+          "authoredDate": "2024-12-12T10:25:37Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:25:37Z",
+          "messageBody": "",
+          "messageHeadline": "Retiramos los mensajes que estan dando error",
+          "oid": "3d4ee0cd4c778c1e9e27717cac9f7c00124d0f35"
+        },
+        {
+          "authoredDate": "2024-12-12T10:25:53Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:25:53Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "6684e14c2d58ecbfa32600fdda8e54031e6541e8"
+        },
+        {
+          "authoredDate": "2024-12-12T10:26:59Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:26:59Z",
+          "messageBody": "",
+          "messageHeadline": "IV JSONLINT",
+          "oid": "47864bea9cb4ca32e83ee81e7ce3c3d4627d243d"
+        },
+        {
+          "authoredDate": "2024-12-12T10:27:16Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:27:16Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "2c665842996b821e8c6f8edd3b48c6a8eb1816ef"
+        },
+        {
+          "authoredDate": "2024-12-12T10:29:01Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:29:01Z",
+          "messageBody": "",
+          "messageHeadline": "No vemos el porque no esta funcionando",
+          "oid": "224838a079e686e8afa342c87199445cf52d9521"
+        },
+        {
+          "authoredDate": "2024-12-12T10:29:18Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:29:18Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "c285e0b8d5dd72f7d80ec51f4ec935dfdd907f49"
+        },
+        {
+          "authoredDate": "2024-12-12T10:31:19Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:31:19Z",
+          "messageBody": "",
+          "messageHeadline": "JSONLINT Prueba",
+          "oid": "a4619ba2062190d0bad5a11adc0ed5c480717e61"
+        },
+        {
+          "authoredDate": "2024-12-12T10:31:33Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:31:33Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "bf8ff1f88d25a8221c038048e5209cc890ac2bef"
+        },
+        {
+          "authoredDate": "2024-12-12T10:35:32Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:35:32Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la modificacion",
+          "oid": "7e1e9d854324b71b7d12fb350b6d909dffb8d156"
+        },
+        {
+          "authoredDate": "2024-12-12T10:35:44Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:35:44Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "be8307ce5f5a49cbc32581629ea3d1e0803fd52e"
+        },
+        {
+          "authoredDate": "2024-12-12T10:37:16Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:37:16Z",
+          "messageBody": "",
+          "messageHeadline": "JSONLINT Prueba",
+          "oid": "bb3b0b0c22b1a0e59dd86c14c0faaab8eea926f8"
+        },
+        {
+          "authoredDate": "2024-12-12T10:37:30Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:37:30Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "d647c73e3dd62cc895e736a7006898efcf672c18"
+        },
+        {
+          "authoredDate": "2024-12-12T10:38:07Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:38:07Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12294655451.txt",
+          "oid": "c75fe227ac601cec5735c5ea85a4ef57bbec2398"
+        },
+        {
+          "authoredDate": "2024-12-12T10:46:34Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:46:34Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la modificacion",
+          "oid": "5cf7a777288dad58d344c03cb87ab19de8374660"
+        },
+        {
+          "authoredDate": "2024-12-12T10:46:48Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:46:48Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "fab139660cd2420f317881571bbc5dc403e3a28e"
+        },
+        {
+          "authoredDate": "2024-12-12T10:48:23Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T10:48:23Z",
+          "messageBody": "",
+          "messageHeadline": "JSONLINT Prueba",
+          "oid": "0b1492991239366bd89dabe5e13f071f0de9e1af"
+        },
+        {
+          "authoredDate": "2024-12-12T10:48:37Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:48:37Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "a8b9d74e62b537d420f1e12c97aaaf2da288617d"
+        },
+        {
+          "authoredDate": "2024-12-12T10:49:17Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T10:49:17Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12294841854.txt",
+          "oid": "0c7c24262cef0970334f6840af672b84bb1294f2"
+        },
+        {
+          "authoredDate": "2024-12-12T11:02:00Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T11:02:00Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la modificacion",
+          "oid": "b56fa1b6eb6c1ea1b2347500cf035e85a0ade435"
+        },
+        {
+          "authoredDate": "2024-12-12T11:02:14Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T11:02:14Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "2ab80aa76322cc83762bbbb1dd1450d7eb94ac1e"
+        },
+        {
+          "authoredDate": "2024-12-12T11:07:50Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T11:07:50Z",
+          "messageBody": "",
+          "messageHeadline": "JSONLINT y YAMLLINT H523 Prueba",
+          "oid": "d37e1fea224d113b8e8d607a76181a490b6be639"
+        },
+        {
+          "authoredDate": "2024-12-12T11:08:04Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T11:08:04Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "8d0fcce277cd7d7aca3aa9f097d898b08540c65b"
+        },
+        {
+          "authoredDate": "2024-12-12T11:08:49Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T11:08:49Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12295155846.txt",
+          "oid": "b1433ca6718cd71a65854b6e822998840d1d57da"
+        },
+        {
+          "authoredDate": "2024-12-12T11:16:10Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T11:16:10Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la modificacion",
+          "oid": "969cee6ba1db3e0ca4b4363d51684364ea206c66"
+        },
+        {
+          "authoredDate": "2024-12-12T11:16:24Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T11:16:24Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "9c5ad617baa2966fabd50661c430f806f5758060"
+        },
+        {
+          "authoredDate": "2024-12-12T11:18:26Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T11:18:26Z",
+          "messageBody": "",
+          "messageHeadline": "JSONLINT y YAMLLINT H523 Prueba",
+          "oid": "e8e8dd55374e64e5a26608e2f65fc78ba12cb07f"
+        },
+        {
+          "authoredDate": "2024-12-12T11:18:40Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T11:18:40Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "e0882653dd19b5e54634893f4d6810f040dcf0bd"
+        },
+        {
+          "authoredDate": "2024-12-12T11:20:40Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2024-12-12T11:20:40Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12295321078.txt",
+          "oid": "7875bb48f783811712e8494ce176228bce7bec9d"
+        },
+        {
+          "authoredDate": "2024-12-12T11:25:40Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2024-12-12T11:25:40Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la modificacion",
+          "oid": "44743c940678e8aec0b3008d0378b18665ea8f2d"
+        }
+      ],
+      "createdAt": "2024-12-12T12:05:21Z",
+      "deletions": 23,
+      "files": [
+        {
+          "path": ".github/workflows/init.yaml",
+          "additions": 9,
+          "deletions": 3
+        },
+        {
+          "path": ".github/workflows/jsonlint.yaml",
+          "additions": 40,
+          "deletions": 16
+        },
+        {
+          "path": ".github/workflows/yamllint.yaml",
+          "additions": 2,
+          "deletions": 4
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 27,
+          "deletions": 0
+        },
+        {
+          "path": "INDEX.md",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/config/control-file.json",
+          "additions": 61,
+          "deletions": 0
+        },
+        {
+          "path": "core/config/control-file.yaml",
+          "additions": 44,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/commit-summary-H-523.txt",
+          "additions": 10,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/files-in-commit-H-523.txt",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12277748067.txt",
+          "additions": 61,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12277972392.txt",
+          "additions": 61,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12278352049.txt",
+          "additions": 61,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12279769969.txt",
+          "additions": 61,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12281018398.txt",
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12294655451.txt",
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12294841854.txt",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12295155846.txt",
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12295321078.txt",
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12295487801.txt",
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12295717924.txt",
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12295924076.txt",
+          "additions": 0,
+          "deletions": 0
+        }
+      ],
+      "fullDatabaseId": "2231507401",
+      "headRefName": "H523-bateria-de-pruebas-de-jsonlint-y-yamllint",
+      "headRefOid": "f6e6987406bae67d4c45c03a8063ae67d7cc133e",
+      "headRepository": {
+        "id": "R_kgDONP0GLw",
+        "name": "kaos"
+      },
+      "headRepositoryOwner": {
+        "id": "O_kgDOCyRQmA",
+        "login": "SantaKa0S"
+      },
+      "id": "PR_kwDONP0GL86FAhnJ",
+      "isCrossRepository": false,
+      "isDraft": false,
+      "labels": [],
+      "latestReviews": [],
+      "maintainerCanModify": false,
+      "mergeCommit": {
+        "oid": "95d93fcc3dc2d10a58c1cc035474b23d16c0a7a8"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergeable": "UNKNOWN",
+      "mergedAt": "2024-12-12T12:06:23Z",
+      "mergedBy": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "milestone": null,
+      "number": 542,
+      "potentialMergeCommit": null,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "reviewDecision": "",
+      "reviewRequests": [],
+      "reviews": [],
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2024-12-12T12:05:44Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12296030242/job/34314181590",
+          "name": "job-core",
+          "startedAt": "2024-12-12T12:05:44Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2024-12-12T12:05:45Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12296030242/job/34314182463",
+          "name": "job-flows",
+          "startedAt": "2024-12-12T12:05:45Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2024-12-12T12:05:45Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12296030242/job/34314183290",
+          "name": "handle_failure",
+          "startedAt": "2024-12-12T12:05:45Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        }
+      ],
+      "title": "H523 bateria de pruebas de jsonlint y yamllint",
+      "updatedAt": "2024-12-12T12:06:31Z",
+      "url": "https://github.com/SantaKa0S/kaos/pull/542"
+    },
+    {
       "additions": 17,
       "assignees": [],
       "author": {
@@ -7918,553 +9933,6 @@
       "title": "H436 ka0s summary action failed ka0s summary",
       "updatedAt": "2024-12-09T12:03:55Z",
       "url": "https://github.com/SantaKa0S/kaos/pull/448"
-    },
-    {
-      "additions": 4,
-      "assignees": [],
-      "author": {
-        "id": "U_kgDOCG7Q6w",
-        "is_bot": false,
-        "login": "Yolabn",
-        "name": "yolabn"
-      },
-      "autoMergeRequest": null,
-      "baseRefName": "main",
-      "body": "Adding comments v4",
-      "changedFiles": 2,
-      "closed": true,
-      "closedAt": "2024-12-09T11:50:09Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86WqYCs",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Sentimos comunicarle que no se cumplen los requerimientos, por favor revise los checks",
-          "createdAt": "2024-12-09T11:44:07Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/pull/445#issuecomment-2527690924",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86WqaV3",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Sentimos comunicarle que no se cumplen los requerimientos, por favor revise los checks",
-          "createdAt": "2024-12-09T11:48:50Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/pull/445#issuecomment-2527700343",
-          "viewerDidAuthor": true
-        }
-      ],
-      "commits": [
-        {
-          "authoredDate": "2024-12-09T11:19:56Z",
-          "authors": [
-            {
-              "email": "yolanda.becerro.navarrete@kyndryl.com",
-              "id": "U_kgDOCVb6KQ",
-              "login": "ybecerr",
-              "name": "ybecerr"
-            }
-          ],
-          "committedDate": "2024-12-09T11:19:56Z",
-          "messageBody": "",
-          "messageHeadline": "H436. Adding comments",
-          "oid": "6c1ae0de19f96fde51f2bd8814e995fdf2c4ec3e"
-        },
-        {
-          "authoredDate": "2024-12-09T11:20:18Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2024-12-09T11:20:18Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
-          "oid": "0fcde2a1f9e3bc5706db12f54623dac855d989ec"
-        }
-      ],
-      "createdAt": "2024-12-09T11:43:41Z",
-      "deletions": 9,
-      "files": [
-        {
-          "path": ".github/workflows/splunk.yaml",
-          "additions": 1,
-          "deletions": 1
-        },
-        {
-          "path": "core/results/commit-summary-H-436.txt",
-          "additions": 3,
-          "deletions": 8
-        }
-      ],
-      "fullDatabaseId": "2223401580",
-      "headRefName": "H436-ka0s-summary-action-failed-ka0s-summary",
-      "headRefOid": "0fcde2a1f9e3bc5706db12f54623dac855d989ec",
-      "headRepository": {
-        "id": "R_kgDONP0GLw",
-        "name": "kaos"
-      },
-      "headRepositoryOwner": {
-        "id": "O_kgDOCyRQmA",
-        "login": "SantaKa0S"
-      },
-      "id": "PR_kwDONP0GL86Ehmps",
-      "isCrossRepository": false,
-      "isDraft": false,
-      "labels": [],
-      "latestReviews": [],
-      "maintainerCanModify": false,
-      "mergeCommit": null,
-      "mergeStateStatus": "UNKNOWN",
-      "mergeable": "UNKNOWN",
-      "mergedAt": null,
-      "mergedBy": null,
-      "milestone": null,
-      "number": 445,
-      "potentialMergeCommit": null,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "reviewDecision": "",
-      "reviewRequests": [],
-      "reviews": [],
-      "state": "CLOSED",
-      "statusCheckRollup": [
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:25:07Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234595960/job/34124115598",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:25:00Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:37:45Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234830717/job/34124826159",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:37:38Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:40:58Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234881337/job/34124976278",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:40:50Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:48:44Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234924686/job/34125335247",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:48:36Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:50:56Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235029943/job/34125448527",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:50:49Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:54:05Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235078080/job/34125595024",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:53:57Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T12:01:51Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235169599/job/34125888628",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T12:01:41Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T12:01:52Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235169599/job/34125975812",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T12:01:52Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:25:18Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234595960/job/34124224491",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:25:14Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:37:57Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234830717/job/34124837477",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:37:53Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:41:09Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234881337/job/34124988384",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:41:05Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:48:56Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234924686/job/34125355455",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:48:52Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:51:08Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235029943/job/34125460659",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:51:04Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:54:19Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235078080/job/34125607445",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:54:14Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:24:20Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://app.codacy.com/gh/SantaKa0S/kaos/pull-requests/439",
-          "name": "Codacy Static Code Analysis",
-          "startedAt": "2024-12-09T11:24:20Z",
-          "status": "COMPLETED",
-          "workflowName": ""
-        }
-      ],
-      "title": "H436 ka0s summary action failed ka0s summary",
-      "updatedAt": "2024-12-09T12:03:55Z",
-      "url": "https://github.com/SantaKa0S/kaos/pull/445"
-    },
-    {
-      "additions": 4,
-      "assignees": [],
-      "author": {
-        "id": "U_kgDOCG7Q6w",
-        "is_bot": false,
-        "login": "Yolabn",
-        "name": "yolabn"
-      },
-      "autoMergeRequest": null,
-      "baseRefName": "main",
-      "body": "Adding comments v3",
-      "changedFiles": 2,
-      "closed": true,
-      "closedAt": "2024-12-09T11:43:07Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86WqWh-",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Sentimos comunicarle que no se cumplen los requerimientos, por favor revise los checks",
-          "createdAt": "2024-12-09T11:41:05Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/pull/443#issuecomment-2527684734",
-          "viewerDidAuthor": true
-        }
-      ],
-      "commits": [
-        {
-          "authoredDate": "2024-12-09T11:19:56Z",
-          "authors": [
-            {
-              "email": "yolanda.becerro.navarrete@kyndryl.com",
-              "id": "U_kgDOCVb6KQ",
-              "login": "ybecerr",
-              "name": "ybecerr"
-            }
-          ],
-          "committedDate": "2024-12-09T11:19:56Z",
-          "messageBody": "",
-          "messageHeadline": "H436. Adding comments",
-          "oid": "6c1ae0de19f96fde51f2bd8814e995fdf2c4ec3e"
-        },
-        {
-          "authoredDate": "2024-12-09T11:20:18Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2024-12-09T11:20:18Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
-          "oid": "0fcde2a1f9e3bc5706db12f54623dac855d989ec"
-        }
-      ],
-      "createdAt": "2024-12-09T11:40:38Z",
-      "deletions": 9,
-      "files": [
-        {
-          "path": ".github/workflows/splunk.yaml",
-          "additions": 1,
-          "deletions": 1
-        },
-        {
-          "path": "core/results/commit-summary-H-436.txt",
-          "additions": 3,
-          "deletions": 8
-        }
-      ],
-      "fullDatabaseId": "2223395307",
-      "headRefName": "H436-ka0s-summary-action-failed-ka0s-summary",
-      "headRefOid": "0fcde2a1f9e3bc5706db12f54623dac855d989ec",
-      "headRepository": {
-        "id": "R_kgDONP0GLw",
-        "name": "kaos"
-      },
-      "headRepositoryOwner": {
-        "id": "O_kgDOCyRQmA",
-        "login": "SantaKa0S"
-      },
-      "id": "PR_kwDONP0GL86EhlHr",
-      "isCrossRepository": false,
-      "isDraft": false,
-      "labels": [],
-      "latestReviews": [],
-      "maintainerCanModify": false,
-      "mergeCommit": null,
-      "mergeStateStatus": "UNKNOWN",
-      "mergeable": "UNKNOWN",
-      "mergedAt": null,
-      "mergedBy": null,
-      "milestone": null,
-      "number": 443,
-      "potentialMergeCommit": null,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "reviewDecision": "",
-      "reviewRequests": [],
-      "reviews": [],
-      "state": "CLOSED",
-      "statusCheckRollup": [
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:25:07Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234595960/job/34124115598",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:25:00Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:37:45Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234830717/job/34124826159",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:37:38Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:40:58Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234881337/job/34124976278",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:40:50Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:48:44Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234924686/job/34125335247",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:48:36Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:50:56Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235029943/job/34125448527",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:50:49Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:54:05Z",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235078080/job/34125595024",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T11:53:57Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T12:01:51Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235169599/job/34125888628",
-          "name": "kaos-version",
-          "startedAt": "2024-12-09T12:01:41Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T12:01:52Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235169599/job/34125975812",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T12:01:52Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:25:18Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234595960/job/34124224491",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:25:14Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:37:57Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234830717/job/34124837477",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:37:53Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:41:09Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234881337/job/34124988384",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:41:05Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:48:56Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12234924686/job/34125355455",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:48:52Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:51:08Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235029943/job/34125460659",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:51:04Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:54:19Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12235078080/job/34125607445",
-          "name": "handle_failure",
-          "startedAt": "2024-12-09T11:54:14Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S Version"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2024-12-09T11:24:20Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://app.codacy.com/gh/SantaKa0S/kaos/pull-requests/439",
-          "name": "Codacy Static Code Analysis",
-          "startedAt": "2024-12-09T11:24:20Z",
-          "status": "COMPLETED",
-          "workflowName": ""
-        }
-      ],
-      "title": "H436 ka0s summary action failed ka0s summary",
-      "updatedAt": "2024-12-09T12:03:55Z",
-      "url": "https://github.com/SantaKa0S/kaos/pull/443"
     }
   ]
 ]

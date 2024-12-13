@@ -14,10 +14,603 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
-      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12283994016\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12283994016 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12283994016**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12283994016\n**Run Number:** 9\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 5cdaf63888784d6222938436decc1daaef639261\nPlease investigate the issue.",
-      "closed": false,
-      "closedAt": null,
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12295848497\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12295848497 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12295848497**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12295848497\n**Run Number:** 21\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 2e98b7b01484a4f1f8133a7876a921deecac2f24\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T11:57:24Z",
       "comments": [],
+      "createdAt": "2024-12-12T11:55:42Z",
+      "id": "I_kwDONP0GL86jD00z",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 541,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T11:57:24Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/541"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12295717924\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12295717924 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12295717924**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12295717924\n**Run Number:** 20\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 30e10469146170ae738bb3f56002b2f2465a1c25\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T11:51:41Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XUVLD",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Hemos detectado el error y procedemos a quitar el codigo\r\n              echo \"Los errores descritos anteriormente se han detectado en este fichero ${{ github.event.inputs.kaos-files }}\" >> \r\n",
+          "createdAt": "2024-12-12T11:51:41Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/540#issuecomment-2538689219",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-12T11:45:09Z",
+      "id": "I_kwDONP0GL86jDvJh",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 540,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T11:51:42Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/540"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12295487801\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12295487801 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12295487801**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12295487801\n**Run Number:** 19\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** c4a87a8d6719e601a16d995be43745db5aa4b5c5\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T11:43:23Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XUNOm",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua\r\nAlready up to date.\r\n[H523-bateria-de-pruebas-de-jsonlint-y-yamllint 43531ce] Generated file core/results/jsonlint-results-12295487801.txt\r\n 1 file changed, 0 insertions(+), 0 deletions(-)\r\n create mode 100644 core/results/jsonlint-results-12295487801.txt\r\nTo https://github.com/SantaKa0S/kaos\r\n   c4a87a8..43531ce  H523-bateria-de-pruebas-de-jsonlint-y-yamllint -> H523-bateria-de-pruebas-de-jsonlint-y-yamllint\r\n/actions-runner/_work/_temp/8a7a8132-342f-416f-8e0d-a993ab7ee851.sh: line 47: syntax error near unexpected token `newline'\r\nError: Process completed with exit code 2.",
+          "createdAt": "2024-12-12T11:43:06Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/539#issuecomment-2538656678",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUNX6",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Vamos a cambiar la manera de inyectar el codigo y ejecutarlo en python",
+          "createdAt": "2024-12-12T11:43:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/539#issuecomment-2538657274",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-12T11:30:12Z",
+      "id": "I_kwDONP0GL86jDnsz",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 539,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T11:43:23Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/539"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12295321078\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12295321078 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12295321078**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12295321078\n**Run Number:** 18\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** e0882653dd19b5e54634893f4d6810f040dcf0bd\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T11:29:26Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XUGIi",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua\r\nAlready up to date.\r\n[H523-bateria-de-pruebas-de-jsonlint-y-yamllint 7875bb4] Generated file core/results/jsonlint-results-12295321078.txt\r\n 1 file changed, 0 insertions(+), 0 deletions(-)\r\n create mode 100644 core/results/jsonlint-results-12295321078.txt\r\nTo https://github.com/SantaKa0S/kaos\r\n   e088265..7875bb4  H523-bateria-de-pruebas-de-jsonlint-y-yamllint -> H523-bateria-de-pruebas-de-jsonlint-y-yamllint\r\n/actions-runner/_work/_temp/eaded3ba-a763-4cb9-b29b-5c0be5ae5[73](https://github.com/SantaKa0S/kaos/actions/runs/12295321078/job/34311970232#step:4:74)1.sh: line 47: syntax error near unexpected token `newline'\r\nError: Process completed with exit code 2.",
+          "createdAt": "2024-12-12T11:29:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/538#issuecomment-2538627618",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-12T11:21:08Z",
+      "id": "I_kwDONP0GL86jDjFP",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 538,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T11:29:26Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/538"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12295155846\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12295155846 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12295155846**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12295155846\n**Run Number:** 17\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 8d0fcce277cd7d7aca3aa9f097d898b08540c65b\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T11:17:50Z",
+      "comments": [],
+      "createdAt": "2024-12-12T11:09:14Z",
+      "id": "I_kwDONP0GL86jDchs",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 537,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T11:17:50Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/537"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12294558658\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12294558658 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12294558658**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12294558658\n**Run Number:** 14\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** bf8ff1f88d25a8221c038048e5209cc890ac2bef\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T10:46:57Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XTuBo",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Corregido",
+          "createdAt": "2024-12-12T10:46:57Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/536#issuecomment-2538528872",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-12T10:32:37Z",
+      "id": "I_kwDONP0GL86jDH5k",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 536,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T10:46:57Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/536"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12294483615\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12294483615 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12294483615**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12294483615\n**Run Number:** 13\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 2c665842996b821e8c6f8edd3b48c6a8eb1816ef\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T10:31:48Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XTloL",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua\r\nAlready up to date.\r\nTraceback (most recent call last):\r\n  File \"<string>\", line 24, in <module>\r\n    if __name__ == __main__:\r\n                   ^^^^^^^^\r\nNameError: name '__main__' is not defined. Did you mean: '__name__'?\r\nError: Process completed with exit code 1.",
+          "createdAt": "2024-12-12T10:31:48Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/535#issuecomment-2538494475",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-12T10:28:16Z",
+      "id": "I_kwDONP0GL86jDFj1",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 535,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T10:31:48Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/535"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12294423808\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12294423808 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12294423808**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12294423808\n**Run Number:** 12\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 6ba30f20eb04e50e0b429b90f90f231c2350a3d3\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T10:26:01Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XTie1",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua\r\nAlready up to date.\r\n  File \"<string>\", line 23\r\n    print(Errores\r\n         ^\r\nSyntaxError: '(' was never closed\r\nError: Process completed with exit code 1.",
+          "createdAt": "2024-12-12T10:26:01Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/534#issuecomment-2538481589",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-12T10:24:39Z",
+      "id": "I_kwDONP0GL86jDDPW",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 534,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T10:26:01Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/534"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12294289037\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12294289037 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12294289037**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12294289037\n**Run Number:** 11\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 01f8e31f12b35e089866001aef42a38bac86a863\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T10:24:19Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XThkG",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua\r\nAlready up to date.\r\n  File \"<string>\", line 23\r\n    print(fErrores\r\n         ^\r\nSyntaxError: '(' was never closed\r\nError: Process completed with exit code 1.\r\n\r\nCorregimos el mensaje de error.",
+          "createdAt": "2024-12-12T10:24:19Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/533#issuecomment-2538477830",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-12T10:16:41Z",
+      "id": "I_kwDONP0GL86jC-vA",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 533,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T10:24:19Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/533"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12294211583\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12294211583 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12294211583**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12294211583\n**Run Number:** 10\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** ecd879ae02e6d7caa74f9ac9938ef42112a1b2ed\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T10:13:49Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XTbsG",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Corregimos\r\nRun # Invocamos la primera comprobación de base, sino se supera el proceso no continua\r\n  \r\nAlready up to date.\r\n  File \"<string>\", line 2\r\n    import json\r\nIndentationError: unexpected indent\r\nError: Process completed with exit code 1.",
+          "createdAt": "2024-12-12T10:13:49Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/532#issuecomment-2538453766",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-12T10:12:02Z",
+      "id": "I_kwDONP0GL86jC8Il",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 532,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T10:13:50Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/532"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12283994016\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12283994016 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12283994016**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12283994016\n**Run Number:** 9\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 5cdaf63888784d6222938436decc1daaef639261\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T10:07:56Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XTYO1",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Prueba del error.",
+          "createdAt": "2024-12-12T10:07:56Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/531#issuecomment-2538439605",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2024-12-12T09:44:40Z",
+      "id": "I_kwDONP0GL86jCsff",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 531,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
+      "updatedAt": "2024-12-12T10:07:57Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/531"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12283994016\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12283994016 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12283994016**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12283994016\n**Run Number:** 9\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 5cdaf63888784d6222938436decc1daaef639261\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2024-12-12T08:55:41Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XSp1t",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Error relacionado con la #523",
+          "createdAt": "2024-12-12T08:55:41Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/530#issuecomment-2538249581",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2024-12-11T20:04:02Z",
       "id": "I_kwDONP0GL86i824I",
       "labels": [
@@ -33,9 +626,9 @@
       "projectCards": [],
       "projectItems": [],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
-      "updatedAt": "2024-12-11T20:04:02Z",
+      "updatedAt": "2024-12-12T08:55:41Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/530"
     },
     {
@@ -53,9 +646,25 @@
         "name": "SantaKloud"
       },
       "body": "An error occurred in the [Ka0S] JSONLINT Action workflow **Ka0s JSON Lint**.\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12281109574\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12281109574 --log-failed\ny compruebe el fichero: \n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12281109574**\n```\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12281109574\n**Run Number:** 8\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H523-bateria-de-pruebas-de-jsonlint-y-yamllint\n**Commit:** 8b3f3ffccced8bdd37f336791771d30b2c523248\nPlease investigate the issue.",
-      "closed": false,
-      "closedAt": null,
-      "comments": [],
+      "closed": true,
+      "closedAt": "2024-12-12T08:55:09Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XSpjx",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "No terminamos de ver como podemos grabar los errores de un documento a un fichero de resultados.",
+          "createdAt": "2024-12-12T08:55:09Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/529#issuecomment-2538248433",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2024-12-11T16:56:21Z",
       "id": "I_kwDONP0GL86i7dQE",
       "labels": [
@@ -71,9 +680,9 @@
       "projectCards": [],
       "projectItems": [],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "[Ka0S] JSONLINT Action Failed: Ka0s JSON Lint",
-      "updatedAt": "2024-12-11T16:56:21Z",
+      "updatedAt": "2024-12-12T08:55:09Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/529"
     },
     {
@@ -307,8 +916,8 @@
         "name": "SantaKloud"
       },
       "body": "Vamos a realizar las pruebas de JSONLINT y YAMLLINT en conjunto para evaluar las diferentes funcionalidades de todos los modulos en su conjunto.",
-      "closed": false,
-      "closedAt": null,
+      "closed": true,
+      "closedAt": "2024-12-12T12:06:24Z",
       "comments": [
         {
           "id": "IC_kwDONP0GL86XILQq",
@@ -1833,16 +2442,16 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "47fc9ee4",
-            "name": "In progress"
+            "optionId": "98236657",
+            "name": "Done"
           },
           "title": "@Core-Kaos-Project"
         }
       ],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Bateria de pruebas de JSONLINT y YAMLLINT",
-      "updatedAt": "2024-12-11T20:03:28Z",
+      "updatedAt": "2024-12-12T12:06:24Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/523"
     },
     {
@@ -1860,9 +2469,250 @@
         "name": "SantaKloud"
       },
       "body": "Una vez finalizada la #519 procederemos a generar los runners personalizados para el módulo, modificaremos el actions y subiremos la version a produccion una vez finalizadas las pruebas.\n\nLas pruebas del modulo de jsonlint deberan de terminar con la publicacion con todo lo necesario de la feature despues de todas las pruebas necesarias.",
-      "closed": false,
-      "closedAt": null,
-      "comments": [],
+      "closed": true,
+      "closedAt": "2024-12-12T12:36:40Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86XUoSk",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H521-runner-personalizados-para-jsonlint\nCommit SHA is 4dbecb2dd465eb3269528ee981b8a1413ae3d485\nRepo origin is SantaKa0S/kaos\nAssigned number issue 521\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12296368134**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12296368134\n**Run Number:** 383\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H521-runner-personalizados-para-jsonlint\n**Commit:** 4dbecb2dd465eb3269528ee981b8a1413ae3d485\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 521**\n**Please review issue 521 for more information.**",
+          "createdAt": "2024-12-12T12:26:47Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538767524",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUoT1",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-521 Ka0S_Code",
+          "createdAt": "2024-12-12T12:26:49Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538767605",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUoZO",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12296374919\n**Run Number:** 405\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H521-runner-personalizados-para-jsonlint\n**Commit:** 5ea018e66a1c1b9487772dffa4d0bd6654803b9b\n\n**Files Involved:**",
+          "createdAt": "2024-12-12T12:26:59Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538767950",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUoaQ",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-12T12:27:01Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538768016",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUoaV",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12296374919\n**Run Number:** 405\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H521-runner-personalizados-para-jsonlint\n**Commit:** 5ea018e66a1c1b9487772dffa4d0bd6654803b9b\n\n**Files Involved:**",
+          "createdAt": "2024-12-12T12:27:01Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538768021",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUobh",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-12T12:27:04Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538768097",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUog1",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12296374919 launch the check 12296378173 and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-12T12:27:13Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538768437",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUoiN",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12296374919 launch the check 12296378773 and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-12T12:27:15Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538768525",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUrc3",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H521-runner-personalizados-para-jsonlint\nCommit SHA is cbf130004660b1e298e870354d110e4dd21ebda3\nRepo origin is SantaKa0S/kaos\nAssigned number issue 521\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12296468306**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12296468306\n**Run Number:** 384\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H521-runner-personalizados-para-jsonlint\n**Commit:** cbf130004660b1e298e870354d110e4dd21ebda3\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 521**\n**Please review issue 521 for more information.**",
+          "createdAt": "2024-12-12T12:32:51Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538780471",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUreD",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-521 Ka0S_Code",
+          "createdAt": "2024-12-12T12:32:53Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538780547",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUrjw",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12296475134\n**Run Number:** 406\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H521-runner-personalizados-para-jsonlint\n**Commit:** 52c065c50ccdc9496b31af44daf66edc80eeb8bc\n\n**Files Involved:**",
+          "createdAt": "2024-12-12T12:33:04Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538780912",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUrj9",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-12T12:33:04Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538780925",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUrkh",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12296475134\n**Run Number:** 406\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H521-runner-personalizados-para-jsonlint\n**Commit:** 52c065c50ccdc9496b31af44daf66edc80eeb8bc\n\n**Files Involved:**",
+          "createdAt": "2024-12-12T12:33:05Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538780961",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUrlE",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2024-12-12T12:33:06Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538780996",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUrsU",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12296475134 launch the check 12296478375 over file .github/workflows/jsonlint.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-12T12:33:17Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538781460",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86XUrsl",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12296475134 launch the check 12296478724 over file .github/workflows/yamllint.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2024-12-12T12:33:17Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/521#issuecomment-2538781477",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2024-12-11T10:21:57Z",
       "id": "I_kwDONP0GL86i3onS",
       "labels": [
@@ -1885,16 +2735,16 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "61e4505c",
-            "name": "Ready"
+            "optionId": "98236657",
+            "name": "Done"
           },
           "title": "@Core-Kaos-Project"
         }
       ],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Runner personalizados para JSONLINT",
-      "updatedAt": "2024-12-11T10:22:10Z",
+      "updatedAt": "2024-12-12T12:36:40Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/521"
     },
     {
@@ -3213,573 +4063,6 @@
       "title": "Error en la ejecución de summary",
       "updatedAt": "2024-12-10T16:40:05Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/506"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "Vamos a subir una nueva version del fichero de monitorizacion de docker",
-      "closed": true,
-      "closedAt": "2024-12-10T14:23:58Z",
-      "comments": [],
-      "createdAt": "2024-12-10T14:18:58Z",
-      "id": "I_kwDONP0GL86ivGbo",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtkA",
-          "name": "enhancement",
-          "description": "New feature or request",
-          "color": "a2eeef"
-        },
-        {
-          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
-          "name": "core",
-          "description": "Only referent CORE MODULES",
-          "color": "0e8a16"
-        }
-      ],
-      "milestone": null,
-      "number": 504,
-      "projectCards": [],
-      "projectItems": [
-        {
-          "status": {
-            "optionId": "98236657",
-            "name": "Done"
-          },
-          "title": "@Core-Kaos-Project"
-        }
-      ],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "Añadimos dashboard de monitorización del entorno kaos",
-      "updatedAt": "2024-12-10T14:23:58Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/504"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S] SUMMARY Action workflow **Ka0s Summary**.\n**[Ka0S] SUMMARY  Message:**\nEl error ha sido en : 12257654954\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12257654954 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12257654954**\n```\n**Workflow Name:** Ka0s Summary\n**Job Name:** handle_failure\n**Run ID:** 12257654954\n**Run Number:** 84\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** 7f36dbfc1b24084ff42a2d13f95601d5fe0475c5\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T15:14:23Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86W6tB-",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "resuleta PR506",
-          "createdAt": "2024-12-10T15:14:23Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/503#issuecomment-2531971198",
-          "viewerDidAuthor": true
-        }
-      ],
-      "createdAt": "2024-12-10T13:59:41Z",
-      "id": "I_kwDONP0GL86iu5-7",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 503,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S] SUMMARY Action Failed: Ka0s Summary",
-      "updatedAt": "2024-12-10T15:14:23Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/503"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "Retiramos la opcion de llamar a splunk y enviarle ficheros dado que tenemos un fordwarder",
-      "closed": true,
-      "closedAt": "2024-12-10T13:56:58Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86W5pms",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H501-retiramos-la-llamada-a-splunk-al-generar-summary\nCommit SHA is 9c4608c051c44913bd05024c8cf0618b204a70f8\nRepo origin is SantaKa0S/kaos\nAssigned number issue 501\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12257519551**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12257519551\n**Run Number:** 320\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H501-retiramos-la-llamada-a-splunk-al-generar-summary\n**Commit:** 9c4608c051c44913bd05024c8cf0618b204a70f8\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 501**\n**Please review issue 501 for more information.**",
-          "createdAt": "2024-12-10T13:50:44Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/501#issuecomment-2531695020",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5poP",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Now initiates flow process to check H-501 Ka0S_Code",
-          "createdAt": "2024-12-10T13:50:47Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/501#issuecomment-2531695119",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5pvQ",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12257527949\n**Run Number:** 344\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H501-retiramos-la-llamada-a-splunk-al-generar-summary\n**Commit:** b1cfc8cbe63cfe200748a632bea75584964e2ad5\n\n**Files Involved:**",
-          "createdAt": "2024-12-10T13:50:56Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/501#issuecomment-2531695568",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5pwZ",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Launch workflow yamllint.yaml",
-          "createdAt": "2024-12-10T13:50:57Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/501#issuecomment-2531695641",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5p5S",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "The yaml lint process 12257527949 launch the check 12257531466 and its result has been SUCCESS",
-          "createdAt": "2024-12-10T13:51:08Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/501#issuecomment-2531696210",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDONP0GL86W5p5t",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "Ka0S approve create pull request for issue 501.Please review all files implicated in pull request and approve to merge",
-          "createdAt": "2024-12-10T13:51:09Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/issues/501#issuecomment-2531696237",
-          "viewerDidAuthor": true
-        }
-      ],
-      "createdAt": "2024-12-10T13:48:38Z",
-      "id": "I_kwDONP0GL86iuzO5",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtkA",
-          "name": "enhancement",
-          "description": "New feature or request",
-          "color": "a2eeef"
-        },
-        {
-          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
-          "name": "core",
-          "description": "Only referent CORE MODULES",
-          "color": "0e8a16"
-        }
-      ],
-      "milestone": null,
-      "number": 501,
-      "projectCards": [],
-      "projectItems": [
-        {
-          "status": {
-            "optionId": "98236657",
-            "name": "Done"
-          },
-          "title": "@Core-Kaos-Project"
-        }
-      ],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "Retiramos la llamada a splunk al generar summary",
-      "updatedAt": "2024-12-10T13:56:58Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/501"
-    },
-    {
-      "assignees": [
-        {
-          "id": "U_kgDOCG7Q6w",
-          "login": "Yolabn",
-          "name": "yolabn"
-        }
-      ],
-      "author": {
-        "id": "U_kgDOCG7Q6w",
-        "is_bot": false,
-        "login": "Yolabn",
-        "name": "yolabn"
-      },
-      "body": "",
-      "closed": true,
-      "closedAt": "2024-12-10T14:02:27Z",
-      "comments": [],
-      "createdAt": "2024-12-10T13:24:30Z",
-      "id": "I_kwDONP0GL86iuk51",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtkA",
-          "name": "enhancement",
-          "description": "New feature or request",
-          "color": "a2eeef"
-        },
-        {
-          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
-          "name": "core",
-          "description": "Only referent CORE MODULES",
-          "color": "0e8a16"
-        }
-      ],
-      "milestone": null,
-      "number": 498,
-      "projectCards": [],
-      "projectItems": [
-        {
-          "status": {
-            "optionId": "98236657",
-            "name": "Done"
-          },
-          "title": "@Core-Kaos-Project"
-        }
-      ],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "Adding deploymentclient.conf",
-      "updatedAt": "2024-12-10T14:02:27Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/498"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12256508538\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12256508538 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12256508538**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12256508538\n**Run Number:** 40\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/493/merge\n**Commit:** 8e66345954b30e2ad5eb13f1358467dc51e78150\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:04:01Z",
-      "comments": [],
-      "createdAt": "2024-12-10T12:53:07Z",
-      "id": "I_kwDONP0GL86iuTB6",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 494,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:04:01Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/494"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12256290815\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12256290815 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12256290815**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12256290815\n**Run Number:** 39\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/491/merge\n**Commit:** 9c2e970c3dc6551b1f8ae947c94fde64f2d53e6d\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:04:01Z",
-      "comments": [],
-      "createdAt": "2024-12-10T12:39:54Z",
-      "id": "I_kwDONP0GL86iuL_D",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 492,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:04:01Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/492"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12256128745\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12256128745 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12256128745**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12256128745\n**Run Number:** 38\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/489/merge\n**Commit:** 11199b5a66e63b22e5eaf32a0f64ea6fb6e734f4\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:04:00Z",
-      "comments": [],
-      "createdAt": "2024-12-10T12:30:10Z",
-      "id": "I_kwDONP0GL86iuGpM",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 490,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:04:00Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/490"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12255949891\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12255949891 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255949891**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12255949891\n**Run Number:** 37\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/487/merge\n**Commit:** 0089340772e2c366bcafd0dabe37c3e84ed0dd80\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:04:00Z",
-      "comments": [],
-      "createdAt": "2024-12-10T12:19:30Z",
-      "id": "I_kwDONP0GL86iuA5H",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 488,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:04:00Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/488"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12255887290\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12255887290 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255887290**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12255887290\n**Run Number:** 36\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/485/merge\n**Commit:** 399d7f7ca75f0f42e5d213f91943c6db35414b46\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:04:00Z",
-      "comments": [],
-      "createdAt": "2024-12-10T12:15:48Z",
-      "id": "I_kwDONP0GL86it-30",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 486,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:04:00Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/486"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12255809638\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12255809638 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255809638**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12255809638\n**Run Number:** 35\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/483/merge\n**Commit:** 0614f9c0efe1bce1ee817676be9804195ee13498\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:03:59Z",
-      "comments": [],
-      "createdAt": "2024-12-10T12:11:16Z",
-      "id": "I_kwDONP0GL86it8a3",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 484,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:03:59Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/484"
-    },
-    {
-      "assignees": [
-        {
-          "id": "MDQ6VXNlcjczMzMyODk4",
-          "login": "santakloud",
-          "name": "SantaKloud"
-        }
-      ],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12255639305\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12255639305 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12255639305**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12255639305\n**Run Number:** 34\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/481/merge\n**Commit:** d16e1558724ff006a0f8a28f877d4d3820fee734\nPlease investigate the issue.",
-      "closed": true,
-      "closedAt": "2024-12-10T13:03:59Z",
-      "comments": [],
-      "createdAt": "2024-12-10T12:01:07Z",
-      "id": "I_kwDONP0GL86it2oe",
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
-          "name": "bug",
-          "description": "Status",
-          "color": "d73a4a"
-        }
-      ],
-      "milestone": null,
-      "number": 482,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "state": "CLOSED",
-      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2024-12-10T13:03:59Z",
-      "url": "https://github.com/SantaKa0S/kaos/issues/482"
     }
   ]
 ]
