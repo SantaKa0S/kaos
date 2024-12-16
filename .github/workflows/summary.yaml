@@ -34,7 +34,7 @@ jobs:
         run: |
             #  Extraemos toda la información de las issues hasta el momento
             touch ${{ env.PATH_RESUME }}issue-log-${{ env.KAOS_CODE }}.json
-            gh issue list --repo ${{ env.GH_REPO }} --state all --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}issue-log-${{ env.KAOS_CODE }}.json
+            gh issue list --repo ${{ env.GH_REPO }} --state all --limit 999 --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > ${{ env.PATH_RESUME }}issue-log-${{ env.KAOS_CODE }}.json
             # Formatear el archivo JSON final
             cat ${{ env.PATH_RESUME }}issue-log-${{ env.KAOS_CODE }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-issue-log.json
 
@@ -42,7 +42,7 @@ jobs:
         run: |
             #  Extraemos toda la información de las pullrequest hasta el momento
             touch ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json
-            gh pr list --repo ${{ env.GH_REPO }} --state all --json additions,assignees,author,autoMergeRequest,baseRefName,body,changedFiles,closed,closedAt,comments,commits,createdAt,deletions,files,fullDatabaseId,headRefName,headRefOid,headRepository,headRepositoryOwner,id,isCrossRepository,isDraft,labels,latestReviews,maintainerCanModify,mergeCommit,mergeStateStatus,mergeable,mergedAt,mergedBy,milestone,number,potentialMergeCommit,projectCards,projectItems,reactionGroups,reviewDecision,reviewRequests,reviews,state,statusCheckRollup,title,updatedAt,url > ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json
+            gh pr list --repo ${{ env.GH_REPO }} --state all --limit 999 --json additions,assignees,author,autoMergeRequest,baseRefName,body,changedFiles,closed,closedAt,comments,commits,createdAt,deletions,files,fullDatabaseId,headRefName,headRefOid,headRepository,headRepositoryOwner,id,isCrossRepository,isDraft,labels,latestReviews,maintainerCanModify,mergeCommit,mergeStateStatus,mergeable,mergedAt,mergedBy,milestone,number,potentialMergeCommit,projectCards,projectItems,reactionGroups,reviewDecision,reviewRequests,reviews,state,statusCheckRollup,title,updatedAt,url > ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json
             # Formatear el archivo JSON final
             cat ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-pullrequest-log.json
           
@@ -50,7 +50,7 @@ jobs:
         run: |
           # Añadimos la información de todos los workflows y sus datos
           # Generamos el fichero con los workflows disponibles en el repo
-          gh workflow list --all --json id,name,path,state > ${{ env.PATH_RESUME }}workflows-available-${{ env.KAOS_CODE }}.json
+          gh workflow list --all --limit 999 --json id,name,path,state > ${{ env.PATH_RESUME }}workflows-available-${{ env.KAOS_CODE }}.json
           # Formatear el archivo JSON final
           cat ${{ env.PATH_RESUME }}workflows-available-${{ env.KAOS_CODE }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-workflows-available.json
           # job_id=$(gh run list --workflow=$workflow --branch=main --json databaseId --jq '.[0].databaseId')
