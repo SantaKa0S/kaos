@@ -42,7 +42,7 @@ jobs:
         run: |
             #  Extraemos toda la información de las pullrequest hasta el momento
             touch ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json
-            gh pr list --repo ${{ env.GH_REPO }} --state all --limit 999 --json additions,assignees,author,autoMergeRequest,baseRefName,body,changedFiles,closed,closedAt,comments,commits,createdAt,deletions,files,fullDatabaseId,headRefName,headRefOid,headRepository,headRepositoryOwner,id,isCrossRepository,isDraft,labels,latestReviews,maintainerCanModify,mergeCommit,mergeStateStatus,mergeable,mergedAt,mergedBy,milestone,number,potentialMergeCommit,projectCards,projectItems,reactionGroups,reviewDecision,reviewRequests,reviews,state,statusCheckRollup,title,updatedAt,url > ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json
+            gh pr list --repo ${{ env.GH_REPO }} --state all --json additions,assignees,author,autoMergeRequest,baseRefName,body,changedFiles,closed,closedAt,comments,commits,createdAt,deletions,files,fullDatabaseId,headRefName,headRefOid,headRepository,headRepositoryOwner,id,isCrossRepository,isDraft,labels,latestReviews,maintainerCanModify,mergeCommit,mergeStateStatus,mergeable,mergedAt,mergedBy,milestone,number,potentialMergeCommit,projectCards,projectItems,reactionGroups,reviewDecision,reviewRequests,reviews,state,statusCheckRollup,title,updatedAt,url > ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json
             # Formatear el archivo JSON final
             cat ${{ env.PATH_RESUME }}pullrequest-log-${{ env.KAOS_CODE }}.json | jq -s '.' > ${{ env.PATH_RESUME }}kaos-pullrequest-log.json
           
