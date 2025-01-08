@@ -64,8 +64,9 @@ jobs:
       - id: upload
         run: |
           echo "${{ env.KAOS_MODULE }} Uploading results to the repository..."
-          git config --global user.email "${USER_EMAIL}"
-          git config --global user.name "${USER_NAME}"
+          git config --global user.name "${{ env.USER_NAME }}"
+          git config --global user.email "${{ env.USER_EMAIL}}"
+          git pull
           git add ${{ env.PATH_RESUME }}trivy-report-${{  github.run_id }}.md
           git commit -m "${{ env.KAOS_MODULE }} Trivy Report"
           git push origin ${{ env.BRANCH_NAME }}
