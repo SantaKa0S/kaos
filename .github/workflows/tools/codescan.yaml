@@ -34,7 +34,7 @@ jobs:
       USER_EMAIL: ${{ github.actor.email }}
       PATH_RESUME: "core/results/"
     steps:
-      - id: repo # Check out the repository to get information of the commit
+      - id: repo 
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
