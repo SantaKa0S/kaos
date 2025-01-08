@@ -42,7 +42,7 @@ jobs:
       - id: scancode
         run: |
           # Vamos a determinar la accion de comprobar el codigo de todo el repositorio
-          trivy fs ./ --scanners all --severity MEDIUM,HIGH,CRITICAL --report ${{ env.PATH_RESUME}}trivy-report.json --skip-dirs .github 
+          trivy fs ./ --scanners all --severity MEDIUM,HIGH,CRITICAL --report all --skip-dirs .github  --output ${{ env.PATH_RESUME}}trivy-report.json 
 
   kaos-codescan-upload:
     runs-on: 
