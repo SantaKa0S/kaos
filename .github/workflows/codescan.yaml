@@ -1,0 +1,99 @@
+name: Ka0s CodeScan
+
+on:
+  workflow_dispatch:
+    #inputs:
+    #  kaos-issue-id:
+    #    description: 'Issue ID'
+    #    default: ""
+    #    required: true
+    #  kaos-involved-file:
+    #    description: 'Involved Files to process'
+    #    default: ""
+    #    required: true
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  pull-requests: write
+
+env:
+  KAOS_MODULE: "[Ka0S] CODESCAN"
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  
+jobs:
+  kaos-codescan-process:
+    runs-on: 
+      group: kaos-codescan
+    env:
+      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
+      BRANCH_NAME: ${{ github.ref }}
+      USER_NAME: ${{ github.actor.name}}
+      USER_EMAIL: ${{ github.actor.email }}
+      PATH_RESUME: "core/results/"
+    steps:
+      - id: repo # Check out the repository to get information of the commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+
+      - id: scancode
+        run: |
+          # Vamos a determinar la accion de comprobar el codigo de todo el repositorio
+          trivy fs ./ --scanners all --severity MEDIUM,HIGH,CRITICAL --report ${{ env.PATH_RESUME}}trivy-report.json --skip-dirs .github 
+
+  kaos-codescan-upload:
+    runs-on: 
+      group: kaos-codescan
+    needs: [kaos-codescan-process]
+    if: ${{ failure() }}
+    env:
+      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
+      BRANCH_NAME: ${{ github.ref }}
+      USER_NAME: ${{ github.actor.name}}
+      USER_EMAIL: ${{ github.actor.email }}
+      PATH_RESUME: "core/results/"
+    steps: 
+      - id: upload
+        run: |
+          echo "${{ env.KAOS_MODULE }} Uploading results to the repository..."
+          git config --global user.email "${USER_EMAIL}"
+          git config --global user.name "${USER_NAME}"
+          git add ${{ env.PATH_RESUME }}trivy-report-${{  github.run_id }}.json
+          git commit -m "${{ env.KAOS_MODULE }} Trivy Report"
+          git push origin ${{ env.BRANCH_NAME }}
+
+  handle_failure:
+    runs-on: 
+      group: kaos-codescan
+    needs: [kaos-codescan-process, kaos-codescan-upload]
+    if: ${{ failure() }}
+    steps:
+      - id: check-execution
+        env:
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+        run: |
+          echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_BODY=$(cat <<'EOF'
+          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          **${{ env.KAOS_MODULE }}  Message:**
+          El error ha sido en : ${{  github.run_id }}
+          ejecute este comando en su consola y podrá consultar el fallo del trabajo
+          gh run view ${{  github.run_id }} --log-failed
+          \`\`\`
+          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
+          \`\`\`
+          **Workflow Name:** ${{ github.workflow }}
+          **Job Name:** ${{ github.job }}
+          **Run ID:** ${{ github.run_id }}
+          **Run Number:** ${{ github.run_number }}
+          **Repository:** ${{ github.repository }}
+          **Branch:** ${{ github.ref }}
+          **Commit:** ${{ github.sha }}
+          Please investigate the issue.
+          EOF
+          )
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
