@@ -102,8 +102,39 @@ jobs:
           git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
           git push
 
+  job-codescan:
+    runs-on: 
+      group: kaos-codescan
+    needs: job-core
+    env:
+      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
+      BRANCH_NAME: ${{ github.ref }}
+      USER_NAME: ${{ github.actor.name}}
+      USER_EMAIL: ${{ github.actor.email }}
+      PATH_RESUME: "core/results/"
+      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
+    outputs:
+      KAOS_CODESCAN_STATUS: "false"
+    steps:
+      - id: repo # Check out the repository to get information of the commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+
+      - id: codescan
+        run: |
+          # Vamos a determinar la accion de comprobar el codigo de todos los filesystem
+          trivy repo ${{ env.KAOS_REPO}} --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL  --output ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
+
+      - id: upload
+        run: |
+          # Añadimos a la Issue el fichero con el resultado del escaner actual
+          gh issue comment  ${{ needs.job-core.outputs.KAOS_NUMBER }} -F ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
+
   job-flows:
-    needs: job-core # Si antes haber evaluado la información not∫ ejecutamos nada
+    needs: [job-core, job-codescan] # Si antes haber evaluado la información not ejecutamos nada
+    if: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS == 'false' }}
     outputs:
       KAOS_BODY_ISSUE: ${{ steps.release-new-flow.outputs.SUMMARY }}
     runs-on:
@@ -162,8 +193,8 @@ jobs:
   handle_failure:
     runs-on: 
       group: kaos
-    needs: [job-core, job-flows]
-    if: ${{ failure() }}
+    needs: [job-core, job-flows, job-codescan]
+    if: ${{ failure() }} 
     steps:
 
       - id: check-execution
