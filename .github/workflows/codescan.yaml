@@ -21,6 +21,7 @@ permissions:
 env:
   KAOS_MODULE: "[Ka0S] CODESCAN"
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  KAOS_REPO: "/actions-runner/_work/kaos/kaos"
   
 jobs:
   kaos-codescan-process:
@@ -46,8 +47,8 @@ jobs:
           pwd
           echo "Listado de ficheros"
           ls -ls
-          # Vamos a determinar la accion de comprobar el codigo de todo el repositorio
-          trivy fs ./ --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL --report all --skip-dirs .github  --output ${{ env.PATH_RESUME}}trivy-report.json 
+          # Vamos a determinar la accion de comprobar el codigo de todos los filesystem
+          trivy repo ${{ env.KAOS_REPO}} --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL  --output ${{ env.PATH_RESUME}}trivy-report.md 
 
   kaos-codescan-upload:
     runs-on: 
@@ -66,7 +67,7 @@ jobs:
           echo "${{ env.KAOS_MODULE }} Uploading results to the repository..."
           git config --global user.email "${USER_EMAIL}"
           git config --global user.name "${USER_NAME}"
-          git add ${{ env.PATH_RESUME }}trivy-report-${{  github.run_id }}.json
+          git add ${{ env.PATH_RESUME }}trivy-report-${{  github.run_id }}.md
           git commit -m "${{ env.KAOS_MODULE }} Trivy Report"
           git push origin ${{ env.BRANCH_NAME }}
 
