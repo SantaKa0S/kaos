@@ -1,5 +1,10 @@
-d05ba71647532c599c7576e2ec063ff68b479956
+9c35759c1335ffb54cd1eda9042b8405cb73a6f8
 SANTALE_mapfre
 santale@3p.mapfre.com
-Wed Jan 8 18:08:28 2025 +0100
-Hotfix depuramos el error de exceso de tiempo en la carga del elemento
+Wed Jan 8 19:20:11 2025 +0100
+Merge branch 'H555-codescan-pruebas-de-funcionalidad-del-modulo' of https://github.com/SantaKa0S/kaos into H555-codescan-pruebas-de-funcionalidad-del-modulo
+ccb9ec020717f4df0ce54e252f82aff114115eff
+SANTALE_mapfre
+santale@3p.mapfre.com
+Wed Jan 8 19:20:04 2025 +0100
+Hotfix version que controla escanea el codigo e inyecta el resultado en la issue desde donde nace la peticion de comprobarlo. Mas adelante le añadiremos la expecion de parar cuando el fichero exista y disponga del comentario CRITICAL
