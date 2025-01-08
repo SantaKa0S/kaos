@@ -192,3 +192,14 @@
   - security/README.md
   - security/core/config/trivy/Dockerfile
 ---------------------------------
+## Version 0.3.1
+- **Branch**: refs/pull/557/merge
+- **Commit**: d3dc4a2dc3a85066ea3ffe44cf3b1e2b8419af2f
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Wed Jan  8 15:48:08 UTC 2025
+- **Message**: Merge ff2a3bdc80bde4ae0f9233011b89b105df282fe1 into dad275ad3edca88cd24cb541692aa4ff4d5ebafd
+- **Files Changed**:
+  - .github/workflows/codescan.yaml
+  - core/results/commit-summary-H-555.txt
+  - core/results/files-in-commit-H-555.txt
+---------------------------------
