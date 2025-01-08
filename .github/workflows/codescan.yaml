@@ -48,13 +48,12 @@ jobs:
           echo "Listado de ficheros"
           ls -ls
           # Vamos a determinar la accion de comprobar el codigo de todos los filesystem
-          trivy repo ${{ env.KAOS_REPO}} --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL  --output ${{ env.PATH_RESUME}}trivy-report.md 
+          trivy repo ${{ env.KAOS_REPO}} --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL  --output ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md 
 
   kaos-codescan-upload:
     runs-on: 
       group: kaos-codescan
     needs: [kaos-codescan-process]
-    if: ${{ failure() }}
     env:
       GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
       BRANCH_NAME: ${{ github.ref }}
