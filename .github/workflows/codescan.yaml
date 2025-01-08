@@ -57,8 +57,8 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
       BRANCH_NAME: ${{ github.ref }}
-      USER_NAME: ${{ github.actor.name}}
-      USER_EMAIL: ${{ github.actor.email }}
+      USER_NAME: ${{ secrets.KAOS_USER_NAME }}
+      USER_EMAIL: ${{ secrets.KAOS_USER_EMAIL }}
       PATH_RESUME: "core/results/"
     steps: 
       - id: upload
