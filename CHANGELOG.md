@@ -263,3 +263,13 @@
   - .github/workflows/codescan.yaml
   - core/results/commit-summary-H-555.txt
 ---------------------------------
+## Version 0.3.8
+- **Branch**: refs/pull/567/merge
+- **Commit**: 0c2d4a6a20d21935db1ccaa261dfae8fb5887684
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Wed Jan  8 17:12:13 UTC 2025
+- **Message**: Merge d8bc023517dd05a5999212b8567425cd06688358 into 5f13bf2511bab983e92fb7a0418a085c6d3751c7
+- **Files Changed**:
+  - .github/workflows/codescan.yaml
+  - core/results/commit-summary-H-555.txt
+---------------------------------
