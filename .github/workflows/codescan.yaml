@@ -39,10 +39,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
 
-      - id: module
-        env:
-            modules: ${{ secrets.KAOS_CORE_MODULES }}
-            files: ${{ secrets.KAOS_CORE_FILES }}
+      - id: scancode
         run: |
           # Vamos a determinar la accion de comprobar el codigo de todo el repositorio
           trivy fs ./ --scanners all --severity MEDIUM,HIGH,CRITICAL --report ${{ env.PATH_RESUME}}trivy-report.json --skip-dirs .github 
