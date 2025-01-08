@@ -41,6 +41,11 @@ jobs:
 
       - id: scancode
         run: |
+          # Vamos a añadir un control de ubicacion del repositorio para ver si estamos ejecutando el escaneo correctamente
+          echo  "Ubicacion del repositorio"
+          pwd
+          echo "Listado de ficheros"
+          ls -ls
           # Vamos a determinar la accion de comprobar el codigo de todo el repositorio
           trivy fs ./ --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL --report all --skip-dirs .github  --output ${{ env.PATH_RESUME}}trivy-report.json 
 
