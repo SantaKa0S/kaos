@@ -63,6 +63,7 @@ jobs:
     steps: 
       - id: upload
         run: |
+          gh issue atachment upload ${{ env.PATH_RESUME }}trivy-report-${{ github.run_id }}.md --repo ${{ github.repository }} --issue ${{ github.event.inputs.kaos-issue-id }}
           echo "${{ env.KAOS_MODULE }} Uploading results to the repository..."
           git config --global user.name "${{ env.USER_NAME }}"
           git config --global user.email "${{ env.USER_EMAIL}}"
