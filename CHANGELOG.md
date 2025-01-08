@@ -179,3 +179,16 @@
   - core/results/files-in-commit-H-521.txt
   - core/runners/docker-compose.yaml
 ---------------------------------
+## Version 0.3.0
+- **Branch**: refs/pull/554/merge
+- **Commit**: 8ada790cc7f0a4228ffc6889401a234f00f64e98
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Wed Jan  8 15:16:36 UTC 2025
+- **Message**: Merge f3d898f2ebfab088d4cfdd0ffad95abd43136daf into 1573411c8939873a6a043b873f017582f2b0b01f
+- **Files Changed**:
+  - .github/workflows/codescan.yaml
+  - core/results/commit-summary-F-549.txt
+  - core/results/files-in-commit-F-549.txt
+  - security/README.md
+  - security/core/config/trivy/Dockerfile
+---------------------------------
