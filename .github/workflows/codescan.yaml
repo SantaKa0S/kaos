@@ -68,8 +68,8 @@ jobs:
           git config --global user.email "${{ env.USER_EMAIL}}"
           git pull
           git add ${{ env.PATH_RESUME }}trivy-report-${{  github.run_id }}.md
-          git commit -m "${{ env.KAOS_MODULE }} Trivy Report"
-          git push origin ${{ env.BRANCH_NAME }}
+          git commit -m "${{ env.KAOS_MODULE }} Trivy Report upload ${{ github.run_id }}"
+          git push
 
   handle_failure:
     runs-on: 
