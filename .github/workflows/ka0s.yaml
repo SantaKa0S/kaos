@@ -114,7 +114,7 @@ jobs:
       PATH_RESUME: "core/results/"
       KAOS_REPO: "/actions-runner/_work/kaos/kaos"
     outputs:
-      KAOS_CODESCAN_STATUS: "true"
+      KAOS_CODESCAN_STATUS: ""
     steps:
       - id: repo # Check out the repository to get information of the commit
         uses: actions/checkout@v4
