@@ -19,7 +19,7 @@ RUN VERSION=`curl  "https://api.github.com/repos/cli/cli/releases/latest" | grep
 RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | tee /usr/share/keyrings/trivy.gpg > /dev/null && \
     echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \
     sudo apt-get update && \
-    sudo apt-get install trivy -y --no-install-recommends
+    sudo apt-get install trivy
 
 # Actualizamos los repos
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
