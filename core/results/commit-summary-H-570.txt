@@ -1,10 +1,5 @@
-f4cc2ada52eb6c094000c6f2b0280f5fd6591e1a
+ee88298cee0be1eecedf20cccf028aae946d970e
 SANTALE_mapfre
 santale@3p.mapfre.com
-Thu Jan 9 13:43:24 2025 +0100
-Merge branch 'H570-hotfix-anadimos-el-control-del-fichero-de-scancode' of https://github.com/SantaKa0S/kaos into H570-hotfix-anadimos-el-control-del-fichero-de-scancode
-5b3f31b2074f9ca4df9b4ca05b3ca7f050b4b361
-SANTALE_mapfre
-santale@3p.mapfre.com
-Thu Jan 9 13:43:19 2025 +0100
-Añadimos en el control del contenido del fichero que si contiene informacion este se adjunte a la issue sino que continue el proceso
+Thu Jan 9 13:48:19 2025 +0100
+Corregimos el fallo porque vemos que la variable no se esta cargando corectamente
