@@ -144,7 +144,7 @@ jobs:
           fi
 
   job-flows:
-    needs: [job-core, job-codescan] # Si antes haber evaluado la información not ejecutamos nada
+    needs: [job-core, job-codescan] 
     if: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS == 'false' }}
     outputs:
       KAOS_BODY_ISSUE: ${{ steps.release-new-flow.outputs.SUMMARY }}
