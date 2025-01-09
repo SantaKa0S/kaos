@@ -126,18 +126,15 @@ jobs:
         run: |
           # Vamos a determinar la accion de comprobar el codigo de todos los filesystem
           trivy repo ${{ env.KAOS_REPO}} --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL  --output ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
-
-      - id: upload
+      
+      - id: check-content-upload
         run: |
-          # Añadimos a la Issue el fichero con el resultado del escaner actual
-          gh issue comment  ${{ needs.job-core.outputs.KAOS_NUMBER }} -F ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
-
-      - id: check-content
-        run: |
-          # Comprobamos si el fichero tiene contenido
+          # Comprobamos el contenido del fichero generado
           if [ -s ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md ]; then
             echo "El fichero tiene contenido"
             echo "KAOS_CODESCAN_STATUS=true" >> $GITHUB_OUTPUT
+            # Añadimos a la Issue el fichero con el resultado del escaner actual
+            gh issue comment  ${{ needs.job-core.outputs.KAOS_NUMBER }} -F ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
           else
             echo "El fichero no tiene contenido"
             echo "KAOS_CODESCAN_STATUS=false" >> $GITHUB_OUTPUT
