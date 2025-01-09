@@ -29,9 +29,9 @@ RUN wget https://dot.net/v1/dotnet-install.sh && \
     ./dotnet-install.sh -c 6.0
 
 # Creamos el directorio y descargamos el runner
-RUN mkdir actions-runner && cd actions-runner && \
-    curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz && \
-    tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz
+#RUN mkdir actions-runner && cd actions-runner && \
+#    curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz && \
+#    tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz
 
 # Agrega el usuario y configura sudo
 RUN useradd -m -s /bin/bash kaos && echo 'kaos:PASSWORD' | chpasswd && \
