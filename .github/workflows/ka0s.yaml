@@ -114,7 +114,7 @@ jobs:
       PATH_RESUME: "core/results/"
       KAOS_REPO: "/actions-runner/_work/kaos/kaos"
     outputs:
-      KAOS_CODESCAN_STATUS: ""
+      KAOS_CODESCAN_STATUS: ''
     steps:
       - id: repo # Check out the repository to get information of the commit
         uses: actions/checkout@v4
@@ -132,14 +132,12 @@ jobs:
           # Comprobamos el contenido del fichero generado
           if [ -s ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md ]; then
             echo "El fichero tiene contenido"
-            KAOS_CODESCAN_STATUS=$(echo "true")
-            echo "KAOS_CODESCAN_STATUS=$KAOS_CODESCAN_STATUS" >> $GITHUB_OUTPUT
+            KAOS_CODESCAN_STATUS=$(echo 'true')
             # Añadimos a la Issue el fichero con el resultado del escaner actual
             gh issue comment  ${{ needs.job-core.outputs.KAOS_NUMBER }} -F ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
           else
             echo "El fichero no tiene contenido"
-            KAOS_CODESCAN_STATUS=$(echo "false")
-            echo "KAOS_CODESCAN_STATUS=$KAOS_CODESCAN_STATUS" >> $GITHUB_OUTPUT
+            echo "KAOS_CODESCAN_STATUS=$(echo 'false')" >> $GITHUB_OUTPUT
           fi
 
   job-flows:
