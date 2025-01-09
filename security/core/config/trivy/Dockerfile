@@ -16,10 +16,10 @@ RUN VERSION=`curl  "https://api.github.com/repos/cli/cli/releases/latest" | grep
     cp gh_${VERSION}_linux_amd64/bin/gh /usr/local/bin/
 
 # Implementa trivy en la versión latest
-RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null && \
-    echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \
-    sudo apt-get update && \
-    sudo apt-get install trivy
+RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | tee /usr/share/keyrings/trivy.gpg > /dev/null && \
+    echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | tee -a /etc/apt/sources.list.d/trivy.list && \
+    apt-get update && \
+    apt-get install trivy -y --no-install-recommends
 
 # Actualizamos los repos
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
@@ -35,9 +35,9 @@ RUN wget https://dot.net/v1/dotnet-install.sh && \
     ./dotnet-install.sh -c 6.0
 
 # Creamos el directorio y descargamos el runner
-RUN mkdir actions-runner && cd actions-runner && \
-    curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz && \
-    tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz
+#RUN mkdir actions-runner && cd actions-runner && \
+#    curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz && \
+#    tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz
 
 # Agrega el usuario y configura sudo
 RUN useradd -m -s /bin/bash kaos && echo 'kaos:PASSWORD' | chpasswd && \

@@ -10,7 +10,7 @@ RUN apt-get update && \
     apt-get upgrade -y
 
 # Implementa la cli de GH
-RUN VERSION=`curl  "https://api.github.com/repos/cli/cli/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c2-` && \
+RUN VERSION=`wget  "https://api.github.com/repos/cli/cli/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c2-` && \
     wget https://github.com/cli/cli/releases/download/v${VERSION}/gh_${VERSION}_linux_amd64.tar.gz && \
     tar xvf gh_${VERSION}_linux_amd64.tar.gz && \
     cp gh_${VERSION}_linux_amd64/bin/gh /usr/local/bin/
@@ -29,9 +29,9 @@ RUN wget https://dot.net/v1/dotnet-install.sh && \
     ./dotnet-install.sh -c 6.0
 
 # Creamos el directorio y descargamos el runner
-RUN mkdir actions-runner && cd actions-runner && \
-    curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz && \
-    tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz
+#RUN mkdir actions-runner && cd actions-runner && \
+#    curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz && \
+#    tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz
 
 # Agrega el usuario y configura sudo
 RUN useradd -m -s /bin/bash kaos && echo 'kaos:PASSWORD' | chpasswd && \
