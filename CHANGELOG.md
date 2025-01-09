@@ -297,3 +297,16 @@
   - core/results/files-in-commit-H-570.txt
   - security/core/config/trivy/Dockerfile
 ---------------------------------
+## Version 0.3.10
+- **Branch**: refs/pull/575/merge
+- **Commit**: a16942b5017d746c22fec54d73e2b59c46767e15
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Thu Jan  9 14:07:39 UTC 2025
+- **Message**: Merge cd11bbd692051574e4cab888966de21153a69c91 into 399b4fc240f51768c434a3dfba15d2c03a755dec
+- **Files Changed**:
+  - .github/workflows/ka0s.yaml
+  - core/results/commit-summary-H-570.txt
+  - core/results/files-in-commit-H-570.txt
+  - core/runners/Dockerfile
+  - core/runners/dockerfile.json
+---------------------------------
