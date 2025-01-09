@@ -132,13 +132,13 @@ jobs:
           # Comprobamos el contenido del fichero generado
           if [ -s ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md ]; then
             echo "El fichero tiene contenido"
-            KAOS_CODESCAN_STATUS="true"
+            KAOS_CODESCAN_STATUS=$(echo "true")
             echo "KAOS_CODESCAN_STATUS=$KAOS_CODESCAN_STATUS" >> $GITHUB_OUTPUT
             # Añadimos a la Issue el fichero con el resultado del escaner actual
             gh issue comment  ${{ needs.job-core.outputs.KAOS_NUMBER }} -F ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
           else
             echo "El fichero no tiene contenido"
-            KAOS_CODESCAN_STATUS="false"
+            KAOS_CODESCAN_STATUS=$(echo "false")
             echo "KAOS_CODESCAN_STATUS=$KAOS_CODESCAN_STATUS" >> $GITHUB_OUTPUT
           fi
 
