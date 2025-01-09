@@ -310,12 +310,14 @@
   - core/runners/Dockerfile
   - core/runners/dockerfile.json
 ---------------------------------
-## Version 0.4.1
-- **Branch**: refs/pull/579/merge
-- **Commit**: 1d9ab42ad0ac48c7cbe95a17a0547bac58b76ab2
-- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
-- **Date**: Thu Jan  9 16:11:24 UTC 2025
-- **Message**: Merge 82639c703bf3677d423ea49f09909b508dcc97ec into bfcef9c5132646bfbbd54a26ed40058a91b27ca0
+## Version 0.4.0
+- **Branch**: refs/pull/576/merge
+- **Commit**: 646e077d4220aa18d76d8a2e7833c5f0a401e9ce
+- **Author**: yolabn (141480171+Yolabn@users.noreply.github.com)
+- **Date**: Thu Jan  9 15:58:12 UTC 2025
+- **Message**: Merge c025922b3ae57949995f9f106812a38bc30586dc into bfcef9c5132646bfbbd54a26ed40058a91b27ca0
 - **Files Changed**:
-  - .github/dependabot.yml
+  - core/results/commit-summary-F-547.txt
+  - core/results/files-in-commit-F-547.txt
+  - observability/elk/docker-compose/docker-compose.yaml
 ---------------------------------
