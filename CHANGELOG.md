@@ -347,3 +347,18 @@
   - observability/elk/config/filebeat.yaml
   - observability/elk/docker-compose/docker-compose.yaml
 ---------------------------------
+## Version 0.6.0
+- **Branch**: refs/pull/588/merge
+- **Commit**: e51ff9aaafb132defbbd09b01a78acf824a56779
+- **Author**: yolabn (141480171+Yolabn@users.noreply.github.com)
+- **Date**: Fri Jan 10 12:52:06 UTC 2025
+- **Message**: Merge 6b4d8dc8019f259b1915a2ac3d9ee3bcc9caec51 into fbb2c64944383c81433ea8e0c790c7dd865118d2
+- **Files Changed**:
+  - CHANGELOG.md
+  - INDEX.md
+  - core/results/commit-summary-F-580.txt
+  - core/results/files-in-commit-F-580.txt
+  - observability/elk/config/filebeat.yaml
+  - observability/elk/dashboards/file.txt
+  - observability/elk/docker-compose/docker-compose.yaml
+---------------------------------
