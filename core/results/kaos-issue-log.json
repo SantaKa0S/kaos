@@ -14,6 +14,575 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
+      "body": "Dependabot encountered the following error when parsing your .github/dependabot.yml:\n\nThe property '#/updates/0/package-ecosystem' value \"\" did not match one of the following values: npm, bundler, composer, devcontainers, dotnet-sdk, maven, mix, cargo, gradle, nuget, gomod, docker, elm, gitsubmodule",
+      "closed": true,
+      "closedAt": "2025-01-09T16:15:19Z",
+      "comments": [],
+      "createdAt": "2025-01-09T16:07:33Z",
+      "id": "I_kwDONP0GL86lmF6L",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        }
+      ],
+      "milestone": null,
+      "number": 578,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "98236657",
+            "name": "Done"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "Dependabot encountered the following error when parsing your .github/dependabot.yml",
+      "updatedAt": "2025-01-09T16:15:20Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/578"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "Creación del modulo mdlint para los check de documentos con formato md",
+      "closed": false,
+      "closedAt": null,
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86Z0Xpz",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Creamos la rama y añadimos las referencias de esta issue a la issue principal de documentación.",
+          "createdAt": "2025-01-09T15:58:59Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2580642419",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-09T15:58:08Z",
+      "id": "I_kwDONP0GL86lmAnW",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtkA",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAAB29qZEA",
+          "name": "mdlint",
+          "description": "Only refrent MDLINT MODULE",
+          "color": "e99695"
+        }
+      ],
+      "milestone": null,
+      "number": 577,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "47fc9ee4",
+            "name": "In progress"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "Módulo mdlint",
+      "updatedAt": "2025-01-09T15:59:01Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/577"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12691092081\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12691092081 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12691092081**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12691092081\n**Run Number:** 67\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/573/merge\n**Commit:** fdaecc710667cc9a4bc3f085e322411abaf14294\nPlease investigate the issue.",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2025-01-09T13:42:28Z",
+      "id": "I_kwDONP0GL86lkw-o",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 574,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
+      "updatedAt": "2025-01-09T13:42:28Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/574"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] Action workflow **Ka0S**.\n**[Ka0S]  Message:**\nEl error ha sido en : 12690000068\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12690000068 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12690000068**\n```\n**Workflow Name:** Ka0S\n**Job Name:** handle_failure\n**Run ID:** 12690000068\n**Run Number:** 401\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H570-hotfix-anadimos-el-control-del-fichero-de-scancode\n**Commit:** 7b44b7d68372891a92fd4ce420ca55f7619d8f43\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-09T12:48:44Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86ZyNGI",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Solucionado #570 ",
+          "createdAt": "2025-01-09T12:48:44Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/571#issuecomment-2580074888",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-09T12:36:42Z",
+      "id": "I_kwDONP0GL86lkKNL",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 571,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] Action Failed: Ka0S",
+      "updatedAt": "2025-01-09T12:48:44Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/571"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "Vamos a realizar un paso dentro de un job que nos indique si el fichero esta o no vacio que se realice o no una acción\n`- id: check-content\n        run: |\n          # Comprobamos si el fichero tiene contenido\n          if [ -s ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md ]; then\n            echo \"El fichero tiene contenido\"\n            echo \"KAOS_CODESCAN_STATUS=true\" >> $GITHUB_OUTPUT\n          else\n            echo \"El fichero no tiene contenido\"\n            echo \"KAOS_CODESCAN_STATUS=false\" >> $GITHUB_OUTPUT\n          fi`",
+      "closed": false,
+      "closedAt": null,
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86ZxwOT",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "\ncore/runners/Dockerfile (dockerfile)\n====================================\nTests: 25 (SUCCESSES: 24, FAILURES: 1)\nFailures: 1 (MEDIUM: 1, HIGH: 0, CRITICAL: 0)\n\nAVD-DS-0013 (MEDIUM): RUN should not be used to change directory: 'mkdir actions-runner && cd actions-runner &&     curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz &&     tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz'. Use 'WORKDIR' statement instead.\r\n════════════════════════════════════════\r\nUse WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds013\r\n────────────────────────────────────────\r\n core/runners/Dockerfile:32-34\r\n────────────────────────────────────────\r\n  32 ┌ RUN mkdir actions-runner && cd actions-runner && \\\r\n  33 │     curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz && \\\r\n  34 └     tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz\r\n────────────────────────────────────────\r\n\r\n\r\n\nsecurity/core/config/trivy/Dockerfile (dockerfile)\n==================================================\nTests: 25 (SUCCESSES: 21, FAILURES: 4)\nFailures: 4 (MEDIUM: 1, HIGH: 2, CRITICAL: 1)\n\nAVD-DS-0010 (CRITICAL): Using 'sudo' in Dockerfile should be avoided\r\n════════════════════════════════════════\r\nAvoid using 'RUN' with 'sudo' commands, as it can lead to unpredictable behavior.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds010\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:19-22\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null && \\\r\n  20 │     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \\\r\n  21 │     sudo apt-get update && \\\r\n  22 └     sudo apt-get install trivy\r\n────────────────────────────────────────\r\n\r\n\r\nAVD-DS-0013 (MEDIUM): RUN should not be used to change directory: 'mkdir actions-runner && cd actions-runner &&     curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz &&     tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz'. Use 'WORKDIR' statement instead.\r\n════════════════════════════════════════\r\nUse WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds013\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:38-40\r\n────────────────────────────────────────\r\n  38 ┌ RUN mkdir actions-runner && cd actions-runner && \\\r\n  39 │     curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz && \\\r\n  40 └     tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz\r\n────────────────────────────────────────\r\n\r\n\r\nAVD-DS-0021 (HIGH): '-y' flag is missed: 'wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null &&     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list &&     sudo apt-get update &&     sudo apt-get install trivy'\r\n════════════════════════════════════════\r\n'apt-get' calls should use the flag '-y' to avoid manual user input.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds021\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:19-22\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null && \\\r\n  20 │     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \\\r\n  21 │     sudo apt-get update && \\\r\n  22 └     sudo apt-get install trivy\r\n────────────────────────────────────────\r\n\r\n\r\nAVD-DS-0029 (HIGH): '--no-install-recommends' flag is missed: 'wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null &&     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list &&     sudo apt-get update &&     sudo apt-get install trivy'\r\n════════════════════════════════════════\r\n'apt-get' install should use '--no-install-recommends' to minimize image size.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds029\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:19-22\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null && \\\r\n  20 │     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \\\r\n  21 │     sudo apt-get update && \\\r\n  22 └     sudo apt-get install trivy\r\n────────────────────────────────────────\r\n\r\n\r\n",
+          "createdAt": "2025-01-09T11:47:55Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2579956627",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Zx3zE",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Para continuar con las pruebas vamos a comentar estas lineas dentro de los dockerfile y evaluamos el comportamiento de trivy",
+          "createdAt": "2025-01-09T12:02:51Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2579987652",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ZyCBp",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "\nsecurity/core/config/trivy/Dockerfile (dockerfile)\n==================================================\nTests: 25 (SUCCESSES: 22, FAILURES: 3)\nFailures: 3 (MEDIUM: 0, HIGH: 2, CRITICAL: 1)\n\nAVD-DS-0010 (CRITICAL): Using 'sudo' in Dockerfile should be avoided\r\n════════════════════════════════════════\r\nAvoid using 'RUN' with 'sudo' commands, as it can lead to unpredictable behavior.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds010\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:19-22\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | tee /usr/share/keyrings/trivy.gpg > /dev/null && \\\r\n  20 │     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \\\r\n  21 │     sudo apt-get update && \\\r\n  22 └     sudo apt-get install trivy\r\n────────────────────────────────────────\r\n\r\n\r\nAVD-DS-0021 (HIGH): '-y' flag is missed: 'wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | tee /usr/share/keyrings/trivy.gpg > /dev/null &&     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list &&     sudo apt-get update &&     sudo apt-get install trivy'\r\n════════════════════════════════════════\r\n'apt-get' calls should use the flag '-y' to avoid manual user input.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds021\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:19-22\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | tee /usr/share/keyrings/trivy.gpg > /dev/null && \\\r\n  20 │     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \\\r\n  21 │     sudo apt-get update && \\\r\n  22 └     sudo apt-get install trivy\r\n────────────────────────────────────────\r\n\r\n\r\nAVD-DS-0029 (HIGH): '--no-install-recommends' flag is missed: 'wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | tee /usr/share/keyrings/trivy.gpg > /dev/null &&     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list &&     sudo apt-get update &&     sudo apt-get install trivy'\r\n════════════════════════════════════════\r\n'apt-get' install should use '--no-install-recommends' to minimize image size.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds029\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:19-22\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | tee /usr/share/keyrings/trivy.gpg > /dev/null && \\\r\n  20 │     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \\\r\n  21 │     sudo apt-get update && \\\r\n  22 └     sudo apt-get install trivy\r\n────────────────────────────────────────\r\n\r\n\r\n",
+          "createdAt": "2025-01-09T12:24:43Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580029545",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ZyFc7",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "\nsecurity/core/config/trivy/Dockerfile (dockerfile)\n==================================================\nTests: 25 (SUCCESSES: 24, FAILURES: 1)\nFailures: 1 (MEDIUM: 0, HIGH: 0, CRITICAL: 1)\n\nAVD-DS-0010 (CRITICAL): Using 'sudo' in Dockerfile should be avoided\r\n════════════════════════════════════════\r\nAvoid using 'RUN' with 'sudo' commands, as it can lead to unpredictable behavior.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds010\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:19-22\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | tee /usr/share/keyrings/trivy.gpg > /dev/null && \\\r\n  20 │     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \\\r\n  21 │     sudo apt-get update && \\\r\n  22 └     sudo apt-get install trivy -y --no-install-recommends\r\n────────────────────────────────────────\r\n\r\n\r\n",
+          "createdAt": "2025-01-09T12:32:09Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580043579",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Zyaxn",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H570-hotfix-anadimos-el-control-del-fichero-de-scancode\nCommit SHA is d5bb6d5723b457455eeaf2ce10f1236850338cc4\nRepo origin is SantaKa0S/kaos\nAssigned number issue 570\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12690646087**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12690646087\n**Run Number:** 406\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H570-hotfix-anadimos-el-control-del-fichero-de-scancode\n**Commit:** d5bb6d5723b457455eeaf2ce10f1236850338cc4\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 570**\n**Please review issue 570 for more information.**",
+          "createdAt": "2025-01-09T13:16:25Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580130919",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Zya4m",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-570 Ka0S_Code",
+          "createdAt": "2025-01-09T13:16:39Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580131366",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Zya_l",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12690658361\n**Run Number:** 420\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H570-hotfix-anadimos-el-control-del-fichero-de-scancode\n**Commit:** 3ad8c5cd807602fc66d5075957261b62b637fbc7\n\n**Files Involved:**",
+          "createdAt": "2025-01-09T13:16:53Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580131813",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ZybG1",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2025-01-09T13:17:07Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580132277",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ZybNl",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12690658361 launch the check 12690661713 over file .github/workflows/ka0s.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-09T13:17:20Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580132709",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Zyc2Z",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Vamos a realizar las pruebas una vez que se ha subido el codigo a main y comprobamos la funcionalidad, seguimos usando esta rama para la subida de codigo",
+          "createdAt": "2025-01-09T13:20:37Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580139417",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ZyfF6",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "\ncore/runners/Dockerfile (dockerfile)\n====================================\nTests: 25 (SUCCESSES: 24, FAILURES: 1)\nFailures: 1 (MEDIUM: 0, HIGH: 0, CRITICAL: 1)\n\nAVD-DS-0010 (CRITICAL): Using 'sudo' in Dockerfile should be avoided\r\n════════════════════════════════════════\r\nAvoid using 'RUN' with 'sudo' commands, as it can lead to unpredictable behavior.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds010\r\n────────────────────────────────────────\r\n core/runners/Dockerfile:19-24\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \\\r\n  20 │     dpkg -i packages-microsoft-prod.deb && \\\r\n  21 │     rm packages-microsoft-prod.deb && \\\r\n  22 │     sudo apt-get update && \\\r\n  23 │     apt-get upgrade -y && \\\r\n  24 └     apt-get install -y --no-install-recommends dotnet-sdk-6.0 aspnetcore-runtime-6.0 dotnet-runtime-6.0 \r\n────────────────────────────────────────\r\n\r\n\r\n",
+          "createdAt": "2025-01-09T13:25:03Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580148602",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Zy5Tl",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "\ncore/runners/Dockerfile (dockerfile)\n====================================\nTests: 25 (SUCCESSES: 24, FAILURES: 1)\nFailures: 1 (MEDIUM: 0, HIGH: 0, CRITICAL: 1)\n\nAVD-DS-0010 (CRITICAL): Using 'sudo' in Dockerfile should be avoided\r\n════════════════════════════════════════\r\nAvoid using 'RUN' with 'sudo' commands, as it can lead to unpredictable behavior.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds010\r\n────────────────────────────────────────\r\n core/runners/Dockerfile:19-24\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \\\r\n  20 │     dpkg -i packages-microsoft-prod.deb && \\\r\n  21 │     rm packages-microsoft-prod.deb && \\\r\n  22 │     sudo apt-get update && \\\r\n  23 │     apt-get upgrade -y && \\\r\n  24 └     apt-get install -y --no-install-recommends dotnet-sdk-6.0 aspnetcore-runtime-6.0 dotnet-runtime-6.0 \r\n────────────────────────────────────────\r\n\r\n\r\n",
+          "createdAt": "2025-01-09T13:56:47Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580255973",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Zy9Nf",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H570-hotfix-anadimos-el-control-del-fichero-de-scancode\nCommit SHA is 0544d1c1d5cb92c4a8078db43c3dd11ed6c694f3\nRepo origin is SantaKa0S/kaos\nAssigned number issue 570\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12691400131**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12691400131\n**Run Number:** 409\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H570-hotfix-anadimos-el-control-del-fichero-de-scancode\n**Commit:** 0544d1c1d5cb92c4a8078db43c3dd11ed6c694f3\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 570**\n**Please review issue 570 for more information.**",
+          "createdAt": "2025-01-09T14:01:05Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580271967",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Zy9bR",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-570 Ka0S_Code",
+          "createdAt": "2025-01-09T14:01:18Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580272849",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ZzIkZ",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Subimos el código a produccion v0.3.10 y comenzamos con las pruebas.",
+          "createdAt": "2025-01-09T14:13:40Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580318489",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ZzI5E",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Damos por cerrada esta tarea y vamos con las diferentes estructuras del repo",
+          "createdAt": "2025-01-09T14:14:02Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/570#issuecomment-2580319812",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-09T11:45:15Z",
+      "id": "I_kwDONP0GL86ljsdR",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtkA",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        }
+      ],
+      "milestone": null,
+      "number": 570,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "98236657",
+            "name": "Done"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "Hotfix, añadimos el control del fichero de scancode",
+      "updatedAt": "2025-01-09T14:14:03Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/570"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "Vamos a realizar la documentación de:\n\n- Presentación del proyecto y como puede la gente contribuir\n- ",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2025-01-09T08:34:19Z",
+      "id": "I_kwDONP0GL86liDLe",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtfw",
+          "name": "documentation",
+          "description": "Improvements or additions to documentation",
+          "color": "0075ca"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtkA",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        }
+      ],
+      "milestone": null,
+      "number": 569,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "47fc9ee4",
+            "name": "In progress"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "Kaos documentacion del proyecto",
+      "updatedAt": "2025-01-09T08:48:13Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/569"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
       "body": "An error occurred in the [Ka0S] CODESCAN Action workflow **Ka0s CodeScan**.\n**[Ka0S] CODESCAN  Message:**\nEl error ha sido en : 12675210171\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12675210171 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12675210171**\n```\n**Workflow Name:** Ka0s CodeScan\n**Job Name:** handle_failure\n**Run ID:** 12675210171\n**Run Number:** 8\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H555-codescan-pruebas-de-funcionalidad-del-modulo\n**Commit:** 2c7457080818b1fe91af9ef0dbd92984e851e4ef\nPlease investigate the issue.",
       "closed": true,
       "closedAt": "2025-01-08T16:55:04Z",
@@ -1686,7 +2255,23 @@
       "body": "Crear la estructura base de resilence en base a la imagen.\nEste directorio va a contener mucha documentación asociada a los diferentes procesos y procedimientos a tener en cuenta dentro de ka0s en el aspecto de que la plataforma disponga de la mayor cantidad de resilencia posible.\n\n![Image](https://github.com/user-attachments/assets/33b522c9-d59c-4243-90a2-748daca7f64a)\n",
       "closed": false,
       "closedAt": null,
-      "comments": [],
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86ZzM5i",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Comenzamos con la parte básica del repo y la sección de resilence",
+          "createdAt": "2025-01-09T14:18:33Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/548#issuecomment-2580336226",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2024-12-13T12:18:16Z",
       "id": "I_kwDONP0GL86jNqL7",
       "labels": [
@@ -1709,8 +2294,8 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "61e4505c",
-            "name": "Ready"
+            "optionId": "df73e18b",
+            "name": "In review"
           },
           "title": "@Core-Kaos-Project"
         }
@@ -1718,7 +2303,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "Creación de la estructura base de resilence",
-      "updatedAt": "2024-12-13T12:18:16Z",
+      "updatedAt": "2025-01-09T14:18:35Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/548"
     },
     {
@@ -1738,7 +2323,98 @@
       "body": "Creación de la estrutura base de observability y subirla posteriormente al miro de la solución.",
       "closed": false,
       "closedAt": null,
-      "comments": [],
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86Z0WOe",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "\ncore/runners/Dockerfile (dockerfile)\n====================================\nTests: 25 (SUCCESSES: 24, FAILURES: 1)\nFailures: 1 (MEDIUM: 1, HIGH: 0, CRITICAL: 0)\n\nAVD-DS-0013 (MEDIUM): RUN should not be used to change directory: 'mkdir actions-runner && cd actions-runner &&     curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz &&     tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz'. Use 'WORKDIR' statement instead.\r\n════════════════════════════════════════\r\nUse WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds013\r\n────────────────────────────────────────\r\n core/runners/Dockerfile:32-34\r\n────────────────────────────────────────\r\n  32 ┌ RUN mkdir actions-runner && cd actions-runner && \\\r\n  33 │     curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz && \\\r\n  34 └     tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz\r\n────────────────────────────────────────\r\n\r\n\r\n\nsecurity/core/config/trivy/Dockerfile (dockerfile)\n==================================================\nTests: 25 (SUCCESSES: 21, FAILURES: 4)\nFailures: 4 (MEDIUM: 1, HIGH: 2, CRITICAL: 1)\n\nAVD-DS-0010 (CRITICAL): Using 'sudo' in Dockerfile should be avoided\r\n════════════════════════════════════════\r\nAvoid using 'RUN' with 'sudo' commands, as it can lead to unpredictable behavior.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds010\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:19-22\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null && \\\r\n  20 │     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \\\r\n  21 │     sudo apt-get update && \\\r\n  22 └     sudo apt-get install trivy\r\n────────────────────────────────────────\r\n\r\n\r\nAVD-DS-0013 (MEDIUM): RUN should not be used to change directory: 'mkdir actions-runner && cd actions-runner &&     curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz &&     tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz'. Use 'WORKDIR' statement instead.\r\n════════════════════════════════════════\r\nUse WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds013\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:38-40\r\n────────────────────────────────────────\r\n  38 ┌ RUN mkdir actions-runner && cd actions-runner && \\\r\n  39 │     curl -o actions-runner-linux-x64-2.320.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.320.0/actions-runner-linux-x64-2.320.0.tar.gz && \\\r\n  40 └     tar xzf ./actions-runner-linux-x64-2.320.0.tar.gz\r\n────────────────────────────────────────\r\n\r\n\r\nAVD-DS-0021 (HIGH): '-y' flag is missed: 'wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null &&     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list &&     sudo apt-get update &&     sudo apt-get install trivy'\r\n════════════════════════════════════════\r\n'apt-get' calls should use the flag '-y' to avoid manual user input.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds021\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:19-22\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null && \\\r\n  20 │     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \\\r\n  21 │     sudo apt-get update && \\\r\n  22 └     sudo apt-get install trivy\r\n────────────────────────────────────────\r\n\r\n\r\nAVD-DS-0029 (HIGH): '--no-install-recommends' flag is missed: 'wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null &&     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list &&     sudo apt-get update &&     sudo apt-get install trivy'\r\n════════════════════════════════════════\r\n'apt-get' install should use '--no-install-recommends' to minimize image size.\r\n\r\nSee https://avd.aquasec.com/misconfig/ds029\r\n────────────────────────────────────────\r\n security/core/config/trivy/Dockerfile:19-22\r\n────────────────────────────────────────\r\n  19 ┌ RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null && \\\r\n  20 │     echo \"deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main\" | sudo tee -a /etc/apt/sources.list.d/trivy.list && \\\r\n  21 │     sudo apt-get update && \\\r\n  22 └     sudo apt-get install trivy\r\n────────────────────────────────────────\r\n\r\n\r\n",
+          "createdAt": "2025-01-09T15:56:32Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/547#issuecomment-2580636574",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z0Wc7",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by Yolabn.\n launch by Yolabn\nBranch name is refs/heads/F547-creacion-de-la-estructura-base-de-observability\nCommit SHA is 6a591f1d20a9bfbce27f17faedec69170473e569\nRepo origin is SantaKa0S/kaos\nAssigned number issue 547\nExecuted flow about F\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12693608978**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12693608978\n**Run Number:** 410\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/F547-creacion-de-la-estructura-base-de-observability\n**Commit:** 6a591f1d20a9bfbce27f17faedec69170473e569\n**Actions Involved:**\n**Ref Flow: F**\n**Ref Issue: 547**\n**Please review issue 547 for more information.**",
+          "createdAt": "2025-01-09T15:56:56Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/547#issuecomment-2580637499",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z0WlT",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check F-547 Ka0S_Code",
+          "createdAt": "2025-01-09T15:57:10Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/547#issuecomment-2580638035",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z0Wt_",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12693621589\n**Run Number:** 422\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/F547-creacion-de-la-estructura-base-de-observability\n**Commit:** c025922b3ae57949995f9f106812a38bc30586dc\n\n**Files Involved:**",
+          "createdAt": "2025-01-09T15:57:24Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/547#issuecomment-2580638591",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z0W12",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2025-01-09T15:57:37Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/547#issuecomment-2580639094",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z0W-T",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12693621589 launch the check 12693624891 over file observability/elk/docker-compose/docker-compose.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-09T15:57:51Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/547#issuecomment-2580639635",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2024-12-13T12:12:50Z",
       "id": "I_kwDONP0GL86jNnwq",
       "labels": [
@@ -1761,8 +2437,8 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "f75ad846",
-            "name": "Backlog"
+            "optionId": "47fc9ee4",
+            "name": "In progress"
           },
           "title": "@Core-Kaos-Project"
         }
@@ -1770,7 +2446,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "Creación de la estructura base de observability",
-      "updatedAt": "2024-12-13T12:12:50Z",
+      "updatedAt": "2025-01-09T15:57:52Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/547"
     },
     {
@@ -31384,17 +32060,69 @@
       "url": "https://github.com/SantaKa0S/kaos/issues/4"
     },
     {
-      "assignees": [],
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
       "author": {
         "id": "MDQ6VXNlcjczMzMyODk4",
         "is_bot": false,
         "login": "santakloud",
         "name": "SantaKloud"
       },
-      "body": "Necesitamos documentar inicialmente, antes de ocmenzar a trabajar, lo siguiente:\n\n- estructura del repositorio\n- definición de la funcionalidad de las tags en el repositorio\n- definicion de funcionalidad de ramas\n- definicion de tags, prioridades y tallas en issues de proyecto\n- definicion de uso de variables y secretos en el entorno\n- workflows de procesos",
+      "body": "Necesitamos documentar inicialmente, antes de ocmenzar a trabajar, lo siguiente:\n\n- estructura del repositorio\n- definición de la funcionalidad de las tags en el repositorio\n- definicion de funcionalidad de ramas\n- definicion de tags, prioridades y tallas en issues de proyecto\n- definicion de uso de variables y secretos en el entorno\n- workflows de procesos\n- Documentación del proyecto",
       "closed": false,
       "closedAt": null,
-      "comments": [],
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86Zzzj-",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Esta tarea la vamos a ir usando para la creación de la documentación del proyecto Ka0S",
+          "createdAt": "2025-01-09T14:59:24Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/3#issuecomment-2580494590",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z0T5U",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Subimos las modificaciones del documento de readme y del documento de license",
+          "createdAt": "2025-01-09T15:52:29Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/3#issuecomment-2580627028",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z0Vej",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Asociado a esta issue vamos a generar la (#577 ) para añadir el módulo que compruebe y gestione que los ficheros md de la infraestructura estan correctos. el modulo es mdlint.yaml",
+          "createdAt": "2025-01-09T15:55:12Z",
+          "includesCreatedEdit": true,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/3#issuecomment-2580633507",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2024-11-19T10:54:30Z",
       "id": "I_kwDONP0GL86fP4o8",
       "labels": [
@@ -31417,8 +32145,8 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "f75ad846",
-            "name": "Backlog"
+            "optionId": "df73e18b",
+            "name": "In review"
           },
           "title": "@Core-Kaos-Project"
         }
@@ -31426,7 +32154,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "Generar la documentación de ramas, tags, prioridades, tallas, etiquetas de proyecto para saber cual usar en cada momento",
-      "updatedAt": "2024-11-19T15:29:06Z",
+      "updatedAt": "2025-01-09T16:01:18Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/3"
     },
     {
