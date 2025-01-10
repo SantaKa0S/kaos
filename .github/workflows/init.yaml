@@ -72,6 +72,8 @@ jobs:
                     gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
                     # Lanzamos el lint del fichero
                     gh workflow run $file_module --ref ${{ github.ref }} -f kaos-origin=${{ github.run_id }} -f kaos-files=$line -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+                    module_failed=0
+                    extension_failed=0
                     break
                   else
                     # Control de si existe el modulo para esa extension"
