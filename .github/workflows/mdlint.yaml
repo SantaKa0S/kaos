@@ -1,0 +1,120 @@
+name: Ka0s Markdown Lint
+
+on:
+  workflow_dispatch: # Workflow manualmente
+    inputs:
+      kaos-origin:
+        description: 'Dispatcher Workflow Run ID'
+        default: ""
+        required: true
+      kaos-files:
+        description: 'Files Involved'
+        default: ""
+        required: true
+      kaos-issue-id:
+        description: 'Issue ID'
+        default: "Kaos Issue ID"
+        required: true
+  
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  pull-requests: write
+
+env:
+  KAOS_MODULE: "[Ka0S] MDLINT"
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  PATH_RESUME: "core/results/"
+  FILE_ERROR: ""
+  USER_NAME: ${{ secrets.KAOS_USER_NAME }}
+  USER_EMAIL: ${{ secrets.KAOS_USER_EMAIL }}
+  KAOS_MD_CONFIG: "core/config/.markdownlint.json"
+
+jobs:
+  md-lint-process:
+    runs-on: 
+      group: kaos-mdlint
+
+    steps:
+      - id: repo # Checkout the repository to get the information of the commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+    
+      - id: node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+  
+      - id: markdownlint-cli2
+        run: |
+          npm install -g markdownlint-cli2
+  
+      - id: check-md
+        run: |
+            # Invocamos la primera comprobación de base, sino se supera el proceso no continua
+            git config --global user.name '${{ env.USER_NAME }}'
+            git config --global user.email '${{ env.USER_EMAIL}}'
+            git pull
+            # Realizamos el check del documento md 
+            while IFS= read -r file; do
+            if [[ "$file" == *.md ]]; then
+                # Run markdownlint with the specified files and ignore rules
+                markdownlint-cli2 $file --config ${{ env.KAOS_MD_CONFIG }} > ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt || true
+                # Check if exist errors in file
+                if [ ! -s ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt ]; then
+                  echo "File ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt is empty and $file is content correct"
+                  KAOS_ISSUE_BODY="The markdown lint process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} over file ${{ github.event.inputs.kaos-files }} and its result has been SUCCESS. Please MERGE"
+                  gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+                  git add ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
+                  git commit -m "[Ka0S] File ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt is empty and $file is content correct and write commit info"
+                else
+                  echo "File ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt is not empty and $file is content not correct and write commit info"
+                  KAOS_ISSUE_BODY="The json lint process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} over file ${{ github.event.inputs.kaos-files }} and its result has been FAILED, please check ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt and solved it"
+                  gh issue comment  ${{ github.event.inputs.kaos-issue-id }} -F ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
+                  gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} 
+                  git add ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
+                  git commit -m "[Ka0S] File ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt is not empty and $file is content not correct and write commit info"
+                fi
+              else
+              echo "Skipping file $file as it does not have a .md extension"
+            fi
+            done < ${{ github.event.inputs.kaos-files }}
+            git push
+            
+  handle_failure:
+    runs-on: 
+      group: kaos-mdlint
+    needs: [md-lint-process]
+    if: ${{ failure() }}
+    steps:
+      - id: check-execution
+        env:
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+        run: |
+          echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_BODY=$(cat <<'EOF'
+          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          **${{ env.KAOS_MODULE }}  Message:**
+          El error ha sido en : ${{  github.run_id }}
+          ejecute este comando en su consola y podrá consultar el fallo del trabajo
+          gh run view ${{  github.run_id }} --log-failed
+          y compruebe el fichero: ${{ env.FILE_ERROR}}
+          \`\`\`
+          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
+          \`\`\`
+          **Workflow Name:** ${{ github.workflow }}
+          **Job Name:** ${{ github.job }}
+          **Run ID:** ${{ github.run_id }}
+          **Run Number:** ${{ github.run_number }}
+          **Repository:** ${{ github.repository }}
+          **Branch:** ${{ github.ref }}
+          **Commit:** ${{ github.sha }}
+          Please investigate the issue.
+          EOF
+          )
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
+  
