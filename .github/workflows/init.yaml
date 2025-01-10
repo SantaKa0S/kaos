@@ -55,10 +55,12 @@ jobs:
             echo "I-2 Calculamos la extension del fichero $file_extension"
             file_module="$file_extension""lint.yaml"
             echo "I-3 Calculamos el modulo $file_module"
+            IFS=',' read -r -a file_array <<< "$files"
             for file in "${file_array[@]}"; do
               echo "II Leemos el array de $file"
               if [[ "$file_extension" == "$file" ]]; then
                 echo "III Comprobamos si $file_extension es igual a $file"
+                IFS=',' read -r -a module_array <<< "$modules"
                 for module in "${module_array[@]}"; do
                   echo "IV Leemos el array $module"
                   if [[ "$file_module" == *"$module"* ]]; then
