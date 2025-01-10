@@ -335,3 +335,15 @@
   - core/results/files-in-commit-F-577.txt
   - core/results/jsonlint-results-12707750094.txt
 ---------------------------------
+## Version 0.5.0
+- **Branch**: refs/pull/587/merge
+- **Commit**: fc10ee63d14c74fc158b91ea74ef1587f4e2e498
+- **Author**: yolabn (141480171+Yolabn@users.noreply.github.com)
+- **Date**: Fri Jan 10 12:43:01 UTC 2025
+- **Message**: Merge cab34b306810a5a7bb478f11381e79d58820e46a into fbb2c64944383c81433ea8e0c790c7dd865118d2
+- **Files Changed**:
+  - core/results/commit-summary-F-580.txt
+  - core/results/files-in-commit-F-580.txt
+  - observability/elk/config/filebeat.yaml
+  - observability/elk/docker-compose/docker-compose.yaml
+---------------------------------
