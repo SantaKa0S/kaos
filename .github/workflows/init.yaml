@@ -74,14 +74,14 @@ jobs:
                 extension_failed=1
               fi  
             done
-            if [[ $module_failed == 1]]; then
+            if [[ $module_failed == 1 ]]; then
               # Si hemos llegado hasta aquí añadimos el mensaje de que la extension esta permitida pero no dispone de modulo activo y aqui finaliza el proceso
               # Añadimos los valores a las variables de la issue
               KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha detectado que la extensión ($file_extension) esta permitida dentro de KAOS_CORE_FILES, pero el módulo asociado ($file_module) no esta activo. Por favor compruebe que exista y esta activo."
               # Añadimos el comentario a la issue
               gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
             fi
-            if [[ $extension_failed == 1]]; then
+            if [[ $extension_failed == 1 ]]; then
               # Si hemos llegado hasta aquí añadimos el mensaje de que la extension no esta permitida
               # Añadimos los valores a las variables de la issue
               KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha detectado que la extensión ($file_extension) NO esta permitida dentro de KAOS_CORE_FILES. Por favor compruebe que exista y esta activo."
