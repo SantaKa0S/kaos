@@ -321,3 +321,17 @@
   - core/results/files-in-commit-F-547.txt
   - observability/elk/docker-compose/docker-compose.yaml
 ---------------------------------
+## Version 0.5.0
+- **Branch**: refs/pull/582/merge
+- **Commit**: 38267124244f11e2c52bbf296d7700f6d9b6aec5
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Fri Jan 10 10:32:01 UTC 2025
+- **Message**: Merge 13df6e2b11fb455f484623b2d2e769eacd139635 into 8629ac3b92f7520a660ede1680bfeaecaacebd98
+- **Files Changed**:
+  - .github/workflows/mdlint.yaml
+  - core/config/.markdownlint.json
+  - core/config/templates/template-1.yaml
+  - core/results/commit-summary-F-577.txt
+  - core/results/files-in-commit-F-577.txt
+  - core/results/jsonlint-results-12707750094.txt
+---------------------------------
