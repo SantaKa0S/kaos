@@ -14,6 +14,802 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
+      "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12709494763\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12709494763 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12709494763**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12709494763\n**Run Number:** 72\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/585/merge\n**Commit:** 9a2aa2d4db4e0763ee1163ba643842d37788de80\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-10T13:11:09Z",
+      "comments": [],
+      "createdAt": "2025-01-10T12:27:20Z",
+      "id": "I_kwDONP0GL86ltJCq",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 586,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
+      "updatedAt": "2025-01-10T13:11:09Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/586"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the [Ka0S] INIT Action workflow **Ka0s Init**.\n**[Ka0S] INIT  Message:**\nEl error ha sido en : 12709394807\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12709394807 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12709394807**\n```\n**Workflow Name:** Ka0s Init\n**Job Name:** handle_failure\n**Run ID:** 12709394807\n**Run Number:** 427\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** 53d45205bb1320810d98f125ea5dd48480bda7da\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-10T12:26:06Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86Z70mF",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Solucionado en la #583 ",
+          "createdAt": "2025-01-10T12:26:06Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/584#issuecomment-2582595973",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-10T12:20:44Z",
+      "id": "I_kwDONP0GL86ltGAB",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 584,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] INIT Action Failed: Ka0s Init",
+      "updatedAt": "2025-01-10T12:26:06Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/584"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "Bateria de pruebas de mdlint\nreferenciado en #577 \n\nPruebas:\n\n- escaneo correcto e incorrecto de un solo fichero\n- escane de multiples ficheros correctos e incorrectos\n- validación de las pruebas y puesta en producción oficial",
+      "closed": false,
+      "closedAt": null,
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86Z66jk",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Antes de nada vamos a activar desde esta tarjeta el modulo de kaos que permite detectar este tipo de ficheros",
+          "createdAt": "2025-01-10T10:39:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582358244",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6-aS",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\nCommit SHA is ab189d07c2903ab1327e467770305f209688113a\nRepo origin is SantaKa0S/kaos\nAssigned number issue 583\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12707949785**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12707949785\n**Run Number:** 414\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** ab189d07c2903ab1327e467770305f209688113a\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 583**\n**Please review issue 583 for more information.**",
+          "createdAt": "2025-01-10T10:41:18Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582374034",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6_B8",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-583 Ka0S_Code",
+          "createdAt": "2025-01-10T10:41:32Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582376572",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6_rS",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12707960337\n**Run Number:** 424\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** 6201d26d5f720b68637f2322d8661e5527c39889\n\n**Files Involved:**",
+          "createdAt": "2025-01-10T10:41:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582379218",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z7AXO",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2025-01-10T10:41:58Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582382030",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z7Aze",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12707960337 launch the check 12707963008 over file .github/workflows/ka0s.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-10T10:42:12Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582383838",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z7F3s",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\nCommit SHA is df7cf982db7a79767cd7381437a6c6ae9dac95a0\nRepo origin is SantaKa0S/kaos\nAssigned number issue 583\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12708042687**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12708042687\n**Run Number:** 415\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** df7cf982db7a79767cd7381437a6c6ae9dac95a0\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 583**\n**Please review issue 583 for more information.**",
+          "createdAt": "2025-01-10T10:47:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582404588",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z7F_H",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-583 Ka0S_Code",
+          "createdAt": "2025-01-10T10:47:44Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582405063",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z7Jg8",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\nCommit SHA is a03e662a0150e681a4cc19c16d5a1c30745a3f06\nRepo origin is SantaKa0S/kaos\nAssigned number issue 583\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12708150913**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12708150913\n**Run Number:** 416\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** a03e662a0150e681a4cc19c16d5a1c30745a3f06\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 583**\n**Please review issue 583 for more information.**",
+          "createdAt": "2025-01-10T10:55:06Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582419516",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z7Jog",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-583 Ka0S_Code",
+          "createdAt": "2025-01-10T10:55:21Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582420000",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z7Jvh",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12708160548\n**Run Number:** 426\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** 12e475531a4e02435634ff4393c704381e9114f9\n\n**Files Involved:**",
+          "createdAt": "2025-01-10T10:55:35Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582420449",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z7J2g",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow mdlint.yaml",
+          "createdAt": "2025-01-10T10:55:49Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582420896",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z7yAl",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\nCommit SHA is ebd62038333b1a6bcc1e93f61eadf49951eb2320\nRepo origin is SantaKa0S/kaos\nAssigned number issue 583\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12709383738**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12709383738\n**Run Number:** 417\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** ebd62038333b1a6bcc1e93f61eadf49951eb2320\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 583**\n**Please review issue 583 for more information.**",
+          "createdAt": "2025-01-10T12:20:17Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582585381",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z7yHH",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-583 Ka0S_Code",
+          "createdAt": "2025-01-10T12:20:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582585799",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z71Nr",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\nCommit SHA is bdc6b056935039650ef6ba756a1d369e325c5612\nRepo origin is SantaKa0S/kaos\nAssigned number issue 583\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12709493154**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12709493154\n**Run Number:** 418\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** bdc6b056935039650ef6ba756a1d369e325c5612\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 583**\n**Please review issue 583 for more information.**",
+          "createdAt": "2025-01-10T12:27:34Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582598507",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z71UI",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-583 Ka0S_Code",
+          "createdAt": "2025-01-10T12:27:48Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582598920",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z8wjJ",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\nCommit SHA is ade86b718f5e57ecaefb5d57e813ad6f9cd017d2\nRepo origin is SantaKa0S/kaos\nAssigned number issue 583\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12711406070**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12711406070\n**Run Number:** 420\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** ade86b718f5e57ecaefb5d57e813ad6f9cd017d2\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 583**\n**Please review issue 583 for more information.**",
+          "createdAt": "2025-01-10T14:30:42Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582841545",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z8wp-",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-583 Ka0S_Code",
+          "createdAt": "2025-01-10T14:30:56Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582841982",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z83ir",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\nCommit SHA is 46adae8e882cdc8ad5c36cb852ff78a399603b37\nRepo origin is SantaKa0S/kaos\nAssigned number issue 583\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12711654612**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12711654612\n**Run Number:** 421\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** 46adae8e882cdc8ad5c36cb852ff78a399603b37\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 583**\n**Please review issue 583 for more information.**",
+          "createdAt": "2025-01-10T14:45:04Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582870187",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z83r9",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-583 Ka0S_Code",
+          "createdAt": "2025-01-10T14:45:20Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582870781",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z830a",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT Launch workflow yamllint.yaml",
+          "createdAt": "2025-01-10T14:45:34Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582871322",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z837h",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT ha detectado que la extensión (yaml) esta permitida dentro de KAOS_CORE_FILES, pero el módulo asociado (yamllint.yaml) no esta activo. Por favor compruebe que exista y esta activo.",
+          "createdAt": "2025-01-10T14:45:46Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582871777",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z84C1",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT ha detectado que la extensión (yaml) NO esta permitida dentro de KAOS_CORE_FILES. Por favor compruebe que exista y esta activo.",
+          "createdAt": "2025-01-10T14:46:00Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582872245",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z84KT",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12711665650 launch the check 12711668949 over file .github/workflows/init.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-10T14:46:14Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582872723",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z89Td",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\nCommit SHA is d167605bf4d67147baef6a9c433fc63fb0ba50a1\nRepo origin is SantaKa0S/kaos\nAssigned number issue 583\nExecuted flow about H\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12711723607**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12711723607\n**Run Number:** 422\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H583-pruebas-de-funcionalidad-de-mdlint\n**Commit:** d167605bf4d67147baef6a9c433fc63fb0ba50a1\n**Actions Involved:**\n**Ref Flow: H**\n**Ref Issue: 583**\n**Please review issue 583 for more information.**",
+          "createdAt": "2025-01-10T14:55:13Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582893789",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z89ak",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check H-583 Ka0S_Code",
+          "createdAt": "2025-01-10T14:55:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582894244",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z89jG",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT Launch workflow yamllint.yaml",
+          "createdAt": "2025-01-10T14:55:43Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582894790",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z89pc",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12711826880 launch the check 12711830390 over file .github/workflows/init.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-10T14:55:57Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/583#issuecomment-2582895196",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-10T10:36:59Z",
+      "id": "I_kwDONP0GL86lsSzl",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtkA",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        }
+      ],
+      "milestone": null,
+      "number": 583,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "47fc9ee4",
+            "name": "In progress"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "Pruebas de funcionalidad de mdlint",
+      "updatedAt": "2025-01-10T14:55:59Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/583"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "En esta tarjeta generaremos las referencias a cada tarjeta que se asocie a crear una template dentro de la estructura de Ka0S",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2025-01-10T08:30:20Z",
+      "id": "I_kwDONP0GL86lrRUD",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtfw",
+          "name": "documentation",
+          "description": "Improvements or additions to documentation",
+          "color": "0075ca"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtkA",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        }
+      ],
+      "milestone": null,
+      "number": 581,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "61e4505c",
+            "name": "Ready"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "Documentación de templates de Ka0S",
+      "updatedAt": "2025-01-10T08:30:20Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/581"
+    },
+    {
+      "assignees": [
+        {
+          "id": "U_kgDOCG7Q6w",
+          "login": "Yolabn",
+          "name": "yolabn"
+        }
+      ],
+      "author": {
+        "id": "U_kgDOCG7Q6w",
+        "is_bot": false,
+        "login": "Yolabn",
+        "name": "yolabn"
+      },
+      "body": "Se deben establecer todos los ficheros de configuración para la indexación de información desde un agente externo",
+      "closed": false,
+      "closedAt": null,
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86Z76Sd",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by Yolabn.\n launch by Yolabn\nBranch name is refs/heads/F580-configuración-de-elk-y-sus-componentes\nCommit SHA is f425e1a562f86e527b4df27d9dd2850f4e0a000a\nRepo origin is SantaKa0S/kaos\nAssigned number issue 580\nExecuted flow about F\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12709665728**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12709665728\n**Run Number:** 419\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/F580-configuración-de-elk-y-sus-componentes\n**Commit:** f425e1a562f86e527b4df27d9dd2850f4e0a000a\n**Actions Involved:**\n**Ref Flow: F**\n**Ref Issue: 580**\n**Please review issue 580 for more information.**",
+          "createdAt": "2025-01-10T12:38:56Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2582619293",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z76Z6",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check F-580 Ka0S_Code",
+          "createdAt": "2025-01-10T12:39:08Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2582619770",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z76iV",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12709676457\n**Run Number:** 429\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/F580-configuración-de-elk-y-sus-componentes\n**Commit:** cab34b306810a5a7bb478f11381e79d58820e46a\n\n**Files Involved:**",
+          "createdAt": "2025-01-10T12:39:22Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2582620309",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z76pi",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2025-01-10T12:39:36Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2582620770",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z76vv",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12709676457\n**Run Number:** 429\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/F580-configuración-de-elk-y-sus-componentes\n**Commit:** cab34b306810a5a7bb478f11381e79d58820e46a\n\n**Files Involved:**",
+          "createdAt": "2025-01-10T12:39:50Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2582621167",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z761-",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2025-01-10T12:40:03Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2582621566",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z767d",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12709676457 launch the check 12709679717 over file observability/elk/config/filebeat.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-10T12:40:17Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2582621917",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z77B_",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12709676457 launch the check 12709680170 over file observability/elk/docker-compose/docker-compose.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-10T12:40:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2582622335",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-10T08:19:08Z",
+      "id": "I_kwDONP0GL86lrMmN",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtkA",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        }
+      ],
+      "milestone": null,
+      "number": 580,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "47fc9ee4",
+            "name": "In progress"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "Configuración de ELK y sus componentes",
+      "updatedAt": "2025-01-10T12:40:31Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/580"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
       "body": "Dependabot encountered the following error when parsing your .github/dependabot.yml:\n\nThe property '#/updates/0/package-ecosystem' value \"\" did not match one of the following values: npm, bundler, composer, devcontainers, dotnet-sdk, maven, mix, cargo, gradle, nuget, gomod, docker, elm, gitsubmodule",
       "closed": true,
       "closedAt": "2025-01-09T16:15:19Z",
@@ -67,8 +863,8 @@
         "name": "SantaKloud"
       },
       "body": "Creación del modulo mdlint para los check de documentos con formato md",
-      "closed": false,
-      "closedAt": null,
+      "closed": true,
+      "closedAt": "2025-01-10T10:34:00Z",
       "comments": [
         {
           "id": "IC_kwDONP0GL86Z0Xpz",
@@ -83,6 +879,246 @@
           "minimizedReason": "",
           "reactionGroups": [],
           "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2580642419",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z5v0T",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Generamos la primera template (template-1) basada en jsonlint, que posteriormente tendremos que documentar en #581",
+          "createdAt": "2025-01-10T08:31:32Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582052115",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z5yHU",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Generada la template-1 pasamos a personalizar el modulo de mdlint",
+          "createdAt": "2025-01-10T08:37:13Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582061524",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6A-_",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "YA tenemos la primera version generada del modulo de mdlint.\nVamos a generar el grupo de runners asociados a este módulo",
+          "createdAt": "2025-01-10T09:08:09Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582122431",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6uTI",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ya tenemos en marcha el runner asociado al modulo de mdlint",
+          "createdAt": "2025-01-10T10:25:56Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582308040",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6uZZ",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Subimos el codigo y comenzamos con las pruebas",
+          "createdAt": "2025-01-10T10:26:09Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582308441",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6vDf",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Ka0S has been initiated by santakloud.\n launch by santakloud\nBranch name is refs/heads/F577-módulo-mdlint\nCommit SHA is e95961b0abc681d379fcdcbb1645cff88a6ea22e\nRepo origin is SantaKa0S/kaos\nAssigned number issue 577\nExecuted flow about F\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12707733955**\n**Workflow Name:** Ka0S\n**Job Name:** job-flows\n**Run ID:** 12707733955\n**Run Number:** 412\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/F577-módulo-mdlint\n**Commit:** e95961b0abc681d379fcdcbb1645cff88a6ea22e\n**Actions Involved:**\n**Ref Flow: F**\n**Ref Issue: 577**\n**Please review issue 577 for more information.**",
+          "createdAt": "2025-01-10T10:27:28Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582311135",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6vKj",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Now initiates flow process to check F-577 Ka0S_Code",
+          "createdAt": "2025-01-10T10:27:41Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582311587",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6vRy",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12707746412\n**Run Number:** 423\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/F577-módulo-mdlint\n**Commit:** 0f2ceb05591fdd27de2afb4779a945e44afd9a4b\n\n**Files Involved:**",
+          "createdAt": "2025-01-10T10:27:55Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582312050",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6vYm",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2025-01-10T10:28:08Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582312486",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6vfX",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12707746412\n**Run Number:** 423\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/F577-módulo-mdlint\n**Commit:** 0f2ceb05591fdd27de2afb4779a945e44afd9a4b\n\n**Files Involved:**",
+          "createdAt": "2025-01-10T10:28:22Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582312919",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6vmu",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow jsonlint.yaml",
+          "createdAt": "2025-01-10T10:28:36Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582313390",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6vtB",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "This is a issue created by [Ka0S] INIT to register Actions workflows **Ka0s Init**.\nIt has been requested by: **santakloud**\n\n**Message:**\n\n\n**Workflow Name:** Ka0s Init\n**Job Name:** kaos-init-process\n**Run ID:** 12707746412\n**Run Number:** 423\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/F577-módulo-mdlint\n**Commit:** 0f2ceb05591fdd27de2afb4779a945e44afd9a4b\n\n**Files Involved:**",
+          "createdAt": "2025-01-10T10:28:50Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582313793",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6v1s",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Launch workflow yamllint.yaml",
+          "createdAt": "2025-01-10T10:29:03Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582314348",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6v9N",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12707746412 launch the check 12707749607 over file .github/workflows/mdlint.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-10T10:29:17Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582314829",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6wF9",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The yaml lint process 12707746412 launch the check 12707750777 over file core/config/templates/template-1.yaml and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-10T10:29:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582315389",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z6wPO",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The json lint process 12707746412 launch the check 12707750094 over file core/config/.markdownlint.json and its result has been SUCCESS. Please MERGE",
+          "createdAt": "2025-01-10T10:29:44Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/577#issuecomment-2582315982",
           "viewerDidAuthor": true
         }
       ],
@@ -114,16 +1150,16 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "47fc9ee4",
-            "name": "In progress"
+            "optionId": "98236657",
+            "name": "Done"
           },
           "title": "@Core-Kaos-Project"
         }
       ],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Módulo mdlint",
-      "updatedAt": "2025-01-09T15:59:01Z",
+      "updatedAt": "2025-01-10T10:34:00Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/577"
     },
     {
@@ -141,8 +1177,8 @@
         "name": "SantaKloud"
       },
       "body": "An error occurred in the [Ka0S]  VERSION when create new tag. Action workflow **Ka0S Version**.\n**[Ka0S]  VERSION  Message:**\nEl error ha sido en : 12691092081\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12691092081 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12691092081**\n```\n**Workflow Name:** Ka0S Version\n**Job Name:** handle_failure\n**Run ID:** 12691092081\n**Run Number:** 67\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/pull/573/merge\n**Commit:** fdaecc710667cc9a4bc3f085e322411abaf14294\nPlease investigate the issue.",
-      "closed": false,
-      "closedAt": null,
+      "closed": true,
+      "closedAt": "2025-01-10T12:25:39Z",
       "comments": [],
       "createdAt": "2025-01-09T13:42:28Z",
       "id": "I_kwDONP0GL86lkw-o",
@@ -159,9 +1195,9 @@
       "projectCards": [],
       "projectItems": [],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "[Ka0S]  VERSION Action Failed: Ka0S Version",
-      "updatedAt": "2025-01-09T13:42:28Z",
+      "updatedAt": "2025-01-10T12:25:39Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/574"
     },
     {
@@ -2321,8 +3357,8 @@
         "name": "SantaKloud"
       },
       "body": "Creación de la estrutura base de observability y subirla posteriormente al miro de la solución.",
-      "closed": false,
-      "closedAt": null,
+      "closed": true,
+      "closedAt": "2025-01-10T08:17:05Z",
       "comments": [
         {
           "id": "IC_kwDONP0GL86Z0WOe",
@@ -2413,6 +3449,21 @@
           "reactionGroups": [],
           "url": "https://github.com/SantaKa0S/kaos/issues/547#issuecomment-2580639635",
           "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86Z5ppi",
+          "author": {
+            "login": "Yolabn"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Se comprueba que con el nuevo fichero de configuración del docker-compose, el stack de ELK arranca correctamente y se sigue ingestando información desde el filebeat externo.",
+          "createdAt": "2025-01-10T08:16:51Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/547#issuecomment-2582026850",
+          "viewerDidAuthor": false
         }
       ],
       "createdAt": "2024-12-13T12:12:50Z",
@@ -2437,16 +3488,16 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "47fc9ee4",
-            "name": "In progress"
+            "optionId": "98236657",
+            "name": "Done"
           },
           "title": "@Core-Kaos-Project"
         }
       ],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Creación de la estructura base de observability",
-      "updatedAt": "2025-01-09T15:57:52Z",
+      "updatedAt": "2025-01-10T08:17:05Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/547"
     },
     {
