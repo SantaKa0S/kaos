@@ -22,6 +22,11 @@ env:
   KAOS_MODULE: "[Ka0S]"
   PATH_RESUME: "core/results/"
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  BRANCH_NAME: ${{ github.ref }}
+  USER_NAME: ${{ github.actor.name}}
+  USER_EMAIL: ${{ github.actor.email }}
+  PATH_RESUME: "core/results/"
+  KAOS_REPO: "/actions-runner/_work/kaos/kaos"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # Worflow
@@ -112,7 +117,7 @@ jobs:
       - id: message
         run: |
           KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión de job-core"
-          gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
+          gh workflow run issue.yaml --ref ${{ env.KAOS_NUMBER }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
             
   job-compliance:
     runs-on: 
@@ -120,11 +125,7 @@ jobs:
     needs: job-core
     env:
       GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
-      BRANCH_NAME: ${{ github.ref }}
-      USER_NAME: ${{ github.actor.name}}
-      USER_EMAIL: ${{ github.actor.email }}
-      PATH_RESUME: "core/results/"
-      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
+      
     outputs:
       KAOS_COMPLIANCE_STATUS: ${{ steps.check-compliance.output.KAOS_STATUS }}
     steps:
