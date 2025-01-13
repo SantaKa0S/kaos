@@ -107,7 +107,7 @@ jobs:
           git add ${{ env.KAOS_PATH_RESUME }}*
           git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
           git push
-          KAOS_STATUS=$( echo "100%")"
+          KAOS_STATUS=$( echo "100%")
           echo "KAOS_CORE_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
 
   job-compliance:
@@ -129,7 +129,7 @@ jobs:
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
           sleep 10
           echo "Aquí deberemos de añadir el código del compliance de la organización"
-          KAOS_STATUS=$( echo "100%")"
+          KAOS_STATUS=$( echo "100%")
           echo "KAOS_COMPLIANCE_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
           KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión del compliance"
           gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
@@ -153,7 +153,7 @@ jobs:
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
           sleep 20
           echo "Aquí deberemos de añadir el código del security check de la organización"
-          KAOS_STATUS=$( echo "100%")"
+          KAOS_STATUS=$( echo "100%")
           echo "KAOS_SECURITY_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
           KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión de la seguridad"
           gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
@@ -177,7 +177,7 @@ jobs:
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
           sleep 30
           echo "Aquí deberemos de añadir el código del observability check de la organización"
-          KAOS_STATUS=$( echo "100%")"
+          KAOS_STATUS=$( echo "100%")
           echo "KAOS_OBSERVABILITY_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
           KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión de la observabilidad"
           gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
@@ -278,7 +278,7 @@ jobs:
 
       - id: end-flows
         run: |
-          KAOS_STATUS=$( echo "100%")"
+          KAOS_STATUS=$( echo "100%")
           echo "KAOS_FLOWS_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
 
   handle_failure:
