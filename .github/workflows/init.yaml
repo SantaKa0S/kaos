@@ -67,7 +67,7 @@ jobs:
                     echo "V Comprobamos que el $file_module es igual a $module y ejecutamos el flujo"
                     # Si hemos llegado hasta aquí ejecutamos el módulo
                     # Añadimos los valores a las variables de la issue
-                    KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} Has been initiated and Launch workflow $file_module"
+                    KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} Has been initiated and Launch workflow $file_module to check file $line"
                     # Añadimos el comentario a la issue
                     gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
                     # Lanzamos el lint del fichero
