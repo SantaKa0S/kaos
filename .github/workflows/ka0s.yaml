@@ -253,13 +253,19 @@ jobs:
       BRANCH_NUMBER: ${{ needs.job-core.outputs.KAOS_NUMBER }}
       BRANCH_INVOLVED: ${{ needs.job-core.outputs.KAOS_INVOLVED }}
     steps:
+      - id: repo # Check out the repository to get information of the commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+
       - id: release-new-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           echo "RN - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
           KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} process ${{ env.BRANCH_ACTION }} action over ${{ github.ref }} has been initiated by ${{ github.triggering_actor }}."
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
-          gh issue comment  ${{ env.BRANCH_NUMBER }} -F ${{ needs.job-core.outputs.KAOS_INVOLVED }}
+          gh issue comment  ${{ env.BRANCH_NUMBER }} -F ${{ env.BRANCH_INVOLVED }}
           gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}  
       - id: feature-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
@@ -267,7 +273,7 @@ jobs:
           echo "F - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
           KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} process ${{ env.BRANCH_ACTION }} action over ${{ github.ref }} has been initiated by ${{ github.triggering_actor }}."
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
-          gh issue comment  ${{ env.BRANCH_NUMBER }} -F ${{ needs.job-core.outputs.KAOS_INVOLVED }}
+          gh issue comment  ${{ env.BRANCH_NUMBER }} -F ${{ env.BRANCH_INVOLVED }}
           gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}
       - id: hotfix-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'H' }}
@@ -275,7 +281,7 @@ jobs:
           echo "H - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
           KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} process ${{ env.BRANCH_ACTION }} action over ${{ github.ref }} has been initiated by ${{ github.triggering_actor }}."
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
-          gh issue comment  ${{ env.BRANCH_NUMBER }} -F ${{ needs.job-core.outputs.KAOS_INVOLVED }}
+          gh issue comment  ${{ env.BRANCH_NUMBER }} -F ${{ env.BRANCH_INVOLVED }}
           gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}
       - id: execution-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'E' }}
