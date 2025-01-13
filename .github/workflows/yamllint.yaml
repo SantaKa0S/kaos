@@ -56,19 +56,19 @@ jobs:
               # Check if exist errors in file
               if [ ! -s .core/results/yaml-lint-results-${{ github.run_id }}.txt ]; then
                 # Todo ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso
-                KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} over file ${{ github.event.inputs.kaos-files }} and its result has been SUCCESS..Please review all files implicated in pull request and approve to merge"
+                KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process (${{ github.event.inputs.kaos-origin }}) launch the check (${{ github.run_id }}) over file (${{ github.event.inputs.kaos-files }}) and its result has been SUCCESS. Please review all files implicated in pull request and approve to merge"
                 gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
                 # una vez finalizado este proceso, en funcion del modulo donde esta ubicado el fichero que se ha comprobado ejecutara un jobs u otro                
               else
                 # Algo no ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso
-                KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} over file ${{ github.event.inputs.kaos-files }} and its result has been FAILED, please check core/results/yaml-lint-results-${{ github.run_id }}.txt"
+                KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process (${{ github.event.inputs.kaos-origin }}) launch the check (${{ github.run_id }}) over file (${{ github.event.inputs.kaos-files }}) and its result has been FAILED, please check core/results/yaml-lint-results-${{ github.run_id }}.txt"
                 gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-body-file=core/results/yaml-lint-results-${{ github.run_id }}.txt
                 # una vez finalizado este proceso, en funcion del modulo donde esta ubicado el ficher que se ha comprobado ejecutara un jobs u otro 
               fi
 
       - id: message
         run: |
-          KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha terminado de comprobar kaos-check-yaml"
+          KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha terminado de comprobar check-yaml"
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
 
   handle_failure:
