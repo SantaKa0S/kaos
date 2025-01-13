@@ -104,10 +104,67 @@ jobs:
           git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
           git push
 
+  job-compliance:
+    runs-on: 
+      group: kaos
+    needs: job-core
+    env:
+      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
+      BRANCH_NAME: ${{ github.ref }}
+      USER_NAME: ${{ github.actor.name}}
+      USER_EMAIL: ${{ github.actor.email }}
+      PATH_RESUME: "core/results/"
+      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
+    outputs:
+      KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
+    steps:
+      -id: check-compliance
+      run: |
+        # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+        echo "Aquí deberemos de añadir el código del compliance de la organización"
+
+  job-security:
+    runs-on: 
+      group: kaos
+    needs: job-core
+    env:
+      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
+      BRANCH_NAME: ${{ github.ref }}
+      USER_NAME: ${{ github.actor.name}}
+      USER_EMAIL: ${{ github.actor.email }}
+      PATH_RESUME: "core/results/"
+      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
+    outputs:
+      KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
+    steps:
+      -id: check-security
+      run: |
+        # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+        echo "Aquí deberemos de añadir el código del security check de la organización"
+
+  job-observability:
+    runs-on: 
+      group: kaos
+    needs: job-core
+    env:
+      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
+      BRANCH_NAME: ${{ github.ref }}
+      USER_NAME: ${{ github.actor.name}}
+      USER_EMAIL: ${{ github.actor.email }}
+      PATH_RESUME: "core/results/"
+      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
+    outputs:
+      KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
+    steps:
+      -id: check-observability
+      run: |
+        # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+        echo "Aquí deberemos de añadir el código del observability check de la organización"
+
   job-codescan:
     runs-on: 
       group: kaos-codescan
-    needs: job-core
+    needs: [job-core, job-compliance, job-security, job-observability]
     env:
       GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
       BRANCH_NAME: ${{ github.ref }}
@@ -143,7 +200,7 @@ jobs:
           fi
 
   job-flows:
-    needs: [job-core, job-codescan] 
+    needs: [job-core, job-codescan, job-compliance, job-security, job-observability] 
     if: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS == 'false' }}
     outputs:
       KAOS_BODY_ISSUE: ${{ steps.release-new-flow.outputs.SUMMARY }}
@@ -200,7 +257,7 @@ jobs:
   handle_failure:
     runs-on: 
       group: kaos
-    needs: [job-core, job-flows, job-codescan]
+    needs: [job-core]
     if: ${{ failure() }} 
     steps:
 
