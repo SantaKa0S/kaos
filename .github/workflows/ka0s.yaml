@@ -121,7 +121,7 @@ jobs:
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
           echo "Aquí deberemos de añadir el código del compliance de la organización"
           KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión del compliance"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=$${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
                       
 
   job-security:
@@ -143,7 +143,7 @@ jobs:
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
           echo "Aquí deberemos de añadir el código del security check de la organización"
           KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión de la seguridad"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=$${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
 
   job-observability:
     runs-on: 
@@ -164,12 +164,12 @@ jobs:
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
           echo "Aquí deberemos de añadir el código del observability check de la organización"
           KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión de la observabilidad"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=$${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
 
   job-codescan:
     runs-on: 
       group: kaos-codescan
-    needs: [job-compliance, job-security, job-observability]
+    needs: [job-core, job-compliance, job-security, job-observability]
     env:
       GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
       BRANCH_NAME: ${{ github.ref }}
@@ -262,7 +262,7 @@ jobs:
   handle_failure:
     runs-on: 
       group: kaos
-    needs: [job-core]
+    needs: [job-core, job-compliance, job-security, job-observability, job-codescan, job-flows]
     if: ${{ failure() }} 
     steps:
 
