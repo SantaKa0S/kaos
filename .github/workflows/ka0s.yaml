@@ -164,7 +164,7 @@ jobs:
   job-codescan:
     runs-on: 
       group: kaos-codescan
-    needs: [job-core, job-compliance, job-security, job-observability]
+    needs: [job-compliance, job-security, job-observability]
     env:
       GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
       BRANCH_NAME: ${{ github.ref }}
@@ -200,7 +200,7 @@ jobs:
           fi
 
   job-flows:
-    needs: [job-core, job-codescan, job-compliance, job-security, job-observability] 
+    needs: [job-codescan] 
     if: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS == 'false' }}
     outputs:
       KAOS_BODY_ISSUE: ${{ steps.release-new-flow.outputs.SUMMARY }}
