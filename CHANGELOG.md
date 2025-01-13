@@ -378,3 +378,21 @@
   - core/results/files-in-commit-H-583.txt
   - core/test/correct-file.md
 ---------------------------------
+## Version 0.6.2
+- **Branch**: refs/pull/600/merge
+- **Commit**: 35fc9701f552e7499307ea552804ef16b03eee6a
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 13 15:53:11 UTC 2025
+- **Message**: Merge 6eb5103e25004336b65997bc162b0cafcb2abc67 into a85e85e80078d4ff8aa455a8f36087601e388f05
+- **Files Changed**:
+  - .github/workflows/jsonlint.yaml
+  - .github/workflows/ka0s.yaml
+  - core/config/templates/template-1.yaml
+  - core/results/commit-summary-H-598.txt
+  - core/results/files-in-commit-H-598.txt
+  - core/results/jsonlint-results-12750508446.txt
+  - core/results/jsonlint-results-12750881874.txt
+  - core/test/correct-file.json
+  - core/test/correct-file.md
+  - core/test/correct-file.yaml
+---------------------------------
