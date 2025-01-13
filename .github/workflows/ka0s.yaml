@@ -12,7 +12,12 @@ on:
       - 'H*'
       - 'F*'
       - 'RN*'
-
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  pull-requests: write
+  
 env:
   KAOS_MODULE: "[Ka0S]"
   PATH_RESUME: "core/results/"
