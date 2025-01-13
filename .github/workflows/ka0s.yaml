@@ -133,7 +133,7 @@ jobs:
 
       - id: check-compliance
         run: |
-          # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+          # Vamos a determinar  la accion de comprobar el cumplimiento de las politicas
           echo "Aquí deberemos de añadir el código del compliance de la organización"
           KAOS_STATUS=$( echo "100%")
           echo "KAOS_COMPLIANCE_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
