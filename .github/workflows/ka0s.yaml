@@ -114,11 +114,6 @@ jobs:
           git push
           KAOS_CORE_STATUS=$( echo "100%")
           echo "KAOS_CORE_STATUS=$KAOS_CORE_STATUS" >> $GITHUB_OUTPUT
-      
-      - id: message
-        run: |
-          KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión de job-core"
-          gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ steps.core.outputs.RNNUMBER }} -f kaos-issue-actions=comment
             
   job-compliance:
     runs-on: 
