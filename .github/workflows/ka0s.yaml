@@ -20,7 +20,6 @@ permissions:
 
 env:
   KAOS_MODULE: "[Ka0S]"
-  PATH_RESUME: "core/results/"
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   BRANCH_NAME: ${{ github.ref }}
   USER_NAME: ${{ github.actor.name}}
