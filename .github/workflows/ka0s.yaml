@@ -17,7 +17,7 @@ permissions:
   actions: write
   issues: write
   pull-requests: write
-  
+
 env:
   KAOS_MODULE: "[Ka0S]"
   PATH_RESUME: "core/results/"
@@ -32,6 +32,7 @@ jobs:
       KAOS_BRANCH: ${{ steps.core.outputs.RNBRANCH }}
       KAOS_NUMBER: ${{ steps.core.outputs.RNNUMBER }}
       KAOS_INVOLVED: ${{ steps.files.outputs.INVOLVED }}
+      KAOS_CORE_STATUS: ${{ steps.files.output.KAOS_STATUS }}
     runs-on: 
       group: kaos
     permissions:
@@ -106,6 +107,8 @@ jobs:
           git add ${{ env.KAOS_PATH_RESUME }}*
           git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
           git push
+          KAOS_STATUS=$( echo "100%")"
+          echo "KAOS_CORE_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
 
   job-compliance:
     runs-on: 
@@ -119,16 +122,18 @@ jobs:
       PATH_RESUME: "core/results/"
       KAOS_REPO: "/actions-runner/_work/kaos/kaos"
     outputs:
-      KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
+      KAOS_COMPLIANCE_STATUS: ${{ steps.check-compliance.output.KAOS_STATUS }}
     steps:
       - id: check-compliance
         run: |
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+          sleep 10
           echo "Aquí deberemos de añadir el código del compliance de la organización"
+          KAOS_STATUS=$( echo "100%")"
+          echo "KAOS_COMPLIANCE_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
           KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión del compliance"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
+          gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
                       
-
   job-security:
     runs-on: 
       group: kaos
@@ -141,14 +146,17 @@ jobs:
       PATH_RESUME: "core/results/"
       KAOS_REPO: "/actions-runner/_work/kaos/kaos"
     outputs:
-      KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
+      KAOS_SECURITY_STATUS: ${{ steps.check-security.outputs.KAOS_STATUS }}
     steps:
       - id: check-security
         run: |
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+          sleep 20
           echo "Aquí deberemos de añadir el código del security check de la organización"
+          KAOS_STATUS=$( echo "100%")"
+          echo "KAOS_SECURITY_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
           KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión de la seguridad"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
+          gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
 
   job-observability:
     runs-on: 
@@ -162,14 +170,17 @@ jobs:
       PATH_RESUME: "core/results/"
       KAOS_REPO: "/actions-runner/_work/kaos/kaos"
     outputs:
-      KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
+      KAOS_OBSERVABILITY_STATUS: ${{ steps.check-observability.outputs.KAOS_STATUS }}
     steps:
       - id: check-observability
         run: |
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+          sleep 30
           echo "Aquí deberemos de añadir el código del observability check de la organización"
+          KAOS_STATUS=$( echo "100%")"
+          echo "KAOS_OBSERVABILITY_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
           KAOS_ISSUE_BODY="[KA0S] Se ha completado la revisión de la observabilidad"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
+          gh workflow run issue.yaml --ref ${{ env.BRANCH_NAME }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER}} -f kaos-issue-actions=comment
 
   job-codescan:
     runs-on: 
@@ -201,19 +212,20 @@ jobs:
           # Comprobamos el contenido del fichero generado
           if [ -s ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md ]; then
             echo "El fichero tiene contenido"
-            echo "KAOS_CODESCAN_STATUS=$(echo 'true')" >> $GITHUB_OUTPUT
+            echo "KAOS_CODESCAN_STATUS=$(echo '0%')" >> $GITHUB_OUTPUT
             # Añadimos a la Issue el fichero con el resultado del escaner actual
             gh issue comment  ${{ needs.job-core.outputs.KAOS_NUMBER }} -F ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
           else
             echo "El fichero no tiene contenido"
-            echo "KAOS_CODESCAN_STATUS=$(echo 'false')" >> $GITHUB_OUTPUT
+            echo "KAOS_CODESCAN_STATUS=$(echo '100%')" >> $GITHUB_OUTPUT
           fi
 
   job-flows:
     needs: [job-core, job-codescan] 
-    if: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS == 'false' }}
+    if: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS == '100%' }}
     outputs:
       KAOS_BODY_ISSUE: ${{ steps.release-new-flow.outputs.SUMMARY }}
+      KAOS_FLOWS_STATUS: ${{ steps.end-flows.outputs.KAOS_STATUS }}
     runs-on:
       group: kaos
     permissions:
@@ -264,6 +276,11 @@ jobs:
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
 
+      - id: end-flows
+        run: |
+          KAOS_STATUS=$( echo "100%")"
+          echo "KAOS_FLOWS_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
+
   handle_failure:
     runs-on: 
       group: kaos
@@ -280,6 +297,11 @@ jobs:
           KAOS_ISSUE_BODY=$(cat <<'EOF'
           An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
           **${{ env.KAOS_MODULE }}  Message:**
+          Compliance: ${{ needs.job-compliance.outputs.KAOS_COMPLIANCE_STATUS }}
+          Security: ${{ needs.job-security.outputs.KAOS_SECURITY_STATUS }}
+          Observability: ${{ needs.job-observability.outputs.KAOS_OBSERVABILITY_STATUS }}
+          CodeScan: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS }}
+          Flow: ${{ needs.job-flows.outputs.KAOS_FLOWS_STATUS }}
           El error ha sido en : ${{  github.run_id }}
           ejecute este comando en su consola y podrá consultar el fallo del trabajo
           gh run view ${{  github.run_id }} --log-failed
