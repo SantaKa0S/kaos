@@ -340,16 +340,20 @@ jobs:
       group: kaos
     needs: [job-core, job-compliance, job-security, job-observability, job-codescan, job-flows]
     if: ${{ success() }}
-    un: |
-          echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
-          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
-          KAOS_ISSUE_BODY=$(cat <<'EOF'
-          **${{ env.KAOS_MODULE }}  Message:**
-          Compliance: ${{ needs.job-compliance.outputs.KAOS_COMPLIANCE_STATUS }}
-          Security: ${{ needs.job-security.outputs.KAOS_SECURITY_STATUS }}
-          Observability: ${{ needs.job-observability.outputs.KAOS_OBSERVABILITY_STATUS }}
-          CodeScan: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS }}
-          Flow: ${{ needs.job-flows.outputs.KAOS_FLOWS_STATUS }}
-          EOF
-          )
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }} -f kaos-issue-actions=comment 
+    steps:
+      - id: check-execution
+        env:
+          GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+        run: |
+              echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
+              KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+              KAOS_ISSUE_BODY=$(cat <<'EOF'
+              **${{ env.KAOS_MODULE }}  Message:**
+              Compliance: ${{ needs.job-compliance.outputs.KAOS_COMPLIANCE_STATUS }}
+              Security: ${{ needs.job-security.outputs.KAOS_SECURITY_STATUS }}
+              Observability: ${{ needs.job-observability.outputs.KAOS_OBSERVABILITY_STATUS }}
+              CodeScan: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS }}
+              Flow: ${{ needs.job-flows.outputs.KAOS_FLOWS_STATUS }}
+              EOF
+              )
+              gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }} -f kaos-issue-actions=comment 
