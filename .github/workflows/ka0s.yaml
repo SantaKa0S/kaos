@@ -280,8 +280,7 @@ jobs:
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           echo "RN - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
-          KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action"
-          KAOS_ISSUE_BODY=$(printf "${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.\n${{ github.action_status }} launch by ${{ github.actor }}\nBranch name is ${{ github.ref }}\nCommit SHA is ${{ github.sha }}\nRepo origin is ${{ github.repository }}\nAssigned number issue ${{ env.BRANCH_NUMBER }}\nExecuted flow about ${{ env.BRANCH_ACTION }}\n**Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n**Actions Involved:**\n**Ref Flow: ${{ env.BRANCH_ACTION }}**\n**Ref Issue: ${{ env.BRANCH_NUMBER }}**\n**Please review issue ${{ env.BRANCH_NUMBER }} for more information.**\n")
+          KAOS_ISSUE_BODY="[Ka0S] Job:${{ github.workflow }} action has been initiated by ${{ github.triggering_actor }}."
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
           gh issue comment  ${{ env.BRANCH_NUMBER }} -F ${{ needs.job-core.outputs.KAOS_INVOLVED }}
           gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}  
@@ -289,8 +288,7 @@ jobs:
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
         run: |
           echo "F - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
-          KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action"
-          KAOS_ISSUE_BODY=$(printf "${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.\n${{ github.action_status }} launch by ${{ github.actor }}\nBranch name is ${{ github.ref }}\nCommit SHA is ${{ github.sha }}\nRepo origin is ${{ github.repository }}\nAssigned number issue ${{ env.BRANCH_NUMBER }}\nExecuted flow about ${{ env.BRANCH_ACTION }}\n**Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n**Actions Involved:**\n**Ref Flow: ${{ env.BRANCH_ACTION }}**\n**Ref Issue: ${{ env.BRANCH_NUMBER }}**\n**Please review issue ${{ env.BRANCH_NUMBER }} for more information.**\n")
+          KAOS_ISSUE_BODY="[Ka0S] Job:${{ github.workflow }} action has been initiated by ${{ github.triggering_actor }}."
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
           gh issue comment  ${{ env.BRANCH_NUMBER }} -F ${{ needs.job-core.outputs.KAOS_INVOLVED }}
           gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}
@@ -298,8 +296,7 @@ jobs:
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'H' }}
         run: |
           echo "H - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
-          KAOS_ISSUE_TITLE="[Ka0S] Job:${{ github.workflow }} action"
-          KAOS_ISSUE_BODY=$(printf "${{ github.workflow }} has been initiated by ${{ github.triggering_actor }}.\n${{ github.action_status }} launch by ${{ github.actor }}\nBranch name is ${{ github.ref }}\nCommit SHA is ${{ github.sha }}\nRepo origin is ${{ github.repository }}\nAssigned number issue ${{ env.BRANCH_NUMBER }}\nExecuted flow about ${{ env.BRANCH_ACTION }}\n**Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**\n**Workflow Name:** ${{ github.workflow }}\n**Job Name:** ${{ github.job }}\n**Run ID:** ${{ github.run_id }}\n**Run Number:** ${{ github.run_number }}\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref }}\n**Commit:** ${{ github.sha }}\n**Actions Involved:**\n**Ref Flow: ${{ env.BRANCH_ACTION }}**\n**Ref Issue: ${{ env.BRANCH_NUMBER }}**\n**Please review issue ${{ env.BRANCH_NUMBER }} for more information.**\n")
+          KAOS_ISSUE_BODY="[Ka0S] Job:${{ github.workflow }} action has been initiated by ${{ github.triggering_actor }}."
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
           gh issue comment  ${{ env.BRANCH_NUMBER }} -F ${{ needs.job-core.outputs.KAOS_INVOLVED }}
           gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}
