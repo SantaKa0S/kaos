@@ -335,11 +335,11 @@ jobs:
           )
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-workflow-id=${{  github.run_id }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
 
-  handle_sucess:
+  handle_success:
     runs-on: 
       group: kaos
     needs: [job-core, job-compliance, job-security, job-observability, job-codescan, job-flows]
-    if: ${{ sucess() }}
+    if: ${{ success() }}
     un: |
           echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
           KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
