@@ -118,10 +118,10 @@ jobs:
     outputs:
       KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
     steps:
-      -id: check-compliance
-      run: |
-        # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
-        echo "Aquí deberemos de añadir el código del compliance de la organización"
+      - id: check-compliance
+        run: |
+          # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+          echo "Aquí deberemos de añadir el código del compliance de la organización"
 
   job-security:
     runs-on: 
@@ -137,10 +137,10 @@ jobs:
     outputs:
       KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
     steps:
-      -id: check-security
-      run: |
-        # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
-        echo "Aquí deberemos de añadir el código del security check de la organización"
+      - id: check-security
+        run: |
+          # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+          echo "Aquí deberemos de añadir el código del security check de la organización"
 
   job-observability:
     runs-on: 
@@ -156,10 +156,10 @@ jobs:
     outputs:
       KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
     steps:
-      -id: check-observability
-      run: |
-        # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
-        echo "Aquí deberemos de añadir el código del observability check de la organización"
+      - id: check-observability
+        run: |
+          # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+          echo "Aquí deberemos de añadir el código del observability check de la organización"
 
   job-codescan:
     runs-on: 
