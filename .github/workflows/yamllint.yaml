@@ -66,11 +66,6 @@ jobs:
                 # una vez finalizado este proceso, en funcion del modulo donde esta ubicado el ficher que se ha comprobado ejecutara un jobs u otro 
               fi
 
-      - id: message
-        run: |
-          KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha terminado de comprobar check-yaml"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
-
   handle_failure:
     runs-on: 
       group: kaos-yamllint

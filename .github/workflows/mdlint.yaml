@@ -83,12 +83,7 @@ jobs:
             fi
             done < ${{ github.event.inputs.kaos-files }}
             git push
-
-      - id: message
-        run: |
-          KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha terminado de comprobar check-md"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
-            
+  
   handle_failure:
     runs-on: 
       group: kaos-mdlint
