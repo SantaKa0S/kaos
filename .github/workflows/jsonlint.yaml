@@ -91,12 +91,12 @@ jobs:
             # Check if exist errors in file
             if [ ! -s ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt ]; then
               echo "File ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt is empty and is content correct"
-              KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} over file ${{ github.event.inputs.kaos-files }} and its result has been SUCCESS. Please MERGE"
+              KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process (${{ github.event.inputs.kaos-origin }}) launch the check (${{ github.run_id }}) over file (${{ github.event.inputs.kaos-files }}) and its result has been SUCCESS. Please MERGE"
               gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
             else
               echo "File ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt is not empty and is content not correct and write commit info"
               echo "FILE_ERROR=${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt" >> $GITHUB_ENV
-              KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} over file ${{ github.event.inputs.kaos-files }} and its result has been FAILED, please check ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt and solved it"
+              KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process (${{ github.event.inputs.kaos-origin }}) launch the check (${{ github.run_id }}) over file (${{ github.event.inputs.kaos-files }}) and its result has been FAILED, please check ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt and solved it"
               gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} 
             fi
        
