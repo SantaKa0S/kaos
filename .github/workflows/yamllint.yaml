@@ -59,7 +59,7 @@ jobs:
               if [ ! -s ${{ env.PATH_RESUME }}yaml-lint-results-${{ github.run_id }}.txt ]; then
                 # Todo ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso
                 # Añadimos la versión de yamllint con la que se realiza la comprobacion
-                yamllint --version > ${{ env.PATH_RESUME }}yaml-lint-results-${{ github.run_id }}.txt
+                yamllint --version >> ${{ env.PATH_RESUME }}yaml-lint-results-${{ github.run_id }}.txt
                 # añadimos el nombre del fichero que vamos a comprobar
                 echo "Finding: ${{ github.event.inputs.kaos-files }}" >> ${{ env.PATH_RESUME }}yaml-lint-results-${{ github.run_id }}.txt
                 KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process (${{ github.event.inputs.kaos-origin }}) launch the check (${{ github.run_id }}) over file (${{ github.event.inputs.kaos-files }}) and its result has been SUCCESS. Please review all files implicated in pull request and approve to merge"
@@ -69,7 +69,7 @@ jobs:
               else
                 # Algo no ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso
                 # Añadimos la versión de yamllint con la que se realiza la comprobacion
-                yamllint --version > ${{ env.PATH_RESUME }}yaml-lint-results-${{ github.run_id }}.txt
+                yamllint --version >> ${{ env.PATH_RESUME }}yaml-lint-results-${{ github.run_id }}.txt
                 # añadimos el nombre del fichero que vamos a comprobar
                 echo "Finding: ${{ github.event.inputs.kaos-files }}" >> ${{ env.PATH_RESUME }}yaml-lint-results-${{ github.run_id }}.txt
                 KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process (${{ github.event.inputs.kaos-origin }}) launch the check (${{ github.run_id }}) over file (${{ github.event.inputs.kaos-files }}) and its result has been FAILED, please check core/results/yaml-lint-results-${{ github.run_id }}.txt"
