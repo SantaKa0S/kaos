@@ -1,7 +1,7 @@
 name: Ka0s Markdown Lint
 
 on:
-  workflow_dispatch: # Workflow manualmente
+  workflow_dispatch:
     inputs:
       kaos-origin:
         description: 'Dispatcher Workflow Run ID'
@@ -37,7 +37,7 @@ jobs:
       group: kaos-mdlint
 
     steps:
-      - id: repo # Checkout the repository to get the information of the commit
+      - id: repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -74,17 +74,13 @@ jobs:
                 if [ "$summary_value" == "0" ]; then
                   echo "File ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt is empty and $file is content correct"
                   KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process (${{ github.event.inputs.kaos-origin }}) launch the check (${{ github.run_id }}) over file (${{ github.event.inputs.kaos-files }}) and its result has been SUCCESS. Please MERGE"
-                  gh issue comment  ${{ github.event.inputs.kaos-issue-id }} -F ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
                   gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
-                  # git add ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
-                  # git commit -m "[Ka0S] File ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt is empty and $file is content correct and write commit info"
+                  gh issue comment  ${{ github.event.inputs.kaos-issue-id }} -F ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
                 else
                   echo "File ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt is not empty and $file is content not correct and write commit info"
                   KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process (${{ github.event.inputs.kaos-origin }}) launch the check (${{ github.run_id }}) over file (${{ github.event.inputs.kaos-files }}) and its result has been FAILED, please check ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt and solved it"
-                  gh issue comment  ${{ github.event.inputs.kaos-issue-id }} -F ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
                   gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} 
-                  # git add ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
-                  # git commit -m "[Ka0S] File ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt is not empty and $file is content not correct and write commit info"
+                  gh issue comment  ${{ github.event.inputs.kaos-issue-id }} -F ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
                 fi
   
   handle_failure:
