@@ -1,7 +1,7 @@
 name: Ka0s YAML Lint
 
 on:
-  workflow_dispatch: # Workflow manualmente
+  workflow_dispatch:
     inputs:
       kaos-origin:
         description: 'Dispatcher Workflow Run ID'
@@ -35,7 +35,7 @@ jobs:
       group: kaos-yamllint
 
     steps:
-      - id: repo # Checkout the repository to get the information of the commit
+      - id: repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
