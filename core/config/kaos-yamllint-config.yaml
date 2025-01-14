@@ -14,11 +14,11 @@ rules:
     level: warning
     ignore: |
       .github/workflows/*.yaml
-# Use this rule to set a maximal number of allowed consecutive blank lines.
+# Use this rule to set a maximal number of allowed consecutive blank lines
   empty-lines:
     max: 1
     max-start: 0
     max-end: 0
-# Use this rule to prevent multiple entries with the same key in mappings.
+# Use this rule to prevent multiple entries with the same key in mappings
 key-duplicates:
     forbid-duplicated-merge-keys: false
