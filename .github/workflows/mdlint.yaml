@@ -54,13 +54,9 @@ jobs:
   
       - id: check-md
         run: |
-            # Invocamos la primera comprobación de base, sino se supera el proceso no continua
-            # git config --global user.name '${{ env.USER_NAME }}'
-            # git config --global user.email '${{ env.USER_EMAIL}}'
-            # git pull
             # Realizamos el check del documento md 
                 # Run markdownlint with the specified files and ignore rules
-                markdownlint-cli2 $file --config ${{ env.KAOS_MD_CONFIG }} > ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt || true
+                markdownlint-cli2 ${{ github.event.inputs.kaos-files }} --config ${{ env.KAOS_MD_CONFIG }} > ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt || true
                 # Check if exist errors in file
                 if [ ! -s ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt ]; then
                   echo "File ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt is empty and $file is content correct"
@@ -76,10 +72,6 @@ jobs:
                   # git add ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
                   # git commit -m "[Ka0S] File ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt is not empty and $file is content not correct and write commit info"
                 fi
-              else
-              echo "Skipping file $file as it does not have a .md extension"
-            fi
-            # git push
   
   handle_failure:
     runs-on: 
