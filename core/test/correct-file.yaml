@@ -1,7 +1,15 @@
 name: Kaos
-steps:
+        env: 
+  steps:
   - primero
   - segundo
-  - tercero
+
+
+            - tercero
   - cuarto
+
+
 id: 99999
+env: 
+  - primero
+  - segundo
