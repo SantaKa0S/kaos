@@ -1,7 +1,7 @@
 name: Ka0s JSON Lint
 
 on:
-  workflow_dispatch: # Workflow manualmente
+  workflow_dispatch:
     inputs:
       kaos-origin:
         description: 'Dispatcher Workflow Run ID'
@@ -36,7 +36,7 @@ jobs:
       group: kaos-jsonlint
 
     steps:
-      - id: repo # Checkout the repository to get the information of the commit
+      - id: repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -114,5 +114,6 @@ jobs:
           Please investigate the issue.
           EOF
           )
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"
+  
   
