@@ -53,6 +53,11 @@ jobs:
       - id: check-yaml
         run: |
             # Invocamos la primera comprobación de base, sino se supera el proceso no continua
+            # Vamos a mostrar la version de yamllint
+            yamllint --version
+            # Vamos a mostrar la ayuda de yamllint
+            yamllint --help
+            # Ejecutamos el comando
             yamllint -c ${{ env.KAOS_YAMLLINT_CONFIG }} "${{ github.event.inputs.kaos-files }}" > ${{ env.PATH_RESUME }}yaml-lint-results-${{ github.run_id }}.txt 2>&1 || true
               # Check if exist errors in file
               if [ ! -s ${{ env.PATH_RESUME }}yaml-lint-results-${{ github.run_id }}.txt ]; then
