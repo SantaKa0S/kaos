@@ -413,3 +413,16 @@
   - core/test/correct-file2.md
   - core/test/correct-file3.md
 ---------------------------------
+## Version 0.6.4
+- **Branch**: refs/pull/610/merge
+- **Commit**: 49b75bcb5170217331556aa5eaac11e2e7811cde
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Jan 14 14:35:15 UTC 2025
+- **Message**: Merge fd32567e0e2c2b0f22ad9ae50c161f6004a3e877 into e2c204cf82798d24ef63a7a0d475b1155af92147
+- **Files Changed**:
+  - .github/workflows/yamllint.yaml
+  - core/config/kaos-yamllint-config.yaml
+  - core/results/commit-summary-H-608.txt
+  - core/results/files-in-commit-H-608.txt
+  - core/test/correct-file.yaml
+---------------------------------
