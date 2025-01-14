@@ -1,6 +1,1882 @@
 [
   [
     {
+      "additions": 75,
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "autoMergeRequest": null,
+      "baseRefName": "main",
+      "body": "mergamos y pasamos a produccion las modificaciones y resultados de las pruebas",
+      "changedFiles": 12,
+      "closed": true,
+      "closedAt": "2025-01-13T15:56:49Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86aOiiu",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S]  VERSION ha generado una nueva versión con el tag v0.6.2. Esta todo dispuesto para realizar *MERGE* del código.",
+          "createdAt": "2025-01-13T15:53:28Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/pull/600#issuecomment-2587502766",
+          "viewerDidAuthor": true
+        }
+      ],
+      "commits": [
+        {
+          "authoredDate": "2025-01-13T15:15:22Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T15:15:22Z",
+          "messageBody": "",
+          "messageHeadline": "Retiramos un mensaje innecesario",
+          "oid": "3a3e9e0214485c878f63511cf363b2a235ba996c"
+        },
+        {
+          "authoredDate": "2025-01-13T15:18:19Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T15:18:19Z",
+          "messageBody": "",
+          "messageHeadline": "añadimos el fichero md de pruebas",
+          "oid": "94109a102fb0b408f64f387690a951c65da6845c"
+        },
+        {
+          "authoredDate": "2025-01-13T15:18:29Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T15:18:29Z",
+          "messageBody": "",
+          "messageHeadline": "añadimos el fichero json de pruebas",
+          "oid": "081de97e640a9aa70d6d115873028a7aa3b49495"
+        },
+        {
+          "authoredDate": "2025-01-13T15:18:43Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T15:18:43Z",
+          "messageBody": "",
+          "messageHeadline": "añadimos el fichero yaml de pruebas",
+          "oid": "a79b92eecf644f8a5bf20dc601f1262a0ae8e494"
+        },
+        {
+          "authoredDate": "2025-01-13T15:19:04Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T15:19:04Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "efe8de77f712ae0be9c80daedfc6f35980df401f"
+        },
+        {
+          "authoredDate": "2025-01-13T15:26:20Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T15:26:20Z",
+          "messageBody": "",
+          "messageHeadline": "Detectamos un error en el uso del contenido de los ficheros implicados",
+          "oid": "96a42fa6f1856fdd3a05e49e16a29cc404fb1136"
+        },
+        {
+          "authoredDate": "2025-01-13T15:26:42Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T15:26:42Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos una nueva modificacion y probamos",
+          "oid": "ff2bdd85bb968f393bc8d118ec8c0d1ff1a519fc"
+        },
+        {
+          "authoredDate": "2025-01-13T15:26:58Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T15:26:58Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "2b9e0f1c8184858cd2a135fe12ef25d0dbfcd92e"
+        },
+        {
+          "authoredDate": "2025-01-13T15:28:23Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T15:28:23Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12750508446.txt",
+          "oid": "8764c3dd5914e5856562afee82a4612fdf5daab3"
+        },
+        {
+          "authoredDate": "2025-01-13T15:31:21Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T15:31:21Z",
+          "messageBody": "",
+          "messageHeadline": "corregimos el mensaje en jsonlint",
+          "oid": "994470ebfa21cb2d0cc6c8b279c5a7773a65e275"
+        },
+        {
+          "authoredDate": "2025-01-13T15:31:40Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T15:31:40Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "fdce7a95c0aac3ce900fb2c9b5e840b738413cd7"
+        },
+        {
+          "authoredDate": "2025-01-13T15:36:45Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T15:36:45Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos el mensaje de si todo sale ok",
+          "oid": "74618e1153b9970f949fef72941685285b4a4510"
+        },
+        {
+          "authoredDate": "2025-01-13T15:37:15Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T15:37:15Z",
+          "messageBody": "",
+          "messageHeadline": "Normalizamos y retiramos el mensaje de si todo ha ido ok",
+          "oid": "6907bbcb4dddbac842d2bb01523af495bba19a4b"
+        },
+        {
+          "authoredDate": "2025-01-13T15:37:34Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T15:37:34Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "74c23c10328da4c2c571471f7215d4cb43f5300c"
+        },
+        {
+          "authoredDate": "2025-01-13T15:45:35Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T15:45:35Z",
+          "messageBody": "",
+          "messageHeadline": "I Prueba con implicacion de varios ficheros status:correctos",
+          "oid": "086b2b747fb169b55c99029e6cd5741c922e79ce"
+        },
+        {
+          "authoredDate": "2025-01-13T15:45:52Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T15:45:52Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "fb5af62fdd9c5cf2aa1379441ba0b22c52731d58"
+        },
+        {
+          "authoredDate": "2025-01-13T15:47:16Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T15:47:16Z",
+          "messageBody": "",
+          "messageHeadline": "Generated file core/results/jsonlint-results-12750881874.txt",
+          "oid": "6eb5103e25004336b65997bc162b0cafcb2abc67"
+        },
+        {
+          "authoredDate": "2025-01-13T15:52:59Z",
+          "authors": [
+            {
+              "email": "73332898+santakloud@users.noreply.github.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "SantaKloud"
+            }
+          ],
+          "committedDate": "2025-01-13T15:52:59Z",
+          "messageBody": "…aa455a8f36087601e388f05",
+          "messageHeadline": "Merge 6eb5103e25004336b65997bc162b0cafcb2abc67 into a85e85e80078d4ff8…",
+          "oid": "35fc9701f552e7499307ea552804ef16b03eee6a"
+        },
+        {
+          "authoredDate": "2025-01-13T15:53:12Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T15:53:12Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S]  VERSION  Upload: CHANGELOG.md, INDEX.md with version 0.6.2",
+          "oid": "97b0d0aaea98a71601b8a2b6831a39ba6ff9e06b"
+        }
+      ],
+      "createdAt": "2025-01-13T15:52:57Z",
+      "deletions": 34,
+      "files": [
+        {
+          "path": ".github/workflows/jsonlint.yaml",
+          "additions": 1,
+          "deletions": 1
+        },
+        {
+          "path": ".github/workflows/ka0s.yaml",
+          "additions": 10,
+          "deletions": 31
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 18,
+          "deletions": 0
+        },
+        {
+          "path": "INDEX.md",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/config/templates/template-1.yaml",
+          "additions": 23,
+          "deletions": 1
+        },
+        {
+          "path": "core/results/commit-summary-H-598.txt",
+          "additions": 5,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/files-in-commit-H-598.txt",
+          "additions": 3,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12750508446.txt",
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/jsonlint-results-12750881874.txt",
+          "additions": 0,
+          "deletions": 0
+        },
+        {
+          "path": "core/test/correct-file.json",
+          "additions": 6,
+          "deletions": 0
+        },
+        {
+          "path": "core/test/correct-file.md",
+          "additions": 1,
+          "deletions": 1
+        },
+        {
+          "path": "core/test/correct-file.yaml",
+          "additions": 7,
+          "deletions": 0
+        }
+      ],
+      "fullDatabaseId": "2274251938",
+      "headRefName": "H598-bateria-de-pruebas-extensiones-permitidas",
+      "headRefOid": "97b0d0aaea98a71601b8a2b6831a39ba6ff9e06b",
+      "headRepository": {
+        "id": "R_kgDONP0GLw",
+        "name": "kaos"
+      },
+      "headRepositoryOwner": {
+        "id": "O_kgDOCyRQmA",
+        "login": "SantaKa0S"
+      },
+      "id": "PR_kwDONP0GL86HjlSi",
+      "isCrossRepository": false,
+      "isDraft": false,
+      "labels": [],
+      "latestReviews": [],
+      "maintainerCanModify": false,
+      "mergeCommit": {
+        "oid": "c46a9c0fcfbeffccc21659deaec53e1b82986791"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergeable": "UNKNOWN",
+      "mergedAt": "2025-01-13T15:56:49Z",
+      "mergedBy": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "milestone": null,
+      "number": 600,
+      "potentialMergeCommit": null,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "reviewDecision": "",
+      "reviewRequests": [],
+      "reviews": [],
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:53:18Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12750998377/job/35536999499",
+          "name": "job-core",
+          "startedAt": "2025-01-13T15:53:18Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:54:53Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12750998402/job/35537000615",
+          "name": "Analyze (actions)",
+          "startedAt": "2025-01-13T15:53:27Z",
+          "status": "COMPLETED",
+          "workflowName": "CodeQL"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:53:20Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12750998377/job/35537000582",
+          "name": "job-compliance",
+          "startedAt": "2025-01-13T15:53:20Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:53:20Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12750998377/job/35537001615",
+          "name": "job-security",
+          "startedAt": "2025-01-13T15:53:20Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:53:20Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12750998377/job/35537001112",
+          "name": "job-observability",
+          "startedAt": "2025-01-13T15:53:20Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:53:21Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12750998377/job/35537002147",
+          "name": "job-codescan",
+          "startedAt": "2025-01-13T15:53:21Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:53:22Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12750998377/job/35537002979",
+          "name": "job-flows",
+          "startedAt": "2025-01-13T15:53:22Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:53:23Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12750998377/job/35537004271",
+          "name": "handle_failure",
+          "startedAt": "2025-01-13T15:53:23Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:54:47Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/runs/35537087691",
+          "name": "CodeQL",
+          "startedAt": "2025-01-13T15:54:44Z",
+          "status": "COMPLETED",
+          "workflowName": ""
+        }
+      ],
+      "title": "H598 bateria de pruebas extensiones permitidas",
+      "updatedAt": "2025-01-13T15:56:53Z",
+      "url": "https://github.com/SantaKa0S/kaos/pull/600"
+    },
+    {
+      "additions": 247,
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "autoMergeRequest": null,
+      "baseRefName": "main",
+      "body": "Subida de la nueva version con los nuevos jobs y los mensajes detallados se apertura en la issue",
+      "changedFiles": 10,
+      "closed": true,
+      "closedAt": "2025-01-13T15:03:53Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86aN7xT",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S]  VERSION ha generado una nueva versión con el tag v0.6.1. Esta todo dispuesto para realizar *MERGE* del código.",
+          "createdAt": "2025-01-13T15:01:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/pull/597#issuecomment-2587343955",
+          "viewerDidAuthor": true
+        }
+      ],
+      "commits": [
+        {
+          "authoredDate": "2025-01-10T10:40:20Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T10:40:20Z",
+          "messageBody": "…s con formato .md",
+          "messageHeadline": "Añadimos la funcionalidad de detectar los ficheros que estan generado…",
+          "oid": "ab189d07c2903ab1327e467770305f209688113a"
+        },
+        {
+          "authoredDate": "2025-01-10T10:40:36Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-10T10:40:36Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "6201d26d5f720b68637f2322d8661e5527c39889"
+        },
+        {
+          "authoredDate": "2025-01-10T10:45:36Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T10:45:36Z",
+          "messageBody": "",
+          "messageHeadline": "Subimos el primer fichero de pruebas correctas con md",
+          "oid": "41305dbe24f1f23cc52a2f831dffe52c6dc4a9f4"
+        },
+        {
+          "authoredDate": "2025-01-10T10:45:52Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T10:45:52Z",
+          "messageBody": "…hub.com/SantaKa0S/kaos into H583-pruebas-de-funcionalidad-de-mdlint",
+          "messageHeadline": "Merge branch 'H583-pruebas-de-funcionalidad-de-mdlint' of https://git…",
+          "oid": "328ee230b8e77f496b5f13f03bbfd85c039656c4"
+        },
+        {
+          "authoredDate": "2025-01-10T10:46:27Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T10:46:27Z",
+          "messageBody": "",
+          "messageHeadline": "Subimos el primer fichero de pruebas correctas con md",
+          "oid": "df7cf982db7a79767cd7381437a6c6ae9dac95a0"
+        },
+        {
+          "authoredDate": "2025-01-10T10:46:47Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-10T10:46:47Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "5ddef1e8a3283f398c77515eead14fdfe0caaf05"
+        },
+        {
+          "authoredDate": "2025-01-10T10:54:07Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T10:54:07Z",
+          "messageBody": "",
+          "messageHeadline": "2 Subimos el primer fichero de pruebas correctas con md",
+          "oid": "a03e662a0150e681a4cc19c16d5a1c30745a3f06"
+        },
+        {
+          "authoredDate": "2025-01-10T10:54:23Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-10T10:54:23Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "12e475531a4e02435634ff4393c704381e9114f9"
+        },
+        {
+          "authoredDate": "2025-01-10T12:16:55Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T12:16:55Z",
+          "messageBody": "",
+          "messageHeadline": "Add: nueva version de las funcionalidad de Kaos init",
+          "oid": "96c855ff1364ad06393a7e34cc9731e2a2434fb0"
+        },
+        {
+          "authoredDate": "2025-01-10T12:19:14Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T12:19:14Z",
+          "messageBody": "…hub.com/SantaKa0S/kaos into H583-pruebas-de-funcionalidad-de-mdlint",
+          "messageHeadline": "Merge branch 'H583-pruebas-de-funcionalidad-de-mdlint' of https://git…",
+          "oid": "ebd62038333b1a6bcc1e93f61eadf49951eb2320"
+        },
+        {
+          "authoredDate": "2025-01-10T12:19:34Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-10T12:19:34Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "53d45205bb1320810d98f125ea5dd48480bda7da"
+        },
+        {
+          "authoredDate": "2025-01-10T12:26:31Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T12:26:31Z",
+          "messageBody": "",
+          "messageHeadline": "Hotfix corregimos el mensaje del error de la primera ejecucion",
+          "oid": "bdc6b056935039650ef6ba756a1d369e325c5612"
+        },
+        {
+          "authoredDate": "2025-01-10T12:26:48Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-10T12:26:48Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "2c74af9897b034b57ff4c0587c60a7d3ab7a1f8f"
+        },
+        {
+          "authoredDate": "2025-01-10T14:29:42Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T14:29:42Z",
+          "messageBody": "",
+          "messageHeadline": "Build nueva version con check de control",
+          "oid": "ade86b718f5e57ecaefb5d57e813ad6f9cd017d2"
+        },
+        {
+          "authoredDate": "2025-01-10T14:29:59Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-10T14:29:59Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "c8745cfa3cd4d622f0677b45222d654ee6cdc77c"
+        },
+        {
+          "authoredDate": "2025-01-10T14:43:01Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T14:43:01Z",
+          "messageBody": "",
+          "messageHeadline": "Build: comprobamos el funcionamiento del init",
+          "oid": "46adae8e882cdc8ad5c36cb852ff78a399603b37"
+        },
+        {
+          "authoredDate": "2025-01-10T14:44:21Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-10T14:44:21Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "520c57683118fd11e0463ac4f5fb2676f3e2965a"
+        },
+        {
+          "authoredDate": "2025-01-10T14:48:21Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T14:48:21Z",
+          "messageBody": "",
+          "messageHeadline": "Build: se nos olvido inicializar la variable a 0 si todo es ok",
+          "oid": "d167605bf4d67147baef6a9c433fc63fb0ba50a1"
+        },
+        {
+          "authoredDate": "2025-01-10T14:48:37Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-10T14:48:37Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "6ecabeaeeb4431b831a633c2c580684c0349c7ea"
+        },
+        {
+          "authoredDate": "2025-01-10T15:10:02Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-10T15:10:02Z",
+          "messageBody": "",
+          "messageHeadline": "Build: mejoramos el sistema de mensajes en las issues",
+          "oid": "3cadd4ece6d2f65e8645187eb1dd7f1b367ab6a6"
+        },
+        {
+          "authoredDate": "2025-01-13T08:15:15Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T08:15:15Z",
+          "messageBody": "",
+          "messageHeadline": "Build: mejoramos el sistema de mensajes en las issues",
+          "oid": "ac5385ccc78fc5ae18f3e20923d96454d9fd98e1"
+        },
+        {
+          "authoredDate": "2025-01-13T08:34:03Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T08:34:03Z",
+          "messageBody": "",
+          "messageHeadline": "Build: con la nueva estructura donde ya esta todo el codigo implementado",
+          "oid": "0186ed11a5050951f9a7a63532385e33ac47a1fa"
+        },
+        {
+          "authoredDate": "2025-01-13T08:39:49Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T08:39:49Z",
+          "messageBody": "",
+          "messageHeadline": "Hotfox corregimos una seccion incorrecta",
+          "oid": "c10b6d9bb57978c39c63b7ed10bc65619f3d6051"
+        },
+        {
+          "authoredDate": "2025-01-13T08:40:06Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T08:40:06Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "59d0e452ea36e93f9101ac26a61b666ddd11c0d3"
+        },
+        {
+          "authoredDate": "2025-01-13T08:58:52Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T08:58:52Z",
+          "messageBody": "",
+          "messageHeadline": "Build la versión ya esta lista para ser usada",
+          "oid": "49ab279aa815f3a4cd1853e74b7288a9520a7c96"
+        },
+        {
+          "authoredDate": "2025-01-13T08:59:09Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T08:59:09Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "50fee4ae673424bd3bb40c6e3c041bc3fd27122d"
+        },
+        {
+          "authoredDate": "2025-01-13T09:43:13Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T09:43:13Z",
+          "messageBody": "…vacio",
+          "messageHeadline": "Correcciones al ultimo build, detectamos que una varibale se pasa en …",
+          "oid": "fcdb16b32cbd3a833f0cbe194efc27e21554c394"
+        },
+        {
+          "authoredDate": "2025-01-13T09:43:29Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T09:43:29Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "f31e8ed98e4778e0a224e213730cabda06f61463"
+        },
+        {
+          "authoredDate": "2025-01-13T09:56:29Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T09:56:29Z",
+          "messageBody": "",
+          "messageHeadline": "Build recuperamos el valor de la variable",
+          "oid": "2f6663116132d82824d9293a1528c9029dc0d2f9"
+        },
+        {
+          "authoredDate": "2025-01-13T09:56:45Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T09:56:45Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "8aefea240e1db6e8c4bd3e6f7885cafa96a2e1e1"
+        },
+        {
+          "authoredDate": "2025-01-13T10:04:02Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T10:04:02Z",
+          "messageBody": "",
+          "messageHeadline": "Build dos versiones nuevas",
+          "oid": "c25006d77021b886040be5549ca48a9797bf236f"
+        },
+        {
+          "authoredDate": "2025-01-13T10:04:18Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T10:04:18Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "eafbb0706436635863213253ac73668b46b27773"
+        },
+        {
+          "authoredDate": "2025-01-13T10:07:47Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T10:07:47Z",
+          "messageBody": "",
+          "messageHeadline": "Inventigamos la desaparicion de los permisos de ejecucion",
+          "oid": "f338b2a266e9931a56b905102781fe4779fd19a0"
+        },
+        {
+          "authoredDate": "2025-01-13T10:08:06Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T10:08:06Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "fdbfc48c19cb72fb49580b0ac41b1e850064950b"
+        },
+        {
+          "authoredDate": "2025-01-13T10:39:11Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T10:39:11Z",
+          "messageBody": "…ctas y las que no",
+          "messageHeadline": "Build añadimos control en el mensaje de las partes que han sido corre…",
+          "oid": "93bd1e3fe6e76207d6dd447af5d4cf72c3766dde"
+        },
+        {
+          "authoredDate": "2025-01-13T10:39:27Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T10:39:27Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "471449263092a4140d1d3428ecb03f38bb050e3b"
+        },
+        {
+          "authoredDate": "2025-01-13T10:42:30Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T10:42:30Z",
+          "messageBody": "",
+          "messageHeadline": "Build construimos una version preliminar",
+          "oid": "f4c7c365abaf951323b9fceac4c921295aa76597"
+        },
+        {
+          "authoredDate": "2025-01-13T10:42:45Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T10:42:45Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "96968527f5491ace8999b30d612910cb0a8df740"
+        },
+        {
+          "authoredDate": "2025-01-13T10:48:35Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T10:48:35Z",
+          "messageBody": "… runner",
+          "messageHeadline": "Build version con check repo en cada paso para evitar dependencia del…",
+          "oid": "defec70e2432fe1668fb7e156c5b9c412baa0c9c"
+        },
+        {
+          "authoredDate": "2025-01-13T10:48:51Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T10:48:51Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "8c206f36564b017145fd9a3362bed7b1cec7f97e"
+        },
+        {
+          "authoredDate": "2025-01-13T11:03:32Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T11:03:32Z",
+          "messageBody": "",
+          "messageHeadline": "Investigamos el uso del numero de runners o global o personalizado",
+          "oid": "44db8f7e72f2f6baf8d412f021783f83651731b7"
+        },
+        {
+          "authoredDate": "2025-01-13T11:03:49Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T11:03:49Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "0f24ed4fb2b4ea66645215fcab2812f14f88da1d"
+        },
+        {
+          "authoredDate": "2025-01-13T11:15:04Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T11:15:04Z",
+          "messageBody": "",
+          "messageHeadline": "Investigamos el uso del numero de runners o global o personalizado",
+          "oid": "87b61c8632c9bd42b8588391c10f5746a596be7c"
+        },
+        {
+          "authoredDate": "2025-01-13T11:15:19Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T11:15:19Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "b6fe68fc2f0f88190f05a7c413bbd6609ccacbde"
+        },
+        {
+          "authoredDate": "2025-01-13T11:29:30Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T11:29:30Z",
+          "messageBody": "…lo de code scan",
+          "messageHeadline": "Build comprobamos la carga y traspaso de variables y detectado el fal…",
+          "oid": "67e3c86511c01d43eebd5db1eb1cdd9ce8706358"
+        },
+        {
+          "authoredDate": "2025-01-13T11:29:47Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T11:29:47Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "072d361e11f90a16dac0f282cd9caf9a10d37dde"
+        },
+        {
+          "authoredDate": "2025-01-13T11:43:04Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T11:43:04Z",
+          "messageBody": "…entro de la issue, para tener un seguimiento mas claro del proceso completo",
+          "messageHeadline": "Aprovechamos para añadir una nueva version de los mensajes añadidos d…",
+          "oid": "86854eea57873a3f3f76229ab56255d2ebb11d47"
+        },
+        {
+          "authoredDate": "2025-01-13T11:43:22Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T11:43:22Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "44908bde7101479a2dd167e0e7c89172fc1145be"
+        },
+        {
+          "authoredDate": "2025-01-13T11:49:51Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T11:49:51Z",
+          "messageBody": "",
+          "messageHeadline": "Hemos detectado un error en el calculo del numero de issue",
+          "oid": "c0f6bb7551935e94b16c5e68482d5d4822ae638d"
+        },
+        {
+          "authoredDate": "2025-01-13T11:51:20Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T11:51:20Z",
+          "messageBody": "",
+          "messageHeadline": "Error duplicamos variable y comenzamos pruebas",
+          "oid": "3bf5855999b29f5ad5db7a27979fb61356219722"
+        },
+        {
+          "authoredDate": "2025-01-13T11:51:40Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T11:51:40Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "ac79c13765ab02a919547b88223cc8d78ffc7125"
+        },
+        {
+          "authoredDate": "2025-01-13T11:55:00Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T11:55:00Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos una nueva version del contenido de la variable",
+          "oid": "6435468788b11b347a9318901993c75d5f9abb9d"
+        },
+        {
+          "authoredDate": "2025-01-13T11:55:17Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T11:55:17Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "f745a3b871b6eb1e71669530df627217a8413b87"
+        },
+        {
+          "authoredDate": "2025-01-13T12:00:47Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:00:47Z",
+          "messageBody": "",
+          "messageHeadline": "Damos por finalizada la correccion de mensajes en Kaos, vamos a por init",
+          "oid": "883911b84bcf19552cae011c6a916e96de2f5b01"
+        },
+        {
+          "authoredDate": "2025-01-13T12:04:24Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:04:24Z",
+          "messageBody": "…e se realizan",
+          "messageHeadline": "Modificamos los mensajes de seguimiento de las diferentes acciones qu…",
+          "oid": "28a921477dc2be016fb939ce5aadfc9457376933"
+        },
+        {
+          "authoredDate": "2025-01-13T12:12:21Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:12:21Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos como extra la lista de ficheros implicados en el commit",
+          "oid": "97cea030fc104347fd4089fc06d96e9803a48c3e"
+        },
+        {
+          "authoredDate": "2025-01-13T12:12:54Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:12:54Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos los mensajes a yamllint, vamos por jsonlint",
+          "oid": "6d7942707d4b02ea4bf3e3d4eb9bf6623224d464"
+        },
+        {
+          "authoredDate": "2025-01-13T12:21:01Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:21:01Z",
+          "messageBody": "",
+          "messageHeadline": "añadimos los comentarios al modulo jsonlint",
+          "oid": "9dfb9421ff7dd49bbe3044f23bf0f9d54b5a9e52"
+        },
+        {
+          "authoredDate": "2025-01-13T12:24:19Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:24:19Z",
+          "messageBody": "",
+          "messageHeadline": "añadimos los mensajes de estado correcto a md.lint",
+          "oid": "552b074d1b7f59437d1ece404f7d6d4441672570"
+        },
+        {
+          "authoredDate": "2025-01-13T12:24:39Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T12:24:39Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "6b9accc238fe5f81a9b89bbb686b59e85e71cbd0"
+        },
+        {
+          "authoredDate": "2025-01-13T12:31:35Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:31:35Z",
+          "messageBody": "",
+          "messageHeadline": "Ampliamos la informacion de init",
+          "oid": "1a0413b46af97cbed83607a917949bdcdca4bb2e"
+        },
+        {
+          "authoredDate": "2025-01-13T12:35:36Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:35:36Z",
+          "messageBody": "",
+          "messageHeadline": "Mejoramos el control de los mensajes desde kaos",
+          "oid": "68cba4b7455d89e54c128444091a066ad3b2e26b"
+        },
+        {
+          "authoredDate": "2025-01-13T12:36:33Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:36:33Z",
+          "messageBody": "",
+          "messageHeadline": "Mejora en los mensajes",
+          "oid": "634503edd63259b64d6151bc989aebe5f445c238"
+        },
+        {
+          "authoredDate": "2025-01-13T12:40:44Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:40:44Z",
+          "messageBody": "",
+          "messageHeadline": "mejoramos los mensajes de check y resultado",
+          "oid": "0d8547e604fa81c9a18f5379126cc5c76bafd66e"
+        },
+        {
+          "authoredDate": "2025-01-13T12:41:51Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:41:51Z",
+          "messageBody": "",
+          "messageHeadline": "Mejoramos los comentarios",
+          "oid": "e3322a118148e6ac0b5517fa09a4ff7ef45892c7"
+        },
+        {
+          "authoredDate": "2025-01-13T12:43:09Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T12:43:09Z",
+          "messageBody": "",
+          "messageHeadline": "Mejoramos los mensajes de respuesta a la issue",
+          "oid": "91ab98717bb38f126930ce1813b4dc5eae8b4d68"
+        },
+        {
+          "authoredDate": "2025-01-13T12:43:57Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T12:43:57Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "aa03dea00928811d228b57a2353ed4be30a9b19f"
+        },
+        {
+          "authoredDate": "2025-01-13T14:28:34Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T14:28:34Z",
+          "messageBody": "…ciona OK graba los compliance",
+          "messageHeadline": "Añadimos la perte de resumen de terminar el actions Kaos, si todo fun…",
+          "oid": "d7d1ed1f2305ea2f16a64b876db58b749e09853b"
+        },
+        {
+          "authoredDate": "2025-01-13T14:31:24Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T14:31:24Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos correcciones al sistema nuevo de mensajes",
+          "oid": "f02e293fb62980b19a852a7a706b0160c7a34b58"
+        },
+        {
+          "authoredDate": "2025-01-13T14:40:58Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T14:40:58Z",
+          "messageBody": "",
+          "messageHeadline": "Build nueva version del init",
+          "oid": "eda1b60d1b828fcff42bdf07b026977343e3721d"
+        },
+        {
+          "authoredDate": "2025-01-13T14:41:17Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T14:41:17Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "a874be6007e880aee86e6b6de1141c0c97dc38b0"
+        },
+        {
+          "authoredDate": "2025-01-13T14:47:45Z",
+          "authors": [
+            {
+              "email": "santale@3p.mapfre.com",
+              "id": "",
+              "login": "",
+              "name": "SANTALE_mapfre"
+            }
+          ],
+          "committedDate": "2025-01-13T14:47:45Z",
+          "messageBody": "",
+          "messageHeadline": "Finalñizamos el update de los mensajes de esta primera version",
+          "oid": "55867ad8dd9d899d26b553b59dfed348745ee6e1"
+        },
+        {
+          "authoredDate": "2025-01-13T14:48:02Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T14:48:02Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "31dc62b776df8732f1df4504db02695642781720"
+        },
+        {
+          "authoredDate": "2025-01-13T15:01:19Z",
+          "authors": [
+            {
+              "email": "73332898+santakloud@users.noreply.github.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "SantaKloud"
+            }
+          ],
+          "committedDate": "2025-01-13T15:01:19Z",
+          "messageBody": "…c401e69f6a4549361932e7e",
+          "messageHeadline": "Merge 31dc62b776df8732f1df4504db02695642781720 into e533e32f677643940…",
+          "oid": "27aecf55202a07eb3b886ade6590b8d0bd0a0e05"
+        },
+        {
+          "authoredDate": "2025-01-13T15:01:32Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-13T15:01:32Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S]  VERSION  Upload: CHANGELOG.md, INDEX.md with version 0.6.1",
+          "oid": "bbb7592450df20a65d482534e548801097418a12"
+        }
+      ],
+      "createdAt": "2025-01-13T15:01:17Z",
+      "deletions": 73,
+      "files": [
+        {
+          "path": ".github/workflows/init.yaml",
+          "additions": 58,
+          "deletions": 42
+        },
+        {
+          "path": ".github/workflows/jsonlint.yaml",
+          "additions": 3,
+          "deletions": 3
+        },
+        {
+          "path": ".github/workflows/ka0s.yaml",
+          "additions": 148,
+          "deletions": 23
+        },
+        {
+          "path": ".github/workflows/mdlint.yaml",
+          "additions": 3,
+          "deletions": 3
+        },
+        {
+          "path": ".github/workflows/yamllint.yaml",
+          "additions": 2,
+          "deletions": 2
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 16,
+          "deletions": 0
+        },
+        {
+          "path": "INDEX.md",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/commit-summary-H-583.txt",
+          "additions": 5,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/files-in-commit-H-583.txt",
+          "additions": 4,
+          "deletions": 0
+        },
+        {
+          "path": "core/test/correct-file.md",
+          "additions": 7,
+          "deletions": 0
+        }
+      ],
+      "fullDatabaseId": "2274094467",
+      "headRefName": "H583-pruebas-de-funcionalidad-de-mdlint",
+      "headRefOid": "bbb7592450df20a65d482534e548801097418a12",
+      "headRepository": {
+        "id": "R_kgDONP0GLw",
+        "name": "kaos"
+      },
+      "headRepositoryOwner": {
+        "id": "O_kgDOCyRQmA",
+        "login": "SantaKa0S"
+      },
+      "id": "PR_kwDONP0GL86Hi-2D",
+      "isCrossRepository": false,
+      "isDraft": false,
+      "labels": [],
+      "latestReviews": [],
+      "maintainerCanModify": false,
+      "mergeCommit": {
+        "oid": "a85e85e80078d4ff8aa455a8f36087601e388f05"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergeable": "UNKNOWN",
+      "mergedAt": "2025-01-13T15:03:53Z",
+      "mergedBy": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "milestone": null,
+      "number": 597,
+      "potentialMergeCommit": null,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "reviewDecision": "",
+      "reviewRequests": [],
+      "reviews": [],
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:01:36Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12749970698/job/35533656887",
+          "name": "job-core",
+          "startedAt": "2025-01-13T15:01:36Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:03:09Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12749970648/job/35533658154",
+          "name": "Analyze (actions)",
+          "startedAt": "2025-01-13T15:01:44Z",
+          "status": "COMPLETED",
+          "workflowName": "CodeQL"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:01:38Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12749970698/job/35533659338",
+          "name": "job-compliance",
+          "startedAt": "2025-01-13T15:01:38Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:01:37Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12749970698/job/35533658076",
+          "name": "job-security",
+          "startedAt": "2025-01-13T15:01:37Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:01:38Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12749970698/job/35533658771",
+          "name": "job-observability",
+          "startedAt": "2025-01-13T15:01:38Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:01:39Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12749970698/job/35533659903",
+          "name": "job-codescan",
+          "startedAt": "2025-01-13T15:01:39Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:01:40Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12749970698/job/35533660752",
+          "name": "job-flows",
+          "startedAt": "2025-01-13T15:01:40Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:01:41Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12749970698/job/35533662066",
+          "name": "handle_failure",
+          "startedAt": "2025-01-13T15:01:41Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:01:41Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12749970698/job/35533662606",
+          "name": "handle_success",
+          "startedAt": "2025-01-13T15:01:41Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-13T15:03:04Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/runs/35533751922",
+          "name": "CodeQL",
+          "startedAt": "2025-01-13T15:03:01Z",
+          "status": "COMPLETED",
+          "workflowName": ""
+        }
+      ],
+      "title": "H583 pruebas de funcionalidad de mdlint",
+      "updatedAt": "2025-01-13T15:03:53Z",
+      "url": "https://github.com/SantaKa0S/kaos/pull/597"
+    },
+    {
       "additions": 280,
       "assignees": [],
       "author": {
@@ -7583,375 +9459,6 @@
       "title": "H añadimos la nueva moitorizacion de cada modulo",
       "updatedAt": "2024-12-10T14:24:01Z",
       "url": "https://github.com/SantaKa0S/kaos/pull/505"
-    },
-    {
-      "additions": 24,
-      "assignees": [],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "autoMergeRequest": null,
-      "baseRefName": "main",
-      "body": "",
-      "changedFiles": 5,
-      "closed": true,
-      "closedAt": "2024-12-10T13:56:57Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86W5q28",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "[Ka0S]  VERSION ha generado una nueva versión con el tag v0.0.10. Esto todo dispuesto para realizar FUSIONAR el código.",
-          "createdAt": "2024-12-10T13:52:30Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/pull/502#issuecomment-2531700156",
-          "viewerDidAuthor": true
-        }
-      ],
-      "commits": [
-        {
-          "authoredDate": "2024-12-10T13:50:03Z",
-          "authors": [
-            {
-              "email": "santacana.canton@icloud.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "santakloud"
-            }
-          ],
-          "committedDate": "2024-12-10T13:50:03Z",
-          "messageBody": "",
-          "messageHeadline": "Eliminamos la llamada a splunk",
-          "oid": "9c4608c051c44913bd05024c8cf0618b204a70f8"
-        },
-        {
-          "authoredDate": "2024-12-10T13:50:20Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2024-12-10T13:50:20Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
-          "oid": "b1cfc8cbe63cfe200748a632bea75584964e2ad5"
-        },
-        {
-          "authoredDate": "2024-12-10T13:52:05Z",
-          "authors": [
-            {
-              "email": "73332898+santakloud@users.noreply.github.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "SantaKloud"
-            }
-          ],
-          "committedDate": "2024-12-10T13:52:05Z",
-          "messageBody": "…27ad088a2bd33a836f54086",
-          "messageHeadline": "Merge b1cfc8cbe63cfe200748a632bea75584964e2ad5 into 23a8ac9d2546a5a86…",
-          "oid": "6b33185f77ce34a100d499ea2a56daab1afeba81"
-        },
-        {
-          "authoredDate": "2024-12-10T13:52:18Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2024-12-10T13:52:18Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S]  VERSION  Upload: CHANGELOG.md, INDEX.md with version 0.0.10",
-          "oid": "6f4cbfb41921a8aa475e23277a0661af3ce46567"
-        }
-      ],
-      "createdAt": "2024-12-10T13:52:03Z",
-      "deletions": 6,
-      "files": [
-        {
-          "path": ".github/workflows/summary.yaml",
-          "additions": 6,
-          "deletions": 6
-        },
-        {
-          "path": "CHANGELOG.md",
-          "additions": 11,
-          "deletions": 0
-        },
-        {
-          "path": "INDEX.md",
-          "additions": 1,
-          "deletions": 0
-        },
-        {
-          "path": "core/results/commit-summary-H-501.txt",
-          "additions": 5,
-          "deletions": 0
-        },
-        {
-          "path": "core/results/files-in-commit-H-501.txt",
-          "additions": 1,
-          "deletions": 0
-        }
-      ],
-      "fullDatabaseId": "2226498353",
-      "headRefName": "H501-retiramos-la-llamada-a-splunk-al-generar-summary",
-      "headRefOid": "6f4cbfb41921a8aa475e23277a0661af3ce46567",
-      "headRepository": {
-        "id": "R_kgDONP0GLw",
-        "name": "kaos"
-      },
-      "headRepositoryOwner": {
-        "id": "O_kgDOCyRQmA",
-        "login": "SantaKa0S"
-      },
-      "id": "PR_kwDONP0GL86Etasx",
-      "isCrossRepository": false,
-      "isDraft": false,
-      "labels": [],
-      "latestReviews": [],
-      "maintainerCanModify": false,
-      "mergeCommit": {
-        "oid": "7f36dbfc1b24084ff42a2d13f95601d5fe0475c5"
-      },
-      "mergeStateStatus": "UNKNOWN",
-      "mergeable": "UNKNOWN",
-      "mergedAt": "2024-12-10T13:56:57Z",
-      "mergedBy": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "milestone": null,
-      "number": 502,
-      "potentialMergeCommit": null,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "reviewDecision": "",
-      "reviewRequests": [],
-      "reviews": [],
-      "state": "MERGED",
-      "statusCheckRollup": [],
-      "title": "H501 retiramos la llamada a splunk al generar summary",
-      "updatedAt": "2024-12-10T13:57:00Z",
-      "url": "https://github.com/SantaKa0S/kaos/pull/502"
-    },
-    {
-      "additions": 29,
-      "assignees": [],
-      "author": {
-        "id": "U_kgDOCG7Q6w",
-        "is_bot": false,
-        "login": "Yolabn",
-        "name": "yolabn"
-      },
-      "autoMergeRequest": null,
-      "baseRefName": "main",
-      "body": "Adding deploymentclient.conf",
-      "changedFiles": 3,
-      "closed": true,
-      "closedAt": "2024-12-10T13:40:18Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86W5jCA",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "[Ka0S]  VERSION ha generado una nueva versión con el tag v0.0.9. Esto todo dispuesto para realizar FUSIONAR el código.",
-          "createdAt": "2024-12-10T13:40:17Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/pull/500#issuecomment-2531668096",
-          "viewerDidAuthor": true
-        }
-      ],
-      "commits": [
-        {
-          "authoredDate": "2024-12-10T13:30:35Z",
-          "authors": [
-            {
-              "email": "yolanda.becerro.navarrete@kyndryl.com",
-              "id": "U_kgDOCVb6KQ",
-              "login": "ybecerr",
-              "name": "ybecerr"
-            }
-          ],
-          "committedDate": "2024-12-10T13:30:35Z",
-          "messageBody": "",
-          "messageHeadline": "Adding deploymentclient.conf",
-          "oid": "d84aeca37560018b51bf819e8e12a633a9b88a8e"
-        },
-        {
-          "authoredDate": "2024-12-10T13:32:12Z",
-          "authors": [
-            {
-              "email": "yolanda.becerro.navarrete@kyndryl.com",
-              "id": "U_kgDOCVb6KQ",
-              "login": "ybecerr",
-              "name": "ybecerr"
-            }
-          ],
-          "committedDate": "2024-12-10T13:32:12Z",
-          "messageBody": "",
-          "messageHeadline": "Adding deploymentclient.conf",
-          "oid": "e19e4e3561ad9b502ac8337f933425c1e5cd670a"
-        },
-        {
-          "authoredDate": "2024-12-10T13:36:11Z",
-          "authors": [
-            {
-              "email": "yolanda.becerro.navarrete@kyndryl.com",
-              "id": "U_kgDOCVb6KQ",
-              "login": "ybecerr",
-              "name": "ybecerr"
-            }
-          ],
-          "committedDate": "2024-12-10T13:36:11Z",
-          "messageBody": "",
-          "messageHeadline": "Adding deploymentclient.conf",
-          "oid": "29ab2e433f21a6cf1acbda023855f067e82fc658"
-        },
-        {
-          "authoredDate": "2024-12-10T13:37:17Z",
-          "authors": [
-            {
-              "email": "73332898+santakloud@users.noreply.github.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "SantaKloud"
-            }
-          ],
-          "committedDate": "2024-12-10T13:37:17Z",
-          "messageBody": "…a6ed2e8ec4c17fca78f27e7",
-          "messageHeadline": "Merge 29ab2e433f21a6cf1acbda023855f067e82fc658 into 2711bfd4c7cfc71e6…",
-          "oid": "3b428789b89ad292069a2db581f8b720709de8c2"
-        },
-        {
-          "authoredDate": "2024-12-10T13:37:30Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2024-12-10T13:37:30Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S]  VERSION  Upload: CHANGELOG.md, INDEX.md with version 0.0.8",
-          "oid": "049c9f3473c2ada48ca83233c7cf371971f72551"
-        },
-        {
-          "authoredDate": "2024-12-10T13:39:51Z",
-          "authors": [
-            {
-              "email": "141480171+Yolabn@users.noreply.github.com",
-              "id": "U_kgDOCG7Q6w",
-              "login": "Yolabn",
-              "name": "yolabn"
-            }
-          ],
-          "committedDate": "2024-12-10T13:39:51Z",
-          "messageBody": "…a6ed2e8ec4c17fca78f27e7",
-          "messageHeadline": "Merge 049c9f3473c2ada48ca83233c7cf371971f72551 into 2711bfd4c7cfc71e6…",
-          "oid": "afe4e9993e780ec1ff8bf6fbd7a0a0ec09ca7c20"
-        },
-        {
-          "authoredDate": "2024-12-10T13:40:04Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2024-12-10T13:40:04Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S]  VERSION  Upload: CHANGELOG.md, INDEX.md with version 0.0.9",
-          "oid": "40d7880e572b9bb62c03c127541ec079d632afbc"
-        }
-      ],
-      "createdAt": "2024-12-10T13:39:48Z",
-      "deletions": 0,
-      "files": [
-        {
-          "path": "CHANGELOG.md",
-          "additions": 20,
-          "deletions": 0
-        },
-        {
-          "path": "INDEX.md",
-          "additions": 2,
-          "deletions": 0
-        },
-        {
-          "path": "observability/splunk/config/deploymentclient.conf",
-          "additions": 7,
-          "deletions": 0
-        }
-      ],
-      "fullDatabaseId": "2226470386",
-      "headRefName": "H498-adding-deploymentclientconf",
-      "headRefOid": "40d7880e572b9bb62c03c127541ec079d632afbc",
-      "headRepository": {
-        "id": "R_kgDONP0GLw",
-        "name": "kaos"
-      },
-      "headRepositoryOwner": {
-        "id": "O_kgDOCyRQmA",
-        "login": "SantaKa0S"
-      },
-      "id": "PR_kwDONP0GL86EtT3y",
-      "isCrossRepository": false,
-      "isDraft": false,
-      "labels": [],
-      "latestReviews": [],
-      "maintainerCanModify": false,
-      "mergeCommit": {
-        "oid": "23a8ac9d2546a5a8627ad088a2bd33a836f54086"
-      },
-      "mergeStateStatus": "UNKNOWN",
-      "mergeable": "UNKNOWN",
-      "mergedAt": "2024-12-10T13:40:18Z",
-      "mergedBy": {
-        "id": "U_kgDOCG7Q6w",
-        "is_bot": false,
-        "login": "Yolabn",
-        "name": "yolabn"
-      },
-      "milestone": null,
-      "number": 500,
-      "potentialMergeCommit": null,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "reviewDecision": "",
-      "reviewRequests": [],
-      "reviews": [],
-      "state": "MERGED",
-      "statusCheckRollup": [],
-      "title": "H498 adding deploymentclientconf",
-      "updatedAt": "2024-12-10T13:40:22Z",
-      "url": "https://github.com/SantaKa0S/kaos/pull/500"
     }
   ]
 ]
