@@ -16,4 +16,5 @@
 
 ```shell
     en medio escribimos codigo
+    #/bin/bash 
 ```
