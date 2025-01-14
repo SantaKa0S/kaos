@@ -12,10 +12,11 @@
 - segunda cita 
 
 
-
 - tercera cita 
 
 **Resaltado** y ahora con cursiva *queda asi*
+
+
 
 ```shell 
     en medio escribimos codigo
