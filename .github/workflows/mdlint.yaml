@@ -56,9 +56,8 @@ jobs:
         run: |
             # Realizamos el check del documento md 
                 # Run markdownlint with the specified files and ignore rules
-                markdownlint-cli2 ${{ github.event.inputs.kaos-files }} --config ${{ env.KAOS_MD_CONFIG }} > ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt || true
+                markdownlint-cli2 ${{ github.event.inputs.kaos-files }} --config ${{ env.KAOS_MD_CONFIG }} > ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt 2>&1 || true
                 # Check if exist errors in file
-                cat ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt
                 # Abre el fichero en modo lectura y lee todas las líneas
                 lines=$(cat ${{ env.PATH_RESUME }}mdlint-results-${{ github.run_id }}.txt)
                 # Inicializa la variable summary_value
