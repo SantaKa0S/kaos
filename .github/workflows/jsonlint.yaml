@@ -43,9 +43,9 @@ jobs:
           token: ${{ secrets.KAOS_TOKEN }}
     
       - id: install-node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: '14'
 
       - id: install-jsonlint
         run: |
@@ -59,7 +59,7 @@ jobs:
             # Generamos el fichero de resultados vacio
             touch ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             # Realizamos el check del documento json 
-            jsonlint ${{ github.event.inputs.kaos-files }} > ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt 2>&1 || true
+            jsonlint ${{ github.event.inputs.kaos-files }} > ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             # Check if exist errors in file
             if [ ! -s ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt ]; then
               echo "File ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt is empty and is content correct"
