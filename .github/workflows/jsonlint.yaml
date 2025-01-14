@@ -50,9 +50,9 @@ jobs:
       - id: check-json
         run: |
             # Invocamos la primera comprobación de base, sino se supera el proceso no continua
-            git config --global user.name '${{ env.USER_NAME }}'
-            git config --global user.email '${{ env.USER_EMAIL}}'
-            git pull
+            # git config --global user.name '${{ env.USER_NAME }}'
+            # git config --global user.email '${{ env.USER_EMAIL}}'
+            # git pull
             # Extraemos el nombre del fichero
             file_name=$(basename "${{ github.event.inputs.kaos-files }}")
             # Generamos el fichero de resultados vacio
@@ -85,9 +85,9 @@ jobs:
                 
             main()
             EOF
-            git add ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
-            git commit -m "Generated file ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt"
-            git push
+            # git add ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
+            # git commit -m "Generated file ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt"
+            # git push
             # Check if exist errors in file
             if [ ! -s ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt ]; then
               echo "File ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt is empty and is content correct"
