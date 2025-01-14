@@ -92,9 +92,10 @@ jobs:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
           echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
-          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Module ${{ github.workflow }} failed in ${{ github.run_id }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
           An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          Initiated by #${{ github.event.inputs.kaos-issue-id }}
           **${{ env.KAOS_MODULE }}  Message:**
           El error ha sido en : ${{  github.run_id }}
           ejecute este comando en su consola y podrá consultar el fallo del trabajo
@@ -115,8 +116,6 @@ jobs:
           )
           # Creamos la issue dado que ha fallado el modulo principal
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"
-          # Buscamos el numero de la issue en funcion del titulo de la misma 
-          ISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
           # Añadimos el comentario a la issue que dispara el proceso
-          KAOS_ISSUE_BODY="Se ha generado la issue (#$ISSUE_NUMBRE) con el error detectado en el proceso ${{ env.KAOS_MODULE }} en el run ${{ github.run_id }}"
+          KAOS_ISSUE_BODY="Se ha generado la issue con el título ($KAOS_ISSUE_TITLE) en el proceso ${{ env.KAOS_MODULE }} y se ha añadido a la issue que ha disparado el proceso ${{ github.event.inputs.kaos-issue-id }}"
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
