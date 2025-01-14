@@ -50,7 +50,6 @@ jobs:
       - id: install-jsonlint
         run: |
           npm install -g jsonlint
-        continue-on-error: true
   
       - id: check-json
         run: |
