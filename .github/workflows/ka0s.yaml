@@ -23,29 +23,26 @@ env:
   BRANCH_NAME: ${{ github.ref }}
   USER_NAME: ${{ github.actor.name}}
   USER_EMAIL: ${{ github.actor.email }}
-  PATH_RESUME: "core/results/"
+  KAOS_PATH_RESUME: "core/results/"
   KAOS_REPO: "/actions-runner/_work/kaos/kaos"
+  KAOS_STEP_MODULE: ""
+  KAOS_CODE: ""
 
 jobs:
   
   job-core:
     if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }} 
+    runs-on: 
+      group: kaos
     outputs:
       KAOS_BRANCH: ${{ steps.core.outputs.RNBRANCH }}
       KAOS_NUMBER: ${{ steps.core.outputs.RNNUMBER }}
       KAOS_INVOLVED: ${{ steps.files.outputs.INVOLVED }}
       KAOS_CORE_STATUS: ${{ steps.files.outputs.KAOS_STATUS }}
-    runs-on: 
-      group: kaos
-    permissions:
-      contents: write
-      actions: write
-      issues: write
-      pull-requests: write
-    env:
-      KAOS_PATH_RESUME: "core/results/"
-      KAOS_STEP_MODULE: ""
-      KAOS_CODE: ""
+      KAOS_FILES: ${{ steps.core.outputs.CHANGED_FILES }}
+      AUTHOR_NAME: ${{ steps.core.outputs.AUTHOR_NAME }}
+      AUTHOR_EMAIL: ${{ steps.core.outputs.AUTHOR_EMAIL }}
+      COMMIT_MESSAGE: ${{ steps.core.outputs.COMMIT_MESSAGE }}
     steps:
       - id: repo
         if: ${{ always() }}
@@ -84,10 +81,10 @@ jobs:
           echo "KAOS_CODE=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')" >> $GITHUB_ENV
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
           echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT   
-          echo "Commit SHA is ${{ github.sha }}"
-          echo "Repo origin is ${{ github.repository }}"
-          echo "Launch by ${{ github.actor }}"
-          BRANCH_NAME=${{ github.event.base_ref }}
+          echo "AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
+          echo "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
+          echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
+          echo "CHANGED_FILES=$(git diff --name-only HEAD~1 | tr '\n' ' ')" >> $GITHUB_OUTPUT
 
       - id: files
         env:
@@ -306,15 +303,11 @@ jobs:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
           echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
-          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Module Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ github.run_id }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
-          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          An error occurred in the execution Action workflow RunID: **${{ github.run_id }}**.
+          Initiated by #${{ needs.job-core.outputs.AUTHOR_NAME}} from issue number #${{ needs.job-core.outputs.KAOS_NUMBER }}
           **${{ env.KAOS_MODULE }}  Message:**
-          Compliance: ${{ needs.job-compliance.outputs.KAOS_COMPLIANCE_STATUS }}
-          Security: ${{ needs.job-security.outputs.KAOS_SECURITY_STATUS }}
-          Observability: ${{ needs.job-observability.outputs.KAOS_OBSERVABILITY_STATUS }}
-          CodeScan: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS }}
-          Flow: ${{ needs.job-flows.outputs.KAOS_FLOWS_STATUS }}
           El error ha sido en : ${{  github.run_id }}
           ejecute este comando en su consola y podrá consultar el fallo del trabajo
           gh run view ${{  github.run_id }} --log-failed
@@ -331,4 +324,8 @@ jobs:
           Please investigate the issue.
           EOF
           )
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-workflow-id=${{  github.run_id }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
+          # Creamos la issue dado que ha fallado el modulo principal
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"
+          # Añadimos el comentario a la issue que dispara el proceso
+          KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }})  lanzado desde (#${{ needs.job-core.outputs.KAOS_NUMBER }}) en la ejecución (${{ github.run_id }}) y esto ha generado una issue con el titulo ($KAOS_ISSUE_TITLE)"
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }}
