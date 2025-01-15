@@ -78,7 +78,7 @@ jobs:
             case ${{ github.event.inputs.kaos-issue-actions }} in
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
-                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.event.inputs.kaos-user-start }}" -p "@Kaos"
+                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.event.inputs.kaos-user-start }}" -p "@Core-Kaos-Project"
                     gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ github.event.inputs.kaos-workflow-id }}.log"
                     ;;
                 comment)
