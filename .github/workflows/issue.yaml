@@ -74,7 +74,7 @@ jobs:
       - id: work-issues
         run: |
             # Lo primero comprobar la acción que queremos realizar
-            echo "El usuario cumplable es: ${{ github.event.inputs.kaos-user-start }}"
+            echo "El usuario culpable es: ${{ github.event.inputs.kaos-user-start }}"
             case ${{ github.event.inputs.kaos-issue-actions }} in
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
