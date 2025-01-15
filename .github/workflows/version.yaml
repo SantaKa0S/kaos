@@ -82,7 +82,7 @@ jobs:
       env:
         VERSION: ${{ steps.version.outputs.VERSION }}
         CHANGE_FILES: ${{ steps.changed_files.outputs.CHANGED_FILES }}
-        NAME:  ${{ steps.commit_details.outputs.AUTHOR_NAME }}
+        NAME: ${{ steps.commit_details.outputs.AUTHOR_NAME }}
         EMAIL: ${{ steps.commit_details.outputs.AUTHOR_EMAIL }}
         MESSAGE: ${{ steps.commit_details.outputs.COMMIT_MESSAGE }}
       run: |
