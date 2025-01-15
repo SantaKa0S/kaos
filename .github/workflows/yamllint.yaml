@@ -119,7 +119,7 @@ jobs:
           EOF
           )
           # Creamos la issue dado que ha fallado el modulo principal
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
           # Buscamos el numero de la issue en funcion del titulo de la misma 
           ISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
           # Añadimos el comentario a la issue que dispara el proceso

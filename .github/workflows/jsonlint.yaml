@@ -119,7 +119,7 @@ jobs:
           EOF
           )
           # Creamos la issue dado que ha fallado el modulo principal
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
           # Añadimos el comentario a la issue que dispara el proceso
           KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }})  lanzado desde (#${{ github.event.inputs.kaos-issue-id }}) en la ejecución (${{ github.run_id }}) y esto ha generado una issue con el titulo ($KAOS_ISSUE_TITLE)"
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
