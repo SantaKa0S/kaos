@@ -37,6 +37,10 @@ on:
         description: 'Workflow ID'
         default: ""
         required: false
+      kaos-user-start:
+        description: 'User initiated process'
+        default: ""
+        required: true
   
 permissions:
   contents: write
@@ -45,15 +49,17 @@ permissions:
   pull-requests: write
 
 env:
-  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   KAOS_MODULE: "[Ka0S] ISSUE"
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+
 jobs:
   kaos-issue-process:
     runs-on: 
       group: kaos-issue
-
+    outputs:
+      KAOS_WORFLOW_LOG: ${{ steps.resume-log.outputs.KAOS_WORFLOW_LOG }}
     steps:
-      - id: repo # Checkout the repository to get the information of the commit
+      - id: repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -61,7 +67,6 @@ jobs:
 
       - id: resume-log
         run: |
-          # Extraemos el error
           # Extraemos el error
           # gh run view ${{ github.event.inputs.kaos-workflow-id }} --log-failed > ${{ github.event.inputs.kaos-workflow-id }}.log
           # echo "KAOS_WORFLOW_LOG=$(cat ${{ github.event.inputs.kaos-workflow-id }}.log)" >> $GITHUB_OUTPUT
@@ -72,8 +77,8 @@ jobs:
             case ${{ github.event.inputs.kaos-issue-actions }} in
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
-                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.actor }}"
-                    # gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ github.event.inputs.kaos-workflow-id }}.log"
+                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.event.inputs.kaos-user-start }}" -p "@Kaos"
+                    gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ github.event.inputs.kaos-workflow-id }}.log"
                     ;;
                 comment)
                     # Añadimos comentarios a una issue en concreto o ficheros
@@ -117,9 +122,10 @@ jobs:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
           echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
-          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ github.run_id }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
-          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          Ha ocurrido un error en la ejecución del flujo de trabajo de la acción RunID: **${{ github.run_id }}**.
+          Esta ha sido soliictada por la acción ${{ github.event.inputs.kaos-workflow-id }} desde el issue #${{ github.event.inputs.kaos-issue-id }} creado por ${{ github.event.inputs.kaos-user-start }}
           **${{ env.KAOS_MODULE }}  Message:**
           El error ha sido en : ${{  github.run_id }}
           ejecute este comando en su consola y podrá consultar el fallo del trabajo
