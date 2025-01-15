@@ -43,6 +43,7 @@ jobs:
 
     - id: commit_details
       run: |
+        echo "GH_VERSION=$(gh api repos/:owner/:repo/git/matching-refs/tags --jq '.[-1].ref' | sed 's|refs/tags/||')" >> $GITHUB_ENV
         echo "AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
         echo "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
         echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
@@ -55,7 +56,7 @@ jobs:
 
     - id: version
       run: |
-        if [ ! -f ${{ env.GH_VERSION }} ]; then echo "0.0.0" > version.txt; fi
+        if [ ! -f ${{ env.GH_VERSION }} ]; then echo "${{ env.GH_VERSION }}" > version.txt; fi
         VERSION=${{ env.GH_VERSION }}
         IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
         if [[ "${{ steps.commit_details.outputs.RNBRANCH }}" =~ (H) ]]; then
