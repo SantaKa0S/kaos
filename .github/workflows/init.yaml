@@ -11,6 +11,10 @@ on:
         description: 'Involved Files to process'
         default: ""
         required: true
+      kaos-user-start:
+        description: 'User initiated process'
+        default: ""
+        required: true
 
 permissions:
   contents: write
