@@ -16,7 +16,6 @@ permissions:
   actions: write
   issues: write
   pull-requests: write
-
 env:
   KAOS_MODULE: "[Ka0S]"
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
@@ -112,10 +111,7 @@ jobs:
   job-compliance:
     runs-on: 
       group: kaos
-    needs: job-core
-    env:
-      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
-      
+    needs: job-core  
     outputs:
       KAOS_COMPLIANCE_STATUS: ${{ steps.check-compliance.outputs.KAOS_COMPLIANCE_STATUS }}
     steps:
@@ -137,13 +133,6 @@ jobs:
     runs-on: 
       group: kaos
     needs: job-core
-    env:
-      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
-      BRANCH_NAME: ${{ github.ref }}
-      USER_NAME: ${{ github.actor.name}}
-      USER_EMAIL: ${{ github.actor.email }}
-      PATH_RESUME: "core/results/"
-      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
     outputs:
       KAOS_SECURITY_STATUS: ${{ steps.check-security.outputs.KAOS_SECURITY_STATUS }}
     steps:
@@ -165,13 +154,6 @@ jobs:
     runs-on: 
       group: kaos
     needs: job-core
-    env:
-      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
-      BRANCH_NAME: ${{ github.ref }}
-      USER_NAME: ${{ github.actor.name}}
-      USER_EMAIL: ${{ github.actor.email }}
-      PATH_RESUME: "core/results/"
-      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
     outputs:
       KAOS_OBSERVABILITY_STATUS: ${{ steps.check-observability.outputs.KAOS_OBSERVABILITY_STATUS }}
     steps:
@@ -193,13 +175,6 @@ jobs:
     runs-on: 
       group: kaos-codescan
     needs: [job-core, job-compliance, job-security, job-observability]
-    env:
-      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
-      BRANCH_NAME: ${{ github.ref }}
-      USER_NAME: ${{ github.actor.name}}
-      USER_EMAIL: ${{ github.actor.email }}
-      PATH_RESUME: "core/results/"
-      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
     outputs:
       KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
     steps:
@@ -235,17 +210,6 @@ jobs:
       KAOS_FLOWS_STATUS: ${{ steps.end-flows.outputs.KAOS_FLOWS_STATUS }}
     runs-on:
       group: kaos
-    permissions:
-      contents: write
-      actions: write
-      issues: write
-      pull-requests: write
-    env:
-      GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
-      SUMMARY: ""
-      BRANCH_ACTION: ${{ needs.job-core.outputs.KAOS_BRANCH }}
-      BRANCH_NUMBER: ${{ needs.job-core.outputs.KAOS_NUMBER }}
-      BRANCH_INVOLVED: ${{ needs.job-core.outputs.KAOS_INVOLVED }}
     steps:
       - id: repo
         uses: actions/checkout@v4
@@ -257,23 +221,23 @@ jobs:
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
           echo "RN - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
-          KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} process ${{ env.BRANCH_ACTION }} action over ${{ github.ref }} has been initiated by ${{ github.triggering_actor }}."
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
-          gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}  
+          KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} process ${{ needs.job-core.outputs.KAOS_BRANCH }} action over ${{ github.ref }} has been initiated by ${{ github.triggering_actor }}."
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ needs.job-core.outputs.KAOS_INVOLVED }}
+          gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }} -f kaos-involved-file=${{ needs.job-core.outputs.KAOS_INVOLVED }}  
       - id: feature-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'F' }}
         run: |
           echo "F - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
-          KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} process ${{ env.BRANCH_ACTION }} action over ${{ github.ref }} has been initiated by ${{ github.triggering_actor }}."
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
-          gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}
+          KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} process ${{ needs.job-core.outputs.KAOS_BRANCH }} action over ${{ github.ref }} has been initiated by ${{ github.triggering_actor }}."
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ needs.job-core.outputs.KAOS_INVOLVED }}
+          gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }} -f kaos-involved-file=${{ needs.job-core.outputs.KAOS_INVOLVED }}
       - id: hotfix-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'H' }}
         run: |
           echo "H - Este es el fichero implicado ${{ needs.job-core.outputs.KAOS_INVOLVED }}"
-          KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} process ${{ env.BRANCH_ACTION }} action over ${{ github.ref }} has been initiated by ${{ github.triggering_actor }}."
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ env.BRANCH_INVOLVED }}
-          gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ env.BRANCH_NUMBER }} -f kaos-involved-file=${{ env.BRANCH_INVOLVED }}
+          KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} process ${{ needs.job-core.outputs.KAOS_BRANCH }} action over ${{ github.ref }} has been initiated by ${{ github.triggering_actor }}."
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }} -f kaos-issue-actions=comment -f kaos-issue-body-file=${{ needs.job-core.outputs.KAOS_INVOLVED }}
+          gh workflow run init.yaml  --ref ${{ github.ref }} -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }} -f kaos-involved-file=${{ needs.job-core.outputs.KAOS_INVOLVED }}
       - id: execution-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'E' }}
         run: |
