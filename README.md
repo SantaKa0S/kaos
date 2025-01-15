@@ -1,27 +1,49 @@
 # Ka0S
+
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/203720c203a84af7a9d888680a047df4)](https://app.codacy.com/gh/SantaKa0S/kaos/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 <p align="center">
   <img src="core/imgs/kaos.png" alt="All is Code">
 </p>
 
-## Description
-A brief description of what your project does. Explain the purpose and main objectives.
+Albert Einstein dijo una vez: "... si tu intención es describir la verdad, hazlo con sencillez y la elegancia dejasela al sastre."
 
 ## Table of Contents
-1. Description
-2. Team
-3. Installation
-4. Usage
-5. Contribution
+
+1. Nuestra filosofía
+2. ¿Qué es Ka0S?
+3. ¿Y cómo me lo puedo instalar?
+4. El equipo
+5. ¿Y si quiero contribuir con el proyecto?
 6. License
 7. Contact
 
-## Description
-Here you can provide more details about the project, its inspiration, and the problems it solves.
+## Nuestra filosofía
 
-## Team
-Introduce the team members who have worked on the project. Include names, roles, and a brief biography.
+El método **KAIZEN** engloba el concepto de la mejora contínua basada en pequeñas acciones concretas, simples y poco onerosas, donde se ven implicados todos los miembros de una empresa.
+
+## ¿Qué es Ka0S?
+
+Si tuviesemos que explicarlo con una única frase, Ka0S sería algo así como ".... la organización fundamental de un sistema, compuesta por sus módulos, las relaciones entre ellos y su entorno, así como los principios que gobiernan su diseño y evolución."
+
+Si entramos mas en detalle, podemos decir que Ka0S es; *... es un framework, basado en código, que permite en todo momento que todos los miembros de una empresa puedan gestionar el ecosistema de herramientas, al que esta asociado Ka0S, permitiendo que en base a una reglas comunes para todos, cada uno pueda mantener y evolucionar los componentes de los cuales es responsable de una manera sencilla, simple y segura.*
+
+Ventajas de utilizar Ka0S
+
+- Revisión de código continuo
+- Automatización de pruebas
+- Refactorización Continua
+- Integración Conrínua y Entrega Contínua
+- Reatroalimentación y reciclaje del código
+
+## ¿Y cómo me lo puedo instalar?
+
+A fecha de hoy es tan secillo como seguis los pasos de:
+
+- Solicitar al equipo Core de Ka0s "un fork" actualizado del respositorio
+- Documentación personalizada de la configuración de Ka0S en tu entorno
+
+## El equipo
 
 - **Name:** SantaKloud
   - **Role:** Lead Team - Developer - Admin Project
@@ -31,22 +53,18 @@ Introduce the team members who have worked on the project. Include names, roles,
   - **Role:** Lead Team - Developer - Admin Project
   - **Biography:** Brief description of the team member.
 
-## Installation
-Ka0S - All is Code does not require a complex installation process that relies on an installer. For more information about the “installation” process see the reference at .......
+## ¿Y si quiero contribuir con el proyecto?
 
-## Usage
-Explain how to use the project. You can include examples of use cases and benefits.
-
-## Contribution
-Guide for contributing to the project. Include rules for pull requests, issues, and any other relevant information.
+En estos momentos estamos trabajando en el proceso y el procedimiento para poder abrir la colaboración al proyecto de Ka0S. En breve estará disponible..
 
 ## License
+
 Information about the [license](./LICENSE) under which the project is distributed.
 
 ## Contact
+
 Contact information for questions or support.
 
-- **Name:** Your Name
-- **Email:** your_email@example.com
-- **GitHub:** your_username
-
+- **Name:** Ka0S Support
+- **Email:** santacana.canton@icloud.com (add [KAOS] in the title of email)
+- **GitHub:** SantaKloud
