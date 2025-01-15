@@ -74,10 +74,11 @@ jobs:
       - id: work-issues
         run: |
             # Lo primero comprobar la acción que queremos realizar
+            echo "El usuario culpable es: ${{ github.event.inputs.kaos-user-start }}"
             case ${{ github.event.inputs.kaos-issue-actions }} in
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
-                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.event.inputs.kaos-user-start }}" -p "@Kaos"
+                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.event.inputs.kaos-user-start }}" -p "@Core-Kaos-Project"
                     gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ github.event.inputs.kaos-workflow-id }}.log"
                     ;;
                 comment)
@@ -91,7 +92,7 @@ jobs:
                   ;;
                 close)
                     # Cerramos una issue finalizada
-                    gh issue close ${{ github.event.inputs.kaos-issue-id }} -c "Issue: ${{ github.event.inputs.kaos-issue-id }} closed by  ${{ github.actor }}" -r "completed"
+                    gh issue close ${{ github.event.inputs.kaos-issue-id }} -c "Issue: ${{ github.event.inputs.kaos-issue-id }} closed by  ${{ github.event.inputs.kaos-user-start }}" -r "completed"
                   ;;
                 reopen)
                     # Reabrimos una issue que no ha sido solucionada
@@ -101,7 +102,7 @@ jobs:
                       new_title="${title//[SUCCESS]/[FAILED]}"
                       echo "new_title=$new_title" >> $GITHUB_ENV
                     fi
-                    gh issue reopen ${{ github.event.inputs.kaos-issue-id }} -c "Reopen Issue: ${{ github.event.inputs.kaos-issue-id }} by  ${{ github.actor }}"
+                    gh issue reopen ${{ github.event.inputs.kaos-issue-id }} -c "Reopen Issue: ${{ github.event.inputs.kaos-issue-id }} by  ${{ github.event.inputs.kaos-user-start }}"
                     gh issue edit ${{ github.event.inputs.kaos-issue-id }} -t "$new_title"
                     gh issue edit ${{ github.event.inputs.kaos-issue-id }} --remove-label "resolved"
                   ;;
@@ -143,7 +144,7 @@ jobs:
           Please investigate the issue.
           EOF
           )
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
+          gh issue create -t "$KAOS_ISSUE_TITLE" -b "$KAOS_ISSUE_BODY" -l "bug" -a "${{ github.event.inputs.kaos-user-start }}" -p "@Core-Kaos-Project"
           # Buscamos el numero de la issue en funcion del titulo de la misma 
           ISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
           # Añadimos el comentario a la issue que dispara el proceso
