@@ -30,6 +30,7 @@ jobs:
       AUTHOR_NAME: ${{ steps.commit_details.outputs.AUTHOR_NAME }}
       AUTHOR_EMAIL: ${{ steps.commit_details.outputs.AUTHOR_EMAIL }}
       COMMIT_MESSAGE: ${{ steps.commit_details.outputs.COMMIT_MESSAGE }}
+      
     steps:
     - id: repo
       uses: actions/checkout@v4
