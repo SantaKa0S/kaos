@@ -206,7 +206,7 @@ jobs:
     outputs:
       KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
     steps:
-      - id: repo # Check out the repository to get information of the commit
+      - id: repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -250,7 +250,7 @@ jobs:
       BRANCH_NUMBER: ${{ needs.job-core.outputs.KAOS_NUMBER }}
       BRANCH_INVOLVED: ${{ needs.job-core.outputs.KAOS_INVOLVED }}
     steps:
-      - id: repo # Check out the repository to get information of the commit
+      - id: repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -332,4 +332,3 @@ jobs:
           EOF
           )
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-workflow-id=${{  github.run_id }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
- 
