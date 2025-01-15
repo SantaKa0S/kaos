@@ -314,13 +314,15 @@ jobs:
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
+          **Requested By:** ${{ needs.job-core.outputs.AUTHOR_NAME }}
           **Workflow Name:** ${{ github.workflow }}
           **Job Name:** ${{ github.job }}
           **Run ID:** ${{ github.run_id }}
           **Run Number:** ${{ github.run_number }}
           **Repository:** ${{ github.repository }}
           **Branch:** ${{ github.ref }}
-          **Commit:** ${{ github.sha }}
+          **Commit:** ${{ needs.job-core.outputs.COMMIT_MESSAGE }}
+          **Files:** ${{ needs.job-core.outputs.KAOS_FILES }}
           Please investigate the issue.
           EOF
           )
