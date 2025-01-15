@@ -20,8 +20,6 @@ env:
   KAOS_MODULE: "[Ka0S]"
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   BRANCH_NAME: ${{ github.ref }}
-  USER_NAME: ${{ github.actor.name}}
-  USER_EMAIL: ${{ github.actor.email }}
   KAOS_PATH_RESUME: "core/results/"
   KAOS_REPO: "/actions-runner/_work/kaos/kaos"
   KAOS_STEP_MODULE: ""
