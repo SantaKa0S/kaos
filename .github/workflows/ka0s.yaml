@@ -1,6 +1,5 @@
-# This is a basic workflow to help you get started with Actions
 name: Ka0S
-# Controls when the workflow will run
+
 on:
   push: 
     paths:
@@ -26,17 +25,16 @@ env:
   USER_EMAIL: ${{ github.actor.email }}
   PATH_RESUME: "core/results/"
   KAOS_REPO: "/actions-runner/_work/kaos/kaos"
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
 jobs:
-  # Worflow
+  
   job-core:
-    # Condicion antes de comenzar el jobs
     if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }} 
     outputs:
       KAOS_BRANCH: ${{ steps.core.outputs.RNBRANCH }}
       KAOS_NUMBER: ${{ steps.core.outputs.RNNUMBER }}
       KAOS_INVOLVED: ${{ steps.files.outputs.INVOLVED }}
-      KAOS_CORE_STATUS: ${{ steps.files.output.KAOS_CORE_STATUS }}
+      KAOS_CORE_STATUS: ${{ steps.files.outputs.KAOS_STATUS }}
     runs-on: 
       group: kaos
     permissions:
@@ -57,7 +55,6 @@ jobs:
           token: ${{ secrets.KAOS_TOKEN }}
           
       - id: core
-      # vamos a capturar toda la información del evento que dispara el action para controlar el flujo que debera de seguir
         if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }}
         run: |
           # Comprobamos el flow que deberemos de ejecutar
@@ -112,8 +109,8 @@ jobs:
           git add ${{ env.KAOS_PATH_RESUME }}*
           git commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"
           git push
-          KAOS_CORE_STATUS=$( echo "100%")
-          echo "KAOS_CORE_STATUS=$KAOS_CORE_STATUS" >> $GITHUB_OUTPUT
+          KAOS_STATUS=$( echo "100%")
+          echo "KAOS_CORE_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
             
   job-compliance:
     runs-on: 
@@ -123,7 +120,7 @@ jobs:
       GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
       
     outputs:
-      KAOS_COMPLIANCE_STATUS: ${{ steps.check-compliance.output.KAOS_COMPLIANCE_STATUS }}
+      KAOS_COMPLIANCE_STATUS: ${{ steps.check-compliance.outputs.KAOS_COMPLIANCE_STATUS }}
     steps:
       - id: repo
         if: ${{ always() }}
