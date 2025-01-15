@@ -121,7 +121,7 @@ jobs:
         gh workflow run issue.yaml --ref main -f kaos-issue-id="${{ github.event.pull_request.number }}" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment
     
     - id: comment-pull-request
-      if:  ${{ success() }} 
+      if: ${{ success() }} 
       run: |
         # Añadimos el comentario a la pull request de que todo ha ido correcto y de cual es la nueva version generada
         KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha generado una nueva versión con el tag v${{ steps.version.outputs.VERSION }}. Esta todo dispuesto para realizar *MERGE* del código."
