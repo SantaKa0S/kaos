@@ -33,11 +33,13 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
       BRANCH_NAME: ${{ github.ref }}
-      USER_NAME: ${{ github.actor.name}}
-      USER_EMAIL: ${{ github.actor.email }}
-      PATH_RESUME: "core/results/"
+      KAOS_PATH_RESUME: "core/results/"
+      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
+      KAOS_STEP_MODULE: ""
+      KAOS_CODE: ""
+
     steps:
-      - id: repo # Check out the repository to get information of the commit
+      - id: repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -75,7 +77,7 @@ jobs:
                     # Añadimos el comentario a la issue
                     gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
                     # Lanzamos el lint del fichero
-                    gh workflow run $file_module --ref ${{ github.ref }} -f kaos-origin=${{ github.run_id }} -f kaos-files=$line -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+                    gh workflow run $file_module --ref ${{ github.ref }} -f kaos-origin=${{ github.run_id }} -f kaos-files=$line -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-user-start=${{ github.event.inputs.kaos-user-start }}
                     module_failed=0
                     extension_failed=0
                     break
@@ -121,9 +123,10 @@ jobs:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
           echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
-          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ github.run_id }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
-          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          An error occurred in the execution Action workflow RunID: **${{ github.run_id }}**.
+          Initiated by #${{ github.event.inputs.kaos-user-start }} from issue number #${{ github.event.inputs.kaos-issue-id }}
           **${{ env.KAOS_MODULE }}  Message:**
           El error ha sido en : ${{  github.run_id }}
           ejecute este comando en su consola y podrá consultar el fallo del trabajo
@@ -131,14 +134,21 @@ jobs:
           \`\`\`
           **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
           \`\`\`
+          **Requested By:** ${{ github.event.inputs.kaos-user-start }}
           **Workflow Name:** ${{ github.workflow }}
           **Job Name:** ${{ github.job }}
           **Run ID:** ${{ github.run_id }}
           **Run Number:** ${{ github.run_number }}
           **Repository:** ${{ github.repository }}
           **Branch:** ${{ github.ref }}
-          **Commit:** ${{ github.sha }}
+          **Files:** ${{ github.event.inputs.kaos-involved-file }}
           Please investigate the issue.
           EOF
           )
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
+          # Creamos la issue dado que ha fallado el modulo principal
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
+          # Buscamos el numero de la issue en funcion del titulo de la misma 
+          ISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
+          # Añadimos el comentario a la issue que dispara el proceso
+          KAOS_ISSUE_BODY="Se ha generado la issue (#$ISSUE_NUMBRE) con el error detectado en el proceso ${{ env.KAOS_MODULE }} en el run ${{ github.run_id }}"
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
