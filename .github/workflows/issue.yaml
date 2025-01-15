@@ -74,6 +74,7 @@ jobs:
       - id: work-issues
         run: |
             # Lo primero comprobar la acción que queremos realizar
+            echo "El usuario cumplable es: ${{ github.event.inputs.kaos-user-start }}"
             case ${{ github.event.inputs.kaos-issue-actions }} in
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
@@ -91,7 +92,7 @@ jobs:
                   ;;
                 close)
                     # Cerramos una issue finalizada
-                    gh issue close ${{ github.event.inputs.kaos-issue-id }} -c "Issue: ${{ github.event.inputs.kaos-issue-id }} closed by  ${{ github.actor }}" -r "completed"
+                    gh issue close ${{ github.event.inputs.kaos-issue-id }} -c "Issue: ${{ github.event.inputs.kaos-issue-id }} closed by  ${{ github.event.inputs.kaos-user-start }}" -r "completed"
                   ;;
                 reopen)
                     # Reabrimos una issue que no ha sido solucionada
@@ -101,7 +102,7 @@ jobs:
                       new_title="${title//[SUCCESS]/[FAILED]}"
                       echo "new_title=$new_title" >> $GITHUB_ENV
                     fi
-                    gh issue reopen ${{ github.event.inputs.kaos-issue-id }} -c "Reopen Issue: ${{ github.event.inputs.kaos-issue-id }} by  ${{ github.actor }}"
+                    gh issue reopen ${{ github.event.inputs.kaos-issue-id }} -c "Reopen Issue: ${{ github.event.inputs.kaos-issue-id }} by  ${{ github.event.inputs.kaos-user-start }}"
                     gh issue edit ${{ github.event.inputs.kaos-issue-id }} -t "$new_title"
                     gh issue edit ${{ github.event.inputs.kaos-issue-id }} --remove-label "resolved"
                   ;;
