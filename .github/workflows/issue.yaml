@@ -144,7 +144,7 @@ jobs:
           Please investigate the issue.
           EOF
           )
-          gh issue create -t "$KAOS_ISSUE_TITLE" -b "$$KAOS_ISSUE_BODY" -l "bug" -a "${{ github.event.inputs.kaos-user-start }}" -p "@Core-Kaos-Project"
+          gh issue create -t "$KAOS_ISSUE_TITLE" -b "$KAOS_ISSUE_BODY" -l "bug" -a "${{ github.event.inputs.kaos-user-start }}" -p "@Core-Kaos-Project"
           # Buscamos el numero de la issue en funcion del titulo de la misma 
           ISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
           # Añadimos el comentario a la issue que dispara el proceso
