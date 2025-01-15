@@ -40,7 +40,7 @@ on:
       kaos-user-start:
         description: 'User initiated process'
         default: ""
-        required: true
+        required: false
   
 permissions:
   contents: write
