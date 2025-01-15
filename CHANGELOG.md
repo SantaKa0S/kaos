@@ -310,3 +310,119 @@
   - core/runners/Dockerfile
   - core/runners/dockerfile.json
 ---------------------------------
+## Version 0.4.0
+- **Branch**: refs/pull/576/merge
+- **Commit**: 646e077d4220aa18d76d8a2e7833c5f0a401e9ce
+- **Author**: yolabn (141480171+Yolabn@users.noreply.github.com)
+- **Date**: Thu Jan  9 15:58:12 UTC 2025
+- **Message**: Merge c025922b3ae57949995f9f106812a38bc30586dc into bfcef9c5132646bfbbd54a26ed40058a91b27ca0
+- **Files Changed**:
+  - core/results/commit-summary-F-547.txt
+  - core/results/files-in-commit-F-547.txt
+  - observability/elk/docker-compose/docker-compose.yaml
+---------------------------------
+## Version 0.5.0
+- **Branch**: refs/pull/582/merge
+- **Commit**: 38267124244f11e2c52bbf296d7700f6d9b6aec5
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Fri Jan 10 10:32:01 UTC 2025
+- **Message**: Merge 13df6e2b11fb455f484623b2d2e769eacd139635 into 8629ac3b92f7520a660ede1680bfeaecaacebd98
+- **Files Changed**:
+  - .github/workflows/mdlint.yaml
+  - core/config/.markdownlint.json
+  - core/config/templates/template-1.yaml
+  - core/results/commit-summary-F-577.txt
+  - core/results/files-in-commit-F-577.txt
+  - core/results/jsonlint-results-12707750094.txt
+---------------------------------
+## Version 0.5.0
+- **Branch**: refs/pull/587/merge
+- **Commit**: fc10ee63d14c74fc158b91ea74ef1587f4e2e498
+- **Author**: yolabn (141480171+Yolabn@users.noreply.github.com)
+- **Date**: Fri Jan 10 12:43:01 UTC 2025
+- **Message**: Merge cab34b306810a5a7bb478f11381e79d58820e46a into fbb2c64944383c81433ea8e0c790c7dd865118d2
+- **Files Changed**:
+  - core/results/commit-summary-F-580.txt
+  - core/results/files-in-commit-F-580.txt
+  - observability/elk/config/filebeat.yaml
+  - observability/elk/docker-compose/docker-compose.yaml
+---------------------------------
+## Version 0.6.0
+- **Branch**: refs/pull/588/merge
+- **Commit**: e51ff9aaafb132defbbd09b01a78acf824a56779
+- **Author**: yolabn (141480171+Yolabn@users.noreply.github.com)
+- **Date**: Fri Jan 10 12:52:06 UTC 2025
+- **Message**: Merge 6b4d8dc8019f259b1915a2ac3d9ee3bcc9caec51 into fbb2c64944383c81433ea8e0c790c7dd865118d2
+- **Files Changed**:
+  - CHANGELOG.md
+  - INDEX.md
+  - core/results/commit-summary-F-580.txt
+  - core/results/files-in-commit-F-580.txt
+  - observability/elk/config/filebeat.yaml
+  - observability/elk/dashboards/file.txt
+  - observability/elk/docker-compose/docker-compose.yaml
+---------------------------------
+## Version 0.6.1
+- **Branch**: refs/pull/597/merge
+- **Commit**: 27aecf55202a07eb3b886ade6590b8d0bd0a0e05
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 13 15:01:31 UTC 2025
+- **Message**: Merge 31dc62b776df8732f1df4504db02695642781720 into e533e32f677643940c401e69f6a4549361932e7e
+- **Files Changed**:
+  - .github/workflows/init.yaml
+  - .github/workflows/jsonlint.yaml
+  - .github/workflows/ka0s.yaml
+  - .github/workflows/mdlint.yaml
+  - .github/workflows/yamllint.yaml
+  - core/results/commit-summary-H-583.txt
+  - core/results/files-in-commit-H-583.txt
+  - core/test/correct-file.md
+---------------------------------
+## Version 0.6.2
+- **Branch**: refs/pull/600/merge
+- **Commit**: 35fc9701f552e7499307ea552804ef16b03eee6a
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 13 15:53:11 UTC 2025
+- **Message**: Merge 6eb5103e25004336b65997bc162b0cafcb2abc67 into a85e85e80078d4ff8aa455a8f36087601e388f05
+- **Files Changed**:
+  - .github/workflows/jsonlint.yaml
+  - .github/workflows/ka0s.yaml
+  - core/config/templates/template-1.yaml
+  - core/results/commit-summary-H-598.txt
+  - core/results/files-in-commit-H-598.txt
+  - core/results/jsonlint-results-12750508446.txt
+  - core/results/jsonlint-results-12750881874.txt
+  - core/test/correct-file.json
+  - core/test/correct-file.md
+  - core/test/correct-file.yaml
+---------------------------------
+## Version 0.6.3
+- **Branch**: refs/pull/607/merge
+- **Commit**: b4f8bfd7512ca6c1d235e154116e7dab2059c8ab
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Jan 14 12:46:26 UTC 2025
+- **Message**: Merge c05ede37a579905068e55d032738b38d2e360ba8 into c3a70e8ef8ca7017e8b417a82de2fd62100e80f3
+- **Files Changed**:
+  - .github/workflows/jsonlint.yaml
+  - .github/workflows/mdlint.yaml
+  - core/results/commit-summary-H-601.txt
+  - core/results/files-in-commit-H-601.txt
+  - core/results/jsonlint-results-12752144304.txt
+  - core/test/correct-file.md
+  - core/test/correct-file1.md
+  - core/test/correct-file2.md
+  - core/test/correct-file3.md
+---------------------------------
+## Version 0.6.4
+- **Branch**: refs/pull/610/merge
+- **Commit**: 49b75bcb5170217331556aa5eaac11e2e7811cde
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Jan 14 14:35:15 UTC 2025
+- **Message**: Merge fd32567e0e2c2b0f22ad9ae50c161f6004a3e877 into e2c204cf82798d24ef63a7a0d475b1155af92147
+- **Files Changed**:
+  - .github/workflows/yamllint.yaml
+  - core/config/kaos-yamllint-config.yaml
+  - core/results/commit-summary-H-608.txt
+  - core/results/files-in-commit-H-608.txt
+  - core/test/correct-file.yaml
+---------------------------------

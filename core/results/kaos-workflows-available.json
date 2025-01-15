@@ -25,6 +25,12 @@
       "state": "active"
     },
     {
+      "id": 137369941,
+      "name": "Ka0s Markdown Lint",
+      "path": ".github/workflows/mdlint.yaml",
+      "state": "active"
+    },
+    {
       "id": 130222845,
       "name": "Ka0s Splunk",
       "path": ".github/workflows/splunk.yaml",
@@ -46,6 +52,18 @@
       "id": 129223095,
       "name": "Ka0s YAML Lint",
       "path": ".github/workflows/yamllint.yaml",
+      "state": "active"
+    },
+    {
+      "id": 137238211,
+      "name": "Dependabot Updates",
+      "path": "dynamic/dependabot/dependabot-updates",
+      "state": "active"
+    },
+    {
+      "id": 137218876,
+      "name": "CodeQL",
+      "path": "dynamic/github-code-scanning/codeql",
       "state": "active"
     }
   ]

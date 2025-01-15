@@ -50,9 +50,9 @@ jobs:
       - id: check-json
         run: |
             # Invocamos la primera comprobación de base, sino se supera el proceso no continua
-            # git config --global user.name '${{ env.USER_NAME }}'
-            # git config --global user.email '${{ env.USER_EMAIL}}'
-            # git pull
+            git config --global user.name '${{ env.USER_NAME }}'
+            git config --global user.email '${{ env.USER_EMAIL}}'
+            git pull
             # Extraemos el nombre del fichero
             file_name=$(basename "${{ github.event.inputs.kaos-files }}")
             # Generamos el fichero de resultados vacio
@@ -85,21 +85,21 @@ jobs:
                 
             main()
             EOF
-            # git add ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
-            # git commit -m "Generated file ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt"
-            # git push
+            git add ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
+            git commit -m "Generated file ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt"
+            git push
             # Check if exist errors in file
             if [ ! -s ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt ]; then
               echo "File ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt is empty and is content correct"
-              KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process (${{ github.event.inputs.kaos-origin }}) launch the check (${{ github.run_id }}) over file (${{ github.event.inputs.kaos-files }}) and its result has been SUCCESS. Please review all files implicated in pull request and approve to merge"
+              KAOS_ISSUE_BODY="The json lint process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} over file ${{ github.event.inputs.kaos-files }} and its result has been SUCCESS. Please MERGE"
               gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
             else
               echo "File ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt is not empty and is content not correct and write commit info"
               echo "FILE_ERROR=${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt" >> $GITHUB_ENV
-              KAOS_ISSUE_BODY="The ${{ env.KAOS_MODULE }} process (${{ github.event.inputs.kaos-origin }}) launch the check (${{ github.run_id }}) over file (${{ github.event.inputs.kaos-files }}) and its result has been FAILED, please check ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt and solved it"
+              KAOS_ISSUE_BODY="The json lint process ${{ github.event.inputs.kaos-origin }} launch the check ${{ github.run_id }} over file ${{ github.event.inputs.kaos-files }} and its result has been FAILED, please check ${{ env.PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt and solved it"
               gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} 
             fi
-
+            
   handle_failure:
     runs-on: 
       group: kaos-jsonlint
@@ -133,4 +133,26 @@ jobs:
           EOF
           )
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
-  
+
+  handle_success:
+     runs-on: 
+       group: kaos
+     needs: [job-core, job-compliance, job-security, job-observability, job-codescan, job-flows]
+     if: ${{ success() }}
+     steps:
+       - id: check-execution
+         env:
+           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+         run: |
+               echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
+               KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+               KAOS_ISSUE_BODY=$(cat <<'EOF'
+               **${{ env.KAOS_MODULE }} Message: run_id ${{ github.workflow }}**
+               Compliance: ${{ needs.job-compliance.outputs.KAOS_COMPLIANCE_STATUS }}
+               Security: ${{ needs.job-security.outputs.KAOS_SECURITY_STATUS }}
+               Observability: ${{ needs.job-observability.outputs.KAOS_OBSERVABILITY_STATUS }}
+               CodeScan: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS }}
+               Flow: ${{ needs.job-flows.outputs.KAOS_FLOWS_STATUS }}
+               EOF
+               )
+               gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }} -f kaos-issue-actions=comment 
