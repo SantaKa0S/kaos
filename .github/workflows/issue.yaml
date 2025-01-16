@@ -1,7 +1,7 @@
 name: Ka0s Issues
 
 on:
-  workflow_dispatch: # Permite disparar workflow manualmente
+  workflow_dispatch:
     inputs:
       kaos-issue-title:
         description: 'Title'
@@ -37,6 +37,10 @@ on:
         description: 'Workflow ID'
         default: ""
         required: false
+      kaos-user-start:
+        description: 'User initiated process'
+        default: ""
+        required: false
   
 permissions:
   contents: write
@@ -45,15 +49,17 @@ permissions:
   pull-requests: write
 
 env:
-  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   KAOS_MODULE: "[Ka0S] ISSUE"
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+
 jobs:
   kaos-issue-process:
     runs-on: 
       group: kaos-issue
-
+    outputs:
+      KAOS_WORFLOW_LOG: ${{ steps.resume-log.outputs.KAOS_WORFLOW_LOG }}
     steps:
-      - id: repo # Checkout the repository to get the information of the commit
+      - id: repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -62,21 +68,21 @@ jobs:
       - id: resume-log
         run: |
           # Extraemos el error
-          # Extraemos el error
           # gh run view ${{ github.event.inputs.kaos-workflow-id }} --log-failed > ${{ github.event.inputs.kaos-workflow-id }}.log
           # echo "KAOS_WORFLOW_LOG=$(cat ${{ github.event.inputs.kaos-workflow-id }}.log)" >> $GITHUB_OUTPUT
 
       - id: work-issues
         run: |
             # Lo primero comprobar la acción que queremos realizar
+            echo "El usuario culpable es: ${{ github.event.inputs.kaos-user-start }}"
             case ${{ github.event.inputs.kaos-issue-actions }} in
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
-                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.actor }}"
-                    # gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ github.event.inputs.kaos-workflow-id }}.log"
+                    gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.event.inputs.kaos-user-start }}" -p "@Core-Kaos-Project"
+                    gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ github.event.inputs.kaos-workflow-id }}.log"
                     ;;
                 comment)
-                    # Añadimos comentarios a una issue en concreto o ficheros
+                    # Añadimos comentarios a issue en concreto o ficheros
                     if [[ -z "${{ github.event.inputs.kaos-issue-body-file }}" ]]; then
                       gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}"
                     else
@@ -86,7 +92,7 @@ jobs:
                   ;;
                 close)
                     # Cerramos una issue finalizada
-                    gh issue close ${{ github.event.inputs.kaos-issue-id }} -c "Issue: ${{ github.event.inputs.kaos-issue-id }} closed by  ${{ github.actor }}" -r "completed"
+                    gh issue close ${{ github.event.inputs.kaos-issue-id }} -c "Issue: ${{ github.event.inputs.kaos-issue-id }} closed by  ${{ github.event.inputs.kaos-user-start }}" -r "completed"
                   ;;
                 reopen)
                     # Reabrimos una issue que no ha sido solucionada
@@ -96,7 +102,7 @@ jobs:
                       new_title="${title//[SUCCESS]/[FAILED]}"
                       echo "new_title=$new_title" >> $GITHUB_ENV
                     fi
-                    gh issue reopen ${{ github.event.inputs.kaos-issue-id }} -c "Reopen Issue: ${{ github.event.inputs.kaos-issue-id }} by  ${{ github.actor }}"
+                    gh issue reopen ${{ github.event.inputs.kaos-issue-id }} -c "Reopen Issue: ${{ github.event.inputs.kaos-issue-id }} by  ${{ github.event.inputs.kaos-user-start }}"
                     gh issue edit ${{ github.event.inputs.kaos-issue-id }} -t "$new_title"
                     gh issue edit ${{ github.event.inputs.kaos-issue-id }} --remove-label "resolved"
                   ;;
@@ -117,9 +123,10 @@ jobs:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
           echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
-          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Action Failed: ${{ github.workflow }}"
+          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ github.run_id }}"
           KAOS_ISSUE_BODY=$(cat <<'EOF'
-          An error occurred in the ${{ env.KAOS_MODULE }} Action workflow **${{ github.workflow }}**.
+          Ha ocurrido un error en la ejecución del flujo de trabajo de la acción RunID: **${{ github.run_id }}**.
+          Esta ha sido soliictada por la acción ${{ github.event.inputs.kaos-workflow-id }} desde el issue #${{ github.event.inputs.kaos-issue-id }} creada por ${{ github.event.inputs.kaos-user-start }}
           **${{ env.KAOS_MODULE }}  Message:**
           El error ha sido en : ${{  github.run_id }}
           ejecute este comando en su consola y podrá consultar el fallo del trabajo
@@ -137,4 +144,10 @@ jobs:
           Please investigate the issue.
           EOF
           )
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
+          gh issue create -t "$KAOS_ISSUE_TITLE" -b "$KAOS_ISSUE_BODY" -l "bug" -a "${{ github.event.inputs.kaos-user-start }}" -p "@Core-Kaos-Project"
+          # Buscamos el numero de la issue en funcion del titulo de la misma 
+          ISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
+          # Añadimos el comentario a la issue que dispara el proceso
+          KAOS_ISSUE_BODY="Se ha generado la issue (#$ISSUE_NUMBRE) por la acción ${{ github.event.inputs.kaos-workflow-id }} desde el issue #${{ github.event.inputs.kaos-issue-id }} creada por ${{ github.event.inputs.kaos-user-start }}"
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+   

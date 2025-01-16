@@ -28,3 +28,14 @@
 - **Version**: 0.4.0 - **Description**: Merge c025922b3ae57949995f9f106812a38bc30586dc into bfcef9c5132646bfbbd54a26ed40058a91b27ca0
 - **Version**: 0.5.0 - **Description**: Merge 13df6e2b11fb455f484623b2d2e769eacd139635 into 8629ac3b92f7520a660ede1680bfeaecaacebd98
 - **Version**: 0.5.0 - **Description**: Merge cab34b306810a5a7bb478f11381e79d58820e46a into fbb2c64944383c81433ea8e0c790c7dd865118d2
+- **Version**: 0.6.0 - **Description**: Merge 6b4d8dc8019f259b1915a2ac3d9ee3bcc9caec51 into fbb2c64944383c81433ea8e0c790c7dd865118d2
+- **Version**: 0.6.1 - **Description**: Merge 31dc62b776df8732f1df4504db02695642781720 into e533e32f677643940c401e69f6a4549361932e7e
+- **Version**: 0.6.2 - **Description**: Merge 6eb5103e25004336b65997bc162b0cafcb2abc67 into a85e85e80078d4ff8aa455a8f36087601e388f05
+- **Version**: 0.6.3 - **Description**: Merge c05ede37a579905068e55d032738b38d2e360ba8 into c3a70e8ef8ca7017e8b417a82de2fd62100e80f3
+- **Version**: 0.6.4 - **Description**: Merge fd32567e0e2c2b0f22ad9ae50c161f6004a3e877 into e2c204cf82798d24ef63a7a0d475b1155af92147
+- **Version**: 0.6.5 - **Description**: Merge 0ac30bc2dae70efcc214e76c1e23064129d69c32 into 65d96c9fea6abeced7f80c1619f1afeac0315d38
+- **Version**: 0.6.6 - **Description**: Merge 2dd2d4c0db22f7dac1ffebcb083abe8c4d93371b into 0ed0587171c99eee440644e7c4602a2ffbcf2c73
+- **Version**: 0.6.7 - **Description**: Merge 5d1d4dfa9bd24acb273fde5d6ecef148e5010037 into 04dc7eef7f2585ff42eafdd467669f813edc2221
+- **Version**: 0.6.8 - **Description**: Merge 28cc74a5b62e8e592159595af8cbb2cb156d1a2a into 623e8a19e80b3eabfaba3d7a78504a7c611e88c2
+- **Version**: 0.6.9 - **Description**: Merge eb7669e8cc69449c9033a17c292d7eadd1a76e87 into 50d4b3199c5dd5a06ac8fb89a479f3498e613921
+- **Version**: 0.7.1 - **Description**: Merge 8973e107ed8200e614f6cec54606fa97a8d10de1 into 73bdaeeabaa9aaea5a54fbf06fb17ae9f40e1f70
