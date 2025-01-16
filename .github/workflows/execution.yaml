@@ -153,4 +153,3 @@ jobs:
             # Añadimos el comentario a la issue que dispara el proceso
             KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }}) lanzado desde (#${{ needs.check-issue.outputs.KAOS_ISSUE_NUMBER }}) en la ejecución (${{ github.run_id }}) y esto ha generado una issue con el titulo ($KAOS_ISSUE_TITLE)"
             gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ needs.check-issue.outputs.KAOS_ISSUE_NUMBER }}
-  
