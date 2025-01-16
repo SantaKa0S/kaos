@@ -119,7 +119,7 @@ jobs:
           echo "El log de la ejecucion se encuentra en ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}"
           echo "Se añade el log de la ejecución al issue #${{ needs.check-issue.outputs.KAOS_ISSUE_NUMBER }}"
           echo "Se procede a cerrar la issue #${{ needs.check-issue.outputs.KAOS_ISSUE_NUMBER }}"
-          gh issue comment ${{ needs.check-issue.outputs.KAOS_ISSUE_NUMBER }} -b "Aquí podemos añadir los resultados de la ejecución"
+          gh issue comment ${{ needs.check-issue.outputs.KAOS_ISSUE_NUMBER }} -b "Aquí podemos añadir los resultados de la ejecución de la issue antes de cerrarla"
   handle_failure:
       runs-on: 
         group: kaos-execution
@@ -153,4 +153,4 @@ jobs:
             # Añadimos el comentario a la issue que dispara el proceso
             KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }}) lanzado desde (#${{ needs.check-issue.outputs.KAOS_ISSUE_NUMBER }}) en la ejecución (${{ github.run_id }}) y esto ha generado una issue con el titulo ($KAOS_ISSUE_TITLE)"
             gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ needs.check-issue.outputs.KAOS_ISSUE_NUMBER }}
-      
+  
