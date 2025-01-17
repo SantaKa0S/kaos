@@ -25,7 +25,6 @@ jobs:
   init-repo:
     runs-on: 
       group: kaos-execution
-    needs: [check-issue, check-data, show-data]
     steps:
       - id: repo
         name: Checkout repository
@@ -43,6 +42,7 @@ jobs:
   check-issue:
     runs-on: 
       group: kaos-execution
+    needs: init-repo
     steps:
       - id: check-info
         name: Check Info
@@ -52,7 +52,7 @@ jobs:
   check-data:
     runs-on: 
       group: kaos-execution
-    needs: check-issue
+    needs: [init-repo, check-issue]
     steps:
       - id: data
         name: Check data
@@ -63,7 +63,7 @@ jobs:
   show-data:
     runs-on: 
       group: kaos-execution
-    needs: [check-data, check-issue]
+    needs: [check-data, check-issue, init-repo]
     steps:
       - id: show
         name: Show data
