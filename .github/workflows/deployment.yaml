@@ -1,0 +1,81 @@
+name: Complete Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      project-name:
+        description: 'Nombre de la empresa'
+        default: 'empresa'
+        required: true
+      kaos-issue-body-file:
+        description: 'Attach file to body'
+        default: ""
+        required: true
+      kaos-issue-id:
+        description: 'Actions ID'
+        default: ""
+        required: true
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  pull-requests: write
+
+env:
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN_EMPRESA }}
+
+jobs:
+  complete-deployment:
+    runs-on: 
+      group: complete-deployment
+
+    steps:
+    - id: Checkout repository
+      uses: actions/checkout@v2
+
+    - id: python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+  
+    - id: Create project directory
+      run: mkdir kaos-${{ github.event.inputs['project-name'] }}
+
+    - id: Initialize npm project
+      run: cd kaos-${{ github.event.inputs['project-name'] }} && npm init -y
+
+    - id: Add README file
+      run: echo "# kaos-${{ github.event.inputs['project-name'] }}" > kaos-${{ github.event.inputs['project-name'] }}/README.md
+
+    - id: Commit and push changes
+      run: |
+        git config --global user.email ${{ secrets.KAOS_USER_EMAIL }}
+        git config --global user.name ${{ secrets.KAOS_USER_NAME }}
+        git add .
+        git commit -m '[Ka0S] Create new project'
+        git push
+
+    - id: Create Issue for Variables
+      run: |
+        # curl -X POST -H "Authorization: token ${{ secrets.KAOS_TOKEN_EMPRESA }}" \
+        # -H "Accept: application/vnd.github.v3+json" \
+        # https://api.github.com/repos/${{ github.repository }}/issues \
+        # -d '{"title":"Variables","body":"Define your variables here."}'
+        gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}"
+
+    - name: Create Issue for Secrets
+      run: |
+        # curl -X POST -H "Authorization: token ${{ secrets.KAOS_TOKEN_EMPRESA }}" \
+        # -H "Accept: application/vnd.github.v3+json" \
+        # https://api.github.com/repos/${{ github.repository }}/issues \
+        # -d '{"title":"Secrets","body":"Define your secrets here."}'
+        run: gh issue create --title "Secrets" --body "Define your secrets here."
+
+    - name: Create Fork
+      run: |
+        # curl -X POST -H "Authorization: token ${{ secrets.KAOS_TOKEN }}" \
+        # -H "Accept: application/vnd.github.v3+json" \
+        # https://api.github.com/repos/${{ github.repository }}/forks \
+        # -d '{"organization":"KAOS_ORG_EMPRESA"}'
+        run: gh repo fork ${{ github.repository }} --org KAOS_ORG_EMPRESA --remote
