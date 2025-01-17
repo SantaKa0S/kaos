@@ -21,21 +21,21 @@ jobs:
   check-issue:
     runs-on: kaos-execution
     outputs:
-        KAOS_ISSUE_NUMBER: ${{ steps.check-info.outputs.KAOS_ISSUE_NUMBER }}
-        KAOS_ISSUE_TITLE: ${{ steps.check-info.outputs.KAOS_ISSUE_TITLE }}
-        KAOS_ISSUE_BODY: ${{ steps.check-info.outputs.KAOS_ISSUE_BODY }}
-        KAOS_ISSUE_LABELS: ${{ steps.check-info.outputs.KAOS_ISSUE_LABELS }}
-        KAOS_ISSUE_USER: ${{ steps.check-info.outputs.KAOS_ISSUE_USER }}
+        KAOS_ISSUE_NUMBER: ${{ github.event.issue.number }}
+        KAOS_ISSUE_TITLE: ${{ github.event.issue.title }}
+        KAOS_ISSUE_BODY: ${{ github.event.issue.body }}
+        KAOS_ISSUE_LABELS: ${{ github.event.issue.labels }}
+        KAOS_ISSUE_USER: ${{ github.event.issue.user }}
     steps:
       - id: check-info
         name: Check Info
         if: startsWith(github.event.issue.title, '[E]')
         run: |
-            echo "KAOS_ISSUE_TITLE=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
-            echo "KAOS_ISSUE_NUMBER=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
-            echo "KAOS_ISSUE_BODY=${{ github.event.issue.body }}" >> $GITHUB_OUTPUT
-            echo "KAOS_ISSUE_LABELS=${{ github.event.issue.labels }}" >> $GITHUB_OUTPUT
-            echo "KAOS_ISSUE_USER=${{ github.event.issue.user }}" >> $GITHUB_OUTPUT
+            echo "KAOS_ISSUE_TITLE=${{ github.event.issue.title }}" 
+            echo "KAOS_ISSUE_NUMBER=${{ github.event.issue.number }}"
+            echo "KAOS_ISSUE_BODY=${{ github.event.issue.body }}"
+            echo "KAOS_ISSUE_LABELS=${{ github.event.issue.labels }}"
+            echo "KAOS_ISSUE_USER=${{ github.event.issue.user }}"
   check-data:
     runs-on: kaos-execution
     needs: check-issue
