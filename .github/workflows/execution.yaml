@@ -22,13 +22,31 @@ env:
   # KAOS_ISSUE_LABELS: ${{ github.event.issue.labels }}
   # KAOS_ISSUE_USER: ${{ github.event.issue.user }}
 jobs:
+  init-repo:
+    runs-on: 
+      group: kaos-execution
+    needs: [check-issue, check-data, show-data]
+    steps:
+      - id: repo
+        name: Checkout repository
+        if: ${{ success() }}
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+      - id: message
+        name: Message
+        if: ${{ success() }}
+        run: |
+          echo "Init repository"
+          gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha iniciado el repositorio"
   check-issue:
     runs-on: 
       group: kaos-execution
     steps:
       - id: check-info
         name: Check Info
-        if: startsWith(env.KAOS_ISSUE_TITLE, '[E]')
+        if: ${{ startsWith(env.KAOS_ISSUE_TITLE, '[E]') && github.ref == 'refs/heads/main' }}
         run: |
             echo "Check issue for execution $KAOS_ISSUE_NUMBER"
   check-data:
@@ -58,24 +76,6 @@ jobs:
           echo "KAOS_ISSUE_LABELS: $KAOS_ISSUE_LABELS"
           echo "KAOS_ISSUE_USER: $KAOS_ISSUE_USER"
           gh issue comment $KAOS_ISSUE_NUMBER -b "Se han mostrado los datos"     
-  init-repo:
-    runs-on: 
-      group: kaos-execution
-    needs: [check-issue, check-data, show-data]
-    steps:
-      - id: repo
-        name: Checkout repository
-        if: ${{ success() }}
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.KAOS_TOKEN }}
-      - id: message
-        name: Message
-        if: ${{ success() }}
-        run: |
-          echo "Init repository"
-          gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha iniciado el repositorio"
   start-execution:
     runs-on: 
       group: kaos-execution
