@@ -38,8 +38,8 @@ jobs:
     - id: repo
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Clonar todo el historial 
-        token: ${{ secrets.KAOS_TOKEN }}
+        fetch-depth: 0
+        token: ${{ env.GH_TOKEN }}
 
     - id: commit_details
       run: |
