@@ -31,11 +31,7 @@ jobs:
         name: Check Info
         if: startsWith(github.event.issue.title, '[E]')
         run: |
-            echo "KAOS_ISSUE_TITLE=${{ github.event.issue.title }}" 
-            echo "KAOS_ISSUE_NUMBER=${{ github.event.issue.number }}"
-            echo "KAOS_ISSUE_BODY=${{ github.event.issue.body }}"
-            echo "KAOS_ISSUE_LABELS=${{ github.event.issue.labels }}"
-            echo "KAOS_ISSUE_USER=${{ github.event.issue.user }}"
+            echo "Check issue for execution"
   check-data:
     runs-on: kaos-execution
     needs: check-issue
