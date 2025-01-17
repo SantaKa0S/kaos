@@ -58,7 +58,7 @@ jobs:
           gh issue comment $KAOS_ISSUE_NUMBER -b "Se han mostrado los datos"     
   init-repo:
     runs-on: kaos-execution
-    needs: [check-issue, check-data]
+    needs: [check-issue, check-data, show-data]
     steps:
       - id: repo
         name: Checkout repository
@@ -75,7 +75,7 @@ jobs:
           gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha iniciado el repositorio"
   start-execution:
     runs-on: kaos-execution
-    needs: [check-issue, check-data, init-repo]
+    needs: [check-issue, check-data, show-data, init-repo]
     outputs:
         KAOS_EXECUTION_RESULT: ${{ steps.execution.outputs.KAOS_EXECUTION_RESULT }}
         KAOS_EXECUTION_STATUS: ${{ steps.execution.outputs.KAOS_EXECUTION_STATUS }}
@@ -91,7 +91,7 @@ jobs:
           gh issue comment $KAOS_ISSUE_NUMBER -b "Se han lanzado la ejecución"
   end-execution:
     runs-on: kaos-execution
-    needs: [check-issue, check-data, init-repo, start-execution]
+    needs: [check-issue, check-data, show-data, init-repo, start-execution]
     steps:
       - id: end
         name: End execution
@@ -103,7 +103,7 @@ jobs:
   handle-success:
     runs-on: 
       group: kaos-execution
-    needs: [check-issue, check-data, init-repo, start-execution, end-execution]
+    needs: [check-issue, check-data, show-data, init-repo, start-execution, end-execution]
     if: ${{ success() }}
     steps: 
       - id: handle-success-execution
@@ -118,7 +118,7 @@ jobs:
   handle_failure:
       runs-on: 
         group: kaos-execution
-      needs: [check-issue, check-data, init-repo]
+      needs: [check-issue, check-data, show-data, init-repo, start-execution, end-execution]
       if: ${{ failure() }} 
       steps: 
         - id: check-execution
