@@ -19,9 +19,8 @@ env:
   KAOS_ISSUE_NUMBER: ${{ github.event.issue.number }}
   KAOS_ISSUE_TITLE: ${{ github.event.issue.title }}
   KAOS_ISSUE_BODY: ${{ github.event.issue.body }}
-  KAOS_ISSUE_LABELS: ${{ github.event.issue.labels }}
-  KAOS_ISSUE_USER: ${{ github.event.issue.user }}
-
+  # KAOS_ISSUE_LABELS: ${{ github.event.issue.labels }}
+  # KAOS_ISSUE_USER: ${{ github.event.issue.user }}
 jobs:
   check-issue:
     runs-on: 
@@ -29,7 +28,7 @@ jobs:
     steps:
       - id: check-info
         name: Check Info
-        if: startsWith(github.event.issue.title, '[E]')
+        if: startsWith(${{ env.KAOS_ISSUE_TITLE}}, '[E]')
         run: |
             echo "Check issue for execution $KAOS_ISSUE_NUMBER"
   check-data:
