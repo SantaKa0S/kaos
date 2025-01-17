@@ -3,7 +3,7 @@ name: Ka0s Summary
 on:
     workflow_dispatch:
     schedule:
-      - cron: '0 0 * * *' # Ejecutar diariamente a medianoche
+      - cron: '0 0 * * *'
 
 permissions:
   contents: write
@@ -24,7 +24,7 @@ jobs:
       group: kaos-summary
 
     steps:
-      - id: repo # Checkout the repository to get the information of the commit
+      - id: repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -212,4 +212,4 @@ jobs:
           EOF
           )
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"   
-          
+    
