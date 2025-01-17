@@ -90,7 +90,7 @@ jobs:
   
   handle_failure:
     runs-on: 
-      group: kaos-mdlint
+      group: kaos-issue
     needs: [md-lint-process]
     if: ${{ failure() }}
     steps:

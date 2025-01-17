@@ -19,46 +19,12 @@ env:
   KAOS_ISSUE_NUMBER: ${{ github.event.issue.number }}
   KAOS_ISSUE_TITLE: ${{ github.event.issue.title }}
   KAOS_ISSUE_BODY: ${{ github.event.issue.body }}
-  KAOS_ISSUE_LABELS: ${{ github.event.issue.labels }}
-  KAOS_ISSUE_USER: ${{ github.event.issue.user }}
-
+  # KAOS_ISSUE_LABELS: ${{ github.event.issue.labels }}
+  # KAOS_ISSUE_USER: ${{ github.event.issue.user }}
 jobs:
-  check-issue:
-    runs-on: kaos-execution
-    steps:
-      - id: check-info
-        name: Check Info
-        if: startsWith(github.event.issue.title, '[E]')
-        run: |
-            echo "Check issue for execution $KAOS_ISSUE_NUMBER"
-  check-data:
-    runs-on: kaos-execution
-    needs: check-issue
-    steps:
-      - id: data
-        name: Check data
-        if: ${{ success() }}
-        run: |
-            echo "Check data"
-            gh issue comment $KAOS_ISSUE_NUMBER -b "Se han comprobado los datos" 
-  show-data:
-    runs-on: kaos-execution
-    needs: [check-data, check-issue]
-    steps:
-      - id: show
-        name: Show data
-        if: ${{ success() }}
-        run: |
-          echo "Datos de la ejecución"
-          echo "KAOS_ISSUE_NUMBER: $KAOS_ISSUE_NUMBER" 
-          echo "KAOS_ISSUE_TITLE: $KAOS_ISSUE_TITLE"
-          echo "KAOS_ISSUE_BODY: $KAOS_ISSUE_BODY"
-          echo "KAOS_ISSUE_LABELS: $KAOS_ISSUE_LABELS"
-          echo "KAOS_ISSUE_USER: $KAOS_ISSUE_USER"
-          gh issue comment $KAOS_ISSUE_NUMBER -b "Se han mostrado los datos"     
   init-repo:
-    runs-on: kaos-execution
-    needs: [check-issue, check-data]
+    runs-on: 
+      group: kaos-execution
     steps:
       - id: repo
         name: Checkout repository
@@ -73,9 +39,47 @@ jobs:
         run: |
           echo "Init repository"
           gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha iniciado el repositorio"
+  check-issue:
+    runs-on: 
+      group: kaos-execution
+    needs: init-repo
+    steps:
+      - id: check-info
+        name: Check Info
+        if: ${{ startsWith(env.KAOS_ISSUE_TITLE, '[E]') && github.ref == 'refs/heads/main' }}
+        run: |
+            echo "Check issue for execution $KAOS_ISSUE_NUMBER"
+  check-data:
+    runs-on: 
+      group: kaos-execution
+    needs: [init-repo, check-issue]
+    steps:
+      - id: data
+        name: Check data
+        if: ${{ success() }}
+        run: |
+            echo "Check data"
+            gh issue comment $KAOS_ISSUE_NUMBER -b "Se han comprobado los datos" 
+  show-data:
+    runs-on: 
+      group: kaos-execution
+    needs: [check-data, check-issue, init-repo]
+    steps:
+      - id: show
+        name: Show data
+        if: ${{ success() }}
+        run: |
+          echo "Datos de la ejecución"
+          echo "KAOS_ISSUE_NUMBER: $KAOS_ISSUE_NUMBER" 
+          echo "KAOS_ISSUE_TITLE: $KAOS_ISSUE_TITLE"
+          echo "KAOS_ISSUE_BODY: $KAOS_ISSUE_BODY"
+          echo "KAOS_ISSUE_LABELS: $KAOS_ISSUE_LABELS"
+          echo "KAOS_ISSUE_USER: $KAOS_ISSUE_USER"
+          gh issue comment $KAOS_ISSUE_NUMBER -b "Se han mostrado los datos"     
   start-execution:
-    runs-on: kaos-execution
-    needs: [check-issue, check-data, init-repo]
+    runs-on: 
+      group: kaos-execution
+    needs: [check-issue, check-data, show-data, init-repo]
     outputs:
         KAOS_EXECUTION_RESULT: ${{ steps.execution.outputs.KAOS_EXECUTION_RESULT }}
         KAOS_EXECUTION_STATUS: ${{ steps.execution.outputs.KAOS_EXECUTION_STATUS }}
@@ -90,8 +94,9 @@ jobs:
           echo "KAOS_EXECUTION_STATUS=success" >> $GITHUB_OUTPUT
           gh issue comment $KAOS_ISSUE_NUMBER -b "Se han lanzado la ejecución"
   end-execution:
-    runs-on: kaos-execution
-    needs: [check-issue, check-data, init-repo, start-execution]
+    runs-on: 
+      group: kaos-execution
+    needs: [check-issue, check-data, show-data, init-repo, start-execution]
     steps:
       - id: end
         name: End execution
@@ -102,8 +107,8 @@ jobs:
           gh issue comment $KAOS_ISSUE_NUMBER -b "Se añade el fichero de resultados" -F "${{ needs.start-execution.outputs.KAOS_EXECUTION_RESULT }}"
   handle-success:
     runs-on: 
-      group: kaos-execution
-    needs: [check-issue, check-data, init-repo, start-execution, end-execution]
+      group: kaos-issue
+    needs: [check-issue, check-data, show-data, init-repo, start-execution, end-execution]
     if: ${{ success() }}
     steps: 
       - id: handle-success-execution
@@ -117,8 +122,8 @@ jobs:
           gh issue comment $KAOS_ISSUE_NUMBER -b "Aquí podemos añadir los resultados de la ejecución de la issue antes de cerrarla"
   handle_failure:
       runs-on: 
-        group: kaos-execution
-      needs: [check-issue, check-data, init-repo]
+        group: kaos-issue
+      needs: [check-issue, check-data, show-data, init-repo, start-execution, end-execution]
       if: ${{ failure() }} 
       steps: 
         - id: check-execution
