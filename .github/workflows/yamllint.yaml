@@ -86,7 +86,7 @@ jobs:
 
   handle_failure:
     runs-on: 
-      group: kaos-yamllint
+      group: kaos-issue
     needs: [yaml-lint-process]
     if: ${{ failure() }}
     steps:
