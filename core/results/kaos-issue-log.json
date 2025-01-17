@@ -3,6 +3,58 @@
     {
       "assignees": [
         {
+          "id": "U_kgDOCG7Q6w",
+          "login": "Yolabn",
+          "name": "yolabn"
+        }
+      ],
+      "author": {
+        "id": "U_kgDOCG7Q6w",
+        "is_bot": false,
+        "login": "Yolabn",
+        "name": "yolabn"
+      },
+      "body": "- Creación de las actions para hacer el deploy completo:\n   .. Se necesita el TOKEN de usuario con opción de permisos de escritura\n   .. Se necesita conocoer el nombre de la organización a la que pertenece\n\nLos pasos a dar son:\n- Creación del proyecto\n- Creación de Issues de variables y secretos\n- Creación del Fork en la organización de destino para lo que se necesita:\n   .. TOKEN para poder crear repositorios",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2025-01-16T16:59:54Z",
+      "id": "I_kwDONP0GL86mflH5",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtkA",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        }
+      ],
+      "milestone": null,
+      "number": 637,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "47fc9ee4",
+            "name": "In progress"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "Modulo de despliegue de Kaos",
+      "updatedAt": "2025-01-16T17:00:44Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/637"
+    },
+    {
+      "assignees": [
+        {
           "id": "MDQ6VXNlcjczMzMyODk4",
           "login": "santakloud",
           "name": "SantaKloud"
@@ -31,6 +83,471 @@
           "minimizedReason": "",
           "reactionGroups": [],
           "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2593417421",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arWqL",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": ".github/workflows/execution.yaml\n",
+          "createdAt": "2025-01-16T09:53:27Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595056267",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arXXI",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] process RN action over refs/heads/RN633-modulo-de-execution has been initiated by santakloud.",
+          "createdAt": "2025-01-16T09:54:39Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595059144",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arXke",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT has been initiated and Launch workflow yamllint.yaml to check file .github/workflows/execution.yaml",
+          "createdAt": "2025-01-16T09:54:49Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595059998",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arXmg",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "::group::.github/workflows/execution.yaml\n::error file=.github/workflows/execution.yaml,line=156,col=7::156:7 [new-line-at-end-of-file] no new line character at the end of file\n::endgroup::\n\nyamllint 1.35.1\nFinding: .github/workflows/execution.yaml\n",
+          "createdAt": "2025-01-16T09:54:52Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595060128",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arXvz",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The [Ka0S] YAMLLINT process (12806341409) launch the check (12806344241) over file (.github/workflows/execution.yaml) and its result has been FAILED, please check and solved it",
+          "createdAt": "2025-01-16T09:55:01Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595060723",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arbwn",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "core/test/correct-file.yaml\n",
+          "createdAt": "2025-01-16T10:00:04Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595077159",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arcqX",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] process RN action over refs/heads/RN633-modulo-de-execution has been initiated by santakloud.",
+          "createdAt": "2025-01-16T10:01:10Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595080855",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arcw2",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT has been initiated and Launch workflow yamllint.yaml to check file core/test/correct-file.yaml",
+          "createdAt": "2025-01-16T10:01:20Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595081270",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arcyb",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Errno 2] No such file or directory: 'core/test/correct-file.yaml'\nyamllint 1.35.1\nFinding: core/test/correct-file.yaml\n",
+          "createdAt": "2025-01-16T10:01:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595081371",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arc3w",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The [Ka0S] YAMLLINT process (12806444226) launch the check (12806447476) over file (core/test/correct-file.yaml) and its result has been FAILED, please check and solved it",
+          "createdAt": "2025-01-16T10:01:32Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595081712",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arg-s",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Añadimos modificaciones a kaos-version y kaos-execution, vamos a comprobar su funcionalidad en el core.",
+          "createdAt": "2025-01-16T10:07:54Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595098540",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arhIv",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": ".github/workflows/execution.yaml\n.github/workflows/version.yaml\n",
+          "createdAt": "2025-01-16T10:08:12Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595099183",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arhyD",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] process RN action over refs/heads/RN633-modulo-de-execution has been initiated by santakloud.",
+          "createdAt": "2025-01-16T10:09:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595101827",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arh6D",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT has been initiated and Launch workflow yamllint.yaml to check file .github/workflows/execution.yaml",
+          "createdAt": "2025-01-16T10:09:35Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595102339",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arh64",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT has been initiated and Launch workflow yamllint.yaml to check file .github/workflows/version.yaml",
+          "createdAt": "2025-01-16T10:09:36Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595102392",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arh8K",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "::group::.github/workflows/execution.yaml\n::error file=.github/workflows/execution.yaml,line=156,col=3::156:3 [new-line-at-end-of-file] no new line character at the end of file\n::endgroup::\n\nyamllint 1.35.1\nFinding: .github/workflows/execution.yaml\n",
+          "createdAt": "2025-01-16T10:09:38Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595102474",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ariBr",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The [Ka0S] YAMLLINT process (12806596619) launch the check (12806599535) over file (.github/workflows/execution.yaml) and its result has been FAILED, please check and solved it",
+          "createdAt": "2025-01-16T10:09:48Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595102827",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ariE6",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "yamllint 1.35.1\nFinding: .github/workflows/version.yaml\n",
+          "createdAt": "2025-01-16T10:09:54Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595103034",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ariK_",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The [Ka0S] YAMLLINT process (12806596619) launch the check (12806599907) over file (.github/workflows/version.yaml) and its result has been SUCCESS. Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-16T10:10:04Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595103423",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ari2u",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Subimos execution",
+          "createdAt": "2025-01-16T10:11:07Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595106222",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86ari31",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": ".github/workflows/execution.yaml\n",
+          "createdAt": "2025-01-16T10:11:09Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595106293",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arjhl",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] process RN action over refs/heads/RN633-modulo-de-execution has been initiated by santakloud.",
+          "createdAt": "2025-01-16T10:12:19Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595108965",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arjnj",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT has been initiated and Launch workflow yamllint.yaml to check file .github/workflows/execution.yaml",
+          "createdAt": "2025-01-16T10:12:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595109347",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arjpU",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "yamllint 1.35.1\nFinding: .github/workflows/execution.yaml\n",
+          "createdAt": "2025-01-16T10:12:34Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595109460",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arjuf",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The [Ka0S] YAMLLINT process (12806649505) launch the check (12806652281) over file (.github/workflows/execution.yaml) and its result has been SUCCESS. Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-16T10:12:43Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595109791",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arkEP",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Vamos a pasar a produccion para empezar a generar el procedimiento de creacion o solicitud de una issue",
+          "createdAt": "2025-01-16T10:13:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595111183",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86asjvg",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": ".github/workflows/issue.yaml\n",
+          "createdAt": "2025-01-16T12:10:12Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595372000",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86askg4",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] process RN action over refs/heads/RN633-modulo-de-execution has been initiated by santakloud.",
+          "createdAt": "2025-01-16T12:11:25Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595375160",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86askl-",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT has been initiated and Launch workflow yamllint.yaml to check file .github/workflows/issue.yaml",
+          "createdAt": "2025-01-16T12:11:35Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595375486",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86askob",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "yamllint 1.35.1\nFinding: .github/workflows/issue.yaml\n",
+          "createdAt": "2025-01-16T12:11:38Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595375643",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86askt5",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The [Ka0S] YAMLLINT process (12808580441) launch the check (12808583719) over file (.github/workflows/issue.yaml) and its result has been SUCCESS. Please review all files implicated in pull request and approve to merge",
+          "createdAt": "2025-01-16T12:11:48Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/633#issuecomment-2595375993",
           "viewerDidAuthor": true
         }
       ],
@@ -65,7 +582,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "Modulo de Execution",
-      "updatedAt": "2025-01-15T16:41:39Z",
+      "updatedAt": "2025-01-16T12:11:49Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/633"
     },
     {
@@ -9695,6 +10212,126 @@
           "reactionGroups": [],
           "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2582622335",
           "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86avWmp",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "compliance/README.md\ncore/results/README.md\n",
+          "createdAt": "2025-01-16T15:58:52Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2596104617",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86avXU9",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] process F action over refs/heads/F580-configuración-de-elk-y-sus-componentes has been initiated by Yolabn.",
+          "createdAt": "2025-01-16T16:00:03Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2596107581",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86avXdh",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT has been initiated and Launch workflow mdlint.yaml to check file compliance/README.md",
+          "createdAt": "2025-01-16T16:00:16Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2596108129",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86avXeA",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INIT has been initiated and Launch workflow mdlint.yaml to check file core/results/README.md",
+          "createdAt": "2025-01-16T16:00:16Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2596108160",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86avXil",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "markdownlint-cli2 v0.17.1 (markdownlint v0.37.3)\nFinding: compliance/README.md\nLinting: 1 file(s)\nSummary: 0 error(s)\n",
+          "createdAt": "2025-01-16T16:00:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2596108453",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86avXpO",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The [Ka0S] MDLINT process (12812736919) launch the check (12812741247) over file (compliance/README.md) and its result has been SUCCESS. Please MERGE",
+          "createdAt": "2025-01-16T16:00:33Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2596108878",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86avXtu",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "markdownlint-cli2 v0.17.1 (markdownlint v0.37.3)\nFinding: core/results/README.md\nLinting: 1 file(s)\nSummary: 0 error(s)\n",
+          "createdAt": "2025-01-16T16:00:40Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2596109166",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86avX0K",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "The [Ka0S] MDLINT process (12812736919) launch the check (12812741445) over file (core/results/README.md) and its result has been SUCCESS. Please MERGE",
+          "createdAt": "2025-01-16T16:00:50Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/580#issuecomment-2596109578",
+          "viewerDidAuthor": true
         }
       ],
       "createdAt": "2025-01-10T08:19:08Z",
@@ -9728,7 +10365,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "Configuración de ELK y sus componentes",
-      "updatedAt": "2025-01-10T12:40:31Z",
+      "updatedAt": "2025-01-16T16:00:51Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/580"
     },
     {
@@ -13488,6 +14125,21 @@
           "reactionGroups": [],
           "url": "https://github.com/SantaKa0S/kaos/issues/544#issuecomment-2593396168",
           "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86arRU_",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "OPS¡ se ha producido un error en el proceso ([Ka0S]) lanzado desde (#544) en la ejecución (12806171589) y esto ha generado una issue con el titulo ([Ka0S] Module failed in 12806171589)",
+          "createdAt": "2025-01-16T09:44:43Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/544#issuecomment-2595034431",
+          "viewerDidAuthor": true
         }
       ],
       "createdAt": "2024-12-13T11:55:39Z",
@@ -13521,7 +14173,7 @@
       "reactionGroups": [],
       "state": "CLOSED",
       "title": "Creación de la estructura base de Automations",
-      "updatedAt": "2025-01-15T16:34:48Z",
+      "updatedAt": "2025-01-16T09:44:45Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/544"
     },
     {
