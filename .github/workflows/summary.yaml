@@ -182,7 +182,7 @@ jobs:
       
   handle_failure:
     runs-on: 
-      group: kaos-summary
+      group: kaos-issue
     needs: [kaos-summary]
     if: ${{ failure() }}
     steps:
