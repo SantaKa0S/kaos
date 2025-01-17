@@ -137,8 +137,8 @@ jobs:
             \`\`\`
             **Solicitado por:** $KAOS_ISSUE_USER
             **Número de ejecución:** $KAOS_ISSUE_NUMBER
-            **Título:** ${{ env.KAOS_ISSUE_TITLE }}
-            **Datos de la ejecución:** ${{ env.KAOS_ISSUE_TITLE }}
+            **Título:** $KAOS_ISSUE_TITLE
+            **Datos de la ejecución:** "$KAOS_ISSUE_TITLE"
             **Tipo de Ejecución:** $KAOS_ISSUE_LABELS
             Please investigate the issue.
             EOF
