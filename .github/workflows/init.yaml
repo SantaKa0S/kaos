@@ -114,7 +114,7 @@ jobs:
 
   handle_failure:
     runs-on: 
-      group: kaos-init
+      group: kaos-issue
     needs: [kaos-init-process]
     if: ${{ failure() }}
     steps:

@@ -130,7 +130,7 @@ jobs:
 
   handle_failure:
     runs-on: 
-      group: kaos-version
+      group: kaos-issue
     needs: [kaos-version]
     if: ${{ failure() }}
     steps:
