@@ -41,11 +41,12 @@ jobs:
           echo "Init repository"
           # gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha iniciado el repositorio"
           # Vemos si con inicializar el fichero solventamos el problema
-          touch ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
+          touch ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          echo "$_timestamp - Se ha iniciado la ejecución ${{ env.KAOS_CODE}} a través de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
+          ${{ steps.id.outputs.name }}
+          echo "($_timestamp) - Se ha iniciado la ejecución ${{ env.KAOS_CODE}} a través de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          echo "$_timestamp - Se ha iniciado el Repositorio." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
+          echo "($_timestamp) - Se ha iniciado el Repositorio." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
   check-issue:
     runs-on: 
       group: kaos-execution
@@ -58,7 +59,7 @@ jobs:
             echo "Check issue for execution $KAOS_ISSUE_NUMBER"
             # gh issue comment $KAOS_ISSUE_NUMBER -b "Check issue for execution $KAOS_ISSUE_NUMBER"
             _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-            echo "$_timestamp - Se ha comprobado que la tarjeta #${{ env.KAOS_ISSUE_NUMBER }} se puede ejecutar." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
+            echo "($_timestamp) - Se ha comprobado que la tarjeta #${{ env.KAOS_ISSUE_NUMBER }} se puede ejecutar." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
   check-data:
     runs-on: 
       group: kaos-execution
@@ -71,7 +72,7 @@ jobs:
             echo "Check data"
             # gh issue comment $KAOS_ISSUE_NUMBER -b "Se han comprobado los datos"
             _timestamp=-$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-            echo "$_timestamp - Se comprobado los datos asociados a la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
+            echo "($_timestamp) - Se comprobado los datos asociados a la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
   show-data:
     runs-on: 
       group: kaos-execution
@@ -87,11 +88,11 @@ jobs:
           echo "KAOS_ISSUE_BODY: $KAOS_ISSUE_BODY"
           # gh issue comment $KAOS_ISSUE_NUMBER -b "Se han mostrado los datos"
           _timestamp=-$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          echo "$_timestamp - Estos son los datos de la ejecucion ${{ env.KAOS_CODE}} de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
-          echo "KAOS_ISSUE_NUMBER: $KAOS_ISSUE_NUMBER" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
-          echo "KAOS_ISSUE_TITLE: $KAOS_ISSUE_TITLE" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
-          echo "KAOS_ISSUE_BODY: $KAOS_ISSUE_BODY" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
-          echo "------------------------------------------------------------------------------------------" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
+          echo "($_timestamp) - Estos son los datos de la ejecucion ${{ env.KAOS_CODE}} de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
+          echo "KAOS_ISSUE_NUMBER: $KAOS_ISSUE_NUMBER" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
+          echo "KAOS_ISSUE_TITLE: $KAOS_ISSUE_TITLE" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
+          echo "KAOS_ISSUE_BODY: $KAOS_ISSUE_BODY" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
+          echo "------------------------------------------------------------------------------------------" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
   start-execution:
     runs-on: 
       group: kaos-execution
@@ -107,7 +108,7 @@ jobs:
           # Sección donde definimos como será la ejecución
           echo "Start execution"
           _timestamp=-$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          echo "$_timestamp - Se ha iniciado la ejecución de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
+          echo "($_timestamp) - Se ha iniciado la ejecución de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           echo "KAOS_EXECUTION_RESULT=fichero_de_resultado" >> $GITHUB_OUTPUT
           echo "KAOS_EXECUTION_STATUS=success" >> $GITHUB_OUTPUT
           # gh issue comment $KAOS_ISSUE_NUMBER -b "Se han lanzado la ejecución"
@@ -122,9 +123,9 @@ jobs:
         run: |
           echo "End execution"
           _timestamp=-$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          echo "$_timestamp - La ejecución de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }} ha finalizado con el resultado ${{ needs.start-execution.outputs.KAOS_EXECUTION_STATUS }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
+          echo "($_timestamp) - La ejecución de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }} ha finalizado con el resultado ${{ needs.start-execution.outputs.KAOS_EXECUTION_STATUS }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           _timestamp=-$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          echo "$_timestamp - El resultado de la ejecución se añade a la tajeta #${{ env.KAOS_ISSUE_NUMBER }} ha finalizado con el resultado ${{ env.KAOS_FILE_OUTPUT}}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
+          echo "($_timestamp) - El resultado de la ejecución se añade a la tajeta #${{ env.KAOS_ISSUE_NUMBER }} ha finalizado con el resultado ${{ env.KAOS_FILE_OUTPUT}}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           # gh issue comment $KAOS_ISSUE_NUMBER -b "La ejecución ha finalizado con el resultado ${{ needs.start-execution.outputs.KAOS_EXECUTION_STATUS }}"
           # gh issue comment $KAOS_ISSUE_NUMBER -b "Se añade el fichero de resultados" -F "${{ needs.start-execution.outputs.KAOS_EXECUTION_RESULT }}"
   handle-success:
@@ -142,7 +143,7 @@ jobs:
           echo "Se añade el log de la ejecución al issue #$KAOS_ISSUE_NUMBER"
           echo "Se procede a cerrar la issue #$KAOS_ISSUE_NUMBER"
           gh issue comment $KAOS_ISSUE_NUMBER --body "La ejecución ha sido SUCCESS #${{ env.KAOS_ISSUE_NUMBER }} el siguiente mensaje muestra el resultado de las operaciones"
-          gh issue comment $KAOS_ISSUE_NUMBER --body-file "${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md"
+          gh issue comment $KAOS_ISSUE_NUMBER --body-file "${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt"
   handle_failure:
       runs-on: 
         group: kaos-execution
