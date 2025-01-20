@@ -118,13 +118,6 @@ jobs:
       group: kaos
     needs: job-core  
     steps:
-      - id: repo
-        name: repo
-        if: ${{ always() }}
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.KAOS_TOKEN }}
       - id: check-compliance
         name: check-compliance
         run: |
@@ -138,13 +131,6 @@ jobs:
       group: kaos
     needs: job-core
     steps:
-      - id: repo
-        name: repo
-        if: ${{ always() }}
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.KAOS_TOKEN }}
       - id: check-security
         name: check-security
         run: |
@@ -158,13 +144,6 @@ jobs:
       group: kaos
     needs: job-core
     steps:
-      - id: repo
-        name: repo
-        if: ${{ always() }}
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.KAOS_TOKEN }}
       - id: check-observability
         name: Check Observability
         run: |
@@ -206,8 +185,6 @@ jobs:
             KAOS_CODESCAN_STATUS=$(echo '100%')
             echo "KAOS_CODESCAN_STATUS=$KAOS_CODESCAN_STATUS" >> $GITHUB_OUTPUT
           fi
-          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          echo "($_timestamp) - JOB_CODESCAN: $KAOS_CODESCAN_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt
   job-flows:
     needs: [job-core, job-codescan] 
     if: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS == '100%' }}
@@ -217,11 +194,6 @@ jobs:
     runs-on:
       group: kaos
     steps:
-      - id: repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.KAOS_TOKEN }}
       - id: release-new-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
