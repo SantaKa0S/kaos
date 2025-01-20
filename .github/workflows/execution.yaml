@@ -146,11 +146,11 @@ jobs:
   handle_failure:
       runs-on: 
         group: kaos-execution
-        env:
-          SAFE_KAOS_ISSUE_USER: ${{ env.KAOS_ISSUE_TITLE }}
-          SAFE_KAOS_ISSUE_USER: ${{ env.KAOS_ISSUE_USER }}
-          SAFE_KAOS_ISSUE_NUMBER: ${{ env.KAOS_ISSUE_NUMBER }}
-          SAFE_KAOS_ISSUE_BODY: ${{ env.KAOS_ISSUE_BODY }}
+      env:
+        SAFE_KAOS_ISSUE_USER: ${{ env.KAOS_ISSUE_TITLE }}
+        SAFE_KAOS_ISSUE_USER: ${{ env.KAOS_ISSUE_USER }}
+        SAFE_KAOS_ISSUE_NUMBER: ${{ env.KAOS_ISSUE_NUMBER }}
+        SAFE_KAOS_ISSUE_BODY: ${{ env.KAOS_ISSUE_BODY }}
       needs: [check-issue, check-data, show-data, start-execution, end-execution]
       if: ${{ failure() }} 
       steps: 
