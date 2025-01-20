@@ -15,7 +15,6 @@ env:
   KAOS_PATH_RESUME: "core/results/"
   KAOS_PATH_OUTPUT: "core/outputs/e/"
   KAOS_REPO: "/actions-runner/_work/kaos/kaos"
-  KAOS_PROJECT_NAME: "@Core-Kaos-Project"
   KAOS_STEP_MODULE: ""
   KAOS_CODE: ${{ github.run_id }}
   KAOS_ISSUE_NUMBER: ${{ github.event.issue.number }}
@@ -40,10 +39,9 @@ jobs:
         if: ${{ success() }}
         run: |
           echo "Init repository"
-          # gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha iniciado el repositorio"
           # Vemos si con inicializar el fichero solventamos el problema
           touch ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
-          echo "------------------------------------------------------------------------------------------" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
+          echo "# iniciamos la ejecución." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
           ${{ steps.id.outputs.name }}
           echo "($_timestamp) - Se ha iniciado la ejecución ${{ env.KAOS_CODE}} a través de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
@@ -71,7 +69,7 @@ jobs:
   check-data:
     runs-on: 
       group: kaos-execution
-    needs: [check-issue]
+    needs: init-repo
     steps:
       - id: data
         name: Check data
@@ -85,7 +83,7 @@ jobs:
   show-data:
     runs-on: 
       group: kaos-execution
-    needs: [check-data, check-issue]
+    needs: init-repo
     steps:
       - id: show
         name: Show data
@@ -101,7 +99,6 @@ jobs:
           echo "KAOS_ISSUE_NUMBER: $KAOS_ISSUE_NUMBER" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           echo "KAOS_ISSUE_TITLE: $KAOS_ISSUE_TITLE" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           echo "KAOS_ISSUE_BODY: $KAOS_ISSUE_BODY" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
-          echo "------------------------------------------------------------------------------------------" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
   start-execution:
     runs-on: 
       group: kaos-execution
@@ -124,7 +121,7 @@ jobs:
   end-execution:
     runs-on: 
       group: kaos-execution
-    needs: [check-issue, check-data, show-data, start-execution]
+    needs: [start-execution]
     steps:
       - id: end
         name: End execution
@@ -140,7 +137,7 @@ jobs:
   handle-success:
     runs-on: 
       group: kaos-execution
-    needs: [check-issue, check-data, show-data, start-execution, end-execution]
+    needs: [end-execution]
     if: ${{ success() }}
     steps: 
       - id: handle-success-execution
@@ -157,7 +154,7 @@ jobs:
   handle_failure:
       runs-on: 
         group: kaos-execution
-      needs: [check-issue, check-data, show-data, start-execution, end-execution]
+      needs: [init-repo, check-issue, check-data, show-data, start-execution, end-execution]
       if: ${{ failure() }} 
       steps: 
         - id: check-execution
@@ -181,4 +178,4 @@ jobs:
             gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_TITLE" -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="$KAOS_ISSUE_USER"
             # Añadimos el comentario a la issue que dispara el proceso
             KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }}) lanzado desde (#$KAOS_ISSUE_NUMBER) en la ejecución (${{ env.KAOS_CODE }}) y esto ha generado una issue con el titulo ($KAOS_TITLE)"
-            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=$KAOS_ISSUE_NUMBER -f kaos-issue-body-file="${{ env.KAOS_FILE_OUTPUT}}"
+            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=$KAOS_ISSUE_NUMBER -f kaos-issue-body-file="${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt"
