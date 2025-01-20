@@ -41,9 +41,9 @@ jobs:
         run: |
           echo "Init repository"
           # gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha iniciado el repositorio"
-          echo "KAOS_FILE_OUTPUT=${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ enc.KAOS_ISSUE_NUMBER}}.md" >> $GITHUB_ENV
-          echo "$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z') - Se ha iniciado la ejecución ${{ env.KAOS_CODE}} a través de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ enc.KAOS_ISSUE_NUMBER}}.md
-          echo "$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z') - Se ha iniciado el Repositorio." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ enc.KAOS_ISSUE_NUMBER}}.md
+          echo "KAOS_FILE_OUTPUT=${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md" >> $GITHUB_ENV
+          echo "$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z') - Se ha iniciado la ejecución ${{ env.KAOS_CODE}} a través de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
+          echo "$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z') - Se ha iniciado el Repositorio." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
   check-issue:
     runs-on: 
       group: kaos-execution
@@ -130,7 +130,7 @@ jobs:
           # Añadimos a cada paso el mensaje de éxito incluido en la issue original
           echo "${{ env.KAOS_MODULE }} Success in runid ${{ github.run_id }} initiated by $KAOS_ISSUE_USER trouhg issue number $KAOS_ISSUE_NUMBER."
           echo "La ejecución solicitada en el issue #$KAOS_ISSUE_NUMBER ha sido completada con éxito."
-          echo "El log de la ejecucion se encuentra en ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}"
+          echo "El log de la ejecucion se envuentra en ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}"
           echo "Se añade el log de la ejecución al issue #$KAOS_ISSUE_NUMBER"
           echo "Se procede a cerrar la issue #$KAOS_ISSUE_NUMBER"
           gh issue comment $KAOS_ISSUE_NUMBER --body "Handle Success Execution for #${{ env.KAOS_ISSUE_NUMBER }}" --body-file "${{ env.KAOS_FILE_OUTPUT}}"
