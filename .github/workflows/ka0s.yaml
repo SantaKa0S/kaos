@@ -227,6 +227,8 @@ jobs:
         run: |
           KAOS_FLOWS_STATUS=$( echo "100%")
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          echo "($_timestamp) - JOB_CODESCAN: ${{ needs.job-codescan.outputs.KAOS_FLOWS_STATUS}}" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt
+          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
           echo "($_timestamp) - JOB_FLOWS: $KAOS_FLOWS_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt
           gh issue comment ${{ needs.job-core.outputs.KAOS_NUMBER }} --body "La ejecución ha sido SUCCESS #${{ needs.job-core.outputs.KAOS_NUMBER }} el siguiente mensaje muestra el resultado de las operaciones"
   handle-success:
