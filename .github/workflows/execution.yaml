@@ -49,6 +49,7 @@ jobs:
         if: ${{ startsWith(env.KAOS_ISSUE_TITLE, '[E]') && github.ref == 'refs/heads/main' }}
         run: |
             echo "Check issue for execution $KAOS_ISSUE_NUMBER"
+            gh issue comment $KAOS_ISSUE_NUMBER -b "Check issue for execution $KAOS_ISSUE_NUMBER"
   check-data:
     runs-on: 
       group: kaos-execution
