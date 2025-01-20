@@ -260,7 +260,13 @@ jobs:
         group: kaos-execution
       needs: [job-core, job-compliance, job-security, job-observability, job-codescan, job-flows]
       if: ${{ success() }}
-      steps: 
+      steps:
+        - id: repo
+          name: repo
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
+            token: ${{ secrets.KAOS_TOKEN }} 
         - id: handle-success-execution
           name: handle-success-execution
           run: |
