@@ -69,7 +69,7 @@ jobs:
   check-data:
     runs-on: 
       group: kaos-execution
-    needs: init-repo
+    needs: check-issue
     steps:
       - id: data
         name: Check data
@@ -83,7 +83,7 @@ jobs:
   show-data:
     runs-on: 
       group: kaos-execution
-    needs: init-repo
+    needs: check-data
     steps:
       - id: show
         name: Show data
