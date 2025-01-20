@@ -42,6 +42,7 @@ jobs:
           echo "Init repository"
           # gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha iniciado el repositorio"
           echo "KAOS_FILE_OUTPUT=${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md" >> $GITHUB_ENV
+          # Vemos si con inicializar el fichero solventamos el problema
           touch ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
           echo "$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z') - Se ha iniciado la ejecución ${{ env.KAOS_CODE}} a través de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
           echo "$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z') - Se ha iniciado el Repositorio." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md
