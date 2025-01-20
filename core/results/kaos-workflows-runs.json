@@ -63541,18 +63541,33 @@
     "run_started_at": "2024-11-27T16:10:08Z"
   },
   {
+    "id": 12859112408,
+    "name": "Ka0s Summary",
+    "head_branch": "main",
+    "head_sha": "1e35dc7325020242754685e1d62e7fc6bd5ed6a9",
+    "run_number": 140,
+    "event": "schedule",
+    "status": "in_progress",
+    "conclusion": null,
+    "workflow_id": 129804632,
+    "url": "https://api.github.com/repos/SantaKa0S/kaos/actions/runs/12859112408",
+    "created_at": "2025-01-20T01:20:11Z",
+    "updated_at": "2025-01-20T01:20:21Z",
+    "run_started_at": "2025-01-20T01:20:11Z"
+  },
+  {
     "id": 12849118478,
     "name": "Ka0s Summary",
     "head_branch": "main",
     "head_sha": "c44795dcbf6bf4a7e9fe3a35b73d14396afe704d",
     "run_number": 139,
     "event": "schedule",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "success",
     "workflow_id": 129804632,
     "url": "https://api.github.com/repos/SantaKa0S/kaos/actions/runs/12849118478",
     "created_at": "2025-01-19T01:24:44Z",
-    "updated_at": "2025-01-19T01:24:52Z",
+    "updated_at": "2025-01-19T01:29:21Z",
     "run_started_at": "2025-01-19T01:24:44Z"
   },
   {
@@ -72104,6 +72119,21 @@
     "created_at": "2025-01-09T16:15:25Z",
     "updated_at": "2025-01-09T16:15:52Z",
     "run_started_at": "2025-01-09T16:15:25Z"
+  },
+  {
+    "id": 12849152643,
+    "name": "Push on main",
+    "head_branch": "main",
+    "head_sha": "1e35dc7325020242754685e1d62e7fc6bd5ed6a9",
+    "run_number": 99,
+    "event": "dynamic",
+    "status": "completed",
+    "conclusion": "success",
+    "workflow_id": 137218876,
+    "url": "https://api.github.com/repos/SantaKa0S/kaos/actions/runs/12849152643",
+    "created_at": "2025-01-19T01:29:16Z",
+    "updated_at": "2025-01-19T01:30:47Z",
+    "run_started_at": "2025-01-19T01:29:16Z"
   },
   {
     "id": 12839494957,
