@@ -260,7 +260,7 @@ jobs:
   handle-success:
       runs-on: 
         group: kaos
-      needs: [job-flows, job-core, jobs-compliance, job-security, job-observability, job-codescan]
+      needs: [job-flows, job-core, job-compliance, job-security, job-observability, job-codescan]
       if: ${{ success() }}
       steps:
         - id: handle-success-execution
