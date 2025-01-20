@@ -131,7 +131,7 @@ jobs:
     steps:
       - id: end
         name: End execution
-        if: ${{ sucess() }}
+        if: ${{ success() }}
         run: |
           echo "End execution"
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
