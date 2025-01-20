@@ -84,6 +84,7 @@ jobs:
           echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
           echo "CHANGED_FILES=$(git diff --name-only HEAD~1 | tr '\n' ' ')" >> $GITHUB_OUTPUT
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          touch ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
           echo "($_timestamp) - Se ha iniciado el Repositorio." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
           echo "($_timestamp) - Se detecta el flujo $RNBRANCH." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
       - id: files
