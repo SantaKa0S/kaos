@@ -154,8 +154,6 @@ jobs:
             echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
             KAOS_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ env.KAOS_CODE }}"
             KAOS_BODY=$(cat <<'EOF'
-            An error occurred in the execution Action workflow RunID: **${{ env.KAOS_CODE }}**.
-            Initiated by #$KAOS_ISSUE_USER from issue number #$KAOS_ISSUE_NUMBER
             **${{ env.KAOS_MODULE }}  Message:**
             El error ha sido en : ${{ env.KAOS_CODE }}
             ejecute este comando en su consola y podrá consultar el fallo del trabajo
@@ -163,10 +161,6 @@ jobs:
             \`\`\`
             **La información de la ejecución ${{ secrets.KAOS_ACTIONS_URL }}${{ env.KAOS_CODE }}**
             \`\`\`
-            **Solicitado por:** $KAOS_ISSUE_USER
-            **Número de ejecución:** $KAOS_ISSUE_NUMBER
-            **Título:** $KAOS_ISSUE_TITLE
-            **Datos de la ejecución:** "$KAOS_ISSUE_BODY"
             Please investigate the issue.
             EOF
             )
