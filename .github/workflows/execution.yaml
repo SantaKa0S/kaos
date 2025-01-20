@@ -131,7 +131,7 @@ jobs:
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
           echo "($_timestamp) - La ejecución de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }} ha finalizado con el resultado ${{ needs.start-execution.outputs.KAOS_EXECUTION_STATUS }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          echo "($_timestamp) - El resultado de la ejecución se añade a la tajeta #${{ env.KAOS_ISSUE_NUMBER }} ha finalizado con el resultado SUCCESS." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
+          echo "($_timestamp) - El resultado de la ejecución se añade a la tajeta #${{ env.KAOS_ISSUE_NUMBER }}, ha finalizado con el resultado SUCCESS." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           # gh issue comment $KAOS_ISSUE_NUMBER -b "La ejecución ha finalizado con el resultado ${{ needs.start-execution.outputs.KAOS_EXECUTION_STATUS }}"
           # gh issue comment $KAOS_ISSUE_NUMBER -b "Se añade el fichero de resultados" -F "${{ needs.start-execution.outputs.KAOS_EXECUTION_RESULT }}"
   handle-success:
@@ -151,6 +151,7 @@ jobs:
           echo "Se procede a cerrar la issue #$KAOS_ISSUE_NUMBER"
           gh issue comment $KAOS_ISSUE_NUMBER --body "La ejecución ha sido SUCCESS #${{ env.KAOS_ISSUE_NUMBER }} el siguiente mensaje muestra el resultado de las operaciones"
           gh issue comment $KAOS_ISSUE_NUMBER --body-file "${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt"
+          gh issue close $KAOS_ISSUE_NUMBER --comment "Puede proceder a cerrar la tarjeta." --reason completed
   handle_failure:
       runs-on: 
         group: kaos-execution
