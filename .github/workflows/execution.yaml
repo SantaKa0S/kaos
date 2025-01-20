@@ -155,7 +155,8 @@ jobs:
             KAOS_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ env.KAOS_CODE }}"
             KAOS_BODY=$(cat <<'EOF'
             **${{ env.KAOS_MODULE }}  Message:**
-            El error ha sido en : ${{ env.KAOS_CODE }}
+            El error ha sido en: ${{ env.KAOS_CODE }}
+            si dispòne de los permisos necesarios 
             ejecute este comando en su consola y podrá consultar el fallo del trabajo
             gh run view ${{ env.KAOS_CODE }} --log-failed
             \`\`\`
