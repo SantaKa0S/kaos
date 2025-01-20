@@ -41,7 +41,6 @@ jobs:
           echo "Init repository"
           # Vemos si con inicializar el fichero solventamos el problema
           touch ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
-          echo "# iniciamos la ejecución." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
           ${{ steps.id.outputs.name }}
           echo "($_timestamp) - Se ha iniciado la ejecución ${{ env.KAOS_CODE}} a través de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
