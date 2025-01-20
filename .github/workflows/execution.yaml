@@ -15,7 +15,6 @@ env:
   KAOS_PATH_RESUME: "core/results/"
   KAOS_PATH_OUTPUT: "core/outputs/e/"
   KAOS_REPO: "/actions-runner/_work/kaos/kaos"
-  KAOS_PROJECT_NAME: "@Core-Kaos-Project"
   KAOS_STEP_MODULE: ""
   KAOS_CODE: ${{ github.run_id }}
   KAOS_ISSUE_NUMBER: ${{ github.event.issue.number }}
