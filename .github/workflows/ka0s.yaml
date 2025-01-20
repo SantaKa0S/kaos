@@ -96,7 +96,7 @@ jobs:
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
           git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
           # Subimos la lista de ficheros que tenemos que comprobar
-          gh issue comment ${{ steps.core.outputs.RNNUMBER }} -F ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
+          gh issue comment ${{ steps.core.outputs.RNNUMBER }} --body "Comienza la ejecución de KAOS run_id: ${{ env.KAOS_CODE }}"
           INVOLVED=${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
           echo "INVOLVED=$INVOLVED" >> $GITHUB_OUTPUT
           git config --global user.name "${{ secrets.KAOS_USER_NAME }}"
@@ -259,16 +259,10 @@ jobs:
           gh issue comment ${{ needs.job-core.outputs.KAOS_NUMBER }} --body "La ejecución ha sido SUCCESS #${{ needs.job-core.outputs.KAOS_NUMBER }} el siguiente mensaje muestra el resultado de las operaciones"
   handle-success:
       runs-on: 
-        group: kaos-execution
+        group: kaos
       needs: [job-flows, job-core]
       if: ${{ success() }}
       steps:
-        - id: repo
-          name: repo
-          uses: actions/checkout@v4
-          with:
-            fetch-depth: 0
-            token: ${{ secrets.KAOS_TOKEN }} 
         - id: handle-success-execution
           name: handle-success-execution
           run: |
