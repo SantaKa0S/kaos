@@ -189,7 +189,7 @@ jobs:
           # Vamos a determinar la accion de comprobar el codigo de todos los filesystem
           trivy repo ${{ env.KAOS_REPO}} --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL  --output ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md     
       - id: check-content-upload
-          name: check-content-upload
+        name: check-content-upload
         run: |
           # Comprobamos el contenido del fichero generado
           if [ -s ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md ]; then
