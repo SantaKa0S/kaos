@@ -141,7 +141,8 @@ jobs:
           echo "El log de la ejecucion se envuentra en ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}"
           echo "Se añade el log de la ejecución al issue #$KAOS_ISSUE_NUMBER"
           echo "Se procede a cerrar la issue #$KAOS_ISSUE_NUMBER"
-          gh issue comment $KAOS_ISSUE_NUMBER --body "Handle Success Execution for #${{ env.KAOS_ISSUE_NUMBER }}" --body-file "${{ env.KAOS_FILE_OUTPUT }}"
+          gh issue comment $KAOS_ISSUE_NUMBER --body "La ejecución ha sido SUCCESS #${{ env.KAOS_ISSUE_NUMBER }} el siguiente mensaje muestra el resultado de las operaciones"
+          gh issue comment $KAOS_ISSUE_NUMBER --body-file "${{ env.KAOS_FILE_OUTPUT }}"
   handle_failure:
       runs-on: 
         group: kaos-execution
@@ -153,19 +154,14 @@ jobs:
             echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
             KAOS_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ env.KAOS_CODE }}"
             KAOS_BODY=$(cat <<'EOF'
-            An error occurred in the execution Action workflow RunID: **${{ env.KAOS_CODE }}**.
-            Initiated by #$KAOS_ISSUE_USER from issue number #$KAOS_ISSUE_NUMBER
             **${{ env.KAOS_MODULE }}  Message:**
-            El error ha sido en : ${{ env.KAOS_CODE }}
+            El error ha sido en: ${{ env.KAOS_CODE }}
+            si dispòne de los permisos necesarios 
             ejecute este comando en su consola y podrá consultar el fallo del trabajo
             gh run view ${{ env.KAOS_CODE }} --log-failed
             \`\`\`
             **La información de la ejecución ${{ secrets.KAOS_ACTIONS_URL }}${{ env.KAOS_CODE }}**
             \`\`\`
-            **Solicitado por:** $KAOS_ISSUE_USER
-            **Número de ejecución:** $KAOS_ISSUE_NUMBER
-            **Título:** $KAOS_ISSUE_TITLE
-            **Datos de la ejecución:** "$KAOS_ISSUE_BODY"
             Please investigate the issue.
             EOF
             )
