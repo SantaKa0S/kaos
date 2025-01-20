@@ -21,12 +21,12 @@ env:
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   BRANCH_NAME: ${{ github.ref }}
   KAOS_PATH_RESUME: "core/results/"
+  KAOS_PATH_OUTPUT: "core/outputs/e/"
   KAOS_REPO: "/actions-runner/_work/kaos/kaos"
   KAOS_STEP_MODULE: ""
-  KAOS_CODE: ""
+  KAOS_CODE: ${{ github.run_id }}
 
-jobs:
-  
+jobs: 
   job-core:
     if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }} 
     runs-on: 
@@ -42,13 +42,14 @@ jobs:
       COMMIT_MESSAGE: ${{ steps.core.outputs.COMMIT_MESSAGE }}
     steps:
       - id: repo
+        name: Inicializamos el repositorio
         if: ${{ always() }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.KAOS_TOKEN }}
-          
+          token: ${{ secrets.KAOS_TOKEN }}         
       - id: core
+        name: Core
         if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }}
         run: |
           # Comprobamos el flow que deberemos de ejecutar
@@ -82,8 +83,11 @@ jobs:
           echo "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
           echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
           echo "CHANGED_FILES=$(git diff --name-only HEAD~1 | tr '\n' ' ')" >> $GITHUB_OUTPUT
-
+          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          echo "($_timestamp) - Se ha iniciado el Repositorio." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
+          echo "($_timestamp) - Se detecta el flujo $RNBRANCH." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
       - id: files
+        name: Ficheros implicados
         if: ${{ always() }}
         run: |
           # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
@@ -102,101 +106,103 @@ jobs:
           git push
           KAOS_STATUS=$( echo "100%")
           echo "KAOS_CORE_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
-            
+          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          echo "($_timestamp) - Se genera el fichero de commit ${{ env.KAOS_PATH_RESUME }}commit-summary-${{ env.KAOS_CODE }}.txt." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
+          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          echo "($_timestamp) - Se genera el fichero de ficheros implicados ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
+          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          echo "($_timestamp) - JOB_CORE: $KAOS_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt           
   job-compliance:
     runs-on: 
       group: kaos
     needs: job-core  
-    outputs:
-      KAOS_COMPLIANCE_STATUS: ${{ steps.check-compliance.outputs.KAOS_COMPLIANCE_STATUS }}
     steps:
       - id: repo
+        name: inicilizamos el repositorio
         if: ${{ always() }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
-
       - id: check-compliance
+        name: Check Compliance
         run: |
           # Vamos a determinar  la accion de comprobar el cumplimiento de las politicas
           echo "Aquí deberemos de añadir el código del compliance de la organización"
           KAOS_COMPLIANCE_STATUS=$( echo "100%")
-          echo "KAOS_COMPLIANCE_STATUS=$KAOS_COMPLIANCE_STATUS" >> $GITHUB_OUTPUT
-                
+          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          echo "($_timestamp) - JOB_COMPLIANCE: $KAOS_COMPLIANCE_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt               
   job-security:
     runs-on: 
       group: kaos
     needs: job-core
-    outputs:
-      KAOS_SECURITY_STATUS: ${{ steps.check-security.outputs.KAOS_SECURITY_STATUS }}
     steps:
       - id: repo
+        name: Inicializamos el repositorio
         if: ${{ always() }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
-
       - id: check-security
+        name: Check Security
         run: |
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
           echo "Aquí deberemos de añadir el código del security check de la organización"
           KAOS_SECURITY_STATUS=$( echo "100%")
-          echo "KAOS_SECURITY_STATUS=$KAOS_SECURITY_STATUS" >> $GITHUB_OUTPUT
-
+          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          echo "($_timestamp) - JOB_SECURITY: $KAOS_SECURITY_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt
   job-observability:
     runs-on: 
       group: kaos
     needs: job-core
-    outputs:
-      KAOS_OBSERVABILITY_STATUS: ${{ steps.check-observability.outputs.KAOS_OBSERVABILITY_STATUS }}
     steps:
       - id: repo
+        name: Inicializamos el repositorio
         if: ${{ always() }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
-
       - id: check-observability
+        name: Check Observability
         run: |
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
           echo "Aquí deberemos de añadir el código del observability check de la organización"
           KAOS_OBSERVABILITY_STATUS=$( echo "100%")
-          echo "KAOS_OBSERVABILITY_STATUS=$KAOS_OBSERVABILITY_STATUS" >> $GITHUB_OUTPUT
-
+          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          echo "($_timestamp) - JOB_OBSERVABILITY: $KAOS_OBSERVABILITY_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt
   job-codescan:
     runs-on: 
       group: kaos-codescan
     needs: [job-core, job-compliance, job-security, job-observability]
-    outputs:
-      KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
     steps:
       - id: repo
+        name: Inicializamos el Repositorio
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
-
       - id: codescan
+          name: Iniciamos el escaneo
         run: |
           # Vamos a determinar la accion de comprobar el codigo de todos los filesystem
-          trivy repo ${{ env.KAOS_REPO}} --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL  --output ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
-      
+          trivy repo ${{ env.KAOS_REPO}} --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL  --output ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md     
       - id: check-content-upload
+          name: Comprobamos el resultado
         run: |
           # Comprobamos el contenido del fichero generado
           if [ -s ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md ]; then
             echo "El fichero tiene contenido"
-            echo "KAOS_CODESCAN_STATUS=$(echo '0%')" >> $GITHUB_OUTPUT
+            KAOS_CODESCAN_STATUS=$(echo '0%')
             # Añadimos a la Issue el fichero con el resultado del escaner actual
             gh issue comment  ${{ needs.job-core.outputs.KAOS_NUMBER }} -F ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
           else
             echo "El fichero no tiene contenido"
-            echo "KAOS_CODESCAN_STATUS=$(echo '100%')" >> $GITHUB_OUTPUT
+            KAOS_CODESCAN_STATUS=$(echo '100%')
           fi
-
+          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          echo "($_timestamp) - JOB_CODESCAN: $KAOS_CODESCAN_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt
   job-flows:
     needs: [job-core, job-codescan] 
     if: ${{ needs.job-codescan.outputs.KAOS_CODESCAN_STATUS == '100%' }}
@@ -211,7 +217,6 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
-
       - id: release-new-flow
         if: ${{ needs.job-core.outputs.KAOS_BRANCH == 'RN' }}
         run: |
@@ -241,49 +246,53 @@ jobs:
           echo "Commit SHA is ${{ github.sha }}"
           echo "Repo origin is ${{ github.repository }}"
           echo "Launch by ${{ github.actor }}"
-
       - id: end-flows
         run: |
           KAOS_FLOWS_STATUS=$( echo "100%")
-          echo "KAOS_FLOWS_STATUS=$KAOS_FLOWS_STATUS" >> $GITHUB_OUTPUT
-
+          _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+          echo "($_timestamp) - JOB_FLOWS: $KAOS_FLOWS_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt
+  handle-success:
+      runs-on: 
+        group: kaos-execution
+      needs: [job-core, job-compliance, job-security, job-observability, job-codescan, job-flows]
+      if: ${{ success() }}
+      steps: 
+        - id: handle-success-execution
+          name: Añadimos el resultado correcto a la issue
+          run: |
+            # Si todo ha ido correcto añadimos el contenido del fichero 
+            gh issue comment $KAOS_ISSUE_NUMBER --body "La ejecución ha sido SUCCESS #${{ env.KAOS_ISSUE_NUMBER }} el siguiente mensaje muestra el resultado de las operaciones"
+            gh issue comment $KAOS_ISSUE_NUMBER --body-file "${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt"
   handle_failure:
     runs-on: 
       group: kaos-issue
     needs: [job-core, job-compliance, job-security, job-observability, job-codescan, job-flows]
     if: ${{ failure() }} 
     steps:
-
       - id: check-execution
+        name: Creamos la Issue
         env:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
           echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
-          KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ github.run_id }}"
-          KAOS_ISSUE_BODY=$(cat <<'EOF'
-          An error occurred in the execution Action workflow RunID: **${{ github.run_id }}**.
-          Initiated by #${{ needs.job-core.outputs.AUTHOR_NAME}} from issue number #${{ needs.job-core.outputs.KAOS_NUMBER }}
-          **${{ env.KAOS_MODULE }}  Message:**
-          El error ha sido en : ${{  github.run_id }}
-          ejecute este comando en su consola y podrá consultar el fallo del trabajo
-          gh run view ${{  github.run_id }} --log-failed
-          \`\`\`
-          **Please check the job logs for ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
-          \`\`\`
-          **Requested By:** ${{ needs.job-core.outputs.AUTHOR_NAME }}
-          **Workflow Name:** ${{ github.workflow }}
-          **Job Name:** ${{ github.job }}
-          **Run ID:** ${{ github.run_id }}
-          **Run Number:** ${{ github.run_number }}
-          **Repository:** ${{ github.repository }}
-          **Branch:** ${{ github.ref }}
-          **Commit:** ${{ needs.job-core.outputs.COMMIT_MESSAGE }}
-          **Files:** ${{ needs.job-core.outputs.KAOS_FILES }}
-          Please investigate the issue.
-          EOF
-          )
+          KAOS_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ env.KAOS_CODE }}"
+            KAOS_BODY=$(cat <<'EOF'
+            **${{ env.KAOS_MODULE }}  Message:**
+            El error ha sido en: ${{ env.KAOS_CODE }}
+            si dispòne de los permisos necesarios 
+            ejecute este comando en su consola y podrá consultar el fallo del trabajo
+            gh run view ${{ env.KAOS_CODE }} --log-failed
+            \`\`\`
+            **La información de la ejecución ${{ secrets.KAOS_ACTIONS_URL }}${{ env.KAOS_CODE }}**
+            \`\`\`
+            Please investigate the issue.
+            EOF
+            )
           # Creamos la issue dado que ha fallado el modulo principal
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ needs.job-core.outputs.AUTHOR_NAME }}"
+          # obtenemos le numero de la issue generada
+          ISSUE_NUMBER=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
+          echo "Mostramos el $ISSUE_NUMBER"
           # Añadimos el comentario a la issue que dispara el proceso
-          KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }}) lanzado desde (#${{ needs.job-core.outputs.KAOS_NUMBER }}) en la ejecución (${{ github.run_id }}) y esto ha generado una issue con el titulo ($KAOS_ISSUE_TITLE)"
+          KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }}) en la ejecución (${{ env.KAOS_CODE }}) y esto ha generado una issue con el titulo ($KAOS_ISSUE_TITLE)"
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }}
