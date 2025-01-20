@@ -58,3 +58,4 @@
 - **Version**: 1.0.15 - **Description**: Merge 710f60570a12901116de7f6585f2032908dbc09c into 8e4d2b7a7674eecf7522b75ffade5ed561c8c098
 - **Version**: 1.0.16 - **Description**: Merge 714cb1f95c5f494107a042609a3b42beb5ccd4b6 into 37c25e7219dfcb85ece63bc3516bda4b0b083dd3
 - **Version**: 1.0.17 - **Description**: Merge e8dfed25e9523530590ae6e8f8dd02a2d85055db into f9ee1e7a9eb8aff8278b1c59b7e9e565c3ef1bc2
+- **Version**: 1.0.18 - **Description**: Merge 1e084bdaeee8b11be04e55edab1a5dcec0d3034f into 6cd93cdbaf469ff63975dedced953ea908e7668b
