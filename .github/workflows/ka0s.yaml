@@ -259,7 +259,7 @@ jobs:
   handle-success:
       runs-on: 
         group: kaos-execution
-      needs: [job-flows]
+      needs: [job-flows, job-core]
       if: ${{ success() }}
       steps:
         - id: repo
