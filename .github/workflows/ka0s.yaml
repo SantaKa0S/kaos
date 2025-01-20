@@ -76,7 +76,7 @@ jobs:
           RNNUMBER=$(echo "$rn" | grep -o '[0-9]*')
           echo "Extracted RN Branch: $RNBRANCH"
           echo "Extracted RN Number: $RNNUMBER"
-          echo "KAOS_CODE=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')" >> $GITHUB_ENV
+          KAOS_CODE_FILES=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
           echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT   
           echo "AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
@@ -92,12 +92,12 @@ jobs:
         if: ${{ always() }}
         run: |
           # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
-          git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.KAOS_PATH_RESUME }}commit-summary-${{ env.KAOS_CODE }}.txt
+          git log ${{ github.event.before }}..${{ github.sha }} --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > ${{ env.KAOS_PATH_RESUME }}commit-summary-$KAOS_CODE_FILES.txt
           # Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > ${{ env.KAOS_PATH_RESUME }}files-in-commit-$KAOS_CODE_FILES.txt
           # Subimos la lista de ficheros que tenemos que comprobar
           gh issue comment ${{ steps.core.outputs.RNNUMBER }} --body "Comienza la ejecución de KAOS run_id: ${{ env.KAOS_CODE }}"
-          INVOLVED=${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt
+          INVOLVED=${{ env.KAOS_PATH_RESUME }}files-in-commit-$KAOS_CODE_FILES.txt
           echo "INVOLVED=$INVOLVED" >> $GITHUB_OUTPUT
           git config --global user.name "${{ secrets.KAOS_USER_NAME }}"
           git config --global user.email "${{ secrets.KAOS_USER_EMAIL }}"
@@ -108,9 +108,9 @@ jobs:
           KAOS_STATUS=$( echo "100%")
           echo "KAOS_CORE_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          echo "($_timestamp) - Se genera el fichero de commit ${{ env.KAOS_PATH_RESUME }}commit-summary-${{ env.KAOS_CODE }}.txt." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
+          echo "($_timestamp) - Se genera el fichero de commit ${{ env.KAOS_PATH_RESUME }}commit-summary-$KAOS_CODE_FILES.txt." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          echo "($_timestamp) - Se genera el fichero de ficheros implicados ${{ env.KAOS_PATH_RESUME }}files-in-commit-${{ env.KAOS_CODE }}.txt." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
+          echo "($_timestamp) - Se genera el fichero de ficheros implicados ${{ env.KAOS_PATH_RESUME }}files-in-commit-$KAOS_CODE_FILES.txt." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
           echo "($_timestamp) - JOB_CORE: $KAOS_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt           
   job-compliance:
