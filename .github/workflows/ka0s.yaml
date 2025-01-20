@@ -42,14 +42,14 @@ jobs:
       COMMIT_MESSAGE: ${{ steps.core.outputs.COMMIT_MESSAGE }}
     steps:
       - id: repo
-        name: Inicializamos el repositorio
+        name: repo
         if: ${{ always() }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}         
       - id: core
-        name: Core
+        name: core
         if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }}
         run: |
           # Comprobamos el flow que deberemos de ejecutar
@@ -87,7 +87,7 @@ jobs:
           echo "($_timestamp) - Se ha iniciado el Repositorio." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
           echo "($_timestamp) - Se detecta el flujo $RNBRANCH." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-$RNBRANCH.txt
       - id: files
-        name: Ficheros implicados
+        name: files
         if: ${{ always() }}
         run: |
           # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
@@ -118,14 +118,14 @@ jobs:
     needs: job-core  
     steps:
       - id: repo
-        name: inicilizamos el repositorio
+        name: repo
         if: ${{ always() }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
       - id: check-compliance
-        name: Check Compliance
+        name: check-compliance
         run: |
           # Vamos a determinar  la accion de comprobar el cumplimiento de las politicas
           echo "Aquí deberemos de añadir el código del compliance de la organización"
@@ -138,14 +138,14 @@ jobs:
     needs: job-core
     steps:
       - id: repo
-        name: Inicializamos el repositorio
+        name: repo
         if: ${{ always() }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
       - id: check-security
-        name: Check Security
+        name: check-security
         run: |
           # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
           echo "Aquí deberemos de añadir el código del security check de la organización"
@@ -158,7 +158,7 @@ jobs:
     needs: job-core
     steps:
       - id: repo
-        name: Inicializamos el repositorio
+        name: repo
         if: ${{ always() }}
         uses: actions/checkout@v4
         with:
@@ -178,18 +178,18 @@ jobs:
     needs: [job-core, job-compliance, job-security, job-observability]
     steps:
       - id: repo
-        name: Inicializamos el Repositorio
+        name: repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
       - id: codescan
-          name: Iniciamos el escaneo
+        name: codescan
         run: |
           # Vamos a determinar la accion de comprobar el codigo de todos los filesystem
           trivy repo ${{ env.KAOS_REPO}} --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL  --output ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md     
       - id: check-content-upload
-          name: Comprobamos el resultado
+          name: check-content-upload
         run: |
           # Comprobamos el contenido del fichero generado
           if [ -s ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md ]; then
@@ -258,7 +258,7 @@ jobs:
       if: ${{ success() }}
       steps: 
         - id: handle-success-execution
-          name: Añadimos el resultado correcto a la issue
+          name: handle-success-execution
           run: |
             # Si todo ha ido correcto añadimos el contenido del fichero 
             gh issue comment $KAOS_ISSUE_NUMBER --body "La ejecución ha sido SUCCESS #${{ env.KAOS_ISSUE_NUMBER }} el siguiente mensaje muestra el resultado de las operaciones"
@@ -269,8 +269,8 @@ jobs:
     needs: [job-core, job-compliance, job-security, job-observability, job-codescan, job-flows]
     if: ${{ failure() }} 
     steps:
-      - id: check-execution
-        name: Creamos la Issue
+      - id: handle-failure-execution
+        name: handle-failure-execution
         env:
           GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
         run: |
