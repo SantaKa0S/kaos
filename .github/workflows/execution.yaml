@@ -52,7 +52,7 @@ jobs:
   check-data:
     runs-on: 
       group: kaos-execution
-    needs: [init-repo, check-issue]
+    needs: [check-issue]
     steps:
       - id: data
         name: Check data
@@ -63,7 +63,7 @@ jobs:
   show-data:
     runs-on: 
       group: kaos-execution
-    needs: [check-data, check-issue, init-repo]
+    needs: [check-data, check-issue]
     steps:
       - id: show
         name: Show data
@@ -79,7 +79,7 @@ jobs:
   start-execution:
     runs-on: 
       group: kaos-execution
-    needs: [check-issue, check-data, show-data, init-repo]
+    needs: [check-issue, check-data, show-data]
     outputs:
         KAOS_EXECUTION_RESULT: ${{ steps.execution.outputs.KAOS_EXECUTION_RESULT }}
         KAOS_EXECUTION_STATUS: ${{ steps.execution.outputs.KAOS_EXECUTION_STATUS }}
@@ -96,7 +96,7 @@ jobs:
   end-execution:
     runs-on: 
       group: kaos-execution
-    needs: [check-issue, check-data, show-data, init-repo, start-execution]
+    needs: [check-issue, check-data, show-data, start-execution]
     steps:
       - id: end
         name: End execution
@@ -108,7 +108,7 @@ jobs:
   handle-success:
     runs-on: 
       group: kaos-issue
-    needs: [check-issue, check-data, show-data, init-repo, start-execution, end-execution]
+    needs: [check-issue, check-data, show-data, start-execution, end-execution]
     if: ${{ success() }}
     steps: 
       - id: handle-success-execution
@@ -123,7 +123,7 @@ jobs:
   handle_failure:
       runs-on: 
         group: kaos-issue
-      needs: [check-issue, check-data, show-data, init-repo, start-execution, end-execution]
+      needs: [check-issue, check-data, show-data, start-execution, end-execution]
       if: ${{ failure() }} 
       steps: 
         - id: check-execution
