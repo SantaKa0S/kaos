@@ -86,7 +86,7 @@ jobs:
                     if [[ -z "${{ github.event.inputs.kaos-issue-body-file }}" ]]; then
                       gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}"
                     else
-                      gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}" 
+                      gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "${{ github.event.inputs.kaos-issue-body }}" --body-file "${{ github.event.inputs.kaos-issue-body-file }}"
                       # Esta opción se añadira más adelante --body-file "${{ github.event.inputs.kaos-issue-body-file }}"
                     fi
                   ;;

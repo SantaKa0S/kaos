@@ -46,6 +46,7 @@ jobs:
       kaos_issue_id: ${{ steps.issue.outputs.kaos_issue_id }}
 
     steps:
+<<<<<<< HEAD
       - id: repo
         uses: actions/checkout@v4
         with:
@@ -64,6 +65,10 @@ jobs:
           echo "kaos_issue_id=$kaos_issue_id" >> $GITHUB_ENV
           echo "kaos_issue_id='Mi texto'" >> $GITHUB_ENV
       - id: titulo
+=======
+    - id: Checkout repository
+      uses: actions/checkout@v4
+>>>>>>> origin/main
 
   kaos_execution-process:
     runs-on: 
