@@ -142,7 +142,7 @@ jobs:
           echo "Se añade el log de la ejecución al issue #$KAOS_ISSUE_NUMBER"
           echo "Se procede a cerrar la issue #$KAOS_ISSUE_NUMBER"
           gh issue comment $KAOS_ISSUE_NUMBER --body "La ejecución ha sido SUCCESS #${{ env.KAOS_ISSUE_NUMBER }} el siguiente mensaje muestra el resultado de las operaciones"
-          gh issue comment $KAOS_ISSUE_NUMBER --body-file "${{ env.KAOS_FILE_OUTPUT }}"
+          gh issue comment $KAOS_ISSUE_NUMBER --body-file "${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.md"
   handle_failure:
       runs-on: 
         group: kaos-execution
