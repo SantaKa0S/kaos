@@ -176,6 +176,8 @@ jobs:
     runs-on: 
       group: kaos-codescan
     needs: [job-core, job-compliance, job-security, job-observability]
+    outputs:
+      KAOS_CODESCAN_STATUS: ${{ steps.check-content-upload.outputs.KAOS_CODESCAN_STATUS }}
     steps:
       - id: repo
         name: repo
@@ -195,11 +197,13 @@ jobs:
           if [ -s ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md ]; then
             echo "El fichero tiene contenido"
             KAOS_CODESCAN_STATUS=$(echo '0%')
+            echo "KAOS_CODESCAN_STATUS=$KAOS_CODESCAN_STATUS" >> $GITHUB_OUTPUT
             # Añadimos a la Issue el fichero con el resultado del escaner actual
             gh issue comment  ${{ needs.job-core.outputs.KAOS_NUMBER }} -F ${{ env.PATH_RESUME}}trivy-report-${{ github.run_id }}.md
           else
             echo "El fichero no tiene contenido"
             KAOS_CODESCAN_STATUS=$(echo '100%')
+            echo "KAOS_CODESCAN_STATUS=$KAOS_CODESCAN_STATUS" >> $GITHUB_OUTPUT
           fi
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
           echo "($_timestamp) - JOB_CODESCAN: $KAOS_CODESCAN_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt
