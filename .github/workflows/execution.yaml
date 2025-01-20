@@ -22,7 +22,7 @@ env:
   KAOS_ISSUE_TITLE: ${{ github.event.issue.title }}
   KAOS_ISSUE_BODY: ${{ github.event.issue.body }}
   # KAOS_ISSUE_LABELS: ${{ github.event.issue.labels }}
-  # KAOS_ISSUE_USER: ${{ github.event.issue.user }}
+  KAOS_ISSUE_USER: ""
 jobs:
   init-repo:
     runs-on: 
@@ -66,7 +66,7 @@ jobs:
         name: Check Kaos
         run: |
           echo "Extraemos el usuario asignado"
-          KAOS_ISSUE_USER=$(gh issue view $KAOS_ISSUE_NUMBER --json assignees |jq -r '.assignees[].login')
+          echo "KAOS_ISSUE_USER=$(gh issue view $KAOS_ISSUE_NUMBER --json assignees |jq -r '.assignees[].login')" >> $GITHUB_ENV
           echo "Aquí la cambiamos de No Status a Backlog"
           # gh issue edit
           echo "Añadimos la etiqueta automations a la tarjeta"
