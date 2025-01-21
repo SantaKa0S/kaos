@@ -14,13 +14,15 @@ on:
         description: 'Project Name'
         default: ""
         required: false
+
 permissions:
   contents: write
   actions: write
   issues: write
   pull-requests: write
+
 env:
-  KAOS_MODULE: "[Ka0S]"
+  KAOS_MODULE: "[Ka0S] Deployment"
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   BRANCH_NAME: ${{ github.ref }}
   KAOS_PATH_RESUME: "core/results/"
@@ -28,59 +30,75 @@ env:
   KAOS_STEP_MODULE: ""
   KAOS_CODE: ""
   # Variables de entorno del actions que usan variables de entorno de ${{ github.
-  KAOS_USER_EMAILL: ${{ github.actor_id }}
+  KAOS_USER_EMAIL: ${{ github.actor_id }}
+
+  KAOS_ISSUE_NUMBER: ${{ github.event.issue.number }}
+  KAOS_ISSUE_TITLE: ${{ github.event.issue.title }}
+  KAOS_ISSUE_BODY: ${{ github.event.issue.body }}
 
 
 jobs:
   kaos-init-process:
     runs-on: 
       group: kaos-init
-    env:
-      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
-      BRANCH_NAME: ${{ github.ref }}
-      KAOS_PATH_RESUME: "core/results/"
-      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
-      KAOS_STEP_MODULE: ""
-      KAOS_CODE: ""
-    outputs:
-      kaos_issue_id: ${{ steps.issue.outputs.kaos_issue_id }}
 
     steps:
-<<<<<<< HEAD
+      - id: credentials
+        name: Check Credentials
+        if: ${{ success() }}
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const token = secrets.KAOS_TOKEN;
+            if (!token) {
+            throw new Error('CUSTOM_TOKEN is not set');
+            }
+            console.log('KAOS_TOKEN is set');
+
       - id: repo
+        name: Check Repository
+        if: ${{ success() }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.KAOS_TOKEN }} ${{ vars.KAOS_ISSUE_ID}}
+          token: ${{ secrets.KAOS_TOKEN }}
       
-      - id: issue
-        env:
-            kaos_issue_id: ""
+      - id: message
+        name: Message
+        if: ${{ success() }}
         run: |
-          # Nuevo proceso de activacion de los modulos
-          echo " Secccion inicio repo"
-          variable="\$\{\{ "+"secrets."KAOS_"+${{ github.event.inputs.kaos-org-name }}+"_TOKEN"+" \}\}"
-          SECRETO="${{ secrets."+"$variable}}"
-          kaos_issue_id="Mi texto"
-          echo "kaos_issue_id=$kaos_issue_id" >> $GITHUB_ENV
-          echo "kaos_issue_id='Mi texto'" >> $GITHUB_ENV
-      - id: titulo
-=======
-    - id: Checkout repository
-      uses: actions/checkout@v4
->>>>>>> origin/main
+          echo "Init repository"
+          gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha iniciado el repositorio"
 
-  kaos_execution-process:
+  kaos-issue-process:
     runs-on: 
-      group: kaos-issue
+      group: kaos-execution
+    env:
+      issue_id: ${{ needs.kaos-init-process.outputs.kaos_issue_id }}
     needs: kaos-init-process
+    outputs:
+      kaos_issue_id: ${{ steps.issue.outputs.kaos_issue_id }}
+    
     steps:
-      - id: issue
-        env:
-            issue_id: ${{ needs.kaos-init-process.outputs.kaos_issue_id }}
+      - id: issueval
+        name: Create Issue for Variables
+        if: ${{ success() }}
         run: |
-          # Nuevo proceso de activacion de los modulos
-          $issue_id
+          echo "Creating Variable Issue"
+          gh issue create --title "Variables" --body "Define your variables here."
+
+      - id: issuesec
+        name: Create Issue for Secrets
+        run: |
+          echo "Creating Secret Issue"
+          gh issue create --title "Secrets" --body "Define your secrets here."
+
+      - id: fork
+        name: Create Fork
+        if: ${{ success() }}
+        run: |
+          echo "Creating Fork"
+          gh repo fork ${{ github.repository }} --org KAOS_ORG_EMPRESA --remote
 
   handle-success:
     runs-on: 
