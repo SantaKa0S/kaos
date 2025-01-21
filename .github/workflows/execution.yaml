@@ -22,7 +22,7 @@ env:
   KAOS_ISSUE_TITLE: ${{ github.event.issue.title }}
   KAOS_ISSUE_BODY: ${{ github.event.issue.body }}
   # KAOS_ISSUE_LABELS: ${{ github.event.issue.labels }}
-  KAOS_ISSUE_USER: ""
+  KAOS_ISSUE_USER: ${{ github.actor}}
 jobs:
   init-repo:
     runs-on: 
@@ -80,7 +80,7 @@ jobs:
         run: |
             echo "Extract data"
             # Separar las claves y valores
-            IFS=';' read -ra PAIRS <<< "$KAOS_ISSUE_BODY"
+            IFS=',' read -ra PAIRS <<< "$KAOS_ISSUE_BODY"
             # Procesar el primer par clave-valor
             FIRST_PAIR=${PAIRS[0]}
             # Eliminar las comillas
@@ -170,12 +170,12 @@ jobs:
               echo "El modulo ${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} está activo y se puede ejecutar"
               # en esta parte de la ejecucion tenemos que tener en cuenta que podemos iniciar un workflow
               # Run the workflow file 'module.yaml' with JSON via standard input of variable {"name":"scully", "greeting":"hello"}
-              # echo '${{ needs.check-data.outputs.KAOS_EXECUTION_VARS }}' | gh workflow run triage.yml --json
-              gh workflow run ${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }}".yaml"
+              # echo 'KAOS_EXECUTION_VARS' | gh workflow run triage.yml --json
+              gh workflow run "${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }}.yaml"
               RUN_ID=$(gh run list --workflow="${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }}.yaml" --limit=1 --json databaseId --jq '.[0].databaseId')
               echo "RUN_ID=$RUN_ID" >> $GITHUB_OUTPUT
               _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-              echo "($_timestamp) - Se ha lanzado la ejecución de #${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} con run_id: $RUN_ID." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
+              echo "($_timestamp) - Se ha lanzado la ejecución de #${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} con run_id: $RUN_ID. con las variables ${{ needs.check-data.outputs.KAOS_EXECUTION_VARS }}" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
               ;;
             "false")
               echo "El modulo ${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} está inactivo y necesita autorización para su ejecución"
@@ -246,8 +246,10 @@ jobs:
             Please investigate the issue.
             EOF
             )
+            # Añadimos a la tarjeta de ejecución cual es la issue que se crea
             # Creamos la issue dado que ha fallado el modulo principal
-            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_TITLE" -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="$KAOS_ISSUE_USER"
+            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_TITLE" -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ env.KAOS_ISSUE_USER }}"
             # Añadimos el comentario a la issue que dispara el proceso
             KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }}) lanzado desde (#$KAOS_ISSUE_NUMBER) en la ejecución (${{ env.KAOS_CODE }}) y esto ha generado una issue con el titulo ($KAOS_TITLE)"
-            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=$KAOS_ISSUE_NUMBER -f kaos-issue-body-file="${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt"
+            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=$KAOS_ISSUE_NUMBER 
+            gh workflow run issue.yaml --ref ${{ github.ref }}-f kaos-issue-actions=comment -f kaos-issue-id=$KAOS_ISSUE_NUMBER -f kaos-issue-body-file="${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt"
