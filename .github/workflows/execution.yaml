@@ -162,7 +162,7 @@ jobs:
         if: ${{ success() }}
         run: |
           echo "Check type"
-          # Buscar el valorexecution en el fichero JSON
+          # Buscar el valorexecution en el formato JSON de la ejecución
           RESULT=$(jq -r --arg valorexecution "${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }}" '.[] | select(.module == $valorexecution) | .active' "${{ env.KAOS_AUTOMATION_COMPLIANCE}}")
           # Evaluar el resultado
           case $RESULT in
