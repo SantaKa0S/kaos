@@ -843,3 +843,21 @@
   - core/results/files-in-commit-.txt
   - version.txt
 ---------------------------------
+## Version 1.0.25
+- **Branch**: refs/pull/769/merge
+- **Commit**: d886c833a12d68ffe187fc309e798d385f7ec786
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Jan 21 13:35:01 UTC 2025
+- **Message**: Merge d39ac8a1409a2e24e829915f312567601259a725 into ea5d1ccab252966d7dc8af0eff59bcb3f329c7e3
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - .github/workflows/summary.yaml
+  - README.md
+  - core/docs/ka0s/ka0s_core.md
+  - core/docs/ka0s/variables.md
+  - core/docs/ka0s_execution/ka0s_execution.md
+  - core/docs/ka0s_template/ka0s_template.md
+  - core/results/commit-summary-.txt
+  - core/results/files-in-commit-.txt
+  - version.txt
+---------------------------------
