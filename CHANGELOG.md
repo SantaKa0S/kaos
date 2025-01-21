@@ -749,3 +749,97 @@
   - core/results/commit-summary-H-633.txt
   - version.txt
 ---------------------------------
+## Version 1.0.17
+- **Branch**: refs/pull/747/merge
+- **Commit**: bbc469a88416062d3eea178cc96846c1fc37e20f
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 20 15:41:15 UTC 2025
+- **Message**: Merge e8dfed25e9523530590ae6e8f8dd02a2d85055db into f9ee1e7a9eb8aff8278b1c59b7e9e565c3ef1bc2
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - core/results/commit-summary-H-633.txt
+  - version.txt
+---------------------------------
+## Version 1.0.18
+- **Branch**: refs/pull/749/merge
+- **Commit**: e85ce71f6c889e2ba8d0c15b206a9e8a610ddc00
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 20 15:49:49 UTC 2025
+- **Message**: Merge 1e084bdaeee8b11be04e55edab1a5dcec0d3034f into 6cd93cdbaf469ff63975dedced953ea908e7668b
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - core/results/commit-summary-H-633.txt
+  - version.txt
+---------------------------------
+## Version 1.0.19
+- **Branch**: refs/pull/752/merge
+- **Commit**: 4b524dd4d27c881451b14f1ad3846295068660da
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 20 15:59:36 UTC 2025
+- **Message**: Merge fadacda54bef522236e6d2441c522e511d66569e into b7fa3736b59041a236a53578d2bee162e13c6e8f
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - core/results/commit-summary-H-633.txt
+  - version.txt
+---------------------------------
+## Version 1.0.20
+- **Branch**: refs/pull/754/merge
+- **Commit**: f833a5a0ed7d6043492b57d597a4e6f558825e4c
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 20 16:23:42 UTC 2025
+- **Message**: Merge 204b919b5422d034cb971ab6561933c1255d1274 into 1404a81ce089bb38d2c01a8db51f102dbbb49808
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - core/results/commit-summary-H-633.txt
+  - version.txt
+---------------------------------
+## Version 1.0.21
+- **Branch**: refs/pull/760/merge
+- **Commit**: 45a68ad5891f6dd3cdfa0a6eefcaba4cab7c99ea
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 20 16:41:10 UTC 2025
+- **Message**: Merge 4ee68b8aab1f9eca5f67f9552d3180bf6f7de98f into 73a32c6c57434fe4013747fecbd604fed4ab028a
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - core/results/commit-summary-H-633.txt
+  - version.txt
+---------------------------------
+## Version 1.0.22
+- **Branch**: refs/pull/762/merge
+- **Commit**: d6e3e06f21410c068a71ca5f95d125624c3ca195
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 20 16:57:00 UTC 2025
+- **Message**: Merge d6bf072b2faf868f646d1707c9b1d26a0bf1f327 into 0d11df720eac7711942f5e1c0bd69642766002f1
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - core/results/commit-summary-H-633.txt
+  - version.txt
+---------------------------------
+## Version 1.0.23
+- **Branch**: refs/pull/764/merge
+- **Commit**: d95d76b5f14550684175aa27f9e8f885a23e1deb
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 20 19:06:37 UTC 2025
+- **Message**: Merge d92a454435b43635c19f91bc86f4b7b9afd7827a into 04d195bf596e76dd064c1482e6e9e0b5f68a1936
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - .github/workflows/ka0s.yaml
+  - core/results/commit-summary-.txt
+  - core/results/commit-summary-H-633.txt
+  - core/results/files-in-commit-.txt
+  - core/results/files-in-commit-H-633.txt
+  - version.txt
+---------------------------------
+## Version 1.0.24
+- **Branch**: refs/pull/766/merge
+- **Commit**: cc17ea05540142096cfb615f957c7ac51001e3f1
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Mon Jan 20 19:33:50 UTC 2025
+- **Message**: Merge 08141d9994560d8ea54b3c1ab0ce076a0eb89ffd into d5c2d0d410cef1cfd1a670e46e24179bca95fc5d
+- **Files Changed**:
+  - core/docs/ka0s/secrets.md
+  - core/docs/ka0s/variables.md
+  - core/results/commit-summary-.txt
+  - core/results/files-in-commit-.txt
+  - version.txt
+---------------------------------
