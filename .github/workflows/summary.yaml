@@ -4,20 +4,17 @@ on:
     workflow_dispatch:
     schedule:
       - cron: '0 0 * * *'
-
 permissions:
   contents: write
   actions: write
   issues: write
   pull-requests: write
-
 env:
   GH_TOKEN: ${{ secrets.KAOS_ISSUE_TOKEN }}
   KAOS_MODULE: "[Ka0S] SUMMARY"
   GH_REPO: ${{ secrets.KAOS_REPO }}
   PATH_RESUME: "core/results/"
   KAOS_CODE: ${{ github.run_id }}
-
 jobs:
   kaos-summary:
     runs-on: 

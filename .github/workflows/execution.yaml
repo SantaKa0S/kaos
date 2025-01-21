@@ -70,6 +70,26 @@ jobs:
       group: kaos-execution
     needs: check-issue
     steps:
+      - id: extract
+        name: extract data
+        if: ${{ success() }}
+        run: |
+            echo "Extract data"
+            # Separar las claves y valores
+            IFS=';' read -ra PAIRS <<< "$KAOS_ISSUE_BODY"   
+            # Iterar sobre cada par clave-valor
+            for PAIR in "${PAIRS[@]}"; do
+                # Eliminar las comillas
+                PAIR=$(echo $PAIR | tr -d '"')
+                # Separar la clave y el valor
+                IFS=':' read -ra KV <<< "$PAIR"
+                KEY=${KV[0]}
+                VALUE=${KV[1]}
+                # Mostrar la clave y el valor
+                echo "Clave: $KEY, Valor: $VALUE"
+            done
+            _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+            echo "($_timestamp) - Se han extraido los datos de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
       - id: data
         name: Check data
         if: ${{ success() }}
