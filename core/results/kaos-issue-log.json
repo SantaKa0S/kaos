@@ -18,6 +18,137 @@
       "closed": false,
       "closedAt": null,
       "comments": [],
+      "createdAt": "2025-01-21T17:34:34Z",
+      "id": "I_kwDONP0GL86nCc7_",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABz7Qfaw",
+          "name": "automations",
+          "description": "Only referent AUTOMATIONS MODULE",
+          "color": "117AA4"
+        }
+      ],
+      "milestone": null,
+      "number": 794,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "f75ad846",
+            "name": "Backlog"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[E] Informe Summary",
+      "updatedAt": "2025-01-21T17:35:00Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/794"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "**[Ka0S] Execution  Message:**\nEl error ha sido en: 12892372117\nsi dispòne de los permisos necesarios \nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12892372117 --log-failed\n```\n**La información de la ejecución https://github.com/SantaKa0S/kaos/actions/runs/12892372117**\n```\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-21T17:29:14Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bSmLh",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Solucionado en #633 ",
+          "createdAt": "2025-01-21T17:29:14Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/792#issuecomment-2605343457",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-21T17:26:07Z",
+      "id": "I_kwDONP0GL86nCZGd",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 792,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] Execution Module failed in 12892372117",
+      "updatedAt": "2025-01-21T17:29:15Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/792"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "\"module\":\"summary\"",
+      "closed": true,
+      "closedAt": "2025-01-21T17:28:53Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bSkmr",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "**[Ka0S] Execution  Message:**\nEl error ha sido en: 12892372117\nsi dispòne de los permisos necesarios \nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12892372117 --log-failed\n```\n**La información de la ejecución https://github.com/SantaKa0S/kaos/actions/runs/12892372117**\n```\nPlease investigate the issue.",
+          "createdAt": "2025-01-21T17:26:06Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/791#issuecomment-2605337003",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86bSmBZ",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "error #792 ",
+          "createdAt": "2025-01-21T17:28:53Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/791#issuecomment-2605342809",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2025-01-21T17:22:39Z",
       "id": "I_kwDONP0GL86nCXiW",
       "labels": [
@@ -34,16 +165,16 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "f75ad846",
-            "name": "Backlog"
+            "optionId": "98236657",
+            "name": "Done"
           },
           "title": "@Core-Kaos-Project"
         }
       ],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "[E] Reporte Summary",
-      "updatedAt": "2025-01-21T17:23:06Z",
+      "updatedAt": "2025-01-21T17:28:54Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/791"
     },
     {
@@ -9478,7 +9609,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "Modulo de Execution",
-      "updatedAt": "2025-01-21T17:21:34Z",
+      "updatedAt": "2025-01-21T17:35:01Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/633"
     },
     {
