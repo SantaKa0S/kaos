@@ -82,7 +82,11 @@ jobs:
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
                     gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.event.inputs.kaos-user-start }}"
-                    gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ github.event.inputs.kaos-workflow-id }}.log"
+                    if [[ -z "${{ steps.resume-log.outputs.KAOS_WORFLOW_LOG }}" ]]; then
+                      echo "No se ha encontrado el log de la ejecución"
+                    else
+                      gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ steps.resume-log.outputs.KAOS_WORFLOW_LOG }}"
+                    fi
                     ;;
                 comment)
                     # Añadimos comentarios a issue en concreto o ficheros
