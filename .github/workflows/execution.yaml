@@ -12,6 +12,7 @@ env:
   KAOS_MODULE: "[Ka0S] Execution"
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
   BRANCH_NAME: ${{ github.ref }}
+  KAOS_AUTOMATION_COMPLIANCE: "compliance/automations/automations.json"
   KAOS_PATH_RESUME: "core/results/"
   KAOS_PATH_OUTPUT: "core/outputs/e/"
   KAOS_REPO: "/actions-runner/_work/kaos/kaos"
@@ -71,6 +72,7 @@ jobs:
     needs: check-issue
     outputs:
       KAOS_EXECUTION_TYPE: ${{ steps.extract.outputs.KAOS_EXECUTION_TYPE }}
+      KAOS_EXECUTION_VARS: ${{ steps.extract.outputs.KAOS_EXECUTION_VARS }}
     steps:
       - id: extract
         name: extract data
@@ -87,6 +89,22 @@ jobs:
             IFS=':' read -ra KV <<< "$FIRST_PAIR"
             FIRST_KEY=${KV[0]}
             FIRST_VALUE=${KV[1]}
+            # Procesar el resto de los pares clave-valor
+            REMAINING_PAIRS="${PAIRS[@]:1}"
+            REMAINING_VALUES=""   
+            for PAIR in ${REMAINING_PAIRS[@]}; do
+                # Eliminar las comillas
+                PAIR=$(echo $PAIR | tr -d '"')
+                # Separar la clave y el valor
+                IFS=':' read -ra KV <<< "$PAIR"
+                KEY=${KV[0]}
+                VALUE=${KV[1]}
+                # Añadir al string de valores restantes
+                REMAINING_VALUES+="$KEY:$VALUE;"
+            done
+            echo "KAOS_EXECUTION_VARS=$REMAINING_VALUES" >> $GITHUB_OUTPUT
+            # Eliminar el último punto y coma
+            REMAINING_VALUES=${REMAINING_VALUES%?}            
             # Asignar el valor de la primera clave a una variable
             echo "KAOS_EXECUTION_TYPE=$FIRST_VALUE" >> $GITHUB_OUTPUT
             _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
@@ -126,6 +144,7 @@ jobs:
     outputs:
         KAOS_EXECUTION_RESULT: ${{ steps.execution.outputs.KAOS_EXECUTION_RESULT }}
         KAOS_EXECUTION_STATUS: ${{ steps.execution.outputs.KAOS_EXECUTION_STATUS }}
+        KAOS_EXECUTION_RUN_ID: ${{ steps.type.outputs.RUN_ID }}
     steps:
       - id: execution
         name: Start execution
@@ -143,20 +162,30 @@ jobs:
         if: ${{ success() }}
         run: |
           echo "Check type"
-          # gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha comprobado el"
-          case $KAOS_EXECUTION_TYPE in
-            "summary")
-              echo "Execution Summary Manually"
-              gh workflow run summary.yaml
+          # Buscar el valorexecution en el fichero JSON
+          RESULT=$(jq -r --arg valorexecution "${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }}" '.[] | select(.module == $valorexecution) | .active' "${{ env.KAOS_AUTOMATION_COMPLIANCE}}")
+          # Evaluar el resultado
+          case $RESULT in
+            "true")
+              echo "El modulo ${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} está activo y se puede ejecutar"
+              # en esta parte de la ejecucion tenemos que tener en cuenta que podemos iniciar un workflow
+              # Run the workflow file 'module.yaml' with JSON via standard input of variable {"name":"scully", "greeting":"hello"}
+              # echo '${{ needs.check-data.outputs.KAOS_EXECUTION_VARS }}' | gh workflow run triage.yml --json
+              gh workflow run ${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }}".yaml"
+              RUN_ID=$(gh run list --workflow="${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }}.yaml" --limit=1 --json databaseId --jq '.[0].databaseId')
+              echo "RUN_ID=$RUN_ID" >> $GITHUB_OUTPUT
+              _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+              echo "($_timestamp) - Se ha lanzado la ejecución de #${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} con run_id: $RUN_ID." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
               ;;
-            "type2")
-              echo "Type 2"
-              ;;
-            "type3")
-              echo "Type 3"
+            "false")
+              echo "El modulo ${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} está inactivo y necesita autorización para su ejecución"
+              _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+              echo "($_timestamp) - El módulo solicitado#${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} está inactivo y necesita autorización para su ejecución" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
               ;;
             *)
-              echo "Type not found"
+              echo "El modulo ${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} no está definido"
+              _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
+              echo "($_timestamp) - El módulo solicitado#${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} no está definido" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
               ;;
           esac
           gh workflow run $file_module 
