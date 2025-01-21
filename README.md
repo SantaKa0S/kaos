@@ -30,11 +30,11 @@ Si entramos mas en detalle, podemos decir que Ka0S es; *... es un framework, bas
 
 Ventajas de utilizar Ka0S
 
-- Revisión de código continuo
-- Automatización de pruebas
-- Refactorización Continua
-- Integración Conrínua y Entrega Contínua
-- Reatroalimentación y reciclaje del código
+- Revisión de código continuo *Permite detectar y corregir errores de manera temprana, mejorando la calidad del código.*
+- Automatización de pruebas *Asegura que todas las funcionalidades se prueben de manera consistente y eficiente.*
+- Refactorización Continua *Facilita la mejora constante del código sin afectar su funcionalidad.*
+- Integración Contínua y Entrega Contínua *Permite integrar y entregar cambios de manera rápida y segura.*
+- Reatroalimentación y reciclaje del código *Fomenta la mejora continua a través de la retroalimentación y la reutilización de componentes.*
 
 ## ¿Y cómo me lo puedo instalar?
 
