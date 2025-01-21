@@ -187,8 +187,7 @@ jobs:
               _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
               echo "($_timestamp) - El módulo solicitado#${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} no está definido" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
               ;;
-          esac
-          gh workflow run $file_module 
+          esac 
   end-execution:
     runs-on: 
       group: kaos-execution
