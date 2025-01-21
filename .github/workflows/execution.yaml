@@ -162,7 +162,7 @@ jobs:
         if: ${{ success() }}
         run: |
           echo "Check type"
-          # Buscar el valorexecution en el fichero JSON
+          # Buscar el valorexecution en el formato JSON de la ejecución
           RESULT=$(jq -r --arg valorexecution "${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }}" '.[] | select(.module == $valorexecution) | .active' "${{ env.KAOS_AUTOMATION_COMPLIANCE}}")
           # Evaluar el resultado
           case $RESULT in
@@ -175,7 +175,7 @@ jobs:
               RUN_ID=$(gh run list --workflow="${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }}.yaml" --limit=1 --json databaseId --jq '.[0].databaseId')
               echo "RUN_ID=$RUN_ID" >> $GITHUB_OUTPUT
               _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-              echo "($_timestamp) - Se ha lanzado la ejecución de #${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} con run_id: $RUN_ID. con las variables ${{ needs.check-data.outputs.KAOS_EXECUTION_VARS }}" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
+              echo "($_timestamp) - Se ha lanzado la ejecución de #${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} con run_id: $RUN_ID. con las variables {${{ needs.check-data.outputs.KAOS_EXECUTION_VARS }}}" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
               ;;
             "false")
               echo "El modulo ${{ needs.check-data.outputs.KAOS_EXECUTION_TYPE }} está inactivo y necesita autorización para su ejecución"

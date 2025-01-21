@@ -82,7 +82,11 @@ jobs:
                 create)
                     # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID
                     gh issue create -t "${{ github.event.inputs.kaos-issue-title }}" -b "${{ github.event.inputs.kaos-issue-body }}" -l "${{ github.event.inputs.kaos-issue-tag }}" -a "${{ github.event.inputs.kaos-user-start }}"
-                    gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ github.event.inputs.kaos-workflow-id }}.log"
+                    if [[ -z "${{ steps.resume-log.outputs.KAOS_WORFLOW_LOG }}" ]]; then
+                      echo "No se ha encontrado el log de la ejecución"
+                    else
+                      gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body-file "${{ steps.resume-log.outputs.KAOS_WORFLOW_LOG }}"
+                    fi
                     ;;
                 comment)
                     # Añadimos comentarios a issue en concreto o ficheros
@@ -144,5 +148,5 @@ jobs:
           ISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
           # Añadimos el comentario a la issue que dispara el proceso
           KAOS_ISSUE_BODY="Se ha generado la issue (#$ISSUE_NUMBRE) por la acción ${{ github.event.inputs.kaos-workflow-id }} desde el issue #${{ github.event.inputs.kaos-issue-id }} creada por ${{ github.event.inputs.kaos-user-start }}"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+          gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "$KAOS_ISSUE_BODY"
    
