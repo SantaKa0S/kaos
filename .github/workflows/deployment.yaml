@@ -18,11 +18,13 @@ on:
         description: 'Issue ID'
         default: ""
         required: true
+
 permissions:
   contents: write
   actions: write
   issues: write
   pull-requests: write
+
 env:
   KAOS_MODULE: "[Ka0S] Deployment"
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
@@ -31,41 +33,12 @@ env:
   KAOS_REPO: "/actions-runner/_work/kaos/kaos"
   KAOS_STEP_MODULE: ""
   KAOS_CODE: ""
+
 jobs:
   jobs-core:
     runs-on: 
-      group: kaos 
-    steps:
-      - id: repo
-        name: repo
-        if: ${{ always() }}
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.KAOS_TOKEN }}         
-      - id: core
-        name: core
-        if: ${{ success() }}
-        run: |
-          # Extraer el numero de issue y la letra de ejecucion  
-          echo "Branch name is ${{ github.ref }}"
-  kaos-init-process:
-    runs-on: 
       group: kaos-init
-
     steps:
-      - id: credentials
-        name: Check Credentials
-        if: ${{ success() }}
-        uses: actions/github-script@v4
-        with:
-          script: |
-            const token = secrets.KAOS_TOKEN;
-            if (!token) {
-            throw new Error('CUSTOM_TOKEN is not set');
-            }
-            console.log('KAOS_TOKEN is set');
-
       - id: repo
         name: Check Repository
         if: ${{ success() }}
@@ -73,7 +46,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
-      
+
       - id: message
         name: Message
         if: ${{ success() }}
@@ -81,81 +54,38 @@ jobs:
           echo "Init repository"
           gh issue comment $KAOS_ISSUE_NUMBER -b "Se ha iniciado el repositorio"
 
-  kaos-issue-process:
+  jobs-project:
     runs-on: 
-      group: kaos-execution
-    env:
-      issue_id: ${{ needs.kaos-init-process.outputs.kaos_issue_id }}
-    needs: kaos-init-process
-    outputs:
-      kaos_issue_id: ${{ steps.issue.outputs.kaos_issue_id }}
-    
+      group: kaos
     steps:
-      - id: issueval
-        name: Create Issue for Variables
+      - id: project
+        name: Create project
         if: ${{ success() }}
         run: |
-          echo "Creating Variable Issue"
-          gh issue create --title "Variables" --body "Define your variables here."
+          echo "Create project"
+          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+          gh project create --owner ${{ github.event.inputs.kaos-org-name }} --title ${{ github.event.inputs.kaos-project-name }} --format json
 
-      - id: issuesec
-        name: Create Issue for Secrets
-        run: |
-          echo "Creating Secret Issue"
-          gh issue create --title "Secrets" --body "Define your secrets here."
-
-      - id: fork
-        name: Create Fork
+      - id: assignpro
+        name: Assign project to repo
         if: ${{ success() }}
         run: |
-          echo "Creating Fork"
-          gh repo fork ${{ github.repository }} --org KAOS_ORG_EMPRESA --remote
+          PROJECT_NUMBER=$(gh project list --owner ${{ github.event.inputs.kaos-org-name }} --json number --jq '..number')
+          gh project link $PROJECT_NUMBER --owner ${{ github.event.inputs.kaos-org-name }} --repo ${{ github.event.inputs.kaos-org-name }}/${{ github.event.inputs.kaos-repo-name }}
 
-  handle-success:
-    runs-on: 
-      group: kaos-issue
-    needs: [check-issue, check-data, show-data, init-repo, start-execution, end-execution]
-    if: ${{ success() }}
-    steps: 
-      - id: handle-success-execution
+  jobs_repo:
+    runs-on:
+      group: kaos
+    steps:
+      - id: repo
+        name: Clone Repo
+        if: ${{ success() }}
         run: |
-          # Añadimos a cada paso el mensaje de éxito incluido en la issue original
-          echo "${{ env.KAOS_MODULE }} Success in runid ${{ github.run_id }} initiated by $KAOS_ISSUE_USER trouhg issue number $KAOS_ISSUE_NUMBER."
-          echo "La ejecución solicitada en el issue #$KAOS_ISSUE_NUMBER ha sido completada con éxito."
-          echo "El log de la ejecucion se encuentra en ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}"
-          echo "Se añade el log de la ejecución al issue #$KAOS_ISSUE_NUMBER"
-          echo "Se procede a cerrar la issue #$KAOS_ISSUE_NUMBER"
-          gh issue comment $KAOS_ISSUE_NUMBER -b "Aquí podemos añadir los resultados de la ejecución de la issue antes de cerrarla"
-  handle_failure:
-      runs-on: 
-        group: kaos-issue
-      needs: [check-issue, check-data, show-data, init-repo, start-execution, end-execution]
-      if: ${{ failure() }} 
-      steps: 
-        - id: check-execution
-          run: |
-            echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
-            KAOS_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ github.run_id }}"
-            KAOS_BODY=$(cat <<'EOF'
-            An error occurred in the execution Action workflow RunID: **${{ github.run_id }}**.
-            Initiated by #$KAOS_ISSUE_USER from issue number #$KAOS_ISSUE_NUMBER
-            **${{ env.KAOS_MODULE }}  Message:**
-            El error ha sido en : ${{  github.run_id }}
-            ejecute este comando en su consola y podrá consultar el fallo del trabajo
-            gh run view ${{  github.run_id }} --log-failed
-            \`\`\`
-            **La información de la ejecución ${{ secrets.KAOS_ACTIONS_URL }}${{ github.run_id }}**
-            \`\`\`
-            **Solicitado por:** $KAOS_ISSUE_USER
-            **Número de ejecución:** $KAOS_ISSUE_NUMBER
-            **Título:** $KAOS_ISSUE_TITLE
-            **Datos de la ejecución:** "$KAOS_ISSUE_TITLE"
-            **Tipo de Ejecución:** $KAOS_ISSUE_LABELS
-            Please investigate the issue.
-            EOF
-            )
-            # Creamos la issue dado que ha fallado el modulo principal
-            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_TITLE" -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="$KAOS_ISSUE_USER"
-            # Añadimos el comentario a la issue que dispara el proceso
-            KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }}) lanzado desde (#$KAOS_ISSUE_NUMBER) en la ejecución (${{ github.run_id }}) y esto ha generado una issue con el titulo ($KAOS_TITLE)"
-            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=$KAOS_ISSUE_NUMBER
+          echo "Clone Repo"
+          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+          gh repo clone ${{ github.event.inputs.kaos-org-name }}/${{ env.KAOS_REPO }}
+
+      - id: assignrep
+        name: Assign respository to Organization & Proyect
+        if: ${{ success() }}
+        
