@@ -1,6 +1,364 @@
 [
   [
     {
+      "additions": 175,
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "autoMergeRequest": null,
+      "baseRefName": "main",
+      "body": "la caña\r\nAñadimos la primera version de control de inspector que extrae el log de la ejecucion y codigo ejecutado paso a paso, extrae dos ficheros:\r\n- json, que dispone del tiempo exacto que ha tardado en ejecutarse todo el codigo\r\n- log que dispone del output completo de la ejecucion halla fallado o no \r\n\r\nAñadimos esta versatilidad, para que sea disparada siempre al finalizar la ejecucion del modulo de execution como fase de pruebas, a posteriori si todo es correcto añadiremos a cada modulo este proceso global",
+      "changedFiles": 8,
+      "closed": true,
+      "closedAt": "2025-01-22T16:54:27Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bb0-I",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] VERSION ha generado una nueva versión con el tag v1.0.32. Esta todo dispuesto para realizar *MERGE* del código.",
+          "createdAt": "2025-01-22T16:52:03Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/pull/806#issuecomment-2607763336",
+          "viewerDidAuthor": true
+        }
+      ],
+      "commits": [
+        {
+          "authoredDate": "2025-01-22T15:39:18Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-22T15:39:18Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de inspector a las ejecuciones de execution",
+          "oid": "d9167489996c1931694d93dfbb59a6c36c5c85b9"
+        },
+        {
+          "authoredDate": "2025-01-22T16:00:26Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-22T16:00:26Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos mejoras y normalizacion al modulo de issue",
+          "oid": "72796246ac700021891a0f8acef7eae2d53edc1e"
+        },
+        {
+          "authoredDate": "2025-01-22T16:01:00Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-22T16:01:00Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de saber el ususrio que pidio la ejecucion",
+          "oid": "7f7d5c8619ece55970d500c15a1a78ee4151875b"
+        },
+        {
+          "authoredDate": "2025-01-22T16:21:00Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-22T16:21:00Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la primera version de inspector",
+          "oid": "df86f348fa9a447f405dc9d57f61c72f2e019e26"
+        },
+        {
+          "authoredDate": "2025-01-22T16:25:30Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-22T16:25:30Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la primera version de inspector revisada por la IA",
+          "oid": "fb4a277815d952ecbf45af41ed31ec9602a8f073"
+        },
+        {
+          "authoredDate": "2025-01-22T16:25:51Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-22T16:25:51Z",
+          "messageBody": "…0S/kaos into H633-modulo-de-execution",
+          "messageHeadline": "Merge branch 'H633-modulo-de-execution' of https://github.com/SantaKa…",
+          "oid": "da4101d71be917eac800cf577fdfd218973cb263"
+        },
+        {
+          "authoredDate": "2025-01-22T16:26:15Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-22T16:26:15Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "e2e0b30b035cc857f1c939b4158f4107ad6bcd21"
+        },
+        {
+          "authoredDate": "2025-01-22T16:51:36Z",
+          "authors": [
+            {
+              "email": "73332898+santakloud@users.noreply.github.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "SantaKloud"
+            }
+          ],
+          "committedDate": "2025-01-22T16:51:36Z",
+          "messageBody": "…5e8f2507705ebe18c2b6b98",
+          "messageHeadline": "Merge e2e0b30b035cc857f1c939b4158f4107ad6bcd21 into 0638216bbfb4b6eac…",
+          "oid": "310170e59d81a54b724539acbfb34bf1073bf0a2"
+        },
+        {
+          "authoredDate": "2025-01-22T16:51:49Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-22T16:51:49Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] VERSION  Upload: CHANGELOG.md, INDEX.md with version 1.0.32",
+          "oid": "13fb8bfe87dc1484a59992630b846194c8d800d6"
+        }
+      ],
+      "createdAt": "2025-01-22T16:51:34Z",
+      "deletions": 8,
+      "files": [
+        {
+          "path": ".github/workflows/execution.yaml",
+          "additions": 13,
+          "deletions": 0
+        },
+        {
+          "path": ".github/workflows/inspector.yaml",
+          "additions": 115,
+          "deletions": 0
+        },
+        {
+          "path": ".github/workflows/issue.yaml",
+          "additions": 1,
+          "deletions": 4
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 14,
+          "deletions": 0
+        },
+        {
+          "path": "INDEX.md",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/commit-summary-.txt",
+          "additions": 28,
+          "deletions": 3
+        },
+        {
+          "path": "core/results/files-in-commit-.txt",
+          "additions": 2,
+          "deletions": 0
+        },
+        {
+          "path": "version.txt",
+          "additions": 1,
+          "deletions": 1
+        }
+      ],
+      "fullDatabaseId": "2292688599",
+      "headRefName": "H633-modulo-de-execution",
+      "headRefOid": "13fb8bfe87dc1484a59992630b846194c8d800d6",
+      "headRepository": {
+        "id": "R_kgDONP0GLw",
+        "name": "kaos"
+      },
+      "headRepositoryOwner": {
+        "id": "O_kgDOCyRQmA",
+        "login": "SantaKa0S"
+      },
+      "id": "PR_kwDONP0GL86Ip6bX",
+      "isCrossRepository": false,
+      "isDraft": false,
+      "labels": [],
+      "latestReviews": [],
+      "maintainerCanModify": false,
+      "mergeCommit": {
+        "oid": "24d70074f97041d23b45eeb2535821213c254d64"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergeable": "UNKNOWN",
+      "mergedAt": "2025-01-22T16:54:27Z",
+      "mergedBy": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "milestone": null,
+      "number": 806,
+      "potentialMergeCommit": null,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "reviewDecision": "",
+      "reviewRequests": [],
+      "reviews": [],
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-22T16:51:53Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12913091896/job/36009484893",
+          "name": "job-core",
+          "startedAt": "2025-01-22T16:51:53Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-22T16:53:55Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12913091990/job/36009486097",
+          "name": "Analyze (actions)",
+          "startedAt": "2025-01-22T16:52:01Z",
+          "status": "COMPLETED",
+          "workflowName": "CodeQL"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-22T16:51:54Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12913091896/job/36009486078",
+          "name": "job-compliance",
+          "startedAt": "2025-01-22T16:51:54Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-22T16:51:54Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12913091896/job/36009485594",
+          "name": "job-security",
+          "startedAt": "2025-01-22T16:51:54Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-22T16:51:55Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12913091896/job/36009486559",
+          "name": "job-observability",
+          "startedAt": "2025-01-22T16:51:55Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-22T16:51:55Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12913091896/job/36009487079",
+          "name": "job-codescan",
+          "startedAt": "2025-01-22T16:51:55Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-22T16:51:56Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12913091896/job/36009487944",
+          "name": "job-flows",
+          "startedAt": "2025-01-22T16:51:56Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-22T16:51:57Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12913091896/job/36009488887",
+          "name": "handle-success",
+          "startedAt": "2025-01-22T16:51:57Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-22T16:51:58Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12913091896/job/36009489587",
+          "name": "handle_failure",
+          "startedAt": "2025-01-22T16:51:58Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-22T16:53:47Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/runs/36009597527",
+          "name": "CodeQL",
+          "startedAt": "2025-01-22T16:53:45Z",
+          "status": "COMPLETED",
+          "workflowName": ""
+        }
+      ],
+      "title": "H633 modulo de execution",
+      "updatedAt": "2025-01-22T16:54:28Z",
+      "url": "https://github.com/SantaKa0S/kaos/pull/806"
+    },
+    {
       "additions": 18,
       "assignees": [],
       "author": {
@@ -8809,118 +9167,6 @@
       "title": "H633 modulo de execution",
       "updatedAt": "2025-01-20T10:11:00Z",
       "url": "https://github.com/SantaKa0S/kaos/pull/683"
-    },
-    {
-      "additions": 1,
-      "assignees": [],
-      "author": {
-        "is_bot": true,
-        "login": "app/dependabot"
-      },
-      "autoMergeRequest": null,
-      "baseRefName": "main",
-      "body": "Bumps [actions/checkout](https://github.com/actions/checkout) from 2 to 4.\n<details>\n<summary>Release notes</summary>\n<p><em>Sourced from <a href=\"https://github.com/actions/checkout/releases\">actions/checkout's releases</a>.</em></p>\n<blockquote>\n<h2>v4.0.0</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Update default runtime to node20 by <a href=\"https://github.com/takost\"><code>@​takost</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1436\">actions/checkout#1436</a></li>\n<li>Support fetching without the --progress option by <a href=\"https://github.com/simonbaird\"><code>@​simonbaird</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1067\">actions/checkout#1067</a></li>\n<li>Release 4.0.0 by <a href=\"https://github.com/takost\"><code>@​takost</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1447\">actions/checkout#1447</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/takost\"><code>@​takost</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1436\">actions/checkout#1436</a></li>\n<li><a href=\"https://github.com/simonbaird\"><code>@​simonbaird</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1067\">actions/checkout#1067</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/checkout/compare/v3...v4.0.0\">https://github.com/actions/checkout/compare/v3...v4.0.0</a></p>\n<h2>v3.6.0</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Mark test scripts with Bash'isms to be run via Bash by <a href=\"https://github.com/dscho\"><code>@​dscho</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1377\">actions/checkout#1377</a></li>\n<li>Add option to fetch tags even if fetch-depth &gt; 0 by <a href=\"https://github.com/RobertWieczoreck\"><code>@​RobertWieczoreck</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/579\">actions/checkout#579</a></li>\n<li>Release 3.6.0 by <a href=\"https://github.com/luketomlinson\"><code>@​luketomlinson</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1437\">actions/checkout#1437</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/RobertWieczoreck\"><code>@​RobertWieczoreck</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/579\">actions/checkout#579</a></li>\n<li><a href=\"https://github.com/luketomlinson\"><code>@​luketomlinson</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1437\">actions/checkout#1437</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/checkout/compare/v3.5.3...v3.6.0\">https://github.com/actions/checkout/compare/v3.5.3...v3.6.0</a></p>\n<h2>v3.5.3</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Fix: Checkout Issue in self hosted runner due to faulty submodule check-ins by <a href=\"https://github.com/megamanics\"><code>@​megamanics</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1196\">actions/checkout#1196</a></li>\n<li>Fix typos found by codespell by <a href=\"https://github.com/DimitriPapadopoulos\"><code>@​DimitriPapadopoulos</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1287\">actions/checkout#1287</a></li>\n<li>Add support for sparse checkouts by <a href=\"https://github.com/dscho\"><code>@​dscho</code></a> and <a href=\"https://github.com/dfdez\"><code>@​dfdez</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1369\">actions/checkout#1369</a></li>\n<li>Release v3.5.3 by <a href=\"https://github.com/TingluoHuang\"><code>@​TingluoHuang</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1376\">actions/checkout#1376</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/megamanics\"><code>@​megamanics</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1196\">actions/checkout#1196</a></li>\n<li><a href=\"https://github.com/DimitriPapadopoulos\"><code>@​DimitriPapadopoulos</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1287\">actions/checkout#1287</a></li>\n<li><a href=\"https://github.com/dfdez\"><code>@​dfdez</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1369\">actions/checkout#1369</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/checkout/compare/v3...v3.5.3\">https://github.com/actions/checkout/compare/v3...v3.5.3</a></p>\n<h2>v3.5.2</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Fix: Use correct API url / endpoint in GHES by <a href=\"https://github.com/fhammerl\"><code>@​fhammerl</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1289\">actions/checkout#1289</a> based on <a href=\"https://redirect.github.com/actions/checkout/issues/1286\">#1286</a> by <a href=\"https://github.com/1newsr\"><code>@​1newsr</code></a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/actions/checkout/compare/v3.5.1...v3.5.2\">https://github.com/actions/checkout/compare/v3.5.1...v3.5.2</a></p>\n<h2>v3.5.1</h2>\n<h2>What's Changed</h2>\n<ul>\n<li>Improve checkout performance on Windows runners by upgrading <code>@​actions/github</code> dependency by <a href=\"https://github.com/BrettDong\"><code>@​BrettDong</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1246\">actions/checkout#1246</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/BrettDong\"><code>@​BrettDong</code></a> made their first contribution in <a href=\"https://redirect.github.com/actions/checkout/pull/1246\">actions/checkout#1246</a></li>\n</ul>\n<!-- raw HTML omitted -->\n</blockquote>\n<p>... (truncated)</p>\n</details>\n<details>\n<summary>Changelog</summary>\n<p><em>Sourced from <a href=\"https://github.com/actions/checkout/blob/main/CHANGELOG.md\">actions/checkout's changelog</a>.</em></p>\n<blockquote>\n<h1>Changelog</h1>\n<h2>v4.2.2</h2>\n<ul>\n<li><code>url-helper.ts</code> now leverages well-known environment variables by <a href=\"https://github.com/jww3\"><code>@​jww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1941\">actions/checkout#1941</a></li>\n<li>Expand unit test coverage for <code>isGhes</code> by <a href=\"https://github.com/jww3\"><code>@​jww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1946\">actions/checkout#1946</a></li>\n</ul>\n<h2>v4.2.1</h2>\n<ul>\n<li>Check out other refs/* by commit if provided, fall back to ref by <a href=\"https://github.com/orhantoy\"><code>@​orhantoy</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1924\">actions/checkout#1924</a></li>\n</ul>\n<h2>v4.2.0</h2>\n<ul>\n<li>Add Ref and Commit outputs by <a href=\"https://github.com/lucacome\"><code>@​lucacome</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1180\">actions/checkout#1180</a></li>\n<li>Dependency updates by <a href=\"https://github.com/dependabot\"><code>@​dependabot</code></a>- <a href=\"https://redirect.github.com/actions/checkout/pull/1777\">actions/checkout#1777</a>, <a href=\"https://redirect.github.com/actions/checkout/pull/1872\">actions/checkout#1872</a></li>\n</ul>\n<h2>v4.1.7</h2>\n<ul>\n<li>Bump the minor-npm-dependencies group across 1 directory with 4 updates by <a href=\"https://github.com/dependabot\"><code>@​dependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1739\">actions/checkout#1739</a></li>\n<li>Bump actions/checkout from 3 to 4 by <a href=\"https://github.com/dependabot\"><code>@​dependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1697\">actions/checkout#1697</a></li>\n<li>Check out other refs/* by commit by <a href=\"https://github.com/orhantoy\"><code>@​orhantoy</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1774\">actions/checkout#1774</a></li>\n<li>Pin actions/checkout's own workflows to a known, good, stable version. by <a href=\"https://github.com/jww3\"><code>@​jww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1776\">actions/checkout#1776</a></li>\n</ul>\n<h2>v4.1.6</h2>\n<ul>\n<li>Check platform to set archive extension appropriately by <a href=\"https://github.com/cory-miller\"><code>@​cory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1732\">actions/checkout#1732</a></li>\n</ul>\n<h2>v4.1.5</h2>\n<ul>\n<li>Update NPM dependencies by <a href=\"https://github.com/cory-miller\"><code>@​cory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1703\">actions/checkout#1703</a></li>\n<li>Bump github/codeql-action from 2 to 3 by <a href=\"https://github.com/dependabot\"><code>@​dependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1694\">actions/checkout#1694</a></li>\n<li>Bump actions/setup-node from 1 to 4 by <a href=\"https://github.com/dependabot\"><code>@​dependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1696\">actions/checkout#1696</a></li>\n<li>Bump actions/upload-artifact from 2 to 4 by <a href=\"https://github.com/dependabot\"><code>@​dependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1695\">actions/checkout#1695</a></li>\n<li>README: Suggest <code>user.email</code> to be <code>41898282+github-actions[bot]@users.noreply.github.com</code> by <a href=\"https://github.com/cory-miller\"><code>@​cory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1707\">actions/checkout#1707</a></li>\n</ul>\n<h2>v4.1.4</h2>\n<ul>\n<li>Disable <code>extensions.worktreeConfig</code> when disabling <code>sparse-checkout</code> by <a href=\"https://github.com/jww3\"><code>@​jww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1692\">actions/checkout#1692</a></li>\n<li>Add dependabot config by <a href=\"https://github.com/cory-miller\"><code>@​cory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1688\">actions/checkout#1688</a></li>\n<li>Bump the minor-actions-dependencies group with 2 updates by <a href=\"https://github.com/dependabot\"><code>@​dependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1693\">actions/checkout#1693</a></li>\n<li>Bump word-wrap from 1.2.3 to 1.2.5 by <a href=\"https://github.com/dependabot\"><code>@​dependabot</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1643\">actions/checkout#1643</a></li>\n</ul>\n<h2>v4.1.3</h2>\n<ul>\n<li>Check git version before attempting to disable <code>sparse-checkout</code> by <a href=\"https://github.com/jww3\"><code>@​jww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1656\">actions/checkout#1656</a></li>\n<li>Add SSH user parameter by <a href=\"https://github.com/cory-miller\"><code>@​cory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1685\">actions/checkout#1685</a></li>\n<li>Update <code>actions/checkout</code> version in <code>update-main-version.yml</code> by <a href=\"https://github.com/jww3\"><code>@​jww3</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1650\">actions/checkout#1650</a></li>\n</ul>\n<h2>v4.1.2</h2>\n<ul>\n<li>Fix: Disable sparse checkout whenever <code>sparse-checkout</code> option is not present <a href=\"https://github.com/dscho\"><code>@​dscho</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1598\">actions/checkout#1598</a></li>\n</ul>\n<h2>v4.1.1</h2>\n<ul>\n<li>Correct link to GitHub Docs by <a href=\"https://github.com/peterbe\"><code>@​peterbe</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1511\">actions/checkout#1511</a></li>\n<li>Link to release page from what's new section by <a href=\"https://github.com/cory-miller\"><code>@​cory-miller</code></a> in <a href=\"https://redirect.github.com/actions/checkout/pull/1514\">actions/checkout#1514</a></li>\n</ul>\n<h2>v4.1.0</h2>\n<ul>\n<li><a href=\"https://redirect.github.com/actions/checkout/pull/1396\">Add support for partial checkout filters</a></li>\n</ul>\n<!-- raw HTML omitted -->\n</blockquote>\n<p>... (truncated)</p>\n</details>\n<details>\n<summary>Commits</summary>\n<ul>\n<li><a href=\"https://github.com/actions/checkout/commit/11bd71901bbe5b1630ceea73d27597364c9af683\"><code>11bd719</code></a> Prepare 4.2.2 Release (<a href=\"https://redirect.github.com/actions/checkout/issues/1953\">#1953</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/e3d2460bbb42d7710191569f88069044cfb9d8cf\"><code>e3d2460</code></a> Expand unit test coverage (<a href=\"https://redirect.github.com/actions/checkout/issues/1946\">#1946</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/163217dfcd28294438ea1c1c149cfaf66eec283e\"><code>163217d</code></a> <code>url-helper.ts</code> now leverages well-known environment variables. (<a href=\"https://redirect.github.com/actions/checkout/issues/1941\">#1941</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871\"><code>eef6144</code></a> Prepare 4.2.1 release (<a href=\"https://redirect.github.com/actions/checkout/issues/1925\">#1925</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/6b42224f41ee5dfe5395e27c8b2746f1f9955030\"><code>6b42224</code></a> Add workflow file for publishing releases to immutable action package (<a href=\"https://redirect.github.com/actions/checkout/issues/1919\">#1919</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/de5a000abf73b6f4965bd1bcdf8f8d94a56ea815\"><code>de5a000</code></a> Check out other refs/* by commit if provided, fall back to ref (<a href=\"https://redirect.github.com/actions/checkout/issues/1924\">#1924</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/d632683dd7b4114ad314bca15554477dd762a938\"><code>d632683</code></a> Prepare 4.2.0 release (<a href=\"https://redirect.github.com/actions/checkout/issues/1878\">#1878</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/6d193bf28034eafb982f37bd894289fe649468fc\"><code>6d193bf</code></a> Bump braces from 3.0.2 to 3.0.3 (<a href=\"https://redirect.github.com/actions/checkout/issues/1777\">#1777</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/db0cee9a514becbbd4a101a5fbbbf47865ee316c\"><code>db0cee9</code></a> Bump the minor-npm-dependencies group across 1 directory with 4 updates (<a href=\"https://redirect.github.com/actions/checkout/issues/1872\">#1872</a>)</li>\n<li><a href=\"https://github.com/actions/checkout/commit/b6849436894e144dbce29d7d7fda2ae3bf9d8365\"><code>b684943</code></a> Add Ref and Commit outputs (<a href=\"https://redirect.github.com/actions/checkout/issues/1180\">#1180</a>)</li>\n<li>Additional commits viewable in <a href=\"https://github.com/actions/checkout/compare/v2...v4\">compare view</a></li>\n</ul>\n</details>\n<br />\n\n\n[![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=actions/checkout&package-manager=github_actions&previous-version=2&new-version=4)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)\n\nDependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `@dependabot rebase`.\n\n[//]: # (dependabot-automerge-start)\n[//]: # (dependabot-automerge-end)\n\n---\n\n<details>\n<summary>Dependabot commands and options</summary>\n<br />\n\nYou can trigger Dependabot actions by commenting on this PR:\n- `@dependabot rebase` will rebase this PR\n- `@dependabot recreate` will recreate this PR, overwriting any edits that have been made to it\n- `@dependabot merge` will merge this PR after your CI passes on it\n- `@dependabot squash and merge` will squash and merge this PR after your CI passes on it\n- `@dependabot cancel merge` will cancel a previously requested merge and block automerging\n- `@dependabot reopen` will reopen this PR if it is closed\n- `@dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually\n- `@dependabot show <dependency name> ignore conditions` will show all of the ignore conditions of the specified dependency\n- `@dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)\n- `@dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)\n- `@dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)\n\n\n</details>",
-      "changedFiles": 1,
-      "closed": true,
-      "closedAt": "2025-01-20T10:16:59Z",
-      "comments": [],
-      "commits": [
-        {
-          "authoredDate": "2025-01-20T10:12:05Z",
-          "authors": [
-            {
-              "email": "49699333+dependabot[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDk2OTkzMzM=",
-              "login": "dependabot[bot]",
-              "name": "dependabot[bot]"
-            }
-          ],
-          "committedDate": "2025-01-20T10:12:05Z",
-          "messageBody": "Bumps [actions/checkout](https://github.com/actions/checkout) from 2 to 4.\n- [Release notes](https://github.com/actions/checkout/releases)\n- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/actions/checkout/compare/v2...v4)\n\n---\nupdated-dependencies:\n- dependency-name: actions/checkout\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
-          "messageHeadline": "Bump actions/checkout from 2 to 4",
-          "oid": "1a399aab1dac2686f005321fdf59d80e3ea54f23"
-        }
-      ],
-      "createdAt": "2025-01-17T23:01:41Z",
-      "deletions": 1,
-      "files": [
-        {
-          "path": ".github/workflows/deployment.yaml",
-          "additions": 1,
-          "deletions": 1
-        }
-      ],
-      "fullDatabaseId": "2285190802",
-      "headRefName": "dependabot/github_actions/actions/checkout-4",
-      "headRefOid": "1a399aab1dac2686f005321fdf59d80e3ea54f23",
-      "headRepository": {
-        "id": "R_kgDONP0GLw",
-        "name": "kaos"
-      },
-      "headRepositoryOwner": {
-        "id": "O_kgDOCyRQmA",
-        "login": "SantaKa0S"
-      },
-      "id": "PR_kwDONP0GL86INT6S",
-      "isCrossRepository": false,
-      "isDraft": false,
-      "labels": [
-        {
-          "id": "LA_kwDONP0GL88AAAAB3XXIdA",
-          "name": "dependencies",
-          "description": "Pull requests that update a dependency file",
-          "color": "0366d6"
-        }
-      ],
-      "latestReviews": [],
-      "maintainerCanModify": false,
-      "mergeCommit": {
-        "oid": "3c8cf729b2f7ca15c66249d827a59220d8de0bd3"
-      },
-      "mergeStateStatus": "UNKNOWN",
-      "mergeable": "UNKNOWN",
-      "mergedAt": "2025-01-20T10:16:59Z",
-      "mergedBy": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "milestone": null,
-      "number": 679,
-      "potentialMergeCommit": null,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "reviewDecision": "",
-      "reviewRequests": [],
-      "reviews": [],
-      "state": "MERGED",
-      "statusCheckRollup": [
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:12:08Z",
-          "conclusion": "NEUTRAL",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/runs/35866782574",
-          "name": "CodeQL",
-          "startedAt": "2025-01-20T10:12:07Z",
-          "status": "COMPLETED",
-          "workflowName": ""
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:13:36Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://app.codacy.com/gh/SantaKa0S/kaos/pull-requests/679",
-          "name": "Codacy Static Code Analysis",
-          "startedAt": "2025-01-20T10:13:36Z",
-          "status": "COMPLETED",
-          "workflowName": ""
-        }
-      ],
-      "title": "Bump actions/checkout from 2 to 4",
-      "updatedAt": "2025-01-20T10:17:02Z",
-      "url": "https://github.com/SantaKa0S/kaos/pull/679"
     }
   ]
 ]

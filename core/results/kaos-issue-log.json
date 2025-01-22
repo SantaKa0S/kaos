@@ -14,6 +14,52 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
+      "body": "\"module\":\"summary\"",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2025-01-22T16:56:23Z",
+      "id": "I_kwDONP0GL86nL0hz",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABz7Qfaw",
+          "name": "automations",
+          "description": "Only referent AUTOMATIONS MODULE",
+          "color": "117AA4"
+        }
+      ],
+      "milestone": null,
+      "number": 807,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "f75ad846",
+            "name": "Backlog"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[E] Inspector despues de summary",
+      "updatedAt": "2025-01-22T16:56:50Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/807"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
       "body": "esta tarjeta no deberia de disparar nada",
       "closed": false,
       "closedAt": null,
@@ -54,9 +100,55 @@
         "name": "SantaKloud"
       },
       "body": "\"module\":\"summary\"",
-      "closed": false,
-      "closedAt": null,
-      "comments": [],
+      "closed": true,
+      "closedAt": "2025-01-22T15:31:33Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bbDxv",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "La ejecución ha sido SUCCESS #804 el siguiente mensaje muestra el resultado de las operaciones",
+          "createdAt": "2025-01-22T15:31:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/804#issuecomment-2607561839",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86bbDyb",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "(2025-01-22 16:30:21 CET) - Se ha iniciado la ejecución 12911554565 a través de la tarjeta #804.\n(2025-01-22 16:30:21 CET) - Se ha iniciado el Repositorio.\n(2025-01-22 16:30:32 CET) - Se ha comprobado que la tarjeta #804 se puede ejecutar.\n(2025-01-22 16:30:43 CET) - Se han extraido los datos de la tarjeta #804.\n(2025-01-22 16:30:43 CET) - Se comprobado los datos asociados a la tarjeta #804.\n(2025-01-22 16:30:55 CET) - Estos son los datos de la ejecucion 12911554565 de la tarjeta #804.\nKAOS_ISSUE_NUMBER: 804\nKAOS_ISSUE_TITLE: [E] Nueva ejecución de Summary\nKAOS_ISSUE_BODY: \"module\":\"summary\"\n(2025-01-22 16:31:07 CET) - Se ha iniciado la ejecución de la tarjeta #804.\n(2025-01-22 16:31:08 CET) - Se ha lanzado la ejecución de #summary con run_id: 12910762013. con las variables {}\n(2025-01-22 16:31:18 CET) - La ejecución de la tarjeta #804 ha finalizado con el resultado success.\n(2025-01-22 16:31:18 CET) - El resultado de la ejecución se añade a la tajeta #804, ha finalizado con el resultado SUCCESS.\n",
+          "createdAt": "2025-01-22T15:31:31Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/804#issuecomment-2607561883",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86bbDzA",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Puede proceder a cerrar la tarjeta.",
+          "createdAt": "2025-01-22T15:31:32Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/804#issuecomment-2607561920",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2025-01-22T15:30:09Z",
       "id": "I_kwDONP0GL86nLEbl",
       "labels": [
@@ -73,16 +165,16 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "f75ad846",
-            "name": "Backlog"
+            "optionId": "98236657",
+            "name": "Done"
           },
           "title": "@Core-Kaos-Project"
         }
       ],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "[E] Nueva ejecución de Summary",
-      "updatedAt": "2025-01-22T15:30:33Z",
+      "updatedAt": "2025-01-22T15:31:33Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/804"
     },
     {
@@ -102,7 +194,23 @@
       "body": "Nombre del módulo \"inspector.yaml\"\n\nTODOS los workflows de kaos (ya sean de core o no) deben de tener asociada la funcionalidad de que cada vez que se termina una ejecución hay que:\n\n- salvaguardar la informacion de lo que se ha ejecutado y cada tiempo de cada paso y cada estado\ngh run view KAOS_WORKFLOW_ID --json attempt,conclusion,createdAt,databaseId,displayTitle,event,headBranch,headSha,jobs,name,number,startedAt,status,updatedAt,url,workflowDatabaseId,workflowName > $KAOS_WORKFLOW_ID.json\n\n- Salvaguardar el log completo de la ejecución realizada\ngh run view KAOS_WORKFLOW_ID --log > $KAOS_WORKFLOW_ID.log\n\n- Toda esta información se debería de asociar en una carpeta, en el caso del core de kaos todo esto se va a quedar almacenado en la carpeta core/outputs/e\n- Cada vez que se grabe la información se añadirán de manera automatica los ficheros al repositorio",
       "closed": false,
       "closedAt": null,
-      "comments": [],
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bbHzB",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "esta relacionada con la #633 ",
+          "createdAt": "2025-01-22T15:38:08Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/802#issuecomment-2607578305",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2025-01-22T15:09:00Z",
       "id": "I_kwDONP0GL86nK31R",
       "labels": [
@@ -140,7 +248,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "Modulo asociado a observabilidad para las ejecuciones",
-      "updatedAt": "2025-01-22T15:15:21Z",
+      "updatedAt": "2025-01-22T15:38:10Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/802"
     },
     {
@@ -10289,7 +10397,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "Modulo de Execution",
-      "updatedAt": "2025-01-22T15:18:29Z",
+      "updatedAt": "2025-01-22T16:55:38Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/633"
     },
     {
