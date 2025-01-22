@@ -5,7 +5,7 @@ on:
       kaos-issue-id:
         description: 'Issue ID'
         default: ""
-        required: true
+        required: false
       kaos-workflow-id:
         description: 'Workflow ID'
         default: ""
@@ -82,7 +82,13 @@ jobs:
           echo "La ejecución solicitada en el issue ${{ github.event.inputs.kaos-issue-id }} ha sido completada con éxito."
           echo "El código ejecutado y el log de su ejecución se encuentran en ${{ env.KAOS_OUTPUT_EXECUTION }} clave ${{ github.event.inputs.kaos-workflow-id }}"
           echo "Se añaden los ficheros de la ejecución ${{ github.event.inputs.kaos-issue-id }} al repositorio."
-          gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body "${{ env.KAOS_MODULE }} success extract information from the execution ${{ github.event.inputs.kaos-workflow-id }} initiated by ${{ github.event.inputs.kaos-user-start }}."
+          if [ -z "${{ github.event.inputs.kaos-issue-id }}" ]; then
+            echo "No se ha encontrado el issue asociado a la ejecución."
+          else
+            echo "Se ha encontrado el issue asociado a la ejecución."
+            gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body "${{ env.KAOS_MODULE }} success extract information from the execution ${{ github.event.inputs.kaos-workflow-id }} initiated by ${{ github.event.inputs.kaos-user-start }}."
+          fi
+          
   handle_failure:
     runs-on: 
       group: kaos-issue
