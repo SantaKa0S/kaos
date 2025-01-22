@@ -43,7 +43,6 @@ jobs:
           # Vemos si con inicializar el fichero solventamos el problema
           touch ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
-          ${{ steps.id.outputs.name }}
           echo "($_timestamp) - Se ha iniciado la ejecución ${{ env.KAOS_CODE}} a través de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
           echo "($_timestamp) - Se ha iniciado el Repositorio." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
@@ -61,6 +60,7 @@ jobs:
             echo "($_timestamp) - Se ha comprobado que la tarjeta #${{ env.KAOS_ISSUE_NUMBER }} se puede ejecutar." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
       - id: check-kaos
         name: Check Kaos
+        if: ${{ success() }}
         run: |
           echo "Extraemos el usuario asignado"
           echo "KAOS_ISSUE_USER=$(gh issue view $KAOS_ISSUE_NUMBER --json assignees |jq -r '.assignees[].login')" >> $GITHUB_ENV
@@ -73,6 +73,7 @@ jobs:
     outputs:
       KAOS_EXECUTION_TYPE: ${{ steps.extract.outputs.KAOS_EXECUTION_TYPE }}
       KAOS_EXECUTION_VARS: ${{ steps.extract.outputs.KAOS_EXECUTION_VARS }}
+    if: ${{ success() }}
     steps:
       - id: extract
         name: extract data
