@@ -27,6 +27,7 @@ jobs:
   init-repo:
     runs-on: 
       group: kaos-execution
+    if: ${{ startsWith(github.event.issue.title, '[E]') && github.ref == 'refs/heads/main' }}
     steps:
       - id: repo
         name: Checkout repository
@@ -53,7 +54,7 @@ jobs:
     steps:
       - id: check-info
         name: Check Info
-        if: ${{ startsWith(env.KAOS_ISSUE_TITLE, '[E]') && github.ref == 'refs/heads/main' }}
+        if: ${{ success() }}
         run: |
             echo "Check issue for execution $KAOS_ISSUE_NUMBER"
             _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
