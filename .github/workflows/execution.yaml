@@ -254,3 +254,16 @@ jobs:
             KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }}) lanzado desde (#$KAOS_ISSUE_NUMBER) en la ejecución (${{ env.KAOS_CODE }}) y esto ha generado una issue con el titulo ($KAOS_TITLE)"
             gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=$KAOS_ISSUE_NUMBER 
             gh workflow run issue.yaml --ref ${{ github.ref }}-f kaos-issue-actions=comment -f kaos-issue-id=$KAOS_ISSUE_NUMBER -f kaos-issue-body-file="${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt"
+  end-workflow:
+    runs-on: 
+      group: kaos-execution
+    needs: [init-repo, check-issue, check-data, show-data, start-execution, end-execution, handle-success, handle_failure]
+    if: ${{ always() }}
+    steps:
+      - id: end-process
+        name: Finaliza el workflow
+        run: |
+          echo "End process"
+          gh workflow run inspector.yaml --ref ${{ github.ref }} -f kaos-issue-id="$KAOS_ISSUE_NUMBER" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ env.KAOS_ISSUE_USER }}"
+
+          
