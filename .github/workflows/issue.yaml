@@ -1,5 +1,4 @@
 name: Ka0s Issues
-
 on:
   workflow_dispatch:
     inputs:
@@ -40,14 +39,12 @@ on:
       kaos-user-start:
         description: 'User initiated process'
         default: ""
-        required: false
-  
+        required: false 
 permissions:
   contents: write
   actions: write
   issues: write
   pull-requests: write
-
 env:
   KAOS_MODULE: "[Ka0S] ISSUE"
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
