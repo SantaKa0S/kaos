@@ -1,0 +1,116 @@
+name: Ka0s Inspector
+on:
+  workflow_dispatch:
+    inputs:
+      kaos-issue-id:
+        description: 'Issue ID'
+        default: ""
+        required: false
+      kaos-workflow-id:
+        description: 'Workflow ID'
+        default: ""
+        required: false
+      kaos-user-start:
+          description: 'User initiated process'
+          default: ""
+          required: false
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  pull-requests: write
+env:
+  KAOS_MODULE: "[Ka0S] INSPECTOR"
+  GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  BRANCH_NAME: ${{ github.ref }}
+  KAOS_OUTPUT_EXECUTION: "core/outputs/e/"
+  KAOS_EXP_FULL_LOGS: "attempt,conclusion,createdAt,databaseId,displayTitle,event,headBranch,headSha,jobs,name,number,startedAt,status,updatedAt,url,workflowDatabaseId,workflowName"
+  KAOS_REPO: "/actions-runner/_work/kaos/kaos"
+  KAOS_STEP_MODULE: ""
+  KAOS_CODE: ${{ github.run_id }}
+jobs:
+  init-repo:
+    runs-on: 
+      group: kaos-inspector
+    steps:
+      - id: repo
+        name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.KAOS_TOKEN }}
+  check-info:
+    runs-on: 
+      group: kaos-inspector
+    needs: [init-repo]
+    if: ${{ success() }}
+    steps:
+      - id: check-data
+        name: Check Information
+        run: |
+          echo "Checking the execution of the workflow..."
+          gh run view ${{ github.event.inputs.kaos-workflow-id }} --log-failed > ${{ env.KAOS_OUTPUT_EXECUTION }}${{ github.event.inputs.kaos-workflow-id }}.log
+          echo "Extract resume of execution code..."
+          gh run view ${{ github.event.inputs.kaos-workflow-id }} --json ${{ env.KAOS_EXP_FULL_LOGS }} > ${{ env.KAOS_OUTPUT_EXECUTION }}${{ github.event.inputs.kaos-workflow-id }}.json
+  upload-files:
+    runs-on: 
+      group: kaos-inspector
+    needs: [init-repo, check-info]
+    if: ${{ success() }}
+    steps:
+      - id: upload-files
+        name: Upload Files
+        run: |
+          echo "Uploading files to the repository..."
+          git config --global user.name "${{ secrets.KAOS_USER_NAME }}"
+          git config --global user.email "${{ secrets.KAOS_USER_EMAIL }}"
+          git pull
+          git add ${{ env.KAOS_OUTPUT_EXECUTION }}*
+          git commit -m "[Ka0S] Uploading resume execution files to the repository..."
+          git push
+  handle-success:
+    runs-on: 
+      group: kaos-inspector
+    needs: [init-repo, check-info, upload-files]
+    if: ${{ success() }}
+    steps: 
+      - id: handle-success-execution
+        run: |
+          # Si todo ha iso correctamente pasamos la tarjeta a done
+          # Añadimos a cada paso el mensaje de éxito incluido en la issue original
+          echo "${{ env.KAOS_MODULE }} Success in runid ${{ env.KAOS_CODE }} initiated by ${{ github.event.inputs.kaos-user-start }} through issue number ${{ github.event.inputs.kaos-issue-id }}."
+          echo "La ejecución solicitada en el issue ${{ github.event.inputs.kaos-issue-id }} ha sido completada con éxito."
+          echo "El código ejecutado y el log de su ejecución se encuentran en ${{ env.KAOS_OUTPUT_EXECUTION }} clave ${{ github.event.inputs.kaos-workflow-id }}"
+          echo "Se añade los ficheros de la ejecución ${{ github.event.inputs.kaos-issue-id }} al repositorio."
+          gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body "${{ env.KAOS_MODULE }} success extract information from the execution ${{ github.event.inputs.kaos-workflow-id }} initiated by ${{ github.event.inputs.kaos-user-start }}."
+  handle_failure:
+      runs-on: 
+        group: kaos-issue
+      needs: [init-repo, check-info, upload-files]
+      if: ${{ failure() }}
+      steps:
+        - id: handle-failure-execution
+          env:
+            GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+          run: |
+            echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
+            KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ github.run_id }}"
+            KAOS_BODY=$(cat <<'EOF'
+              **${{ env.KAOS_MODULE }}  Message:**
+              El error ha sido en: ${{ env.KAOS_CODE }}
+              si dispòne de los permisos necesarios 
+              ejecute este comando en su consola y podrá consultar el fallo del trabajo
+              gh run view ${{ env.KAOS_CODE }} --log-failed
+              \`\`\`
+              **La información de la ejecución ${{ secrets.KAOS_ACTIONS_URL }}${{ env.KAOS_CODE }}**
+              \`\`\`
+              Please investigate the issue.
+              EOF
+              )
+            gh issue create -t "$KAOS_ISSUE_TITLE" -b "$KAOS_ISSUE_BODY" -l "bug" -a "${{ github.event.inputs.kaos-user-start }}"
+            # Buscamos el numero de la issue en funcion del titulo de la misma 
+            ISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
+            # Añadimos el comentario a la issue que dispara el proceso
+            KAOS_ISSUE_BODY="Se ha generado la issue (#$ISSUE_NUMBRE) por la acción ${{ github.event.inputs.kaos-workflow-id }} desde el issue #${{ github.event.inputs.kaos-issue-id }} creada por ${{ github.event.inputs.kaos-user-start }}"
+            gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "$KAOS_ISSUE_BODY"
+   
