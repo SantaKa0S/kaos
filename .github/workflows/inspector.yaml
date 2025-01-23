@@ -39,12 +39,6 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.KAOS_TOKEN }}
-  check-info:
-    runs-on: 
-      group: kaos-inspector
-    needs: [init-repo]
-    if: ${{ success() }}
-    steps:
       - id: check-data
         name: Check Information
         run: |
@@ -52,12 +46,6 @@ jobs:
           gh run view ${{ github.event.inputs.kaos-workflow-id }} --log > ${{ env.KAOS_OUTPUT_EXECUTION }}${{ github.event.inputs.kaos-workflow-id }}.log
           echo "Extract resume of execution code..."
           gh run view ${{ github.event.inputs.kaos-workflow-id }} --json ${{ env.KAOS_EXP_FULL_LOGS }} > ${{ env.KAOS_OUTPUT_EXECUTION }}${{ github.event.inputs.kaos-workflow-id }}.json
-  upload-files:
-    runs-on: 
-      group: kaos-inspector
-    needs: [init-repo, check-info]
-    if: ${{ success() }}
-    steps:
       - id: upload-files
         name: Upload Files
         run: |
@@ -71,7 +59,7 @@ jobs:
   handle-success:
     runs-on: 
       group: kaos-inspector
-    needs: [init-repo, check-info, upload-files]
+    needs: [init-repo]
     if: ${{ success() }}
     steps: 
       - id: handle-success-execution
@@ -92,7 +80,7 @@ jobs:
   handle_failure:
     runs-on: 
       group: kaos-issue
-    needs: [init-repo, check-info, upload-files]
+    needs: [init-repo]
     if: ${{ failure() }}
     steps:
       - id: handle-failure-execution
