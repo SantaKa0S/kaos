@@ -843,3 +843,146 @@
   - core/results/files-in-commit-.txt
   - version.txt
 ---------------------------------
+## Version 1.0.25
+- **Branch**: refs/pull/769/merge
+- **Commit**: d886c833a12d68ffe187fc309e798d385f7ec786
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Jan 21 13:35:01 UTC 2025
+- **Message**: Merge d39ac8a1409a2e24e829915f312567601259a725 into ea5d1ccab252966d7dc8af0eff59bcb3f329c7e3
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - .github/workflows/summary.yaml
+  - README.md
+  - core/docs/ka0s/ka0s_core.md
+  - core/docs/ka0s/variables.md
+  - core/docs/ka0s_execution/ka0s_execution.md
+  - core/docs/ka0s_template/ka0s_template.md
+  - core/results/commit-summary-.txt
+  - core/results/files-in-commit-.txt
+  - version.txt
+---------------------------------
+## Version 1.0.26
+- **Branch**: refs/pull/771/merge
+- **Commit**: da7a16dac4efbd861bac0ee65b3f655bd1b19dff
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Jan 21 16:04:20 UTC 2025
+- **Message**: Merge 26803fd4195761a6df593b591c1d465cf4ff2782 into 4d1456b19bbcd2b59e2385174eb6073c313b761b
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - compliance/automations/automations.json
+  - core/results/commit-summary-.txt
+  - core/results/files-in-commit-.txt
+  - version.txt
+---------------------------------
+## Version 1.0.27
+- **Branch**: refs/pull/785/merge
+- **Commit**: 836391e99d02abda633ab44e0bd2f026685233c5
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Jan 21 16:50:53 UTC 2025
+- **Message**: Merge 2382c8fb727f986c72e666b6c02530474a87b236 into df1ae71776e98cfabcf93b82c28c59b832ff5ff2
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - .github/workflows/issue.yaml
+  - core/results/commit-summary-.txt
+  - core/results/files-in-commit-.txt
+  - version.txt
+---------------------------------
+## Version 1.0.28
+- **Branch**: refs/pull/790/merge
+- **Commit**: d84942df902f9cf10ee5cac26d10c004b467b902
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Jan 21 17:14:24 UTC 2025
+- **Message**: Merge b0665647f8f90c6c77cf045f3ea6100f516e166a into b337745c454933543214787807b89d546642b95b
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - .github/workflows/issue.yaml
+  - core/results/commit-summary-.txt
+  - core/results/files-in-commit-.txt
+  - version.txt
+---------------------------------
+## Version 1.0.29
+- **Branch**: refs/pull/793/merge
+- **Commit**: fb3c64f97788a743f968be84a95310c11d18fadf
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Tue Jan 21 17:31:32 UTC 2025
+- **Message**: Merge 39e46e25c194584b268f89e7f42274a76bf81acd into 0ce36c08da1b061ea6727df4d3a6d3760672b5a1
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - core/results/commit-summary-.txt
+  - core/results/files-in-commit-.txt
+  - version.txt
+---------------------------------
+## Version 1.0.30
+- **Branch**: refs/pull/799/merge
+- **Commit**: 8744c11b9fa449821b5c297adb9a0f9c7eb50953
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Wed Jan 22 14:44:51 UTC 2025
+- **Message**: Merge 43715e73fbbda8e0bc5f4a71c43a36b459380e58 into 610830ef84985d55186446e80fc2e68433a2b261
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - core/results/commit-summary-.txt
+  - version.txt
+---------------------------------
+## Version 1.0.31
+- **Branch**: refs/pull/803/merge
+- **Commit**: 27e294b1e4264a7fe89842b93726e31c0702fb28
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Wed Jan 22 15:24:47 UTC 2025
+- **Message**: Merge 86418c374abf82a2f0ec3c00faabfd4baad9bafd into 08697d4feeeed28c4f0fb0e68c9c0ae863b1cf85
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - core/results/commit-summary-.txt
+  - version.txt
+---------------------------------
+## Version 1.0.32
+- **Branch**: refs/pull/806/merge
+- **Commit**: 310170e59d81a54b724539acbfb34bf1073bf0a2
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Wed Jan 22 16:51:48 UTC 2025
+- **Message**: Merge e2e0b30b035cc857f1c939b4158f4107ad6bcd21 into 0638216bbfb4b6eac5e8f2507705ebe18c2b6b98
+- **Files Changed**:
+  - .github/workflows/execution.yaml
+  - .github/workflows/inspector.yaml
+  - .github/workflows/issue.yaml
+  - core/results/commit-summary-.txt
+  - core/results/files-in-commit-.txt
+  - version.txt
+---------------------------------
+## Version 1.0.33
+- **Branch**: refs/pull/810/merge
+- **Commit**: 36c6ce3d9939601338e02943400298e5424564f2
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Wed Jan 22 17:51:35 UTC 2025
+- **Message**: Merge c850a978cbe46f5a747e490832d8dec8b334314f into e48f95686cd26a53d22e9df50f03abb455398d0b
+- **Files Changed**:
+  - .github/workflows/inspector.yaml
+  - .github/workflows/summary.yaml
+  - core/imgs/kaos-execution.png
+  - core/results/commit-summary-.txt
+  - core/results/files-in-commit-.txt
+  - core/runners/Dockerfile
+  - version.txt
+---------------------------------
+## Version 1.0.34
+- **Branch**: refs/pull/811/merge
+- **Commit**: cb44eed0c54849d2cdd75b79a55954b1403a1f08
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Thu Jan 23 08:15:07 UTC 2025
+- **Message**: Merge 06b0c28f2786e67b7d8fa7c857cb762b4cdd6478 into 881d6cb1549ceb5b6b1ed1de6d7e66fd8bd325b4
+- **Files Changed**:
+  - .github/workflows/inspector.yaml
+  - core/results/commit-summary-.txt
+  - core/results/files-in-commit-.txt
+  - version.txt
+---------------------------------
+## Version 1.0.35
+- **Branch**: refs/pull/813/merge
+- **Commit**: 8da1a54a7b8f27e3aba0ef10b4b1bf60f6752a49
+- **Author**: SantaKloud (73332898+santakloud@users.noreply.github.com)
+- **Date**: Thu Jan 23 08:40:32 UTC 2025
+- **Message**: Merge f19ca3ae5717deaf5cf0ea41ce80b09358c928e1 into 4bb84258eef7a22536e827fe60aa9f5231ccec97
+- **Files Changed**:
+  - .github/workflows/inspector.yaml
+  - core/results/commit-summary-.txt
+  - version.txt
+---------------------------------

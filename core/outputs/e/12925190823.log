@@ -1,0 +1,565 @@
+init-repo	Set up job	2025-01-23T08:30:24.0715920Z Current runner version: '2.321.0'
+init-repo	Set up job	2025-01-23T08:30:24.0722814Z Runner name: 'kaos-execution-4'
+init-repo	Set up job	2025-01-23T08:30:24.0723641Z Runner group name: 'kaos-execution'
+init-repo	Set up job	2025-01-23T08:30:24.0724541Z Machine name: 'aaeee0098231'
+init-repo	Set up job	2025-01-23T08:30:24.0727778Z ##[group]GITHUB_TOKEN Permissions
+init-repo	Set up job	2025-01-23T08:30:24.0730094Z Actions: write
+init-repo	Set up job	2025-01-23T08:30:24.0730627Z Contents: write
+init-repo	Set up job	2025-01-23T08:30:24.0731107Z Issues: write
+init-repo	Set up job	2025-01-23T08:30:24.0731571Z Metadata: read
+init-repo	Set up job	2025-01-23T08:30:24.0732046Z PullRequests: write
+init-repo	Set up job	2025-01-23T08:30:24.0732536Z ##[endgroup]
+init-repo	Set up job	2025-01-23T08:30:24.0734691Z Secret source: Actions
+init-repo	Set up job	2025-01-23T08:30:24.0735901Z Prepare workflow directory
+init-repo	Set up job	2025-01-23T08:30:24.1339079Z Prepare all required actions
+init-repo	Set up job	2025-01-23T08:30:24.1379451Z Getting action download info
+init-repo	Set up job	2025-01-23T08:30:24.3745178Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+init-repo	Set up job	2025-01-23T08:30:25.1896748Z Complete job name: init-repo
+init-repo	Checkout repository	2025-01-23T08:30:25.2429495Z ##[group]Run actions/checkout@v4
+init-repo	Checkout repository	2025-01-23T08:30:25.2430473Z with:
+init-repo	Checkout repository	2025-01-23T08:30:25.2430916Z   fetch-depth: 0
+init-repo	Checkout repository	2025-01-23T08:30:25.2431621Z   token: ***
+init-repo	Checkout repository	2025-01-23T08:30:25.2432067Z   repository: SantaKa0S/kaos
+init-repo	Checkout repository	2025-01-23T08:30:25.2432726Z   ssh-strict: true
+init-repo	Checkout repository	2025-01-23T08:30:25.2433196Z   ssh-user: git
+init-repo	Checkout repository	2025-01-23T08:30:25.2433782Z   persist-credentials: true
+init-repo	Checkout repository	2025-01-23T08:30:25.2434286Z   clean: true
+init-repo	Checkout repository	2025-01-23T08:30:25.2434752Z   sparse-checkout-cone-mode: true
+init-repo	Checkout repository	2025-01-23T08:30:25.2435747Z   fetch-tags: false
+init-repo	Checkout repository	2025-01-23T08:30:25.2436366Z   show-progress: true
+init-repo	Checkout repository	2025-01-23T08:30:25.2436852Z   lfs: false
+init-repo	Checkout repository	2025-01-23T08:30:25.2437416Z   submodules: false
+init-repo	Checkout repository	2025-01-23T08:30:25.2437887Z   set-safe-directory: true
+init-repo	Checkout repository	2025-01-23T08:30:25.2438733Z env:
+init-repo	Checkout repository	2025-01-23T08:30:25.2439174Z   KAOS_MODULE: [Ka0S] Execution
+init-repo	Checkout repository	2025-01-23T08:30:25.2439866Z   GH_TOKEN: ***
+init-repo	Checkout repository	2025-01-23T08:30:25.2440324Z   BRANCH_NAME: refs/heads/main
+init-repo	Checkout repository	2025-01-23T08:30:25.2441464Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+init-repo	Checkout repository	2025-01-23T08:30:25.2442302Z   KAOS_PATH_RESUME: core/results/
+init-repo	Checkout repository	2025-01-23T08:30:25.2442896Z   KAOS_PATH_OUTPUT: core/outputs/e/
+init-repo	Checkout repository	2025-01-23T08:30:25.2443514Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+init-repo	Checkout repository	2025-01-23T08:30:25.2444231Z   KAOS_STEP_MODULE: 
+init-repo	Checkout repository	2025-01-23T08:30:25.2444691Z   KAOS_CODE: 12925190823
+init-repo	Checkout repository	2025-01-23T08:30:25.2445179Z   KAOS_ISSUE_NUMBER: 812
+init-repo	Checkout repository	2025-01-23T08:30:25.2446567Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+init-repo	Checkout repository	2025-01-23T08:30:25.2447434Z   KAOS_ISSUE_BODY: "module":"summary"
+init-repo	Checkout repository	2025-01-23T08:30:25.2448019Z   KAOS_ISSUE_USER: santakloud
+init-repo	Checkout repository	2025-01-23T08:30:25.2448829Z ##[endgroup]
+init-repo	Checkout repository	2025-01-23T08:30:25.3664281Z Syncing repository: SantaKa0S/kaos
+init-repo	Checkout repository	2025-01-23T08:30:25.3666955Z ##[group]Getting Git version info
+init-repo	Checkout repository	2025-01-23T08:30:25.3667991Z Working directory is '/actions-runner/_work/kaos/kaos'
+init-repo	Checkout repository	2025-01-23T08:30:25.3669122Z [command]/usr/bin/git version
+init-repo	Checkout repository	2025-01-23T08:30:25.3669793Z git version 2.25.1
+init-repo	Checkout repository	2025-01-23T08:30:25.3686145Z ##[endgroup]
+init-repo	Checkout repository	2025-01-23T08:30:25.3703125Z Temporarily overriding HOME='/actions-runner/_work/_temp/99051a0e-1cb1-4188-b056-0e7e07d993d8' before making global git config changes
+init-repo	Checkout repository	2025-01-23T08:30:25.3705138Z Adding repository directory to the temporary git global config as a safe directory
+init-repo	Checkout repository	2025-01-23T08:30:25.3709442Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+init-repo	Checkout repository	2025-01-23T08:30:25.3756557Z [command]/usr/bin/git config --local --get remote.origin.url
+init-repo	Checkout repository	2025-01-23T08:30:25.3790136Z https://github.com/SantaKa0S/kaos
+init-repo	Checkout repository	2025-01-23T08:30:25.3809717Z ##[group]Removing previously created refs, to avoid conflicts
+init-repo	Checkout repository	2025-01-23T08:30:25.3814515Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+init-repo	Checkout repository	2025-01-23T08:30:25.3839307Z refs/heads/main
+init-repo	Checkout repository	2025-01-23T08:30:25.3850232Z [command]/usr/bin/git checkout --detach
+init-repo	Checkout repository	2025-01-23T08:30:25.3986280Z HEAD is now at ef30e90 Merge pull request #790 from SantaKa0S/H633-modulo-de-execution
+init-repo	Checkout repository	2025-01-23T08:30:25.4034301Z [command]/usr/bin/git branch --delete --force main
+init-repo	Checkout repository	2025-01-23T08:30:25.4066154Z Deleted branch main (was ef30e90).
+init-repo	Checkout repository	2025-01-23T08:30:25.4128198Z ##[endgroup]
+init-repo	Checkout repository	2025-01-23T08:30:25.4128933Z [command]/usr/bin/git submodule status
+init-repo	Checkout repository	2025-01-23T08:30:25.4438422Z ##[group]Cleaning the repository
+init-repo	Checkout repository	2025-01-23T08:30:25.4443226Z [command]/usr/bin/git clean -ffdx
+init-repo	Checkout repository	2025-01-23T08:30:25.4483044Z Removing core/outputs/e/12892372117-791.txt
+init-repo	Checkout repository	2025-01-23T08:30:25.4493918Z [command]/usr/bin/git reset --hard HEAD
+init-repo	Checkout repository	2025-01-23T08:30:25.4540535Z HEAD is now at ef30e90 Merge pull request #790 from SantaKa0S/H633-modulo-de-execution
+init-repo	Checkout repository	2025-01-23T08:30:25.4544212Z ##[endgroup]
+init-repo	Checkout repository	2025-01-23T08:30:25.4545797Z ##[group]Disabling automatic garbage collection
+init-repo	Checkout repository	2025-01-23T08:30:25.4550674Z [command]/usr/bin/git config --local gc.auto 0
+init-repo	Checkout repository	2025-01-23T08:30:25.4584387Z ##[endgroup]
+init-repo	Checkout repository	2025-01-23T08:30:25.4585403Z ##[group]Setting up auth
+init-repo	Checkout repository	2025-01-23T08:30:25.4591017Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+init-repo	Checkout repository	2025-01-23T08:30:25.4625466Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+init-repo	Checkout repository	2025-01-23T08:30:25.4930932Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+init-repo	Checkout repository	2025-01-23T08:30:25.4964983Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+init-repo	Checkout repository	2025-01-23T08:30:25.5283754Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+init-repo	Checkout repository	2025-01-23T08:30:25.5332071Z ##[endgroup]
+init-repo	Checkout repository	2025-01-23T08:30:25.5333746Z ##[group]Fetching the repository
+init-repo	Checkout repository	2025-01-23T08:30:25.5342785Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+init-repo	Checkout repository	2025-01-23T08:30:26.6467958Z From https://github.com/SantaKa0S/kaos
+init-repo	Checkout repository	2025-01-23T08:30:26.6471377Z    315f5cc..bda48d6  H633-modulo-de-execution -> origin/H633-modulo-de-execution
+init-repo	Checkout repository	2025-01-23T08:30:26.6474018Z    7098e04..284b40a  H637-modulo-de-despliegue-de-kaos -> origin/H637-modulo-de-despliegue-de-kaos
+init-repo	Checkout repository	2025-01-23T08:30:26.6476273Z    ef30e90..57c3108  main       -> origin/main
+init-repo	Checkout repository	2025-01-23T08:30:26.6477467Z  * [new tag]         1.0.29     -> 1.0.29
+init-repo	Checkout repository	2025-01-23T08:30:26.6479779Z  * [new tag]         1.0.30     -> 1.0.30
+init-repo	Checkout repository	2025-01-23T08:30:26.6483720Z  * [new tag]         1.0.31     -> 1.0.31
+init-repo	Checkout repository	2025-01-23T08:30:26.6484951Z  * [new tag]         1.0.32     -> 1.0.32
+init-repo	Checkout repository	2025-01-23T08:30:26.6486140Z  * [new tag]         1.0.33     -> 1.0.33
+init-repo	Checkout repository	2025-01-23T08:30:26.6487281Z  * [new tag]         1.0.34     -> 1.0.34
+init-repo	Checkout repository	2025-01-23T08:30:26.6531937Z [command]/usr/bin/git branch --list --remote origin/main
+init-repo	Checkout repository	2025-01-23T08:30:26.6558912Z   origin/main
+init-repo	Checkout repository	2025-01-23T08:30:26.6569839Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+init-repo	Checkout repository	2025-01-23T08:30:26.6593770Z 57c3108ecd1dae9968697c9a7d4454618c58d9ac
+init-repo	Checkout repository	2025-01-23T08:30:26.6599823Z ##[endgroup]
+init-repo	Checkout repository	2025-01-23T08:30:26.6601499Z ##[group]Determining the checkout info
+init-repo	Checkout repository	2025-01-23T08:30:26.6603517Z ##[endgroup]
+init-repo	Checkout repository	2025-01-23T08:30:26.6605054Z ##[group]Checking out the ref
+init-repo	Checkout repository	2025-01-23T08:30:26.6607034Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+init-repo	Checkout repository	2025-01-23T08:30:26.6910246Z Previous HEAD position was ef30e90 Merge pull request #790 from SantaKa0S/H633-modulo-de-execution
+init-repo	Checkout repository	2025-01-23T08:30:26.6920600Z Switched to a new branch 'main'
+init-repo	Checkout repository	2025-01-23T08:30:26.6922260Z Branch 'main' set up to track remote branch 'main' from 'origin'.
+init-repo	Checkout repository	2025-01-23T08:30:26.6932742Z ##[endgroup]
+init-repo	Checkout repository	2025-01-23T08:30:26.6971506Z [command]/usr/bin/git log -1 --format=%H
+init-repo	Checkout repository	2025-01-23T08:30:26.7000847Z 57c3108ecd1dae9968697c9a7d4454618c58d9ac
+init-repo	Message	2025-01-23T08:30:26.7251330Z ##[group]Run echo "Init repository"
+init-repo	Message	2025-01-23T08:30:26.7252660Z [36;1mecho "Init repository"[0m
+init-repo	Message	2025-01-23T08:30:26.7254041Z [36;1m# Vemos si con inicializar el fichero solventamos el problema[0m
+init-repo	Message	2025-01-23T08:30:26.7255636Z [36;1mtouch core/outputs/e/12925190823-812.txt[0m
+init-repo	Message	2025-01-23T08:30:26.7257424Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+init-repo	Message	2025-01-23T08:30:26.7259983Z [36;1mecho "($_timestamp) - Se ha iniciado la ejecución 12925190823 a través de la tarjeta #812." >> core/outputs/e/12925190823-812.txt[0m
+init-repo	Message	2025-01-23T08:30:26.7262550Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+init-repo	Message	2025-01-23T08:30:26.7264627Z [36;1mecho "($_timestamp) - Se ha iniciado el Repositorio." >> core/outputs/e/12925190823-812.txt[0m
+init-repo	Message	2025-01-23T08:30:26.7277109Z shell: /usr/bin/bash -e {0}
+init-repo	Message	2025-01-23T08:30:26.7278068Z env:
+init-repo	Message	2025-01-23T08:30:26.7278779Z   KAOS_MODULE: [Ka0S] Execution
+init-repo	Message	2025-01-23T08:30:26.7280176Z   GH_TOKEN: ***
+init-repo	Message	2025-01-23T08:30:26.7280984Z   BRANCH_NAME: refs/heads/main
+init-repo	Message	2025-01-23T08:30:26.7282386Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+init-repo	Message	2025-01-23T08:30:26.7283920Z   KAOS_PATH_RESUME: core/results/
+init-repo	Message	2025-01-23T08:30:26.7284928Z   KAOS_PATH_OUTPUT: core/outputs/e/
+init-repo	Message	2025-01-23T08:30:26.7286362Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+init-repo	Message	2025-01-23T08:30:26.7287459Z   KAOS_STEP_MODULE: 
+init-repo	Message	2025-01-23T08:30:26.7288266Z   KAOS_CODE: 12925190823
+init-repo	Message	2025-01-23T08:30:26.7289144Z   KAOS_ISSUE_NUMBER: 812
+init-repo	Message	2025-01-23T08:30:26.7290523Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+init-repo	Message	2025-01-23T08:30:26.7292120Z   KAOS_ISSUE_BODY: "module":"summary"
+init-repo	Message	2025-01-23T08:30:26.7293177Z   KAOS_ISSUE_USER: santakloud
+init-repo	Message	2025-01-23T08:30:26.7294565Z ##[endgroup]
+init-repo	Message	2025-01-23T08:30:26.7391560Z Init repository
+init-repo	Post Checkout repository	2025-01-23T08:30:26.7586720Z Post job cleanup.
+init-repo	Post Checkout repository	2025-01-23T08:30:26.8620692Z [command]/usr/bin/git version
+init-repo	Post Checkout repository	2025-01-23T08:30:26.8660230Z git version 2.25.1
+init-repo	Post Checkout repository	2025-01-23T08:30:26.8709743Z Temporarily overriding HOME='/actions-runner/_work/_temp/a7f9249c-0e17-4183-8e25-88846f5c32d3' before making global git config changes
+init-repo	Post Checkout repository	2025-01-23T08:30:26.8713002Z Adding repository directory to the temporary git global config as a safe directory
+init-repo	Post Checkout repository	2025-01-23T08:30:26.8715664Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+init-repo	Post Checkout repository	2025-01-23T08:30:26.8766042Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+init-repo	Post Checkout repository	2025-01-23T08:30:26.8807468Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+init-repo	Post Checkout repository	2025-01-23T08:30:26.9119119Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+init-repo	Post Checkout repository	2025-01-23T08:30:26.9144417Z http.https://github.com/.extraheader
+init-repo	Post Checkout repository	2025-01-23T08:30:26.9156252Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+init-repo	Post Checkout repository	2025-01-23T08:30:26.9196184Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+init-repo	Complete job	2025-01-23T08:30:26.9641033Z Cleaning up orphan processes
+check-issue	Set up job	2025-01-23T08:30:38.4390306Z Current runner version: '2.321.0'
+check-issue	Set up job	2025-01-23T08:30:38.4397592Z Runner name: 'kaos-execution-4'
+check-issue	Set up job	2025-01-23T08:30:38.4398361Z Runner group name: 'kaos-execution'
+check-issue	Set up job	2025-01-23T08:30:38.4399272Z Machine name: 'aaeee0098231'
+check-issue	Set up job	2025-01-23T08:30:38.4402066Z ##[group]GITHUB_TOKEN Permissions
+check-issue	Set up job	2025-01-23T08:30:38.4404414Z Actions: write
+check-issue	Set up job	2025-01-23T08:30:38.4404938Z Contents: write
+check-issue	Set up job	2025-01-23T08:30:38.4405485Z Issues: write
+check-issue	Set up job	2025-01-23T08:30:38.4406336Z Metadata: read
+check-issue	Set up job	2025-01-23T08:30:38.4406809Z PullRequests: write
+check-issue	Set up job	2025-01-23T08:30:38.4407292Z ##[endgroup]
+check-issue	Set up job	2025-01-23T08:30:38.4409273Z Secret source: Actions
+check-issue	Set up job	2025-01-23T08:30:38.4409965Z Prepare workflow directory
+check-issue	Set up job	2025-01-23T08:30:38.4982958Z Prepare all required actions
+check-issue	Set up job	2025-01-23T08:30:38.5041354Z Complete job name: check-issue
+check-issue	Check Info	2025-01-23T08:30:38.5570904Z ##[group]Run echo "Check issue for execution $KAOS_ISSUE_NUMBER"
+check-issue	Check Info	2025-01-23T08:30:38.5572014Z [36;1mecho "Check issue for execution $KAOS_ISSUE_NUMBER"[0m
+check-issue	Check Info	2025-01-23T08:30:38.5572910Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+check-issue	Check Info	2025-01-23T08:30:38.5574202Z [36;1mecho "($_timestamp) - Se ha comprobado que la tarjeta #812 se puede ejecutar." >> core/outputs/e/12925190823-812.txt[0m
+check-issue	Check Info	2025-01-23T08:30:38.5594168Z shell: /usr/bin/bash -e {0}
+check-issue	Check Info	2025-01-23T08:30:38.5595534Z env:
+check-issue	Check Info	2025-01-23T08:30:38.5596136Z   KAOS_MODULE: [Ka0S] Execution
+check-issue	Check Info	2025-01-23T08:30:38.5596953Z   GH_TOKEN: ***
+check-issue	Check Info	2025-01-23T08:30:38.5597434Z   BRANCH_NAME: refs/heads/main
+check-issue	Check Info	2025-01-23T08:30:38.5598186Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+check-issue	Check Info	2025-01-23T08:30:38.5599006Z   KAOS_PATH_RESUME: core/results/
+check-issue	Check Info	2025-01-23T08:30:38.5599591Z   KAOS_PATH_OUTPUT: core/outputs/e/
+check-issue	Check Info	2025-01-23T08:30:38.5600207Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+check-issue	Check Info	2025-01-23T08:30:38.5600825Z   KAOS_STEP_MODULE: 
+check-issue	Check Info	2025-01-23T08:30:38.5601352Z   KAOS_CODE: 12925190823
+check-issue	Check Info	2025-01-23T08:30:38.5601855Z   KAOS_ISSUE_NUMBER: 812
+check-issue	Check Info	2025-01-23T08:30:38.5602635Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+check-issue	Check Info	2025-01-23T08:30:38.5603520Z   KAOS_ISSUE_BODY: "module":"summary"
+check-issue	Check Info	2025-01-23T08:30:38.5604220Z   KAOS_ISSUE_USER: santakloud
+check-issue	Check Info	2025-01-23T08:30:38.5604748Z ##[endgroup]
+check-issue	Check Info	2025-01-23T08:30:38.5816273Z Check issue for execution 812
+check-issue	Check Kaos	2025-01-23T08:30:38.5912761Z ##[group]Run echo "Extraemos el usuario asignado"
+check-issue	Check Kaos	2025-01-23T08:30:38.5913624Z [36;1mecho "Extraemos el usuario asignado"[0m
+check-issue	Check Kaos	2025-01-23T08:30:38.5914775Z [36;1mecho "KAOS_ISSUE_USER=$(gh issue view $KAOS_ISSUE_NUMBER --json assignees |jq -r '.assignees[].login')" >> $GITHUB_ENV[0m
+check-issue	Check Kaos	2025-01-23T08:30:38.5916400Z [36;1mecho "Añadimos la etiqueta automations a la tarjeta"[0m
+check-issue	Check Kaos	2025-01-23T08:30:38.5917312Z [36;1mgh issue edit $KAOS_ISSUE_NUMBER --add-label 'automations'[0m
+check-issue	Check Kaos	2025-01-23T08:30:38.5924367Z shell: /usr/bin/bash -e {0}
+check-issue	Check Kaos	2025-01-23T08:30:38.5924943Z env:
+check-issue	Check Kaos	2025-01-23T08:30:38.5925586Z   KAOS_MODULE: [Ka0S] Execution
+check-issue	Check Kaos	2025-01-23T08:30:38.5926509Z   GH_TOKEN: ***
+check-issue	Check Kaos	2025-01-23T08:30:38.5926996Z   BRANCH_NAME: refs/heads/main
+check-issue	Check Kaos	2025-01-23T08:30:38.5927756Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+check-issue	Check Kaos	2025-01-23T08:30:38.5928599Z   KAOS_PATH_RESUME: core/results/
+check-issue	Check Kaos	2025-01-23T08:30:38.5929181Z   KAOS_PATH_OUTPUT: core/outputs/e/
+check-issue	Check Kaos	2025-01-23T08:30:38.5929800Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+check-issue	Check Kaos	2025-01-23T08:30:38.5930460Z   KAOS_STEP_MODULE: 
+check-issue	Check Kaos	2025-01-23T08:30:38.5930935Z   KAOS_CODE: 12925190823
+check-issue	Check Kaos	2025-01-23T08:30:38.5931435Z   KAOS_ISSUE_NUMBER: 812
+check-issue	Check Kaos	2025-01-23T08:30:38.5932197Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+check-issue	Check Kaos	2025-01-23T08:30:38.5933057Z   KAOS_ISSUE_BODY: "module":"summary"
+check-issue	Check Kaos	2025-01-23T08:30:38.5933640Z   KAOS_ISSUE_USER: santakloud
+check-issue	Check Kaos	2025-01-23T08:30:38.5934171Z ##[endgroup]
+check-issue	Check Kaos	2025-01-23T08:30:38.5971452Z Extraemos el usuario asignado
+check-issue	Check Kaos	2025-01-23T08:30:39.1583068Z Añadimos la etiqueta automations a la tarjeta
+check-issue	Check Kaos	2025-01-23T08:30:40.6010126Z https://github.com/SantaKa0S/kaos/issues/812
+check-issue	Complete job	2025-01-23T08:30:40.6318687Z Cleaning up orphan processes
+check-data	Set up job	2025-01-23T08:30:50.7324538Z Current runner version: '2.321.0'
+check-data	Set up job	2025-01-23T08:30:50.7331621Z Runner name: 'kaos-execution-4'
+check-data	Set up job	2025-01-23T08:30:50.7332372Z Runner group name: 'kaos-execution'
+check-data	Set up job	2025-01-23T08:30:50.7333263Z Machine name: 'aaeee0098231'
+check-data	Set up job	2025-01-23T08:30:50.7336324Z ##[group]GITHUB_TOKEN Permissions
+check-data	Set up job	2025-01-23T08:30:50.7338645Z Actions: write
+check-data	Set up job	2025-01-23T08:30:50.7339169Z Contents: write
+check-data	Set up job	2025-01-23T08:30:50.7339630Z Issues: write
+check-data	Set up job	2025-01-23T08:30:50.7340074Z Metadata: read
+check-data	Set up job	2025-01-23T08:30:50.7340540Z PullRequests: write
+check-data	Set up job	2025-01-23T08:30:50.7341030Z ##[endgroup]
+check-data	Set up job	2025-01-23T08:30:50.7343010Z Secret source: Actions
+check-data	Set up job	2025-01-23T08:30:50.7343679Z Prepare workflow directory
+check-data	Set up job	2025-01-23T08:30:50.7858606Z Prepare all required actions
+check-data	Set up job	2025-01-23T08:30:50.7910610Z Complete job name: check-data
+check-data	extract data	2025-01-23T08:30:50.8444096Z ##[group]Run echo "Extract data"
+check-data	extract data	2025-01-23T08:30:50.8444923Z [36;1mecho "Extract data"[0m
+check-data	extract data	2025-01-23T08:30:50.8446187Z [36;1m# Separar las claves y valores[0m
+check-data	extract data	2025-01-23T08:30:50.8446881Z [36;1mIFS=',' read -ra PAIRS <<< "$KAOS_ISSUE_BODY"[0m
+check-data	extract data	2025-01-23T08:30:50.8447768Z [36;1m# Procesar el primer par clave-valor[0m
+check-data	extract data	2025-01-23T08:30:50.8448427Z [36;1mFIRST_PAIR=${PAIRS[0]}[0m
+check-data	extract data	2025-01-23T08:30:50.8449133Z [36;1m# Eliminar las comillas[0m
+check-data	extract data	2025-01-23T08:30:50.8449766Z [36;1mFIRST_PAIR=$(echo $FIRST_PAIR | tr -d '"')[0m
+check-data	extract data	2025-01-23T08:30:50.8450441Z [36;1m# Separar la clave y el valor[0m
+check-data	extract data	2025-01-23T08:30:50.8451075Z [36;1mIFS=':' read -ra KV <<< "$FIRST_PAIR"[0m
+check-data	extract data	2025-01-23T08:30:50.8451709Z [36;1mFIRST_KEY=${KV[0]}[0m
+check-data	extract data	2025-01-23T08:30:50.8452237Z [36;1mFIRST_VALUE=${KV[1]}[0m
+check-data	extract data	2025-01-23T08:30:50.8452858Z [36;1m# Procesar el resto de los pares clave-valor[0m
+check-data	extract data	2025-01-23T08:30:50.8453547Z [36;1mREMAINING_PAIRS="${PAIRS[@]:1}"[0m
+check-data	extract data	2025-01-23T08:30:50.8454154Z [36;1mREMAINING_VALUES=""   [0m
+check-data	extract data	2025-01-23T08:30:50.8454775Z [36;1mfor PAIR in ${REMAINING_PAIRS[@]}; do[0m
+check-data	extract data	2025-01-23T08:30:50.8455761Z [36;1m    # Eliminar las comillas[0m
+check-data	extract data	2025-01-23T08:30:50.8456626Z [36;1m    PAIR=$(echo $PAIR | tr -d '"')[0m
+check-data	extract data	2025-01-23T08:30:50.8457371Z [36;1m    # Separar la clave y el valor[0m
+check-data	extract data	2025-01-23T08:30:50.8458009Z [36;1m    IFS=':' read -ra KV <<< "$PAIR"[0m
+check-data	extract data	2025-01-23T08:30:50.8458609Z [36;1m    KEY=${KV[0]}[0m
+check-data	extract data	2025-01-23T08:30:50.8459117Z [36;1m    VALUE=${KV[1]}[0m
+check-data	extract data	2025-01-23T08:30:50.8459718Z [36;1m    # Añadir al string de valores restantes[0m
+check-data	extract data	2025-01-23T08:30:50.8460400Z [36;1m    REMAINING_VALUES+="$KEY:$VALUE;"[0m
+check-data	extract data	2025-01-23T08:30:50.8461002Z [36;1mdone[0m
+check-data	extract data	2025-01-23T08:30:50.8461644Z [36;1mecho "KAOS_EXECUTION_VARS=$REMAINING_VALUES" >> $GITHUB_OUTPUT[0m
+check-data	extract data	2025-01-23T08:30:50.8462458Z [36;1m# Eliminar el último punto y coma[0m
+check-data	extract data	2025-01-23T08:30:50.8506016Z [36;1mREMAINING_VALUES=${REMAINING_VALUES%?}            [0m
+check-data	extract data	2025-01-23T08:30:50.8507259Z [36;1m# Asignar el valor de la primera clave a una variable[0m
+check-data	extract data	2025-01-23T08:30:50.8508169Z [36;1mecho "KAOS_EXECUTION_TYPE=$FIRST_VALUE" >> $GITHUB_OUTPUT[0m
+check-data	extract data	2025-01-23T08:30:50.8509077Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+check-data	extract data	2025-01-23T08:30:50.8510384Z [36;1mecho "($_timestamp) - Se han extraido los datos de la tarjeta #812." >> core/outputs/e/12925190823-812.txt[0m
+check-data	extract data	2025-01-23T08:30:50.8530708Z shell: /usr/bin/bash -e {0}
+check-data	extract data	2025-01-23T08:30:50.8531585Z env:
+check-data	extract data	2025-01-23T08:30:50.8532044Z   KAOS_MODULE: [Ka0S] Execution
+check-data	extract data	2025-01-23T08:30:50.8532850Z   GH_TOKEN: ***
+check-data	extract data	2025-01-23T08:30:50.8533318Z   BRANCH_NAME: refs/heads/main
+check-data	extract data	2025-01-23T08:30:50.8534045Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+check-data	extract data	2025-01-23T08:30:50.8534836Z   KAOS_PATH_RESUME: core/results/
+check-data	extract data	2025-01-23T08:30:50.8535777Z   KAOS_PATH_OUTPUT: core/outputs/e/
+check-data	extract data	2025-01-23T08:30:50.8536654Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+check-data	extract data	2025-01-23T08:30:50.8537258Z   KAOS_STEP_MODULE: 
+check-data	extract data	2025-01-23T08:30:50.8537727Z   KAOS_CODE: 12925190823
+check-data	extract data	2025-01-23T08:30:50.8538244Z   KAOS_ISSUE_NUMBER: 812
+check-data	extract data	2025-01-23T08:30:50.8539009Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+check-data	extract data	2025-01-23T08:30:50.8539869Z   KAOS_ISSUE_BODY: "module":"summary"
+check-data	extract data	2025-01-23T08:30:50.8540725Z   KAOS_ISSUE_USER: santakloud
+check-data	extract data	2025-01-23T08:30:50.8541245Z ##[endgroup]
+check-data	extract data	2025-01-23T08:30:50.8702093Z Extract data
+check-data	Check data	2025-01-23T08:30:50.8846411Z ##[group]Run echo "Check lógical data"
+check-data	Check data	2025-01-23T08:30:50.8847158Z [36;1mecho "Check lógical data"[0m
+check-data	Check data	2025-01-23T08:30:50.8847796Z [36;1m# Cambiamos de Backlog a In Progress[0m
+check-data	Check data	2025-01-23T08:30:50.8848652Z [36;1m# gh issue comment $KAOS_ISSUE_NUMBER -b "Se han comprobado los datos"[0m
+check-data	Check data	2025-01-23T08:30:50.8849660Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+check-data	Check data	2025-01-23T08:30:50.8850912Z [36;1mecho "($_timestamp) - Se comprobado los datos asociados a la tarjeta #812." >> core/outputs/e/12925190823-812.txt[0m
+check-data	Check data	2025-01-23T08:30:50.8858418Z shell: /usr/bin/bash -e {0}
+check-data	Check data	2025-01-23T08:30:50.8858960Z env:
+check-data	Check data	2025-01-23T08:30:50.8859385Z   KAOS_MODULE: [Ka0S] Execution
+check-data	Check data	2025-01-23T08:30:50.8860167Z   GH_TOKEN: ***
+check-data	Check data	2025-01-23T08:30:50.8860655Z   BRANCH_NAME: refs/heads/main
+check-data	Check data	2025-01-23T08:30:50.8861453Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+check-data	Check data	2025-01-23T08:30:50.8862269Z   KAOS_PATH_RESUME: core/results/
+check-data	Check data	2025-01-23T08:30:50.8862849Z   KAOS_PATH_OUTPUT: core/outputs/e/
+check-data	Check data	2025-01-23T08:30:50.8863526Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+check-data	Check data	2025-01-23T08:30:50.8864144Z   KAOS_STEP_MODULE: 
+check-data	Check data	2025-01-23T08:30:50.8864621Z   KAOS_CODE: 12925190823
+check-data	Check data	2025-01-23T08:30:50.8865123Z   KAOS_ISSUE_NUMBER: 812
+check-data	Check data	2025-01-23T08:30:50.8866265Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+check-data	Check data	2025-01-23T08:30:50.8867149Z   KAOS_ISSUE_BODY: "module":"summary"
+check-data	Check data	2025-01-23T08:30:50.8867739Z   KAOS_ISSUE_USER: santakloud
+check-data	Check data	2025-01-23T08:30:50.8868267Z ##[endgroup]
+check-data	Check data	2025-01-23T08:30:50.9014945Z Check lógical data
+check-data	Complete job	2025-01-23T08:30:50.9074529Z Evaluate and set job outputs
+check-data	Complete job	2025-01-23T08:30:50.9084196Z Set output 'KAOS_EXECUTION_TYPE'
+check-data	Complete job	2025-01-23T08:30:50.9087339Z Cleaning up orphan processes
+show-data	Set up job	2025-01-23T08:31:02.0675329Z Current runner version: '2.321.0'
+show-data	Set up job	2025-01-23T08:31:02.0682114Z Runner name: 'kaos-execution-4'
+show-data	Set up job	2025-01-23T08:31:02.0682951Z Runner group name: 'kaos-execution'
+show-data	Set up job	2025-01-23T08:31:02.0683864Z Machine name: 'aaeee0098231'
+show-data	Set up job	2025-01-23T08:31:02.0687273Z ##[group]GITHUB_TOKEN Permissions
+show-data	Set up job	2025-01-23T08:31:02.0689588Z Actions: write
+show-data	Set up job	2025-01-23T08:31:02.0690117Z Contents: write
+show-data	Set up job	2025-01-23T08:31:02.0690593Z Issues: write
+show-data	Set up job	2025-01-23T08:31:02.0691051Z Metadata: read
+show-data	Set up job	2025-01-23T08:31:02.0691530Z PullRequests: write
+show-data	Set up job	2025-01-23T08:31:02.0692020Z ##[endgroup]
+show-data	Set up job	2025-01-23T08:31:02.0693985Z Secret source: Actions
+show-data	Set up job	2025-01-23T08:31:02.0694666Z Prepare workflow directory
+show-data	Set up job	2025-01-23T08:31:02.1202520Z Prepare all required actions
+show-data	Set up job	2025-01-23T08:31:02.1256278Z Complete job name: show-data
+show-data	Show data	2025-01-23T08:31:02.1782987Z ##[group]Run echo "Datos de la ejecución"
+show-data	Show data	2025-01-23T08:31:02.1783859Z [36;1mecho "Datos de la ejecución"[0m
+show-data	Show data	2025-01-23T08:31:02.1784551Z [36;1mecho "KAOS_ISSUE_NUMBER: $KAOS_ISSUE_NUMBER" [0m
+show-data	Show data	2025-01-23T08:31:02.1785550Z [36;1mecho "KAOS_ISSUE_TITLE: $KAOS_ISSUE_TITLE"[0m
+show-data	Show data	2025-01-23T08:31:02.1786560Z [36;1mecho "KAOS_ISSUE_BODY: $KAOS_ISSUE_BODY"[0m
+show-data	Show data	2025-01-23T08:31:02.1787440Z [36;1m# gh issue comment $KAOS_ISSUE_NUMBER -b "Se han mostrado los datos"[0m
+show-data	Show data	2025-01-23T08:31:02.1788422Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+show-data	Show data	2025-01-23T08:31:02.1790104Z [36;1mecho "($_timestamp) - Estos son los datos de la ejecucion 12925190823 de la tarjeta #812." >> core/outputs/e/12925190823-812.txt[0m
+show-data	Show data	2025-01-23T08:31:02.1791499Z [36;1mecho "KAOS_ISSUE_NUMBER: $KAOS_ISSUE_NUMBER" >> core/outputs/e/12925190823-812.txt[0m
+show-data	Show data	2025-01-23T08:31:02.1792634Z [36;1mecho "KAOS_ISSUE_TITLE: $KAOS_ISSUE_TITLE" >> core/outputs/e/12925190823-812.txt[0m
+show-data	Show data	2025-01-23T08:31:02.1793736Z [36;1mecho "KAOS_ISSUE_BODY: $KAOS_ISSUE_BODY" >> core/outputs/e/12925190823-812.txt[0m
+show-data	Show data	2025-01-23T08:31:02.1812647Z shell: /usr/bin/bash -e {0}
+show-data	Show data	2025-01-23T08:31:02.1813504Z env:
+show-data	Show data	2025-01-23T08:31:02.1813965Z   KAOS_MODULE: [Ka0S] Execution
+show-data	Show data	2025-01-23T08:31:02.1814793Z   GH_TOKEN: ***
+show-data	Show data	2025-01-23T08:31:02.1815264Z   BRANCH_NAME: refs/heads/main
+show-data	Show data	2025-01-23T08:31:02.1816213Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+show-data	Show data	2025-01-23T08:31:02.1817034Z   KAOS_PATH_RESUME: core/results/
+show-data	Show data	2025-01-23T08:31:02.1817744Z   KAOS_PATH_OUTPUT: core/outputs/e/
+show-data	Show data	2025-01-23T08:31:02.1818497Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+show-data	Show data	2025-01-23T08:31:02.1819105Z   KAOS_STEP_MODULE: 
+show-data	Show data	2025-01-23T08:31:02.1819569Z   KAOS_CODE: 12925190823
+show-data	Show data	2025-01-23T08:31:02.1820063Z   KAOS_ISSUE_NUMBER: 812
+show-data	Show data	2025-01-23T08:31:02.1820849Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+show-data	Show data	2025-01-23T08:31:02.1821704Z   KAOS_ISSUE_BODY: "module":"summary"
+show-data	Show data	2025-01-23T08:31:02.1822283Z   KAOS_ISSUE_USER: santakloud
+show-data	Show data	2025-01-23T08:31:02.1822827Z ##[endgroup]
+show-data	Show data	2025-01-23T08:31:02.2140469Z Datos de la ejecución
+show-data	Show data	2025-01-23T08:31:02.2141203Z KAOS_ISSUE_NUMBER: 812
+show-data	Show data	2025-01-23T08:31:02.2142085Z KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+show-data	Show data	2025-01-23T08:31:02.2143028Z KAOS_ISSUE_BODY: "module":"summary"
+show-data	Complete job	2025-01-23T08:31:02.2250514Z Cleaning up orphan processes
+start-execution	Set up job	2025-01-23T08:31:13.5140727Z Current runner version: '2.321.0'
+start-execution	Set up job	2025-01-23T08:31:13.5148000Z Runner name: 'kaos-execution-4'
+start-execution	Set up job	2025-01-23T08:31:13.5148921Z Runner group name: 'kaos-execution'
+start-execution	Set up job	2025-01-23T08:31:13.5149969Z Machine name: 'aaeee0098231'
+start-execution	Set up job	2025-01-23T08:31:13.5153451Z ##[group]GITHUB_TOKEN Permissions
+start-execution	Set up job	2025-01-23T08:31:13.5156287Z Actions: write
+start-execution	Set up job	2025-01-23T08:31:13.5156849Z Contents: write
+start-execution	Set up job	2025-01-23T08:31:13.5157465Z Issues: write
+start-execution	Set up job	2025-01-23T08:31:13.5157936Z Metadata: read
+start-execution	Set up job	2025-01-23T08:31:13.5158430Z PullRequests: write
+start-execution	Set up job	2025-01-23T08:31:13.5158940Z ##[endgroup]
+start-execution	Set up job	2025-01-23T08:31:13.5161226Z Secret source: Actions
+start-execution	Set up job	2025-01-23T08:31:13.5161921Z Prepare workflow directory
+start-execution	Set up job	2025-01-23T08:31:13.5688383Z Prepare all required actions
+start-execution	Set up job	2025-01-23T08:31:13.5743088Z Complete job name: start-execution
+start-execution	Start execution	2025-01-23T08:31:13.6277585Z ##[group]Run # Sección donde definimos como será la ejecución
+start-execution	Start execution	2025-01-23T08:31:13.6278714Z [36;1m# Sección donde definimos como será la ejecución[0m
+start-execution	Start execution	2025-01-23T08:31:13.6279423Z [36;1mecho "Start execution"[0m
+start-execution	Start execution	2025-01-23T08:31:13.6280230Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+start-execution	Start execution	2025-01-23T08:31:13.6281398Z [36;1mecho "($_timestamp) - Se ha iniciado la ejecución de la tarjeta #812." >> core/outputs/e/12925190823-812.txt[0m
+start-execution	Start execution	2025-01-23T08:31:13.6282615Z [36;1mecho "KAOS_EXECUTION_RESULT=fichero_de_resultado" >> $GITHUB_OUTPUT[0m
+start-execution	Start execution	2025-01-23T08:31:13.6283574Z [36;1mecho "KAOS_EXECUTION_STATUS=success" >> $GITHUB_OUTPUT[0m
+start-execution	Start execution	2025-01-23T08:31:13.6284525Z [36;1m# gh issue comment $KAOS_ISSUE_NUMBER -b "Se han lanzado la ejecución"[0m
+start-execution	Start execution	2025-01-23T08:31:13.6303315Z shell: /usr/bin/bash -e {0}
+start-execution	Start execution	2025-01-23T08:31:13.6304208Z env:
+start-execution	Start execution	2025-01-23T08:31:13.6304694Z   KAOS_MODULE: [Ka0S] Execution
+start-execution	Start execution	2025-01-23T08:31:13.6305791Z   GH_TOKEN: ***
+start-execution	Start execution	2025-01-23T08:31:13.6306408Z   BRANCH_NAME: refs/heads/main
+start-execution	Start execution	2025-01-23T08:31:13.6307224Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+start-execution	Start execution	2025-01-23T08:31:13.6308027Z   KAOS_PATH_RESUME: core/results/
+start-execution	Start execution	2025-01-23T08:31:13.6308606Z   KAOS_PATH_OUTPUT: core/outputs/e/
+start-execution	Start execution	2025-01-23T08:31:13.6309258Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+start-execution	Start execution	2025-01-23T08:31:13.6309864Z   KAOS_STEP_MODULE: 
+start-execution	Start execution	2025-01-23T08:31:13.6310464Z   KAOS_CODE: 12925190823
+start-execution	Start execution	2025-01-23T08:31:13.6310976Z   KAOS_ISSUE_NUMBER: 812
+start-execution	Start execution	2025-01-23T08:31:13.6311745Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+start-execution	Start execution	2025-01-23T08:31:13.6312600Z   KAOS_ISSUE_BODY: "module":"summary"
+start-execution	Start execution	2025-01-23T08:31:13.6313191Z   KAOS_ISSUE_USER: santakloud
+start-execution	Start execution	2025-01-23T08:31:13.6313730Z ##[endgroup]
+start-execution	Start execution	2025-01-23T08:31:13.6520706Z Start execution
+start-execution	Execution type	2025-01-23T08:31:13.6638947Z ##[group]Run echo "Check type"
+start-execution	Execution type	2025-01-23T08:31:13.6639658Z [36;1mecho "Check type"[0m
+start-execution	Execution type	2025-01-23T08:31:13.6640387Z [36;1m# Buscar el valorexecution en el formato JSON de la ejecución[0m
+start-execution	Execution type	2025-01-23T08:31:13.6641797Z [36;1mRESULT=$(jq -r --arg valorexecution "summary" '.[] | select(.module == $valorexecution) | .active' "compliance/automations/automations.json")[0m
+start-execution	Execution type	2025-01-23T08:31:13.6643288Z [36;1m# Evaluar el resultado[0m
+start-execution	Execution type	2025-01-23T08:31:13.6643896Z [36;1mcase $RESULT in[0m
+start-execution	Execution type	2025-01-23T08:31:13.6644408Z [36;1m  "true")[0m
+start-execution	Execution type	2025-01-23T08:31:13.6645042Z [36;1m    echo "El modulo summary está activo y se puede ejecutar"[0m
+start-execution	Execution type	2025-01-23T08:31:13.6646546Z [36;1m    # en esta parte de la ejecucion tenemos que tener en cuenta que podemos iniciar un workflow[0m
+start-execution	Execution type	2025-01-23T08:31:13.6647953Z [36;1m    # Run the workflow file 'module.yaml' with JSON via standard input of variable {"name":"scully", "greeting":"hello"}[0m
+start-execution	Execution type	2025-01-23T08:31:13.6649210Z [36;1m    # echo 'KAOS_EXECUTION_VARS' | gh workflow run triage.yml --json[0m
+start-execution	Execution type	2025-01-23T08:31:13.6650081Z [36;1m    gh workflow run "summary.yaml"[0m
+start-execution	Execution type	2025-01-23T08:31:13.6651065Z [36;1m    RUN_ID=$(gh run list --workflow="summary.yaml" --limit=1 --json databaseId --jq '.[0].databaseId')[0m
+start-execution	Execution type	2025-01-23T08:31:13.6652065Z [36;1m    echo "RUN_ID=$RUN_ID" >> $GITHUB_OUTPUT[0m
+start-execution	Execution type	2025-01-23T08:31:13.6652875Z [36;1m    _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+start-execution	Execution type	2025-01-23T08:31:13.6654439Z [36;1m    echo "($_timestamp) - Se ha lanzado la ejecución de #summary con run_id: $RUN_ID. con las variables {}" >> core/outputs/e/12925190823-812.txt[0m
+start-execution	Execution type	2025-01-23T08:31:13.6655901Z [36;1m    ;;[0m
+start-execution	Execution type	2025-01-23T08:31:13.6656354Z [36;1m  "false")[0m
+start-execution	Execution type	2025-01-23T08:31:13.6657127Z [36;1m    echo "El modulo summary está inactivo y necesita autorización para su ejecución"[0m
+start-execution	Execution type	2025-01-23T08:31:13.6658181Z [36;1m    _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+start-execution	Execution type	2025-01-23T08:31:13.6659600Z [36;1m    echo "($_timestamp) - El módulo solicitado#summary está inactivo y necesita autorización para su ejecución" >> core/outputs/e/12925190823-812.txt[0m
+start-execution	Execution type	2025-01-23T08:31:13.6660863Z [36;1m    ;;[0m
+start-execution	Execution type	2025-01-23T08:31:13.6661302Z [36;1m  *)[0m
+start-execution	Execution type	2025-01-23T08:31:13.6661830Z [36;1m    echo "El modulo summary no está definido"[0m
+start-execution	Execution type	2025-01-23T08:31:13.6662646Z [36;1m    _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+start-execution	Execution type	2025-01-23T08:31:13.6663840Z [36;1m    echo "($_timestamp) - El módulo solicitado#summary no está definido" >> core/outputs/e/12925190823-812.txt[0m
+start-execution	Execution type	2025-01-23T08:31:13.6664821Z [36;1m    ;;[0m
+start-execution	Execution type	2025-01-23T08:31:13.6665266Z [36;1mesac [0m
+start-execution	Execution type	2025-01-23T08:31:13.6672375Z shell: /usr/bin/bash -e {0}
+start-execution	Execution type	2025-01-23T08:31:13.6672905Z env:
+start-execution	Execution type	2025-01-23T08:31:13.6673327Z   KAOS_MODULE: [Ka0S] Execution
+start-execution	Execution type	2025-01-23T08:31:13.6674109Z   GH_TOKEN: ***
+start-execution	Execution type	2025-01-23T08:31:13.6674584Z   BRANCH_NAME: refs/heads/main
+start-execution	Execution type	2025-01-23T08:31:13.6675633Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+start-execution	Execution type	2025-01-23T08:31:13.6676734Z   KAOS_PATH_RESUME: core/results/
+start-execution	Execution type	2025-01-23T08:31:13.6677303Z   KAOS_PATH_OUTPUT: core/outputs/e/
+start-execution	Execution type	2025-01-23T08:31:13.6677915Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+start-execution	Execution type	2025-01-23T08:31:13.6678524Z   KAOS_STEP_MODULE: 
+start-execution	Execution type	2025-01-23T08:31:13.6678998Z   KAOS_CODE: 12925190823
+start-execution	Execution type	2025-01-23T08:31:13.6679493Z   KAOS_ISSUE_NUMBER: 812
+start-execution	Execution type	2025-01-23T08:31:13.6680259Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+start-execution	Execution type	2025-01-23T08:31:13.6681152Z   KAOS_ISSUE_BODY: "module":"summary"
+start-execution	Execution type	2025-01-23T08:31:13.6681735Z   KAOS_ISSUE_USER: santakloud
+start-execution	Execution type	2025-01-23T08:31:13.6682253Z ##[endgroup]
+start-execution	Execution type	2025-01-23T08:31:13.6719821Z Check type
+start-execution	Execution type	2025-01-23T08:31:13.7156538Z El modulo summary está activo y se puede ejecutar
+start-execution	Complete job	2025-01-23T08:31:15.4491858Z Evaluate and set job outputs
+start-execution	Complete job	2025-01-23T08:31:15.4509064Z Set output 'KAOS_EXECUTION_RESULT'
+start-execution	Complete job	2025-01-23T08:31:15.4514156Z Set output 'KAOS_EXECUTION_STATUS'
+start-execution	Complete job	2025-01-23T08:31:15.4516908Z Set output 'KAOS_EXECUTION_RUN_ID'
+start-execution	Complete job	2025-01-23T08:31:15.4520367Z Cleaning up orphan processes
+end-execution	Set up job	2025-01-23T08:31:26.0190224Z Current runner version: '2.321.0'
+end-execution	Set up job	2025-01-23T08:31:26.0198000Z Runner name: 'kaos-execution-4'
+end-execution	Set up job	2025-01-23T08:31:26.0198894Z Runner group name: 'kaos-execution'
+end-execution	Set up job	2025-01-23T08:31:26.0199824Z Machine name: 'aaeee0098231'
+end-execution	Set up job	2025-01-23T08:31:26.0202681Z ##[group]GITHUB_TOKEN Permissions
+end-execution	Set up job	2025-01-23T08:31:26.0206118Z Actions: write
+end-execution	Set up job	2025-01-23T08:31:26.0206660Z Contents: write
+end-execution	Set up job	2025-01-23T08:31:26.0207138Z Issues: write
+end-execution	Set up job	2025-01-23T08:31:26.0207600Z Metadata: read
+end-execution	Set up job	2025-01-23T08:31:26.0208076Z PullRequests: write
+end-execution	Set up job	2025-01-23T08:31:26.0208565Z ##[endgroup]
+end-execution	Set up job	2025-01-23T08:31:26.0210880Z Secret source: Actions
+end-execution	Set up job	2025-01-23T08:31:26.0211597Z Prepare workflow directory
+end-execution	Set up job	2025-01-23T08:31:26.0820774Z Prepare all required actions
+end-execution	Set up job	2025-01-23T08:31:26.0881240Z Complete job name: end-execution
+end-execution	End execution	2025-01-23T08:31:26.1468204Z ##[group]Run echo "End execution"
+end-execution	End execution	2025-01-23T08:31:26.1469131Z [36;1mecho "End execution"[0m
+end-execution	End execution	2025-01-23T08:31:26.1470195Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+end-execution	End execution	2025-01-23T08:31:26.1472016Z [36;1mecho "($_timestamp) - La ejecución de la tarjeta #812 ha finalizado con el resultado success." >> core/outputs/e/12925190823-812.txt[0m
+end-execution	End execution	2025-01-23T08:31:26.1473387Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+end-execution	End execution	2025-01-23T08:31:26.1474865Z [36;1mecho "($_timestamp) - El resultado de la ejecución se añade a la tajeta #812, ha finalizado con el resultado SUCCESS." >> core/outputs/e/12925190823-812.txt[0m
+end-execution	End execution	2025-01-23T08:31:26.1477044Z [36;1m# gh issue comment $KAOS_ISSUE_NUMBER -b "La ejecución ha finalizado con el resultado success"[0m
+end-execution	End execution	2025-01-23T08:31:26.1478415Z [36;1m# gh issue comment $KAOS_ISSUE_NUMBER -b "Se añade el fichero de resultados" -F "fichero_de_resultado"[0m
+end-execution	End execution	2025-01-23T08:31:26.1500521Z shell: /usr/bin/bash -e {0}
+end-execution	End execution	2025-01-23T08:31:26.1501729Z env:
+end-execution	End execution	2025-01-23T08:31:26.1502229Z   KAOS_MODULE: [Ka0S] Execution
+end-execution	End execution	2025-01-23T08:31:26.1503121Z   GH_TOKEN: ***
+end-execution	End execution	2025-01-23T08:31:26.1503727Z   BRANCH_NAME: refs/heads/main
+end-execution	End execution	2025-01-23T08:31:26.1504492Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+end-execution	End execution	2025-01-23T08:31:26.1505603Z   KAOS_PATH_RESUME: core/results/
+end-execution	End execution	2025-01-23T08:31:26.1506330Z   KAOS_PATH_OUTPUT: core/outputs/e/
+end-execution	End execution	2025-01-23T08:31:26.1507099Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+end-execution	End execution	2025-01-23T08:31:26.1507743Z   KAOS_STEP_MODULE: 
+end-execution	End execution	2025-01-23T08:31:26.1508505Z   KAOS_CODE: 12925190823
+end-execution	End execution	2025-01-23T08:31:26.1509027Z   KAOS_ISSUE_NUMBER: 812
+end-execution	End execution	2025-01-23T08:31:26.1509818Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+end-execution	End execution	2025-01-23T08:31:26.1510721Z   KAOS_ISSUE_BODY: "module":"summary"
+end-execution	End execution	2025-01-23T08:31:26.1511318Z   KAOS_ISSUE_USER: santakloud
+end-execution	End execution	2025-01-23T08:31:26.1511853Z ##[endgroup]
+end-execution	End execution	2025-01-23T08:31:26.1689678Z End execution
+end-execution	Complete job	2025-01-23T08:31:26.1807761Z Cleaning up orphan processes
+handle-success	Set up job	2025-01-23T08:31:38.5033907Z Current runner version: '2.321.0'
+handle-success	Set up job	2025-01-23T08:31:38.5042545Z Runner name: 'kaos-execution-4'
+handle-success	Set up job	2025-01-23T08:31:38.5043403Z Runner group name: 'kaos-execution'
+handle-success	Set up job	2025-01-23T08:31:38.5044420Z Machine name: 'aaeee0098231'
+handle-success	Set up job	2025-01-23T08:31:38.5047996Z ##[group]GITHUB_TOKEN Permissions
+handle-success	Set up job	2025-01-23T08:31:38.5052092Z Actions: write
+handle-success	Set up job	2025-01-23T08:31:38.5052691Z Contents: write
+handle-success	Set up job	2025-01-23T08:31:38.5053219Z Issues: write
+handle-success	Set up job	2025-01-23T08:31:38.5053726Z Metadata: read
+handle-success	Set up job	2025-01-23T08:31:38.5054255Z PullRequests: write
+handle-success	Set up job	2025-01-23T08:31:38.5054777Z ##[endgroup]
+handle-success	Set up job	2025-01-23T08:31:38.5057818Z Secret source: Actions
+handle-success	Set up job	2025-01-23T08:31:38.5058563Z Prepare workflow directory
+handle-success	Set up job	2025-01-23T08:31:38.5596438Z Prepare all required actions
+handle-success	Set up job	2025-01-23T08:31:38.5686849Z Complete job name: handle-success
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6220953Z ##[group]Run # Si todo ha iso correctamente pasamos la tarjeta a done
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6222333Z [36;1m# Si todo ha iso correctamente pasamos la tarjeta a done[0m
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6223319Z [36;1m# Añadimos a cada paso el mensaje de éxito incluido en la issue original[0m
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6224795Z [36;1mecho "[Ka0S] Execution Success in runid 12925190823 initiated by $KAOS_ISSUE_USER trouhg issue number $KAOS_ISSUE_NUMBER."[0m
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6226662Z [36;1mecho "La ejecución solicitada en el issue #$KAOS_ISSUE_NUMBER ha sido completada con éxito."[0m
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6228342Z [36;1mecho "El log de la ejecucion se envuentra en ***12925190823"[0m
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6229409Z [36;1mecho "Se añade el log de la ejecución al issue #$KAOS_ISSUE_NUMBER"[0m
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6230365Z [36;1mecho "Se procede a cerrar la issue #$KAOS_ISSUE_NUMBER"[0m
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6231926Z [36;1mgh issue comment $KAOS_ISSUE_NUMBER --body "La ejecución ha sido SUCCESS #812 el siguiente mensaje muestra el resultado de las operaciones"[0m
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6233699Z [36;1mgh issue comment $KAOS_ISSUE_NUMBER --body-file "core/outputs/e/12925190823-812.txt"[0m
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6235216Z [36;1mgh issue close $KAOS_ISSUE_NUMBER --comment "Puede proceder a cerrar la tarjeta." --reason completed[0m
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6255678Z shell: /usr/bin/bash -e {0}
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6256856Z env:
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6257339Z   KAOS_MODULE: [Ka0S] Execution
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6258159Z   GH_TOKEN: ***
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6258654Z   BRANCH_NAME: refs/heads/main
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6259413Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6260232Z   KAOS_PATH_RESUME: core/results/
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6260941Z   KAOS_PATH_OUTPUT: core/outputs/e/
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6261579Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6262210Z   KAOS_STEP_MODULE: 
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6262697Z   KAOS_CODE: 12925190823
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6263210Z   KAOS_ISSUE_NUMBER: 812
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6264027Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6308490Z   KAOS_ISSUE_BODY: "module":"summary"
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6309448Z   KAOS_ISSUE_USER: santakloud
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6310045Z ##[endgroup]
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6476120Z [Ka0S] Execution Success in runid 12925190823 initiated by santakloud trouhg issue number 812.
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6598268Z La ejecución solicitada en el issue #812 ha sido completada con éxito.
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6599907Z El log de la ejecucion se envuentra en ***12925190823
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6600777Z Se añade el log de la ejecución al issue #812
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:38.6601475Z Se procede a cerrar la issue #812
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:39.5824995Z https://github.com/SantaKa0S/kaos/issues/812#issuecomment-2609155469
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:40.5023357Z https://github.com/SantaKa0S/kaos/issues/812#issuecomment-2609155500
+handle-success	Run # Si todo ha iso correctamente pasamos la tarjeta a done	2025-01-23T08:31:42.0425208Z ✓ Closed issue SantaKa0S/kaos#812 ([E] Inspector después de summary, es posible error en summary)
+handle-success	Complete job	2025-01-23T08:31:42.0883343Z Cleaning up orphan processes
+end-workflow	Set up job	2025-01-23T08:31:51.7782284Z Current runner version: '2.321.0'
+end-workflow	Set up job	2025-01-23T08:31:51.7788900Z Runner name: 'kaos-execution-4'
+end-workflow	Set up job	2025-01-23T08:31:51.7789668Z Runner group name: 'kaos-execution'
+end-workflow	Set up job	2025-01-23T08:31:51.7790585Z Machine name: 'aaeee0098231'
+end-workflow	Set up job	2025-01-23T08:31:51.7793385Z ##[group]GITHUB_TOKEN Permissions
+end-workflow	Set up job	2025-01-23T08:31:51.7795760Z Actions: write
+end-workflow	Set up job	2025-01-23T08:31:51.7796298Z Contents: write
+end-workflow	Set up job	2025-01-23T08:31:51.7796782Z Issues: write
+end-workflow	Set up job	2025-01-23T08:31:51.7797243Z Metadata: read
+end-workflow	Set up job	2025-01-23T08:31:51.7797722Z PullRequests: write
+end-workflow	Set up job	2025-01-23T08:31:51.7798213Z ##[endgroup]
+end-workflow	Set up job	2025-01-23T08:31:51.7800179Z Secret source: Actions
+end-workflow	Set up job	2025-01-23T08:31:51.7800873Z Prepare workflow directory
+end-workflow	Set up job	2025-01-23T08:31:51.8342945Z Prepare all required actions
+end-workflow	Set up job	2025-01-23T08:31:51.8398436Z Complete job name: end-workflow
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8929317Z ##[group]Run echo "End process"
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8930134Z [36;1mecho "End process"[0m
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8931522Z [36;1mgh workflow run inspector.yaml --ref refs/heads/main -f kaos-issue-id="$KAOS_ISSUE_NUMBER" -f kaos-workflow-id="12925190823" -f kaos-user-start="santakloud"[0m
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8950402Z shell: /usr/bin/bash -e {0}
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8951274Z env:
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8951742Z   KAOS_MODULE: [Ka0S] Execution
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8952562Z   GH_TOKEN: ***
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8953054Z   BRANCH_NAME: refs/heads/main
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8953808Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8954622Z   KAOS_PATH_RESUME: core/results/
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8955215Z   KAOS_PATH_OUTPUT: core/outputs/e/
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8956298Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8956922Z   KAOS_STEP_MODULE: 
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8957407Z   KAOS_CODE: 12925190823
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8957917Z   KAOS_ISSUE_NUMBER: 812
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8959022Z   KAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8959904Z   KAOS_ISSUE_BODY: "module":"summary"
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8960500Z   KAOS_ISSUE_USER: santakloud
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.8961164Z ##[endgroup]
+end-workflow	Finaliza el workflow	2025-01-23T08:31:51.9116959Z End process
+end-workflow	Complete job	2025-01-23T08:31:52.5350700Z Cleaning up orphan processes
