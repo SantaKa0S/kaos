@@ -284,5 +284,5 @@ jobs:
         name: Finaliza el workflow
         run: |
           echo "End process"
-          gh workflow run inspector.yaml --ref ${{ github.ref }} -f kaos-issue-id="${{ steps.core.outputs.RNNUMBER }}" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="$${{ needs.job-core.outputs.AUTHOR_NAME }}"
+          gh workflow run inspector.yaml --ref ${{ github.ref }} -f kaos-issue-id="${{ steps.core.outputs.RNNUMBER }}" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ needs.job-core.outputs.AUTHOR_NAME }}"
         
