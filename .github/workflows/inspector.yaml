@@ -75,8 +75,7 @@ jobs:
           else
             echo "Se ha encontrado el issue asociado a la ejecución."
             gh issue comment ${{ github.event.inputs.kaos-issue-id }} --body "${{ env.KAOS_MODULE }} success extract information from the execution ${{ github.event.inputs.kaos-workflow-id }} initiated by ${{ github.event.inputs.kaos-user-start }} through issue number #${{ github.event.inputs.kaos-issue-id }}."
-          fi
-          
+          fi      
   handle_failure:
     runs-on: 
       group: kaos-issue
