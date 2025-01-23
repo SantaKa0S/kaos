@@ -25,7 +25,6 @@ env:
   KAOS_REPO: "/actions-runner/_work/kaos/kaos"
   KAOS_STEP_MODULE: ""
   KAOS_CODE: ${{ github.run_id }}
-
 jobs: 
   job-core:
     if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }} 
@@ -79,7 +78,7 @@ jobs:
           KAOS_CODE_FILES=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')
           echo "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT
           echo "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT   
-          echo "AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
+          echo "AUTHOR_NAME=${{ github.actor }}" >> $GITHUB_OUTPUT
           echo "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
           echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
           echo "CHANGED_FILES=$(git diff --name-only HEAD~1 | tr '\n' ' ')" >> $GITHUB_OUTPUT
@@ -232,16 +231,16 @@ jobs:
           echo "($_timestamp) - JOB_FLOWS: $KAOS_FLOWS_STATUS" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt
           gh issue comment ${{ needs.job-core.outputs.KAOS_NUMBER }} --body "La ejecución ha sido SUCCESS #${{ needs.job-core.outputs.KAOS_NUMBER }} el siguiente mensaje muestra el resultado de las operaciones"
   handle-success:
-      runs-on: 
-        group: kaos
-      needs: [job-flows, job-core, job-compliance, job-security, job-observability, job-codescan, job-flows]
-      if: ${{ success() }}
-      steps:
-        - id: handle-success-execution
-          name: handle-success-execution
-          run: |
-            # Si todo ha ido correcto añadimos el contenido del fichero 
-            gh issue comment ${{ needs.job-core.outputs.KAOS_NUMBER }} --body-file "${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt"
+    runs-on: 
+      group: kaos
+    needs: [job-flows, job-core, job-compliance, job-security, job-observability, job-codescan, job-flows]
+    if: ${{ success() && !contains(github.event.head_commit.message, '[Ka0S] ') }}
+    steps:
+      - id: handle-success-execution
+        name: handle-success-execution
+        run: |
+          # Si todo ha ido correcto añadimos el contenido del fichero 
+          gh issue comment ${{ needs.job-core.outputs.KAOS_NUMBER }} --body-file "${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ needs.job-core.outputs.KAOS_NUMBER }}.txt"
   handle_failure:
     runs-on: 
       group: kaos
@@ -275,3 +274,14 @@ jobs:
           # Añadimos el comentario a la issue que dispara el proceso
           KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }}) en la ejecución (${{ env.KAOS_CODE }}) y esto ha generado una issue con el titulo ($KAOS_ISSUE_TITLE)"
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }}
+  end-workflow:
+    runs-on: 
+      group: kaos-execution
+    needs: [job-core, job-compliance, job-security, job-observability, job-codescan, job-flows, handle-success, handle_failure]
+    if: ${{ always() && !contains(github.event.head_commit.message, '[Ka0S] ') }} 
+    steps:
+      - id: end-process
+        name: Finaliza el workflow
+        run: |
+          echo "End process"
+          gh workflow run inspector.yaml --ref ${{ github.ref }} -f kaos-issue-id="${{ steps.core.outputs.RNNUMBER }}" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ needs.job-core.outputs.AUTHOR_NAME }}"

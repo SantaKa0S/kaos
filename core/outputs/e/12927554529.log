@@ -1,0 +1,277 @@
+kaos-init-process	Set up job	2025-01-23T10:47:54.9905349Z Current runner version: '2.321.0'
+kaos-init-process	Set up job	2025-01-23T10:47:54.9912736Z Runner name: 'kaos-init-1'
+kaos-init-process	Set up job	2025-01-23T10:47:54.9913531Z Runner group name: 'kaos-init'
+kaos-init-process	Set up job	2025-01-23T10:47:54.9914421Z Machine name: '39c51bc0f9da'
+kaos-init-process	Set up job	2025-01-23T10:47:54.9917960Z ##[group]GITHUB_TOKEN Permissions
+kaos-init-process	Set up job	2025-01-23T10:47:54.9920997Z Actions: write
+kaos-init-process	Set up job	2025-01-23T10:47:54.9921698Z Contents: write
+kaos-init-process	Set up job	2025-01-23T10:47:54.9922199Z Issues: write
+kaos-init-process	Set up job	2025-01-23T10:47:54.9922687Z Metadata: read
+kaos-init-process	Set up job	2025-01-23T10:47:54.9923332Z PullRequests: write
+kaos-init-process	Set up job	2025-01-23T10:47:54.9923984Z ##[endgroup]
+kaos-init-process	Set up job	2025-01-23T10:47:54.9926777Z Secret source: Actions
+kaos-init-process	Set up job	2025-01-23T10:47:54.9927518Z Prepare workflow directory
+kaos-init-process	Set up job	2025-01-23T10:47:55.0587403Z Prepare all required actions
+kaos-init-process	Set up job	2025-01-23T10:47:55.0631781Z Getting action download info
+kaos-init-process	Set up job	2025-01-23T10:47:55.2902908Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+kaos-init-process	Set up job	2025-01-23T10:47:56.0863807Z Complete job name: kaos-init-process
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1590910Z ##[group]Run actions/checkout@v4
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1592227Z with:
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1592739Z   fetch-depth: 0
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1593587Z   token: ***
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1594108Z   repository: SantaKa0S/kaos
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1594717Z   ssh-strict: true
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1595230Z   ssh-user: git
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1595866Z   persist-credentials: true
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1596454Z   clean: true
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1596987Z   sparse-checkout-cone-mode: true
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1597619Z   fetch-tags: false
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1598144Z   show-progress: true
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1598679Z   lfs: false
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1599167Z   submodules: false
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1599703Z   set-safe-directory: true
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1600656Z env:
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1601158Z   KAOS_MODULE: [Ka0S] INIT
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1601949Z   GH_TOKEN: ***
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1602459Z   KAOS_CODE: 
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1603025Z   BRANCH_NAME: refs/heads/H633-modulo-de-execution
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1603770Z   KAOS_PATH_RESUME: core/results/
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1604515Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1605214Z   KAOS_STEP_MODULE: 
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.1605854Z ##[endgroup]
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.2883972Z Syncing repository: SantaKa0S/kaos
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.2886778Z ##[group]Getting Git version info
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.2887656Z Working directory is '/actions-runner/_work/kaos/kaos'
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.2888842Z [command]/usr/bin/git version
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.2899875Z git version 2.25.1
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.2929861Z ##[endgroup]
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.2944809Z Temporarily overriding HOME='/actions-runner/_work/_temp/1c20520d-136a-4cb6-b115-e1c1557bf582' before making global git config changes
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.2946929Z Adding repository directory to the temporary git global config as a safe directory
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.2951631Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.2997831Z [command]/usr/bin/git config --local --get remote.origin.url
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3034141Z https://github.com/SantaKa0S/kaos
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3055672Z ##[group]Removing previously created refs, to avoid conflicts
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3060717Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3087366Z refs/heads/H633-modulo-de-execution
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3097546Z [command]/usr/bin/git checkout --detach
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3351852Z HEAD is now at 9cb17df [Ka0S] se generan los ficheros commit-summary files-in-commit
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3400715Z [command]/usr/bin/git branch --delete --force H633-modulo-de-execution
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3435453Z Deleted branch H633-modulo-de-execution (was 9cb17df).
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3499555Z ##[endgroup]
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3500292Z [command]/usr/bin/git submodule status
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3804181Z ##[group]Cleaning the repository
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3808271Z [command]/usr/bin/git clean -ffdx
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3854203Z [command]/usr/bin/git reset --hard HEAD
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3911010Z HEAD is now at 9cb17df [Ka0S] se generan los ficheros commit-summary files-in-commit
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3920113Z ##[endgroup]
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3921164Z ##[group]Disabling automatic garbage collection
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3924711Z [command]/usr/bin/git config --local gc.auto 0
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3960636Z ##[endgroup]
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3961664Z ##[group]Setting up auth
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.3966510Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.4004309Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.4364013Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.4400276Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.4727616Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.4773096Z ##[endgroup]
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.4774125Z ##[group]Fetching the repository
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:56.4781611Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2265879Z From https://github.com/SantaKa0S/kaos
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2307102Z    9cb17df..cebd6c1  H633-modulo-de-execution -> origin/H633-modulo-de-execution
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2361089Z    3c4b52f..cb2dcba  H637-modulo-de-despliegue-de-kaos -> origin/H637-modulo-de-despliegue-de-kaos
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2374404Z [command]/usr/bin/git branch --list --remote origin/H633-modulo-de-execution
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2389302Z   origin/H633-modulo-de-execution
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2395143Z [command]/usr/bin/git rev-parse refs/remotes/origin/H633-modulo-de-execution
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2428586Z cebd6c1ba165f0e382e9f273a1cd7f90837cf8c7
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2447818Z ##[endgroup]
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2449608Z ##[group]Determining the checkout info
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2459704Z ##[endgroup]
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2462375Z ##[group]Checking out the ref
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2464819Z [command]/usr/bin/git checkout --progress --force -B H633-modulo-de-execution refs/remotes/origin/H633-modulo-de-execution
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2616287Z Previous HEAD position was 9cb17df [Ka0S] se generan los ficheros commit-summary files-in-commit
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2628908Z Switched to a new branch 'H633-modulo-de-execution'
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2635256Z Branch 'H633-modulo-de-execution' set up to track remote branch 'H633-modulo-de-execution' from 'origin'.
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2643136Z ##[endgroup]
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2683997Z [command]/usr/bin/git log -1 --format=%H
+kaos-init-process	Run actions/checkout@v4	2025-01-23T10:47:57.2722529Z cebd6c1ba165f0e382e9f273a1cd7f90837cf8c7
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3045090Z ##[group]Run # Nuevo proceso de activacion de los modulos
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3047182Z [36;1m# Nuevo proceso de activacion de los modulos[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3048583Z [36;1mwhile IFS= read -r line; do[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3050569Z [36;1m  echo "I Leemos el fichero core/results/files-in-commit-.txt y extraemos el fichero $line"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3052595Z [36;1m  module_failed=0[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3053652Z [36;1m  extension_failed=0[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3054801Z [36;1m  file_name=$(basename "$line")[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3056663Z [36;1m  echo "I-1 Calculamos el nombre del fichero $file_name"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3058607Z [36;1m  file_extension="${file_name##*.}"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3060227Z [36;1m  echo "I-2 Calculamos la extension del fichero $file_extension"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3061962Z [36;1m  file_module="$file_extension""lint.yaml"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3063474Z [36;1m  echo "I-3 Calculamos el modulo $file_module"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3064999Z [36;1m  IFS=',' read -r -a file_array <<< "$files"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3067161Z [36;1m  for file in "${file_array[@]}"; do[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3068492Z [36;1m    echo "II Leemos el array de $file"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3069876Z [36;1m    if [[ "$file_extension" == "$file" ]]; then[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3071638Z [36;1m      echo "III Comprobamos si $file_extension es igual a $file"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3073322Z [36;1m      IFS=',' read -r -a module_array <<< "$modules"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3075048Z [36;1m      for module in "${module_array[@]}"; do[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3076727Z [36;1m        echo "IV Leemos el array $module"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3078305Z [36;1m        if [[ "$file_module" == *"$module"* ]]; then[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3087022Z [36;1m          echo "V Comprobamos que el $file_module es igual a $module y ejecutamos el flujo"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3089459Z [36;1m          # Si hemos llegado hasta aquí ejecutamos el módulo[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3091502Z [36;1m          # Añadimos los valores a las variables de la issue[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3094025Z [36;1m          KAOS_ISSUE_BODY="[Ka0S] INIT has been initiated and Launch workflow $file_module to check file $line"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3096779Z [36;1m          # Añadimos el comentario a la issue[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3099961Z [36;1m          gh workflow run issue.yaml --ref refs/heads/H633-modulo-de-execution -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=633 -f kaos-issue-actions=comment[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3104109Z [36;1m          # Lanzamos el lint del fichero[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3107646Z [36;1m          gh workflow run $file_module --ref refs/heads/H633-modulo-de-execution -f kaos-origin=12927554529 -f kaos-files=$line -f kaos-issue-id=633 -f kaos-user-start=santakloud[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3110594Z [36;1m          module_failed=0[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3111653Z [36;1m          extension_failed=0[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3112686Z [36;1m          break[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3113560Z [36;1m        else[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3114727Z [36;1m          # Control de si existe el modulo para esa extension"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3117211Z [36;1m          echo "VI No es igual $file_module a $module y lo indicamos en la variable module_failed=1"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3119317Z [36;1m          module_failed=1[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3120441Z [36;1m        fi[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3121391Z [36;1m      done[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3122371Z [36;1m      break[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3123257Z [36;1m    else[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3124426Z [36;1m      # Control de si existe el modulo para esa extension"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3126851Z [36;1m      echo "VII No es igual $file_extension a $file y lo indicamos en la variable extension_failed=1"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3128805Z [36;1m      extension_failed=1[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3129868Z [36;1m    fi  [0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3130676Z [36;1m  done[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3131743Z [36;1m  if [[ $module_failed == 1 ]]; then[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3134203Z [36;1m    echo "IX Si el modulo falla ($module_failed) añadimos el comentario a la issue"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3140030Z [36;1m    # Si hemos llegado hasta aquí añadimos el mensaje de que la extension esta permitida pero no dispone de modulo activo y aqui finaliza el proceso[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3142751Z [36;1m    # Añadimos los valores a las variables de la issue[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3146876Z [36;1m    KAOS_ISSUE_BODY="[Ka0S] INIT ha detectado que la extensión ($file_extension) esta permitida dentro de KAOS_CORE_FILES, pero el módulo asociado ($file_module) no esta activo. Por favor compruebe que exista y esta activo."[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3150718Z [36;1m    # Añadimos el comentario a la issue[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3153831Z [36;1m    gh workflow run issue.yaml --ref refs/heads/H633-modulo-de-execution -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=633 -f kaos-issue-actions=comment[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3156964Z [36;1m  fi[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3157969Z [36;1m  if [[ $extension_failed == 1 ]]; then[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3160373Z [36;1m    echo "X Si extension falla falla ($extension_failed) añadimos el comentario a la issue"[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3162944Z [36;1m    # Si hemos llegado hasta aquí añadimos el mensaje de que la extension no esta permitida[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3165052Z [36;1m    # Añadimos los valores a las variables de la issue[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3169490Z [36;1m    KAOS_ISSUE_BODY="[Ka0S] INIT ha detectado que la extensión ($file_extension) NO esta permitida dentro de KAOS_CORE_FILES. Por favor compruebe que exista y esta activo."[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3172778Z [36;1m    # Añadimos el comentario a la issue[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3176005Z [36;1m    gh workflow run issue.yaml --ref refs/heads/H633-modulo-de-execution -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=633 -f kaos-issue-actions=comment[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3179389Z [36;1m  fi  [0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3180382Z [36;1mdone < core/results/files-in-commit-.txt[0m
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3194965Z shell: /usr/bin/bash -e {0}
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3196378Z env:
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3197163Z   KAOS_MODULE: [Ka0S] INIT
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3198958Z   GH_TOKEN: ***
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3201823Z   KAOS_CODE: 
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3202884Z   BRANCH_NAME: refs/heads/H633-modulo-de-execution
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3204180Z   KAOS_PATH_RESUME: core/results/
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3205490Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3206718Z   KAOS_STEP_MODULE: 
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3207979Z   modules: ***
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3208889Z   files: ***
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3209715Z ##[endgroup]
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3287478Z I Leemos el fichero core/results/files-in-commit-.txt y extraemos el fichero .github/workflows/ka0s.yaml
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3303144Z I-1 Calculamos el nombre del fichero ka0s.yaml
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3307843Z I-2 Calculamos la extension del fichero yaml
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3316611Z I-3 Calculamos el modulo yamllint.yaml
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3318334Z II Leemos el array de md
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3322045Z VII No es igual yaml a md y lo indicamos en la variable extension_failed=1
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3323649Z II Leemos el array de yaml
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3324649Z III Comprobamos si yaml es igual a yaml
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3327396Z IV Leemos el array mdlint.yaml
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3328986Z VI No es igual yamllint.yaml a mdlint.yaml y lo indicamos en la variable module_failed=1
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3330776Z IV Leemos el array yamllint.yaml
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:57.3332408Z V Comprobamos que el yamllint.yaml es igual a yamllint.yaml y ejecutamos el flujo
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:58.5179997Z could not create workflow dispatch event: HTTP 422: Unexpected inputs provided: ["kaos-origin"] (https://api.github.com/repos/SantaKa0S/kaos/actions/workflows/129223095/dispatches)
+kaos-init-process	Run # Nuevo proceso de activacion de los modulos	2025-01-23T10:47:58.5290457Z ##[error]Process completed with exit code 1.
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.5850413Z Post job cleanup.
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7010130Z [command]/usr/bin/git version
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7051159Z git version 2.25.1
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7100536Z Temporarily overriding HOME='/actions-runner/_work/_temp/7610daeb-a8c6-4287-b679-9b86d41f3f0d' before making global git config changes
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7103825Z Adding repository directory to the temporary git global config as a safe directory
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7106439Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7150699Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7191323Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7518928Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7544740Z http.https://github.com/.extraheader
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7558376Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+kaos-init-process	Post Run actions/checkout@v4	2025-01-23T10:47:58.7602093Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+kaos-init-process	Complete job	2025-01-23T10:47:58.8101423Z Cleaning up orphan processes
+handle_failure	Set up job	2025-01-23T10:48:10.3098168Z Current runner version: '2.321.0'
+handle_failure	Set up job	2025-01-23T10:48:10.3110829Z Runner name: 'kaos-issue-4'
+handle_failure	Set up job	2025-01-23T10:48:10.3112098Z Runner group name: 'kaos-issue'
+handle_failure	Set up job	2025-01-23T10:48:10.3113445Z Machine name: '6a0436fe5834'
+handle_failure	Set up job	2025-01-23T10:48:10.3116869Z ##[group]GITHUB_TOKEN Permissions
+handle_failure	Set up job	2025-01-23T10:48:10.3121017Z Actions: write
+handle_failure	Set up job	2025-01-23T10:48:10.3121663Z Contents: write
+handle_failure	Set up job	2025-01-23T10:48:10.3128749Z Issues: write
+handle_failure	Set up job	2025-01-23T10:48:10.3129390Z Metadata: read
+handle_failure	Set up job	2025-01-23T10:48:10.3129926Z PullRequests: write
+handle_failure	Set up job	2025-01-23T10:48:10.3130463Z ##[endgroup]
+handle_failure	Set up job	2025-01-23T10:48:10.3134760Z Secret source: Actions
+handle_failure	Set up job	2025-01-23T10:48:10.3135782Z Prepare workflow directory
+handle_failure	Set up job	2025-01-23T10:48:10.4726793Z Prepare all required actions
+handle_failure	Set up job	2025-01-23T10:48:10.4994478Z Complete job name: handle_failure
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5771172Z ##[group]Run echo "Error detected in [Ka0S] INIT, creating issue..."
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5772680Z [36;1mecho "Error detected in [Ka0S] INIT, creating issue..."[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5773672Z [36;1mKAOS_ISSUE_TITLE="[Ka0S] INIT Module failed in 12927554529"[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5774611Z [36;1mKAOS_ISSUE_BODY=$(cat <<'EOF'[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5775721Z [36;1mAn error occurred in the execution Action workflow RunID: **12927554529**.[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5776889Z [36;1mInitiated by #santakloud from issue number #633[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5777708Z [36;1m**[Ka0S] INIT  Message:**[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5778450Z [36;1mEl error ha sido en : 12927554529[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5779521Z [36;1mejecute este comando en su consola y podrá consultar el fallo del trabajo[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5780679Z [36;1mgh run view 12927554529 --log-failed[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5781445Z [36;1m\`\`\`[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5782788Z [36;1m**Please check the job logs for ***12927554529**[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5783721Z [36;1m\`\`\`[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5784315Z [36;1m**Requested By:** santakloud[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5785036Z [36;1m**Workflow Name:** Ka0s Init[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5785868Z [36;1m**Job Name:** handle_failure[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5786672Z [36;1m**Run ID:** 12927554529[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5787342Z [36;1m**Run Number:** 598[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5788025Z [36;1m**Repository:** SantaKa0S/kaos[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5788861Z [36;1m**Branch:** refs/heads/H633-modulo-de-execution[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5789729Z [36;1m**Files:** core/results/files-in-commit-.txt[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5790571Z [36;1mPlease investigate the issue.[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5791262Z [36;1mEOF[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5791791Z [36;1m)[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5792497Z [36;1m# Creamos la issue dado que ha fallado el modulo principal[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5794850Z [36;1mgh workflow run issue.yaml --ref refs/heads/H633-modulo-de-execution -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="santakloud"[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5797470Z [36;1m# Buscamos el numero de la issue en funcion del titulo de la misma [0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5798846Z [36;1mISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5800155Z [36;1m# Añadimos el comentario a la issue que dispara el proceso[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5801625Z [36;1mKAOS_ISSUE_BODY="Se ha generado la issue (#$ISSUE_NUMBRE) con el error detectado en el proceso [Ka0S] INIT en el run 12927554529"[0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5804027Z [36;1mgh workflow run issue.yaml --ref refs/heads/H633-modulo-de-execution -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=633 [0m
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5833044Z shell: /usr/bin/bash -e {0}
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5834245Z env:
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5834938Z   KAOS_MODULE: [Ka0S] INIT
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5836375Z   GH_TOKEN: ***
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5836998Z   KAOS_CODE: 12927554529
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.5837535Z ##[endgroup]
+handle_failure	Run echo "Error detected in [Ka0S] INIT, creating issue..."	2025-01-23T10:48:10.6252565Z Error detected in [Ka0S] INIT, creating issue...
+handle_failure	Complete job	2025-01-23T10:48:12.5448305Z Cleaning up orphan processes
+end-workflow	Set up job	2025-01-23T10:48:22.0692431Z Current runner version: '2.321.0'
+end-workflow	Set up job	2025-01-23T10:48:22.0700054Z Runner name: 'kaos-execution-3'
+end-workflow	Set up job	2025-01-23T10:48:22.0700877Z Runner group name: 'kaos-execution'
+end-workflow	Set up job	2025-01-23T10:48:22.0701848Z Machine name: 'fd5b6b14f657'
+end-workflow	Set up job	2025-01-23T10:48:22.0704838Z ##[group]GITHUB_TOKEN Permissions
+end-workflow	Set up job	2025-01-23T10:48:22.0708015Z Actions: write
+end-workflow	Set up job	2025-01-23T10:48:22.0708568Z Contents: write
+end-workflow	Set up job	2025-01-23T10:48:22.0709072Z Issues: write
+end-workflow	Set up job	2025-01-23T10:48:22.0709550Z Metadata: read
+end-workflow	Set up job	2025-01-23T10:48:22.0710053Z PullRequests: write
+end-workflow	Set up job	2025-01-23T10:48:22.0710562Z ##[endgroup]
+end-workflow	Set up job	2025-01-23T10:48:22.0712928Z Secret source: Actions
+end-workflow	Set up job	2025-01-23T10:48:22.0713697Z Prepare workflow directory
+end-workflow	Set up job	2025-01-23T10:48:22.1275991Z Prepare all required actions
+end-workflow	Set up job	2025-01-23T10:48:22.1328897Z Complete job name: end-workflow
+end-workflow	Finaliza el workflow	2025-01-23T10:48:22.1904803Z ##[group]Run echo "End process"
+end-workflow	Finaliza el workflow	2025-01-23T10:48:22.1906183Z [36;1mecho "End process"[0m
+end-workflow	Finaliza el workflow	2025-01-23T10:48:22.1907754Z [36;1mgh workflow run inspector.yaml --ref refs/heads/H633-modulo-de-execution -f kaos-issue-id="633" -f kaos-workflow-id="12927554529" -f kaos-user-start="santakloud"[0m
+end-workflow	Finaliza el workflow	2025-01-23T10:48:22.1927797Z shell: /usr/bin/bash -e {0}
+end-workflow	Finaliza el workflow	2025-01-23T10:48:22.1928754Z env:
+end-workflow	Finaliza el workflow	2025-01-23T10:48:22.1929233Z   KAOS_MODULE: [Ka0S] INIT
+end-workflow	Finaliza el workflow	2025-01-23T10:48:22.1930033Z   GH_TOKEN: ***
+end-workflow	Finaliza el workflow	2025-01-23T10:48:22.1930508Z   KAOS_CODE: 12927554529
+end-workflow	Finaliza el workflow	2025-01-23T10:48:22.1931002Z ##[endgroup]
+end-workflow	Finaliza el workflow	2025-01-23T10:48:22.2089054Z End process
+end-workflow	Complete job	2025-01-23T10:48:22.8006563Z Cleaning up orphan processes
