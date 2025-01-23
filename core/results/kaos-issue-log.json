@@ -1,6 +1,52 @@
 [
   [
     {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "\"module\":\"summary\"",
+      "closed": false,
+      "closedAt": null,
+      "comments": [],
+      "createdAt": "2025-01-23T08:30:13Z",
+      "id": "I_kwDONP0GL86nQ_3m",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABz7Qfaw",
+          "name": "automations",
+          "description": "Only referent AUTOMATIONS MODULE",
+          "color": "117AA4"
+        }
+      ],
+      "milestone": null,
+      "number": 812,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "f75ad846",
+            "name": "Backlog"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[E] Inspector después de summary, es posible error en summary",
+      "updatedAt": "2025-01-23T08:30:40Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/812"
+    },
+    {
       "assignees": [],
       "author": {
         "id": "MDQ6VXNlcjczMzMyODk4",
@@ -9,9 +55,25 @@
         "name": "SantaKloud"
       },
       "body": "An error occurred in the [Ka0S] SUMMARY Action workflow **Ka0s Summary**.\n**[Ka0S] SUMMARY  Message:**\nEl error ha sido en : 12913750600\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12913750600 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12913750600**\n```\n**Workflow Name:** Ka0s Summary\n**Job Name:** handle_failure\n**Run ID:** 12913750600\n**Run Number:** 152\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/main\n**Commit:** e48f95686cd26a53d22e9df50f03abb455398d0b\nPlease investigate the issue.",
-      "closed": false,
-      "closedAt": null,
-      "comments": [],
+      "closed": true,
+      "closedAt": "2025-01-23T07:47:12Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bg1YX",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "corregido en la #633 ",
+          "createdAt": "2025-01-23T07:47:09Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/809#issuecomment-2609075735",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2025-01-22T17:30:47Z",
       "id": "I_kwDONP0GL86nMFz7",
       "labels": [
@@ -27,9 +89,9 @@
       "projectCards": [],
       "projectItems": [],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "[Ka0S] SUMMARY Action Failed: Ka0s Summary",
-      "updatedAt": "2025-01-22T17:30:47Z",
+      "updatedAt": "2025-01-23T07:47:12Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/809"
     },
     {
@@ -231,9 +293,25 @@
         "name": "SantaKloud"
       },
       "body": "esta tarjeta no deberia de disparar nada",
-      "closed": false,
-      "closedAt": null,
-      "comments": [],
+      "closed": true,
+      "closedAt": "2025-01-23T07:47:27Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bg1fk",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Pruebas #633 ",
+          "createdAt": "2025-01-23T07:47:27Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/805#issuecomment-2609076196",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2025-01-22T15:30:37Z",
       "id": "I_kwDONP0GL86nLEto",
       "labels": [],
@@ -243,16 +321,16 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "f75ad846",
-            "name": "Backlog"
+            "optionId": "98236657",
+            "name": "Done"
           },
           "title": "@Core-Kaos-Project"
         }
       ],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Prueba de test",
-      "updatedAt": "2025-01-22T15:30:37Z",
+      "updatedAt": "2025-01-23T07:47:28Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/805"
     },
     {
@@ -10567,7 +10645,7 @@
       "reactionGroups": [],
       "state": "OPEN",
       "title": "Modulo de Execution",
-      "updatedAt": "2025-01-22T17:49:54Z",
+      "updatedAt": "2025-01-23T08:29:23Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/633"
     },
     {

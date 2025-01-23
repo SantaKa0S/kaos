@@ -1,6 +1,279 @@
 [
   [
     {
+      "additions": 19,
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "autoMergeRequest": null,
+      "baseRefName": "main",
+      "body": "update and upgrade\r\nAñadimos todos los pasos dentro del mismo jobs",
+      "changedFiles": 6,
+      "closed": true,
+      "closedAt": "2025-01-23T08:17:14Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bhBMe",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] VERSION ha generado una nueva versión con el tag v1.0.34. Esta todo dispuesto para realizar *MERGE* del código.",
+          "createdAt": "2025-01-23T08:15:20Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/pull/811#issuecomment-2609124126",
+          "viewerDidAuthor": true
+        }
+      ],
+      "commits": [
+        {
+          "authoredDate": "2025-01-23T08:04:36Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T08:04:36Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos todos los pasos en un unico job",
+          "oid": "f4d7427a9caba1d024e76a611ca2043e8d004010"
+        },
+        {
+          "authoredDate": "2025-01-23T08:04:53Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T08:04:53Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "06b0c28f2786e67b7d8fa7c857cb762b4cdd6478"
+        },
+        {
+          "authoredDate": "2025-01-23T08:14:55Z",
+          "authors": [
+            {
+              "email": "73332898+santakloud@users.noreply.github.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "SantaKloud"
+            }
+          ],
+          "committedDate": "2025-01-23T08:14:55Z",
+          "messageBody": "…b1ed1de6d7e66fd8bd325b4",
+          "messageHeadline": "Merge 06b0c28f2786e67b7d8fa7c857cb762b4cdd6478 into 881d6cb1549ceb5b6…",
+          "oid": "cb44eed0c54849d2cdd75b79a55954b1403a1f08"
+        },
+        {
+          "authoredDate": "2025-01-23T08:15:08Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T08:15:08Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] VERSION  Upload: CHANGELOG.md, INDEX.md with version 1.0.34",
+          "oid": "bda48d6666ceb7eac27efe38046d50c49c40df03"
+        }
+      ],
+      "createdAt": "2025-01-23T08:14:52Z",
+      "deletions": 51,
+      "files": [
+        {
+          "path": ".github/workflows/inspector.yaml",
+          "additions": 2,
+          "deletions": 14
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 12,
+          "deletions": 0
+        },
+        {
+          "path": "INDEX.md",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/commit-summary-.txt",
+          "additions": 3,
+          "deletions": 33
+        },
+        {
+          "path": "core/results/files-in-commit-.txt",
+          "additions": 0,
+          "deletions": 3
+        },
+        {
+          "path": "version.txt",
+          "additions": 1,
+          "deletions": 1
+        }
+      ],
+      "fullDatabaseId": "2293877915",
+      "headRefName": "H633-modulo-de-execution",
+      "headRefOid": "bda48d6666ceb7eac27efe38046d50c49c40df03",
+      "headRepository": {
+        "id": "R_kgDONP0GLw",
+        "name": "kaos"
+      },
+      "headRepositoryOwner": {
+        "id": "O_kgDOCyRQmA",
+        "login": "SantaKa0S"
+      },
+      "id": "PR_kwDONP0GL86Iucyb",
+      "isCrossRepository": false,
+      "isDraft": false,
+      "labels": [],
+      "latestReviews": [],
+      "maintainerCanModify": false,
+      "mergeCommit": {
+        "oid": "a7fb5a2793ea9bb049d8e063755839a4e0ea1cb1"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergeable": "UNKNOWN",
+      "mergedAt": "2025-01-23T08:17:14Z",
+      "mergedBy": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "milestone": null,
+      "number": 811,
+      "potentialMergeCommit": null,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "reviewDecision": "",
+      "reviewRequests": [],
+      "reviews": [],
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:15:12Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12924952580/job/36044944700",
+          "name": "job-core",
+          "startedAt": "2025-01-23T08:15:12Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:16:54Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12924952452/job/36044949358",
+          "name": "Analyze (actions)",
+          "startedAt": "2025-01-23T08:15:25Z",
+          "status": "COMPLETED",
+          "workflowName": "CodeQL"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:15:13Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12924952580/job/36044945541",
+          "name": "job-compliance",
+          "startedAt": "2025-01-23T08:15:13Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:15:14Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12924952580/job/36044946326",
+          "name": "job-security",
+          "startedAt": "2025-01-23T08:15:14Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:15:14Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12924952580/job/36044945937",
+          "name": "job-observability",
+          "startedAt": "2025-01-23T08:15:14Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:15:15Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12924952580/job/36044946699",
+          "name": "job-codescan",
+          "startedAt": "2025-01-23T08:15:15Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:15:15Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12924952580/job/36044947249",
+          "name": "job-flows",
+          "startedAt": "2025-01-23T08:15:15Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:15:16Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12924952580/job/36044947840",
+          "name": "handle-success",
+          "startedAt": "2025-01-23T08:15:16Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:15:17Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12924952580/job/36044948337",
+          "name": "handle_failure",
+          "startedAt": "2025-01-23T08:15:17Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:16:50Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/runs/36045017346",
+          "name": "CodeQL",
+          "startedAt": "2025-01-23T08:16:48Z",
+          "status": "COMPLETED",
+          "workflowName": ""
+        }
+      ],
+      "title": "H633 modulo de execution",
+      "updatedAt": "2025-01-23T08:17:14Z",
+      "url": "https://github.com/SantaKa0S/kaos/pull/811"
+    },
+    {
       "additions": 57,
       "assignees": [],
       "author": {
@@ -8904,269 +9177,6 @@
       "title": "H633 modulo de execution",
       "updatedAt": "2025-01-20T11:12:04Z",
       "url": "https://github.com/SantaKa0S/kaos/pull/698"
-    },
-    {
-      "additions": 21,
-      "assignees": [],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "autoMergeRequest": null,
-      "baseRefName": "main",
-      "body": "subimso los cambios y modificaciones por error",
-      "changedFiles": 6,
-      "closed": true,
-      "closedAt": "2025-01-20T10:22:52Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86bF0wM",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "[Ka0S] VERSION ha generado una nueva versión con el tag v1.0.5. Esta todo dispuesto para realizar *MERGE* del código.",
-          "createdAt": "2025-01-20T10:18:09Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/pull/685#issuecomment-2601995276",
-          "viewerDidAuthor": true
-        }
-      ],
-      "commits": [
-        {
-          "authoredDate": "2025-01-20T10:14:41Z",
-          "authors": [
-            {
-              "email": "santacana.canton@icloud.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "santakloud"
-            }
-          ],
-          "committedDate": "2025-01-20T10:14:41Z",
-          "messageBody": "",
-          "messageHeadline": "Correccion de enc por env",
-          "oid": "e0a0e4a768a94a1d1d0e99c36c08c43e34c61976"
-        },
-        {
-          "authoredDate": "2025-01-20T10:14:57Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2025-01-20T10:14:57Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
-          "oid": "4198bc43eb71beb32df248e5c85814a05ededb39"
-        },
-        {
-          "authoredDate": "2025-01-20T10:17:45Z",
-          "authors": [
-            {
-              "email": "73332898+santakloud@users.noreply.github.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "SantaKloud"
-            }
-          ],
-          "committedDate": "2025-01-20T10:17:45Z",
-          "messageBody": "…66249d827a59220d8de0bd3",
-          "messageHeadline": "Merge 4198bc43eb71beb32df248e5c85814a05ededb39 into 3c8cf729b2f7ca15c…",
-          "oid": "505cee51d3dfcd79e723315abb7e448739feb702"
-        },
-        {
-          "authoredDate": "2025-01-20T10:17:57Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2025-01-20T10:17:57Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] VERSION  Upload: CHANGELOG.md, INDEX.md with version 1.0.5",
-          "oid": "792e043973caaccbd0769839cf36575a6ccc3c4b"
-        }
-      ],
-      "createdAt": "2025-01-20T10:17:43Z",
-      "deletions": 20,
-      "files": [
-        {
-          "path": ".github/workflows/execution.yaml",
-          "additions": 4,
-          "deletions": 4
-        },
-        {
-          "path": "CHANGELOG.md",
-          "additions": 12,
-          "deletions": 0
-        },
-        {
-          "path": "INDEX.md",
-          "additions": 1,
-          "deletions": 0
-        },
-        {
-          "path": "core/results/commit-summary-H-633.txt",
-          "additions": 3,
-          "deletions": 13
-        },
-        {
-          "path": "core/results/files-in-commit-H-633.txt",
-          "additions": 0,
-          "deletions": 2
-        },
-        {
-          "path": "version.txt",
-          "additions": 1,
-          "deletions": 1
-        }
-      ],
-      "fullDatabaseId": "2287259893",
-      "headRefName": "H633-modulo-de-execution",
-      "headRefOid": "792e043973caaccbd0769839cf36575a6ccc3c4b",
-      "headRepository": {
-        "id": "R_kgDONP0GLw",
-        "name": "kaos"
-      },
-      "headRepositoryOwner": {
-        "id": "O_kgDOCyRQmA",
-        "login": "SantaKa0S"
-      },
-      "id": "PR_kwDONP0GL86IVND1",
-      "isCrossRepository": false,
-      "isDraft": false,
-      "labels": [],
-      "latestReviews": [],
-      "maintainerCanModify": false,
-      "mergeCommit": {
-        "oid": "96c3041532436d60038780ce82b28f524edf80d5"
-      },
-      "mergeStateStatus": "UNKNOWN",
-      "mergeable": "UNKNOWN",
-      "mergedAt": "2025-01-20T10:22:52Z",
-      "mergedBy": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "milestone": null,
-      "number": 685,
-      "potentialMergeCommit": null,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "reviewDecision": "",
-      "reviewRequests": [],
-      "reviews": [],
-      "state": "MERGED",
-      "statusCheckRollup": [
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:18:00Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12865812495/job/35867110206",
-          "name": "job-core",
-          "startedAt": "2025-01-20T10:18:00Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:19:36Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12865812543/job/35867111011",
-          "name": "Analyze (actions)",
-          "startedAt": "2025-01-20T10:18:07Z",
-          "status": "COMPLETED",
-          "workflowName": "CodeQL"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:18:01Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12865812495/job/35867110600",
-          "name": "job-compliance",
-          "startedAt": "2025-01-20T10:18:01Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:18:02Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12865812495/job/35867111240",
-          "name": "job-security",
-          "startedAt": "2025-01-20T10:18:02Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:18:01Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12865812495/job/35867110916",
-          "name": "job-observability",
-          "startedAt": "2025-01-20T10:18:01Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:18:02Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12865812495/job/35867111608",
-          "name": "job-codescan",
-          "startedAt": "2025-01-20T10:18:02Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:18:03Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12865812495/job/35867112021",
-          "name": "job-flows",
-          "startedAt": "2025-01-20T10:18:03Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:18:03Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12865812495/job/35867112343",
-          "name": "handle_failure",
-          "startedAt": "2025-01-20T10:18:03Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T10:19:30Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/runs/35867187601",
-          "name": "CodeQL",
-          "startedAt": "2025-01-20T10:19:26Z",
-          "status": "COMPLETED",
-          "workflowName": ""
-        }
-      ],
-      "title": "H633 modulo de execution",
-      "updatedAt": "2025-01-20T10:22:53Z",
-      "url": "https://github.com/SantaKa0S/kaos/pull/685"
     }
   ]
 ]
