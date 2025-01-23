@@ -29,10 +29,10 @@ env:
   KAOS_STEP_MODULE: ""
   KAOS_CODE: ${{ github.run_id }}
 jobs:
-  if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }}
   init-repo:
     runs-on: 
       group: kaos-inspector
+    if: ${{ !contains(github.event.head_commit.message, '[Ka0S] ') }}
     steps:
       - id: repo
         name: Checkout Repository
