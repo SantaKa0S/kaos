@@ -115,7 +115,6 @@ jobs:
                     # el modulo de issues fallara y creara una issue propia  
                   ;;
             esac
-
   handle_failure:
     runs-on: 
       group: kaos-issue
@@ -146,4 +145,14 @@ jobs:
           # Añadimos el comentario a la issue que dispara el proceso
           KAOS_ISSUE_BODY="Se ha generado la issue (#$ISSUE_NUMBRE) por la acción ${{ github.event.inputs.kaos-workflow-id }} desde el issue #${{ github.event.inputs.kaos-issue-id }} creada por ${{ github.event.inputs.kaos-user-start }}"
           gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "$KAOS_ISSUE_BODY"
-   
+  end-workflow:
+    runs-on: 
+      group: kaos-execution
+    needs: [kaos-issue-process, handle_failure]
+    if: ${{ always() }}
+    steps:
+      - id: end-process
+        name: Finaliza el workflow
+        run: |
+          echo "End process"
+          gh workflow run inspector.yaml --ref ${{ github.ref }} -f kaos-issue-id="${{ steps.core.outputs.RNNUMBER }}" -f kaos-workflow-id="${{ github.event.inputs.kaos-issue-id }}" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
