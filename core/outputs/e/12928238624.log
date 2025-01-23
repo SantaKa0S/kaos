@@ -1,0 +1,53 @@
+end-workflow	Set up job	2025-01-23T11:29:31.6783934Z Current runner version: '2.321.0'
+end-workflow	Set up job	2025-01-23T11:29:31.6793065Z Runner name: 'kaos-execution-3'
+end-workflow	Set up job	2025-01-23T11:29:31.6793889Z Runner group name: 'kaos-execution'
+end-workflow	Set up job	2025-01-23T11:29:31.6794848Z Machine name: 'fd5b6b14f657'
+end-workflow	Set up job	2025-01-23T11:29:31.6798265Z ##[group]GITHUB_TOKEN Permissions
+end-workflow	Set up job	2025-01-23T11:29:31.6801209Z Actions: write
+end-workflow	Set up job	2025-01-23T11:29:31.6801758Z Contents: write
+end-workflow	Set up job	2025-01-23T11:29:31.6802250Z Issues: write
+end-workflow	Set up job	2025-01-23T11:29:31.6802728Z Metadata: read
+end-workflow	Set up job	2025-01-23T11:29:31.6803219Z PullRequests: write
+end-workflow	Set up job	2025-01-23T11:29:31.6803717Z ##[endgroup]
+end-workflow	Set up job	2025-01-23T11:29:31.6807117Z Secret source: Actions
+end-workflow	Set up job	2025-01-23T11:29:31.6808005Z Prepare workflow directory
+end-workflow	Set up job	2025-01-23T11:29:31.7420647Z Prepare all required actions
+end-workflow	Set up job	2025-01-23T11:29:31.7486464Z Complete job name: end-workflow
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8070570Z ##[group]Run echo "End process"
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8071523Z [36;1mecho "End process"[0m
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8072897Z [36;1mgh workflow run inspector.yaml --ref refs/heads/main -f kaos-issue-id="$KAOS_ISSUE_NUMBER" -f kaos-workflow-id="12928238624" -f kaos-user-start="santakloud"[0m
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8098949Z shell: /usr/bin/bash -e {0}
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8099953Z env:
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8100438Z   KAOS_MODULE: [Ka0S] Execution
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8101306Z   GH_TOKEN: ***
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8101805Z   BRANCH_NAME: refs/heads/main
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8102568Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8103403Z   KAOS_PATH_RESUME: core/results/
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8104002Z   KAOS_PATH_OUTPUT: core/outputs/e/
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8104651Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8105387Z   KAOS_STEP_MODULE: 
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8106086Z   KAOS_CODE: 12928238624
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8106632Z   KAOS_ISSUE_NUMBER: 820
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8107389Z   KAOS_ISSUE_TITLE: [Ka0S] INIT Module failed in 12928231035
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8113393Z   KAOS_ISSUE_BODY: An error occurred in the execution Action workflow RunID: **12928231035**.
+end-workflow	Finaliza el workflow	Initiated by #santakloud from issue number #633
+end-workflow	Finaliza el workflow	**[Ka0S] INIT  Message:**
+end-workflow	Finaliza el workflow	El error ha sido en : 12928231035
+end-workflow	Finaliza el workflow	ejecute este comando en su consola y podrá consultar el fallo del trabajo
+end-workflow	Finaliza el workflow	gh run view 12928231035 --log-failed
+end-workflow	Finaliza el workflow	```
+end-workflow	Finaliza el workflow	**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12928231035**
+end-workflow	Finaliza el workflow	```
+end-workflow	Finaliza el workflow	**Requested By:** santakloud
+end-workflow	Finaliza el workflow	**Workflow Name:** Ka0s Init
+end-workflow	Finaliza el workflow	**Job Name:** handle_failure
+end-workflow	Finaliza el workflow	**Run ID:** 12928231035
+end-workflow	Finaliza el workflow	**Run Number:** 606
+end-workflow	Finaliza el workflow	**Repository:** SantaKa0S/kaos
+end-workflow	Finaliza el workflow	**Branch:** refs/heads/H633-modulo-de-execution
+end-workflow	Finaliza el workflow	**Files:** core/results/files-in-commit-.txt
+end-workflow	Finaliza el workflow	Please investigate the issue.
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8118918Z   KAOS_ISSUE_USER: santakloud
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8119831Z ##[endgroup]
+end-workflow	Finaliza el workflow	2025-01-23T11:29:31.8296427Z End process
+end-workflow	Complete job	2025-01-23T11:29:32.4777297Z Cleaning up orphan processes
