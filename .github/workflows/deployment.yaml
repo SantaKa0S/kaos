@@ -57,6 +57,7 @@ jobs:
   jobs-project:
     runs-on: 
       group: kaos
+    needs: jobs-core
     steps:
       - id: project
         name: Create project
@@ -70,12 +71,14 @@ jobs:
         name: Assign project to repo
         if: ${{ success() }}
         run: |
+          echo "Assign project to repo"
           PROJECT_NUMBER=$(gh project list --owner ${{ github.event.inputs.kaos-org-name }} --json number --jq '..number')
           gh project link $PROJECT_NUMBER --owner ${{ github.event.inputs.kaos-org-name }} --repo ${{ github.event.inputs.kaos-org-name }}/${{ github.event.inputs.kaos-repo-name }}
 
   jobs_repo:
     runs-on:
       group: kaos
+    needs: jobs-project
     steps:
       - id: repo
         name: Clone Repo
@@ -88,4 +91,7 @@ jobs:
       - id: assignrep
         name: Assign respository to Organization & Proyect
         if: ${{ success() }}
-        
+        run: |
+          echo "Assign repo to organization and proyect"
+          PROJECT_NUMBER=$(gh project list --owner ${{ github.event.inputs.kaos-org-name }} --json number --jq '..number')
+          gh project link $PROJECT_NUMBER --owner ${{ github.event.inputs.kaos-org-name }} --repo ${{ github.event.inputs.kaos-org-name }}/${{ env.KAOS_REPO }}
