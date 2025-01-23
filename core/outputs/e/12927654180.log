@@ -1,0 +1,31 @@
+end-workflow	Set up job	2025-01-23T10:54:10.9669169Z Current runner version: '2.321.0'
+end-workflow	Set up job	2025-01-23T10:54:10.9677139Z Runner name: 'kaos-execution-4'
+end-workflow	Set up job	2025-01-23T10:54:10.9677991Z Runner group name: 'kaos-execution'
+end-workflow	Set up job	2025-01-23T10:54:10.9678996Z Machine name: 'aaeee0098231'
+end-workflow	Set up job	2025-01-23T10:54:10.9682067Z ##[group]GITHUB_TOKEN Permissions
+end-workflow	Set up job	2025-01-23T10:54:10.9685017Z Actions: write
+end-workflow	Set up job	2025-01-23T10:54:10.9685692Z Contents: write
+end-workflow	Set up job	2025-01-23T10:54:10.9686202Z Issues: write
+end-workflow	Set up job	2025-01-23T10:54:10.9686687Z Metadata: read
+end-workflow	Set up job	2025-01-23T10:54:10.9687196Z PullRequests: write
+end-workflow	Set up job	2025-01-23T10:54:10.9687710Z ##[endgroup]
+end-workflow	Set up job	2025-01-23T10:54:10.9690226Z Secret source: Actions
+end-workflow	Set up job	2025-01-23T10:54:10.9690981Z Prepare workflow directory
+end-workflow	Set up job	2025-01-23T10:54:11.0265488Z Prepare all required actions
+end-workflow	Set up job	2025-01-23T10:54:11.0326239Z Complete job name: end-workflow
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0961752Z ##[group]Run echo "End process"
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0962767Z [36;1mecho "End process"[0m
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0964232Z [36;1mgh workflow run inspector.yaml --ref refs/heads/H633-modulo-de-execution -f kaos-issue-id="" -f kaos-workflow-id="12927654180" -f kaos-user-start="$"[0m
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0988282Z shell: /usr/bin/bash -e {0}
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0989308Z env:
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0989808Z   KAOS_MODULE: [Ka0S]
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0990689Z   GH_TOKEN: ***
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0991290Z   BRANCH_NAME: refs/heads/H633-modulo-de-execution
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0992021Z   KAOS_PATH_RESUME: core/results/
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0992656Z   KAOS_PATH_OUTPUT: core/outputs/e/
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0993351Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0994036Z   KAOS_STEP_MODULE: 
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0994564Z   KAOS_CODE: 12927654180
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.0995126Z ##[endgroup]
+end-workflow	Finaliza el workflow	2025-01-23T10:54:11.1258696Z End process
+end-workflow	Complete job	2025-01-23T10:54:11.8694986Z Cleaning up orphan processes
