@@ -103,13 +103,13 @@ jobs:
         # Antes de nada borramos el tag asignado en el paso anterior
         git push origin --delete "${{ steps.version.outputs.VERSION }}"
         KAOS_ISSUE_BODY="Sentimos comunicarle que no se cumplen los requerimientos, por favor revise los checks"
-        gh workflow run issue.yaml --ref main -f kaos-issue-id="${{ github.event.pull_request.number }}" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment
+        gh workflow run issue.yaml --ref main -f kaos-issue-id="${{ github.event.pull_request.number }}" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ steps.changelog.outputs.NAME }}"
     - id: comment-pull-request
       if: ${{ success() }} 
       run: |
         # Añadimos el comentario a la pull request de que todo ha ido correcto y de cual es la nueva version generada
         KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha generado una nueva versión con el tag v${{ steps.version.outputs.VERSION }}. Esta todo dispuesto para realizar *MERGE* del código."
-        gh workflow run issue.yaml --ref main -f kaos-issue-id="${{ github.event.pull_request.number }}" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment
+        gh workflow run issue.yaml --ref main -f kaos-issue-id="${{ github.event.pull_request.number }}" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ steps.changelog.outputs.NAME }}"
   handle_failure:
     runs-on: 
       group: kaos-issue
@@ -141,13 +141,13 @@ jobs:
           EOF
           )
           # Creamos la issue dado que ha fallado el modulo principal
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug"
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ needs.kaos-version.outputs.AUTHOR_NAME }}"
           # Añadimos el comentario a la issue que dispara el proceso
           KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }})  lanzado desde (#${{ needs.kaos-version.outputs.KAOS_NUMBER }}) en la ejecución (${{ github.run_id }}) y esto ha generado una issue con el titulo ($KAOS_ISSUE_TITLE)"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ needs.kaos-version.outputs.KAOS_NUMBER }}
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ needs.kaos-version.outputs.KAOS_NUMBER }} -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ needs.kaos-version.outputs.AUTHOR_NAME }}"
   end-workflow:
     runs-on: 
-      group: kaos-execution
+      group: kaos-version
     needs: [kaos-version, handle_failure] 
     if: ${{ always() }}
     steps:
@@ -155,4 +155,4 @@ jobs:
         name: Finaliza el workflow
         run: |
           echo "End process"
-          gh workflow run inspector.yaml --ref ${{ github.ref }} -f kaos-issue-id="${{ steps.commit_details.outputs.RNNUMBER }}" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ steps.commit_details.outputs.AUTHOR_NAME }}"
+          gh workflow run inspector.yaml --ref ${{ github.ref }} -f kaos-issue-id="${{ needs.kaos-version.outputs.KAOS_NUMBER }}" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ needs.kaos-version.outputs.AUTHOR_NAME }}"

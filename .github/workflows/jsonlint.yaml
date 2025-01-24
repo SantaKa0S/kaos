@@ -68,7 +68,7 @@ jobs:
               # jsonlint --version >> ${{ env.KAOS_PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
               # añadimos el nombre del fichero que vamos a comprobar
               echo "Finding: ${{ github.event.inputs.kaos-files }}" >> ${{ env.KAOS_PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
-              gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+              gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
               gh issue comment  ${{ github.event.inputs.kaos-issue-id }} -F ${{ env.KAOS_PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             else
               echo "File ${{ env.KAOS_PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt is not empty and is content not correct and write commit info"
@@ -77,7 +77,7 @@ jobs:
               # jsonlint --version || true >> ${{ env.KAOS_PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
               # añadimos el nombre del fichero que vamos a comprobar
               echo "Finding: ${{ github.event.inputs.kaos-files }}" >> ${{ env.KAOS_PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
-              gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} 
+              gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}  -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
               gh issue comment  ${{ github.event.inputs.kaos-issue-id }} -F ${{ env.KAOS_PATH_RESUME }}jsonlint-results-${{ github.run_id }}.txt
             fi
   handle_failure:
@@ -113,14 +113,14 @@ jobs:
           EOF
           )
           # Creamos la issue dado que ha fallado el modulo principal
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
           # Añadimos el comentario a la issue que dispara el proceso
           KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }})  lanzado desde (#${{ github.event.inputs.kaos-issue-id }}) en la ejecución (${{ github.run_id }}) y esto ha generado una issue con el titulo ($KAOS_ISSUE_TITLE)"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
   end-workflow:
       runs-on: 
-        group: kaos-execution
-      needs: [yaml-lint-process, handle_failure] 
+        group: kaos-jsonlint
+      needs: [json-lint-process, handle_failure] 
       if: ${{ always() }}
       steps:
         - id: end-process

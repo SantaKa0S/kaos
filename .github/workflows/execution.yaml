@@ -1,5 +1,4 @@
 name: Ka0s Execution
-
 on:
   issues:
     types: [opened]
@@ -133,7 +132,6 @@ jobs:
           echo "KAOS_ISSUE_NUMBER: $KAOS_ISSUE_NUMBER" 
           echo "KAOS_ISSUE_TITLE: $KAOS_ISSUE_TITLE"
           echo "KAOS_ISSUE_BODY: $KAOS_ISSUE_BODY"
-          # gh issue comment $KAOS_ISSUE_NUMBER -b "Se han mostrado los datos"
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
           echo "($_timestamp) - Estos son los datos de la ejecucion ${{ env.KAOS_CODE}} de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           echo "KAOS_ISSUE_NUMBER: $KAOS_ISSUE_NUMBER" >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
@@ -158,7 +156,6 @@ jobs:
           echo "($_timestamp) - Se ha iniciado la ejecución de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           echo "KAOS_EXECUTION_RESULT=fichero_de_resultado" >> $GITHUB_OUTPUT
           echo "KAOS_EXECUTION_STATUS=success" >> $GITHUB_OUTPUT
-          # gh issue comment $KAOS_ISSUE_NUMBER -b "Se han lanzado la ejecución"
       - id: type
         name: Execution type
         if: ${{ success() }}
@@ -204,8 +201,6 @@ jobs:
           echo "($_timestamp) - La ejecución de la tarjeta #${{ env.KAOS_ISSUE_NUMBER }} ha finalizado con el resultado ${{ needs.start-execution.outputs.KAOS_EXECUTION_STATUS }}." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
           _timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')
           echo "($_timestamp) - El resultado de la ejecución se añade a la tajeta #${{ env.KAOS_ISSUE_NUMBER }}, ha finalizado con el resultado SUCCESS." >> ${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt
-          # gh issue comment $KAOS_ISSUE_NUMBER -b "La ejecución ha finalizado con el resultado ${{ needs.start-execution.outputs.KAOS_EXECUTION_STATUS }}"
-          # gh issue comment $KAOS_ISSUE_NUMBER -b "Se añade el fichero de resultados" -F "${{ needs.start-execution.outputs.KAOS_EXECUTION_RESULT }}"
   handle-success:
     runs-on: 
       group: kaos-execution
@@ -249,11 +244,11 @@ jobs:
             )
             # Añadimos a la tarjeta de ejecución cual es la issue que se crea
             # Creamos la issue dado que ha fallado el modulo principal
-            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_TITLE" -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ env.KAOS_ISSUE_USER }}"
+            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_TITLE" -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ env.KAOS_ISSUE_USER }}"
             # Añadimos el comentario a la issue que dispara el proceso
             KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }}) lanzado desde (#$KAOS_ISSUE_NUMBER) en la ejecución (${{ env.KAOS_CODE }}) y esto ha generado una issue con el titulo ($KAOS_TITLE)"
-            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=$KAOS_ISSUE_NUMBER 
-            gh workflow run issue.yaml --ref ${{ github.ref }}-f kaos-issue-actions=comment -f kaos-issue-id=$KAOS_ISSUE_NUMBER -f kaos-issue-body-file="${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt"
+            gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=$KAOS_ISSUE_NUMBER -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ env.KAOS_ISSUE_USER }}"
+            gh workflow run issue.yaml --ref ${{ github.ref }}-f kaos-issue-actions=comment -f kaos-issue-id=$KAOS_ISSUE_NUMBER -f kaos-issue-body-file="${{ env.KAOS_PATH_OUTPUT}}${{ env.KAOS_CODE}}-${{ env.KAOS_ISSUE_NUMBER}}.txt" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ env.KAOS_ISSUE_USER }}"
   end-workflow:
     runs-on: 
       group: kaos-execution
@@ -265,5 +260,4 @@ jobs:
         run: |
           echo "End process"
           gh workflow run inspector.yaml --ref ${{ github.ref }} -f kaos-issue-id="$KAOS_ISSUE_NUMBER" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ env.KAOS_ISSUE_USER }}"
-
-          
+         

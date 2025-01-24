@@ -1,0 +1,226 @@
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7896602Z Current runner version: '2.321.0'
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7903890Z Runner name: 'kaos-yamllint-1'
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7904704Z Runner group name: 'kaos-yamllint'
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7906118Z Machine name: 'dfff99a7683d'
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7908972Z ##[group]GITHUB_TOKEN Permissions
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7911446Z Actions: write
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7911996Z Contents: write
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7912476Z Issues: write
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7912958Z Metadata: read
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7913451Z PullRequests: write
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7913960Z ##[endgroup]
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7916585Z Secret source: Actions
+yaml-lint-process	Set up job	2025-01-24T10:11:00.7917291Z Prepare workflow directory
+yaml-lint-process	Set up job	2025-01-24T10:11:00.8518466Z Prepare all required actions
+yaml-lint-process	Set up job	2025-01-24T10:11:00.8560153Z Getting action download info
+yaml-lint-process	Set up job	2025-01-24T10:11:01.1221074Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+yaml-lint-process	Set up job	2025-01-24T10:11:01.8540762Z Download action repository 'actions/setup-python@v5' (SHA:0b93645e9fea7318ecaed2b359559ac225c90a2b)
+yaml-lint-process	Set up job	2025-01-24T10:11:02.7407349Z Complete job name: yaml-lint-process
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8204866Z ##[group]Run actions/checkout@v4
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8206923Z with:
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8207679Z   fetch-depth: 0
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8209016Z   token: ***
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8209773Z   repository: SantaKa0S/kaos
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8210845Z   ssh-strict: true
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8211736Z   ssh-user: git
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8212521Z   persist-credentials: true
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8213406Z   clean: true
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8214348Z   sparse-checkout-cone-mode: true
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8215504Z   fetch-tags: false
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8216348Z   show-progress: true
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8217178Z   lfs: false
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8217906Z   submodules: false
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8219256Z   set-safe-directory: true
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8220882Z env:
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8221605Z   KAOS_MODULE: [Ka0S] YAMLLINT
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8222922Z   GH_TOKEN: ***
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8224009Z   KAOS_YAMLLINT_CONFIG: ***
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8225005Z   KAOS_PATH_RESUME: core/results/
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8226160Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8227551Z   KAOS_STEP_MODULE: 
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8228472Z   KAOS_CODE: 12947532415
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:02.8229300Z ##[endgroup]
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0038382Z Syncing repository: SantaKa0S/kaos
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0041753Z ##[group]Getting Git version info
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0043159Z Working directory is '/actions-runner/_work/kaos/kaos'
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0044941Z [command]/usr/bin/git version
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0046253Z git version 2.25.1
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0080331Z ##[endgroup]
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0093770Z Temporarily overriding HOME='/actions-runner/_work/_temp/2c404e09-0a2d-4c19-93ef-a1cff0403077' before making global git config changes
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0098777Z Adding repository directory to the temporary git global config as a safe directory
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0103693Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0153356Z [command]/usr/bin/git config --local --get remote.origin.url
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0193205Z https://github.com/SantaKa0S/kaos
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0215971Z ##[group]Removing previously created refs, to avoid conflicts
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0221297Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0250915Z refs/heads/H823-ka0s-init-module-failed-in-12932778824
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0259821Z [command]/usr/bin/git checkout --detach
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0330962Z HEAD is now at d837a22 [Ka0S] se generan los ficheros commit-summary files-in-commit
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0391696Z [command]/usr/bin/git branch --delete --force H823-ka0s-init-module-failed-in-12932778824
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0436784Z Deleted branch H823-ka0s-init-module-failed-in-12932778824 (was d837a22).
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0512888Z ##[endgroup]
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0513903Z [command]/usr/bin/git submodule status
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0863832Z ##[group]Cleaning the repository
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0866633Z [command]/usr/bin/git clean -ffdx
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0911070Z Removing core/results/yaml-lint-results-12947532144.txt
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0923407Z [command]/usr/bin/git reset --hard HEAD
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0992262Z HEAD is now at d837a22 [Ka0S] se generan los ficheros commit-summary files-in-commit
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0996991Z ##[endgroup]
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.0998486Z ##[group]Disabling automatic garbage collection
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1002568Z [command]/usr/bin/git config --local gc.auto 0
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1042701Z ##[endgroup]
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1044446Z ##[group]Setting up auth
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1053821Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1104339Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1446383Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1480265Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1796443Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1864025Z ##[endgroup]
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1869997Z ##[group]Fetching the repository
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:03.1874143Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0023396Z From https://github.com/SantaKa0S/kaos
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0037653Z    d837a22..ba00e58  H823-ka0s-init-module-failed-in-12932778824 -> origin/H823-ka0s-init-module-failed-in-12932778824
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0096905Z [command]/usr/bin/git branch --list --remote origin/H823-ka0s-init-module-failed-in-12932778824
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0127474Z   origin/H823-ka0s-init-module-failed-in-12932778824
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0137409Z [command]/usr/bin/git rev-parse refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0169941Z ba00e58e776f67233233ff16311e38f957d036b3
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0181726Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +d837a22969b459f22b28b1ad233a35c274693535:refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0467475Z From https://github.com/SantaKa0S/kaos
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0471504Z  + ba00e58...d837a22 d837a22969b459f22b28b1ad233a35c274693535 -> origin/H823-ka0s-init-module-failed-in-12932778824  (forced update)
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0495450Z ##[endgroup]
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0499649Z ##[group]Determining the checkout info
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0501171Z ##[endgroup]
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0502434Z ##[group]Checking out the ref
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0510138Z [command]/usr/bin/git checkout --progress --force -B H823-ka0s-init-module-failed-in-12932778824 refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0574933Z Switched to a new branch 'H823-ka0s-init-module-failed-in-12932778824'
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0582959Z Branch 'H823-ka0s-init-module-failed-in-12932778824' set up to track remote branch 'H823-ka0s-init-module-failed-in-12932778824' from 'origin'.
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0587151Z ##[endgroup]
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0627064Z [command]/usr/bin/git log -1 --format=%H
+yaml-lint-process	Run actions/checkout@v4	2025-01-24T10:11:04.0658389Z d837a22969b459f22b28b1ad233a35c274693535
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0934008Z ##[group]Run actions/setup-python@v5
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0935006Z with:
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0935774Z   python-version: 3.x
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0936562Z   check-latest: false
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0937601Z   token: ***
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0938325Z   update-environment: true
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0939189Z   allow-prereleases: false
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0939990Z env:
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0940647Z   KAOS_MODULE: [Ka0S] YAMLLINT
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0941916Z   GH_TOKEN: ***
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0942901Z   KAOS_YAMLLINT_CONFIG: ***
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0943759Z   KAOS_PATH_RESUME: core/results/
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0944756Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0945804Z   KAOS_STEP_MODULE: 
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0946554Z   KAOS_CODE: 12947532415
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.0947330Z ##[endgroup]
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.2949537Z ##[group]Installed versions
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.2997350Z Successfully set up CPython (3.13.1)
+yaml-lint-process	Run actions/setup-python@v5	2025-01-24T10:11:04.3004364Z ##[endgroup]
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3152483Z ##[group]Run python -m pip install yamllint
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3153672Z [36;1mpython -m pip install yamllint[0m
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3170221Z shell: /usr/bin/bash -e {0}
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3171102Z env:
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3171753Z   KAOS_MODULE: [Ka0S] YAMLLINT
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3172962Z   GH_TOKEN: ***
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3173943Z   KAOS_YAMLLINT_CONFIG: ***
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3174780Z   KAOS_PATH_RESUME: core/results/
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3176100Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3177059Z   KAOS_STEP_MODULE: 
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3177792Z   KAOS_CODE: 12947532415
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3178838Z   pythonLocation: /actions-runner/_work/_tool/Python/3.13.1/x64
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3180659Z   PKG_CONFIG_PATH: /actions-runner/_work/_tool/Python/3.13.1/x64/lib/pkgconfig
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3182149Z   Python_ROOT_DIR: /actions-runner/_work/_tool/Python/3.13.1/x64
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3183716Z   Python2_ROOT_DIR: /actions-runner/_work/_tool/Python/3.13.1/x64
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3185145Z   Python3_ROOT_DIR: /actions-runner/_work/_tool/Python/3.13.1/x64
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3186901Z   LD_LIBRARY_PATH: /actions-runner/_work/_tool/Python/3.13.1/x64/lib
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.3188150Z ##[endgroup]
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.6968746Z Requirement already satisfied: yamllint in /actions-runner/_work/_tool/Python/3.13.1/x64/lib/python3.13/site-packages (1.35.1)
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.6996039Z Requirement already satisfied: pathspec>=0.5.3 in /actions-runner/_work/_tool/Python/3.13.1/x64/lib/python3.13/site-packages (from yamllint) (0.12.1)
+yaml-lint-process	Run python -m pip install yamllint	2025-01-24T10:11:04.7012296Z Requirement already satisfied: pyyaml in /actions-runner/_work/_tool/Python/3.13.1/x64/lib/python3.13/site-packages (from yamllint) (6.0.2)
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9446217Z ##[group]Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9448561Z [36;1m# Invocamos la primera comprobación de base, sino se supera el proceso no continua[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9450133Z [36;1m# Ejecutamos el comando[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9452732Z [36;1myamllint -c *** ".github/workflows/mdlint.yaml" > core/results/yaml-lint-results-12947532415.txt 2>&1 || true[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9454783Z [36;1m  # Check if exist errors in file[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9456331Z [36;1m  if [ ! -s core/results/yaml-lint-results-12947532415.txt ]; then[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9458161Z [36;1m    # Todo ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9460399Z [36;1m    # Añadimos la versión de yamllint con la que se realiza la comprobacion[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9462206Z [36;1m    yamllint --version >> core/results/yaml-lint-results-12947532415.txt[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9463740Z [36;1m    # añadimos el nombre del fichero que vamos a comprobar[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9465838Z [36;1m    echo "Finding: .github/workflows/mdlint.yaml" >> core/results/yaml-lint-results-12947532415.txt[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9469865Z [36;1m    KAOS_ISSUE_BODY="The [Ka0S] YAMLLINT process (12947528733) launch the check (12947532415) over file (.github/workflows/mdlint.yaml) and its result has been SUCCESS. Please review all files implicated in pull request and approve to merge"[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9476471Z [36;1m    gh workflow run issue.yaml --ref refs/heads/H823-ka0s-init-module-failed-in-12932778824 -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=823 -f kaos-workflow-id="12947532415" -f kaos-user-start="santakloud"[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9481142Z [36;1m    gh issue comment  823 -F core/results/yaml-lint-results-12947532415.txt [0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9483804Z [36;1m    # una vez finalizado este proceso, en funcion del modulo donde esta ubicado el fichero que se ha comprobado ejecutara un jobs u otro                [0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9486193Z [36;1m  else[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9487510Z [36;1m    # Algo no ha salido bien, añadimos el comentario a la issue y saltamos al siguiente paso[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9489400Z [36;1m    # Añadimos la versión de yamllint con la que se realiza la comprobacion[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9491531Z [36;1m    yamllint --version >> core/results/yaml-lint-results-12947532415.txt[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9493246Z [36;1m    # añadimos el nombre del fichero que vamos a comprobar[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9495076Z [36;1m    echo "Finding: .github/workflows/mdlint.yaml" >> core/results/yaml-lint-results-12947532415.txt[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9498655Z [36;1m    KAOS_ISSUE_BODY="The [Ka0S] YAMLLINT process (12947528733) launch the check (12947532415) over file (.github/workflows/mdlint.yaml) and its result has been FAILED, please check and solved it"[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9503945Z [36;1m    gh workflow run issue.yaml --ref refs/heads/H823-ka0s-init-module-failed-in-12932778824 -f kaos-issue-title="" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="" -f kaos-issue-id=823 -f kaos-workflow-id="12947532415" -f kaos-user-start="santakloud"[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9508490Z [36;1m    gh issue comment  823 -F core/results/yaml-lint-results-12947532415.txt[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9510838Z [36;1m    # una vez finalizado este proceso, en funcion del modulo donde esta ubicado el ficher que se ha comprobado ejecutara un jobs u otro [0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9512801Z [36;1m  fi[0m
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9523496Z shell: /usr/bin/bash -e {0}
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9524349Z env:
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9525045Z   KAOS_MODULE: [Ka0S] YAMLLINT
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9526561Z   GH_TOKEN: ***
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9527570Z   KAOS_YAMLLINT_CONFIG: ***
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9528553Z   KAOS_PATH_RESUME: core/results/
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9529679Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9531116Z   KAOS_STEP_MODULE: 
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9531895Z   KAOS_CODE: 12947532415
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9533016Z   pythonLocation: /actions-runner/_work/_tool/Python/3.13.1/x64
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9534665Z   PKG_CONFIG_PATH: /actions-runner/_work/_tool/Python/3.13.1/x64/lib/pkgconfig
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9536383Z   Python_ROOT_DIR: /actions-runner/_work/_tool/Python/3.13.1/x64
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9537873Z   Python2_ROOT_DIR: /actions-runner/_work/_tool/Python/3.13.1/x64
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9539363Z   Python3_ROOT_DIR: /actions-runner/_work/_tool/Python/3.13.1/x64
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9540909Z   LD_LIBRARY_PATH: /actions-runner/_work/_tool/Python/3.13.1/x64/lib
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:04.9542255Z ##[endgroup]
+yaml-lint-process	Run # Invocamos la primera comprobación de base, sino se supera el proceso no continua	2025-01-24T10:11:06.9956230Z https://github.com/SantaKa0S/kaos/issues/823#issuecomment-2612151580
+yaml-lint-process	Post Run actions/setup-python@v5	2025-01-24T10:11:07.0128710Z Post job cleanup.
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.2056793Z Post job cleanup.
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.3270870Z [command]/usr/bin/git version
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.3317981Z git version 2.25.1
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.3373253Z Temporarily overriding HOME='/actions-runner/_work/_temp/1036da82-4405-499b-9ca4-13e5cb1eaadb' before making global git config changes
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.3391355Z Adding repository directory to the temporary git global config as a safe directory
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.3399194Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.3456543Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.3541265Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.3960731Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.3998018Z http.https://github.com/.extraheader
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.4036114Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+yaml-lint-process	Post Run actions/checkout@v4	2025-01-24T10:11:07.4100525Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+yaml-lint-process	Complete job	2025-01-24T10:11:07.4647151Z Cleaning up orphan processes
+end-workflow	Set up job	2025-01-24T10:12:47.8512263Z Current runner version: '2.321.0'
+end-workflow	Set up job	2025-01-24T10:12:47.8520568Z Runner name: 'kaos-yamllint-1'
+end-workflow	Set up job	2025-01-24T10:12:47.8521429Z Runner group name: 'kaos-yamllint'
+end-workflow	Set up job	2025-01-24T10:12:47.8522419Z Machine name: 'dfff99a7683d'
+end-workflow	Set up job	2025-01-24T10:12:47.8525509Z ##[group]GITHUB_TOKEN Permissions
+end-workflow	Set up job	2025-01-24T10:12:47.8528898Z Actions: write
+end-workflow	Set up job	2025-01-24T10:12:47.8529511Z Contents: write
+end-workflow	Set up job	2025-01-24T10:12:47.8530037Z Issues: write
+end-workflow	Set up job	2025-01-24T10:12:47.8530542Z Metadata: read
+end-workflow	Set up job	2025-01-24T10:12:47.8531056Z PullRequests: write
+end-workflow	Set up job	2025-01-24T10:12:47.8531576Z ##[endgroup]
+end-workflow	Set up job	2025-01-24T10:12:47.8534113Z Secret source: Actions
+end-workflow	Set up job	2025-01-24T10:12:47.8534852Z Prepare workflow directory
+end-workflow	Set up job	2025-01-24T10:12:47.9119823Z Prepare all required actions
+end-workflow	Set up job	2025-01-24T10:12:47.9178807Z Complete job name: end-workflow
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9794591Z ##[group]Run echo "End process"
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9795825Z [36;1mecho "End process"[0m
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9797569Z [36;1mgh workflow run inspector.yaml --ref refs/heads/H823-ka0s-init-module-failed-in-12932778824 -f kaos-issue-id="823" -f kaos-workflow-id="12947532415" -f kaos-user-start="santakloud"[0m
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9819379Z shell: /usr/bin/bash -e {0}
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9820418Z env:
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9820884Z   KAOS_MODULE: [Ka0S] YAMLLINT
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9821732Z   GH_TOKEN: ***
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9822388Z   KAOS_YAMLLINT_CONFIG: ***
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9822944Z   KAOS_PATH_RESUME: core/results/
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9823558Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9824187Z   KAOS_STEP_MODULE: 
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9824684Z   KAOS_CODE: 12947532415
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9825191Z ##[endgroup]
+end-workflow	Finaliza el workflow	2025-01-24T10:12:47.9999662Z End process
+end-workflow	Complete job	2025-01-24T10:12:48.6713490Z Cleaning up orphan processes
