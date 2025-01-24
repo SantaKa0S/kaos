@@ -72,7 +72,7 @@ jobs:
                     # Añadimos el comentario a la issue
                     gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
                     # Lanzamos el lint del fichero
-                    gh workflow run $file_module --ref ${{ github.ref }} -f kaos-issue-id=${{ github.run_id }} -f kaos-files=$line -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-user-start=${{ github.event.inputs.kaos-user-start }}
+                    gh workflow run $file_module --ref ${{ github.ref }} -f kaos-issue-id=${{ github.run_id }} -f kaos-files=$line -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-user-start=${{ github.event.inputs.kaos-user-start }} -f kaos-workflow-id=${{ env.KAOS_CODE }}
                     module_failed=0
                     extension_failed=0
                     break
