@@ -67,7 +67,7 @@ jobs:
                     # Añadimos los valores a las variables de la issue
                     KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} has been initiated and Launch workflow $file_module to check file $line"
                     # Añadimos el comentario a la issue
-                    gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
+                    gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment -f kaos-user-start=${{ github.event.inputs.kaos-user-start }} -f kaos-workflow-id=${{ env.KAOS_CODE }}
                     # Lanzamos el lint del fichero
                     gh workflow run $file_module --ref ${{ github.ref }} -f kaos-files=$line -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-user-start=${{ github.event.inputs.kaos-user-start }} -f kaos-workflow-id=${{ env.KAOS_CODE }}
                     module_failed=0
@@ -92,7 +92,7 @@ jobs:
               # Añadimos los valores a las variables de la issue
               KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha detectado que la extensión ($file_extension) esta permitida dentro de KAOS_CORE_FILES, pero el módulo asociado ($file_module) no esta activo. Por favor compruebe que exista y esta activo."
               # Añadimos el comentario a la issue
-              gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
+              gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment -f kaos-user-start=${{ github.event.inputs.kaos-user-start }} -f kaos-workflow-id=${{ env.KAOS_CODE }}
             fi
             if [[ $extension_failed == 1 ]]; then
               echo "X Si extension falla falla ($extension_failed) añadimos el comentario a la issue"
@@ -100,7 +100,7 @@ jobs:
               # Añadimos los valores a las variables de la issue
               KAOS_ISSUE_BODY="${{ env.KAOS_MODULE }} ha detectado que la extensión ($file_extension) NO esta permitida dentro de KAOS_CORE_FILES. Por favor compruebe que exista y esta activo."
               # Añadimos el comentario a la issue
-              gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
+              gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment -f kaos-user-start=${{ github.event.inputs.kaos-user-start }} -f kaos-workflow-id=${{ env.KAOS_CODE }}
             fi  
           done < ${{ github.event.inputs.kaos-involved-file }}
   handle_failure:
@@ -137,12 +137,12 @@ jobs:
           EOF
           )
           # Creamos la issue dado que ha fallado el modulo principal
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}"
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}" -f kaos-workflow-id="${{ env.KAOS_CODE }}"
           # Buscamos el numero de la issue en funcion del titulo de la misma 
           ISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
           # Añadimos el comentario a la issue que dispara el proceso
           KAOS_ISSUE_BODY="Se ha generado la issue (#$ISSUE_NUMBRE) con el error detectado en el proceso ${{ env.KAOS_MODULE }} en el run ${{ github.run_id }}"
-          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} 
+          gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }}  -f kaos-user-start="${{ github.event.inputs.kaos-user-start }}" -f kaos-workflow-id="${{ env.KAOS_CODE }}"
   end-workflow:
     runs-on: 
       group: kaos-init
