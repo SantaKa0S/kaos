@@ -22,18 +22,15 @@ permissions:
 env:
   KAOS_MODULE: "[Ka0S] INIT"
   GH_TOKEN: ${{ secrets.KAOS_TOKEN }}
+  BRANCH_NAME: ${{ github.ref }}
+  KAOS_PATH_RESUME: "core/results/"
+  KAOS_REPO: "/actions-runner/_work/kaos/kaos"
+  KAOS_STEP_MODULE: ""
   KAOS_CODE: ${{ github.run_id }}
 jobs:
   kaos-init-process:
     runs-on: 
       group: kaos-init
-    env:
-      GH_TOKEN: ${{ secrets.KAOS_TOKEN }} 
-      BRANCH_NAME: ${{ github.ref }}
-      KAOS_PATH_RESUME: "core/results/"
-      KAOS_REPO: "/actions-runner/_work/kaos/kaos"
-      KAOS_STEP_MODULE: ""
-      KAOS_CODE: ""
     steps:
       - id: repo
         uses: actions/checkout@v4
@@ -72,7 +69,7 @@ jobs:
                     # Añadimos el comentario a la issue
                     gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-issue-actions=comment
                     # Lanzamos el lint del fichero
-                    gh workflow run $file_module --ref ${{ github.ref }} -f kaos-issue-id=${{ github.run_id }} -f kaos-files=$line -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-user-start=${{ github.event.inputs.kaos-user-start }} -f kaos-workflow-id=${{ env.KAOS_CODE }}
+                    gh workflow run $file_module --ref ${{ github.ref }} -f kaos-files=$line -f kaos-issue-id=${{ github.event.inputs.kaos-issue-id }} -f kaos-user-start=${{ github.event.inputs.kaos-user-start }} -f kaos-workflow-id=${{ env.KAOS_CODE }}
                     module_failed=0
                     extension_failed=0
                     break
