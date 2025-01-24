@@ -1,0 +1,207 @@
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8764528Z Current runner version: '2.321.0'
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8774872Z Runner name: 'ksos-issue-3'
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8776180Z Runner group name: 'kaos-issue'
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8777225Z Machine name: '96d7b84031ed'
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8780955Z ##[group]GITHUB_TOKEN Permissions
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8784738Z Actions: write
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8785617Z Contents: write
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8786146Z Issues: write
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8786765Z Metadata: read
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8787272Z PullRequests: write
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8787784Z ##[endgroup]
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8790990Z Secret source: Actions
+kaos-issue-process	Set up job	2025-01-24T10:11:19.8793364Z Prepare workflow directory
+kaos-issue-process	Set up job	2025-01-24T10:11:19.9501488Z Prepare all required actions
+kaos-issue-process	Set up job	2025-01-24T10:11:19.9552717Z Getting action download info
+kaos-issue-process	Set up job	2025-01-24T10:11:20.1905162Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+kaos-issue-process	Set up job	2025-01-24T10:11:20.9938163Z Complete job name: kaos-issue-process
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0739295Z ##[group]Run actions/checkout@v4
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0740743Z with:
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0741280Z   fetch-depth: 0
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0742170Z   token: ***
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0742714Z   repository: SantaKa0S/kaos
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0743310Z   ssh-strict: true
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0743832Z   ssh-user: git
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0744357Z   persist-credentials: true
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0744933Z   clean: true
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0745612Z   sparse-checkout-cone-mode: true
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0746286Z   fetch-tags: false
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0746813Z   show-progress: true
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0747336Z   lfs: false
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0747827Z   submodules: false
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0748355Z   set-safe-directory: true
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0749851Z env:
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0750386Z   KAOS_MODULE: [Ka0S] ISSUE
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0751310Z   GH_TOKEN: ***
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0752098Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0753046Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0753850Z   KAOS_STEP_MODULE: 
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0754439Z   KAOS_CODE: 12947547915
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.0755001Z ##[endgroup]
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3291601Z Syncing repository: SantaKa0S/kaos
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3317854Z ##[group]Getting Git version info
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3319039Z Working directory is '/actions-runner/_work/kaos/kaos'
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3320677Z [command]/usr/bin/git version
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3321317Z git version 2.25.1
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3323502Z ##[endgroup]
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3462453Z Temporarily overriding HOME='/actions-runner/_work/_temp/ef291ad0-cdaa-46b2-9471-43722f18821f' before making global git config changes
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3474389Z Adding repository directory to the temporary git global config as a safe directory
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3486104Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3604592Z [command]/usr/bin/git config --local --get remote.origin.url
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3687589Z https://github.com/SantaKa0S/kaos
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3743988Z ##[group]Removing previously created refs, to avoid conflicts
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3777597Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3863710Z refs/heads/H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.3867071Z [command]/usr/bin/git checkout --detach
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4128737Z HEAD is now at d837a22 [Ka0S] se generan los ficheros commit-summary files-in-commit
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4258903Z [command]/usr/bin/git branch --delete --force H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4319797Z Deleted branch H823-ka0s-init-module-failed-in-12932778824 (was d837a22).
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4401246Z ##[endgroup]
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4402051Z [command]/usr/bin/git submodule status
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4769335Z ##[group]Cleaning the repository
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4770168Z [command]/usr/bin/git clean -ffdx
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4821498Z [command]/usr/bin/git reset --hard HEAD
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4882981Z HEAD is now at d837a22 [Ka0S] se generan los ficheros commit-summary files-in-commit
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4896317Z ##[endgroup]
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4897444Z ##[group]Disabling automatic garbage collection
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4902169Z [command]/usr/bin/git config --local gc.auto 0
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4948546Z ##[endgroup]
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4954511Z ##[group]Setting up auth
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.4958802Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.5000836Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.5439548Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.5490626Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.5857558Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.5913626Z ##[endgroup]
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.5914737Z ##[group]Fetching the repository
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:21.5922594Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.3650581Z From https://github.com/SantaKa0S/kaos
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.3653701Z    d837a22..1ae6a2d  H823-ka0s-init-module-failed-in-12932778824 -> origin/H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.3703375Z [command]/usr/bin/git branch --list --remote origin/H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.3733361Z   origin/H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.3744117Z [command]/usr/bin/git rev-parse refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.3773196Z 1ae6a2d766ff95bca0a5c8f8efff8f8fc423cc21
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.3809864Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +41dbb46dc36a20be85fd09265cb67b58ef29d4a2:refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4171548Z From https://github.com/SantaKa0S/kaos
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4175250Z  + 1ae6a2d...41dbb46 41dbb46dc36a20be85fd09265cb67b58ef29d4a2 -> origin/H823-ka0s-init-module-failed-in-12932778824  (forced update)
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4197076Z ##[endgroup]
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4198749Z ##[group]Determining the checkout info
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4200448Z ##[endgroup]
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4202173Z ##[group]Checking out the ref
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4206410Z [command]/usr/bin/git checkout --progress --force -B H823-ka0s-init-module-failed-in-12932778824 refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4373167Z Previous HEAD position was d837a22 [Ka0S] se generan los ficheros commit-summary files-in-commit
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4390498Z Switched to a new branch 'H823-ka0s-init-module-failed-in-12932778824'
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4397800Z Branch 'H823-ka0s-init-module-failed-in-12932778824' set up to track remote branch 'H823-ka0s-init-module-failed-in-12932778824' from 'origin'.
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4403247Z ##[endgroup]
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4449667Z [command]/usr/bin/git log -1 --format=%H
+kaos-issue-process	Run actions/checkout@v4	2025-01-24T10:11:22.4477015Z 41dbb46dc36a20be85fd09265cb67b58ef29d4a2
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4725722Z ##[group]Run # Extraemos el error
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4727466Z [36;1m# Extraemos el error[0m
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4728702Z [36;1m# gh run view 12947532144 --log-failed > 12947532144.log[0m
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4730379Z [36;1m# echo "KAOS_WORFLOW_LOG=$(cat 12947532144.log)" >> $GITHUB_OUTPUT[0m
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4754827Z shell: /usr/bin/bash -e {0}
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4756226Z env:
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4756942Z   KAOS_MODULE: [Ka0S] ISSUE
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4758339Z   GH_TOKEN: ***
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4759973Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4761545Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4762682Z   KAOS_STEP_MODULE: 
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4763519Z   KAOS_CODE: 12947547915
+kaos-issue-process	Run # Extraemos el error	2025-01-24T10:11:22.4764369Z ##[endgroup]
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4936280Z ##[group]Run # Lo primero comprobar la acción que queremos realizar
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4938277Z [36;1m# Lo primero comprobar la acción que queremos realizar[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4939718Z [36;1mecho "El usuario culpable es: santakloud"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4940886Z [36;1mcase comment in[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4941731Z [36;1m    create)[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4943223Z [36;1m        # Abrimos la petición y pasamos el issue ID a la variable de repositorio KAOS_ISSUE_ID[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4948533Z [36;1m        gh issue create -t "Kaos Issue Title Example" -b "The [Ka0S] YAMLLINT process (12947528733) launch the check (12947532144) over file (.github/workflows/ka0s.yaml) and its result has been SUCCESS. Please review all files implicated in pull request and approve to merge" -l "bug" -a "santakloud"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4953315Z [36;1m        if [[ -z "" ]]; then[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4954558Z [36;1m          echo "No se ha encontrado el log de la ejecución"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4956245Z [36;1m        else[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4957187Z [36;1m          gh issue comment 823 --body-file ""[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4958277Z [36;1m        fi[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4959042Z [36;1m        ;;[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4959834Z [36;1m    comment)[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4960970Z [36;1m        # Añadimos comentarios a issue en concreto o ficheros[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4962333Z [36;1m        if [[ -z "" ]]; then[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4966297Z [36;1m          gh issue comment 823 -b "The [Ka0S] YAMLLINT process (12947528733) launch the check (12947532144) over file (.github/workflows/ka0s.yaml) and its result has been SUCCESS. Please review all files implicated in pull request and approve to merge"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4970206Z [36;1m        else[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4971183Z [36;1m          gh issue comment 823 --body-file ""[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4972601Z [36;1m          # Esta opción se añadira más adelante --body-file ""[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4973889Z [36;1m        fi[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4974697Z [36;1m      ;;[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4975717Z [36;1m    close)[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4976748Z [36;1m        # Cerramos una issue finalizada[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4978445Z [36;1m        gh issue close 823 -c "Issue: 823 closed by  santakloud" -r "completed"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4980077Z [36;1m      ;;[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4980817Z [36;1m    reopen)[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4981924Z [36;1m        # Reabrimos una issue que no ha sido solucionada[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4983278Z [36;1m        title="Kaos Issue Title Example"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4984541Z [36;1m        if [[ "$title" == *"[SUCCESS]"* ]]; then[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4986199Z [36;1m          echo "Found [SUCCESS] in the title"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4987567Z [36;1m          new_title="${title//[SUCCESS]/[FAILED]}"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4988908Z [36;1m          echo "new_title=$new_title" >> $GITHUB_ENV[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4990272Z [36;1m        fi[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4991445Z [36;1m        gh issue reopen 823 -c "Reopen Issue: 823 by  santakloud"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4993024Z [36;1m        gh issue edit 823 -t "$new_title"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4994401Z [36;1m        gh issue edit 823 --remove-label "resolved"[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4995806Z [36;1m      ;;[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4996573Z [36;1m    *)[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4997469Z [36;1m        # Si no es alguna de las anteriores[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.4999050Z [36;1m        # el modulo de issues fallara y creara una issue propia  [0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5000571Z [36;1m      ;;[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5001325Z [36;1mesac[0m
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5009960Z shell: /usr/bin/bash -e {0}
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5011252Z env:
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5011939Z   KAOS_MODULE: [Ka0S] ISSUE
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5013301Z   GH_TOKEN: ***
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5014486Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5016239Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5017443Z   KAOS_STEP_MODULE: 
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5018764Z   KAOS_CODE: 12947547915
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5019673Z ##[endgroup]
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:22.5078962Z El usuario culpable es: santakloud
+kaos-issue-process	Run # Lo primero comprobar la acción que queremos realizar	2025-01-24T10:11:23.7477712Z https://github.com/SantaKa0S/kaos/issues/823#issuecomment-2612152157
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.7673494Z Post job cleanup.
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.8919266Z [command]/usr/bin/git version
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.8966007Z git version 2.25.1
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.9020713Z Temporarily overriding HOME='/actions-runner/_work/_temp/50173d02-3654-4e1f-a81b-d826995ae3d7' before making global git config changes
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.9027999Z Adding repository directory to the temporary git global config as a safe directory
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.9030479Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.9093558Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.9140127Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.9627639Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.9675601Z http.https://github.com/.extraheader
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.9720902Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+kaos-issue-process	Post Run actions/checkout@v4	2025-01-24T10:11:23.9786554Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+kaos-issue-process	Complete job	2025-01-24T10:11:24.0279842Z Evaluate and set job outputs
+kaos-issue-process	Complete job	2025-01-24T10:11:24.0288288Z Cleaning up orphan processes
+end-workflow	Set up job	2025-01-24T10:11:41.7776390Z Current runner version: '2.321.0'
+end-workflow	Set up job	2025-01-24T10:11:41.7785676Z Runner name: 'kaos-issue-4'
+end-workflow	Set up job	2025-01-24T10:11:41.7786684Z Runner group name: 'kaos-issue'
+end-workflow	Set up job	2025-01-24T10:11:41.7787827Z Machine name: '6a0436fe5834'
+end-workflow	Set up job	2025-01-24T10:11:41.7791184Z ##[group]GITHUB_TOKEN Permissions
+end-workflow	Set up job	2025-01-24T10:11:41.7794870Z Actions: write
+end-workflow	Set up job	2025-01-24T10:11:41.7795603Z Contents: write
+end-workflow	Set up job	2025-01-24T10:11:41.7796363Z Issues: write
+end-workflow	Set up job	2025-01-24T10:11:41.7796881Z Metadata: read
+end-workflow	Set up job	2025-01-24T10:11:41.7797532Z PullRequests: write
+end-workflow	Set up job	2025-01-24T10:11:41.7798056Z ##[endgroup]
+end-workflow	Set up job	2025-01-24T10:11:41.7800835Z Secret source: Actions
+end-workflow	Set up job	2025-01-24T10:11:41.7801612Z Prepare workflow directory
+end-workflow	Set up job	2025-01-24T10:11:41.8518956Z Prepare all required actions
+end-workflow	Set up job	2025-01-24T10:11:41.8622379Z Complete job name: end-workflow
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9531852Z ##[group]Run echo "End process"
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9533060Z [36;1mecho "End process"[0m
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9534779Z [36;1mgh workflow run inspector.yaml --ref refs/heads/H823-ka0s-init-module-failed-in-12932778824 -f kaos-issue-id="823" -f kaos-workflow-id="12947547915" -f kaos-user-start="santakloud"[0m
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9566855Z shell: /usr/bin/bash -e {0}
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9568213Z env:
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9568741Z   KAOS_MODULE: [Ka0S] ISSUE
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9569676Z   GH_TOKEN: ***
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9570459Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9571395Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9572170Z   KAOS_STEP_MODULE: 
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9572782Z   KAOS_CODE: 12947547915
+end-workflow	Finaliza el workflow	2025-01-24T10:11:41.9573407Z ##[endgroup]
+end-workflow	Finaliza el workflow	2025-01-24T10:11:42.0206530Z End process
+end-workflow	Complete job	2025-01-24T10:11:42.6130775Z Cleaning up orphan processes
