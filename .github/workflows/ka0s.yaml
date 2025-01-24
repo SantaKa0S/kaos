@@ -254,18 +254,18 @@ jobs:
         run: |
           echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
           KAOS_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ env.KAOS_CODE }}"
-            KAOS_BODY=$(cat <<'EOF'
-            **${{ env.KAOS_MODULE }}  Message:**
-            El error ha sido en: ${{ env.KAOS_CODE }}
-            si dispòne de los permisos necesarios 
-            ejecute este comando en su consola y podrá consultar el fallo del trabajo
-            gh run view ${{ env.KAOS_CODE }} --log-failed
-            \`\`\`
-            **La información de la ejecución ${{ secrets.KAOS_ACTIONS_URL }}${{ env.KAOS_CODE }}**
-            \`\`\`
-            Please investigate the issue.
-            EOF
-            )
+          KAOS_BODY=$(cat <<'EOF'
+          **${{ env.KAOS_MODULE }}  Message:**
+          El error ha sido en: ${{ env.KAOS_CODE }}
+          si dispòne de los permisos necesarios 
+          ejecute este comando en su consola y podrá consultar el fallo del trabajo
+          gh run view ${{ env.KAOS_CODE }} --log-failed
+          \`\`\`
+          **La información de la ejecución ${{ secrets.KAOS_ACTIONS_URL }}${{ env.KAOS_CODE }}**
+          \`\`\`
+          Please investigate the issue.
+          EOF
+          )
           # Creamos la issue dado que ha fallado el modulo principal
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-title="$KAOS_ISSUE_TITLE" -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=create -f kaos-issue-tag="bug" -f kaos-user-start="${{ needs.job-core.outputs.AUTHOR_NAME }}"
           # obtenemos le numero de la issue generada
