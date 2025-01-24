@@ -149,13 +149,13 @@ jobs:
           KAOS_ISSUE_BODY="OPS¡ se ha producido un error en el proceso (${{ env.KAOS_MODULE }})  lanzado desde (#${{ needs.kaos-version.outputs.KAOS_NUMBER }}) en la ejecución (${{ github.run_id }}) y esto ha generado una issue con el titulo ($KAOS_ISSUE_TITLE)"
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ needs.kaos-version.outputs.KAOS_NUMBER }}
   end-workflow:
-      runs-on: 
-        group: kaos-execution
-      needs: [md-lint-process, handle_failure] 
-      if: ${{ always() }}
-      steps:
-        - id: end-process
-          name: Finaliza el workflow
-          run: |
-            echo "End process"
-            gh workflow run inspector.yaml --ref ${{ github.ref }} -f kaos-issue-id="${{ steps.commit_details.outputs.RNNUMBER }}" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ steps.commit_details.outputs.AUTHOR_NAME }}"
+    runs-on: 
+      group: kaos-execution
+    needs: [md-lint-process, handle_failure] 
+    if: ${{ always() }}
+    steps:
+      - id: end-process
+        name: Finaliza el workflow
+        run: |
+          echo "End process"
+          gh workflow run inspector.yaml --ref ${{ github.ref }} -f kaos-issue-id="${{ steps.commit_details.outputs.RNNUMBER }}" -f kaos-workflow-id="${{ env.KAOS_CODE }}" -f kaos-user-start="${{ steps.commit_details.outputs.AUTHOR_NAME }}"
