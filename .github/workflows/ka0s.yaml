@@ -128,7 +128,7 @@ jobs:
   job-security:
     runs-on: 
       group: kaos
-    needs: job-core
+    needs: [job-core, job-compliance]
     steps:
       - id: check-security
         name: check-security
@@ -141,7 +141,7 @@ jobs:
   job-observability:
     runs-on: 
       group: kaos
-    needs: job-core
+    needs: [job-core, job-compliance, job-security]
     steps:
       - id: check-observability
         name: Check Observability
