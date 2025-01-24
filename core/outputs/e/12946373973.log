@@ -1,0 +1,592 @@
+job-core	Set up job	2025-01-24T08:55:52.1237441Z Current runner version: '2.321.0'
+job-core	Set up job	2025-01-24T08:55:52.1243912Z Runner name: 'kaos-3'
+job-core	Set up job	2025-01-24T08:55:52.1244672Z Runner group name: 'kaos'
+job-core	Set up job	2025-01-24T08:55:52.1245836Z Machine name: 'a6fa158ac5ea'
+job-core	Set up job	2025-01-24T08:55:52.1248544Z ##[group]GITHUB_TOKEN Permissions
+job-core	Set up job	2025-01-24T08:55:52.1251050Z Actions: write
+job-core	Set up job	2025-01-24T08:55:52.1251581Z Contents: write
+job-core	Set up job	2025-01-24T08:55:52.1252057Z Issues: write
+job-core	Set up job	2025-01-24T08:55:52.1252520Z Metadata: read
+job-core	Set up job	2025-01-24T08:55:52.1252999Z PullRequests: write
+job-core	Set up job	2025-01-24T08:55:52.1253486Z ##[endgroup]
+job-core	Set up job	2025-01-24T08:55:52.1255911Z Secret source: Actions
+job-core	Set up job	2025-01-24T08:55:52.1256736Z Prepare workflow directory
+job-core	Set up job	2025-01-24T08:55:52.1804830Z Prepare all required actions
+job-core	Set up job	2025-01-24T08:55:52.1841627Z Getting action download info
+job-core	Set up job	2025-01-24T08:55:52.4519298Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+job-core	Set up job	2025-01-24T08:55:53.2768527Z Complete job name: job-core
+job-core	repo	2025-01-24T08:55:53.3301144Z ##[group]Run actions/checkout@v4
+job-core	repo	2025-01-24T08:55:53.3302079Z with:
+job-core	repo	2025-01-24T08:55:53.3302486Z   fetch-depth: 0
+job-core	repo	2025-01-24T08:55:53.3303149Z   token: ***
+job-core	repo	2025-01-24T08:55:53.3303637Z   repository: SantaKa0S/kaos
+job-core	repo	2025-01-24T08:55:53.3304122Z   ssh-strict: true
+job-core	repo	2025-01-24T08:55:53.3304526Z   ssh-user: git
+job-core	repo	2025-01-24T08:55:53.3304939Z   persist-credentials: true
+job-core	repo	2025-01-24T08:55:53.3305679Z   clean: true
+job-core	repo	2025-01-24T08:55:53.3306218Z   sparse-checkout-cone-mode: true
+job-core	repo	2025-01-24T08:55:53.3306719Z   fetch-tags: false
+job-core	repo	2025-01-24T08:55:53.3307139Z   show-progress: true
+job-core	repo	2025-01-24T08:55:53.3307552Z   lfs: false
+job-core	repo	2025-01-24T08:55:53.3337132Z   submodules: false
+job-core	repo	2025-01-24T08:55:53.3338002Z   set-safe-directory: true
+job-core	repo	2025-01-24T08:55:53.3339426Z env:
+job-core	repo	2025-01-24T08:55:53.3339821Z   KAOS_MODULE: [Ka0S]
+job-core	repo	2025-01-24T08:55:53.3340533Z   GH_TOKEN: ***
+job-core	repo	2025-01-24T08:55:53.3341107Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-core	repo	2025-01-24T08:55:53.3341792Z   KAOS_PATH_RESUME: core/results/
+job-core	repo	2025-01-24T08:55:53.3342370Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-core	repo	2025-01-24T08:55:53.3342921Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-core	repo	2025-01-24T08:55:53.3343444Z   KAOS_STEP_MODULE: 
+job-core	repo	2025-01-24T08:55:53.3343856Z   KAOS_CODE: 12946373973
+job-core	repo	2025-01-24T08:55:53.3344280Z ##[endgroup]
+job-core	repo	2025-01-24T08:55:53.4515776Z Syncing repository: SantaKa0S/kaos
+job-core	repo	2025-01-24T08:55:53.4517919Z ##[group]Getting Git version info
+job-core	repo	2025-01-24T08:55:53.4518643Z Working directory is '/actions-runner/_work/kaos/kaos'
+job-core	repo	2025-01-24T08:55:53.4519769Z [command]/usr/bin/git version
+job-core	repo	2025-01-24T08:55:53.4520352Z git version 2.25.1
+job-core	repo	2025-01-24T08:55:53.4540802Z ##[endgroup]
+job-core	repo	2025-01-24T08:55:53.4552520Z Copying '/home/kaos/.gitconfig' to '/actions-runner/_work/_temp/9939c20f-1da0-4ece-a9af-0afba245aec4/.gitconfig'
+job-core	repo	2025-01-24T08:55:53.4563797Z Temporarily overriding HOME='/actions-runner/_work/_temp/9939c20f-1da0-4ece-a9af-0afba245aec4' before making global git config changes
+job-core	repo	2025-01-24T08:55:53.4565386Z Adding repository directory to the temporary git global config as a safe directory
+job-core	repo	2025-01-24T08:55:53.4569835Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+job-core	repo	2025-01-24T08:55:53.4615017Z [command]/usr/bin/git config --local --get remote.origin.url
+job-core	repo	2025-01-24T08:55:53.4639711Z https://github.com/SantaKa0S/kaos
+job-core	repo	2025-01-24T08:55:53.4662122Z ##[group]Removing previously created refs, to avoid conflicts
+job-core	repo	2025-01-24T08:55:53.4666273Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+job-core	repo	2025-01-24T08:55:53.4694464Z refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-core	repo	2025-01-24T08:55:53.4704925Z [command]/usr/bin/git checkout --detach
+job-core	repo	2025-01-24T08:55:53.4767441Z HEAD is now at 7c5ad32 [Ka0S] se generan los ficheros commit-summary files-in-commit
+job-core	repo	2025-01-24T08:55:53.4820551Z [command]/usr/bin/git branch --delete --force H823-ka0s-init-module-failed-in-12932778824
+job-core	repo	2025-01-24T08:55:53.4855733Z Deleted branch H823-ka0s-init-module-failed-in-12932778824 (was 7c5ad32).
+job-core	repo	2025-01-24T08:55:53.4919145Z ##[endgroup]
+job-core	repo	2025-01-24T08:55:53.4922585Z [command]/usr/bin/git submodule status
+job-core	repo	2025-01-24T08:55:53.5236272Z ##[group]Cleaning the repository
+job-core	repo	2025-01-24T08:55:53.5241968Z [command]/usr/bin/git clean -ffdx
+job-core	repo	2025-01-24T08:55:53.5279837Z Removing core/outputs/e/12946300135-.txt
+job-core	repo	2025-01-24T08:55:53.5281041Z Removing core/outputs/e/12946300135-823.txt
+job-core	repo	2025-01-24T08:55:53.5281663Z Removing core/outputs/e/12946300135-H.txt
+job-core	repo	2025-01-24T08:55:53.5291118Z [command]/usr/bin/git reset --hard HEAD
+job-core	repo	2025-01-24T08:55:53.5354181Z HEAD is now at 7c5ad32 [Ka0S] se generan los ficheros commit-summary files-in-commit
+job-core	repo	2025-01-24T08:55:53.5359152Z ##[endgroup]
+job-core	repo	2025-01-24T08:55:53.5360441Z ##[group]Disabling automatic garbage collection
+job-core	repo	2025-01-24T08:55:53.5364386Z [command]/usr/bin/git config --local gc.auto 0
+job-core	repo	2025-01-24T08:55:53.5397727Z ##[endgroup]
+job-core	repo	2025-01-24T08:55:53.5398570Z ##[group]Setting up auth
+job-core	repo	2025-01-24T08:55:53.5413564Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+job-core	repo	2025-01-24T08:55:53.5449704Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+job-core	repo	2025-01-24T08:55:53.5753861Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+job-core	repo	2025-01-24T08:55:53.5786203Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+job-core	repo	2025-01-24T08:55:53.6096619Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+job-core	repo	2025-01-24T08:55:53.6143719Z ##[endgroup]
+job-core	repo	2025-01-24T08:55:53.6144688Z ##[group]Fetching the repository
+job-core	repo	2025-01-24T08:55:53.6151975Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+job-core	repo	2025-01-24T08:55:54.3310217Z From https://github.com/SantaKa0S/kaos
+job-core	repo	2025-01-24T08:55:54.3312963Z    7c5ad32..cd13370  H823-ka0s-init-module-failed-in-12932778824 -> origin/H823-ka0s-init-module-failed-in-12932778824
+job-core	repo	2025-01-24T08:55:54.3369670Z [command]/usr/bin/git branch --list --remote origin/H823-ka0s-init-module-failed-in-12932778824
+job-core	repo	2025-01-24T08:55:54.3396470Z   origin/H823-ka0s-init-module-failed-in-12932778824
+job-core	repo	2025-01-24T08:55:54.3404839Z [command]/usr/bin/git rev-parse refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+job-core	repo	2025-01-24T08:55:54.3428734Z cd1337083438559b079c7765af1792d5cd558395
+job-core	repo	2025-01-24T08:55:54.3432455Z ##[endgroup]
+job-core	repo	2025-01-24T08:55:54.3433996Z ##[group]Determining the checkout info
+job-core	repo	2025-01-24T08:55:54.3435862Z ##[endgroup]
+job-core	repo	2025-01-24T08:55:54.3439458Z ##[group]Checking out the ref
+job-core	repo	2025-01-24T08:55:54.3442943Z [command]/usr/bin/git checkout --progress --force -B H823-ka0s-init-module-failed-in-12932778824 refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+job-core	repo	2025-01-24T08:55:54.3589704Z Previous HEAD position was 7c5ad32 [Ka0S] se generan los ficheros commit-summary files-in-commit
+job-core	repo	2025-01-24T08:55:54.3595371Z Switched to a new branch 'H823-ka0s-init-module-failed-in-12932778824'
+job-core	repo	2025-01-24T08:55:54.3598917Z Branch 'H823-ka0s-init-module-failed-in-12932778824' set up to track remote branch 'H823-ka0s-init-module-failed-in-12932778824' from 'origin'.
+job-core	repo	2025-01-24T08:55:54.3604131Z ##[endgroup]
+job-core	repo	2025-01-24T08:55:54.3645050Z [command]/usr/bin/git log -1 --format=%H
+job-core	repo	2025-01-24T08:55:54.3674209Z cd1337083438559b079c7765af1792d5cd558395
+job-core	core	2025-01-24T08:55:54.3971582Z ##[group]Run # Comprobamos el flow que deberemos de ejecutar
+job-core	core	2025-01-24T08:55:54.3973441Z [36;1m# Comprobamos el flow que deberemos de ejecutar[0m
+job-core	core	2025-01-24T08:55:54.3975421Z [36;1mecho "Branch name is refs/heads/H823-ka0s-init-module-failed-in-12932778824"[0m
+job-core	core	2025-01-24T08:55:54.3978161Z [36;1mcase "refs/heads/H823-ka0s-init-module-failed-in-12932778824" in[0m
+job-core	core	2025-01-24T08:55:54.3979692Z [36;1m  *RN[0-9]*-*)[0m
+job-core	core	2025-01-24T08:55:54.3981381Z [36;1m    rn=$(echo "refs/heads/H823-ka0s-init-module-failed-in-12932778824" | grep -o 'RN[0-9]*')[0m
+job-core	core	2025-01-24T08:55:54.3983537Z [36;1m    ;;[0m
+job-core	core	2025-01-24T08:55:54.3984340Z [36;1m  *F[0-9]*-*)[0m
+job-core	core	2025-01-24T08:55:54.3986400Z [36;1m    rn=$(echo "refs/heads/H823-ka0s-init-module-failed-in-12932778824" | grep -o 'F[0-9]*')[0m
+job-core	core	2025-01-24T08:55:54.3988230Z [36;1m    ;;[0m
+job-core	core	2025-01-24T08:55:54.3989024Z [36;1m  *H[0-9]*-*)[0m
+job-core	core	2025-01-24T08:55:54.3990680Z [36;1m    rn=$(echo "refs/heads/H823-ka0s-init-module-failed-in-12932778824" | grep -o 'H[0-9]*')[0m
+job-core	core	2025-01-24T08:55:54.3992538Z [36;1m    ;;[0m
+job-core	core	2025-01-24T08:55:54.3993336Z [36;1m  *E[0-9]*-*)[0m
+job-core	core	2025-01-24T08:55:54.3994998Z [36;1m    rn=$(echo "refs/heads/H823-ka0s-init-module-failed-in-12932778824" | grep -o 'H[0-9]*')[0m
+job-core	core	2025-01-24T08:55:54.3997233Z [36;1m    ;;[0m
+job-core	core	2025-01-24T08:55:54.3998025Z [36;1m  *)[0m
+job-core	core	2025-01-24T08:55:54.3998987Z [36;1m    echo "No debería de estar haciendo esto"[0m
+job-core	core	2025-01-24T08:55:54.4000209Z [36;1m    exit 1[0m
+job-core	core	2025-01-24T08:55:54.4001026Z [36;1m    ;;[0m
+job-core	core	2025-01-24T08:55:54.4001805Z [36;1mesac[0m
+job-core	core	2025-01-24T08:55:54.4002749Z [36;1mRNBRANCH=$(echo "$rn" | grep -o '^[A-Za-z]*')[0m
+job-core	core	2025-01-24T08:55:54.4004094Z [36;1mRNNUMBER=$(echo "$rn" | grep -o '[0-9]*')[0m
+job-core	core	2025-01-24T08:55:54.4005395Z [36;1mecho "Extracted RN Branch: $RNBRANCH"[0m
+job-core	core	2025-01-24T08:55:54.4006939Z [36;1mecho "Extracted RN Number: $RNNUMBER"[0m
+job-core	core	2025-01-24T08:55:54.4008605Z [36;1mKAOS_CODE_FILES=$(echo "$rn" | grep -o '^[A-Za-z]*')-$(echo "$rn" | grep -o '[0-9]*')[0m
+job-core	core	2025-01-24T08:55:54.4010362Z [36;1mecho "RNBRANCH=$RNBRANCH" >> $GITHUB_OUTPUT[0m
+job-core	core	2025-01-24T08:55:54.4011761Z [36;1mecho "RNNUMBER=$RNNUMBER" >> $GITHUB_OUTPUT   [0m
+job-core	core	2025-01-24T08:55:54.4013196Z [36;1mecho "AUTHOR_NAME=santakloud" >> $GITHUB_OUTPUT[0m
+job-core	core	2025-01-24T08:55:54.4014921Z [36;1mecho "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT[0m
+job-core	core	2025-01-24T08:55:54.4017311Z [36;1mecho "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT[0m
+job-core	core	2025-01-24T08:55:54.4019447Z [36;1mecho "CHANGED_FILES=$(git diff --name-only HEAD~1 | tr '\n' ' ')" >> $GITHUB_OUTPUT[0m
+job-core	core	2025-01-24T08:55:54.4021441Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+job-core	core	2025-01-24T08:55:54.4023088Z [36;1mtouch core/outputs/e/12946373973-$RNBRANCH.txt[0m
+job-core	core	2025-01-24T08:55:54.4025022Z [36;1mecho "($_timestamp) - Se ha iniciado el Repositorio." >> core/outputs/e/12946373973-$RNBRANCH.txt[0m
+job-core	core	2025-01-24T08:55:54.4028088Z [36;1mecho "($_timestamp) - Se detecta el flujo $RNBRANCH." >> core/outputs/e/12946373973-$RNBRANCH.txt[0m
+job-core	core	2025-01-24T08:55:54.4040689Z shell: /usr/bin/bash -e {0}
+job-core	core	2025-01-24T08:55:54.4041593Z env:
+job-core	core	2025-01-24T08:55:54.4042263Z   KAOS_MODULE: [Ka0S]
+job-core	core	2025-01-24T08:55:54.4043487Z   GH_TOKEN: ***
+job-core	core	2025-01-24T08:55:54.4044633Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-core	core	2025-01-24T08:55:54.4046411Z   KAOS_PATH_RESUME: core/results/
+job-core	core	2025-01-24T08:55:54.4047424Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-core	core	2025-01-24T08:55:54.4048502Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-core	core	2025-01-24T08:55:54.4049573Z   KAOS_STEP_MODULE: 
+job-core	core	2025-01-24T08:55:54.4050364Z   KAOS_CODE: 12946373973
+job-core	core	2025-01-24T08:55:54.4051187Z ##[endgroup]
+job-core	core	2025-01-24T08:55:54.4118468Z Branch name is refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-core	core	2025-01-24T08:55:54.4188024Z Extracted RN Branch: H
+job-core	core	2025-01-24T08:55:54.4189181Z Extracted RN Number: 823
+job-core	files	2025-01-24T08:55:54.4440887Z ##[group]Run # Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow
+job-core	files	2025-01-24T08:55:54.4444723Z [36;1m# Crear un fichero de resumen con todos los datos de los commits asociados, esta información es usada en todo el ciclo de vida del workflow[0m
+job-core	files	2025-01-24T08:55:54.4449444Z [36;1mgit log ad4de47303d7fcc770be834e95275aaa2f435704..cd1337083438559b079c7765af1792d5cd558395 --pretty=format:'%H%n%an%n%ae%n%ad%n%s' > core/results/commit-summary-$KAOS_CODE_FILES.txt[0m
+job-core	files	2025-01-24T08:55:54.4453129Z [36;1m# Crear un fichero con la ruta completa y el nombre ficheros implicados en el commit[0m
+job-core	files	2025-01-24T08:55:54.4457067Z [36;1mgit diff --name-only ad4de47303d7fcc770be834e95275aaa2f435704 cd1337083438559b079c7765af1792d5cd558395 > core/results/files-in-commit-$KAOS_CODE_FILES.txt[0m
+job-core	files	2025-01-24T08:55:54.4460170Z [36;1m# Subimos la lista de ficheros que tenemos que comprobar[0m
+job-core	files	2025-01-24T08:55:54.4462024Z [36;1mgh issue comment 823 --body "Comienza la ejecución de KAOS run_id: 12946373973"[0m
+job-core	files	2025-01-24T08:55:54.4464018Z [36;1mINVOLVED=core/results/files-in-commit-$KAOS_CODE_FILES.txt[0m
+job-core	files	2025-01-24T08:55:54.4465925Z [36;1mecho "INVOLVED=$INVOLVED" >> $GITHUB_OUTPUT[0m
+job-core	files	2025-01-24T08:55:54.4467481Z [36;1mgit config --global user.name "***"[0m
+job-core	files	2025-01-24T08:55:54.4469217Z [36;1mgit config --global user.email "***"[0m
+job-core	files	2025-01-24T08:55:54.4470319Z [36;1mgit pull[0m
+job-core	files	2025-01-24T08:55:54.4471136Z [36;1mgit add core/results/*[0m
+job-core	files	2025-01-24T08:55:54.4472611Z [36;1mgit commit -m "[Ka0S] se generan los ficheros commit-summary files-in-commit"[0m
+job-core	files	2025-01-24T08:55:54.4474203Z [36;1mgit push[0m
+job-core	files	2025-01-24T08:55:54.4475025Z [36;1mKAOS_STATUS=$( echo "100%")[0m
+job-core	files	2025-01-24T08:55:54.4476675Z [36;1mecho "KAOS_CORE_STATUS=$KAOS_STATUS" >> $GITHUB_OUTPUT[0m
+job-core	files	2025-01-24T08:55:54.4478313Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+job-core	files	2025-01-24T08:55:54.4481059Z [36;1mecho "($_timestamp) - Se genera el fichero de commit core/results/commit-summary-$KAOS_CODE_FILES.txt." >> core/outputs/e/12946373973-$RNBRANCH.txt[0m
+job-core	files	2025-01-24T08:55:54.4483789Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+job-core	files	2025-01-24T08:55:54.4487144Z [36;1mecho "($_timestamp) - Se genera el fichero de ficheros implicados core/results/files-in-commit-$KAOS_CODE_FILES.txt." >> core/outputs/e/12946373973-$RNBRANCH.txt[0m
+job-core	files	2025-01-24T08:55:54.4490044Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+job-core	files	2025-01-24T08:55:54.4492079Z [36;1mecho "($_timestamp) - JOB_CORE: $KAOS_STATUS" >> core/outputs/e/12946373973-$RNBRANCH.txt           [0m
+job-core	files	2025-01-24T08:55:54.4500152Z shell: /usr/bin/bash -e {0}
+job-core	files	2025-01-24T08:55:54.4501036Z env:
+job-core	files	2025-01-24T08:55:54.4501718Z   KAOS_MODULE: [Ka0S]
+job-core	files	2025-01-24T08:55:54.4502815Z   GH_TOKEN: ***
+job-core	files	2025-01-24T08:55:54.4503953Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-core	files	2025-01-24T08:55:54.4505433Z   KAOS_PATH_RESUME: core/results/
+job-core	files	2025-01-24T08:55:54.4506761Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-core	files	2025-01-24T08:55:54.4507829Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-core	files	2025-01-24T08:55:54.4508880Z   KAOS_STEP_MODULE: 
+job-core	files	2025-01-24T08:55:54.4509675Z   KAOS_CODE: 12946373973
+job-core	files	2025-01-24T08:55:54.4510496Z ##[endgroup]
+job-core	files	2025-01-24T08:55:56.4552221Z https://github.com/SantaKa0S/kaos/issues/823#issuecomment-2611995435
+job-core	files	2025-01-24T08:55:56.8702206Z Already up to date.
+job-core	files	2025-01-24T08:55:56.8889843Z [H823-ka0s-init-module-failed-in-12932778824 781c651] [Ka0S] se generan los ficheros commit-summary files-in-commit
+job-core	files	2025-01-24T08:55:56.8892732Z  2 files changed, 18 insertions(+), 6 deletions(-)
+job-core	files	2025-01-24T08:55:56.8894403Z  rewrite core/results/commit-summary-.txt (72%)
+job-core	files	2025-01-24T08:55:57.6679166Z To https://github.com/SantaKa0S/kaos
+job-core	files	2025-01-24T08:55:57.6682405Z    cd13370..781c651  H823-ka0s-init-module-failed-in-12932778824 -> H823-ka0s-init-module-failed-in-12932778824
+job-core	Post repo	2025-01-24T08:55:57.7447295Z Post job cleanup.
+job-core	Post repo	2025-01-24T08:55:57.8466065Z [command]/usr/bin/git version
+job-core	Post repo	2025-01-24T08:55:57.8506709Z git version 2.25.1
+job-core	Post repo	2025-01-24T08:55:57.8546323Z Copying '/home/kaos/.gitconfig' to '/actions-runner/_work/_temp/026a452c-3d8b-48ff-af41-fa4b6e1d4976/.gitconfig'
+job-core	Post repo	2025-01-24T08:55:57.8560158Z Temporarily overriding HOME='/actions-runner/_work/_temp/026a452c-3d8b-48ff-af41-fa4b6e1d4976' before making global git config changes
+job-core	Post repo	2025-01-24T08:55:57.8561709Z Adding repository directory to the temporary git global config as a safe directory
+job-core	Post repo	2025-01-24T08:55:57.8567445Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+job-core	Post repo	2025-01-24T08:55:57.8617360Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+job-core	Post repo	2025-01-24T08:55:57.8657365Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+job-core	Post repo	2025-01-24T08:55:57.8989523Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+job-core	Post repo	2025-01-24T08:55:57.9012998Z http.https://github.com/.extraheader
+job-core	Post repo	2025-01-24T08:55:57.9022857Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+job-core	Post repo	2025-01-24T08:55:57.9060283Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+job-core	Complete job	2025-01-24T08:55:57.9479105Z Evaluate and set job outputs
+job-core	Complete job	2025-01-24T08:55:57.9500944Z Set output 'KAOS_BRANCH'
+job-core	Complete job	2025-01-24T08:55:57.9502990Z Set output 'KAOS_NUMBER'
+job-core	Complete job	2025-01-24T08:55:57.9503707Z Set output 'KAOS_INVOLVED'
+job-core	Complete job	2025-01-24T08:55:57.9504093Z Set output 'KAOS_FILES'
+job-core	Complete job	2025-01-24T08:55:57.9504433Z Set output 'AUTHOR_NAME'
+job-core	Complete job	2025-01-24T08:55:57.9504814Z Set output 'AUTHOR_EMAIL'
+job-core	Complete job	2025-01-24T08:55:57.9505178Z Set output 'COMMIT_MESSAGE'
+job-core	Complete job	2025-01-24T08:55:57.9505988Z Cleaning up orphan processes
+job-compliance	Set up job	2025-01-24T08:56:07.9094765Z Current runner version: '2.321.0'
+job-compliance	Set up job	2025-01-24T08:56:07.9102509Z Runner name: 'kaos-3'
+job-compliance	Set up job	2025-01-24T08:56:07.9103212Z Runner group name: 'kaos'
+job-compliance	Set up job	2025-01-24T08:56:07.9104057Z Machine name: 'a6fa158ac5ea'
+job-compliance	Set up job	2025-01-24T08:56:07.9107423Z ##[group]GITHUB_TOKEN Permissions
+job-compliance	Set up job	2025-01-24T08:56:07.9109676Z Actions: write
+job-compliance	Set up job	2025-01-24T08:56:07.9110202Z Contents: write
+job-compliance	Set up job	2025-01-24T08:56:07.9110684Z Issues: write
+job-compliance	Set up job	2025-01-24T08:56:07.9111151Z Metadata: read
+job-compliance	Set up job	2025-01-24T08:56:07.9111630Z PullRequests: write
+job-compliance	Set up job	2025-01-24T08:56:07.9112111Z ##[endgroup]
+job-compliance	Set up job	2025-01-24T08:56:07.9114101Z Secret source: Actions
+job-compliance	Set up job	2025-01-24T08:56:07.9114782Z Prepare workflow directory
+job-compliance	Set up job	2025-01-24T08:56:07.9674750Z Prepare all required actions
+job-compliance	Set up job	2025-01-24T08:56:07.9729277Z Complete job name: job-compliance
+job-compliance	check-compliance	2025-01-24T08:56:08.0263031Z ##[group]Run # Vamos a determinar  la accion de comprobar el cumplimiento de las politicas
+job-compliance	check-compliance	2025-01-24T08:56:08.0264493Z [36;1m# Vamos a determinar  la accion de comprobar el cumplimiento de las politicas[0m
+job-compliance	check-compliance	2025-01-24T08:56:08.0266032Z [36;1mecho "Aquí deberemos de añadir el código del compliance de la organización"[0m
+job-compliance	check-compliance	2025-01-24T08:56:08.0267032Z [36;1mKAOS_COMPLIANCE_STATUS=$( echo "100%")[0m
+job-compliance	check-compliance	2025-01-24T08:56:08.0267860Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+job-compliance	check-compliance	2025-01-24T08:56:08.0269127Z [36;1mecho "($_timestamp) - JOB_COMPLIANCE: $KAOS_COMPLIANCE_STATUS" >> core/outputs/e/12946373973-823.txt               [0m
+job-compliance	check-compliance	2025-01-24T08:56:08.0288603Z shell: /usr/bin/bash -e {0}
+job-compliance	check-compliance	2025-01-24T08:56:08.0289502Z env:
+job-compliance	check-compliance	2025-01-24T08:56:08.0289966Z   KAOS_MODULE: [Ka0S]
+job-compliance	check-compliance	2025-01-24T08:56:08.0290728Z   GH_TOKEN: ***
+job-compliance	check-compliance	2025-01-24T08:56:08.0291410Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-compliance	check-compliance	2025-01-24T08:56:08.0292234Z   KAOS_PATH_RESUME: core/results/
+job-compliance	check-compliance	2025-01-24T08:56:08.0293315Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-compliance	check-compliance	2025-01-24T08:56:08.0294356Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-compliance	check-compliance	2025-01-24T08:56:08.0295014Z   KAOS_STEP_MODULE: 
+job-compliance	check-compliance	2025-01-24T08:56:08.0295862Z   KAOS_CODE: 12946373973
+job-compliance	check-compliance	2025-01-24T08:56:08.0296405Z ##[endgroup]
+job-compliance	check-compliance	2025-01-24T08:56:08.0616904Z Aquí deberemos de añadir el código del compliance de la organización
+job-compliance	Complete job	2025-01-24T08:56:08.0723983Z Cleaning up orphan processes
+job-security	Set up job	2025-01-24T08:56:18.4633938Z Current runner version: '2.321.0'
+job-security	Set up job	2025-01-24T08:56:18.4641546Z Runner name: 'kaos-3'
+job-security	Set up job	2025-01-24T08:56:18.4642245Z Runner group name: 'kaos'
+job-security	Set up job	2025-01-24T08:56:18.4643121Z Machine name: 'a6fa158ac5ea'
+job-security	Set up job	2025-01-24T08:56:18.4646590Z ##[group]GITHUB_TOKEN Permissions
+job-security	Set up job	2025-01-24T08:56:18.4648880Z Actions: write
+job-security	Set up job	2025-01-24T08:56:18.4649410Z Contents: write
+job-security	Set up job	2025-01-24T08:56:18.4649886Z Issues: write
+job-security	Set up job	2025-01-24T08:56:18.4650342Z Metadata: read
+job-security	Set up job	2025-01-24T08:56:18.4650819Z PullRequests: write
+job-security	Set up job	2025-01-24T08:56:18.4651309Z ##[endgroup]
+job-security	Set up job	2025-01-24T08:56:18.4653309Z Secret source: Actions
+job-security	Set up job	2025-01-24T08:56:18.4654002Z Prepare workflow directory
+job-security	Set up job	2025-01-24T08:56:18.5176606Z Prepare all required actions
+job-security	Set up job	2025-01-24T08:56:18.5235076Z Complete job name: job-security
+job-security	check-security	2025-01-24T08:56:18.5793800Z ##[group]Run # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+job-security	check-security	2025-01-24T08:56:18.5795330Z [36;1m# Vamos a determinar la accion de comprobar el cumplimiento de las politicas[0m
+job-security	check-security	2025-01-24T08:56:18.5797067Z [36;1mecho "Aquí deberemos de añadir el código del security check de la organización"[0m
+job-security	check-security	2025-01-24T08:56:18.5798076Z [36;1mKAOS_SECURITY_STATUS=$( echo "100%")[0m
+job-security	check-security	2025-01-24T08:56:18.5798892Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+job-security	check-security	2025-01-24T08:56:18.5800036Z [36;1mecho "($_timestamp) - JOB_SECURITY: $KAOS_SECURITY_STATUS" >> core/outputs/e/12946373973-823.txt[0m
+job-security	check-security	2025-01-24T08:56:18.5819887Z shell: /usr/bin/bash -e {0}
+job-security	check-security	2025-01-24T08:56:18.5820779Z env:
+job-security	check-security	2025-01-24T08:56:18.5821243Z   KAOS_MODULE: [Ka0S]
+job-security	check-security	2025-01-24T08:56:18.5822015Z   GH_TOKEN: ***
+job-security	check-security	2025-01-24T08:56:18.5822701Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-security	check-security	2025-01-24T08:56:18.5823516Z   KAOS_PATH_RESUME: core/results/
+job-security	check-security	2025-01-24T08:56:18.5824110Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-security	check-security	2025-01-24T08:56:18.5824812Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-security	check-security	2025-01-24T08:56:18.5825706Z   KAOS_STEP_MODULE: 
+job-security	check-security	2025-01-24T08:56:18.5826321Z   KAOS_CODE: 12946373973
+job-security	check-security	2025-01-24T08:56:18.5826833Z ##[endgroup]
+job-security	check-security	2025-01-24T08:56:18.6141289Z Aquí deberemos de añadir el código del security check de la organización
+job-security	Complete job	2025-01-24T08:56:18.6249743Z Cleaning up orphan processes
+job-observability	Set up job	2025-01-24T08:56:29.7897240Z Current runner version: '2.321.0'
+job-observability	Set up job	2025-01-24T08:56:29.7906329Z Runner name: 'kaos-3'
+job-observability	Set up job	2025-01-24T08:56:29.7907076Z Runner group name: 'kaos'
+job-observability	Set up job	2025-01-24T08:56:29.7907971Z Machine name: 'a6fa158ac5ea'
+job-observability	Set up job	2025-01-24T08:56:29.7911070Z ##[group]GITHUB_TOKEN Permissions
+job-observability	Set up job	2025-01-24T08:56:29.7914149Z Actions: write
+job-observability	Set up job	2025-01-24T08:56:29.7914714Z Contents: write
+job-observability	Set up job	2025-01-24T08:56:29.7915231Z Issues: write
+job-observability	Set up job	2025-01-24T08:56:29.7915924Z Metadata: read
+job-observability	Set up job	2025-01-24T08:56:29.7916556Z PullRequests: write
+job-observability	Set up job	2025-01-24T08:56:29.7917084Z ##[endgroup]
+job-observability	Set up job	2025-01-24T08:56:29.7919343Z Secret source: Actions
+job-observability	Set up job	2025-01-24T08:56:29.7920299Z Prepare workflow directory
+job-observability	Set up job	2025-01-24T08:56:29.8469073Z Prepare all required actions
+job-observability	Set up job	2025-01-24T08:56:29.8529330Z Complete job name: job-observability
+job-observability	Check Observability	2025-01-24T08:56:29.9092104Z ##[group]Run # Vamos a determinar la accion de comprobar el cumplimiento de las politicas
+job-observability	Check Observability	2025-01-24T08:56:29.9093764Z [36;1m# Vamos a determinar la accion de comprobar el cumplimiento de las politicas[0m
+job-observability	Check Observability	2025-01-24T08:56:29.9095223Z [36;1mecho "Aquí deberemos de añadir el código del observability check de la organización"[0m
+job-observability	Check Observability	2025-01-24T08:56:29.9096460Z [36;1mKAOS_OBSERVABILITY_STATUS=$( echo "100%")[0m
+job-observability	Check Observability	2025-01-24T08:56:29.9097299Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+job-observability	Check Observability	2025-01-24T08:56:29.9098532Z [36;1mecho "($_timestamp) - JOB_OBSERVABILITY: $KAOS_OBSERVABILITY_STATUS" >> core/outputs/e/12946373973-823.txt[0m
+job-observability	Check Observability	2025-01-24T08:56:29.9119337Z shell: /usr/bin/bash -e {0}
+job-observability	Check Observability	2025-01-24T08:56:29.9120588Z env:
+job-observability	Check Observability	2025-01-24T08:56:29.9121084Z   KAOS_MODULE: [Ka0S]
+job-observability	Check Observability	2025-01-24T08:56:29.9121929Z   GH_TOKEN: ***
+job-observability	Check Observability	2025-01-24T08:56:29.9122654Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-observability	Check Observability	2025-01-24T08:56:29.9123525Z   KAOS_PATH_RESUME: core/results/
+job-observability	Check Observability	2025-01-24T08:56:29.9124386Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-observability	Check Observability	2025-01-24T08:56:29.9125041Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-observability	Check Observability	2025-01-24T08:56:29.9125883Z   KAOS_STEP_MODULE: 
+job-observability	Check Observability	2025-01-24T08:56:29.9126374Z   KAOS_CODE: 12946373973
+job-observability	Check Observability	2025-01-24T08:56:29.9126911Z ##[endgroup]
+job-observability	Check Observability	2025-01-24T08:56:29.9484533Z Aquí deberemos de añadir el código del observability check de la organización
+job-observability	Complete job	2025-01-24T08:56:29.9602853Z Cleaning up orphan processes
+job-codescan	Set up job	2025-01-24T08:56:40.5773255Z Current runner version: '2.321.0'
+job-codescan	Set up job	2025-01-24T08:56:40.5780881Z Runner name: 'kaos-codescan-1'
+job-codescan	Set up job	2025-01-24T08:56:40.5781667Z Runner group name: 'kaos-codescan'
+job-codescan	Set up job	2025-01-24T08:56:40.5782591Z Machine name: '2cbadfb3a234'
+job-codescan	Set up job	2025-01-24T08:56:40.5785696Z ##[group]GITHUB_TOKEN Permissions
+job-codescan	Set up job	2025-01-24T08:56:40.5788406Z Actions: write
+job-codescan	Set up job	2025-01-24T08:56:40.5788949Z Contents: write
+job-codescan	Set up job	2025-01-24T08:56:40.5789439Z Issues: write
+job-codescan	Set up job	2025-01-24T08:56:40.5789908Z Metadata: read
+job-codescan	Set up job	2025-01-24T08:56:40.5790395Z PullRequests: write
+job-codescan	Set up job	2025-01-24T08:56:40.5790901Z ##[endgroup]
+job-codescan	Set up job	2025-01-24T08:56:40.5793421Z Secret source: Actions
+job-codescan	Set up job	2025-01-24T08:56:40.5794287Z Prepare workflow directory
+job-codescan	Set up job	2025-01-24T08:56:40.6352723Z Prepare all required actions
+job-codescan	Set up job	2025-01-24T08:56:40.6392641Z Getting action download info
+job-codescan	Set up job	2025-01-24T08:56:40.8829346Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+job-codescan	Set up job	2025-01-24T08:56:41.7375881Z Complete job name: job-codescan
+job-codescan	repo	2025-01-24T08:56:41.7907158Z ##[group]Run actions/checkout@v4
+job-codescan	repo	2025-01-24T08:56:41.7908065Z with:
+job-codescan	repo	2025-01-24T08:56:41.7908454Z   fetch-depth: 0
+job-codescan	repo	2025-01-24T08:56:41.7909110Z   token: ***
+job-codescan	repo	2025-01-24T08:56:41.7909502Z   repository: SantaKa0S/kaos
+job-codescan	repo	2025-01-24T08:56:41.7909972Z   ssh-strict: true
+job-codescan	repo	2025-01-24T08:56:41.7910371Z   ssh-user: git
+job-codescan	repo	2025-01-24T08:56:41.7910770Z   persist-credentials: true
+job-codescan	repo	2025-01-24T08:56:41.7911211Z   clean: true
+job-codescan	repo	2025-01-24T08:56:41.7911604Z   sparse-checkout-cone-mode: true
+job-codescan	repo	2025-01-24T08:56:41.7912082Z   fetch-tags: false
+job-codescan	repo	2025-01-24T08:56:41.7912480Z   show-progress: true
+job-codescan	repo	2025-01-24T08:56:41.7912886Z   lfs: false
+job-codescan	repo	2025-01-24T08:56:41.7913255Z   submodules: false
+job-codescan	repo	2025-01-24T08:56:41.7913666Z   set-safe-directory: true
+job-codescan	repo	2025-01-24T08:56:41.7914326Z env:
+job-codescan	repo	2025-01-24T08:56:41.7914700Z   KAOS_MODULE: [Ka0S]
+job-codescan	repo	2025-01-24T08:56:41.7915259Z   GH_TOKEN: ***
+job-codescan	repo	2025-01-24T08:56:41.7916293Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-codescan	repo	2025-01-24T08:56:41.7916976Z   KAOS_PATH_RESUME: core/results/
+job-codescan	repo	2025-01-24T08:56:41.7917511Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-codescan	repo	2025-01-24T08:56:41.7918058Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-codescan	repo	2025-01-24T08:56:41.7918583Z   KAOS_STEP_MODULE: 
+job-codescan	repo	2025-01-24T08:56:41.7918988Z   KAOS_CODE: 12946373973
+job-codescan	repo	2025-01-24T08:56:41.7919399Z ##[endgroup]
+job-codescan	repo	2025-01-24T08:56:41.9263224Z Syncing repository: SantaKa0S/kaos
+job-codescan	repo	2025-01-24T08:56:41.9265688Z ##[group]Getting Git version info
+job-codescan	repo	2025-01-24T08:56:41.9266483Z Working directory is '/actions-runner/_work/kaos/kaos'
+job-codescan	repo	2025-01-24T08:56:41.9267665Z [command]/usr/bin/git version
+job-codescan	repo	2025-01-24T08:56:41.9268201Z git version 2.25.1
+job-codescan	repo	2025-01-24T08:56:41.9279938Z ##[endgroup]
+job-codescan	repo	2025-01-24T08:56:41.9295001Z Temporarily overriding HOME='/actions-runner/_work/_temp/7bb4c5c9-a2aa-4a9b-9e91-d38a301be747' before making global git config changes
+job-codescan	repo	2025-01-24T08:56:41.9297998Z Adding repository directory to the temporary git global config as a safe directory
+job-codescan	repo	2025-01-24T08:56:41.9303275Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+job-codescan	repo	2025-01-24T08:56:41.9374093Z [command]/usr/bin/git config --local --get remote.origin.url
+job-codescan	repo	2025-01-24T08:56:41.9395051Z https://github.com/SantaKa0S/kaos
+job-codescan	repo	2025-01-24T08:56:41.9415243Z ##[group]Removing previously created refs, to avoid conflicts
+job-codescan	repo	2025-01-24T08:56:41.9420658Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+job-codescan	repo	2025-01-24T08:56:41.9450820Z refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-codescan	repo	2025-01-24T08:56:41.9465090Z [command]/usr/bin/git checkout --detach
+job-codescan	repo	2025-01-24T08:56:41.9531165Z HEAD is now at 23ca939 Corregimos in error de indexacion
+job-codescan	repo	2025-01-24T08:56:41.9593757Z [command]/usr/bin/git branch --delete --force H823-ka0s-init-module-failed-in-12932778824
+job-codescan	repo	2025-01-24T08:56:41.9633583Z Deleted branch H823-ka0s-init-module-failed-in-12932778824 (was 23ca939).
+job-codescan	repo	2025-01-24T08:56:41.9711022Z ##[endgroup]
+job-codescan	repo	2025-01-24T08:56:41.9719807Z [command]/usr/bin/git submodule status
+job-codescan	repo	2025-01-24T08:56:42.0055192Z ##[group]Cleaning the repository
+job-codescan	repo	2025-01-24T08:56:42.0058394Z [command]/usr/bin/git clean -ffdx
+job-codescan	repo	2025-01-24T08:56:42.0099138Z Removing trivy-report-12946300135.md
+job-codescan	repo	2025-01-24T08:56:42.0111129Z [command]/usr/bin/git reset --hard HEAD
+job-codescan	repo	2025-01-24T08:56:42.0180513Z HEAD is now at 23ca939 Corregimos in error de indexacion
+job-codescan	repo	2025-01-24T08:56:42.0190124Z ##[endgroup]
+job-codescan	repo	2025-01-24T08:56:42.0191630Z ##[group]Disabling automatic garbage collection
+job-codescan	repo	2025-01-24T08:56:42.0195921Z [command]/usr/bin/git config --local gc.auto 0
+job-codescan	repo	2025-01-24T08:56:42.0231188Z ##[endgroup]
+job-codescan	repo	2025-01-24T08:56:42.0232016Z ##[group]Setting up auth
+job-codescan	repo	2025-01-24T08:56:42.0239742Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+job-codescan	repo	2025-01-24T08:56:42.0285032Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+job-codescan	repo	2025-01-24T08:56:42.0624475Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+job-codescan	repo	2025-01-24T08:56:42.0660820Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+job-codescan	repo	2025-01-24T08:56:42.0979976Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+job-codescan	repo	2025-01-24T08:56:42.1024421Z ##[endgroup]
+job-codescan	repo	2025-01-24T08:56:42.1026502Z ##[group]Fetching the repository
+job-codescan	repo	2025-01-24T08:56:42.1034223Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+job-codescan	repo	2025-01-24T08:56:42.9458915Z From https://github.com/SantaKa0S/kaos
+job-codescan	repo	2025-01-24T08:56:42.9462794Z    23ca939..781c651  H823-ka0s-init-module-failed-in-12932778824 -> origin/H823-ka0s-init-module-failed-in-12932778824
+job-codescan	repo	2025-01-24T08:56:42.9544967Z [command]/usr/bin/git branch --list --remote origin/H823-ka0s-init-module-failed-in-12932778824
+job-codescan	repo	2025-01-24T08:56:42.9580802Z   origin/H823-ka0s-init-module-failed-in-12932778824
+job-codescan	repo	2025-01-24T08:56:42.9593277Z [command]/usr/bin/git rev-parse refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+job-codescan	repo	2025-01-24T08:56:42.9626623Z 781c651ffda732e7ba715bb4c86efb4365e9b290
+job-codescan	repo	2025-01-24T08:56:42.9643544Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +cd1337083438559b079c7765af1792d5cd558395:refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+job-codescan	repo	2025-01-24T08:56:42.9989085Z From https://github.com/SantaKa0S/kaos
+job-codescan	repo	2025-01-24T08:56:42.9992237Z  + 781c651...cd13370 cd1337083438559b079c7765af1792d5cd558395 -> origin/H823-ka0s-init-module-failed-in-12932778824  (forced update)
+job-codescan	repo	2025-01-24T08:56:43.0018160Z ##[endgroup]
+job-codescan	repo	2025-01-24T08:56:43.0019713Z ##[group]Determining the checkout info
+job-codescan	repo	2025-01-24T08:56:43.0021436Z ##[endgroup]
+job-codescan	repo	2025-01-24T08:56:43.0022996Z ##[group]Checking out the ref
+job-codescan	repo	2025-01-24T08:56:43.0026427Z [command]/usr/bin/git checkout --progress --force -B H823-ka0s-init-module-failed-in-12932778824 refs/remotes/origin/H823-ka0s-init-module-failed-in-12932778824
+job-codescan	repo	2025-01-24T08:56:43.0196693Z Previous HEAD position was 23ca939 Corregimos in error de indexacion
+job-codescan	repo	2025-01-24T08:56:43.0207272Z Switched to a new branch 'H823-ka0s-init-module-failed-in-12932778824'
+job-codescan	repo	2025-01-24T08:56:43.0210897Z Branch 'H823-ka0s-init-module-failed-in-12932778824' set up to track remote branch 'H823-ka0s-init-module-failed-in-12932778824' from 'origin'.
+job-codescan	repo	2025-01-24T08:56:43.0216565Z ##[endgroup]
+job-codescan	repo	2025-01-24T08:56:43.0261341Z [command]/usr/bin/git log -1 --format=%H
+job-codescan	repo	2025-01-24T08:56:43.0293288Z cd1337083438559b079c7765af1792d5cd558395
+job-codescan	codescan	2025-01-24T08:56:43.0559895Z ##[group]Run # Vamos a determinar la accion de comprobar el codigo de todos los filesystem
+job-codescan	codescan	2025-01-24T08:56:43.0562569Z [36;1m# Vamos a determinar la accion de comprobar el codigo de todos los filesystem[0m
+job-codescan	codescan	2025-01-24T08:56:43.0566494Z [36;1mtrivy repo /actions-runner/_work/kaos/kaos --scanners vuln,misconfig,secret,license --severity MEDIUM,HIGH,CRITICAL  --output trivy-report-12946373973.md     [0m
+job-codescan	codescan	2025-01-24T08:56:43.0582507Z shell: /usr/bin/bash -e {0}
+job-codescan	codescan	2025-01-24T08:56:43.0583567Z env:
+job-codescan	codescan	2025-01-24T08:56:43.0584359Z   KAOS_MODULE: [Ka0S]
+job-codescan	codescan	2025-01-24T08:56:43.0585842Z   GH_TOKEN: ***
+job-codescan	codescan	2025-01-24T08:56:43.0587190Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-codescan	codescan	2025-01-24T08:56:43.0588849Z   KAOS_PATH_RESUME: core/results/
+job-codescan	codescan	2025-01-24T08:56:43.0589999Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-codescan	codescan	2025-01-24T08:56:43.0591213Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-codescan	codescan	2025-01-24T08:56:43.0592427Z   KAOS_STEP_MODULE: 
+job-codescan	codescan	2025-01-24T08:56:43.0593390Z   KAOS_CODE: 12946373973
+job-codescan	codescan	2025-01-24T08:56:43.0594400Z ##[endgroup]
+job-codescan	codescan	2025-01-24T08:56:43.1260022Z 2025-01-24T08:56:43Z	INFO	[vuln] Vulnerability scanning is enabled
+job-codescan	codescan	2025-01-24T08:56:43.1261980Z 2025-01-24T08:56:43Z	INFO	[misconfig] Misconfiguration scanning is enabled
+job-codescan	codescan	2025-01-24T08:56:43.1263707Z 2025-01-24T08:56:43Z	INFO	[secret] Secret scanning is enabled
+job-codescan	codescan	2025-01-24T08:56:43.1265958Z 2025-01-24T08:56:43Z	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+job-codescan	codescan	2025-01-24T08:56:43.1269518Z 2025-01-24T08:56:43Z	INFO	[secret] Please see also https://aquasecurity.github.io/trivy/v0.58/docs/scanner/secret#recommendation for faster secret detection
+job-codescan	codescan	2025-01-24T08:56:43.1272406Z 2025-01-24T08:56:43Z	INFO	[license] License scanning is enabled
+job-codescan	codescan	2025-01-24T08:56:47.8992035Z 2025-01-24T08:56:47Z	INFO	Number of language-specific files	num=0
+job-codescan	codescan	2025-01-24T08:56:47.8994427Z 2025-01-24T08:56:47Z	INFO	Detected config files	num=2
+job-codescan	check-content-upload	2025-01-24T08:56:47.9249970Z ##[group]Run # Comprobamos el contenido del fichero generado
+job-codescan	check-content-upload	2025-01-24T08:56:47.9250514Z [36;1m# Comprobamos el contenido del fichero generado[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9250924Z [36;1mif [ -s trivy-report-12946373973.md ]; then[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9251291Z [36;1m  echo "El fichero tiene contenido"[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9251630Z [36;1m  KAOS_CODESCAN_STATUS=$(echo '0%')[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9252064Z [36;1m  echo "KAOS_CODESCAN_STATUS=$KAOS_CODESCAN_STATUS" >> $GITHUB_OUTPUT[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9252625Z [36;1m  # Añadimos a la Issue el fichero con el resultado del escaner actual[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9253128Z [36;1m  gh issue comment  823 -F trivy-report-12946373973.md[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9253489Z [36;1melse[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9253749Z [36;1m  echo "El fichero no tiene contenido"[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9254099Z [36;1m  KAOS_CODESCAN_STATUS=$(echo '100%')[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9254528Z [36;1m  echo "KAOS_CODESCAN_STATUS=$KAOS_CODESCAN_STATUS" >> $GITHUB_OUTPUT[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9254981Z [36;1mfi[0m
+job-codescan	check-content-upload	2025-01-24T08:56:47.9263666Z shell: /usr/bin/bash -e {0}
+job-codescan	check-content-upload	2025-01-24T08:56:47.9263954Z env:
+job-codescan	check-content-upload	2025-01-24T08:56:47.9264172Z   KAOS_MODULE: [Ka0S]
+job-codescan	check-content-upload	2025-01-24T08:56:47.9264864Z   GH_TOKEN: ***
+job-codescan	check-content-upload	2025-01-24T08:56:47.9265233Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-codescan	check-content-upload	2025-01-24T08:56:47.9265863Z   KAOS_PATH_RESUME: core/results/
+job-codescan	check-content-upload	2025-01-24T08:56:47.9266171Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-codescan	check-content-upload	2025-01-24T08:56:47.9266619Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-codescan	check-content-upload	2025-01-24T08:56:47.9266965Z   KAOS_STEP_MODULE: 
+job-codescan	check-content-upload	2025-01-24T08:56:47.9267220Z   KAOS_CODE: 12946373973
+job-codescan	check-content-upload	2025-01-24T08:56:47.9267474Z ##[endgroup]
+job-codescan	check-content-upload	2025-01-24T08:56:47.9301472Z El fichero no tiene contenido
+job-codescan	Post repo	2025-01-24T08:56:47.9412793Z Post job cleanup.
+job-codescan	Post repo	2025-01-24T08:56:48.0441000Z [command]/usr/bin/git version
+job-codescan	Post repo	2025-01-24T08:56:48.0483573Z git version 2.25.1
+job-codescan	Post repo	2025-01-24T08:56:48.0539777Z Temporarily overriding HOME='/actions-runner/_work/_temp/50a86190-3542-4eea-8e4d-0131b8c329b2' before making global git config changes
+job-codescan	Post repo	2025-01-24T08:56:48.0540812Z Adding repository directory to the temporary git global config as a safe directory
+job-codescan	Post repo	2025-01-24T08:56:48.0541634Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+job-codescan	Post repo	2025-01-24T08:56:48.0590071Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+job-codescan	Post repo	2025-01-24T08:56:48.0629341Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+job-codescan	Post repo	2025-01-24T08:56:48.0942166Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+job-codescan	Post repo	2025-01-24T08:56:48.0967534Z http.https://github.com/.extraheader
+job-codescan	Post repo	2025-01-24T08:56:48.0980648Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+job-codescan	Post repo	2025-01-24T08:56:48.1016758Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+job-codescan	Complete job	2025-01-24T08:56:48.1444302Z Evaluate and set job outputs
+job-codescan	Complete job	2025-01-24T08:56:48.1451160Z Set output 'KAOS_CODESCAN_STATUS'
+job-codescan	Complete job	2025-01-24T08:56:48.1453392Z Cleaning up orphan processes
+job-flows	Set up job	2025-01-24T08:56:57.7930531Z Current runner version: '2.321.0'
+job-flows	Set up job	2025-01-24T08:56:57.7938147Z Runner name: 'kaos-3'
+job-flows	Set up job	2025-01-24T08:56:57.7938841Z Runner group name: 'kaos'
+job-flows	Set up job	2025-01-24T08:56:57.7939666Z Machine name: 'a6fa158ac5ea'
+job-flows	Set up job	2025-01-24T08:56:57.7942674Z ##[group]GITHUB_TOKEN Permissions
+job-flows	Set up job	2025-01-24T08:56:57.7945479Z Actions: write
+job-flows	Set up job	2025-01-24T08:56:57.7946158Z Contents: write
+job-flows	Set up job	2025-01-24T08:56:57.7946768Z Issues: write
+job-flows	Set up job	2025-01-24T08:56:57.7947230Z Metadata: read
+job-flows	Set up job	2025-01-24T08:56:57.7947704Z PullRequests: write
+job-flows	Set up job	2025-01-24T08:56:57.7948190Z ##[endgroup]
+job-flows	Set up job	2025-01-24T08:56:57.7950268Z Secret source: Actions
+job-flows	Set up job	2025-01-24T08:56:57.7950957Z Prepare workflow directory
+job-flows	Set up job	2025-01-24T08:56:57.8509876Z Prepare all required actions
+job-flows	Set up job	2025-01-24T08:56:57.8634243Z Complete job name: job-flows
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9221083Z ##[group]Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9222426Z [36;1mecho "H - Este es el fichero implicado core/results/files-in-commit-.txt"[0m
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9223928Z [36;1mKAOS_ISSUE_BODY="[Ka0S] process H action over refs/heads/H823-ka0s-init-module-failed-in-12932778824 has been initiated by santakloud."[0m
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9226882Z [36;1mgh workflow run issue.yaml --ref refs/heads/H823-ka0s-init-module-failed-in-12932778824 -f kaos-issue-body="$KAOS_ISSUE_BODY"  -f kaos-issue-id=823 -f kaos-issue-actions=comment -f kaos-issue-body-file=core/results/files-in-commit-.txt[0m
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9229846Z [36;1mgh workflow run init.yaml  --ref refs/heads/H823-ka0s-init-module-failed-in-12932778824 -f kaos-issue-id=823 -f kaos-involved-file=core/results/files-in-commit-.txt -f kaos-user-start="santakloud"[0m
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9249788Z shell: /usr/bin/bash -e {0}
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9250635Z env:
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9251080Z   KAOS_MODULE: [Ka0S]
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9251870Z   GH_TOKEN: ***
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9252531Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9253316Z   KAOS_PATH_RESUME: core/results/
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9253895Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9254491Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9255089Z   KAOS_STEP_MODULE: 
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9255882Z   KAOS_CODE: 12946373973
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9256355Z ##[endgroup]
+job-flows	Run echo "H - Este es el fichero implicado core/results/files-in-commit-.txt"	2025-01-24T08:56:57.9416384Z H - Este es el fichero implicado core/results/files-in-commit-.txt
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2328093Z ##[group]Run KAOS_FLOWS_STATUS=$( echo "100%")
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2330040Z [36;1mKAOS_FLOWS_STATUS=$( echo "100%")[0m
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2331989Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2334396Z [36;1mecho "($_timestamp) - JOB_CODESCAN: 100%" >> core/outputs/e/12946373973-823.txt[0m
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2336896Z [36;1m_timestamp=$(TZ='Europe/Madrid' date +'%Y-%m-%d %H:%M:%S %Z')[0m
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2339395Z [36;1mecho "($_timestamp) - JOB_FLOWS: $KAOS_FLOWS_STATUS" >> core/outputs/e/12946373973-823.txt[0m
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2342452Z [36;1mgh issue comment 823 --body "La ejecución ha sido SUCCESS #823 el siguiente mensaje muestra el resultado de las operaciones"[0m
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2354200Z shell: /usr/bin/bash -e {0}
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2355482Z env:
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2356507Z   KAOS_MODULE: [Ka0S]
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2358056Z   GH_TOKEN: ***
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2359476Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2361211Z   KAOS_PATH_RESUME: core/results/
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2362479Z   KAOS_PATH_OUTPUT: core/outputs/e/
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2363827Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2365164Z   KAOS_STEP_MODULE: 
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2366334Z   KAOS_CODE: 12946373973
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:56:59.2367463Z ##[endgroup]
+job-flows	Run KAOS_FLOWS_STATUS=$( echo "100%")	2025-01-24T08:57:00.1310178Z https://github.com/SantaKa0S/kaos/issues/823#issuecomment-2611997352
+job-flows	Complete job	2025-01-24T08:57:00.1680508Z Evaluate and set job outputs
+job-flows	Complete job	2025-01-24T08:57:00.1715876Z Cleaning up orphan processes
+handle-success	Set up job	2025-01-24T08:57:09.5688160Z Current runner version: '2.321.0'
+handle-success	Set up job	2025-01-24T08:57:09.5696099Z Runner name: 'kaos-3'
+handle-success	Set up job	2025-01-24T08:57:09.5696960Z Runner group name: 'kaos'
+handle-success	Set up job	2025-01-24T08:57:09.5697868Z Machine name: 'a6fa158ac5ea'
+handle-success	Set up job	2025-01-24T08:57:09.5701033Z ##[group]GITHUB_TOKEN Permissions
+handle-success	Set up job	2025-01-24T08:57:09.5703763Z Actions: write
+handle-success	Set up job	2025-01-24T08:57:09.5704312Z Contents: write
+handle-success	Set up job	2025-01-24T08:57:09.5704796Z Issues: write
+handle-success	Set up job	2025-01-24T08:57:09.5705254Z Metadata: read
+handle-success	Set up job	2025-01-24T08:57:09.5706232Z PullRequests: write
+handle-success	Set up job	2025-01-24T08:57:09.5706734Z ##[endgroup]
+handle-success	Set up job	2025-01-24T08:57:09.5708952Z Secret source: Actions
+handle-success	Set up job	2025-01-24T08:57:09.5709666Z Prepare workflow directory
+handle-success	Set up job	2025-01-24T08:57:09.6368869Z Prepare all required actions
+handle-success	Set up job	2025-01-24T08:57:09.6429367Z Complete job name: handle-success
+handle-success	handle-success-execution	2025-01-24T08:57:09.7046627Z ##[group]Run # Si todo ha ido correcto añadimos el contenido del fichero 
+handle-success	handle-success-execution	2025-01-24T08:57:09.7048203Z [36;1m# Si todo ha ido correcto añadimos el contenido del fichero [0m
+handle-success	handle-success-execution	2025-01-24T08:57:09.7049192Z [36;1mgh issue comment 823 --body-file "core/outputs/e/12946373973-823.txt"[0m
+handle-success	handle-success-execution	2025-01-24T08:57:09.7074728Z shell: /usr/bin/bash -e {0}
+handle-success	handle-success-execution	2025-01-24T08:57:09.7076018Z env:
+handle-success	handle-success-execution	2025-01-24T08:57:09.7076512Z   KAOS_MODULE: [Ka0S]
+handle-success	handle-success-execution	2025-01-24T08:57:09.7077358Z   GH_TOKEN: ***
+handle-success	handle-success-execution	2025-01-24T08:57:09.7078091Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+handle-success	handle-success-execution	2025-01-24T08:57:09.7079078Z   KAOS_PATH_RESUME: core/results/
+handle-success	handle-success-execution	2025-01-24T08:57:09.7079690Z   KAOS_PATH_OUTPUT: core/outputs/e/
+handle-success	handle-success-execution	2025-01-24T08:57:09.7080341Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+handle-success	handle-success-execution	2025-01-24T08:57:09.7081001Z   KAOS_STEP_MODULE: 
+handle-success	handle-success-execution	2025-01-24T08:57:09.7081509Z   KAOS_CODE: 12946373973
+handle-success	handle-success-execution	2025-01-24T08:57:09.7082027Z ##[endgroup]
+handle-success	handle-success-execution	2025-01-24T08:57:10.6257580Z https://github.com/SantaKa0S/kaos/issues/823#issuecomment-2611997676
+handle-success	Complete job	2025-01-24T08:57:10.6740504Z Cleaning up orphan processes
+end-workflow	Set up job	2025-01-24T08:57:20.5311265Z Current runner version: '2.321.0'
+end-workflow	Set up job	2025-01-24T08:57:20.5319554Z Runner name: 'kaos-execution-4'
+end-workflow	Set up job	2025-01-24T08:57:20.5320364Z Runner group name: 'kaos-execution'
+end-workflow	Set up job	2025-01-24T08:57:20.5321322Z Machine name: 'aaeee0098231'
+end-workflow	Set up job	2025-01-24T08:57:20.5324177Z ##[group]GITHUB_TOKEN Permissions
+end-workflow	Set up job	2025-01-24T08:57:20.5327537Z Actions: write
+end-workflow	Set up job	2025-01-24T08:57:20.5328075Z Contents: write
+end-workflow	Set up job	2025-01-24T08:57:20.5328549Z Issues: write
+end-workflow	Set up job	2025-01-24T08:57:20.5328997Z Metadata: read
+end-workflow	Set up job	2025-01-24T08:57:20.5329472Z PullRequests: write
+end-workflow	Set up job	2025-01-24T08:57:20.5329961Z ##[endgroup]
+end-workflow	Set up job	2025-01-24T08:57:20.5332391Z Secret source: Actions
+end-workflow	Set up job	2025-01-24T08:57:20.5333235Z Prepare workflow directory
+end-workflow	Set up job	2025-01-24T08:57:20.5981388Z Prepare all required actions
+end-workflow	Set up job	2025-01-24T08:57:20.6055215Z Complete job name: end-workflow
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6797054Z ##[group]Run echo "End process"
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6798518Z [36;1mecho "End process"[0m
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6800270Z [36;1mgh workflow run inspector.yaml --ref refs/heads/H823-ka0s-init-module-failed-in-12932778824 -f kaos-issue-id="" -f kaos-workflow-id="12946373973" -f kaos-user-start="santakloud"[0m
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6838452Z shell: /usr/bin/bash -e {0}
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6840140Z env:
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6840689Z   KAOS_MODULE: [Ka0S]
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6841656Z   GH_TOKEN: ***
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6842459Z   BRANCH_NAME: refs/heads/H823-ka0s-init-module-failed-in-12932778824
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6843448Z   KAOS_PATH_RESUME: core/results/
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6844217Z   KAOS_PATH_OUTPUT: core/outputs/e/
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6845038Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6848304Z   KAOS_STEP_MODULE: 
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6849017Z   KAOS_CODE: 12946373973
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.6849634Z ##[endgroup]
+end-workflow	Finaliza el workflow	2025-01-24T08:57:20.7419444Z End process
+end-workflow	Complete job	2025-01-24T08:57:21.5800924Z Cleaning up orphan processes
