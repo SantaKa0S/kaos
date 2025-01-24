@@ -1,6 +1,2386 @@
 [
   [
     {
+      "additions": 5482,
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "autoMergeRequest": null,
+      "baseRefName": "main",
+      "body": "update and upgrade inspector module",
+      "changedFiles": 148,
+      "closed": true,
+      "closedAt": "2025-01-23T15:31:49Z",
+      "comments": [],
+      "commits": [
+        {
+          "authoredDate": "2025-01-23T08:44:23Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T08:44:23Z",
+          "messageBody": "",
+          "messageHeadline": "Primera version de inspector",
+          "oid": "3d137649bf9cfd2888647a3116a0bf082dd2ffe3"
+        },
+        {
+          "authoredDate": "2025-01-23T08:49:01Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T08:49:01Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de inspector",
+          "oid": "dd2f4f541e5a7c4ea1108d60134bda8d5564a672"
+        },
+        {
+          "authoredDate": "2025-01-23T08:53:21Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T08:53:21Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de inspector",
+          "oid": "28b91df58b968d775cd9f1a7661326ba37b4fe23"
+        },
+        {
+          "authoredDate": "2025-01-23T08:55:01Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T08:55:01Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de inspector",
+          "oid": "beb7c2f1c322c9df670a64d0a889297984b05cc6"
+        },
+        {
+          "authoredDate": "2025-01-23T08:57:21Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T08:57:21Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de inspector",
+          "oid": "dd64bfba784a696979a31eed6022378f47ae5037"
+        },
+        {
+          "authoredDate": "2025-01-23T09:01:47Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T09:01:47Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de inspector",
+          "oid": "812d5f22defc46778419f77518f961565ba8dafc"
+        },
+        {
+          "authoredDate": "2025-01-23T09:02:24Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T09:02:24Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de inspector",
+          "oid": "27a3f2c3f604d865a064d7f70bccbf17a35d2ef7"
+        },
+        {
+          "authoredDate": "2025-01-23T09:04:43Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T09:04:43Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de inspector",
+          "oid": "eb6ad42f6b8f866bad479522fefae32f4551a368"
+        },
+        {
+          "authoredDate": "2025-01-23T09:07:41Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T09:07:41Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de inspector",
+          "oid": "c8a6b034a74b28ad4b2773801a4d1795588a4649"
+        },
+        {
+          "authoredDate": "2025-01-23T09:45:32Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T09:45:32Z",
+          "messageBody": "",
+          "messageHeadline": "Añadimos la funcionalidad de inspector",
+          "oid": "0c989dbf968abe016827eee346e713efc0643076"
+        },
+        {
+          "authoredDate": "2025-01-23T09:47:14Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T09:47:14Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "9cb17df0fb26a1820fc84e8e6d9c294f38583d05"
+        },
+        {
+          "authoredDate": "2025-01-23T09:48:58Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T09:48:58Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "a0f1d3239df92172dca34bc6adc479e662a6fff0"
+        },
+        {
+          "authoredDate": "2025-01-23T09:49:11Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T09:49:11Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "89de8383f76f520befd239fad76699cf8e19657d"
+        },
+        {
+          "authoredDate": "2025-01-23T10:41:05Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T10:41:05Z",
+          "messageBody": "",
+          "messageHeadline": "Corregimos una asignacion de usuario mal concebida",
+          "oid": "c978cf6babe6abe73dbb378065b304965c4914a3"
+        },
+        {
+          "authoredDate": "2025-01-23T10:46:50Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:46:50Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "cebd6c1ba165f0e382e9f273a1cd7f90837cf8c7"
+        },
+        {
+          "authoredDate": "2025-01-23T10:48:36Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:48:36Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "86ec783738d2fa1c0d9c587943fd249fc13c1136"
+        },
+        {
+          "authoredDate": "2025-01-23T10:48:48Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:48:48Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "22d93842f3a9f91a6514627ee40131a9f9c8e213"
+        },
+        {
+          "authoredDate": "2025-01-23T10:49:05Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:49:05Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "a386c39701c350744f015b7ff3c91bee4c1fa2b3"
+        },
+        {
+          "authoredDate": "2025-01-23T10:49:22Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:49:22Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "98ccf77708b3728abdb109d563cbab81902de6d6"
+        },
+        {
+          "authoredDate": "2025-01-23T10:49:34Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:49:34Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "3d83b17302375d8c4feb92a5602e1c8e61de2e68"
+        },
+        {
+          "authoredDate": "2025-01-23T10:50:40Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:50:40Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "aba3fcb404cac7fb4448d4846ee62af5de5f5da9"
+        },
+        {
+          "authoredDate": "2025-01-23T10:50:53Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:50:53Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "5dd8165b9c2d8b2f66e00340945f5378535bb066"
+        },
+        {
+          "authoredDate": "2025-01-23T10:51:08Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:51:08Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "0da4d496363bc68aa4fd8bd5c43a1eb990e2b340"
+        },
+        {
+          "authoredDate": "2025-01-23T10:51:20Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:51:20Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "6c6a613a87da045b9170ce282571bf6492904807"
+        },
+        {
+          "authoredDate": "2025-01-23T10:51:37Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:51:37Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "e6e58d16261eaf407c3354c09caa17539504ac8f"
+        },
+        {
+          "authoredDate": "2025-01-23T10:51:48Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:51:48Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "0bc481d1881d4f339ae0d7cb45b9bdbd185c43c2"
+        },
+        {
+          "authoredDate": "2025-01-23T10:52:04Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:52:04Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "62da8698034067962dad803eea627507f827af36"
+        },
+        {
+          "authoredDate": "2025-01-23T10:52:16Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:52:16Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "48398135894add616f883ba54ffaa053e242c4b6"
+        },
+        {
+          "authoredDate": "2025-01-23T10:52:32Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:52:32Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "49c032eed24e5b20a5b973356b8ae3bc9f7aa5f0"
+        },
+        {
+          "authoredDate": "2025-01-23T10:52:43Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:52:43Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "8e835d0e6cfd0661c207c8e73c1ac6444b290a8e"
+        },
+        {
+          "authoredDate": "2025-01-23T10:53:00Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:53:00Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "aab66c287f1a29182cdc80475497cbbebd55903f"
+        },
+        {
+          "authoredDate": "2025-01-23T10:53:10Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:53:10Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "00b3e8f26e02b8ba5cdcb0a45ec669edc8c91d22"
+        },
+        {
+          "authoredDate": "2025-01-23T10:53:29Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:53:29Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "529427162e690bf87337fb315961591e533d0d5e"
+        },
+        {
+          "authoredDate": "2025-01-23T10:53:38Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:53:38Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "779ccfa4b21c97798fff2f08f987bb4feff17cc1"
+        },
+        {
+          "authoredDate": "2025-01-23T10:53:56Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:53:56Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "38303772f8982c5fd90fde776f7663f8c28c2774"
+        },
+        {
+          "authoredDate": "2025-01-23T10:54:06Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:54:06Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "ae8eb6f8c77fe13f862784f949816d2fe1c2d0af"
+        },
+        {
+          "authoredDate": "2025-01-23T10:54:24Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:54:24Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "cf2f4dd02b071e49bcb00dbf66acbb10d040b652"
+        },
+        {
+          "authoredDate": "2025-01-23T10:54:33Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:54:33Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "3ed78c7b6e8cbd069760bea36d08ebb60e2a09fa"
+        },
+        {
+          "authoredDate": "2025-01-23T10:54:48Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:54:48Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "b6c478fa7821ff14e72a9e379026234c8f8b0822"
+        },
+        {
+          "authoredDate": "2025-01-23T10:54:56Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:54:56Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "0c8e944e9810317f4ea287a3fcd58d49607eb6ce"
+        },
+        {
+          "authoredDate": "2025-01-23T10:55:11Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:55:11Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "3311b3af4bcd8eddc3b35bed2e74e13041fc7683"
+        },
+        {
+          "authoredDate": "2025-01-23T10:55:21Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:55:21Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "52d43ab8814e2b3dbe7d0ab149bf808e218be06d"
+        },
+        {
+          "authoredDate": "2025-01-23T10:55:34Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:55:34Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "0a67d7493403a063ab38cbce53a0a93bd28523d6"
+        },
+        {
+          "authoredDate": "2025-01-23T10:55:44Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:55:44Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "3c786d7185ee86aa96c69cfb37cc61f84f34a79a"
+        },
+        {
+          "authoredDate": "2025-01-23T10:55:58Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:55:58Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "774f692a211c9879c9b7ea01bf5d4ec49a0aec4a"
+        },
+        {
+          "authoredDate": "2025-01-23T10:56:07Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:56:07Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "7617f2d0e43faf529b305539be5e257d56a090e6"
+        },
+        {
+          "authoredDate": "2025-01-23T10:56:21Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:56:21Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "9e777cee7da93562c1a5b808468b8f504400efb9"
+        },
+        {
+          "authoredDate": "2025-01-23T10:56:30Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:56:30Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "6b1b8b797def02c6efdaa0ea63d7a2478aabd907"
+        },
+        {
+          "authoredDate": "2025-01-23T10:56:43Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:56:43Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "18dea70fc58d6dc6df269e3cee636c944aea94ca"
+        },
+        {
+          "authoredDate": "2025-01-23T10:56:53Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:56:53Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "2798b22edfd806e7a5383258931aec10aa556ca5"
+        },
+        {
+          "authoredDate": "2025-01-23T10:57:06Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:57:06Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "c230fa08e03f5eff845b71c189bc255d8ad3ccf4"
+        },
+        {
+          "authoredDate": "2025-01-23T10:57:15Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:57:15Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "2c64b46e5a9a9fca7ff15308d48fa70e5c63316d"
+        },
+        {
+          "authoredDate": "2025-01-23T10:57:29Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:57:29Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "564f7a0d1cb3c7785fc058fbbfdd6e44007915ea"
+        },
+        {
+          "authoredDate": "2025-01-23T10:57:37Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:57:37Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "a8794d590bc4787f6f14d4a794fa10adb3e56a42"
+        },
+        {
+          "authoredDate": "2025-01-23T10:57:51Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:57:51Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "ae67b2d0bd7fe3362b139565fad82906d6c4e72d"
+        },
+        {
+          "authoredDate": "2025-01-23T10:58:00Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:58:00Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "79af6908d33492ddc8b4d7c2c6b56b0d6ca2048f"
+        },
+        {
+          "authoredDate": "2025-01-23T10:58:15Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:58:15Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "32000a02cb16a70fa0adbc287926b5db54b82da8"
+        },
+        {
+          "authoredDate": "2025-01-23T10:58:23Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:58:23Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "a283db59f868d1fb5e3587982f7917b05d313be6"
+        },
+        {
+          "authoredDate": "2025-01-23T10:58:37Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:58:37Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "c8cdb6cb64ad316102c8bfb52e9f9c0808c65a0e"
+        },
+        {
+          "authoredDate": "2025-01-23T10:58:46Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:58:46Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "c0bc866bf912b8374b79f636434e90ca088c9507"
+        },
+        {
+          "authoredDate": "2025-01-23T10:59:00Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:59:00Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "b2ddb0c69642bb082db6ad63744ed1aa74af4ad8"
+        },
+        {
+          "authoredDate": "2025-01-23T10:59:10Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:59:10Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "cbb39810f03faa6afe1abb5278f60229ddc018ad"
+        },
+        {
+          "authoredDate": "2025-01-23T10:59:23Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:59:23Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "4ba022f199619d0086e8b16303cf3556d01dfd46"
+        },
+        {
+          "authoredDate": "2025-01-23T10:59:33Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T10:59:33Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "1c9733f9549f22dd5714469dbba97f565b753a5e"
+        },
+        {
+          "authoredDate": "2025-01-23T11:02:59Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T11:02:59Z",
+          "messageBody": "",
+          "messageHeadline": "Evitamos que inspector se lance por eventos generados en commit de kaos",
+          "oid": "16b232cfaf5f88dd912a30de869d05e8d123a191"
+        },
+        {
+          "authoredDate": "2025-01-23T11:03:19Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:03:19Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "e937a309e2476d9365d35eda38a7b10a714448a3"
+        },
+        {
+          "authoredDate": "2025-01-23T11:08:47Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T11:08:47Z",
+          "messageBody": "",
+          "messageHeadline": "Cambiamos la asignacion del valor a la variable",
+          "oid": "177a98c1222076fbcb138684dc10c937aef51f18"
+        },
+        {
+          "authoredDate": "2025-01-23T11:09:14Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:09:14Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "9ede0d5ab7b713bab7c0952aa42c5ad5ea744500"
+        },
+        {
+          "authoredDate": "2025-01-23T11:11:54Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T11:11:54Z",
+          "messageBody": "",
+          "messageHeadline": "No esta colocada la excepcion correctamente",
+          "oid": "c69292fb97ed21222157b320f66d92360f6c1d66"
+        },
+        {
+          "authoredDate": "2025-01-23T11:12:11Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:12:11Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "610eb85c00d49e86518bf2864c32ad98094a30d0"
+        },
+        {
+          "authoredDate": "2025-01-23T11:13:49Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:13:49Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "723bbe826a5476ab76437d409c1f88da4a52db2d"
+        },
+        {
+          "authoredDate": "2025-01-23T11:13:59Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:13:59Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "599ce4b59191b112439ce2245834ef8d2555c9d9"
+        },
+        {
+          "authoredDate": "2025-01-23T11:14:14Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:14:14Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "9170f0c3621c05109cf563d17458b47607d3ad1e"
+        },
+        {
+          "authoredDate": "2025-01-23T11:14:23Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:14:23Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "9026c865b831aee23ad7503f4a6340f78eefc5ea"
+        },
+        {
+          "authoredDate": "2025-01-23T11:14:33Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T11:14:33Z",
+          "messageBody": "",
+          "messageHeadline": "Corregimos el ultimo error detectado",
+          "oid": "dab2b66aaf50652e7adc9f30290a02f7487eeefd"
+        },
+        {
+          "authoredDate": "2025-01-23T11:14:37Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:14:37Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "120adcdd56ce1c6f5d69a354e2262151e9cd899f"
+        },
+        {
+          "authoredDate": "2025-01-23T11:14:43Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T11:14:43Z",
+          "messageBody": "…0S/kaos into H633-modulo-de-execution",
+          "messageHeadline": "Merge branch 'H633-modulo-de-execution' of https://github.com/SantaKa…",
+          "oid": "54ede54498d80203014009e14745d5852f5e4c43"
+        },
+        {
+          "authoredDate": "2025-01-23T11:14:47Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:14:47Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "296ac63d1495395db0d575b4388a5050d1fa318e"
+        },
+        {
+          "authoredDate": "2025-01-23T11:15:02Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:15:02Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "dde92d2a962ec0f024d52b65b939043a94db9c4f"
+        },
+        {
+          "authoredDate": "2025-01-23T11:15:11Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:15:11Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "55868c7a4eac22f54b3e2b55297db867e86c7e87"
+        },
+        {
+          "authoredDate": "2025-01-23T11:15:25Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:15:25Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "c58a08359de3a67faa48203b880073d9e7a94d75"
+        },
+        {
+          "authoredDate": "2025-01-23T11:15:34Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:15:34Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "a8272f852fd938cbe772dd1f6df8881a2cdab847"
+        },
+        {
+          "authoredDate": "2025-01-23T11:15:48Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:15:48Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "b04a86410e59715531a85c9b7fb461e8662ce999"
+        },
+        {
+          "authoredDate": "2025-01-23T11:15:58Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:15:58Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "ece981752ae1553045ee8cc352fd27127b735150"
+        },
+        {
+          "authoredDate": "2025-01-23T11:16:11Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:16:11Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "ce2ebd27a2fc9743fb3c6424be33b276e39b726f"
+        },
+        {
+          "authoredDate": "2025-01-23T11:19:46Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T11:19:46Z",
+          "messageBody": "…0S/kaos into H633-modulo-de-execution",
+          "messageHeadline": "Merge branch 'H633-modulo-de-execution' of https://github.com/SantaKa…",
+          "oid": "52863472c55119e4023c2c89d6ab996fe6d17454"
+        },
+        {
+          "authoredDate": "2025-01-23T11:20:43Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T11:20:43Z",
+          "messageBody": "…ector e issue",
+          "messageHeadline": "Añadimos el evento que evita el ciclo de llamar recursivamente a insp…",
+          "oid": "b2fa656edb8cac0d0fbc0c9d0e135f49b8aa9df9"
+        },
+        {
+          "authoredDate": "2025-01-23T11:21:00Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:21:00Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "08b5d34aa8dab9def03a2f3c604b1c397802bc17"
+        },
+        {
+          "authoredDate": "2025-01-23T11:22:27Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:22:27Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "b36bae98d14acebe270fd605b1bf2ac32e414987"
+        },
+        {
+          "authoredDate": "2025-01-23T11:22:38Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:22:38Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "b41de099fedf60d18064ca5701e7f2eaea660f9b"
+        },
+        {
+          "authoredDate": "2025-01-23T11:22:49Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:22:49Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "ff660a9933e02d582238e4d9b092e787eedbcf85"
+        },
+        {
+          "authoredDate": "2025-01-23T11:27:39Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T11:27:39Z",
+          "messageBody": "…de ellas",
+          "messageHeadline": "Referenciamos correctamente la variable despues de una normalizacion …",
+          "oid": "e65f961c4c80de6bd4a1d59e9f8f5dd6fe837282"
+        },
+        {
+          "authoredDate": "2025-01-23T11:28:00Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:28:00Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "62999e09227333b16f825e0786c545c24420efda"
+        },
+        {
+          "authoredDate": "2025-01-23T11:29:25Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:29:25Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "3e4cb042bf2c20adc23746020325d9af50930cbb"
+        },
+        {
+          "authoredDate": "2025-01-23T11:29:45Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T11:29:45Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] Uploading resume execution files to the repository...",
+          "oid": "385fe5e781cb2697f9fed5343f2ce7fb323192a5"
+        }
+      ],
+      "createdAt": "2025-01-23T15:27:04Z",
+      "deletions": 94,
+      "files": [
+        {
+          "path": ".github/workflows/init.yaml",
+          "additions": 15,
+          "deletions": 9
+        },
+        {
+          "path": ".github/workflows/inspector.yaml",
+          "additions": 2,
+          "deletions": 2
+        },
+        {
+          "path": ".github/workflows/issue.yaml",
+          "additions": 11,
+          "deletions": 2
+        },
+        {
+          "path": ".github/workflows/jsonlint.yaml",
+          "additions": 18,
+          "deletions": 16
+        },
+        {
+          "path": ".github/workflows/ka0s.yaml",
+          "additions": 22,
+          "deletions": 12
+        },
+        {
+          "path": ".github/workflows/mdlint.yaml",
+          "additions": 18,
+          "deletions": 16
+        },
+        {
+          "path": ".github/workflows/version.yaml",
+          "additions": 14,
+          "deletions": 17
+        },
+        {
+          "path": ".github/workflows/yamllint.yaml",
+          "additions": 18,
+          "deletions": 16
+        },
+        {
+          "path": "core/outputs/e/12926509201.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12926509201.log",
+          "additions": 276,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12926516543.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12926516543.log",
+          "additions": 239,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927554529.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927554529.log",
+          "additions": 277,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927561509.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927561509.log",
+          "additions": 240,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927568970.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927568970.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927573290.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927573290.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927577540.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927577540.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927581715.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927581715.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927585251.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927585251.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927603439.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927603439.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927606472.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927606472.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927611018.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927611018.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927614331.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927614331.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927618084.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927618084.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927621365.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927621365.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927624946.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927624946.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927628407.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927628407.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927632188.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927632188.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927635149.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927635149.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927639944.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927639944.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927642279.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927642279.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927647527.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927647527.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927649641.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927649641.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927654180.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927654180.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927656943.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927656943.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927661343.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927661343.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927663926.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927663926.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927667405.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927667405.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927669475.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927669475.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927673927.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927673927.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927676252.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927676252.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927680037.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927680037.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927682491.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927682491.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927685588.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927685588.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927687883.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927687883.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927690966.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927690966.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927692789.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927692789.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927696454.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927696454.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927698765.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927698765.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927701744.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927701744.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927704106.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927704106.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927707393.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927707393.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927709267.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927709267.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927712991.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927712991.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927715170.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927715170.log",
+          "additions": 31,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927718760.json",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/outputs/e/12927718760.log",
+          "additions": 31,
+          "deletions": 0
+        }
+      ],
+      "fullDatabaseId": "2294762909",
+      "headRefName": "H633-modulo-de-execution",
+      "headRefOid": "385fe5e781cb2697f9fed5343f2ce7fb323192a5",
+      "headRepository": {
+        "id": "R_kgDONP0GLw",
+        "name": "kaos"
+      },
+      "headRepositoryOwner": {
+        "id": "O_kgDOCyRQmA",
+        "login": "SantaKa0S"
+      },
+      "id": "PR_kwDONP0GL86Ix02d",
+      "isCrossRepository": false,
+      "isDraft": false,
+      "labels": [],
+      "latestReviews": [],
+      "maintainerCanModify": false,
+      "mergeCommit": {
+        "oid": "f6e59777e63faaa32b477275c183bcc97d6b318c"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergeable": "UNKNOWN",
+      "mergedAt": "2025-01-23T15:31:49Z",
+      "mergedBy": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "milestone": null,
+      "number": 821,
+      "potentialMergeCommit": null,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "reviewDecision": "",
+      "reviewRequests": [],
+      "reviews": [],
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T11:29:48Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12928244275/job/36055101324",
+          "name": "job-core",
+          "startedAt": "2025-01-23T11:29:48Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T15:28:43Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12932474314/job/36068791544",
+          "name": "Analyze (actions)",
+          "startedAt": "2025-01-23T15:27:15Z",
+          "status": "COMPLETED",
+          "workflowName": "CodeQL"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T11:29:48Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12928244275/job/36055101766",
+          "name": "job-compliance",
+          "startedAt": "2025-01-23T11:29:48Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T11:29:49Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12928244275/job/36055102084",
+          "name": "job-security",
+          "startedAt": "2025-01-23T11:29:49Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T11:29:49Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12928244275/job/36055102373",
+          "name": "job-observability",
+          "startedAt": "2025-01-23T11:29:49Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T11:29:50Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12928244275/job/36055102621",
+          "name": "job-codescan",
+          "startedAt": "2025-01-23T11:29:50Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T11:29:50Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12928244275/job/36055102923",
+          "name": "job-flows",
+          "startedAt": "2025-01-23T11:29:50Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T11:29:51Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12928244275/job/36055103597",
+          "name": "handle-success",
+          "startedAt": "2025-01-23T11:29:51Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T11:29:50Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12928244275/job/36055103309",
+          "name": "handle_failure",
+          "startedAt": "2025-01-23T11:29:50Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T11:29:51Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12928244275/job/36055103907",
+          "name": "end-workflow",
+          "startedAt": "2025-01-23T11:29:51Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T15:28:19Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://app.codacy.com/gh/SantaKa0S/kaos/pull-requests/821",
+          "name": "Codacy Static Code Analysis",
+          "startedAt": "2025-01-23T15:28:19Z",
+          "status": "COMPLETED",
+          "workflowName": ""
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T15:28:34Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/runs/36068881304",
+          "name": "CodeQL",
+          "startedAt": "2025-01-23T15:28:31Z",
+          "status": "COMPLETED",
+          "workflowName": ""
+        }
+      ],
+      "title": "H633 modulo de execution",
+      "updatedAt": "2025-01-23T15:31:49Z",
+      "url": "https://github.com/SantaKa0S/kaos/pull/821"
+    },
+    {
+      "additions": 18,
+      "assignees": [],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "autoMergeRequest": null,
+      "baseRefName": "main",
+      "body": "Version inicial de inspector a produccion funcionando",
+      "changedFiles": 5,
+      "closed": true,
+      "closedAt": "2025-01-23T08:43:49Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bhNTH",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] VERSION ha generado una nueva versión con el tag v1.0.35. Esta todo dispuesto para realizar *MERGE* del código.",
+          "createdAt": "2025-01-23T08:40:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/pull/813#issuecomment-2609173703",
+          "viewerDidAuthor": true
+        }
+      ],
+      "commits": [
+        {
+          "authoredDate": "2025-01-23T08:36:56Z",
+          "authors": [
+            {
+              "email": "santacana.canton@icloud.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "santakloud"
+            }
+          ],
+          "committedDate": "2025-01-23T08:36:56Z",
+          "messageBody": "…l acto",
+          "messageHeadline": "Añadimos el toque de que si falla el inspector registre en la issue e…",
+          "oid": "50a042c2c5139c501f1ba1e5a8a4b26a5c516e25"
+        },
+        {
+          "authoredDate": "2025-01-23T08:37:15Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T08:37:15Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
+          "oid": "f19ca3ae5717deaf5cf0ea41ce80b09358c928e1"
+        },
+        {
+          "authoredDate": "2025-01-23T08:40:21Z",
+          "authors": [
+            {
+              "email": "73332898+santakloud@users.noreply.github.com",
+              "id": "MDQ6VXNlcjczMzMyODk4",
+              "login": "santakloud",
+              "name": "SantaKloud"
+            }
+          ],
+          "committedDate": "2025-01-23T08:40:21Z",
+          "messageBody": "…6e827fe60aa9f5231ccec97",
+          "messageHeadline": "Merge f19ca3ae5717deaf5cf0ea41ce80b09358c928e1 into 4bb84258eef7a2253…",
+          "oid": "8da1a54a7b8f27e3aba0ef10b4b1bf60f6752a49"
+        },
+        {
+          "authoredDate": "2025-01-23T08:40:33Z",
+          "authors": [
+            {
+              "email": "github-actions[bot]@users.noreply.github.com",
+              "id": "MDM6Qm90NDE4OTgyODI=",
+              "login": "github-actions[bot]",
+              "name": "github-actions[bot]"
+            }
+          ],
+          "committedDate": "2025-01-23T08:40:33Z",
+          "messageBody": "",
+          "messageHeadline": "[Ka0S] VERSION  Upload: CHANGELOG.md, INDEX.md with version 1.0.35",
+          "oid": "de18a0264e2102474d2542c5968018eca0d966ca"
+        }
+      ],
+      "createdAt": "2025-01-23T08:40:18Z",
+      "deletions": 5,
+      "files": [
+        {
+          "path": ".github/workflows/inspector.yaml",
+          "additions": 2,
+          "deletions": 1
+        },
+        {
+          "path": "CHANGELOG.md",
+          "additions": 11,
+          "deletions": 0
+        },
+        {
+          "path": "INDEX.md",
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "path": "core/results/commit-summary-.txt",
+          "additions": 3,
+          "deletions": 3
+        },
+        {
+          "path": "version.txt",
+          "additions": 1,
+          "deletions": 1
+        }
+      ],
+      "fullDatabaseId": "2293921895",
+      "headRefName": "H633-modulo-de-execution",
+      "headRefOid": "de18a0264e2102474d2542c5968018eca0d966ca",
+      "headRepository": {
+        "id": "R_kgDONP0GLw",
+        "name": "kaos"
+      },
+      "headRepositoryOwner": {
+        "id": "O_kgDOCyRQmA",
+        "login": "SantaKa0S"
+      },
+      "id": "PR_kwDONP0GL86Iunhn",
+      "isCrossRepository": false,
+      "isDraft": false,
+      "labels": [],
+      "latestReviews": [],
+      "maintainerCanModify": false,
+      "mergeCommit": {
+        "oid": "86fae4056ba07df068f95c0e00f7bd89fe9f0e1f"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergeable": "UNKNOWN",
+      "mergedAt": "2025-01-23T08:43:49Z",
+      "mergedBy": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "milestone": null,
+      "number": 813,
+      "potentialMergeCommit": null,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "reviewDecision": "",
+      "reviewRequests": [],
+      "reviews": [],
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:40:38Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12925354712/job/36046140840",
+          "name": "job-core",
+          "startedAt": "2025-01-23T08:40:38Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:42:15Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12925354708/job/36046141227",
+          "name": "Analyze (actions)",
+          "startedAt": "2025-01-23T08:40:44Z",
+          "status": "COMPLETED",
+          "workflowName": "CodeQL"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:40:40Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12925354712/job/36046142408",
+          "name": "job-compliance",
+          "startedAt": "2025-01-23T08:40:40Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:40:39Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12925354712/job/36046142078",
+          "name": "job-security",
+          "startedAt": "2025-01-23T08:40:39Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:40:39Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12925354712/job/36046141688",
+          "name": "job-observability",
+          "startedAt": "2025-01-23T08:40:39Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:40:40Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12925354712/job/36046142743",
+          "name": "job-codescan",
+          "startedAt": "2025-01-23T08:40:40Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:40:41Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12925354712/job/36046143330",
+          "name": "job-flows",
+          "startedAt": "2025-01-23T08:40:41Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:40:42Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12925354712/job/36046144380",
+          "name": "handle-success",
+          "startedAt": "2025-01-23T08:40:42Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:40:42Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12925354712/job/36046143983",
+          "name": "handle_failure",
+          "startedAt": "2025-01-23T08:40:42Z",
+          "status": "COMPLETED",
+          "workflowName": "Ka0S"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2025-01-23T08:42:08Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/SantaKa0S/kaos/runs/36046214718",
+          "name": "CodeQL",
+          "startedAt": "2025-01-23T08:42:06Z",
+          "status": "COMPLETED",
+          "workflowName": ""
+        }
+      ],
+      "title": "H633 modulo de execution",
+      "updatedAt": "2025-01-23T08:43:50Z",
+      "url": "https://github.com/SantaKa0S/kaos/pull/813"
+    },
+    {
       "additions": 19,
       "assignees": [],
       "author": {
@@ -8571,612 +10951,6 @@
       "title": "H633 modulo de execution",
       "updatedAt": "2025-01-20T11:52:39Z",
       "url": "https://github.com/SantaKa0S/kaos/pull/725"
-    },
-    {
-      "additions": 23,
-      "assignees": [],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "autoMergeRequest": null,
-      "baseRefName": "main",
-      "body": "update",
-      "changedFiles": 7,
-      "closed": true,
-      "closedAt": "2025-01-20T11:21:34Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86bGbLv",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "[Ka0S] VERSION ha generado una nueva versión con el tag v1.0.7. Esta todo dispuesto para realizar *MERGE* del código.",
-          "createdAt": "2025-01-20T11:19:58Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/pull/701#issuecomment-2602152687",
-          "viewerDidAuthor": true
-        }
-      ],
-      "commits": [
-        {
-          "authoredDate": "2025-01-20T11:16:43Z",
-          "authors": [
-            {
-              "email": "santacana.canton@icloud.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "santakloud"
-            }
-          ],
-          "committedDate": "2025-01-20T11:16:43Z",
-          "messageBody": "",
-          "messageHeadline": "corregimos el directorio de destino",
-          "oid": "04bfd323687737c8282c9585d288d8f325f5c0ba"
-        },
-        {
-          "authoredDate": "2025-01-20T11:16:59Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2025-01-20T11:16:59Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
-          "oid": "9ef088af1e1ced96d19666fc80d8ba59366e0660"
-        },
-        {
-          "authoredDate": "2025-01-20T11:19:32Z",
-          "authors": [
-            {
-              "email": "73332898+santakloud@users.noreply.github.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "SantaKloud"
-            }
-          ],
-          "committedDate": "2025-01-20T11:19:32Z",
-          "messageBody": "…8debb8a66565f933788b42a",
-          "messageHeadline": "Merge 9ef088af1e1ced96d19666fc80d8ba59366e0660 into ce5c2a963c2c731c9…",
-          "oid": "ce6547d4d60fd15ffdbca9edaec03441e0b740c9"
-        },
-        {
-          "authoredDate": "2025-01-20T11:19:45Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2025-01-20T11:19:45Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] VERSION  Upload: CHANGELOG.md, INDEX.md with version 1.0.7",
-          "oid": "dbd0f150ddc4c54a52f8e6da865275f52df98cbb"
-        }
-      ],
-      "createdAt": "2025-01-20T11:19:30Z",
-      "deletions": 17,
-      "files": [
-        {
-          "path": "CHANGELOG.md",
-          "additions": 13,
-          "deletions": 0
-        },
-        {
-          "path": "INDEX.md",
-          "additions": 1,
-          "deletions": 0
-        },
-        {
-          "path": "core/outputps/e/README.md",
-          "additions": 0,
-          "deletions": 1
-        },
-        {
-          "path": "core/outputs/e/README.md",
-          "additions": 3,
-          "deletions": 0
-        },
-        {
-          "path": "core/results/commit-summary-H-633.txt",
-          "additions": 3,
-          "deletions": 13
-        },
-        {
-          "path": "core/results/files-in-commit-H-633.txt",
-          "additions": 2,
-          "deletions": 2
-        },
-        {
-          "path": "version.txt",
-          "additions": 1,
-          "deletions": 1
-        }
-      ],
-      "fullDatabaseId": "2287400999",
-      "headRefName": "H633-modulo-de-execution",
-      "headRefOid": "dbd0f150ddc4c54a52f8e6da865275f52df98cbb",
-      "headRepository": {
-        "id": "R_kgDONP0GLw",
-        "name": "kaos"
-      },
-      "headRepositoryOwner": {
-        "id": "O_kgDOCyRQmA",
-        "login": "SantaKa0S"
-      },
-      "id": "PR_kwDONP0GL86IVvgn",
-      "isCrossRepository": false,
-      "isDraft": false,
-      "labels": [],
-      "latestReviews": [],
-      "maintainerCanModify": false,
-      "mergeCommit": {
-        "oid": "2870fdacb1de90d42ee2804078d3577a872de85e"
-      },
-      "mergeStateStatus": "UNKNOWN",
-      "mergeable": "UNKNOWN",
-      "mergedAt": "2025-01-20T11:21:34Z",
-      "mergedBy": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "milestone": null,
-      "number": 701,
-      "potentialMergeCommit": null,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "reviewDecision": "",
-      "reviewRequests": [],
-      "reviews": [],
-      "state": "MERGED",
-      "statusCheckRollup": [
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:19:48Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866893147/job/35870392368",
-          "name": "job-core",
-          "startedAt": "2025-01-20T11:19:48Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:21:25Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866893747/job/35870395266",
-          "name": "Analyze (actions)",
-          "startedAt": "2025-01-20T11:19:59Z",
-          "status": "COMPLETED",
-          "workflowName": "CodeQL"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:19:50Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866893147/job/35870393937",
-          "name": "job-compliance",
-          "startedAt": "2025-01-20T11:19:50Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:19:49Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866893147/job/35870393127",
-          "name": "job-security",
-          "startedAt": "2025-01-20T11:19:49Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:19:49Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866893147/job/35870393569",
-          "name": "job-observability",
-          "startedAt": "2025-01-20T11:19:49Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:19:50Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866893147/job/35870394263",
-          "name": "job-codescan",
-          "startedAt": "2025-01-20T11:19:50Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:19:51Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866893147/job/35870394741",
-          "name": "job-flows",
-          "startedAt": "2025-01-20T11:19:51Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:19:51Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866893147/job/35870395209",
-          "name": "handle_failure",
-          "startedAt": "2025-01-20T11:19:51Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:21:19Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/runs/35870467921",
-          "name": "CodeQL",
-          "startedAt": "2025-01-20T11:21:16Z",
-          "status": "COMPLETED",
-          "workflowName": ""
-        }
-      ],
-      "title": "H633 modulo de execution",
-      "updatedAt": "2025-01-20T11:21:34Z",
-      "url": "https://github.com/SantaKa0S/kaos/pull/701"
-    },
-    {
-      "additions": 31,
-      "assignees": [],
-      "author": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "autoMergeRequest": null,
-      "baseRefName": "main",
-      "body": "update",
-      "changedFiles": 7,
-      "closed": true,
-      "closedAt": "2025-01-20T11:12:04Z",
-      "comments": [
-        {
-          "id": "IC_kwDONP0GL86bGTxS",
-          "author": {
-            "login": "santakloud"
-          },
-          "authorAssociation": "MEMBER",
-          "body": "[Ka0S] VERSION ha generado una nueva versión con el tag v1.0.6. Esta todo dispuesto para realizar *MERGE* del código.",
-          "createdAt": "2025-01-20T11:06:23Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/SantaKa0S/kaos/pull/698#issuecomment-2602122322",
-          "viewerDidAuthor": true
-        }
-      ],
-      "commits": [
-        {
-          "authoredDate": "2025-01-20T10:40:52Z",
-          "authors": [
-            {
-              "email": "santacana.canton@icloud.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "santakloud"
-            }
-          ],
-          "committedDate": "2025-01-20T10:40:52Z",
-          "messageBody": "",
-          "messageHeadline": "Inicializamos el fichero antes de escribir en el",
-          "oid": "2292a4ae7979c14522620f76f72c7abc695739f0"
-        },
-        {
-          "authoredDate": "2025-01-20T10:41:09Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2025-01-20T10:41:09Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
-          "oid": "ae37da9a35b8f194b3e38641606a3bdb6017d2ac"
-        },
-        {
-          "authoredDate": "2025-01-20T10:52:22Z",
-          "authors": [
-            {
-              "email": "santacana.canton@icloud.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "santakloud"
-            }
-          ],
-          "committedDate": "2025-01-20T10:52:22Z",
-          "messageBody": "",
-          "messageHeadline": "Borramos la herramienta",
-          "oid": "2cb113058d659517545a1025d2ced865bcc40a1d"
-        },
-        {
-          "authoredDate": "2025-01-20T10:52:38Z",
-          "authors": [
-            {
-              "email": "santacana.canton@icloud.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "santakloud"
-            }
-          ],
-          "committedDate": "2025-01-20T10:52:38Z",
-          "messageBody": "…0S/kaos into H633-modulo-de-execution",
-          "messageHeadline": "Merge branch 'H633-modulo-de-execution' of https://github.com/SantaKa…",
-          "oid": "2c9d83742c2d372d0fec01de7868498f741a6b78"
-        },
-        {
-          "authoredDate": "2025-01-20T10:53:21Z",
-          "authors": [
-            {
-              "email": "santacana.canton@icloud.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "santakloud"
-            }
-          ],
-          "committedDate": "2025-01-20T10:53:21Z",
-          "messageBody": "",
-          "messageHeadline": "inicializamos el fichero antes de nada",
-          "oid": "103f164ff5fb0c9f8380edbcac9cd4785aa032a2"
-        },
-        {
-          "authoredDate": "2025-01-20T10:53:38Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2025-01-20T10:53:38Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] se generan los ficheros commit-summary files-in-commit",
-          "oid": "1c33c3ab2be8fe625e75cb5ca0b9091ff1082f52"
-        },
-        {
-          "authoredDate": "2025-01-20T11:05:56Z",
-          "authors": [
-            {
-              "email": "73332898+santakloud@users.noreply.github.com",
-              "id": "MDQ6VXNlcjczMzMyODk4",
-              "login": "santakloud",
-              "name": "SantaKloud"
-            }
-          ],
-          "committedDate": "2025-01-20T11:05:56Z",
-          "messageBody": "…38780ce82b28f524edf80d5",
-          "messageHeadline": "Merge 1c33c3ab2be8fe625e75cb5ca0b9091ff1082f52 into 96c3041532436d600…",
-          "oid": "f2a2bfc48f1f0e1bd9ff33a31705660bef09baba"
-        },
-        {
-          "authoredDate": "2025-01-20T11:06:09Z",
-          "authors": [
-            {
-              "email": "github-actions[bot]@users.noreply.github.com",
-              "id": "MDM6Qm90NDE4OTgyODI=",
-              "login": "github-actions[bot]",
-              "name": "github-actions[bot]"
-            }
-          ],
-          "committedDate": "2025-01-20T11:06:09Z",
-          "messageBody": "",
-          "messageHeadline": "[Ka0S] VERSION  Upload: CHANGELOG.md, INDEX.md with version 1.0.6",
-          "oid": "c7e5e21096e49ad14a3de61982d5732b352a5e75"
-        }
-      ],
-      "createdAt": "2025-01-20T11:05:54Z",
-      "deletions": 57,
-      "files": [
-        {
-          "path": ".github/workflows/execution.yaml",
-          "additions": 2,
-          "deletions": 0
-        },
-        {
-          "path": ".github/workflows/tools/tools-vars.yaml",
-          "additions": 0,
-          "deletions": 53
-        },
-        {
-          "path": "CHANGELOG.md",
-          "additions": 13,
-          "deletions": 0
-        },
-        {
-          "path": "INDEX.md",
-          "additions": 1,
-          "deletions": 0
-        },
-        {
-          "path": "core/results/commit-summary-H-633.txt",
-          "additions": 13,
-          "deletions": 3
-        },
-        {
-          "path": "core/results/files-in-commit-H-633.txt",
-          "additions": 1,
-          "deletions": 0
-        },
-        {
-          "path": "version.txt",
-          "additions": 1,
-          "deletions": 1
-        }
-      ],
-      "fullDatabaseId": "2287372267",
-      "headRefName": "H633-modulo-de-execution",
-      "headRefOid": "c7e5e21096e49ad14a3de61982d5732b352a5e75",
-      "headRepository": {
-        "id": "R_kgDONP0GLw",
-        "name": "kaos"
-      },
-      "headRepositoryOwner": {
-        "id": "O_kgDOCyRQmA",
-        "login": "SantaKa0S"
-      },
-      "id": "PR_kwDONP0GL86IVofr",
-      "isCrossRepository": false,
-      "isDraft": false,
-      "labels": [],
-      "latestReviews": [],
-      "maintainerCanModify": false,
-      "mergeCommit": {
-        "oid": "ce5c2a963c2c731c98debb8a66565f933788b42a"
-      },
-      "mergeStateStatus": "UNKNOWN",
-      "mergeable": "UNKNOWN",
-      "mergedAt": "2025-01-20T11:12:04Z",
-      "mergedBy": {
-        "id": "MDQ6VXNlcjczMzMyODk4",
-        "is_bot": false,
-        "login": "santakloud",
-        "name": "SantaKloud"
-      },
-      "milestone": null,
-      "number": 698,
-      "potentialMergeCommit": null,
-      "projectCards": [],
-      "projectItems": [],
-      "reactionGroups": [],
-      "reviewDecision": "",
-      "reviewRequests": [],
-      "reviews": [],
-      "state": "MERGED",
-      "statusCheckRollup": [
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:06:13Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866655804/job/35869681980",
-          "name": "job-core",
-          "startedAt": "2025-01-20T11:06:13Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:07:55Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866655909/job/35869682986",
-          "name": "Analyze (actions)",
-          "startedAt": "2025-01-20T11:06:22Z",
-          "status": "COMPLETED",
-          "workflowName": "CodeQL"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:06:15Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866655804/job/35869683774",
-          "name": "job-compliance",
-          "startedAt": "2025-01-20T11:06:15Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:06:14Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866655804/job/35869682703",
-          "name": "job-security",
-          "startedAt": "2025-01-20T11:06:14Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:06:14Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866655804/job/35869683370",
-          "name": "job-observability",
-          "startedAt": "2025-01-20T11:06:14Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:06:15Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866655804/job/35869684219",
-          "name": "job-codescan",
-          "startedAt": "2025-01-20T11:06:15Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:06:16Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866655804/job/35869684861",
-          "name": "job-flows",
-          "startedAt": "2025-01-20T11:06:16Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:06:16Z",
-          "conclusion": "SKIPPED",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/actions/runs/12866655804/job/35869685440",
-          "name": "handle_failure",
-          "startedAt": "2025-01-20T11:06:16Z",
-          "status": "COMPLETED",
-          "workflowName": "Ka0S"
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:09:20Z",
-          "conclusion": "ACTION_REQUIRED",
-          "detailsUrl": "https://app.codacy.com/gh/SantaKa0S/kaos/pull-requests/698",
-          "name": "Codacy Static Code Analysis",
-          "startedAt": "2025-01-20T11:09:20Z",
-          "status": "COMPLETED",
-          "workflowName": ""
-        },
-        {
-          "__typename": "CheckRun",
-          "completedAt": "2025-01-20T11:07:47Z",
-          "conclusion": "SUCCESS",
-          "detailsUrl": "https://github.com/SantaKa0S/kaos/runs/35869762021",
-          "name": "CodeQL",
-          "startedAt": "2025-01-20T11:07:44Z",
-          "status": "COMPLETED",
-          "workflowName": ""
-        }
-      ],
-      "title": "H633 modulo de execution",
-      "updatedAt": "2025-01-20T11:12:04Z",
-      "url": "https://github.com/SantaKa0S/kaos/pull/698"
     }
   ]
 ]

@@ -14,10 +14,569 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
-      "body": "\"module\":\"summary\"",
+      "body": "An error occurred in the execution Action workflow RunID: **12932778824**.\nInitiated by #santakloud from issue number #633\n**[Ka0S] INIT  Message:**\nEl error ha sido en : 12932778824\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12932778824 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12932778824**\n```\n**Requested By:** santakloud\n**Workflow Name:** Ka0s Init\n**Job Name:** handle_failure\n**Run ID:** 12932778824\n**Run Number:** 607\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H633-modulo-de-execution\n**Files:** core/results/files-in-commit-.txt\nPlease investigate the issue.",
       "closed": false,
       "closedAt": null,
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bk9lg",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INSPECTOR success extract information from the execution 12932789860 initiated by santakloud through issue number #823.",
+          "createdAt": "2025-01-23T15:43:50Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/823#issuecomment-2610157920",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-23T15:43:09Z",
+      "id": "I_kwDONP0GL86nU0mB",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 823,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "[Ka0S] INIT Module failed in 12932778824",
+      "updatedAt": "2025-01-23T15:43:51Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/823"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "Mejoras para él modulo de summary y la extracción de la información",
+      "closed": false,
+      "closedAt": null,
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bk45u",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INSPECTOR success extract information from the execution 12932651328 initiated by santakloud through issue number #822.",
+          "createdAt": "2025-01-23T15:36:36Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/822#issuecomment-2610138734",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-23T15:35:51Z",
+      "id": "I_kwDONP0GL86nUwTb",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtkA",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        },
+        {
+          "id": "LA_kwDONP0GL88AAAABz7QTtQ",
+          "name": "core",
+          "description": "Only referent CORE MODULES",
+          "color": "0e8a16"
+        }
+      ],
+      "milestone": null,
+      "number": 822,
+      "projectCards": [],
+      "projectItems": [
+        {
+          "status": {
+            "optionId": "f75ad846",
+            "name": "Backlog"
+          },
+          "title": "@Core-Kaos-Project"
+        }
+      ],
+      "reactionGroups": [],
+      "state": "OPEN",
+      "title": "Modulo Summary",
+      "updatedAt": "2025-01-23T15:36:37Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/822"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the execution Action workflow RunID: **12928231035**.\nInitiated by #santakloud from issue number #633\n**[Ka0S] INIT  Message:**\nEl error ha sido en : 12928231035\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12928231035 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12928231035**\n```\n**Requested By:** santakloud\n**Workflow Name:** Ka0s Init\n**Job Name:** handle_failure\n**Run ID:** 12928231035\n**Run Number:** 606\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H633-modulo-de-execution\n**Files:** core/results/files-in-commit-.txt\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-23T15:39:13Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bit8l",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INSPECTOR success extract information from the execution 12928238624 initiated by santakloud through issue number #820.",
+          "createdAt": "2025-01-23T11:29:55Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/820#issuecomment-2609569573",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-23T11:29:20Z",
+      "id": "I_kwDONP0GL86nSjTC",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 820,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] INIT Module failed in 12928231035",
+      "updatedAt": "2025-01-23T15:39:13Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/820"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the execution Action workflow RunID: **12928119672**.\nInitiated by #santakloud from issue number #633\n**[Ka0S] INIT  Message:**\nEl error ha sido en : 12928119672\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12928119672 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12928119672**\n```\n**Requested By:** santakloud\n**Workflow Name:** Ka0s Init\n**Job Name:** handle_failure\n**Run ID:** 12928119672\n**Run Number:** 605\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H633-modulo-de-execution\n**Files:** core/results/files-in-commit-.txt\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-23T11:28:22Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bip5-",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INSPECTOR success extract information from the execution 12928128873 initiated by santakloud through issue number #819.",
+          "createdAt": "2025-01-23T11:23:00Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/819#issuecomment-2609553022",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86bitK0",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Corregida la incorrecta asignacion de la variable en #633 ",
+          "createdAt": "2025-01-23T11:28:22Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/819#issuecomment-2609566388",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-23T11:22:23Z",
+      "id": "I_kwDONP0GL86nSfBj",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 819,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] INIT Module failed in 12928119672",
+      "updatedAt": "2025-01-23T11:28:23Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/819"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the execution Action workflow RunID: **12927971689**.\nInitiated by #santakloud from issue number #633\n**[Ka0S] INIT  Message:**\nEl error ha sido en : 12927971689\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12927971689 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12927971689**\n```\n**Requested By:** santakloud\n**Workflow Name:** Ka0s Init\n**Job Name:** handle_failure\n**Run ID:** 12927971689\n**Run Number:** 603\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H633-modulo-de-execution\n**Files:** core/results/files-in-commit-.txt\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-23T11:15:06Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bill8",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INSPECTOR success extract information from the execution 12927981681 initiated by santakloud through issue number #818.",
+          "createdAt": "2025-01-23T11:14:12Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/818#issuecomment-2609535356",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86bimCf",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Corregido en #633 ",
+          "createdAt": "2025-01-23T11:15:06Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/818#issuecomment-2609537183",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-23T11:13:35Z",
+      "id": "I_kwDONP0GL86nSaeH",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 818,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] INIT Module failed in 12927971689",
+      "updatedAt": "2025-01-23T11:15:07Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/818"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the execution Action workflow RunID: **12927923159**.\nInitiated by #santakloud from issue number #633\n**[Ka0S] INIT  Message:**\nEl error ha sido en : 12927923159\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12927923159 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12927923159**\n```\n**Requested By:** santakloud\n**Workflow Name:** Ka0s Init\n**Job Name:** handle_failure\n**Run ID:** 12927923159\n**Run Number:** 602\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H633-modulo-de-execution\n**Files:** core/results/files-in-commit-.txt\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-23T11:11:31Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bikND",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INSPECTOR success extract information from the execution 12927932598 initiated by santakloud through issue number #817.",
+          "createdAt": "2025-01-23T11:11:19Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/817#issuecomment-2609529667",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-23T11:10:42Z",
+      "id": "I_kwDONP0GL86nSY_l",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 817,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] INIT Module failed in 12927923159",
+      "updatedAt": "2025-01-23T11:11:31Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/817"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the execution Action workflow RunID: **12927819363**.\nInitiated by #santakloud from issue number #633\n**[Ka0S] INIT  Message:**\nEl error ha sido en : 12927819363\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12927819363 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12927819363**\n```\n**Requested By:** santakloud\n**Workflow Name:** Ka0s Init\n**Job Name:** handle_failure\n**Run ID:** 12927819363\n**Run Number:** 600\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H633-modulo-de-execution\n**Files:** core/results/files-in-commit-.txt\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-23T11:11:30Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bihOl",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INSPECTOR success extract information from the execution 12927829092 initiated by santakloud through issue number #816.",
+          "createdAt": "2025-01-23T11:05:16Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/816#issuecomment-2609517477",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2025-01-23T11:04:41Z",
+      "id": "I_kwDONP0GL86nSVdD",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 816,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] INIT Module failed in 12927819363",
+      "updatedAt": "2025-01-23T11:11:30Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/816"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the execution Action workflow RunID: **12927554529**.\nInitiated by #santakloud from issue number #633\n**[Ka0S] INIT  Message:**\nEl error ha sido en : 12927554529\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12927554529 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12927554529**\n```\n**Requested By:** santakloud\n**Workflow Name:** Ka0s Init\n**Job Name:** handle_failure\n**Run ID:** 12927554529\n**Run Number:** 598\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H633-modulo-de-execution\n**Files:** core/results/files-in-commit-.txt\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-23T11:00:07Z",
       "comments": [],
+      "createdAt": "2025-01-23T10:48:22Z",
+      "id": "I_kwDONP0GL86nSMsu",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 815,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] INIT Module failed in 12927554529",
+      "updatedAt": "2025-01-23T11:00:07Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/815"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "An error occurred in the execution Action workflow RunID: **12926509201**.\nInitiated by #santakloud from issue number #633\n**[Ka0S] INIT  Message:**\nEl error ha sido en : 12926509201\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12926509201 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12926509201**\n```\n**Requested By:** santakloud\n**Workflow Name:** Ka0s Init\n**Job Name:** handle_failure\n**Run ID:** 12926509201\n**Run Number:** 597\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/H633-modulo-de-execution\n**Files:** core/results/files-in-commit-.txt\nPlease investigate the issue.",
+      "closed": true,
+      "closedAt": "2025-01-23T11:00:06Z",
+      "comments": [],
+      "createdAt": "2025-01-23T09:48:42Z",
+      "id": "I_kwDONP0GL86nRrCC",
+      "labels": [
+        {
+          "id": "LA_kwDONP0GL88AAAABzhFtdQ",
+          "name": "bug",
+          "description": "Status",
+          "color": "d73a4a"
+        }
+      ],
+      "milestone": null,
+      "number": 814,
+      "projectCards": [],
+      "projectItems": [],
+      "reactionGroups": [],
+      "state": "CLOSED",
+      "title": "[Ka0S] INIT Module failed in 12926509201",
+      "updatedAt": "2025-01-23T11:00:06Z",
+      "url": "https://github.com/SantaKa0S/kaos/issues/814"
+    },
+    {
+      "assignees": [
+        {
+          "id": "MDQ6VXNlcjczMzMyODk4",
+          "login": "santakloud",
+          "name": "SantaKloud"
+        }
+      ],
+      "author": {
+        "id": "MDQ6VXNlcjczMzMyODk4",
+        "is_bot": false,
+        "login": "santakloud",
+        "name": "SantaKloud"
+      },
+      "body": "\"module\":\"summary\"",
+      "closed": true,
+      "closedAt": "2025-01-23T08:31:41Z",
+      "comments": [
+        {
+          "id": "IC_kwDONP0GL86bhI2N",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "La ejecución ha sido SUCCESS #812 el siguiente mensaje muestra el resultado de las operaciones",
+          "createdAt": "2025-01-23T08:31:39Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/812#issuecomment-2609155469",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86bhI2s",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "(2025-01-23 09:30:26 CET) - Se ha iniciado la ejecución 12925190823 a través de la tarjeta #812.\n(2025-01-23 09:30:26 CET) - Se ha iniciado el Repositorio.\n(2025-01-23 09:30:38 CET) - Se ha comprobado que la tarjeta #812 se puede ejecutar.\n(2025-01-23 09:30:50 CET) - Se han extraido los datos de la tarjeta #812.\n(2025-01-23 09:30:50 CET) - Se comprobado los datos asociados a la tarjeta #812.\n(2025-01-23 09:31:02 CET) - Estos son los datos de la ejecucion 12925190823 de la tarjeta #812.\nKAOS_ISSUE_NUMBER: 812\nKAOS_ISSUE_TITLE: [E] Inspector después de summary, es posible error en summary\nKAOS_ISSUE_BODY: \"module\":\"summary\"\n(2025-01-23 09:31:13 CET) - Se ha iniciado la ejecución de la tarjeta #812.\n(2025-01-23 09:31:15 CET) - Se ha lanzado la ejecución de #summary con run_id: 12920279560. con las variables {}\n(2025-01-23 09:31:26 CET) - La ejecución de la tarjeta #812 ha finalizado con el resultado success.\n(2025-01-23 09:31:26 CET) - El resultado de la ejecución se añade a la tajeta #812, ha finalizado con el resultado SUCCESS.\n",
+          "createdAt": "2025-01-23T08:31:40Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/812#issuecomment-2609155500",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86bhI3S",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Puede proceder a cerrar la tarjeta.",
+          "createdAt": "2025-01-23T08:31:41Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/812#issuecomment-2609155538",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86bhJKZ",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "[Ka0S] INSPECTOR success extract information from the execution 12925190823 initiated by santakloud.",
+          "createdAt": "2025-01-23T08:32:19Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/812#issuecomment-2609156761",
+          "viewerDidAuthor": true
+        }
+      ],
       "createdAt": "2025-01-23T08:30:13Z",
       "id": "I_kwDONP0GL86nQ_3m",
       "labels": [
@@ -34,16 +593,16 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "f75ad846",
-            "name": "Backlog"
+            "optionId": "98236657",
+            "name": "Done"
           },
           "title": "@Core-Kaos-Project"
         }
       ],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "[E] Inspector después de summary, es posible error en summary",
-      "updatedAt": "2025-01-23T08:30:40Z",
+      "updatedAt": "2025-01-23T08:32:20Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/812"
     },
     {
@@ -689,7 +1248,7 @@
         "login": "santakloud",
         "name": "SantaKloud"
       },
-      "body": "Vamos a diseñar el modulo de save.yaml, que deberia permitir:\n- en funcion de un fichero json que tenga los que hay que hacer y donde hay que grabar en funcion de donde se llama\n- variables:\n- KAOS_MODULE\n- KAOS_WORKFLOW_ID\n- KAOS_ISSUE_ID\n- con esta informacion diseñaremos un modulo que en base a un documento json haga lo que tiene que hacer",
+      "body": "Vamos a diseñar el modulo de inspector.yaml, que deberia permitir:\n- en funcion de un fichero json que tenga los que hay que hacer y donde hay que grabar en funcion de donde se llama\n- variables:\n- KAOS_MODULE\n- KAOS_WORKFLOW_ID\n- KAOS_ISSUE_ID\n- con esta informacion diseñaremos un modulo que en base a un documento json haga lo que tiene que hacer",
       "closed": false,
       "closedAt": null,
       "comments": [
@@ -737,6 +1296,36 @@
           "reactionGroups": [],
           "url": "https://github.com/SantaKa0S/kaos/issues/798#issuecomment-2607385091",
           "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86bk3Lw",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "El modulo de inspector se ha desarrollado en la issue #633 ",
+          "createdAt": "2025-01-23T15:34:09Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/798#issuecomment-2610131696",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDONP0GL86bk3ck",
+          "author": {
+            "login": "santakloud"
+          },
+          "authorAssociation": "MEMBER",
+          "body": "Esta tarjeta se usará para la batería de pruebas de ejecución.",
+          "createdAt": "2025-01-23T15:34:33Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/SantaKa0S/kaos/issues/798#issuecomment-2610132772",
+          "viewerDidAuthor": true
         }
       ],
       "createdAt": "2025-01-22T14:22:20Z",
@@ -775,8 +1364,8 @@
       ],
       "reactionGroups": [],
       "state": "OPEN",
-      "title": "Modulo de guardar fichero",
-      "updatedAt": "2025-01-22T15:15:41Z",
+      "title": "Modulo Inspector",
+      "updatedAt": "2025-01-23T15:34:49Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/798"
     },
     {
@@ -6836,8 +7425,8 @@
         "name": "SantaKloud"
       },
       "body": "An error occurred in the execution Action workflow RunID: **12827885480**.\nInitiated by #yolabn from issue number #637\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12827885480\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12827885480 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12827885480**\n```\n**Requested By:** yolabn\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12827885480\n**Run Number:** 41\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/RN637-modulo-de-despliegue-de-kaos\n**Launch by:** 12827881679\n**Files:** core/results/kaos-issue-log.json\nPlease investigate the issue.",
-      "closed": false,
-      "closedAt": null,
+      "closed": true,
+      "closedAt": "2025-01-23T11:28:39Z",
       "comments": [
         {
           "id": "IC_kwDONP0GL86a2_oX",
@@ -6870,9 +7459,9 @@
       "projectCards": [],
       "projectItems": [],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "[Ka0S] JSONLINT Module failed in 12827885480",
-      "updatedAt": "2025-01-17T11:11:23Z",
+      "updatedAt": "2025-01-23T11:28:39Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/659"
     },
     {
@@ -7419,8 +8008,8 @@
         "name": "SantaKloud"
       },
       "body": "An error occurred in the execution Action workflow RunID: **12825431666**.\nInitiated by #santakloud from issue number #633\n**[Ka0S] JSONLINT  Message:**\nEl error ha sido en : 12825431666\nejecute este comando en su consola y podrá consultar el fallo del trabajo\ngh run view 12825431666 --log-failed\n```\n**Please check the job logs for https://github.com/SantaKa0S/kaos/actions/runs/12825431666**\n```\n**Requested By:** santakloud\n**Workflow Name:** Ka0s JSON Lint\n**Job Name:** handle_failure\n**Run ID:** 12825431666\n**Run Number:** 40\n**Repository:** SantaKa0S/kaos\n**Branch:** refs/heads/RN633-modulo-de-execution\n**Launch by:** 12825428688\n**Files:** core/results/kaos-workflows-runs.json\nPlease investigate the issue.",
-      "closed": false,
-      "closedAt": null,
+      "closed": true,
+      "closedAt": "2025-01-23T11:28:38Z",
       "comments": [
         {
           "id": "IC_kwDONP0GL86a145e",
@@ -7454,16 +8043,16 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "f75ad846",
-            "name": "Backlog"
+            "optionId": "98236657",
+            "name": "Done"
           },
           "title": "@Core-Kaos-Project"
         }
       ],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "[Ka0S] JSONLINT Module failed in 12825431666",
-      "updatedAt": "2025-01-17T09:37:22Z",
+      "updatedAt": "2025-01-23T11:28:38Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/641"
     },
     {
@@ -9092,7 +9681,7 @@
       "reactionGroups": [],
       "state": "CLOSED",
       "title": "Modulo de despliegue de Kaos",
-      "updatedAt": "2025-01-22T15:22:12Z",
+      "updatedAt": "2025-01-23T11:15:19Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/637"
     },
     {
@@ -9110,8 +9699,8 @@
         "name": "SantaKloud"
       },
       "body": "En esta issue detallaremos los pasoa a seguir en el módulo de Execution, para permitir ejecuciones directamente desde una issue pasando la información como un fichero estructurado en json y valido para cualquier tipo de deploy a ejecutar en automations\n\nTenemos que tener en cuenta que el proceso se puede disprar por cada uno de estos estados de typed:\n\nassigned\nunassigned\nlabeled\nunlabeled\nopened\nedited\nmilestoned\ndemilestoned\nclosed\nreopened\ntransferred\npinned\nunpinned\nlocked\nunlocked\ndeleted\ntransferred",
-      "closed": false,
-      "closedAt": null,
+      "closed": true,
+      "closedAt": "2025-01-23T15:32:54Z",
       "comments": [
         {
           "id": "IC_kwDONP0GL86alGjN",
@@ -10636,16 +11225,16 @@
       "projectItems": [
         {
           "status": {
-            "optionId": "47fc9ee4",
-            "name": "In progress"
+            "optionId": "98236657",
+            "name": "Done"
           },
           "title": "@Core-Kaos-Project"
         }
       ],
       "reactionGroups": [],
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Modulo de Execution",
-      "updatedAt": "2025-01-23T08:29:23Z",
+      "updatedAt": "2025-01-23T15:43:41Z",
       "url": "https://github.com/SantaKa0S/kaos/issues/633"
     },
     {
