@@ -276,7 +276,7 @@ jobs:
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ needs.job-core.outputs.KAOS_NUMBER }}
   end-workflow:
     runs-on: 
-      group: kaos-execution
+      group: kaos
     needs: [job-core, job-compliance, job-security, job-observability, job-codescan, job-flows, handle-success, handle_failure]
     if: ${{ always() && !contains(github.event.head_commit.message, '[Ka0S] ') }} 
     steps:

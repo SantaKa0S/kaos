@@ -147,7 +147,7 @@ jobs:
           gh workflow run issue.yaml --ref ${{ github.ref }} -f kaos-issue-body="$KAOS_ISSUE_BODY" -f kaos-issue-actions=comment -f kaos-issue-tag="bug" -f kaos-issue-id=${{ needs.kaos-version.outputs.KAOS_NUMBER }}
   end-workflow:
     runs-on: 
-      group: kaos-execution
+      group: kaos-version
     needs: [kaos-version, handle_failure] 
     if: ${{ always() }}
     steps:

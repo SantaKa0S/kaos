@@ -147,7 +147,7 @@ jobs:
           gh issue comment ${{ github.event.inputs.kaos-issue-id }} -b "$KAOS_ISSUE_BODY"
   end-workflow:
     runs-on: 
-      group: kaos-execution
+      group: kaos-issue
     needs: [kaos-issue-process, handle_failure]
     if: ${{ always() }}
     steps:
