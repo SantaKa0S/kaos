@@ -1,0 +1,36 @@
+end-workflow	Set up job	2025-01-24T19:57:06.4691249Z Current runner version: '2.321.0'
+end-workflow	Set up job	2025-01-24T19:57:06.4698608Z Runner name: 'kaos-execution-4'
+end-workflow	Set up job	2025-01-24T19:57:06.4699410Z Runner group name: 'kaos-execution'
+end-workflow	Set up job	2025-01-24T19:57:06.4700335Z Machine name: 'aaeee0098231'
+end-workflow	Set up job	2025-01-24T19:57:06.4703171Z ##[group]GITHUB_TOKEN Permissions
+end-workflow	Set up job	2025-01-24T19:57:06.4705892Z Actions: write
+end-workflow	Set up job	2025-01-24T19:57:06.4706674Z Contents: write
+end-workflow	Set up job	2025-01-24T19:57:06.4707163Z Issues: write
+end-workflow	Set up job	2025-01-24T19:57:06.4707628Z Metadata: read
+end-workflow	Set up job	2025-01-24T19:57:06.4708110Z PullRequests: write
+end-workflow	Set up job	2025-01-24T19:57:06.4708604Z ##[endgroup]
+end-workflow	Set up job	2025-01-24T19:57:06.4710621Z Secret source: Actions
+end-workflow	Set up job	2025-01-24T19:57:06.4711301Z Prepare workflow directory
+end-workflow	Set up job	2025-01-24T19:57:06.5241972Z Prepare all required actions
+end-workflow	Set up job	2025-01-24T19:57:06.5298165Z Complete job name: end-workflow
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5826119Z ##[group]Run echo "End process"
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5826955Z [36;1mecho "End process"[0m
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5828338Z [36;1mgh workflow run inspector.yaml --ref refs/heads/main -f kaos-issue-id="$KAOS_ISSUE_NUMBER" -f kaos-workflow-id="12956644883" -f kaos-user-start="santakloud"[0m
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5848393Z shell: /usr/bin/bash -e {0}
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5849307Z env:
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5849782Z   KAOS_MODULE: [Ka0S] Execution
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5850601Z   GH_TOKEN: ***
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5851090Z   BRANCH_NAME: refs/heads/main
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5851846Z   KAOS_AUTOMATION_COMPLIANCE: compliance/automations/automations.json
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5852671Z   KAOS_PATH_RESUME: core/results/
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5853262Z   KAOS_PATH_OUTPUT: core/outputs/e/
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5853904Z   KAOS_REPO: /actions-runner/_work/kaos/kaos
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5854528Z   KAOS_STEP_MODULE: 
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5855018Z   KAOS_CODE: 12956644883
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5855928Z   KAOS_ISSUE_NUMBER: 834
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5856803Z   KAOS_ISSUE_TITLE: Corrección de la asignación de usurario a la creación de la Isaura
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5858527Z   KAOS_ISSUE_BODY: Hay que revisar en todos los actuó a la asignación de la variable de nombre de usuario cuando se realiza la solicitud de creación de Isaura de manera automática
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5859976Z   KAOS_ISSUE_USER: santakloud
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.5860644Z ##[endgroup]
+end-workflow	Finaliza el workflow	2025-01-24T19:57:06.6069000Z End process
+end-workflow	Complete job	2025-01-24T19:57:07.2630469Z Cleaning up orphan processes
