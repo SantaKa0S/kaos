@@ -38,7 +38,7 @@ jobs:
     - id: commit_details
       run: |
         echo "GH_VERSION=$(gh api repos/:owner/:repo/git/matching-refs/tags --jq '.[-1].ref' | sed 's|refs/tags/||')" >> $GITHUB_ENV
-        echo "AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_OUTPUT
+        echo "AUTHOR_NAME=${{ github.actor }}" >> $GITHUB_OUTPUT
         echo "AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_OUTPUT
         echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
         RNBRANCH=$(echo "${{ github.event.pull_request.title }}" | grep -o '^[A-Za-z]*')
@@ -87,12 +87,9 @@ jobs:
         for file in ${{ env.CHANGE_FILES }}; do echo "  - $file" >> CHANGELOG.md; done
         echo "---------------------------------" >> CHANGELOG.md
     - id: push-log-tag-index
-      env:
-        USER_NAME: ${{ secrets.KAOS_USER_NAME }}
-        USER_EMAIL: ${{ secrets.KAOS_USER_EMAIL }}
       run: |
-        git config --global user.name '${{ env.USER_NAME }}'
-        git config --global user.email '${{ env.USER_EMAIL}}'
+        git config --global user.name '${{ secrets.KAOS_USER_NAME }}'
+        git config --global user.email '${{ secrets.KAOS_USER_EMAIL }}'
         git tag -a "${{ steps.version.outputs.VERSION }}" -m "${{ env.KAOS_MODULE }} NEW Ka0S version ${{ steps.version.outputs.VERSION }}"
         git push origin "${{ steps.version.outputs.VERSION }}"
         if [ ! -f INDEX.md ]; then echo "# Version Index" > INDEX.md; fi
