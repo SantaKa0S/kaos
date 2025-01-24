@@ -128,17 +128,17 @@ jobs:
           echo "Error detected in ${{ env.KAOS_MODULE }}, creating issue..."
           KAOS_ISSUE_TITLE="${{ env.KAOS_MODULE }} Module failed in ${{ github.run_id }}"
           KAOS_BODY=$(cat <<'EOF'
-            **${{ env.KAOS_MODULE }}  Message:**
-            El error ha sido en: ${{ env.KAOS_CODE }}
-            si dispòne de los permisos necesarios 
-            ejecute este comando en su consola y podrá consultar el fallo del trabajo
-            gh run view ${{ env.KAOS_CODE }} --log-failed
-            \`\`\`
-            **La información de la ejecución ${{ secrets.KAOS_ACTIONS_URL }}${{ env.KAOS_CODE }}**
-            \`\`\`
-            Please investigate the issue.
-            EOF
-            )
+          **${{ env.KAOS_MODULE }}  Message:**
+          El error ha sido en: ${{ env.KAOS_CODE }}
+          si dispòne de los permisos necesarios 
+          ejecute este comando en su consola y podrá consultar el fallo del trabajo
+          gh run view ${{ env.KAOS_CODE }} --log-failed
+          \`\`\`
+          **La información de la ejecución ${{ secrets.KAOS_ACTIONS_URL }}${{ env.KAOS_CODE }}**
+          \`\`\`
+          Please investigate the issue.
+          EOF
+          )
           gh issue create -t "$KAOS_ISSUE_TITLE" -b "$KAOS_ISSUE_BODY" -l "bug" -a "${{ github.event.inputs.kaos-user-start }}"
           # Buscamos el numero de la issue en funcion del titulo de la misma 
           ISSUE_NUMBRE=$(gh issue list --limit 1 --state open --label bug --json number --jq '.[0].number')
