@@ -1,0 +1,327 @@
+kaos-summary	Set up job	2025-01-25T01:15:52.0903465Z Current runner version: '2.321.0'
+kaos-summary	Set up job	2025-01-25T01:15:52.0911157Z Runner name: 'kaos-summary-1'
+kaos-summary	Set up job	2025-01-25T01:15:52.0911937Z Runner group name: 'kaos-summary'
+kaos-summary	Set up job	2025-01-25T01:15:52.0912854Z Machine name: '36c83cc075a4'
+kaos-summary	Set up job	2025-01-25T01:15:52.0916108Z ##[group]GITHUB_TOKEN Permissions
+kaos-summary	Set up job	2025-01-25T01:15:52.0918447Z Actions: write
+kaos-summary	Set up job	2025-01-25T01:15:52.0919023Z Contents: write
+kaos-summary	Set up job	2025-01-25T01:15:52.0919543Z Issues: write
+kaos-summary	Set up job	2025-01-25T01:15:52.0920047Z Metadata: read
+kaos-summary	Set up job	2025-01-25T01:15:52.0920575Z PullRequests: write
+kaos-summary	Set up job	2025-01-25T01:15:52.0921113Z ##[endgroup]
+kaos-summary	Set up job	2025-01-25T01:15:52.0923134Z Secret source: Actions
+kaos-summary	Set up job	2025-01-25T01:15:52.0923859Z Prepare workflow directory
+kaos-summary	Set up job	2025-01-25T01:15:52.1482445Z Prepare all required actions
+kaos-summary	Set up job	2025-01-25T01:15:52.1524899Z Getting action download info
+kaos-summary	Set up job	2025-01-25T01:15:52.3988059Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+kaos-summary	Set up job	2025-01-25T01:15:53.2622264Z Complete job name: kaos-summary
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3178644Z ##[group]Run actions/checkout@v4
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3179709Z with:
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3180209Z   fetch-depth: 0
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3181166Z   token: ***
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3181815Z   repository: SantaKa0S/kaos
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3182399Z   ssh-strict: true
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3182904Z   ssh-user: git
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3183426Z   persist-credentials: true
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3183991Z   clean: true
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3184511Z   sparse-checkout-cone-mode: true
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3185127Z   fetch-tags: false
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3185731Z   show-progress: true
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3186256Z   lfs: false
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3186740Z   submodules: false
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3209405Z   set-safe-directory: true
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3210624Z env:
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3211365Z   GH_TOKEN: ***
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3211897Z   KAOS_MODULE: [Ka0S] SUMMARY
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3212511Z   GH_REPO: ***
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3213021Z   PATH_RESUME: core/results/
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3213597Z   KAOS_CODE: 12960385509
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3214214Z   KAOS_USER_START: santakloud
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.3214790Z ##[endgroup]
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4401401Z Syncing repository: SantaKa0S/kaos
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4403923Z ##[group]Getting Git version info
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4404955Z Working directory is '/actions-runner/_work/kaos/kaos'
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4406597Z [command]/usr/bin/git version
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4407220Z git version 2.25.1
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4420306Z ##[endgroup]
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4432266Z Copying '/home/kaos/.gitconfig' to '/actions-runner/_work/_temp/c2bf78ab-efdd-4cf7-ae93-df3a860e5c74/.gitconfig'
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4442723Z Temporarily overriding HOME='/actions-runner/_work/_temp/c2bf78ab-efdd-4cf7-ae93-df3a860e5c74' before making global git config changes
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4444509Z Adding repository directory to the temporary git global config as a safe directory
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4449167Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4532600Z [command]/usr/bin/git config --local --get remote.origin.url
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4558622Z https://github.com/SantaKa0S/kaos
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4578821Z ##[group]Removing previously created refs, to avoid conflicts
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4584532Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4643413Z refs/heads/main
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4689618Z [command]/usr/bin/git checkout --detach
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4829410Z HEAD is now at 3e0008f [Ka0S] We integrate the summary files for 12941319652 in the repository, you do not need to integrate these files
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4885600Z [command]/usr/bin/git branch --delete --force main
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4944488Z Deleted branch main (was 3e0008f).
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4996915Z ##[endgroup]
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.4998349Z [command]/usr/bin/git submodule status
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5344866Z ##[group]Cleaning the repository
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5345954Z [command]/usr/bin/git clean -ffdx
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5400435Z Removing core/results/issue-log-12941319652.json
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5402037Z Removing core/results/pullrequest-log-12941319652.json
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5403582Z Removing core/results/workflows-available-12941319652.json
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5406209Z Removing core/results/workflows-runs-12941319652.json
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5408157Z [command]/usr/bin/git reset --hard HEAD
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5472203Z HEAD is now at 3e0008f [Ka0S] We integrate the summary files for 12941319652 in the repository, you do not need to integrate these files
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5480387Z ##[endgroup]
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5482746Z ##[group]Disabling automatic garbage collection
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5484336Z [command]/usr/bin/git config --local gc.auto 0
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5529980Z ##[endgroup]
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5531272Z ##[group]Setting up auth
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5532225Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5571814Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5928938Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.5964390Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.6306875Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.6363580Z ##[endgroup]
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.6364727Z ##[group]Fetching the repository
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:53.6370508Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.1644891Z From https://github.com/SantaKa0S/kaos
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.1662564Z  - [deleted]         (none)     -> origin/H633-modulo-de-execution
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6024675Z  * [new branch]      H823-ka0s-init-module-failed-in-12932778824 -> origin/H823-ka0s-init-module-failed-in-12932778824
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6033069Z    3e0008f..0714b46  main       -> origin/main
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6084073Z [command]/usr/bin/git branch --list --remote origin/main
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6111435Z   origin/main
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6121237Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6148237Z 0714b46fb20e9899455307078158272b0a20df43
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6151638Z ##[endgroup]
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6152992Z ##[group]Determining the checkout info
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6154577Z ##[endgroup]
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6156118Z ##[group]Checking out the ref
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6157941Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6382854Z Previous HEAD position was 3e0008f [Ka0S] We integrate the summary files for 12941319652 in the repository, you do not need to integrate these files
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6389389Z Switched to a new branch 'main'
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6390997Z Branch 'main' set up to track remote branch 'main' from 'origin'.
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6439297Z ##[endgroup]
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6441972Z [command]/usr/bin/git log -1 --format=%H
+kaos-summary	Run actions/checkout@v4	2025-01-25T01:15:54.6469855Z 0714b46fb20e9899455307078158272b0a20df43
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6733474Z ##[group]Run #  Extraemos toda la información de las issues hasta el momento
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6735842Z [36;1m#  Extraemos toda la información de las issues hasta el momento[0m
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6737465Z [36;1mtouch core/results/issue-log-12960385509.json[0m
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6742905Z [36;1mgh issue list --repo *** --state all --limit 999 --json assignees,author,body,closed,closedAt,comments,createdAt,id,labels,milestone,number,projectCards,projectItems,reactionGroups,state,title,updatedAt,url > core/results/issue-log-12960385509.json[0m
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6748084Z [36;1m# Formatear el archivo JSON final[0m
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6749962Z [36;1mcat core/results/issue-log-12960385509.json | jq -s '.' > core/results/kaos-issue-log.json[0m
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6762450Z shell: /usr/bin/bash -e {0}
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6763427Z env:
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6764509Z   GH_TOKEN: ***
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6765373Z   KAOS_MODULE: [Ka0S] SUMMARY
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6766730Z   GH_REPO: ***
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6767630Z   PATH_RESUME: core/results/
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6768561Z   KAOS_CODE: 12960385509
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6769450Z   KAOS_USER_START: santakloud
+kaos-summary	Run #  Extraemos toda la información de las issues hasta el momento	2025-01-25T01:15:54.6770381Z ##[endgroup]
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6135120Z ##[group]Run #  Extraemos toda la información de las pullrequest hasta el momento
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6136543Z [36;1m#  Extraemos toda la información de las pullrequest hasta el momento[0m
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6137106Z [36;1mtouch core/results/pullrequest-log-12960385509.json[0m
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6142102Z [36;1mgh pr list --repo *** --state all --json additions,assignees,author,autoMergeRequest,baseRefName,body,changedFiles,closed,closedAt,comments,commits,createdAt,deletions,files,fullDatabaseId,headRefName,headRefOid,headRepository,headRepositoryOwner,id,isCrossRepository,isDraft,labels,latestReviews,maintainerCanModify,mergeCommit,mergeStateStatus,mergeable,mergedAt,mergedBy,milestone,number,potentialMergeCommit,projectCards,projectItems,reactionGroups,reviewDecision,reviewRequests,reviews,state,statusCheckRollup,title,updatedAt,url > core/results/pullrequest-log-12960385509.json[0m
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6147314Z [36;1m# Formatear el archivo JSON final[0m
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6147893Z [36;1mcat core/results/pullrequest-log-12960385509.json | jq -s '.' > core/results/kaos-pullrequest-log.json[0m
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6154890Z shell: /usr/bin/bash -e {0}
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6155167Z env:
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6156144Z   GH_TOKEN: ***
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6156390Z   KAOS_MODULE: [Ka0S] SUMMARY
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6156670Z   GH_REPO: ***
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6156915Z   PATH_RESUME: core/results/
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6157178Z   KAOS_CODE: 12960385509
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6157448Z   KAOS_USER_START: santakloud
+kaos-summary	Run #  Extraemos toda la información de las pullrequest hasta el momento	2025-01-25T01:16:24.6157723Z ##[endgroup]
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3474248Z ##[group]Run # Añadimos la información de todos los workflows y sus datos
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3474903Z [36;1m# Añadimos la información de todos los workflows y sus datos[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3475640Z [36;1m# Generamos el fichero con los workflows disponibles en el repo[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3476600Z [36;1mgh workflow list --all --limit 999 --json id,name,path,state > core/results/workflows-available-12960385509.json[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3477207Z [36;1m# Formatear el archivo JSON final[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3477799Z [36;1mcat core/results/workflows-available-12960385509.json | jq -s '.' > core/results/kaos-workflows-available.json[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3489978Z [36;1m# job_id=$(gh run list --workflow=$workflow --branch=main --json databaseId --jq '.[0].databaseId')[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3490953Z [36;1m# gh workflow run issue.yaml --ref main -f kaos-issue-title=$KAOS_ISSUE_TITLE -f kaos-issue-body="Launch workflow $workflow with id $job_id" -f kaos-issue-id=$GH_ISSUE_ID[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3492647Z [36;1m# A continuación extraemos el fichero con todas las ejecuciones de cada uno de los workflows anteriores[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3493354Z [36;1m# Leer el archivo de workflows[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3493876Z [36;1mworkflows=$(cat core/results/kaos-workflows-available.json | jq -r '.[] | .[] | .id')  [0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3494600Z [36;1m# Crear un archivo para guardar los detalles de las ejecuciones[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3495080Z [36;1mecho "[]" > core/results/workflows-runs-12960385509.json[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3495711Z [36;1m# Iterar sobre cada workflow y obtener sus ejecuciones[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3496365Z [36;1mfor workflow_id in $workflows; do[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3496955Z [36;1mgh api repos/:owner/:repo/actions/workflows/$workflow_id/runs --paginate --jq '.workflow_runs[]' | jq '{[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3497499Z [36;1m  id: .id,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3498036Z [36;1m  name: .name,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3498292Z [36;1m  head_branch: .head_branch,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3498595Z [36;1m  head_sha: .head_sha,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3498871Z [36;1m  run_number: .run_number,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3499151Z [36;1m  event: .event,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3499405Z [36;1m  status: .status,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3499671Z [36;1m  conclusion: .conclusion,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3499961Z [36;1m  workflow_id: .workflow_id,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3500244Z [36;1m  url: .url,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3500488Z [36;1m  created_at: .created_at,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3500777Z [36;1m  updated_at: .updated_at,[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3501075Z [36;1m  run_started_at: .run_started_at[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3501429Z [36;1m}' >> core/results/workflows-runs-12960385509.json[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3501767Z [36;1mdone[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3501972Z [36;1m[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3502195Z [36;1m# Formatear el archivo JSON final[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3502750Z [36;1mcat core/results/workflows-runs-12960385509.json | jq -s '.' > core/results/kaos-workflows-runs.json[0m
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3509825Z shell: /usr/bin/bash -e {0}
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3510095Z env:
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3510503Z   GH_TOKEN: ***
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3510734Z   KAOS_MODULE: [Ka0S] SUMMARY
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3511013Z   GH_REPO: ***
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3511240Z   PATH_RESUME: core/results/
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3511497Z   KAOS_CODE: 12960385509
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3511750Z   KAOS_USER_START: santakloud
+kaos-summary	Run # Añadimos la información de todos los workflows y sus datos	2025-01-25T01:16:30.3512011Z ##[endgroup]
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5139479Z ##[group]Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5140631Z [36;1m# Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5141457Z [36;1mgit config --global user.email ***[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5141855Z [36;1mgit config --global user.name ***[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5142179Z [36;1mgit pull[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5142422Z [36;1mgit add core/results/kaos-*[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5143021Z [36;1mgit commit -m "[Ka0S] We integrate the summary files for 12960385509 in the repository, you do not need to integrate these files"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5143958Z [36;1mgit push[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5144192Z [36;1m[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5144497Z [36;1m# # Generamos los ficheros delta de kaos-workflows-runs[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5145098Z [36;1m# if [[ -f "core/results/kaos-workflows-runs-old.json" ]]; then[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5145920Z [36;1m#     # Comparar con la lista anterior[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5146661Z [36;1m#     jq -s '.[0] - .[1]' core/results/kaos-workflows-runs.json core/results/kaos-workflows-runs-old.json > core/results/kaos-workflows-runs-delta.json[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5147373Z [36;1m#     git pull[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5147862Z [36;1m#     git add core/results/kaos-workflows-runs-delta.json[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5148900Z [36;1m#     git commit -m "[Ka0S] We integrate the DELTA runs summary files for 12960385509 in the repository, you do not need to integrate these files"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5149586Z [36;1m#     git push[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5150086Z [36;1m#     if [[ -s "core/results/kaos-workflows-runs-delta.json" ]]; then[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5150509Z [36;1m#      # LLamamos a splunk[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5150920Z [36;1m#      echo "En esta sección se puede habilitar la llamada a splunk"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5151722Z [36;1m#      # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=core/results/kaos-workflows-runs-delta.json -f kaos-issue-id=Ka0s Summary[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5152424Z [36;1m#     else[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5152730Z [36;1m#      echo "No hay contenido nuevo que subir a splunk"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5153087Z [36;1m#    fi [0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5153311Z [36;1m# else[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5153754Z [36;1m#     cat core/results/kaos-workflows-runs.json > core/results/kaos-workflows-runs-old.json[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5163802Z [36;1m#     git pull[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5164153Z [36;1m#     git add core/results/*[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5164786Z [36;1m#     git commit -m "[Ka0S] We integrate the summary files for 12960385509 in the repository, you do not need to integrate these files"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5166204Z [36;1m#     git push[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5166812Z [36;1m#     cat core/results/kaos-workflows-runs-old.json > core/results/kaos-workflows-runs-delta.json[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5167334Z [36;1m#     git pull[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5167616Z [36;1m#     git add core/results/*[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5168208Z [36;1m#     git commit -m "[Ka0S] We integrate the summary files for 12960385509 in the repository, you do not need to integrate these files"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5168802Z [36;1m#     git push[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5169429Z [36;1m#     # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=core/results/kaos-workflows-runs-delta.json -f kaos-issue-id=Ka0s Summary[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5170261Z [36;1m# fi[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5170475Z [36;1m# [0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5170946Z [36;1m# # Generamos los ficheros delta de kaos-workflows-available[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5171501Z [36;1m# if [[ -f "core/results/kaos-workflows-available-old.json" ]]; then[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5172067Z [36;1m#     # Comparar con la lista anterior[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5172849Z [36;1m#     jq -s '.[0] - .[1]' core/results/kaos-workflows-available.json core/results/kaos-workflows-available-old.json > core/results/kaos-workflows-available-delta.json[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5173981Z [36;1m#     git pull[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5174237Z [36;1m#     git add core/results/*[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5174828Z [36;1m#     git commit -m "[KA0S] We integrate the summary files for 12960385509 in the repository, you do not need to integrate these files"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5175651Z [36;1m#     git push[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5176179Z [36;1m#     if [[ -s "core/results/kaos-workflows-available-delta.json" ]]; then[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5176729Z [36;1m#      # LLamamos a splunk[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5177121Z [36;1m#      echo "En esta sección se puede habilitar la llamada a splunk"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5177913Z [36;1m#      # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=core/results/kaos-workflows-available-delta.json -f kaos-issue-id=Ka0s Summary[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5178595Z [36;1m#     else[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5178887Z [36;1m#      echo "No hay contenido nuevo que subir a splunk"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5179233Z [36;1m#    fi [0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5179452Z [36;1m# else[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5179924Z [36;1m#     cat core/results/kaos-workflows-available.json > core/results/kaos-workflows-available-old.json[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5180464Z [36;1m#     git pull[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5180716Z [36;1m#     git add core/results/*[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5181319Z [36;1m#     git commit -m "[KA0S] We integrate the summary files for 12960385509 in the repository, you do not need to integrate these files"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5182068Z [36;1m#     git push[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5182752Z [36;1m#     cat core/results/kaos-workflows-available-old.json > core/results/kaos-workflows-available-delta.json[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5183324Z [36;1m#     git pull[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5183585Z [36;1m#     git add core/results/*[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5184199Z [36;1m#     git commit -m "[KA0S] We integrate the summary files for 12960385509 in the repository, you do not need to integrate these files"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5184797Z [36;1m#     git push[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5185681Z [36;1m#     # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=core/results/kaos-workflows-available-delta.json -f kaos-issue-id=Ka0s Summary[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5186618Z [36;1m# fi[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5186852Z [36;1m# [0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5187054Z [36;1m# [0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5187529Z [36;1m# # Generamos los ficheros delta de kaos-issue-log[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5187952Z [36;1m# if [[ -f "core/results/kaos-issue-log-old.json" ]]; then[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5188359Z [36;1m#     # Comparar con la lista anterior[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5188992Z [36;1m#     jq -s '.[0] - .[1]' core/results/kaos-issue-log.json core/results/kaos-issue-log-old.json > core/results/kaos-issue-log-delta.json[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5189600Z [36;1m#     git pull[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5189858Z [36;1m#     git add core/results/*[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5190453Z [36;1m#     git commit -m "[KA0S] We integrate the summary files for 12960385509 in the repository, you do not need to integrate these files"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5191244Z [36;1m#     git push[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5191576Z [36;1m#     if [[ -s "core/results/kaos-issue-log-delta.json" ]]; then[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5192118Z [36;1m#      # LLamamos a splunk[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5192637Z [36;1m#      echo "En esta sección se puede habilitar la llamada a splunk"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5193528Z [36;1m#      # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=core/results/kaos-issue-log-delta.json -f kaos-issue-id=Ka0s Summary[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5194178Z [36;1m#     else[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5194478Z [36;1m#      echo "No hay contenido nuevo que subir a splunk"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5194814Z [36;1m#    fi [0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5195028Z [36;1m# else[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5195600Z [36;1m#     cat core/results/kaos-issue-log.json > core/results/kaos-issue-log-old.json[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5196366Z [36;1m#     git pull[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5196622Z [36;1m#     git add core/results/*[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5197227Z [36;1m#     git commit -m "[KA0S] We integrate the summary files for 12960385509 in the repository, you do not need to integrate these files"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5197945Z [36;1m#     git push[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5198382Z [36;1m#     cat core/results/kaos-issue-log-old.json > core/results/kaos-issue-log-delta.json[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5198867Z [36;1m#     git pull[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5199119Z [36;1m#     git add core/results/*[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5199711Z [36;1m#     git commit -m "[KA0S] We integrate the summary files for 12960385509 in the repository, you do not need to integrate these files"[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5200304Z [36;1m#     git push[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5200907Z [36;1m#     # gh workflow run splunk.yaml --ref main -f kaos-issue-body-file=core/results/kaos-issue-log-delta.json -f kaos-issue-id=Ka0s Summary[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5201551Z [36;1m# fi[0m
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5209332Z shell: /usr/bin/bash -e {0}
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5209611Z env:
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5210031Z   GH_TOKEN: ***
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5210268Z   KAOS_MODULE: [Ka0S] SUMMARY
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5210545Z   GH_REPO: ***
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5210776Z   PATH_RESUME: core/results/
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5211038Z   KAOS_CODE: 12960385509
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5211289Z   KAOS_USER_START: santakloud
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.5211567Z ##[endgroup]
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:21.9511164Z Already up to date.
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:22.3071257Z [main 0ff4ea4] [Ka0S] We integrate the summary files for 12960385509 in the repository, you do not need to integrate these files
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:22.3072020Z  4 files changed, 41669 insertions(+), 32920 deletions(-)
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:23.8977862Z To https://github.com/SantaKa0S/kaos
+kaos-summary	Run # Al ser un proceso nocturno le vamos a añadir la funcionalidad de hacer push a la rama para integrar los ficheros	2025-01-25T01:19:23.8979573Z    0714b46..0ff4ea4  main -> main
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:23.9452239Z Post job cleanup.
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.0636781Z [command]/usr/bin/git version
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.0675814Z git version 2.25.1
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.0715780Z Copying '/home/kaos/.gitconfig' to '/actions-runner/_work/_temp/7cd62dce-d4c2-498c-b0e5-bab2b3e38a7e/.gitconfig'
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.0729828Z Temporarily overriding HOME='/actions-runner/_work/_temp/7cd62dce-d4c2-498c-b0e5-bab2b3e38a7e' before making global git config changes
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.0730743Z Adding repository directory to the temporary git global config as a safe directory
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.0735651Z [command]/usr/bin/git config --global --add safe.directory /actions-runner/_work/kaos/kaos
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.0779079Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.0821196Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.1148255Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.1174021Z http.https://github.com/.extraheader
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.1185912Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+kaos-summary	Post Run actions/checkout@v4	2025-01-25T01:19:24.1225084Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+kaos-summary	Complete job	2025-01-25T01:19:24.1656358Z Cleaning up orphan processes
+end-workflow	Set up job	2025-01-25T01:19:35.8457263Z Current runner version: '2.321.0'
+end-workflow	Set up job	2025-01-25T01:19:35.8463878Z Runner name: 'kaos-version-1'
+end-workflow	Set up job	2025-01-25T01:19:35.8464912Z Runner group name: 'kaos-version'
+end-workflow	Set up job	2025-01-25T01:19:35.8466205Z Machine name: 'f4db209b0066'
+end-workflow	Set up job	2025-01-25T01:19:35.8469081Z ##[group]GITHUB_TOKEN Permissions
+end-workflow	Set up job	2025-01-25T01:19:35.8471433Z Actions: write
+end-workflow	Set up job	2025-01-25T01:19:35.8471977Z Contents: write
+end-workflow	Set up job	2025-01-25T01:19:35.8472463Z Issues: write
+end-workflow	Set up job	2025-01-25T01:19:35.8472934Z Metadata: read
+end-workflow	Set up job	2025-01-25T01:19:35.8473429Z PullRequests: write
+end-workflow	Set up job	2025-01-25T01:19:35.8473929Z ##[endgroup]
+end-workflow	Set up job	2025-01-25T01:19:35.8476492Z Secret source: Actions
+end-workflow	Set up job	2025-01-25T01:19:35.8477328Z Prepare workflow directory
+end-workflow	Set up job	2025-01-25T01:19:35.9002850Z Prepare all required actions
+end-workflow	Set up job	2025-01-25T01:19:35.9056126Z Complete job name: end-workflow
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9589455Z ##[group]Run echo "End process"
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9590281Z [36;1mecho "End process"[0m
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9591604Z [36;1mgh workflow run inspector.yaml --ref refs/heads/main -f kaos-issue-id="programada" -f kaos-workflow-id="12960385509" -f kaos-user-start="Ka0s"[0m
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9611601Z shell: /usr/bin/bash -e {0}
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9612504Z env:
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9613255Z   GH_TOKEN: ***
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9613757Z   KAOS_MODULE: [Ka0S] SUMMARY
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9614497Z   GH_REPO: ***
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9615008Z   PATH_RESUME: core/results/
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9615792Z   KAOS_CODE: 12960385509
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9616324Z   KAOS_USER_START: santakloud
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9616987Z ##[endgroup]
+end-workflow	Finaliza el workflow	2025-01-25T01:19:35.9779528Z End process
+end-workflow	Complete job	2025-01-25T01:19:36.6513673Z Cleaning up orphan processes
